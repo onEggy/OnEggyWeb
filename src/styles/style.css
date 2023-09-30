@@ -1,0 +1,196 @@
+
+  /* toggle the sidebar from the menu button */
+  .menu {
+    z-index: 34;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 50px;
+    width: 70px;
+    overflow: hidden;
+  }
+  /* style.css */
+  .container {
+    position: relative;
+  }
+  
+  .normal-button {
+    z-index: 34;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 50px;
+    overflow: hidden;
+    background-color: #37fff4; /* Background color */
+    color: #000; /* Text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px; /* Border radius */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Hover transition */
+    /* Initially hide the button to the right */
+  }
+  
+  .normal-button:hover {
+    background-color: #00ABA1; /* Background color on hover */
+    color: #ffffff; /* Text color on hover */
+  }
+  
+  /* menu div has a tag that consists of two spans in which there are icons- hamburger and arrow */
+  .menu a {
+    background-color: #37fff4;
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+  .menu a:hover {
+    background-color: black;
+    left: -70px;
+  }
+  span {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  span i {
+    color: white;
+    font-size: 2rem;
+  }
+  
+  /* ----------------THE SIDEBAR--------------------- */
+  /* Sidebar full layout */
+  .sidebar {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    top: 0;
+    padding: 0;
+    right: 0;
+    z-index: 2;
+    background-color: white;
+    width: 0;
+    height: 100vh;
+    float: right;
+    transition: all 0.5s linear;
+    overflow: hidden;
+  }
+  .sidebar-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .sidebar-left {
+    width: 40%;
+  }
+  
+  .sidebar-right {
+    width: 60%;
+  }
+  .sidebar-para {
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 18px;
+    font-weight: 500;
+    color: #8e90a6;
+    line-height: 1.2;
+    margin-bottom: 32px;
+  }
+  .sidebar-list {
+    list-style-type: none;
+  }
+  .sidebar-list li {
+    list-style-type: none;
+    text-decoration: none;
+  }
+  /* All links of sidebar edited for hover animation */
+  .sidebar-a {
+    white-space: nowrap;
+    overflow: hidden;
+    color: black;
+    text-decoration: none;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding-right: 0;
+    transition: padding-right 0.2s;
+  }
+  .sidebar-a-left {
+    font-size: 32px;
+    line-height: 1.1;
+    font-weight: 500;
+  }
+  .sidebar-left ul li a {
+    padding: 3px;
+  }
+  .sidebar-left ul li:not(:last-child) {
+    margin-bottom: 30px;
+  }
+  .sidebar-a:after{
+    content: "";  
+    position: absolute;
+    width: 0px;
+    right: 0px;
+    height: 20px;
+    transition: width 0.2s;
+  }
+  .sidebar-a:hover {
+    color: #37fff4;
+    padding-right: 25px;
+  }
+  .sidebar-a:hover::after {
+    width: 25px;
+  }
+  
+  .contact {
+    margin-bottom: 80px;
+  }
+  
+  .contact-a {
+    font-size: 28px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  
+  .follow ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .follow ul li {
+    width: calc(50%-8px);
+  }
+  @media (max-width: 1000px) {
+    .menu a:active {
+      background-color: #3f71ff;
+      left: 0;
+    }
+    .sidebar {
+      overflow: auto;
+    }
+    .sidebar-row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .sidebar-left ul li:not(:last-child) {
+      margin-bottom: 5px;
+    }
+    .contact {
+      margin-bottom: 0;
+    }
+  }
+  
