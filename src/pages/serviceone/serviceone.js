@@ -14,6 +14,9 @@ import ConsultationButton from "../components/consultButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Sidebar from "../components/sidebar";
+import Benefits from "./benefits";
+import Offers from "./offers";
+import Talks from "./talk";
 
 const Home = (skill) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -68,7 +71,7 @@ const Home = (skill) => {
   const title = "Services";
   const desc =
     "At our firm, we provide a variety of services to assist businesses in growing and succeeding online. These services include";
-  const buttonPlaceholder = "Book a Consultataion";
+  const buttonPlaceholder = "Talk to Kubernetes Expert";
 
   return (
     <div className="landingPage1 container max-w-7xl mx-auto">
@@ -80,11 +83,11 @@ const Home = (skill) => {
           <div style={{ width: "589px" }}>
             {/*HEADINGS*/}
             <h1 className="text-6xl font-semibold theme-heading">
-              Transforming Technology with a Human Touch
+              Trusted Managed Services for Kubernetes
             </h1>
             <Image
-              src="/ai.png"
-              alt="aiImage"
+              src="/kubernetes.png"
+              alt="service"
               width={0}
               height={0}
               sizes="100vw"
@@ -92,18 +95,25 @@ const Home = (skill) => {
               style={{ width: "80%", height: "auto", margin: "auto" }}
             />
             <p className="mt-12 text-justify font-spaceGrotesk sm:pr-48 px-0">
-              With OnEggy's IT services, you can leave your mark in the digital
-              world. Transform your company with our cutting-edge and effective
-              digital solutions to set you on the way to success.
+              From advising and implementation to optimization and support -
+              making Kubernetes easier for you.
             </p>
             <ConsultationButton buttonPlaceholder={buttonPlaceholder} />
           </div>
           <div className="ml-auto md:block hidden">
-            <Image src="/ai.png" alt="aiImage" width={500} height={478} />
+            <Image
+              src="/kubernetes.png"
+              alt="service"
+              width={500}
+              height={478}
+            />
           </div>
         </div>
 
         <Projectlogos />
+        <Benefits />
+        <Marksheet />
+        <Offers />
         <Awards />
         <Headline title={title} desc={desc} />
         <div className="flex flex-wrap sm:flex-row justify-center flex-col px-6 sm:px-0 mt-10 overflow-hidden">
@@ -123,9 +133,9 @@ const Home = (skill) => {
           </div>
         </div>
         <GetFreeProp />
-        <Marksheet />
         <Testimonials />
         <ContactUs />
+        <Talks />
         <Footer />
       </div>
     </div>

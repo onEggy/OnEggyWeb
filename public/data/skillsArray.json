@@ -1,0 +1,33 @@
+[
+    {
+      "title": "Website Development",
+      "imageSrc": "/home/landingComponent/1.png",
+      "learnMoreLink": "#"
+    },
+    {
+      "title": "Application Development",
+      "imageSrc": "/home/landingComponent/2.png",
+      "learnMoreLink": "#"
+    },
+    {
+      "title": "UI/UX Designing",
+      "imageSrc": "/home/landingComponent/3.png",
+      "learnMoreLink": "#"
+    },
+    {
+      "title": "DevOps Services",
+      "imageSrc": "/home/landingComponent/4.png",
+      "learnMoreLink": "#"
+    },
+    {
+      "title": "QA & Testing",
+      "imageSrc": "/home/landingComponent/5.png",
+      "learnMoreLink": "#"
+    },
+    {
+      "title": "Cloud Manage Services",
+      "imageSrc": "/home/landingComponent/6.png",
+      "learnMoreLink": "#"
+    }
+  ]
+  

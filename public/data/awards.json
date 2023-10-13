@@ -1,0 +1,23 @@
+  
+  {
+    "title": "Certification and Awards",
+    "description": "At our firm, we provide a variety of services to assist businesses in growing and succeeding online. These services include:",
+    "images": [
+        {
+            "id": 1,
+            "url": "/home/awards/image1.png",
+            "alt": "east-mojo-logo"
+          },
+          {
+            "id": 2,
+            "url": "/home/awards/image2.png",
+            "alt": "east-mojo-logo"
+          },
+          {
+            "id": 3,
+            "url": "/home/awards/image3.png",
+            "alt": "east-mojo-logo"
+          }
+    ]
+  }
+  

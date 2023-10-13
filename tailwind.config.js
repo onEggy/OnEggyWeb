@@ -30,6 +30,15 @@ module.exports = {
       fontFamily: {
         spaceGrotesk: ["Space Grotesk", "sans-serif"],
       },
+      borderWidth: {
+        DEFAULT: "1px",
+        0: "0",
+        2: "1px",
+        3: "3px",
+        4: "4px",
+        6: "6px",
+        8: "8px",
+      },
     },
     theme: {
       container: {

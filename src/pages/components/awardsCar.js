@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const Carousel = () => {
   const images = [
-    "../home/awards/image 1.png",
+    "../../home/awards/image 1.png",
     "../home/awards/image 2.png",
     "../home/awards/image 3.png",
   ];

@@ -4,6 +4,7 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
+import logo from "../../../public/logo.png";
 
 const navigation = [
   { name: "About Us", href: "/about/about", current: true },
@@ -33,13 +34,7 @@ export default function Navbar() {
             <div className="relative flex h-16 items-center justify-between">
               <div className="flex flex-shrink-0 items-center lg:hidden">
                 <a href="/">
-                  <Image
-                    src="/logo.png"
-                    alt="Logo"
-                    width="110"
-                    height="55"
-                    // className="logo_img cursor-pointer w-32"
-                  />
+                  <Image src={logo} alt="Logehehheo" width="110" height="55" />
                 </a>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center lg:hidden order-2">
@@ -60,13 +55,7 @@ export default function Navbar() {
               <nav className="py-4 lg:flex lg:justify-between mx-auto hidden lg:w-full order-1">
                 <div className="flex flex-shrink-0 items-center">
                   <a href="/">
-                    <Image
-                      src="/logo.jpg"
-                      alt="Logo"
-                      width="150"
-                      height="55"
-                      // className="logo_img cursor-pointer w-32"
-                    />
+                    <Image src={logo} alt="Logasfo" width="150" height="55" />
                   </a>
                 </div>
 

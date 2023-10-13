@@ -1,0 +1,41 @@
+{
+    "projectLogos": [
+        {
+            "id": 1,
+            "name": "East Mojo Logo",
+            "url": "/home/projectLogos/east-mojo-logo.png",
+            "alt": "east-mojo-logo"
+          },
+      {
+        "id": 2,
+        "name": "East Mojo Logo",
+        "url": "/home/projectLogos/east-mojo-logo.png",
+        "alt": "east-mojo-logo"
+      },
+      {
+        "id": 3,
+        "name": "East Mojo Logo",
+        "url": "/home/projectLogos/east-mojo-logo.png",
+        "alt": "east-mojo-logo"
+      },
+      {
+        "id": 4,
+        "name": "East Mojo Logo",
+        "url": "/home/projectLogos/east-mojo-logo.png",
+        "alt": "east-mojo-logo"
+      },
+      {
+        "id": 5,
+        "name": "East Mojo Logo",
+        "url": "/home/projectLogos/east-mojo-logo.png",
+        "alt": "east-mojo-logo"
+      },
+      {
+        "id": 6,
+        "name": "Beyond Logo",
+        "url": "/home/projectLogos/beyond-logo.png",
+        "alt": "beyond"
+      }
+    ]
+  }
+  
