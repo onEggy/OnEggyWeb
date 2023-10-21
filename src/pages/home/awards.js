@@ -43,7 +43,7 @@ const Awards = () => {
                 <img
                   src={image.url} // Use the image URL from JSON
                   alt={image.alt}
-                  className="mx-auto"
+                  className="mx-auto px-5"
                   style={imageStyle}
                 />
               </div>

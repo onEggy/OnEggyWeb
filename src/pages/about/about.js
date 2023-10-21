@@ -13,12 +13,12 @@ import Sidebar from "../components/sidebar";
 
 const about = () => {
   const brands = [
-    "../about/amazon.png",
-    "../about/dribble.png",
-    "../about/hubspot.png",
-    "../about/notion.png",
-    "../about/netflix.png",
-    "../about/zoom.png",
+    "../home/projectLogos/smile-logo.png",
+    "../home/projectLogos/numwize-logo.png",
+    "../home/projectLogos/mgmt-logo.png",
+    "../home/projectLogos/east-mojo-logo.png",
+    "../home/projectLogos/bit-logo.png",
+    "../home/projectLogos/beyond-logo.png",
   ];
 
   const alternative = [
@@ -72,9 +72,9 @@ const about = () => {
     "We create delectable dishes by combining design and technology with additional cheese of awesomeness. With demonstrated experience in accelerating the growth of start-ups by analyzing their needs and delivering the growth package. We make your dreams a reality. We're Oneggy. Our routine is to be ahead of schedule and under budget, to be forward-thinking and to create a seamless digital life. Every concept you bring to the table is nourished and ready to be implemented. With us, you invest in brand building and digital growth rather than design and development.";
 
   return (
-    <div className="bg-cover bg-right sm:min-h-screen container mx-auto sm:px-20">
+    <div className="bg-cover bg-right sm:min-h-screen landingPage1 container max-w-7xl mx-auto">
       <Navbar />
-      <Sidebar/>
+      <Sidebar />
       <Section1
         head={head}
         sentence={sentence}
