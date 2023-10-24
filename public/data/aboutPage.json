@@ -41,8 +41,8 @@
         "alt": "Certify"
       }
     ],
-    "title": "Our core values",
-    "desc": "We investigate the basics of innovation while retaining the synergy that channels implementation.",
+    "titleAbout": "Our core values",
+    "descAbout": "We investigate the basics of innovation while retaining the synergy that channels implementation.",
     "head": "Tested & Derived Solutions",
     "sentence": " This is the stage at which your solution is introduced on the real market with real clients.",
     "showButton": true,

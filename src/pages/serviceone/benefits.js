@@ -1,16 +1,14 @@
 import React from "react";
+import Headline from "../components/headline";
+
 const benefits = () => {
+  const title = "Benefits";
+  const desc =
+    "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies";
   return (
     <div className="benefits">
-      {/* heading div of benefits */}
-      <div className="benefits-heading">
-        <h1>Benefits</h1>
-        <p>
-          Explore Real-Life Examples of Our Proven Digital Marketing
-          <br />
-          Success through Our Case Studies
-        </p>
-      </div>
+      <Headline title={title} desc={desc} />
+
       {/* cards grid of benefits */}
       <div className="benefits-cards">
         <div className="benefits-card">

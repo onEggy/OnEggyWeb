@@ -18,8 +18,8 @@ const About = () => {
     brands,
     alternative,
     compoArray,
-    title,
-    desc,
+    titleAbout,
+    descAbout,
     head,
     sentence,
     showButton,
@@ -60,7 +60,7 @@ const About = () => {
           <Platforms brands={brands} alternative={alternative} />
         </section>
       </div>
-      <Headline title={title} desc={desc} />
+      <Headline title={titleAbout} desc={descAbout} />
       <div className="grid grid-cols-1 sm:grid-cols-2  gap-y-6 sm:gap-y-16 gap-10 mb-16 justify-items-stretch] px-4 sm:px-0 mt-10 ">
         {compoArray.map(
           (item, index) => (

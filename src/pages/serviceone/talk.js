@@ -1,144 +1,135 @@
 import React from "react";
+import Headline from "../components/headline";
 const talks = () => {
+  const title = "Let's Talk";
+  const desc = "Let's talk about your digital services requirements.";
   return (
     <div className="talk">
-      <div className="talk-heading">
-        <h1>Lets Talk</h1>
-        <p>
-          Let's talk about your digital services <br />
-          requirements.
-        </p>
-      </div>
-      <br />
-      <br />
-      <div className="talk-content">
+      <Headline title={title} desc={desc} />
+
+      <div className="talk-content mt-10">
         <div className="talk-content-left">
           <p>Trusted by 100+ companies worldwide</p>
-          <br />
-          <div className="company-grid">
+          <div className="company-grid mt-5">
+            <div className="company-card">
+              <img src="/iconImages/onemg.png" alt="company" />
+            </div>
             <div className="company-card">
               <img
                 className="company-card-logo"
-                src="./assets/company-1.png"
+                src="/iconImages/aera.png"
                 alt="company"
               />
             </div>
             <div className="company-card">
               <img
                 className="company-card-logo"
-                src="./assets/company-1.png"
+                src="/iconImages/equinx.png"
                 alt="company"
               />
             </div>
             <div className="company-card">
               <img
                 className="company-card-logo"
-                src="./assets/company-1.png"
+                src="/iconImages/hdfc.png"
                 alt="company"
               />
             </div>
             <div className="company-card">
               <img
                 className="company-card-logo"
-                src="./assets/company-1.png"
+                src="/iconImages/hitachi.png"
                 alt="company"
               />
             </div>
             <div className="company-card">
               <img
                 className="company-card-logo"
-                src="./assets/company-1.png"
+                src="/iconImages/intellect.png"
                 alt="company"
               />
             </div>
             <div className="company-card">
               <img
                 className="company-card-logo"
-                src="./assets/company-1.png"
+                src="/iconImages/jpmorgan.png"
                 alt="company"
               />
             </div>
             <div className="company-card">
               <img
                 className="company-card-logo"
-                src="./assets/company-1.png"
+                src="/iconImages/loft.png"
                 alt="company"
               />
             </div>
             <div className="company-card">
               <img
                 className="company-card-logo"
-                src="./assets/company-1.png"
+                src="/iconImages/mercedes.png"
                 alt="company"
               />
             </div>
             <div className="company-card">
               <img
                 className="company-card-logo"
-                src="./assets/company-1.png"
+                src="/iconImages/packet.png"
                 alt="company"
               />
             </div>
             <div className="company-card">
               <img
                 className="company-card-logo"
-                src="./assets/company-1.png"
+                src="/iconImages/portworx.png"
                 alt="company"
               />
             </div>
             <div className="company-card">
               <img
                 className="company-card-logo"
-                src="./assets/company-1.png"
+                src="/iconImages/Qualys.png"
                 alt="company"
               />
             </div>
             <div className="company-card">
               <img
                 className="company-card-logo"
-                src="./assets/company-1.png"
+                src="/iconImages/reancher.png"
                 alt="company"
               />
             </div>
             <div className="company-card">
               <img
                 className="company-card-logo"
-                src="./assets/company-1.png"
+                src="/iconImages/styra.png"
                 alt="company"
               />
             </div>
             <div className="company-card">
               <img
                 className="company-card-logo"
-                src="./assets/company-1.png"
+                src="/iconImages/sunpower.png"
                 alt="company"
               />
             </div>
             <div className="company-card">
               <img
                 className="company-card-logo"
-                src="./assets/company-1.png"
+                src="/iconImages/taos.png"
                 alt="company"
               />
             </div>
             <div className="company-card">
               <img
                 className="company-card-logo"
-                src="./assets/company-1.png"
+                src="/iconImages/Tigera.png"
                 alt="company"
               />
             </div>
             <div className="company-card">
               <img
                 className="company-card-logo"
-                src="./assets/company-1.png"
-                alt="company"
-              />
-            </div>
-            <div className="company-card">
-              <img
-                className="company-card-logo"
-                src="./assets/company-1.png"
+                src="/iconImages/upbound.png"
                 alt="company"
               />
             </div>

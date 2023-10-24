@@ -18,14 +18,13 @@ const blogOne = () => {
       content:
         "We are a team of Artists, Innovators & Strategists who left their ordinary life to invent and reinvent the common. Our Passion for technologies changes problems into opportunities. Our heart is full of creative juice that shapes ideas, Our mind is on a quest to transform the ordinary into the extraordinary. This is our code that energizes deep-rooted human desires and makes people pursue their dreams. We took an oath to stick to the Code and call ourselves Code Theorem.",
     },
-    // ... (additional items)
   ];
 
   return (
     <div className="max-w-7xl mx-auto">
       <Navbar />
       <Sidebar />
-      <div className="w-full md:w-5/6 lg:w-[53rem] mx-auto">
+      <div className="w-full md:w-5/6  mx-auto">
         <MainHeadline head={head} sentence={sentence} showButton={showButton} />
       </div>
       <div className="flex flex-wrap">
@@ -55,7 +54,6 @@ const blogOne = () => {
               />
               Development
             </li>
-            {/* ... (additional categories) */}
           </ul>
           <h3 className="text-3xl font-bold mt-8">All Tags</h3>
           <ul className="flex flex-wrap mt-2">
@@ -65,7 +63,6 @@ const blogOne = () => {
             <li className="border rounded-[3rem] py-2 px-4 my-1 mx-2">
               Experience
             </li>
-            {/* ... (additional tags) */}
           </ul>
         </div>
       </div>

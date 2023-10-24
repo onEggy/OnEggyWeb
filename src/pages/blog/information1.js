@@ -167,16 +167,16 @@ const information1 = () => {
         </div>
         <div className="mt-16">
           <div className="bg-l_grey rounded-3xl p-10">
-              <h1 className="text-4xl font-semibold">
-                Looking for any personalized service
-              </h1>
-              <p className="mt-4">
-                Contact us today to learn more about how our digital marketing
-                services can help your business grow and succeed online.
-              </p>
-              {showButton && (
-                <ConsultationButton buttonPlaceholder={buttonPlaceholder} />
-              )}
+            <h1 className="text-4xl font-semibold">
+              Looking for any personalized service
+            </h1>
+            <p className="mt-4">
+              Contact us today to learn more about how our digital marketing
+              services can help your business grow and succeed online.
+            </p>
+            {showButton && (
+              <ConsultationButton buttonPlaceholder={buttonPlaceholder} />
+            )}
           </div>
         </div>{" "}
       </div>

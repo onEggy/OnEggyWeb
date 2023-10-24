@@ -17,9 +17,26 @@ import Sidebar from "../components/sidebar";
 import Benefits from "./benefits";
 import Offers from "./offers";
 import Talks from "./talk";
+import Section5 from "../about/section5";
+import aboutPageData from "../../../public/data/aboutPage.json";
+import TechnologyStack from "../service/technologyStack";
 
 const Home = (skill) => {
   const [isOpen, setIsOpen] = useState(false);
+  const {
+    brands,
+    alternative,
+    compoArray,
+    titleAbout,
+    descAbout,
+    head,
+    sentence,
+    showButton,
+    boxTitle1,
+    boxTitle2,
+    boxParaTitle,
+    boxContent,
+  } = aboutPageData;
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
@@ -114,27 +131,18 @@ const Home = (skill) => {
         <Benefits />
         <Marksheet />
         <Offers />
-        <Awards />
-        <Headline title={title} desc={desc} />
-        <div className="flex flex-wrap sm:flex-row justify-center flex-col px-6 sm:px-0 mt-10 overflow-hidden">
-          {skillsArray.map((skill, index) => (
-            <Technology key={index} skill={skill} index={index} />
-          ))}
-        </div>
-
-        <div className="md:flex justify-end  hidden overflow-hidden">
-          <div className="mr-5 mt-5 rounded-full p-1 bg-l_black transform -rotate-[30deg] text-[4px] cursor-pointer">
-            <span className="text-white">
-              <FontAwesomeIcon icon={faArrowRight} size="4x" />
-            </span>
-          </div>
-          <div className="mr-8 mt-5 cursor-pointer">
-            <a href={skill.learnMoreLink}>Learn More</a>
-          </div>
+        <Headline title={titleAbout} desc={descAbout} />
+        <div className="grid grid-cols-1 sm:grid-cols-2  gap-y-6 sm:gap-y-16 gap-10 mb-16 justify-items-stretch] px-4 sm:px-0 mt-10 ">
+          {compoArray.map(
+            (item, index) => (
+              console.log(item.head),
+              (<Section5 key={index} head={item} index={index} />)
+            )
+          )}
         </div>
         <GetFreeProp />
-        <Testimonials />
-        <ContactUs />
+        <TechnologyStack />
+        <Awards />
         <Talks />
         <Footer />
       </div>

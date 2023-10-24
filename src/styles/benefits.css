@@ -6,16 +6,7 @@
     --benefits-bg: rgba(243, 243, 243, 1);
   }
   
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Lexend", sans-serif;
-    font-family: "Noto Sans", sans-serif;
-    font-family: "Patrick Hand", cursive;
-    font-family: "Roboto", sans-serif;
-    font-family: "Space Grotesk", sans-serif;
-  }
+
   
   .benefits {
     width: 100%;

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Headline from "../components/headline";
 
 const Accordion = ({ title, content, initiallyOpen }) => {
   const [isOpen, setIsOpen] = useState(initiallyOpen);
@@ -22,16 +23,13 @@ const Accordion = ({ title, content, initiallyOpen }) => {
 };
 
 const Offers = () => {
+  const title = "What do we offer ?";
+  const desc =
+    "Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Digital Marketing Services";
   return (
     <div className="offer">
-      <div className="offer-heading">
-        <h1>What do we offer ?</h1>
-        <p>
-          Hear from Our Satisfied Clients: Read Our Testimonials
-          <br />
-          to Learn More about Our Digital Marketing Services
-        </p>
-      </div>
+      <Headline title={title} desc={desc} />
+
       <br />
       <br />
       <div className="offer-content">
