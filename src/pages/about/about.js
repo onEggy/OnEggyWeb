@@ -11,65 +11,24 @@ import Platforms from "./platforms";
 import Footer from "../components/footer";
 import Sidebar from "../components/sidebar";
 
-const about = () => {
-  const brands = [
-    "../home/projectLogos/smile-logo.png",
-    "../home/projectLogos/numwize-logo.png",
-    "../home/projectLogos/mgmt-logo.png",
-    "../home/projectLogos/east-mojo-logo.png",
-    "../home/projectLogos/bit-logo.png",
-    "../home/projectLogos/beyond-logo.png",
-  ];
+import aboutPageData from "../../../public/data/aboutPage.json";
 
-  const alternative = [
-    "Amazon",
-    "Dribble",
-    "Hubspot",
-    "Notion",
-    "Netflix",
-    "Zoom",
-  ];
-
-  const compoArray = [
-    {
-      head: "Customer Satisfacton",
-      para: "Customer Satisfaction first. OpenSource Dev & DevOps. Elevate website with top-notch designs, UI, and growth.",
-      image: "../about/thumb.png",
-      alt: "Thumb",
-    },
-    {
-      head: "Tech Innovation",
-      para: "Tech Innovation drives us. OpenSource Dev & DevOps. Elevate website with cutting-edge designs, UI, and growth.",
-      image: "../about/bulb.png",
-      alt: "Bulb",
-    },
-    {
-      head: "Honesty Culture",
-      para: "Integrity is our pillar, and an honest culture fosters trust with clients and employees.",
-      image: "../about/handshake.png",
-      alt: "HandShake",
-    },
-    {
-      head: "No-Compromise Quality",
-      para: "We deliver reliable IT solutions, exceeding expectations with excellence in every project we undertake.",
-      image: "../about/certify.png",
-      alt: "Certify",
-    },
-  ];
-
-  const title = "Our core values";
-  const desc =
-    "We investigate the basics of innovation while retaining the synergy that channels implementation.";
-  const head = "Tested & Derived Solutions";
-  const sentence =
-    " This is the stage at which your solution is introduced on the real market with real clients.";
-  const showButton = true;
-  const buttonPlaceholder = "Book a consultation";
-  const boxTitle1 = "Your dreams";
-  const boxTitle2 = "empowered.";
-  const boxParaTitle = "What we do?";
-  const boxContent =
-    "We create delectable dishes by combining design and technology with additional cheese of awesomeness. With demonstrated experience in accelerating the growth of start-ups by analyzing their needs and delivering the growth package. We make your dreams a reality. We're Oneggy. Our routine is to be ahead of schedule and under budget, to be forward-thinking and to create a seamless digital life. Every concept you bring to the table is nourished and ready to be implemented. With us, you invest in brand building and digital growth rather than design and development.";
+const About = () => {
+  const {
+    brands,
+    alternative,
+    compoArray,
+    title,
+    desc,
+    head,
+    sentence,
+    showButton,
+    buttonPlaceholder,
+    boxTitle1,
+    boxTitle2,
+    boxParaTitle,
+    boxContent,
+  } = aboutPageData;
 
   return (
     <div className="bg-cover bg-right sm:min-h-screen landingPage1 container max-w-7xl mx-auto">
@@ -103,13 +62,16 @@ const about = () => {
       </div>
       <Headline title={title} desc={desc} />
       <div className="grid grid-cols-1 sm:grid-cols-2  gap-y-6 sm:gap-y-16 gap-10 mb-16 justify-items-stretch] px-4 sm:px-0 mt-10 ">
-        {compoArray.map((head, index) => (
-          <Section5 key={index} head={head} index={index} />
-        ))}
+        {compoArray.map(
+          (item, index) => (
+            console.log(item.head),
+            (<Section5 key={index} head={item} index={index} />)
+          )
+        )}
       </div>
       <Footer />
     </div>
   );
 };
 
-export default about;
+export default About;

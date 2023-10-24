@@ -10,14 +10,20 @@ const CarouselImages = () => {
     "/team/people.png",
     "/team/people.png",
     "/team/people.png",
+    "/team/people.png",
+    "/team/people.png",
+    "/team/people.png",
+    "/team/people.png",
+    "/team/people.png",
+    "/team/people.png",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // Change slide every 5 seconds
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % (images.length / 5)); // Divide by 5 to determine the number of "groups" of images
+    }, 1000); // Change slide every 5 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -25,23 +31,37 @@ const CarouselImages = () => {
   const settings = {
     autoplay: true,
     infinite: true,
-    arrows: false, // Hide navigation arrows if needed
-    dots: false, // Hide dots if needed
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    fade: true, // Enable fade effect between slides
-    cssEase: "linear", // Specify the easing effect
+    arrows: false,
+    dots: false,
+    slidesToShow: 3.7,
+    slidesToScroll: 3.7,
+    centerMode: true,
+    fade: false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+          centerPadding: "10",
+        },
+      },
+    ],
   };
 
   return (
     <div className="relative overflow-hidden">
-      <Slider className="lg:h-225" {...settings} initialSlide={currentIndex}>
+      <Slider
+        className="lg:h-225"
+        {...settings}
+        initialSlide={currentIndex * 5}
+      >
         {images.map((image, index) => (
           <div key={index} className="carousel-item w-full">
             <img
               src={image}
               alt={`Carousel Image ${index + 1}`}
-              className="w-full lg:h-225"
+              className="w-auto lg:h-40 px-2 lg:px-0"
             />
           </div>
         ))}

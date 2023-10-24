@@ -7,12 +7,11 @@ import TeamCompo from "./teamCompo";
 import Footer from "../components/footer";
 import Sidebar from "../components/sidebar";
 
-const team = () => {
+import teamPageData from "../../../public/data/teamPage.json";
+
+const Team = () => {
   const showButton = true;
-  const head = "Tech Heroes Creating Extraordinary Solutions!";
-  const sentence =
-    "Discover our team of Tech Heroes, who are knowledgeable and enthusiastic about cutting-edge technology. We collaborate to create remarkable online solutions, pushing the envelope to offer excellence for your digital success.";
-  const buttonPlaceholder = "Book a consultation";
+  const { head, sentence, buttonPlaceholder } = teamPageData;
 
   return (
     <div className="mx-auto max-w-7xl">
@@ -32,4 +31,4 @@ const team = () => {
   );
 };
 
-export default team;
+export default Team;

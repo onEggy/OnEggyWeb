@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const techCompo = ({ development, index, content }) => {
+const TechCompo = ({ development, index, content, image }) => {
+  const [isExpanded, setExpanded] = useState(false);
+
   function bg_color(index) {
     if (index === 0 || index === 2 || index === 4 || index === 6)
       return "bg-blue";
@@ -14,11 +16,22 @@ const techCompo = ({ development, index, content }) => {
       return "text-blue";
     else return "text-offWhite";
   }
+
+  const handleMouseEnter = () => {
+    setExpanded(true);
+  };
+
+  const handleMouseLeave = () => {
+    setExpanded(false);
+  };
+
   return (
     <div
       className={` ${bg_color(
         index
       )} container mt-10 border border-b-[5px] border-l_black rounded-[3rem] p-8`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <div className="flex justify-between items-center mb-6">
         <div className="mainData flex">
@@ -32,7 +45,7 @@ const techCompo = ({ development, index, content }) => {
         <div className="flex items-center buttonClass">
           <div className="transform -rotate-[30deg] mr-3">
             <span
-              className={`rounded-full p-2 pt-2 bg-black ${arrow_color(
+              className={`rounded-full p-2 pt-5 bg-black ${arrow_color(
                 index
               )} text-[6px]`}
             >
@@ -43,11 +56,27 @@ const techCompo = ({ development, index, content }) => {
         </div>
       </div>
       <hr className="border-t-2 border-black mb-2" />
-      <div className="content">
-        <p>{content}</p>
+      <div className={`content ${isExpanded ? "expanded" : ""}`}>
+        {content}
+        {isExpanded && (
+          <div className="expanded-icons flex space-x-2">
+            {Array.isArray(image) ? (
+              image.map((imageName, i) => (
+                <img
+                  key={i}
+                  src={imageName}
+                  alt={`Icon ${i + 1}`}
+                  className="h-10 mt-5"
+                />
+              ))
+            ) : (
+              <img src={image} alt="Icon" className="h-20" />
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
-export default techCompo;
+export default TechCompo;
