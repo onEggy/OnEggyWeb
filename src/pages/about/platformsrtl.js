@@ -4,15 +4,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import projectLogosData from "../../../public/data/projectlogos.json";
 
-const Platforms = () => {
+const Platformsrtl = () => {
   const sliderSettings = {
     dots: false,
     infinite: true,
     speed: 2000,
     slidesToShow: 5,
-    slidesToScroll: -1,
+    slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 0,
+    autoplaySpeed: 20,
     responsive: [
       {
         breakpoint: 768,
@@ -46,4 +46,4 @@ const Platforms = () => {
   );
 };
 
-export default Platforms;
+export default Platformsrtl;

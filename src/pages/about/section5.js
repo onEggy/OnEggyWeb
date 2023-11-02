@@ -22,11 +22,20 @@ const section5 = ({ head, index }) => {
 
         <div className="px-5 w-auto mt-2">
           <h2
-            className={`${bgColor(
+            className={` sm:text-3xl text-xl font-semibold rounded-md px-2 ${bgColor(
               index
-            )} px-5 py-2 w-auto text-3xl font-semibold rounded-2xl service-heading`}
+            )}  sm:ml-12 service_heading`}
           >
-            {head.head}
+            {head.head.split(" ")[0]}
+          </h2>
+          <h2
+            className={` sm:text-3xl text-xl font-semibold rounded-md px-1 ${bgColor(
+              index
+            )}  sm:ml-12 service_heading`}
+          >
+            {head.head.split(" ").length == 2
+              ? head.head.split(" ")[1]
+              : head.head.split(" ").slice(1).join(" ")}
           </h2>
           <p className="text-white mt-4">{head.para}</p>
         </div>

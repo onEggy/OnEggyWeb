@@ -39,7 +39,7 @@ export default function Navbar() {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center lg:hidden order-2">
                 {/* Mobile menu button*/}
-                <Disclosure.Button
+                {/* <Disclosure.Button
                   className="relative inline-flex items-center justify-end 
                 rounded-md p-2 text-black hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                 >
@@ -50,7 +50,7 @@ export default function Navbar() {
                   ) : (
                     <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
                   )}
-                </Disclosure.Button>
+                </Disclosure.Button> */}
               </div>
               <nav className="py-4 lg:flex lg:justify-between mx-auto hidden lg:w-full order-1">
                 <div className="flex flex-shrink-0 items-center">
@@ -94,7 +94,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          <Disclosure.Panel className="lg:hidden">
+          {/* <Disclosure.Panel className="lg:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
               {navigation.map((item) => (
                 <Disclosure.Button
@@ -113,7 +113,7 @@ export default function Navbar() {
                 </Disclosure.Button>
               ))}
             </div>
-          </Disclosure.Panel>
+          </Disclosure.Panel> */}
         </>
       )}
     </Disclosure>

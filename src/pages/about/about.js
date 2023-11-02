@@ -8,6 +8,7 @@ import Section4 from "./section4";
 import Section5 from "./section5";
 import Headline from "../components/headline";
 import Platforms from "./platforms";
+import Platformsrtl from "./platformsrtl";
 import Footer from "../components/footer";
 import Sidebar from "../components/sidebar";
 
@@ -50,15 +51,9 @@ const About = () => {
       <Section4 />
       <GetFreeProp />
       <div className="sm:mt-8 my-8 platform-div">
-        <section style={{ "--speed": `${20000}ms` }} className="leftSwipe">
-          <Platforms brands={brands} alternative={alternative} />
-        </section>
-        <section style={{ "--speed": `${10000}ms` }} className="rightSwipe">
-          <Platforms brands={brands} alternative={alternative} />
-        </section>
-        <section style={{ "--speed": `${30000}ms` }} className="leftSwipe">
-          <Platforms brands={brands} alternative={alternative} />
-        </section>
+        <Platforms />
+        <Platformsrtl />
+        <Platforms />
       </div>
       <Headline title={titleAbout} desc={descAbout} />
       <div className="grid grid-cols-1 sm:grid-cols-2  gap-y-6 sm:gap-y-16 gap-10 mb-16 justify-items-stretch] px-4 sm:px-0 mt-10 ">
