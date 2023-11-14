@@ -1,10 +1,10 @@
 import React from "react";
-import Navbar from "../components/navbar";
-import ContactUs from "../home/contactUs";
-import Footer from "../components/footer";
+import Navbar from "./components/navbar";
+import ContactUs from "./home/contactUs";
+import Footer from "./components/footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import Sidebar from "../components/sidebar";
+import Sidebar from "./components/sidebar";
 
 const section1 = () => {
   const profile = [

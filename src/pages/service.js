@@ -1,16 +1,16 @@
 import React from "react";
-import Navbar from "../components/navbar";
-import MainHeadline from "../components/mainHeadline";
-import Headline from "../components/headline";
-import Testimonials from "../home/testimonials";
-import Footer from "../components/footer";
-import GetFreeProp from "../home/getFreeProp";
-import Marksheet from "../home/marksheet";
-import Section3 from "../about/section3";
-import TechCompo from "./techCompo";
-import TechnologyStack from "./technologyStack";
+import Navbar from "./components/navbar";
+import MainHeadline from "./components/mainHeadline";
+import Headline from "./components/headline";
+import Testimonials from "./home/testimonials";
+import Footer from "./components/footer";
+import GetFreeProp from "./home/getFreeProp";
+import Marksheet from "./home/marksheet";
+import Section3 from "./about/section3";
+import TechCompo from "./service/techCompo";
+import TechnologyStack from "./service/technologyStack";
 import Slider from "react-slick";
-import Sidebar from "../components/sidebar";
+import Sidebar from "./components/sidebar";
 
 const service = () => {
   const head = "Web Development Making Benchmarking Products";

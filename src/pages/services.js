@@ -1,13 +1,13 @@
 import React from "react";
-import Navbar from "../components/navbar";
-import MainHeadline from "../components/mainHeadline";
-import Headline from "../components/headline";
-import TechCompo from "./techCompo";
-import GetFreeProp from "../home/getFreeProp";
-import Footer from "../components/footer";
-import EngagementModel from "./engagementModel";
-import Sidebar from "../components/sidebar";
-import serviceData from "../../../public/data/serviceData.json";
+import Navbar from "./components/navbar";
+import MainHeadline from "./components/mainHeadline";
+import Headline from "./components/headline";
+import TechCompo from "./services/techCompo";
+import GetFreeProp from "./home/getFreeProp";
+import Footer from "./components/footer";
+import EngagementModel from "./services/engagementModel";
+import Sidebar from "./components/sidebar";
+import serviceData from "../../public/data/serviceData.json";
 
 const services = () => {
   const { head, sentence, showButton, buttonPlaceholder, title, desc, arr } =

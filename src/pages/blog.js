@@ -1,9 +1,9 @@
-import Navbar from "../components/navbar";
-import Section1 from "../components/mainHeadline";
+import Navbar from "./components/navbar";
+import Section1 from "./components/mainHeadline";
 import React from "react";
-import Information1 from "./information1";
-import Footer from "../components/footer";
-import Sidebar from "../components/sidebar";
+import Information1 from "./blog/information1";
+import Footer from "./components/footer";
+import Sidebar from "./components/sidebar";
 
 const blog = () => {
   const head = "Top 6 free website mockup tools 2022";

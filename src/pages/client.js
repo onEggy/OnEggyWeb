@@ -1,11 +1,11 @@
 import React from "react";
-import Navbar from "../components/navbar";
-import GetFreeProp from "../home/getFreeProp";
-import Section1 from "../components/mainHeadline";
-import Footer from "../components/footer";
-import Sidebar from "../components/sidebar";
+import Navbar from "./components/navbar";
+import GetFreeProp from "./home/getFreeProp";
+import Section1 from "./components/mainHeadline";
+import Footer from "./components/footer";
+import Sidebar from "./components/sidebar";
 
-import clientPageData from "../../../public/data/clientPage.json";
+import clientPageData from "../../public/data/clientPage.json";
 
 const Client = () => {
   const {

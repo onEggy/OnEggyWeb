@@ -7,12 +7,12 @@ import Link from "next/link";
 import logo from "../../../public/logo.png";
 
 const navigation = [
-  { name: "About Us", href: "/about/about", current: true },
-  { name: "Services", href: "/services/services", current: false },
-  { name: "Team", href: "/team/team", current: false },
-  { name: "Portfolio", href: "/client/client", current: false },
-  { name: "Blog", href: "/blog/blog", current: false },
-  { name: "Contact", href: "/contact/contact", current: false },
+  { name: "About Us", href: "/about", current: true },
+  { name: "Services", href: "/services", current: false },
+  { name: "Team", href: "/team", current: false },
+  { name: "Portfolio", href: "/client", current: false },
+  { name: "Blog", href: "/blog", current: false },
+  { name: "Contact", href: "/contact", current: false },
 ];
 
 function classNames(...classes) {

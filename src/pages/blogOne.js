@@ -1,10 +1,10 @@
 import React from "react";
-import Navbar from "../components/navbar";
-import MainHeadline from "../components/mainHeadline";
-import Footer from "../components/footer";
-import GetFreeProp from "../home/getFreeProp";
-import Compo from "./compo";
-import Sidebar from "../components/sidebar";
+import Navbar from "./components/navbar";
+import MainHeadline from "./components/mainHeadline";
+import Footer from "./components/footer";
+import GetFreeProp from "./home/getFreeProp";
+import Compo from "./blogOne/compo";
+import Sidebar from "./components/sidebar";
 
 const blogOne = () => {
   const head = "We Serve Trending Brews!";

@@ -1,18 +1,18 @@
 import React from "react";
-import GetFreeProp from "../home/getFreeProp";
-import Navbar from "../components/navbar";
-import Section1 from "../components/mainHeadline";
-import Section2 from "./section2";
-import Section3 from "./section3";
-import Section4 from "./section4";
-import Section5 from "./section5";
-import Headline from "../components/headline";
-import Platforms from "./platforms";
-import Platformsrtl from "./platformsrtl";
-import Footer from "../components/footer";
-import Sidebar from "../components/sidebar";
+import GetFreeProp from "./home/getFreeProp";
+import Navbar from "./components/navbar";
+import Section1 from "./components/mainHeadline";
+import Section2 from "./about/section2";
+import Section3 from "./about/section3";
+import Section4 from "./about/section4";
+import Section5 from "./about/section5";
+import Headline from "./components/headline";
+import Platforms from "./about/platforms";
+import Platformsrtl from "./about/platformsrtl";
+import Footer from "./components/footer";
+import Sidebar from "./components/sidebar";
 
-import aboutPageData from "../../../public/data/aboutPage.json";
+import aboutPageData from "../../public/data/aboutPage.json";
 
 const About = () => {
   const {

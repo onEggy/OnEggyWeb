@@ -1,13 +1,13 @@
 import React from "react";
-import Navbar from "../components/navbar";
-import Section1 from "../components/mainHeadline";
-import VideoSection from "./videoSection";
-import CarouselImages from "./carouselImages";
-import TeamCompo from "./teamCompo";
-import Footer from "../components/footer";
-import Sidebar from "../components/sidebar";
+import Navbar from "./components/navbar";
+import Section1 from "./components/mainHeadline";
+import VideoSection from "./team/videoSection";
+import CarouselImages from "./team/carouselImages";
+import TeamCompo from "./team/teamCompo";
+import Footer from "./components/footer";
+import Sidebar from "./components/sidebar";
 
-import teamPageData from "../../../public/data/teamPage.json";
+import teamPageData from "../../public/data/teamPage.json";
 
 const Team = () => {
   const showButton = true;
