@@ -13,6 +13,8 @@ const Platforms = () => {
     slidesToScroll: -1,
     autoplay: true,
     autoplaySpeed: 0,
+    cssEase: "linear",
+    pauseOnHover: false,
     responsive: [
       {
         breakpoint: 768,
