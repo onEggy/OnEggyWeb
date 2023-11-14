@@ -32,7 +32,7 @@ const TechCompo = ({ development, index, content, image }) => {
   const sliderSettings = {
     dots: false,
     infinite: true,
-    slidesToShow: 17,
+    slidesToShow: 11,
     autoplay: true,
     arrows: false,
     autoplaySpeed: 0,
@@ -85,7 +85,7 @@ const TechCompo = ({ development, index, content, image }) => {
                   key={i}
                   src={imageName}
                   alt={`Icon ${i + 1}`}
-                  className="h-10 mt-5"
+                  className="h-10 px-10 mt-5"
                 />
               ))
             ) : (
