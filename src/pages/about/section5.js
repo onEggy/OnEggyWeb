@@ -1,6 +1,16 @@
 import React from "react";
 
 const section5 = ({ head, index }) => {
+  if (!head || typeof head !== "object") {
+    console.error("Invalid head object:", head);
+    return null; // or return some default content
+  }
+
+  // Check if head.image is undefined or null
+  if (!head.image) {
+    console.error("Image is missing in the head object:", head);
+    return null; // or return some default content
+  }
   function bgColor(index) {
     if (index === 0 || index === 3 || index === 4) {
       return "bg-blue";

@@ -11,7 +11,7 @@ import Platforms from "./about/platforms";
 import Platformsrtl from "./about/platformsrtl";
 import Footer from "./components/footer";
 import Sidebar from "./components/sidebar";
-
+import { useRef } from "react";
 import aboutPageData from "../../public/data/aboutPage.json";
 
 const About = () => {

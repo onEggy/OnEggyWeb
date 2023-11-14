@@ -1,8 +1,18 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
+import { useRef } from "react";
 
 const Technology = ({ skill, index }) => {
+  console.log("Skill:", skill);
+
+  if (!skill || typeof skill !== "object" || !skill.title) {
+    // Log the reason for returning null
+    console.error("Invalid skill object or missing title:", skill);
+
+    // Return null or any default content when skill is not defined or doesn't have a title
+    return null;
+  }
   const mapIcons = {
     faArrowRight,
   };

@@ -2,7 +2,6 @@ import Image from "next/image";
 import React, { useState } from "react";
 import Projectlogos from "./serviceone/projectlogos";
 import Awards from "./serviceone/awards";
-import Technology from "./serviceone/techComponent";
 import GetFreeProp from "./serviceone/getFreeProp";
 import Headline from "./components/headline";
 import Marksheet from "./serviceone/marksheet";
