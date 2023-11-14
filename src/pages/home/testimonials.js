@@ -79,9 +79,9 @@ const Testimonials = () => {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 0.96,
           slidesToScroll: 1,
-          centerPadding: "10%",
+          centerPadding: "4%",
         },
       },
     ],

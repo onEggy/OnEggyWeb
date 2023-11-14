@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 
 const TechCompo = ({ development, index, content, image }) => {
   const [isExpanded, setExpanded] = useState(false);
@@ -36,7 +37,7 @@ const TechCompo = ({ development, index, content, image }) => {
       <div className="flex justify-between items-center mb-6">
         <div className="mainData flex">
           <div>
-            <h2 className="font-bold text-5xl mr-10">0{index}</h2>
+            <h2 className="font-bold text-5xl mr-10">0{index + 1}</h2>
           </div>
           <div className="place-self-center">
             <h2 className="font-semibold text-xl">{development}</h2>
@@ -44,15 +45,19 @@ const TechCompo = ({ development, index, content, image }) => {
         </div>
         <div className="flex items-center buttonClass">
           <div className="transform -rotate-[30deg] mr-3">
-            <span
-              className={`rounded-full p-2 pt-5 bg-black ${arrow_color(
-                index
-              )} text-[6px]`}
-            >
-              <FontAwesomeIcon icon={faArrowRight} size="4x" />
-            </span>
+            <Link href="/service/service">
+              <span
+                className={`rounded-full p-2 pt-5 bg-black ${arrow_color(
+                  index
+                )} text-[6px]`}
+              >
+                <FontAwesomeIcon icon={faArrowRight} size="4x" />
+              </span>
+            </Link>
           </div>
-          <p>Learn more</p>
+          <Link href="/service/service">
+            <p>Learn more</p>
+          </Link>
         </div>
       </div>
       <hr className="border-t-2 border-black mb-2" />

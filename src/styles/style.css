@@ -17,7 +17,7 @@
   }
   
   .normal-button {
-    z-index: 34;
+    z-index: 60;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,6 +33,11 @@
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease; /* Hover transition */
     /* Initially hide the button to the right */
+  }
+  @media (max-width: 500px) {
+    .normal-button {
+      background-color: #ffffff00;
+    }
   }
   
   .normal-button:hover {
@@ -157,6 +162,14 @@
   
   .contact {
     margin-bottom: 80px;
+  }
+  @media (max-width: 500px) {
+    .contact {
+      margin-left: 40px;
+    }
+    .follow{
+      margin-left: 40px;
+    }
   }
   
   .contact-a {

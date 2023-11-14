@@ -21,7 +21,7 @@ const Awards = () => {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 0.98,
           centerMode: true,
         },
       },

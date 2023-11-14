@@ -6,7 +6,7 @@ const VideoSection = () => {
 
   const opts = {
     playerVars: {
-      autoplay: 1,
+      autoplay: 0,
     },
   };
 

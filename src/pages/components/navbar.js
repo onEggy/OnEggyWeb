@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -23,11 +23,28 @@ export default function Navbar() {
   const router = useRouter();
 
   const isLinkActive = (href) => {
-    return router.pathname === href ? "font-bold" : "font-normal"; // Customize the active and inactive link styles
+    return router.pathname === href ? "font-bold" : "font-normal";
   };
 
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const threshold = 200;
+
+      setIsSticky(scrollPosition > threshold);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <Disclosure as="nav" className="">
+    <Disclosure as="nav" className={`lg:sticky top-0 z-50 bg-white`}>
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 md:px-6 lg:px-4 md:pt-2">

@@ -82,7 +82,7 @@ const footer = () => {
         </div>
       </div>
       <hr className="mx-auto w-[94%]" />
-      <footer className="text-white px-4 mt-10 flex   space-x-8 pb-10">
+      <footer className="text-white px-4 mt-10 flex flex-col space-y-2 pb-10 md:flex-row md:justify-between md:items-center">
         <p>&copy; {new Date().getFullYear()} OnEggy. All Rights Reserved.</p>
         <a href="#" className="underline">
           Privacy Policy
