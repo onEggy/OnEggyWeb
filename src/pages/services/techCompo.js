@@ -37,6 +37,7 @@ const TechCompo = ({ development, index, content, image }) => {
     arrows: false,
     autoplaySpeed: 0,
     cssEase: "linear",
+    speed: 3000,
     pauseOnHover: false,
   };
 
