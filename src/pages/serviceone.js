@@ -19,6 +19,8 @@ import Talks from "./serviceone/talk";
 import Section5 from "./about/section5";
 import aboutPageData from "../../public/data/aboutPage.json";
 import TechnologyStack from "./service/technologyStack";
+import { NextSeo } from "next-seo";
+import seoData from "../../public/data/service-seo.json";
 
 const Home = (skill) => {
   const [isOpen, setIsOpen] = useState(false);

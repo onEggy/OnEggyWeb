@@ -8,6 +8,8 @@ import Footer from "./components/footer";
 import EngagementModel from "./services/engagementModel";
 import Sidebar from "./components/sidebar";
 import serviceData from "../../public/data/serviceData.json";
+import { NextSeo } from "next-seo";
+import seoData from "../../public/data/service-seo.json";
 
 const services = () => {
   const { head, sentence, showButton, buttonPlaceholder, title, desc, arr } =

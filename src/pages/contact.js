@@ -5,8 +5,12 @@ import Footer from "./components/footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Sidebar from "./components/sidebar";
+import seoData from "../../public/data/seo-data.json";
+import { NextSeo } from "next-seo";
 
 const section1 = () => {
+  const currentPageData = seoData["/contact"];
+
   const profile = [
     {
       name: "Aakash Sharma",
@@ -25,6 +29,10 @@ const section1 = () => {
   ];
   return (
     <div className="max-w-7xl mx-auto">
+      <NextSeo
+        title={currentPageData.title}
+        description={currentPageData.description}
+      />
       <Navbar />
       <Sidebar />
       <h2 className="text-5xl text-center font-semibold mt-10">Let's Talk</h2>

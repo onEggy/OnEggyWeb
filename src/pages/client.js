@@ -4,10 +4,14 @@ import GetFreeProp from "./home/getFreeProp";
 import Section1 from "./components/mainHeadline";
 import Footer from "./components/footer";
 import Sidebar from "./components/sidebar";
+import seoData from "../../public/data/seo-data.json";
+import nextseo from "next-seo";
 
 import clientPageData from "../../public/data/clientPage.json";
 
 const Client = () => {
+  const currentPageData = seoData["/client"];
+
   const {
     projects1,
     projects2,
@@ -20,6 +24,10 @@ const Client = () => {
 
   return (
     <div className="max-w-7xl mx-auto">
+      <nextseo
+        title={currentPageData.title}
+        description={currentPageData.description}
+      />
       <Navbar />
       <Sidebar />
       <Section1

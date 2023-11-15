@@ -5,8 +5,11 @@ import Footer from "./components/footer";
 import GetFreeProp from "./home/getFreeProp";
 import Compo from "./blogOne/compo";
 import Sidebar from "./components/sidebar";
+import seoData from "../../public/data/seo-data.json";
+import { NextSeo } from "next-seo";
 
 const blogOne = () => {
+  const currentPageData = seoData["/blog"];
   const head = "We Serve Trending Brews!";
   const sentence =
     "Create your unique footprint in the digital world with OnEggy’s IT services. Transform your business with our cutting-edge and effective digital solutions to pave your path to success.";
@@ -22,6 +25,10 @@ const blogOne = () => {
 
   return (
     <div className="max-w-7xl mx-auto">
+      <NextSeo
+        title={currentPageData.title}
+        description={currentPageData.description}
+      />
       <Navbar />
       <Sidebar />
       <div className="w-full md:w-5/6  mx-auto">

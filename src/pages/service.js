@@ -11,6 +11,8 @@ import TechCompo from "./service/techCompo";
 import TechnologyStack from "./service/technologyStack";
 import Slider from "react-slick";
 import Sidebar from "./components/sidebar";
+import { NextSeo } from "next-seo";
+import seoData from "../../public/data/service-seo.json";
 
 const service = () => {
   const head = "Web Development Making Benchmarking Products";

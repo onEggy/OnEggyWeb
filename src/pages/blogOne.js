@@ -4,7 +4,8 @@ import React from "react";
 import Information1 from "./blog/information1";
 import Footer from "./components/footer";
 import Sidebar from "./components/sidebar";
-
+import { NextSeo } from "next-seo";
+import seoData from "../../public/data/blog-seo.json";
 const blog = () => {
   const head = "Top 6 free website mockup tools 2022";
   const showButton = false;

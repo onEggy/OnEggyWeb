@@ -13,8 +13,12 @@ import Footer from "./components/footer";
 import Sidebar from "./components/sidebar";
 import { useRef } from "react";
 import aboutPageData from "../../public/data/aboutPage.json";
+import seoData from "../../public/data/seo-data.json";
+
+import { NextSeo } from "next-seo";
 
 const About = () => {
+  const currentPageData = seoData["/about"];
   const {
     brands,
     alternative,
@@ -33,6 +37,10 @@ const About = () => {
 
   return (
     <div className="bg-cover bg-right sm:min-h-screen landingPage1 container max-w-7xl mx-auto">
+      <NextSeo
+        title={currentPageData.title}
+        description={currentPageData.description}
+      />
       <Navbar />
       <Sidebar />
       <Section1

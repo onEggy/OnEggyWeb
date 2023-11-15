@@ -1,0 +1,39 @@
+{
+    "/": {
+      "title": "OnEggy",
+      "description": "Welcome to our website!"
+    },
+    "/about": {
+      "title": "About Us",
+      "description": "Learn more about our company."
+    },
+    "/blog": {
+      "title": "Blog",
+      "description": "Read our latest blog posts."
+    },
+    "/blogOne": {
+      "title": "Blog Post One",
+      "description": "Details about the first blog post."
+    },
+    "/service": {
+      "title": "Services",
+      "description": "Explore our services."
+    },
+    "/serviceOne": {
+      "title": "Service One",
+      "description": "Details about the first service."
+    },
+    "/contact": {
+      "title": "Contact Us",
+      "description": "Get in touch with us."
+    },
+    "/team": {
+      "title": "Our Team",
+      "description": "Meet our amazing team members."
+    },
+    "/client": {
+        "title": "Our Client",
+        "description": "Meet our amazing team members."
+      }
+  }
+  
