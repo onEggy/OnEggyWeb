@@ -69,11 +69,11 @@ const Sidebar = () => {
             <div className="contact">
               <p className="sidebar-para">Contact Us</p>
               <a href="#" className="sidebar-a contact-a">
-                hello@oneggy.com
+                ask@oneggy.com
               </a>
               <br />
               <a href="#" className="sidebar-a contact-a">
-                +91 9508040387
+                +91 9811133005
               </a>
             </div>
 
