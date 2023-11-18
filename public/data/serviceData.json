@@ -1,14 +1,65 @@
 {
-    "head": "IT Services You Can Count On",
-    "sentence": "With OnEggy's IT Services, you can leave your mark on the digital world. Transform your company with our cutting-edge and effective digital solutions to help you succeed.",
-    "showButton": true,
-    "buttonPlaceholder": "Book a consultation",
-    "title": "Our Services",
-    "desc": "Step-by-Step Guide to Achieving Your Business Goals",
-    "arr": [
+    "services": [
       {
+        "id":"1",
+        "pageTitle":"Web Development Making Benchmarking Products",
+        "perpageSentence":"Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+        "perPageShowButton": true,
+        "ourWork": "Our Work",
+        "workDesc":"Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
         "development": "Web Development",
+        "boxTitle1":"Secured",
+        "boxTitle2":"Standardized",
+        "boxParaTitle1":"How we do it?",
+        "boxContent":"Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
         "content": "We create websites and web apps to ensure that you are noticed and heard in the proper circles.",
+        "compoArray":{
+          "compoServices":[
+            {
+              "compoId":"1",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"2",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"3",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"4",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            }
+          ]
+        },
+        "projectImage": [
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png"
+        ],
         "image": [
           "../service/angular.png",
           "../service/aws.png",
@@ -39,8 +90,33 @@
         ]
       },
       {
-        "development": "App Development",
-        "content": "If you've been thinking about app development to help your business grow, OnEggy Technologies is the company to turn to. We offer end-to-end development services for mobile apps for Android and iOS platforms that meet your organization's requirements.",
+        "id":"2",
+        "pageTitle":"Web Development Making Benchmarking Products",
+        "perpageSentence":"Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+        "perPageShowButton": true,
+        "ourWork": "Our Work",
+        "workDesc":"Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+        "development": "Web Development",
+        "boxTitle1":"Secured",
+        "boxTitle2":"Standardized",
+        "boxParaTitle1":"How we do it?",
+        "boxContent":"Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+        "content": "We create websites and web apps to ensure that you are noticed and heard in the proper circles.",
+        "projectImage": [
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png"
+        ],
         "image": [
           "../service/angular.png",
           "../service/aws.png",
@@ -67,11 +143,69 @@
           "../service/aws.png",
           "../service/html.png",
           "../service/html.png"
+
         ]
       },
       {
-        "development": "MVP Development",
-        "content": "At OnEggy Technologies, we specialise in creating custom MVP Solutions that can propel your business to success.",
+        "id":"3",
+        "pageTitle":"Web Development Making Benchmarking Products",
+        "perpageSentence":"Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+        "perPageShowButton": true,
+        "ourWork": "Our Work",
+        "workDesc":"Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+        "development": "Web Development",
+        "boxTitle1":"Secured",
+        "boxTitle2":"Standardized",
+        "boxParaTitle1":"How we do it?",
+        "boxContent":"Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+        "content": "We create websites and web apps to ensure that you are noticed and heard in the proper circles.",
+        "compoArray":{
+          "compoServices":[
+            {
+              "compoId":"1",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"2",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"3",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"4",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            }
+          ]
+        },
+        "projectImage": [
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png"
+        ],
         "image": [
           "../service/angular.png",
           "../service/aws.png",
@@ -98,11 +232,69 @@
           "../service/aws.png",
           "../service/html.png",
           "../service/html.png"
+
         ]
       },
       {
-        "development": "Custom App Development",
-        "content": "We specialise in developing custom software solutions that enable organisations to prosper in today's volatile digital economy.",
+        "id":"4",
+        "pageTitle":"Web Development Making Benchmarking Products",
+        "perpageSentence":"Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+        "perPageShowButton": true,
+        "ourWork": "Our Work",
+        "workDesc":"Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+        "development": "Web Development",
+        "boxTitle1":"Secured",
+        "boxTitle2":"Standardized",
+        "boxParaTitle1":"How we do it?",
+        "boxContent":"Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+        "content": "We create websites and web apps to ensure that you are noticed and heard in the proper circles.",
+        "compoArray":{
+          "compoServices":[
+            {
+              "compoId":"1",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"2",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"3",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"4",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            }
+          ]
+        },
+        "projectImage": [
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png",
+          "../client/1.png"
+        ],
         "image": [
           "../service/angular.png",
           "../service/aws.png",
@@ -129,99 +321,7 @@
           "../service/aws.png",
           "../service/html.png",
           "../service/html.png"
-        ]
-      },
-      {
-        "development": "UI / UX Design",
-        "content": "where creativity meets utility to generate appealing UI/UX designs. We create user-centric experiences that make a lasting impact on your audience and propel your business to new heights.",
-        "image": [
-          "../service/angular.png",
-          "../service/aws.png",
-          "../service/html.png",
-          "../service/html.png",
-          "../service/angular.png",
-          "../service/aws.png",
-          "../service/html.png",
-          "../service/angular.png",
-          "../service/aws.png",
-          "../service/html.png",
-          "../service/aws.png",
-          "../service/html.png",
-          "../service/angular.png",
-          "../service/aws.png",
-          "../service/html.png",
-          "../service/angular.png",
-          "../service/aws.png",
-          "../service/html.png",
-          "../service/angular.png",
-          "../service/aws.png",
-          "../service/html.png",
-          "../service/angular.png",
-          "../service/aws.png",
-          "../service/html.png",
-          "../service/html.png"
-        ]
-      },
-      {
-        "development": "QA / Testing",
-        "content": "your reliable partner for complete QA Testing and Load Testing services. We ensure that your digital goods are of the greatest quality, offering excellent performance even under severe user demands.",
-        "image": [
-          "../service/angular.png",
-          "../service/aws.png",
-          "../service/html.png",
-          "../service/html.png",
-          "../service/angular.png",
-          "../service/aws.png",
-          "../service/html.png",
-          "../service/angular.png",
-          "../service/aws.png",
-          "../service/html.png",
-          "../service/aws.png",
-          "../service/html.png",
-          "../service/angular.png",
-          "../service/aws.png",
-          "../service/html.png",
-          "../service/angular.png",
-          "../service/aws.png",
-          "../service/html.png",
-          "../service/angular.png",
-          "../service/aws.png",
-          "../service/html.png",
-          "../service/angular.png",
-          "../service/aws.png",
-          "../service/html.png",
-          "../service/html.png"
-        ]
-      },
-      {
-        "development": "IT Staffing Service",
-        "content": "We take pleasure in providing top-tier IT Staffing Services that bring a pool of competent experts straight to your workplace. Our specialised in-house staff works directly with your organisation to provide the technical assistance and experience required to establish and manage powerful IT resources.",
-        "image": [
-          "../service/angular.png",
-          "../service/aws.png",
-          "../service/html.png",
-          "../service/html.png",
-          "../service/angular.png",
-          "../service/aws.png",
-          "../service/html.png",
-          "../service/angular.png",
-          "../service/aws.png",
-          "../service/html.png",
-          "../service/aws.png",
-          "../service/html.png",
-          "../service/angular.png",
-          "../service/aws.png",
-          "../service/html.png",
-          "../service/angular.png",
-          "../service/aws.png",
-          "../service/html.png",
-          "../service/angular.png",
-          "../service/aws.png",
-          "../service/html.png",
-          "../service/angular.png",
-          "../service/aws.png",
-          "../service/html.png",
-          "../service/html.png"
+
         ]
       }
     ]
