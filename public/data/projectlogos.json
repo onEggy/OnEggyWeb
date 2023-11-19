@@ -1,0 +1,41 @@
+{
+    "projectLogos": [
+        {
+            "id": 1,
+            "name": "East Mojo Logo",
+            "url": "/home/projectLogos/east-mojo-logo.png",
+            "alt": "east-mojo-logo"
+          },
+      {
+        "id": 2,
+        "name": "East Mojo Logo",
+        "url": "/home/projectLogos/beyond-logo.png",
+        "alt": "beyond logo"
+      },
+      {
+        "id": 3,
+        "name": "East Mojo Logo",
+        "url": "/home/projectLogos/bit-logo.png",
+        "alt": "bit logo"
+      },
+      {
+        "id": 4,
+        "name": "East Mojo Logo",
+        "url": "/home/projectLogos/mgmt-logo.png",
+        "alt": "mgmt logo"
+      },
+      {
+        "id": 5,
+        "name": "East Mojo Logo",
+        "url": "/home/projectLogos/numwize-logo.png",
+        "alt": "Numwize logo"
+      },
+      {
+        "id": 6,
+        "name": "Beyond Logo",
+        "url": "/home/projectLogos/smile-logo.png",
+        "alt": "Smile Logo"
+      }
+    ]
+  }
+  

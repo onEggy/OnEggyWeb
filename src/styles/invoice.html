@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  .invoice {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  .invoice-header {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #333;
+    color: #fff;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  .total {
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<div class="invoice">
+  <div class="invoice-header">
+    <h1>Invoice</h1>
+  </div>
+
+  **From:**  
+  [Your Name]  
+  [Your Address]  
+  [City, State, ZIP Code]  
+  [Your Phone Number]  
+  [Your Email Address]  
+  [Date]
+
+  **Bill To:**  
+  Fountain Institute  
+  [Institute Address]  
+  [City, State, ZIP Code]
+
+  **Invoice Number:** [Unique Invoice Number]  
+  **Invoice Date:** [Date of the Invoice]
+
+  ---
+
+  **Description of Services Provided:**
+
+  <table>
+    <tr>
+      <th>Description</th>
+      <th>Amount (in INR)</th>
+    </tr>
+    <tr>
+      <td>Frontend Development (Nuxt.js)</td>
+      <td>40,000</td>
+    </tr>
+    <tr>
+      <td>Backend Development (Node.js)</td>
+      <td>15,000</td>
+    </tr>
+    <tr>
+      <td>Email Service Integration</td>
+      <td>5,000</td>
+    </tr>
+    <tr>
+      <td>CMS Development</td>
+      <td>10,000</td>
+    </tr>
+  </table>
+
+  **Subtotal:** 70,000 INR
+
+  **GST (18%):** 12,600 INR
+
+  **Total Amount Due:** 82,600 INR
+
+  ---
+
+  **Payment Information:**
+
+  - **Bank Name:** [Your Bank Name]
+  - **Account Number:** [Your Bank Account Number]
+  - **IFSC Code:** [Your Bank's IFSC Code]
+
+  **Payment Due Date:** [Due Date]
+
+  **Terms and Conditions:**
+
+  - Payment is due within [Specify Payment Terms, e.g., 15 days] from the date of this invoice.
+  - Please make the payment through bank transfer using the provided bank account details.
+  - In case of any questions or concerns, please contact us at [Your Contact Information].
+  - Late payments may incur additional charges.
+
+  Thank you for your business!
+</div>
+
+</body>
+</html>

@@ -1,0 +1,821 @@
+{
+    "services": [
+      {
+        "id":"1",
+        "pageTitle":"Web Development Making Benchmarking Products",
+        "perpageSentence":"Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+        "perPageShowButton": true,
+        "ourWork": "Our Work",
+        "workDesc":"Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+        "development": "waah re waah",
+        "imgSrc":"./home/landingComponent/1.png",
+        "icon":"faArrowRight",
+        "boxTitle1":"Secured",
+        "boxTitle2":"Standardized",
+        "boxParaTitle1":"How we do it?",
+        "boxContent":"Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+        "content": "We create websites and web apps to ensure that you are noticed and heard in the proper circles.",
+        "compoArray":{
+          "compoServices":[
+            {
+              "compoId":"1",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"2",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"3",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"4",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            }
+          ]
+        },
+        "projectImage": [
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png"
+        ],
+        "image": [
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/html.png"
+
+        ],
+        "technolgyStacImages": [
+          "/service/html.png",
+          "/service/vue.png",
+          "/service/react.png",
+          "/service/angular.png",
+          "/service/node.png",
+          "/service/aws.png",
+          "/service/python.png",
+          "/service/sql.png"
+
+        ]
+      },
+      {
+        "id":"2",
+        "pageTitle":"Web Development Making Benchmarking Products",
+        "perpageSentence":"Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+        "perPageShowButton": true,
+        "ourWork": "Our Work",
+        "workDesc":"Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+        "development": "waah re waah",
+        "imgSrc":"./home/landingComponent/1.png",
+        "icon":"faArrowRight",
+        "boxTitle1":"Secured",
+        "boxTitle2":"Standardized",
+        "boxParaTitle1":"How we do it?",
+        "boxContent":"Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+        "content": "We create websites and web apps to ensure that you are noticed and heard in the proper circles.",
+        "compoArray":{
+          "compoServices":[
+            {
+              "compoId":"1",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"2",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"3",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"4",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            }
+          ]
+        },
+        "projectImage": [
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png"
+        ],
+        "image": [
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/html.png"
+
+        ],
+        "technolgyStacImages": [
+          "/service/html.png",
+          "/service/vue.png",
+          "/service/react.png",
+          "/service/angular.png",
+          "/service/node.png",
+          "/service/aws.png",
+          "/service/python.png",
+          "/service/sql.png"
+
+        ]
+      },
+      {
+        "id":"3",
+        "pageTitle":"Web Development Making Benchmarking Products",
+        "perpageSentence":"Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+        "perPageShowButton": true,
+        "ourWork": "Our Work",
+        "workDesc":"Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+        "development": "waah re waah",
+        "imgSrc":"./home/landingComponent/1.png",
+        "icon":"faArrowRight",
+        "boxTitle1":"Secured",
+        "boxTitle2":"Standardized",
+        "boxParaTitle1":"How we do it?",
+        "boxContent":"Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+        "content": "We create websites and web apps to ensure that you are noticed and heard in the proper circles.",
+        "compoArray":{
+          "compoServices":[
+            {
+              "compoId":"1",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"2",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"3",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"4",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            }
+          ]
+        },
+        "projectImage": [
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png"
+        ],
+        "image": [
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/html.png"
+
+        ],
+        "technolgyStacImages": [
+          "/service/html.png",
+          "/service/vue.png",
+          "/service/react.png",
+          "/service/angular.png",
+          "/service/node.png",
+          "/service/aws.png",
+          "/service/python.png",
+          "/service/sql.png"
+
+        ]
+      },
+      {
+        "id":"4",
+        "pageTitle":"Web Development Making Benchmarking Products",
+        "perpageSentence":"Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+        "perPageShowButton": true,
+        "ourWork": "Our Work",
+        "workDesc":"Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+        "development": "waah re waah",
+        "imgSrc":"./home/landingComponent/1.png",
+        "icon":"faArrowRight",
+        "boxTitle1":"Secured",
+        "boxTitle2":"Standardized",
+        "boxParaTitle1":"How we do it?",
+        "boxContent":"Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+        "content": "We create websites and web apps to ensure that you are noticed and heard in the proper circles.",
+        "compoArray":{
+          "compoServices":[
+            {
+              "compoId":"1",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"2",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"3",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"4",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            }
+          ]
+        },
+        "projectImage": [
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png"
+        ],
+        "image": [
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/html.png"
+
+        ],
+        "technolgyStacImages": [
+          "/service/html.png",
+          "/service/vue.png",
+          "/service/react.png",
+          "/service/angular.png",
+          "/service/node.png",
+          "/service/aws.png",
+          "/service/python.png",
+          "/service/sql.png"
+
+        ]
+      },
+      {
+        "id":"5",
+        "pageTitle":"Web Development Making Benchmarking Products",
+        "perpageSentence":"Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+        "perPageShowButton": true,
+        "ourWork": "Our Work",
+        "workDesc":"Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+        "development": "waah re waah",
+        "imgSrc":"./home/landingComponent/1.png",
+        "icon":"faArrowRight",
+        "boxTitle1":"Secured",
+        "boxTitle2":"Standardized",
+        "boxParaTitle1":"How we do it?",
+        "boxContent":"Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+        "content": "We create websites and web apps to ensure that you are noticed and heard in the proper circles.",
+        "compoArray":{
+          "compoServices":[
+            {
+              "compoId":"1",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"2",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"3",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"4",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            }
+          ]
+        },
+        "projectImage": [
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png"
+        ],
+        "image": [
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/html.png"
+
+        ],
+        "technolgyStacImages": [
+          "/service/html.png",
+          "/service/vue.png",
+          "/service/react.png",
+          "/service/angular.png",
+          "/service/node.png",
+          "/service/aws.png",
+          "/service/python.png",
+          "/service/sql.png"
+
+        ]
+      },
+      {
+        "id":"6",
+        "pageTitle":"Web Development Making Benchmarking Products",
+        "perpageSentence":"Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+        "perPageShowButton": true,
+        "ourWork": "Our Work",
+        "workDesc":"Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+        "development": "waah re waah",
+        "imgSrc":"./home/landingComponent/1.png",
+        "icon":"faArrowRight",
+        "boxTitle1":"Secured",
+        "boxTitle2":"Standardized",
+        "boxParaTitle1":"How we do it?",
+        "boxContent":"Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+        "content": "We create websites and web apps to ensure that you are noticed and heard in the proper circles.",
+        "compoArray":{
+          "compoServices":[
+            {
+              "compoId":"1",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"2",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"3",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"4",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            }
+          ]
+        },
+        "projectImage": [
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png"
+        ],
+        "image": [
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/html.png"
+
+        ],
+        "technolgyStacImages": [
+          "/service/html.png",
+          "/service/vue.png",
+          "/service/react.png",
+          "/service/angular.png",
+          "/service/node.png",
+          "/service/aws.png",
+          "/service/python.png",
+          "/service/sql.png"
+
+        ]
+      },
+      {
+        "id":"7",
+        "pageTitle":"Web Development Making Benchmarking Products",
+        "perpageSentence":"Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+        "perPageShowButton": true,
+        "ourWork": "Our Work",
+        "workDesc":"Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+        "development": "waah re waah",
+        "imgSrc":"./home/landingComponent/1.png",
+        "icon":"faArrowRight",
+        "boxTitle1":"Secured",
+        "boxTitle2":"Standardized",
+        "boxParaTitle1":"How we do it?",
+        "boxContent":"Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+        "content": "We create websites and web apps to ensure that you are noticed and heard in the proper circles.",
+        "compoArray":{
+          "compoServices":[
+            {
+              "compoId":"1",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"2",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"3",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"4",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            }
+          ]
+        },
+        "projectImage": [
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png"
+        ],
+        "image": [
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/html.png"
+
+        ],
+        "technolgyStacImages": [
+          "/service/html.png",
+          "/service/vue.png",
+          "/service/react.png",
+          "/service/angular.png",
+          "/service/node.png",
+          "/service/aws.png",
+          "/service/python.png",
+          "/service/sql.png"
+
+        ]
+      },
+      {
+        "id":"8",
+        "pageTitle":"Web Development Making Benchmarking Products",
+        "perpageSentence":"Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+        "perPageShowButton": true,
+        "ourWork": "Our Work",
+        "workDesc":"Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+        "development": "waah re waah",
+        "imgSrc":"./home/landingComponent/1.png",
+        "icon":"faArrowRight",
+        "boxTitle1":"Secured",
+        "boxTitle2":"Standardized",
+        "boxParaTitle1":"How we do it?",
+        "boxContent":"Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+        "content": "We create websites and web apps to ensure that you are noticed and heard in the proper circles.",
+        "compoArray":{
+          "compoServices":[
+            {
+              "compoId":"1",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"2",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"3",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            },
+            {
+              "compoId":"4",
+              "head":"Front-end Development",
+              "para": "Contact us today to learn more about how our digital marketing services can succeed online.",
+              "image": "/service/speaker.png",
+              "alt": "Speaker Image"
+            }
+          ]
+        },
+        "projectImage": [
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png",
+          "/client/1.png"
+        ],
+        "image": [
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/angular.png",
+          "../service/aws.png",
+          "../service/html.png",
+          "../service/html.png"
+
+        ],
+        "technolgyStacImages": [
+          "/service/html.png",
+          "/service/vue.png",
+          "/service/react.png",
+          "/service/angular.png",
+          "/service/node.png",
+          "/service/aws.png",
+          "/service/python.png",
+          "/service/sql.png"
+
+        ]
+      }
+    ]
+  }
+  

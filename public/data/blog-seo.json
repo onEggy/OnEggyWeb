@@ -1,0 +1,29 @@
+{
+    "blogs": [
+      {
+        "blogId": 1,
+        "blogTitle": "Title of Blog 1",
+        "desc": "Description of Blog 1",
+        "content": "Content of Blog 1",
+        "keywords": ["keyword1", "keyword2", "keyword3"],
+        "imageAlt": "Alternative text for the image in Blog 1"
+      },
+      {
+        "blogId": 2,
+        "blogTitle": "Title of Blog 2",
+        "desc": "Description of Blog 2",
+        "content": "Content of Blog 2",
+        "keywords": ["keyword4", "keyword5", "keyword6"],
+        "imageAlt": "Alternative text for the image in Blog 2"
+      },
+      {
+        "blogId": 3,
+        "blogTitle": "Title of Blog 3",
+        "desc": "Description of Blog 3",
+        "content": "Content of Blog 3",
+        "keywords": ["keyword7", "keyword8", "keyword9"],
+        "imageAlt": "Alternative text for the image in Blog 3"
+      }
+    ]
+  }
+  

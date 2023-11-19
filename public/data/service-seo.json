@@ -1,0 +1,32 @@
+{
+    "services": [
+      {
+        "serviceName": "Service 1",
+        "serviceDescription": "Description of Service 1",
+        "iconUrls": [
+          {"url": "url1", "altText": "Alt text for icon 1"},
+          {"url": "url2", "altText": "Alt text for icon 2"},
+          {"url": "url3", "altText": "Alt text for icon 3"}
+        ]
+      },
+      {
+        "serviceName": "Service 2",
+        "serviceDescription": "Description of Service 2",
+        "iconUrls": [
+          {"url": "url4", "altText": "Alt text for icon 4"},
+          {"url": "url5", "altText": "Alt text for icon 5"},
+          {"url": "url6", "altText": "Alt text for icon 6"}
+        ]
+      },
+      {
+        "serviceName": "Service 3",
+        "serviceDescription": "Description of Service 3",
+        "iconUrls": [
+          {"url": "url7", "altText": "Alt text for icon 7"},
+          {"url": "url8", "altText": "Alt text for icon 8"},
+          {"url": "url9", "altText": "Alt text for icon 9"}
+        ]
+      }
+    ]
+  }
+  

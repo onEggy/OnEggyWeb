@@ -1,0 +1,37 @@
+{
+    "projects1": [
+      {
+        "image": "/client/1.png"
+      },
+      {
+        "image": "/client/2.png"
+      },
+      {
+        "image": "/client/3.png"
+      }
+    ],
+    "projects2": [
+      {
+        "image": "/client/4.png"
+      },
+      {
+        "image": "/client/5.png"
+      }
+    ],
+    "projects3": [
+      {
+        "image": "/client/6.png"
+      },
+      {
+        "image": "/client/7.png"
+      },
+      {
+        "image": "/client/8.png"
+      }
+    ],
+    "showButton": true,
+    "head": "Creating Disruptive Products from Dreams",
+    "sentence": "Oneggy thrives on turning dreams into disruptive reality as she embarks on an innovation journey. We challenge the norm with audacious creativity, creating extraordinary products that push the boundaries of what's possible, igniting transformative success for our clients and reshaping industries.",
+    "buttonPlaceholder": "Book a consultation"
+  }
+  
