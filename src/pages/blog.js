@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Navbar from './components/navbar';
 import MainHeadline from './components/mainHeadline';
 import Footer from './components/footer';
 import Sidebar from './components/sidebar';
 import GetFreeProp from './home/getFreeProp';
-import Compo from './blogOne/compo';
 import { NextSeo } from 'next-seo';
 import blogsData from '../../public/data/blogs.json';
 
@@ -29,15 +28,29 @@ const Blog = () => {
         />
       </div>
       <div className="flex flex-wrap">
-        <div className="w-full md:w-3/4 px-4">
-          <div className="flex flex-wrap justify-center m-10">
-            {blogs.map((blog , index) => (
-              <div className='flex flex-row' key={blog.id}>
-                <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-6 md:mb-0">
-                  <h2 className="bg-blue font-semibold px-2 py-1 mb-1 rounded-lg w-max">{blog.category}</h2>
-                  <img src={blog.thumbnail} alt={`Thumbnail for ${blog.title}`} className="mx-auto max-w-full" />
+      <div className="w-full md:w-3/4 px-4">
+        <div className="flex flex-wrap justify-center ">
+        {blogs.map((blog, index) => (
+              <div className="flex flex-col md:flex-row" key={blog.id}>
+                <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-6 md:mb-0 order-1 md:order-1">
+                  <h2 className="bg-blue font-semibold px-2 py-1 mb-1 rounded-lg w-max hidden md:block">
+                    {blog.category}
+                  </h2>
+                  <img
+                    src={blog.thumbnail}
+                    alt={`Thumbnail for ${blog.title}`}
+                    className="mx-auto max-w-full mb-1 hidden md:block"
+                  />
                 </div>
-                <div className="w-full md:w-1/2 lg:w-2/3 px-4">
+                <div className="w-full md:w-1/2 lg:w-2/3 px-4 order-2 md:order-1">
+                  <img
+                    src={blog.thumbnail}
+                    alt={`Thumbnail for ${blog.title}`}
+                    className="mx-auto max-w-full mb-1 block md:hidden"
+                  />
+                  <h2 className="bg-blue font-semibold px-2 py-1 mb-1 rounded-lg w-max block md:hidden">
+                    {blog.category}
+                  </h2>
                   <Link href={`/blog/${blog.id}`} passHref>
                     <h3 className="font-semibold text-2xl">{blog.title}</h3>
                   </Link>
@@ -45,8 +58,8 @@ const Blog = () => {
                 </div>
               </div>
             ))}
-          </div>
         </div>
+      </div>
         <div className="w-full md:w-1/4 px-4 mt-10 md:mt-0">
           <h2 className="text-3xl font-bold">Categories</h2>
           <ul className="font-semibold text-lg mt-4">

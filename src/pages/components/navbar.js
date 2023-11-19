@@ -55,19 +55,6 @@ export default function Navbar() {
                 </a>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center lg:hidden order-2">
-                {/* Mobile menu button*/}
-                {/* <Disclosure.Button
-                  className="relative inline-flex items-center justify-end 
-                rounded-md p-2 text-black hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                >
-                  <span className="absolute -inset-0.5" />
-                  <span className="sr-only">Open main menu</span>
-                  {open ? (
-                    <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
-                  ) : (
-                    <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
-                  )}
-                </Disclosure.Button> */}
               </div>
               <nav className="py-4 lg:flex lg:justify-between mx-auto hidden lg:w-full order-1">
                 <div className="flex flex-shrink-0 items-center">

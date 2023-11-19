@@ -1,16 +1,19 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
-import { useRef } from "react";
+import { useRouter } from 'next/router';
+
 
 const Technology = ({ skill, index }) => {
   console.log("Skill:", skill);
+  const router = useRouter();
+  const navigateToService = (id) => {
+    router.push(`/service/${id}`);
+  };
 
-  if (!skill || typeof skill !== "object" || !skill.title) {
-    // Log the reason for returning null
+
+  if (!skill || typeof skill !== "object" || !skill.development) {
     console.error("Invalid skill object or missing title:", skill);
-
-    // Return null or any default content when skill is not defined or doesn't have a title
     return null;
   }
   const mapIcons = {
@@ -71,20 +74,19 @@ const Technology = ({ skill, index }) => {
             index
           )} sm:ml-12 mt-10 service_heading`}
         >
-          {skill.title.split(" ")[0]}
+          {skill.development.split(" ")[0]}
         </h2>
         <h2
           className={`sm:text-3xl text-xl font-semibold rounded-md px-1 ${textColor(
             index
           )} sm:ml-12 service_heading`}
         >
-          {skill.title.split(" ").length == 2
-            ? skill.title.split(" ")[1]
-            : skill.title.split(" ").slice(1).join(" ")}
+          {skill.development.split(" ").length == 2
+            ? skill.development.split(" ")[1]
+            : skill.development.split(" ").slice(1).join(" ")}
         </h2>
         <div className="flex">
           {arrowBg(index) === "bg-white" ? (
-            // Use this SVG for bg white
             <svg
               width="41"
               height="41"
@@ -101,7 +103,6 @@ const Technology = ({ skill, index }) => {
               />
             </svg>
           ) : (
-            // Use this SVG for bg black and others
             <svg
               width="41"
               height="41"
@@ -119,7 +120,8 @@ const Technology = ({ skill, index }) => {
             </svg>
           )}
           <a
-            href={skill.learnMoreLink}
+            href="#"
+            onClick={() => navigateToService(skill.id)}
             className={`text-blue-500 hover:underline mt-[8rem] ml-[15px] ${linkColor(
               index
             )}`}
@@ -130,12 +132,11 @@ const Technology = ({ skill, index }) => {
       </div>
       <div className="flex">
         <img
-          src={skill.imageSrc}
-          alt={skill.title}
+          src={skill.imgSrc}
+          alt={skill.development}
           width={0}
           height={0}
           style={{
-            // width:'100%',
             height: "auto",
           }}
           sizes="100vw"

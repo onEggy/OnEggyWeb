@@ -6,7 +6,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const TechCompo = ({ development, index, content, image }) => {
+const TechCompo = ({ id, development, index, content, image }) => {
   const [isExpanded, setExpanded] = useState(false);
 
   function bg_color(index) {
@@ -60,7 +60,7 @@ const TechCompo = ({ development, index, content, image }) => {
         </div>
         <div className="flex items-center buttonClass">
           <div className="transform -rotate-[30deg] mr-3">
-            <Link href="/service/service">
+            <Link href={`/service/${id}`}>
               <span
                 className={`rounded-full p-2 pt-5 bg-black ${arrow_color(
                   index
@@ -70,7 +70,7 @@ const TechCompo = ({ development, index, content, image }) => {
               </span>
             </Link>
           </div>
-          <Link href="/service/service">
+          <Link href={`/service/${id}`}>
             <p>Learn more</p>
           </Link>
         </div>

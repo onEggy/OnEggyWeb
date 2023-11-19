@@ -14,6 +14,7 @@ import ConsultationButton from "../components/consultButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Sidebar from "../components/sidebar";
+import servicesData from "../../../public/data/serviceData.json";
 
 const Home = (skill) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,44 +23,7 @@ const Home = (skill) => {
     setIsOpen(!isOpen);
   };
 
-  const skillsArray = [
-    {
-      title: "Website Development",
-      imageSrc: "/home/landingComponent/1.png",
-      icon: "faArrowRight",
-      learnMoreLink: "#",
-    },
-    {
-      title: "Application Development",
-      imageSrc: "/home/landingComponent/2.png",
-      icon: "faArrowRight",
-      learnMoreLink: "#",
-    },
-    {
-      title: "UI/UX Designing",
-      imageSrc: "/home/landingComponent/3.png",
-      icon: "faArrowRight",
-      learnMoreLink: "#",
-    },
-    {
-      title: "DevOps Services",
-      imageSrc: "/home/landingComponent/4.png",
-      icon: "faArrowRight",
-      learnMoreLink: "#",
-    },
-    {
-      title: "QA & Testing",
-      imageSrc: "/home/landingComponent/5.png",
-      icon: "faArrowRight",
-      learnMoreLink: "#",
-    },
-    {
-      title: "Cloud Manage Services",
-      imageSrc: "/home/landingComponent/6.png",
-      icon: "faArrowRight",
-      learnMoreLink: "#",
-    },
-  ];
+  const skillsArray = servicesData.services;
 
   const mapIcons = {
     faArrowRight,
@@ -75,10 +39,8 @@ const Home = (skill) => {
       <Navbar />
       <Sidebar />
       <div className="mt-16 sm:max-h-screen justify-between">
-        <div className="flex px-4">
-          {/*WRAPPER*/}
+        <div className="flex">
           <div style={{ width: "589px" }}>
-            {/*HEADINGS*/}
             <h1 className="text-6xl font-semibold theme-heading">
               Transforming Technology with a Human Touch
             </h1>
@@ -107,8 +69,8 @@ const Home = (skill) => {
         <Awards />
         <Headline title={title} desc={desc} />
         <div className="flex flex-wrap sm:flex-row justify-center flex-col px-6 sm:px-0 mt-10 overflow-hidden">
-          {skillsArray.map((skill, index) => (
-            <Technology key={index} skill={skill} index={index} />
+          {skillsArray.slice(0, 6).map((service, index) => (
+            <Technology key={index} skill={service} index={index} />
           ))}
         </div>
 

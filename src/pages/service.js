@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from "next/router";
 import Navbar from "./components/navbar";
 import MainHeadline from "./components/mainHeadline";
 import Headline from "./components/headline";
@@ -7,51 +8,35 @@ import Footer from "./components/footer";
 import GetFreeProp from "./home/getFreeProp";
 import Marksheet from "./home/marksheet";
 import Section3 from "./about/section3";
-import TechCompo from "./service/techCompo";
+import TechCompoService from "./service/techCompoService";
 import TechnologyStack from "./service/technologyStack";
 import Slider from "react-slick";
 import Sidebar from "./components/sidebar";
+import serviceData from "../../public/data/serviceData.json";
 import { NextSeo } from "next-seo";
-import seoData from "../../public/data/service-seo.json";
 
 const service = () => {
-  const head = "Web Development Making Benchmarking Products";
-  const sentence =
-    "Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.";
-  const showButton = true;
-  const buttonPlaceholder = "Book a consultation";
-  const title = "Our Work";
-  const desc =
-    "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies";
-  const projects = [
-    {
-      image: "../client/1.png",
-    },
-    {
-      image: "../client/2.png",
-    },
-    {
-      image: "../client/3.png",
-    },
-    {
-      image: "../client/3.png",
-    },
-    {
-      image: "../client/3.png",
-    },
-    {
-      image: "../client/3.png",
-    },
-    {
-      image: "../client/3.png",
-    },
-  ];
-  const boxTitle1 = "Secured";
-  const boxTitle2 = "Standardized";
-  const boxParaTitle = "How we do it?";
-  const boxContent =
-    "Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.";
+  const router = useRouter();
+  const { id } = router.query;
 
+  const service = serviceData.services.find((s) => s.id === id);
+  if (!service) {
+    return <p>Service not found</p>;
+  }
+  const {
+    pageTitle,
+    perpageSentence,
+    perPageShowButton,
+    ourWork,
+    workDesc,
+    projectImage,
+    boxTitle1,
+    boxTitle2,
+    boxParaTitle1,
+    boxContent,
+  } = service;
+
+  
   const sliderSettings = {
     infinite: true,
     speed: 500,
@@ -69,35 +54,36 @@ const service = () => {
 
   return (
     <div className="mx-auto max-w-7xl">
+      <NextSeo title={pageTitle} />
       <Navbar />
       <Sidebar />
       <MainHeadline
-        head={head}
-        sentence={sentence}
-        showButton={showButton}
-        buttonPlaceholder={buttonPlaceholder}
+        head={pageTitle}
+        sentence={perpageSentence}
+        showButton={perPageShowButton}
+        buttonPlaceholder="Book a consultation"
       />
       <div className="mt-16">
         <Section3
           boxTitle1={boxTitle1}
           boxTitle2={boxTitle2}
-          boxParaTitle={boxParaTitle}
+          boxParaTitle={boxParaTitle1}
           boxContent={boxContent}
         />
-        <Headline title={title} desc={desc} />
+        <Headline title={ourWork} desc={workDesc} />
         <div className="mt-5">
           <Slider {...sliderSettings}>
-            {projects.map((data, index) => (
+            {projectImage.map((image, index) => (
               <div key={index} className="h-auto w-auto p-2 ">
-                <img src={data.image} alt={`Project Image ${index + 1}`} />
+                <img src={image} alt={`Project Image ${index + 1}`} />
               </div>
             ))}
           </Slider>
         </div>
       </div>
 
-      <TechCompo />
-      <TechnologyStack />
+      <TechCompoService id={id} serviceData={service} />
+      <TechnologyStack id={id} serviceData={service} />
       <Testimonials />
       <GetFreeProp />
       <Marksheet />
