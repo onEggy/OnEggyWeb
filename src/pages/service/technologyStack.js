@@ -1,23 +1,15 @@
+// Import the correct key from the JSON data
 import React from "react";
 import Headline from "../components/headline";
-import Slider from "react-slick"; // Import the Slider component
+import Slider from "react-slick";
+import Link from 'next/link';
 
-const technologyStack = () => {
+const TechnologyStack = ({ id, serviceData }) => {
   const title = "Technology Stacks";
   const desc =
     "Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Digital Marketing Services";
 
-  // Define your list of technology stack images
-  const technologyStackImages = [
-    "/service/html.png",
-    "/service/vue.png",
-    "/service/react.png",
-    "/service/angular.png",
-    "/service/node.png",
-    "/service/aws.png",
-    "/service/python.png",
-    "/service/sql.png",
-  ];
+  const technologyStackImages = serviceData.technolgyStacImages;
 
   const sliderSettings = {
     infinite: true,
@@ -42,7 +34,9 @@ const technologyStack = () => {
       <Slider {...sliderSettings}>
         {technologyStackImages.map((image, index) => (
           <div key={index} className="mx-2 mt-5">
-            <img src={image} alt={`Tech Stack Image ${index + 1}`} />
+            <Link href={`/service/${id}`}>
+                <img src={image} alt={`Tech Stack Image ${index + 1}`} />
+            </Link>
           </div>
         ))}
       </Slider>
@@ -50,4 +44,4 @@ const technologyStack = () => {
   );
 };
 
-export default technologyStack;
+export default TechnologyStack;

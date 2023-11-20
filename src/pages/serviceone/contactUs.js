@@ -113,8 +113,8 @@ const contactUs = () => {
         </div>
         <div className="hidden sm:block">
           <img 
-            src="../home/contactUs/illustration.png"
-            alt="illustraion"
+            src="/home/contactUs/illustration.png"
+            alt="ilu"
             width={494}
             height={394}
             className="absolute -right-[232px] top-[63px]"  

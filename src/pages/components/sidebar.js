@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaInstagram, FaYoutube, FaFacebook, FaLinkedin } from "react-icons/fa";
+import Link from 'next/link';
+
+
 
 const Sidebar = () => {
   const [sidebarexpanded, setSidebarExpanded] = useState(false);
@@ -19,6 +22,7 @@ const Sidebar = () => {
     }
   };
 
+
   return (
     <div className="container">
       <button className="normal-button" onClick={handleMenuClick}>
@@ -31,40 +35,39 @@ const Sidebar = () => {
       >
         <div className="sidebar-row">
           <div className="sidebar-left m-10">
-            <ul className="sidebar-list">
-              <li>
-                <a href="#" className="sidebar-a sidebar-a-left">
+            <ul className="flex flex-col pb-10">
+              <Link href="/t">
+                <p className="sidebar-a sidebar-a-left">
                   Home
-                </a>
-              </li>
-              <li>
-                <a href="#" className="sidebar-a sidebar-a-left">
+                </p>
+              </Link>
+              <Link href="/about">
+                <p className="sidebar-a sidebar-a-left">
                   About Us
-                </a>
-              </li>
-              <li>
-                <a href="#" className="sidebar-a sidebar-a-left">
+                </p>
+              </Link>
+              <Link href="/services">
+                <p className="sidebar-a sidebar-a-left">
                   Services
-                </a>
-              </li>
-              <li>
-                <a href="#" className="sidebar-a sidebar-a-left">
+                </p>
+              </Link>
+              <Link href="/team">
+                <p className="sidebar-a sidebar-a-left">
                   Team
-                </a>
-              </li>
-              <li>
-                <a href="#" className="sidebar-a sidebar-a-left">
+                </p>
+              </Link>
+              <Link href="/client">
+                <p className="sidebar-a sidebar-a-left">
                   Portfolio
-                </a>
-              </li>
-              <li>
-                <a href="#" className="sidebar-a sidebar-a-left">
+                </p>
+              </Link>
+              <Link href="/blog">
+                <p className="sidebar-a sidebar-a-left">
                   Blog
-                </a>
-              </li>
+                </p>
+              </Link>
             </ul>
           </div>
-
           <div className="sidebar-right sm:mx-4">
             <div className="contact">
               <p className="sidebar-para">Contact Us</p>
@@ -76,15 +79,31 @@ const Sidebar = () => {
                 +91 9811133005
               </a>
             </div>
-
-            <div className="follow">
-              <p className="sidebar-para">Follow us on</p>
-              <ul className="sidebar-list">
-                {/* Add social media links here */}
+            <div className="contact">
+              <p className="">Follow us on</p>
+              <ul className="flex flex-row ">
+                  <li>
+                    <a href="#" className="">
+                      <FaInstagram className="w-10 h-10" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" >
+                      <FaFacebook className="w-10 h-10"/>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" >
+                      <FaLinkedin className="w-10 h-10" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <FaYoutube className="w-10 h-10" />
+                    </a>
+                  </li>
               </ul>
             </div>
-            {/* <p>Additional Text</p> */}
-            <li>{/* add  the button here bro */}</li>
           </div>
         </div>
       </div>

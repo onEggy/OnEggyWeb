@@ -33,7 +33,7 @@ const Awards = () => {
   };
 
   return (
-    <div className="mx-7">
+    <div className="mx-5">
       <Headline title={title} desc={description} />
       <div className="flex flex-col md:flex-row mt-16">
         <div className="w-full md:w-1/2 ">

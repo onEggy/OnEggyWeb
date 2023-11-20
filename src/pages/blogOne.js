@@ -1,39 +1,39 @@
-import Navbar from "./components/navbar";
-import Section1 from "./components/mainHeadline";
-import React from "react";
-import Information1 from "./blog/information1";
-import Footer from "./components/footer";
-import Sidebar from "./components/sidebar";
-import { NextSeo } from "next-seo";
-import seoData from "../../public/data/blog-seo.json";
-const blog = () => {
-  const head = "Top 6 free website mockup tools 2022";
-  const showButton = false;
+// blogOne.js
+
+import React from 'react';
+import Navbar from './components/navbar';
+import MainHeadline from './components/mainHeadline';
+import Footer from './components/footer';
+import GetFreeProp from './home/getFreeProp';
+import Information1 from './blog/information1';
+import Sidebar from './components/sidebar';
+import { NextSeo } from 'next-seo';
+
+const BlogOne = ({ blog }) => {
+  const currentPageData = blog; 
 
   return (
     <div className="bg-cover bg-right sm:min-h-screen max-w-7xl mx-auto ">
+      <NextSeo title={currentPageData.title} description={currentPageData.description} />
       <Navbar />
       <Sidebar />
-      <Section1 head={head} showButton={showButton} />
+      <div className="w-full md:w-5/6 mx-auto">
+        <MainHeadline head={currentPageData.title}  showButton={false} />
+      </div>
       <div className="flex justify-center">
-        <a
-          href="https://codetheorem.co/blogs/category/ui-ux-design"
-          className="font-bold"
-        >
-          UI UX Design
-        </a>
+        <a className="font-bold">{currentPageData.category}</a>
         <div className="h-[0.85rem] mt-[0.4rem] mx-4 border-black border-r-2 before:absolute before:h-40 " />
         <h1>21-Aug-2023</h1>
         <div className="h-[0.85rem] mt-[0.4rem] mx-4 border-black border-r-2 before:absolute before:h-40" />
         <h2>10 min read</h2>
       </div>
       <div className="mt-10 px-6 sm:px-20">
-        <img src="../about/people.png" alt="Image" className="w-full mx-auto" />
+        <img src={currentPageData.blogImage} alt="Blog Image" className="w-full mx-auto" />
       </div>
-      <Information1 />
+      <Information1 blog={blog} />
       <Footer />
     </div>
   );
 };
 
-export default blog;
+export default BlogOne;

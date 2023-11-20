@@ -1,0 +1,88 @@
+{
+    "blogs": [
+      {
+        "id":"1",
+        "title": "Title of Blog 1",
+        "thumbnail": "../about/people.png",
+        "blogImage": "../about/people.png",
+        "description": "We are a team of Artists, Innovators & Strategists who left their ordinary life to invent and reinvent the common. Our Passion for technologies changes problems into opportunities. Our heart is full of creative juice that shapes ideas, Our mind is on a quest to transform the ordinary into the extraordinary. This is our code that energizes deep-rooted human desires and makes people pursue their dreams. We took an oath to stick to the Code and call ourselves Code Theorem.",
+        "content": "Content of Blog 1",
+        "keywords": ["keyword1", "keyword2", "keyword3"],
+        "category": "Web development",
+        "slug": ""
+      },
+      {
+        "id":"2",
+        "title": "Title of Blog 2",
+        "thumbnail": "../about/people.png",
+        "blogImage": "../about/people.png",
+        "description": "We are a team of Artists, Innovators & Strategists who left their ordinary life to invent and reinvent the common. Our Passion for technologies changes problems into opportunities. Our heart is full of creative juice that shapes ideas, Our mind is on a quest to transform the ordinary into the extraordinary. This is our code that energizes deep-rooted human desires and makes people pursue their dreams. We took an oath to stick to the Code and call ourselves Code Theorem.",
+        "content": "Content of Blog 2",
+        "keywords": ["keyword4", "keyword5", "keyword6"],
+        "category": "Category 2",
+        "slug": ""
+
+      },
+      {
+        "id":"3",
+        "title": "Title of Blog 3",
+        "thumbnail": "../about/people.png",
+        "blogImage": "../about/people.png",
+        "description": "We are a team of Artists, Innovators & Strategists who left their ordinary life to invent and reinvent the common. Our Passion for technologies changes problems into opportunities. Our heart is full of creative juice that shapes ideas, Our mind is on a quest to transform the ordinary into the extraordinary. This is our code that energizes deep-rooted human desires and makes people pursue their dreams. We took an oath to stick to the Code and call ourselves Code Theorem.",
+        "content": "Content of Blog 3",
+        "keywords": ["keyword7", "keyword8", "keyword9"],
+        "category": "Category 3",
+        "slug": ""
+
+      },
+      {
+        "id":"4",
+        "title": "Title of Blog 4",
+        "thumbnail": "../about/people.png",
+        "blogImage": "../about/people.png",
+        "description": "We are a team of Artists, Innovators & Strategists who left their ordinary life to invent and reinvent the common. Our Passion for technologies changes problems into opportunities. Our heart is full of creative juice that shapes ideas, Our mind is on a quest to transform the ordinary into the extraordinary. This is our code that energizes deep-rooted human desires and makes people pursue their dreams. We took an oath to stick to the Code and call ourselves Code Theorem.",
+        "content": "About 95% of the first impression comes from your website design. This makes building a compelling and informative website crucial. And that needs you to look for the perfect web design agency. The best web design agency can make your website a supercharged marketing tool for your business. But with so many web design options, it’s like choosing from many choices. So, before you start Googling the best web design company, go through a few insider tips about how to choose a web design agency. Tips to Choose the Best Web Design Agency for Your Project. To help you shortlist the excellent web design companies for startups and finally choose the best, here’s the lowdown on how to choose a web design company that matches your business goals and working style: Define Your Goals and Budget. Your website is a robust business and marketing tool. It will help if you have a clear picture of the primary aim of your website and its requirements to fulfill that aim. Here are some examples of what you could be the primary goal of your website: Accordingly, you should decide on the budget of your website and hire an affordable web design agency. Check their website. Once you know your website’s goals, go through the website of your chosen web designers before hiring them. This way, you’ll get to know their design aesthetic, user experience, and technical proficiency. You’ll also know if the web design agency stays current with design trends and technologies. More specifically, when examining the website of a web design agency, consider the following: Notice the visual appeal, layout, and overall design. Is it modern, visually engaging, and easy to navigate? How intuitive is the navigation? Is it easy to find information? A positive user experience is vital for your own website’s success. Check how the website performs on different devices. A mobile-friendly site is essential for reaching a wider audience. Analyze the clarity, accuracy, and relevance of the content. It reflects their ability to convey messages effectively. Evaluate the effectiveness of their Call to Action (CTA). A website should guide visitors toward desired actions. Check if their website is optimized for search engines. This shows their understanding of online visibility strategies. Portfolio and Experience. Once you’ve gone through the website of a web design agency, check for its working style and experience. More specifically, look for the following to find out if web designers are the right fit for you or not: Do web designers have experience crafting websites for your industry, leading to positive results, including features you desire or reflecting your preferences? Look for streamlined processes to simplify website creation. Check for ongoing marketing support to foster business growth. Assess whether you’re their typical customer size. Being too small or too large could affect service quality. In addition to experience, it’s essential to gauge their portfolio. So, check the following aspects before hiring them: Suppose your chosen web design agency has commendable experience and portfolio but needs more substantial experience in your industry. In that case, you can contact them to know how they’d tailor solutions for you or if they have worked in a similar industry.",
+        "keywords": ["keyword4", "keyword5", "keyword6"],
+        "category": "UI/UX Design",
+        "slug": ""
+
+      },
+      {
+        "id":"35",
+        "title": "Title of Blog 5",
+        "thumbnail": "../about/people.png",
+        "blogImage": "../about/people.png",
+        "description": "We are a team of Artists, Innovators & Strategists who left their ordinary life to invent and reinvent the common. Our Passion for technologies changes problems into opportunities. Our heart is full of creative juice that shapes ideas, Our mind is on a quest to transform the ordinary into the extraordinary. This is our code that energizes deep-rooted human desires and makes people pursue their dreams. We took an oath to stick to the Code and call ourselves Code Theorem.",
+        "content": "Content of Blog 3",
+        "keywords": ["keyword7", "keyword8", "keyword9"],
+        "category": "Category 3",
+        "slug": ""
+
+      },
+      {
+        "id":"6",
+        "title": "Title of Blog 6",
+        "thumbnail": "../about/people.png",
+        "blogImage": "../about/people.png",
+        "description": "We are a team of Artists, Innovators & Strategists who left their ordinary life to invent and reinvent the common. Our Passion for technologies changes problems into opportunities. Our heart is full of creative juice that shapes ideas, Our mind is on a quest to transform the ordinary into the extraordinary. This is our code that energizes deep-rooted human desires and makes people pursue their dreams. We took an oath to stick to the Code and call ourselves Code Theorem.",
+        "content": "Content of Blog 2",
+        "keywords": ["keyword4", "keyword5", "keyword6"],
+        "category": "Category 2",
+        "slug": ""
+
+      },
+      {
+        "id":"7",
+        "title": "Title of Blog 7",
+        "thumbnail": "../about/people.png",
+        "blogImage": "../about/people.png",
+        "description": "We are a team of Artists, Innovators & Strategists who left their ordinary life to invent and reinvent the common. Our Passion for technologies changes problems into opportunities. Our heart is full of creative juice that shapes ideas, Our mind is on a quest to transform the ordinary into the extraordinary. This is our code that energizes deep-rooted human desires and makes people pursue their dreams. We took an oath to stick to the Code and call ourselves Code Theorem.",
+        "content": "Content of Blog 3",
+        "keywords": ["keyword7", "keyword8", "keyword9"],
+        "category": "Category 3",
+        "slug": ""
+
+      }
+    ]
+  }
+  

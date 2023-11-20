@@ -25,18 +25,18 @@
     top: 20px;
     right: 50px;
     overflow: hidden;
-    background-color: #37fff4; /* Background color */
-    color: #000; /* Text color */
+    background-color: #37fff4; 
+    color: #000; 
     border: none;
     padding: 10px 20px;
-    border-radius: 5px; /* Border radius */
+    border-radius: 5px; 
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Hover transition */
-    /* Initially hide the button to the right */
+    transition: background-color 0.3s ease, color 0.3s ease; 
   }
   @media (max-width: 500px) {
     .normal-button {
       background-color: #ffffff00;
+      right: 10px;
     }
   }
   

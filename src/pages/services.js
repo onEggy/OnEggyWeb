@@ -8,13 +8,17 @@ import Footer from "./components/footer";
 import EngagementModel from "./services/engagementModel";
 import Sidebar from "./components/sidebar";
 import serviceData from "../../public/data/serviceData.json";
-import { NextSeo } from "next-seo";
-import seoData from "../../public/data/service-seo.json";
+
 
 const services = () => {
-  const { head, sentence, showButton, buttonPlaceholder, title, desc, arr } =
-    serviceData;
-
+  const { services } = serviceData;
+    console.log(services);
+    const head="IT Services You Can Count On"; 
+    const sentence="With OnEggy's IT Services, you can leave your mark on the digital world. Transform your company with our cutting-edge and effective digital solutions to help you succeed.";
+    const showButton = true;
+    const buttonPlaceholder="Book a consultation";
+    const title="Our Services";
+    const desc="Step-by-Step Guide to Achieving Your Business Goals";
   return (
     <div className="max-w-7xl container mx-auto">
       <Navbar />
@@ -27,7 +31,7 @@ const services = () => {
       />
       <Headline title={title} desc={desc} />
       <div className="mt-16 m-4">
-        {arr.map((props, index) => (
+        {services.map((props, index) => (
           <TechCompo key={index} {...props} index={index} />
         ))}
       </div>
