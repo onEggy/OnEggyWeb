@@ -38,10 +38,10 @@ const Home = (skill) => {
     <div className="landingPage1 container max-w-7xl mx-auto">
       <Navbar />
       <Sidebar />
-      <div className="mt-16 sm:max-h-screen justify-between">
-        <div className="flex">
+      <div className="mt-16 sm:m sm:max-h-screen justify-between">
+        <div className="flex mx-5">
           <div style={{ width: "589px" }}>
-            <h1 className="text-6xl font-semibold theme-heading">
+            <h1 className="text-5xl mx-2 font-semibold theme-heading">
               Transforming Technology with a Human Touch
             </h1>
             <Image
@@ -66,7 +66,7 @@ const Home = (skill) => {
         </div>
 
         <Projectlogos />
-        <Awards />
+        {/* <Awards /> */}
         <Headline title={title} desc={desc} />
         <div className="flex flex-wrap sm:flex-row justify-center flex-col px-6 sm:px-0 mt-10 overflow-hidden">
           {skillsArray.slice(0, 6).map((service, index) => (
@@ -84,7 +84,7 @@ const Home = (skill) => {
             <a href={skill.learnMoreLink}>Learn More</a>
           </div>
         </div>
-        <GetFreeProp />
+        <GetFreeProp /> 
         <Marksheet />
         <Testimonials />
         <ContactUs />

@@ -63,15 +63,15 @@ const service = () => {
         showButton={perPageShowButton}
         buttonPlaceholder="Book a consultation"
       />
-      <div className="mt-16">
+      <div className="mt-16 ">
         <Section3
           boxTitle1={boxTitle1}
           boxTitle2={boxTitle2}
           boxParaTitle={boxParaTitle1}
           boxContent={boxContent}
         />
-        <Headline title={ourWork} desc={workDesc} />
-        <div className="mt-5">
+        {/* <Headline title={ourWork} desc={workDesc} /> */}
+        {/* <div className="mt-5 mx-7">
           <Slider {...sliderSettings}>
             {projectImage.map((image, index) => (
               <div key={index} className="h-auto w-auto p-2 ">
@@ -79,11 +79,11 @@ const service = () => {
               </div>
             ))}
           </Slider>
-        </div>
+        </div> */}
       </div>
 
       <TechCompoService id={id} serviceData={service} />
-      <TechnologyStack id={id} serviceData={service} />
+      {/* <TechnologyStack id={id} serviceData={service} /> */}
       <Testimonials />
       <GetFreeProp />
       <Marksheet />

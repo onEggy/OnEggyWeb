@@ -7,7 +7,7 @@ const getFreeProp = () => {
         <h2 className="text-3xl text-center justify-center sm:text-left font-semibold">
           Let's get things begun
         </h2>
-        <p className="mt-8 w-96 text-center sm:text-left">
+        <p className="mt-8  text-center sm:text-left">
           Contact us today to learn more about how our digital services may
           assist your company in growing and succeeding online
         </p>

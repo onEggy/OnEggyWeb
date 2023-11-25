@@ -37,7 +37,7 @@ const Awards = () => {
       <Headline title={title} desc={description} />
       <div className="flex flex-col md:flex-row mt-16">
         <div className="w-full md:w-1/2 ">
-          <Slider {...carouselSettings}>
+          <Slider {...carouselSettings} className="mx-5">
             {images.map((image, index) => (
               <div key={index} className="text-center">
                 <img
