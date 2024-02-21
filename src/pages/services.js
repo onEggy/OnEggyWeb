@@ -9,7 +9,8 @@ import EngagementModel from "./services/engagementModel";
 import Sidebar from "./components/sidebar";
 import serviceData from "../../public/data/serviceData.json";
 import { NextSeo } from "next-seo";
-import seoData from "../../public/data/service-seo.json";
+import seoData from "../../public/data/seo-data.json";
+import Head from "next/head";
 
 const services = () => {
   const { head, sentence, showButton, buttonPlaceholder, title, desc, arr, head2, para2 } =
@@ -17,6 +18,14 @@ const services = () => {
 
   return (
     <div className="max-w-7xl container mx-auto">
+      <NextSeo
+        title={serviceData.title}
+        description={serviceData.desc}
+      />
+
+      <Head>
+        <meta name="keywords" content={seoData['/services']?.keywords} />
+      </Head>
       <Navbar />
       <Sidebar />
       <MainHeadline

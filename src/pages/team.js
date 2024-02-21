@@ -9,6 +9,7 @@ import Sidebar from "./components/sidebar";
 import { NextSeo } from "next-seo";
 import seoData from "../../public/data/seo-data.json";
 import teamPageData from "../../public/data/teamPage.json";
+import Head from "next/head";
 
 const Team = () => {
   const showButton = true;
@@ -20,6 +21,9 @@ const Team = () => {
         title={currentPageData.title}
         description={currentPageData.description}
       />
+       <Head>
+        <meta name="keywords" content={currentPageData?.keywords} />
+      </Head>
       <Navbar />
       <Sidebar />
       <Section1

@@ -17,6 +17,7 @@ import seoData from "../../public/data/seo-data.json";
 
 import { NextSeo } from "next-seo";
 import ProjectLogos from "./home/projectlogos";
+import Head from "next/head";
 
 const About = () => {
   const currentPageData = seoData["/about"];
@@ -42,6 +43,9 @@ const About = () => {
         title={currentPageData.title}
         description={currentPageData.description}
       />
+      <Head>
+       <meta name="keywords" content={currentPageData?.keywords} />
+      </Head>
       <Navbar />
       <Sidebar />
       <Section1

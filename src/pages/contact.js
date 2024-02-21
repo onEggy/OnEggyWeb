@@ -7,6 +7,7 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Sidebar from "./components/sidebar";
 import seoData from "../../public/data/seo-data.json";
 import { NextSeo } from "next-seo";
+import Head from "next/head";
 
 const section1 = () => {
   const currentPageData = seoData["/contact"];
@@ -33,6 +34,10 @@ const section1 = () => {
         title={currentPageData.title}
         description={currentPageData.description}
       />
+      <Head>
+        <meta name="keywords" content={currentPageData?.keywords} />
+      </Head>
+
       <Navbar />
       <Sidebar />
       <h2 className="text-5xl text-center font-semibold mt-10">Let's Talk</h2>
