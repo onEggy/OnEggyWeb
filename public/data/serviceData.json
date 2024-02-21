@@ -7,6 +7,10 @@
   "desc": "Step-by-Step Guide to Achieving Your Business Goals",
   "arr": [
     {
+      "meta-title": "Web Development Service - OnEggy Technologies",
+      "meta-title-slug": "web-development-service",
+      "meta-keywords": "development, website, webdevelopment",
+      "meta-description": "Web Development meta description here",
       "development": "Web Development",
       "content": "We create websites and web apps to ensure that you are noticed and heard in the proper circles.",
       "image": [
@@ -22,9 +26,14 @@
         "../service/vue.svg",
         "../service/react.svg",
         "../service/angular.svg"
-      ]
+      ],
+      "imageSrc": "../home/landingComponent/1.png"
     },
     {
+      "meta-title": "App Development Service - OnEggy Technologies",
+      "meta-title-slug": "app-development-service",
+      "meta-keywords": "development, website, appdevelopment",
+      "meta-description": "App Development meta description here",
       "development": "App Development",
       "content": "If you've been thinking about app development to help your business grow, OnEggy Technologies is the company to turn to. We offer end-to-end development services for mobile apps for Android and iOS platforms that meet your organization's requirements.",
       "image": [
@@ -40,9 +49,14 @@
         "../service/vue.svg",
         "../service/react.svg",
         "../service/angular.svg"
-      ]
+      ],
+      "imageSrc": "../home/landingComponent/2.png"
     },
     {
+      "meta-title": "MVP Development Service - OnEggy Technologies",
+      "meta-title-slug": "mvp-development-service",
+      "meta-keywords": "development, website, mvp development",
+      "meta-description": "mvp Development meta description here",
       "development": "MVP Development",
       "content": "At OnEggy Technologies, we specialise in creating custom MVP Solutions that can propel your business to success.",
       "image": [
@@ -58,9 +72,14 @@
         "../service/vue.svg",
         "../service/react.svg",
         "../service/angular.svg"
-      ]
+      ],
+      "imageSrc": "../home/landingComponent/3.png"
     },
     {
+      "meta-title": "Custom App & Softwares Development Service - OnEggy Technologies",
+      "meta-title-slug": "custom-app-softwares-development-service",
+      "meta-keywords": "development, website, custom app development",
+      "meta-description": "custom app and software Development meta description here",
       "development": "Custom App Development",
       "content": "We specialise in developing custom software solutions that enable organisations to prosper in today's volatile digital economy.",
       "image": [
@@ -76,12 +95,17 @@
         "../service/vue.svg",
         "../service/react.svg",
         "../service/angular.svg"
-      ]
+      ],
+      "imageSrc": "../home/landingComponent/4.png"
     },
     {
+      "meta-title": "UI/UX Design Service - OnEggy Technologies",
+      "meta-title-slug": "ui-ux-design-service",
+      "meta-keywords": "development, website, ui ux design",
+      "meta-description": "ui/ux design service meta description here",
       "development": "UI / UX Design",
       "content": "where creativity meets utility to generate appealing UI/UX designs. We create user-centric experiences that make a lasting impact on your audience and propel your business to new heights.",
-      "image":[
+      "image": [
         "../service/node.svg",
         "../service/aws.svg",
         "../service/python.svg",
@@ -94,9 +118,14 @@
         "../service/vue.svg",
         "../service/react.svg",
         "../service/angular.svg"
-      ]
+      ],
+      "imageSrc": "../home/landingComponent/5.png"
     },
     {
+      "meta-title": "QA Testing App or Softwares Service - OnEggy Technologies",
+      "meta-title-slug": "quality-testing-service",
+      "meta-keywords": "development, website, QA Testing App and Softwares service",
+      "meta-description": "QA Testing App meta description here",
       "development": "QA / Testing",
       "content": "your reliable partner for complete QA Testing and Load Testing services. We ensure that your digital goods are of the greatest quality, offering excellent performance even under severe user demands.",
       "image": [
@@ -112,9 +141,14 @@
         "../service/vue.svg",
         "../service/react.svg",
         "../service/angular.svg"
-      ]
+      ],
+      "imageSrc": "../home/landingComponent/6.png"
     },
     {
+      "meta-title": "IT Staffing Service - OnEggy Technologies",
+      "meta-title-slug": "it-staffing-design-service",
+      "meta-keywords": "development, website, IT Staffing and Resources, Outsourcing Staffing Service",
+      "meta-description": "IT Staffing and Resource service meta description here",
       "development": "IT Staffing Service",
       "content": "We take pleasure in providing top-tier IT Staffing Services that bring a pool of competent experts straight to your workplace. Our specialised in-house staff works directly with your organisation to provide the technical assistance and experience required to establish and manage powerful IT resources.",
       "image": [

@@ -14,10 +14,11 @@ import Sidebar from "../components/sidebar";
 import { NextSeo } from "next-seo";
 import seoData from "../../../public/data/service-seo.json";
 import serviceData from "../../../public/data/serviceData.json";
+import Head from "next/head";
 
-const service = ({ type }) => {
+const service = (props) => {
 
-  const head = type || "Web Development";
+  const head = props.development || "Web Development";
   const head2 = "Making Benchmarking Products"
   const sentence =
     "Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.";
@@ -72,6 +73,13 @@ const service = ({ type }) => {
 
   return (
     <div className="mx-auto md:max-w-7xl">
+      <NextSeo
+        title={props?.['meta-title']}
+        description={props?.['meta-description']}
+      />
+      <Head>
+        <meta name="keywords" content={props?.['meta-keywords']} />
+      </Head>
       <Navbar />
       <Sidebar />
       <MainHeadline
@@ -132,7 +140,9 @@ export default service;
 export async function getStaticProps({ params: { type } }) {
 
 
-  return { props: { type } }
+  // console.log('type is ', type)
+  let path = await serviceData?.arr?.filter(x => x?.['meta-title-slug'] == type)
+  return { props: path[0] }
 
 }
 
@@ -141,7 +151,7 @@ export async function getStaticPaths() {
 
   let paths = await serviceData?.arr?.map(x => {
 
-    return { params: { type: x?.development.replace('/', '') } }
+    return { params: { type: x?.['meta-title-slug'] } }
   })
 
   // console.log('path is ',paths)
