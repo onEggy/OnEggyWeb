@@ -52,27 +52,27 @@ const Testimonials = () => {
   }, []);
 
 
-  function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "transparent",position:'relative',top:'15px',left:'900px',transform:'scale(1.3)' }}
-        onClick={onClick}
-        />
-        );
-      }
+  // function SampleNextArrow(props) {
+  //   const { className, style, onClick } = props;
+  //   return (
+  //     <div
+  //       className={className}
+  //       style={{ ...style, display: "block", background: "transparent",position:'relative',top:'15px',left:'900px',transform:'scale(1.3)' }}
+  //       onClick={onClick}
+  //       />
+  //       );
+  //     }
       
-      function SamplePrevArrow(props) {
-        const { className, style, onClick } = props;
-        return (
-          <div
-          className={className}
-          style={{ ...style, display: "block", background: "transparent",position:'relative',top:'440px',left:'340px',transform:'scale(1.3)' }}
-        onClick={onClick}
-      />
-    );
-  }
+  //     function SamplePrevArrow(props) {
+  //       const { className, style, onClick } = props;
+  //       return (
+  //         <div
+  //         className={className}
+  //         style={{ ...style, display: "block", background: "transparent",position:'relative',top:'440px',left:'340px',transform:'scale(1.3)' }}
+  //       onClick={onClick}
+  //     />
+  //   );
+  // }
 
   const settings = {
     dots: true,
@@ -114,8 +114,8 @@ const Testimonials = () => {
       const isActive = i === currentSlide;
       return isActive ? <ActiveDot /> : <NormalDot />;
     },
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+    // nextArrow: <SampleNextArrow />,
+    // prevArrow: <SamplePrevArrow />
   };
 
   return (
