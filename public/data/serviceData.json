@@ -122,12 +122,12 @@
             "imageSrc": "../home/landingComponent/5.png"
         },
         {
-            "meta-title": "IT Staffing and Outsourcing Services - OnEggy Technologies",
-            "meta-title-slug": "it-staffing-and-outsourcing-services",
-            "meta-keywords": "IT Staffing, Outsourcing Services, Resources, DevOps, AWS, India, Delhi, New Delhi, Gurugram, Gurgaon, Noida, Bangalore",
-            "meta-description": "Unlock the potential of your workforce with our comprehensive IT Staffing and Outsourcing Services. OnEggy Technologies provides top-tier staffing solutions, delivering a pool of skilled experts directly to your organization. Our dedicated in-house staff collaborates seamlessly with your team, providing technical assistance and expertise to establish and manage robust IT resources. Join hands with us to enhance your business capabilities across India, including Delhi, Gurugram, Gurgaon, Noida, and Bangalore.",
-            "development": "IT Staffing Service",
-            "content": "Transform your organizational dynamics with OnEggy Technologies. Our IT Staffing Service goes beyond conventional solutions, offering comprehensive outsourcing options tailored to your specific needs. We deliver a skilled workforce and technical expertise directly to your workplace, ensuring the seamless establishment and management of powerful IT resources. Partner with us to elevate your business capabilities across India, including Delhi, Gurugram, Gurgaon, Noida, and Bangalore.",
+            "meta-title": "QA Testing and Load Testing Services - OnEggy Technologies",
+            "meta-title-slug": "qa-and-load-testing-services",
+            "meta-keywords": "QA Testing, Load Testing, development, website, software testing, quality assurance",
+            "meta-description": "Ensure the flawless performance of your digital products with OnEggy Technologies' QA Testing and Load Testing Services. As your reliable partner, we guarantee the highest quality and exceptional performance, even under the most demanding user conditions.",
+            "development": "QA / Testing",
+            "content": "Partner with OnEggy Technologies for comprehensive QA Testing and Load Testing services. We go beyond conventional quality assurance, ensuring that your digital products not only meet but exceed user expectations. Our commitment to excellence guarantees outstanding performance, providing confidence even under severe user demands.",
             "image": [
                 "../service/node.svg",
                 "../service/aws.svg",
@@ -142,9 +142,30 @@
                 "../service/react.svg",
                 "../service/angular.svg"
             ],
-            "imageSrc": "../home/landingComponent/5.png"
+            "imageSrc": "../home/landingComponent/6.png"
+        },
+        {
+            "meta-title": "IT Staffing and Outsourcing Services - OnEggy Technologies",
+            "meta-title-slug": "it-staffing-and-outsourcing-services",
+            "meta-keywords": "IT Staffing, Outsourcing Services, development, website, IT Resources, Outsourcing Staffing, DevOps, AWS",
+            "meta-description": "Elevate your workforce with OnEggy Technologies' comprehensive IT Staffing and Outsourcing Services. We take pride in delivering top-tier IT staffing solutions, bringing a pool of competent experts directly to your workplace. Our specialized in-house staff collaborates with your organization, providing the technical assistance and experience required to establish and manage powerful IT resources.",
+            "development": "IT Staffing Service",
+            "content": "Transform your organizational dynamics with OnEggy Technologies. Our IT Staffing Service goes beyond conventional solutions, offering comprehensive outsourcing options tailored to your specific needs. We deliver a skilled workforce and technical expertise directly to your workplace, ensuring the seamless establishment and management of powerful IT resources. Partner with us to elevate your business capabilities.",
+            "image": [
+                "../service/node.svg",
+                "../service/aws.svg",
+                "../service/python.svg",
+                "../service/mysql.svg",
+                "../service/php.svg",
+                "../service/mongodb.svg",
+                "../service/firebase.svg",
+                "../service/html.svg",
+                "../service/css.svg",
+                "../service/vue.svg",
+                "../service/react.svg",
+                "../service/angular.svg"
+            ],
+            "head2": "Let's get things begun",
+            "para2": "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online."
         }
-    ],
-    "head2": "Let's get things begun",
-    "para2": "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online."
 }
