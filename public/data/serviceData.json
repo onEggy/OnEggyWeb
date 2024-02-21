@@ -120,6 +120,29 @@
                 "../service/angular.svg"
             ],
             "imageSrc": "../home/landingComponent/5.png"
+        },
+        {
+            "meta-title": "IT Staffing and Outsourcing Services - OnEggy Technologies",
+            "meta-title-slug": "it-staffing-and-outsourcing-services",
+            "meta-keywords": "IT Staffing, Outsourcing Services, Resources, DevOps, AWS, India, Delhi, New Delhi, Gurugram, Gurgaon, Noida, Bangalore",
+            "meta-description": "Unlock the potential of your workforce with our comprehensive IT Staffing and Outsourcing Services. OnEggy Technologies provides top-tier staffing solutions, delivering a pool of skilled experts directly to your organization. Our dedicated in-house staff collaborates seamlessly with your team, providing technical assistance and expertise to establish and manage robust IT resources. Join hands with us to enhance your business capabilities across India, including Delhi, Gurugram, Gurgaon, Noida, and Bangalore.",
+            "development": "IT Staffing Service",
+            "content": "Transform your organizational dynamics with OnEggy Technologies. Our IT Staffing Service goes beyond conventional solutions, offering comprehensive outsourcing options tailored to your specific needs. We deliver a skilled workforce and technical expertise directly to your workplace, ensuring the seamless establishment and management of powerful IT resources. Partner with us to elevate your business capabilities across India, including Delhi, Gurugram, Gurgaon, Noida, and Bangalore.",
+            "image": [
+                "../service/node.svg",
+                "../service/aws.svg",
+                "../service/python.svg",
+                "../service/mysql.svg",
+                "../service/php.svg",
+                "../service/mongodb.svg",
+                "../service/firebase.svg",
+                "../service/html.svg",
+                "../service/css.svg",
+                "../service/vue.svg",
+                "../service/react.svg",
+                "../service/angular.svg"
+            ],
+            "imageSrc": "../home/landingComponent/5.png"
         }
     ],
     "head2": "Let's get things begun",
