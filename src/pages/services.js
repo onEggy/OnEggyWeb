@@ -12,7 +12,7 @@ import { NextSeo } from "next-seo";
 import seoData from "../../public/data/service-seo.json";
 
 const services = () => {
-  const { head, sentence, showButton, buttonPlaceholder, title, desc, arr } =
+  const { head, sentence, showButton, buttonPlaceholder, title, desc, arr, head2, para2 } =
     serviceData;
 
   return (
@@ -24,15 +24,24 @@ const services = () => {
         sentence={sentence}
         showButton={showButton}
         buttonPlaceholder={buttonPlaceholder}
+        headCss={'sm:w-10/12 mt-12 sm:mt-24 sm:mb-10'}
+        pCss={'md:w-11/12 sm:text-xl '}
       />
-      <Headline title={title} desc={desc} />
+
+      <Headline
+        title={title}
+        desc={desc}
+        mainCss={'md:ml-4'}
+        titleCss={'md:font-bold text-4xl'}
+        descCss={'md:w-[18rem] mt-7 md:ml-12  '}
+      />
       <div className="mt-16 m-4">
         {arr.map((props, index) => (
           <TechCompo key={index} {...props} index={index} />
         ))}
       </div>
       <div className="px-4 sm:px-0">
-        <GetFreeProp />
+        <GetFreeProp head={head2} para={para2} />
         <EngagementModel />
       </div>
       <Footer />

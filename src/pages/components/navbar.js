@@ -79,7 +79,7 @@ export default function Navbar() {
                 <div className="hidden lg:ml-6 sm:block">
                   <ul className="flex justify-end py-4">
                     {navigation.map((item) => {
-                      console.log(item.href);
+                      // console.log(item.href);
 
                       if (item.href !== "/contact/contact")
                         return (

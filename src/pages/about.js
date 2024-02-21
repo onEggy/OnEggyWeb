@@ -16,6 +16,7 @@ import aboutPageData from "../../public/data/aboutPage.json";
 import seoData from "../../public/data/seo-data.json";
 
 import { NextSeo } from "next-seo";
+import ProjectLogos from "./home/projectlogos";
 
 const About = () => {
   const currentPageData = seoData["/about"];
@@ -48,6 +49,8 @@ const About = () => {
         sentence={sentence}
         showButton={showButton}
         buttonPlaceholder={buttonPlaceholder}
+        mainCss={'mt-16'}
+        headCss={'sm:tracking-wider font-[500] sm:leading-tight'}
       />
       <Section2 />
       <Section3
@@ -57,17 +60,22 @@ const About = () => {
         boxContent={boxContent}
       />
       <Section4 />
-      <GetFreeProp />
-      <div className="sm:mt-8 my-8 platform-div">
-        <Platforms />
-        <Platformsrtl />
-        <Platforms />
+      <GetFreeProp
+        head={"Let's get things begun"}
+        para={"Contact us today to learn more about how our digital services may assist your company in growing and succeeding online"}
+        buttonText={"Get your free proposal"}
+      />
+      <div className="sm:-mt-20  my-8 platform-div">
+        {/* <Platforms /> */}
+        {/* <Platformsrtl /> */}
+        {/* <Platforms /> */}
+        <ProjectLogos />
       </div>
-      <Headline title={titleAbout} desc={descAbout} />
-      <div className="grid grid-cols-1 sm:grid-cols-2  gap-y-6 sm:gap-y-16 gap-10 mb-16 justify-items-stretch] px-4 sm:px-0 mt-10 ">
+      <Headline title={titleAbout} desc={descAbout} titleCss={'md:font-bold md:text-4xl'} descCss={'md:w-36rem] mt-7 md:ml-16 md:font-semibold'} />
+      <div className="grid grid-cols-1 sm:grid-cols-2  gap-y-6 sm:gap-y-16 gap-10 mb-16 justify-items-stretch] px-4 sm:px-0 my-16 ">
         {compoArray.map(
           (item, index) => (
-            console.log(item.head),
+            // console.log(item.head),
             (<Section5 key={index} head={item} index={index} />)
           )
         )}

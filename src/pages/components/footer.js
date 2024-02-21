@@ -5,8 +5,9 @@ import logo from "../../../public/logoWhite.png";
 import {
   faFacebookF,
   faTwitter,
-  faLinkedin,
+  faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
+import Link from "next/link";
 
 const footer = () => {
   return (
@@ -21,15 +22,15 @@ const footer = () => {
           className="logo_img"
         />
         <ul className="justify-center py-4 text-white underline hidden sm:flex">
-          <li className="mx-5 cursor-pointer">About us</li>
-          <li className="mx-5 cursor-pointer">Service</li>
-          <li className="mx-5 cursor-pointer">Team</li>
-          <li className="mx-5 cursor-pointer">Portfolio</li>
-          <li className="mx-5 cursor-pointer">Blog</li>
+          <li className="mx-5 cursor-pointer"><Link href={'/about'}> About us </Link></li>
+          <li className="mx-5 cursor-pointer"><Link href={'/services'}> Service </Link></li>
+          <li className="mx-5 cursor-pointer"><Link href={'/team'}> Team </Link></li>
+          <li className="mx-5 cursor-pointer"> <Link href={'/client'}> Portfolio</Link></li>
+          <li className="mx-5 cursor-pointer"><Link href={'/blog'}>Blog </Link></li>
         </ul>
         <div className=" space-x-4 self-center hidden sm:flex">
           <div className="bg-white w-8 h-8 flex justify-center items-center rounded-full text-l_black">
-            <FontAwesomeIcon icon={faLinkedin} />
+            <FontAwesomeIcon icon={faLinkedinIn} />
           </div>
           <div className="bg-white  w-8 h-8 flex justify-center items-center rounded-full text-l_black">
             <FontAwesomeIcon icon={faFacebookF} />
@@ -51,11 +52,11 @@ const footer = () => {
           <p className="text-white mt-4">
             Phone: <span className="underline">+91 9811133005</span>
           </p>
-          <p className="text-white mt-4 sm:w-1/2 w-2/6 text-center sm:text-left">
+          <p className="text-white mt-4 md:w-1/2 w-4/6 text-center sm:text-left">
             Address: 172, Block M, Shakurpur New Delhi, Delhi 110034
           </p>
         </div>
-        <div className="bg-greyblack flex sm:flex-row flex-col p-6 sm:xspace-x-4 rounded-2xl mb-4 sm:mb-12 mt-4 sm:mt-0 sm:w-1/2 w-full">
+        <div className="bg-greyblack flex sm:flex-row flex-col p-6 sm:xspace-x-4 rounded-2xl mb-4 sm:mb-12 mt-8 sm:mt-0 sm:w-1/2 w-full">
           <input
             type="email"
             id="email"
@@ -72,7 +73,7 @@ const footer = () => {
       </div>
       <div className="flex space-x-4 justify-center sm:hidden mt-4 mb-8">
         <div className="bg-white w-8 h-8 flex justify-center items-center rounded-full text-l_black">
-          <FontAwesomeIcon icon={faLinkedin} />
+          <FontAwesomeIcon icon={faLinkedinIn} />
         </div>
         <div className="bg-white  w-8 h-8 flex justify-center items-center rounded-full text-l_black">
           <FontAwesomeIcon icon={faFacebookF} />
@@ -82,9 +83,10 @@ const footer = () => {
         </div>
       </div>
       <hr className="mx-auto w-[94%]" />
-      <footer className="text-white px-4 mt-10 flex flex-col space-y-2 pb-10 md:flex-row md:justify-between md:items-center">
-        <p>&copy; {new Date().getFullYear()} OnEggy. All Rights Reserved.</p>
-        <a href="#" className="underline">
+      {/* <footer className="text-white px-4 mt-10 flex flex-col space-y-2 pb-10 md:flex-row md:justify-between md:items-center"> */}
+      <footer className="text-white px-4 mt-10 flex flex-col space-y-2 pb-10 md:flex-row md:justify-start md:items-center md:w-8/12 ml-4 ">
+        <p className="mt-2">&copy; {new Date().getFullYear()} OnEggy. All Rights Reserved.</p>
+        <a href="#" className="ml-28 ">
           Privacy Policy
         </a>
       </footer>

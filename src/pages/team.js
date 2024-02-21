@@ -27,6 +27,10 @@ const Team = () => {
         sentence={sentence}
         showButton={showButton}
         buttonPlaceholder={buttonPlaceholder}
+        mainCss={'w-full mt-12 sm:mt-24'}
+        headCss={'tracking-wide font-[400] leading-tight text-3xl w-5/6 '}
+        pCss={'sm:text-xl md:w-11/12'}
+
       />
       <VideoSection />
       <CarouselImages />

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
@@ -20,7 +21,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container ">
       <button className="normal-button" onClick={handleMenuClick}>
         {sidebarexpanded ? <FaTimes /> : <FaBars />}
       </button>
@@ -33,34 +34,34 @@ const Sidebar = () => {
           <div className="sidebar-left m-10">
             <ul className="sidebar-list">
               <li>
-                <a href="#" className="sidebar-a sidebar-a-left">
+                <Link href="/" className="sidebar-a sidebar-a-left">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="sidebar-a sidebar-a-left">
+                <Link href="/about" className="sidebar-a sidebar-a-left">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="sidebar-a sidebar-a-left">
+                <Link href="/services" className="sidebar-a sidebar-a-left">
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="sidebar-a sidebar-a-left">
+                <Link href="/team" className="sidebar-a sidebar-a-left">
                   Team
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="sidebar-a sidebar-a-left">
+                <Link href="/client" className="sidebar-a sidebar-a-left">
                   Portfolio
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="sidebar-a sidebar-a-left">
+                <Link href="/blog" className="sidebar-a sidebar-a-left">
                   Blog
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

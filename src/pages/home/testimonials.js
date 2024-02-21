@@ -51,15 +51,40 @@ const Testimonials = () => {
     setTestimonials(testimonialsData.testimonials);
   }, []);
 
+
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "block", background: "transparent",position:'relative',top:'15px',left:'900px',transform:'scale(1.3)' }}
+        onClick={onClick}
+        />
+        );
+      }
+      
+      function SamplePrevArrow(props) {
+        const { className, style, onClick } = props;
+        return (
+          <div
+          className={className}
+          style={{ ...style, display: "block", background: "transparent",position:'relative',top:'440px',left:'340px',transform:'scale(1.3)' }}
+        onClick={onClick}
+      />
+    );
+  }
+
   const settings = {
     dots: true,
     infinite: true,
-    speed: 1000,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    arrows: false,
+    easing:'linear',
+    pauseOnHover:false,
+    arrows: true,
     centerMode: true,
     centerPadding: "25.33%",
     beforeChange: (prev, next) => {
@@ -89,17 +114,19 @@ const Testimonials = () => {
       const isActive = i === currentSlide;
       return isActive ? <ActiveDot /> : <NormalDot />;
     },
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />
   };
 
   return (
     <div className="px-4 sm:px-0">
-      <Headline title={title} desc={desc} />
-      <div className="bg-l_black py-16 rounded-3xl mt-4 mb-12 sm:mb-0">
-        <div className="max-w-2xl mx-auto lg:max-w-none lg:w-606px">
+      <Headline title={title} desc={desc} titleCss={'md:font-bold md:text-4xl'} descCss={'md:w-[32rem] md:mt-7 md:ml-16'} />
+      <div className="bg-l_black py-16 rounded-3xl mt-16 mb-12 sm:mb-0">
+        <div className="max-w-2xl mx-auto lg:max-w-none lg:w-606px ">
           <Slider {...settings}>
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="">
-                <p className="box-testimonial box-testimonial-content text-left text-sm text-white px-8 py-10">
+              <div key={index} className="mx-2">
+                <p className="box-testimonial box-testimonial-content text-left text-sm text-white p-6 sm:p-14 w-11/12 md:bg-[#284660] ">
                   {testimonial.testimonial}
                 </p>
 

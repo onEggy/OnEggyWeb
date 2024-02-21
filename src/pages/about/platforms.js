@@ -12,9 +12,10 @@ const Platforms = () => {
     slidesToShow: 5,
     slidesToScroll: -1,
     autoplay: true,
-    autoplaySpeed: 0,
+    autoplaySpeed: 2000,
     cssEase: "linear",
     pauseOnHover: false,
+    pauseOnFocus: false,
     responsive: [
       {
         breakpoint: 768,
@@ -30,7 +31,7 @@ const Platforms = () => {
       <div className="inner">
         <Slider {...sliderSettings}>
           {projectLogosData.projectLogos.map((logo) => (
-            <div key={logo.id}>
+            <div key={logo.id} className="my-2">
               <img
                 src={logo.url}
                 alt={logo.alt}

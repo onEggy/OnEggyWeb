@@ -43,7 +43,7 @@ const CarouselImages = () => {
         settings: {
           slidesToShow: 1,
           centerMode: true,
-          centerPadding: "10",
+          centerPadding: "40",
         },
       },
     ],
@@ -54,7 +54,8 @@ const CarouselImages = () => {
       <Slider
         className="lg:h-225"
         {...settings}
-        initialSlide={currentIndex * 5}
+        // initialSlide={currentIndex * 5}
+        initialSlide={1}
       >
         {images.map((image, index) => (
           <div key={index} className="carousel-item w-full">

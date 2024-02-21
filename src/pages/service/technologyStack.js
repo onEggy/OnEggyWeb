@@ -9,28 +9,32 @@ const technologyStack = () => {
 
   // Define your list of technology stack images
   const technologyStackImages = [
-    "/service/html.png",
-    "/service/vue.png",
-    "/service/react.png",
-    "/service/angular.png",
-    "/service/node.png",
-    "/service/aws.png",
-    "/service/python.png",
-    "/service/sql.png",
+    "/service/html.svg",
+    "/service/vue.svg",
+    "/service/react.svg",
+    "/service/angular.svg",
+    "/service/node.svg",
+    "/service/aws.svg",
+    "/service/python.svg",
+    "/service/mysql.svg",
   ];
 
   const sliderSettings = {
     infinite: true,
-    speed: 1000,
-    slidesToShow: 4,
+    slidesToShow: 7,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1000,
+    speed: 2000,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+    pauseOnHover:false,
+    pauseOnFocus:false,
+
     responsive: [
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 5,
         },
       },
     ],
@@ -38,10 +42,10 @@ const technologyStack = () => {
 
   return (
     <div className="">
-      <Headline title={title} desc={desc} />
+      <Headline title={title} desc={desc} descCss={' md:mt-8'} />
       <Slider {...sliderSettings}>
         {technologyStackImages.map((image, index) => (
-          <div key={index} className="mx-2 mt-5">
+          <div key={index} className="mx-2 mt-16">
             <img src={image} alt={`Tech Stack Image ${index + 1}`} />
           </div>
         ))}

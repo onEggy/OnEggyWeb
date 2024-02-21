@@ -32,13 +32,13 @@ const techCompo = () => {
       alt: "Speaker Image",
     },
     {
-      head: "SaaS Apps Development",
+      head: "SaaS-Apps Development",
       para: "Contact us today to learn more about how our digital marketing services can succeed online.",
       image: "/service/speaker.png",
       alt: "Speaker Image",
     },
     {
-      head: "Custom Web Development",
+      head: "Custom-Web Development",
       para: "Contact us today to learn more about how our digital marketing services can succeed online.",
       image: "/service/speaker.png",
       alt: "Speaker Image",
@@ -47,11 +47,18 @@ const techCompo = () => {
 
   return (
     <div className="mt-10 px-4">
-      <Headline title={title} desc={desc} />
+      <Headline
+        title={title}
+        desc={desc}
+        titleCss={'md:font-bold md:text-4xl'}
+        descCss={'md:w-[32rem] text-lg md:font-semibold mt-7 md:ml-12 '}
+      />
 
-      <div className="flex flex-wrap sm:flex-row justify-center mt-10">
+      <div className="flex flex-wrap sm:flex-row justify-center  mt-10 ">
         {compoArray.map((head, index) => (
-          <Section5 key={index} head={head} index={index} />
+          <div key={index} className=" md:w-6/12">
+          <Section5 mainCss={'p-3'}  head={head} index={index} />
+          </div>
         ))}
       </div>
     </div>

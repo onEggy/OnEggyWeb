@@ -21,9 +21,9 @@ const Section2 = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col sm:flex-row items-center w-full">
-          <div className="sm:w-1/2 sm:mt-0 mt-8 textss-center">
-            <h2 className="bg-blue inline-flex  font-semibold px-2 py-2 rounded-md text-3xl">
+        <div className="flex flex-col sm:flex-row items-center w-full md:my-20">
+          <div className="sm:w-1/2 sm:mt-0 mt-8 text-center ">
+            <h2 className="bg-blue inline-flex  font-semibold px-2 py-2 rounded-md text-3xl md:font-bold md:text-4xl">
               {title}
             </h2>
             <p className="sm:mt-8 mt-8 sm:mr-16 text-left">
@@ -42,7 +42,7 @@ const Section2 = () => {
               business model.
             </p>
           </div>
-          <div className="sm:w-1/2 hidden sm:block p-10 mt-24">
+          <div className="sm:w-1/2 hidden sm:block p-10 mt-24 sm:mt-0">
             <Image
               src="/about/people.png"
               alt="People Image"

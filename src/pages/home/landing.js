@@ -14,6 +14,7 @@ import ConsultationButton from "../components/consultButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Sidebar from "../components/sidebar";
+import Link from "next/link";
 
 const Home = (skill) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +23,7 @@ const Home = (skill) => {
     setIsOpen(!isOpen);
   };
 
+  const getFreePropText = {head:"Let's get things begun",para:"Contact us today to learn more about how our digital services may assist your company in growing and succeeding online"}
   const skillsArray = [
     {
       title: "Website Development",
@@ -71,15 +73,15 @@ const Home = (skill) => {
   const buttonPlaceholder = "Book a Consultataion";
 
   return (
-    <div className="landingPage1 container max-w-7xl mx-auto">
+    <div className="landingPage1 container max-w-7xl mx-auto overflow-x-hidden">
       <Navbar />
       <Sidebar />
-      <div className="mt-16 sm:max-h-screen justify-between">
+      <div className="mt-16 sm:max-h-screen justify-between ">
         <div className="flex px-4">
           {/*WRAPPER*/}
           <div style={{ width: "589px" }}>
             {/*HEADINGS*/}
-            <h1 className="text-6xl font-semibold theme-heading">
+            <h1 className="text-[45px] font-medium mb-2 leading-tight md:text-6xl md:font-semibold theme-heading">
               Transforming Technology with a Human Touch
             </h1>
             <Image
@@ -88,7 +90,7 @@ const Home = (skill) => {
               width={0}
               height={0}
               sizes="100vw"
-              className="md:hidden"
+              className="md:hidden" 
               style={{ width: "80%", height: "auto", margin: "auto" }}
             />
             <p className="mt-12 text-justify font-spaceGrotesk sm:pr-48 px-0">
@@ -105,24 +107,28 @@ const Home = (skill) => {
 
         <Projectlogos />
         <Awards />
-        <Headline title={title} desc={desc} />
-        <div className="flex flex-wrap sm:flex-row justify-center flex-col px-6 sm:px-0 mt-10 overflow-hidden">
+        <Headline title={title} desc={desc} width={''} titleCss={'md:font-bold md:text-4xl'} descCss={' w-[25rem] ml-0 md:w-[40rem] mt-7'} />
+        <div className="flex flex-col justify-center   px-6 mt-10 overflow-hidden sm:flex-row sm:flex-wrap sm:px-0  ">
           {skillsArray.map((skill, index) => (
             <Technology key={index} skill={skill} index={index} />
           ))}
         </div>
 
-        <div className="md:flex justify-end  hidden overflow-hidden">
-          <div className="mr-5 mt-5 rounded-full p-1 bg-l_black transform -rotate-[30deg] text-[4px] cursor-pointer">
+        <div className="hidden md:flex justify-end  ">
+          <div className="mr-7 mt-4 p-[8px] bg-l_black transform -rotate-[30deg] text-[4px] scale-150 cursor-pointer" style={{borderRadius:'50%'}}>
             <span className="text-white">
               <FontAwesomeIcon icon={faArrowRight} size="4x" />
             </span>
           </div>
           <div className="mr-8 mt-5 cursor-pointer">
-            <a href={skill.learnMoreLink}>Learn More</a>
+            <Link href={'/services'}>Learn More</Link>
           </div>
         </div>
-        <GetFreeProp />
+        <GetFreeProp 
+        head={getFreePropText.head}
+        para={getFreePropText.para}
+        buttonText="Get your proposal"
+        />
         <Marksheet />
         <Testimonials />
         <ContactUs />

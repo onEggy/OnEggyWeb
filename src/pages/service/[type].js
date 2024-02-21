@@ -1,21 +1,24 @@
 import React from "react";
-import Navbar from "./components/navbar";
-import MainHeadline from "./components/mainHeadline";
-import Headline from "./components/headline";
-import Testimonials from "./home/testimonials";
-import Footer from "./components/footer";
-import GetFreeProp from "./home/getFreeProp";
-import Marksheet from "./home/marksheet";
-import Section3 from "./about/section3";
-import TechCompo from "./service/techCompo";
-import TechnologyStack from "./service/technologyStack";
+import Navbar from "../components/navbar";
+import MainHeadline from "../components/mainHeadline";
+import Headline from "../components/headline";
+import Testimonials from "../home/testimonials";
+import Footer from "../components/footer";
+import GetFreeProp from "../home/getFreeProp";
+import Marksheet from "../home/marksheet";
+import Section3 from "../about/section3";
+import TechCompo from "./techCompo";
+import TechnologyStack from "./technologyStack";
 import Slider from "react-slick";
-import Sidebar from "./components/sidebar";
+import Sidebar from "../components/sidebar";
 import { NextSeo } from "next-seo";
-import seoData from "../../public/data/service-seo.json";
+import seoData from "../../../public/data/service-seo.json";
+import serviceData from "../../../public/data/serviceData.json";
 
-const service = () => {
-  const head = "Web Development Making Benchmarking Products";
+const service = ({ type }) => {
+
+  const head = type || "Web Development";
+  const head2 = "Making Benchmarking Products"
   const sentence =
     "Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.";
   const showButton = true;
@@ -68,14 +71,19 @@ const service = () => {
   };
 
   return (
-    <div className="mx-auto max-w-7xl">
+    <div className="mx-auto md:max-w-7xl">
       <Navbar />
       <Sidebar />
       <MainHeadline
         head={head}
+        head2={head2}
         sentence={sentence}
         showButton={showButton}
         buttonPlaceholder={buttonPlaceholder}
+        mainCss={'mt-4 '}
+        headCss={'sm:w-10/12 sm:mt-24 '}
+        head2Css={'sm:font-thin w-full sm:mb-10 mt-[3px]'}
+        pCss={'md:w-11/12 sm:text-xl mb-7'}
       />
       <div className="mt-16">
         <Section3
@@ -84,11 +92,18 @@ const service = () => {
           boxParaTitle={boxParaTitle}
           boxContent={boxContent}
         />
-        <Headline title={title} desc={desc} />
-        <div className="mt-5">
+        <Headline
+          mainCss={''}
+          title={title}
+          desc={desc}
+          titleCss={'md:font-bold md:text-4xl'}
+          descCss={'md:w-[32rem] font-semibold mt-7 md:ml-12 '}
+        />
+
+        <div className="mt-24 md:-ml-10">
           <Slider {...sliderSettings}>
             {projects.map((data, index) => (
-              <div key={index} className="h-auto w-auto p-2 ">
+              <div key={index} className="h-auto w-auto p-10 ">
                 <img src={data.image} alt={`Project Image ${index + 1}`} />
               </div>
             ))}
@@ -99,11 +114,40 @@ const service = () => {
       <TechCompo />
       <TechnologyStack />
       <Testimonials />
-      <GetFreeProp />
+      <GetFreeProp
+        head={'Let’s make things happen'}
+        para={'Contact us today to learn more about how our digital marketing services can help your business grow and succeed online.'}
+        buttonText="Get your free proposal" />
       <Marksheet />
       <Footer />
     </div>
   );
 };
 
+
+
 export default service;
+
+
+export async function getStaticProps({ params: { type } }) {
+
+
+  return { props: { type } }
+
+}
+
+
+export async function getStaticPaths() {
+
+  let paths = await serviceData?.arr?.map(x => {
+
+    return { params: { type: x?.development.replace('/', '') } }
+  })
+
+  // console.log('path is ',paths)
+
+  return {
+    paths,
+    fallback: true
+  }
+}

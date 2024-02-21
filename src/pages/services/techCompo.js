@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const TechCompo = ({ development, index, content, image }) => {
   const [isExpanded, setExpanded] = useState(false);
+  // console.log('isExpanded',isExpanded)
 
   function bg_color(index) {
     if (index === 0 || index === 2 || index === 4 || index === 6)
@@ -32,7 +33,7 @@ const TechCompo = ({ development, index, content, image }) => {
   const sliderSettings = {
     dots: false,
     infinite: true,
-    slidesToShow: 11,
+    slidesToShow: 7,
     autoplay: true,
     arrows: false,
     autoplaySpeed: 0,
@@ -45,48 +46,48 @@ const TechCompo = ({ development, index, content, image }) => {
     <div
       className={` ${bg_color(
         index
-      )} container mt-10 border border-b-[5px] border-l_black rounded-[3rem] p-8`}
+      )} container mt-10 border border-b-[5px] border-l_black rounded-[3rem] p-16 cursor-pointer `}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="flex justify-between items-center mb-6">
-        <div className="mainData flex">
+      <div className="flex justify-between items-center mb-6 ">
+        <div className="mainData flex ">
           <div>
             <h2 className="font-bold text-5xl mr-10">0{index + 1}</h2>
           </div>
           <div className="place-self-center">
-            <h2 className="font-semibold text-xl">{development}</h2>
+            <h2 className="font-bold md:text-3xl -ml-4 ">{development}</h2>
           </div>
         </div>
-        <div className="flex items-center buttonClass">
-          <div className="transform -rotate-[30deg] mr-3">
-            <Link href="/service/service">
+        <div className="flex items-center buttonClass scale-50 md:scale-100">
+          <div className="transform -rotate-[30deg] mr-3 ">
+            <Link href={`/service/${development?.replace('/','')}`} className="">
               <span
-                className={`rounded-full p-2 pt-5 bg-black ${arrow_color(
+                className={`rounded-full p-3 pt-8 pb-3 bg-black ${arrow_color(
                   index
                 )} text-[6px]`}
               >
-                <FontAwesomeIcon icon={faArrowRight} size="4x" />
+                <FontAwesomeIcon icon={faArrowRight} size="5x" />
               </span>
             </Link>
           </div>
-          <Link href="/service/service">
-            <p>Learn more</p>
+          <Link href={`/service/${development?.replace('/','')}`}>
+            <p className="ml-4 md:ml-0">Learn more</p>
           </Link>
         </div>
       </div>
-      <hr className="border-t-2 border-black mb-2" />
-      <div className={`content ${isExpanded ? "expanded" : ""}`}>
-        {content}
+      <hr className="border-t-2 border-black my-10" />
+      <div className={`content overflow-hidde text-md${isExpanded ? "expanded" : ""}`}>
+        <p className="text-sm md:text-md">{content} </p>
         {isExpanded && (
-          <Slider {...sliderSettings}>
+          <Slider {...sliderSettings} className="hidden sm:block mt-14 scale-150 w-8/12 mx-auto p-1 ease-in duration-300" >
             {Array.isArray(image) ? (
               image.map((imageName, i) => (
                 <img
                   key={i}
                   src={imageName}
                   alt={`Icon ${i + 1}`}
-                  className="h-10 px-10 mt-5"
+                  className="h-14 w-5/12 px-10 mt-5 "
                 />
               ))
             ) : (

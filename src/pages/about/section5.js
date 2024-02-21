@@ -1,6 +1,6 @@
 import React from "react";
 
-const section5 = ({ head, index }) => {
+const section5 = ({mainCss, head, index }) => {
   if (!head || typeof head !== "object") {
     console.error("Invalid head object:", head);
     return null; // or return some default content
@@ -24,30 +24,30 @@ const section5 = ({ head, index }) => {
   }
 
   return (
-    <div className="mt-5">
-      <div className="bg-l_black platform-card rounded-[3rem] flex sm:pl-16 p-10 sm:p-10 border border-b-[5px] border-l_black justify-between m-auto h-full  sm:w-[100%]">
-        <div className={`w-89 h-89 m-auto platform-image ${textColor(index)}`}>
+    <div className={`mt-5 ${mainCss}`}>
+      <div className="bg-l_black flex-row sm:platform-card rounded-[3rem] flex sm:pl-16 p-10 sm:p-10 border border-b-[5px] border-l_black justify-between m-auto h-full  sm:w-[100%]">
+        <div className={` w-28 sm:w-40 h-50 m-auto platform-image p-4 ${textColor(index)}`}>
           <img src={head.image} alt={head.alt} />
         </div>
 
-        <div className="px-5 w-auto mt-2">
+        <div className="px-5 w-10/12 mt-2 md:ml-2">
           <h2
             className={` sm:text-3xl text-xl font-semibold rounded-md px-2 ${bgColor(
               index
-            )}  sm:ml-12 service_heading`}
+            )}  sm:ml-0 service_heading`}
           >
             {head.head.split(" ")[0]}
           </h2>
           <h2
             className={` sm:text-3xl text-xl font-semibold rounded-md px-1 ${bgColor(
               index
-            )}  sm:ml-12 service_heading`}
+            )}  sm:ml-0 service_heading`}
           >
             {head.head.split(" ").length == 2
               ? head.head.split(" ")[1]
               : head.head.split(" ").slice(1).join(" ")}
           </h2>
-          <p className="text-white mt-4">{head.para}</p>
+          <p className="text-white text-sm mt-4">{head.para}</p>
         </div>
       </div>
     </div>
