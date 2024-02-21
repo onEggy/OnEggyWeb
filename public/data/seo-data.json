@@ -1,14 +1,14 @@
 {
     "/": {
-      "title": "OnEggy",
+      "title": "Design Develop Deploy & Managed Tech Apps - OnEggy Technologies",
       "description": "Welcome to our website!"
     },
     "/about": {
-      "title": "About Us",
+      "title": "About Us - OnEggy Technologies",
       "description": "Learn more about our company."
     },
     "/blog": {
-      "title": "Blog",
+      "title": "Blog - OnEggy Technologies",
       "description": "Read our latest blog posts."
     },
     "/blogOne": {
@@ -16,7 +16,7 @@
       "description": "Details about the first blog post."
     },
     "/service": {
-      "title": "Services",
+      "title": "Services - OnEggy Technologies",
       "description": "Explore our services."
     },
     "/serviceOne": {
@@ -24,15 +24,15 @@
       "description": "Details about the first service."
     },
     "/contact": {
-      "title": "Contact Us",
+      "title": "Contact Us - OnEggy Technologies",
       "description": "Get in touch with us."
     },
     "/team": {
-      "title": "Our Team",
+      "title": "Our Team - OnEggy Technologies",
       "description": "Meet our amazing team members."
     },
     "/client": {
-        "title": "Our Client",
+        "title": "Our Client - OnEggy Technologies",
         "description": "Meet our amazing team members."
       }
   }
