@@ -73,7 +73,7 @@ const Home = (skill) => {
   const buttonPlaceholder = "Book a Consultataion";
 
   return (
-    <div className="landingPage1 container max-w-7xl mx-auto overflow-x-hidden">
+    <div className="landingPage1 container max-w-7xl mx-auto overflow-x-hidden md:overflow-x-visible">
       <Navbar />
       <Sidebar />
       <div className="mt-16 sm:max-h-screen justify-between ">
