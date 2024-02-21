@@ -7,7 +7,7 @@ import Link from "next/link";
 const Technology = ({ skill, index }) => {
   console.log("Skill:", skill);
 
-  if (!skill || typeof skill !== "object" || !skill.title) {
+  if (!skill || typeof skill !== "object" || !skill.development || !skill.imageSrc) {
     // Log the reason for returning null
     console.error("Invalid skill object or missing title:", skill);
 
@@ -73,16 +73,16 @@ const Technology = ({ skill, index }) => {
             index
           )} sm:ml-12 mt-10 service_heading`}
         >
-          {skill.title.split(" ")[0]}
+          {skill.development.split(" ")[0]}
         </h2>
         <h2
           className={`sm:text-3xl text-xl font-semibold rounded-md px-1 ${textColor(
             index
           )} sm:ml-12 service_heading`}
         >
-          {skill.title.split(" ").length == 2
-            ? skill.title.split(" ")[1]
-            : skill.title.split(" ").slice(1).join(" ")}
+          {skill.development.split(" ").length == 2
+            ? skill.development.split(" ")[1]
+            : skill.development.split(" ").slice(1).join(" ")}
         </h2>
         <div className="flex">
           {arrowBg(index) === "bg-white" ? (
@@ -121,7 +121,7 @@ const Technology = ({ skill, index }) => {
             </svg>
           )}
           <Link
-            href={`service/${skill.title?.replace('/','')}`}
+            href={`service/${skill?.['meta-title-slug']}`}
             className={`text-blue-500 hover:underline mt-[8rem] ml-[15px] w-6/12 md:w-auto ${linkColor(
               index
             )}`}
@@ -133,7 +133,7 @@ const Technology = ({ skill, index }) => {
       <div className="flex">
         <img
           src={skill.imageSrc}
-          alt={skill.title}
+          alt={skill.development}
           width={0}
           height={0}
           style={{

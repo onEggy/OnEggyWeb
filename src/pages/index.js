@@ -14,6 +14,9 @@ export default function App() {
         title={currentPageData.title}
         description={currentPageData.description}
       />
+       <Head>
+        <meta name="keywords" content={currentPageData?.keywords} />
+      </Head>
       <Landing />
     </div>
   );

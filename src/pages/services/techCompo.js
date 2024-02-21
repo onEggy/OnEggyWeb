@@ -6,9 +6,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const TechCompo = ({ development, index, content, image }) => {
+const TechCompo = ({ development, index, content, image, ...props }) => {
   const [isExpanded, setExpanded] = useState(false);
-  // console.log('isExpanded',isExpanded)
+  // console.log('isExpanded',props)
 
   function bg_color(index) {
     if (index === 0 || index === 2 || index === 4 || index === 6)
@@ -61,7 +61,7 @@ const TechCompo = ({ development, index, content, image }) => {
         </div>
         <div className="flex items-center buttonClass scale-50 md:scale-100">
           <div className="transform -rotate-[30deg] mr-3 ">
-            <Link href={`/service/${development?.replace('/','')}`} className="">
+            <Link href={`/service/${props?.['meta-title-slug']}`} className="">
               <span
                 className={`rounded-full p-3 pt-8 pb-3 bg-black ${arrow_color(
                   index
@@ -71,7 +71,7 @@ const TechCompo = ({ development, index, content, image }) => {
               </span>
             </Link>
           </div>
-          <Link href={`/service/${development?.replace('/','')}`}>
+          <Link href={`/service/${props?.['meta-title-slug']}`}>
             <p className="ml-4 md:ml-0">Learn more</p>
           </Link>
         </div>

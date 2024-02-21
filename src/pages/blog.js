@@ -7,6 +7,7 @@ import Compo from "./blogOne/compo";
 import Sidebar from "./components/sidebar";
 import seoData from "../../public/data/seo-data.json";
 import { NextSeo } from "next-seo";
+import Head from "next/head";
 
 const blogOne = () => {
   const currentPageData = seoData["/blog"];
@@ -47,6 +48,9 @@ const blogOne = () => {
         title={currentPageData.title}
         description={currentPageData.description}
       />
+      <Head>
+        <meta name="keywords" content={currentPageData?.keywords} />
+      </Head>
       <Navbar />
       <Sidebar />
       <div className="w-full md:w-5/6  mx-auto">
@@ -93,14 +97,14 @@ const blogOne = () => {
           </ul>
         </div>
       </div>
-     
+
       <GetFreeProp
         head={'Looking for any personalized service'}
         para={'Contact us today to learn more about how our digital marketing services can help your business grow and succeed online.'}
       />
 
       <div className="w-full md:w-3/4 px-4 md:mb-3 ">
-        {arr?.slice(0,1).map((props, index) => (
+        {arr?.slice(0, 1).map((props, index) => (
           <Compo key={index} {...props} />
         ))}
       </div>

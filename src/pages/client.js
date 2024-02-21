@@ -5,9 +5,10 @@ import Section1 from "./components/mainHeadline";
 import Footer from "./components/footer";
 import Sidebar from "./components/sidebar";
 import seoData from "../../public/data/seo-data.json";
-import nextseo from "next-seo";
+import nextseo, { NextSeo } from "next-seo";
 
 import clientPageData from "../../public/data/clientPage.json";
+import Head from "next/head";
 
 const Client = () => {
   const currentPageData = seoData["/client"];
@@ -24,10 +25,13 @@ const Client = () => {
 
   return (
     <div className="max-w-7xl mx-auto">
-      <nextseo
+      <NextSeo
         title={currentPageData.title}
         description={currentPageData.description}
       />
+      <Head>
+        <meta name="keywords" content={currentPageData?.keywords} />
+      </Head>
       <Navbar />
       <Sidebar />
       <Section1

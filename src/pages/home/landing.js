@@ -15,6 +15,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Sidebar from "../components/sidebar";
 import Link from "next/link";
+import serviceData from "../../../public/data/serviceData.json";
+
 
 const Home = (skill) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,45 +25,7 @@ const Home = (skill) => {
     setIsOpen(!isOpen);
   };
 
-  const getFreePropText = {head:"Let's get things begun",para:"Contact us today to learn more about how our digital services may assist your company in growing and succeeding online"}
-  const skillsArray = [
-    {
-      title: "Website Development",
-      imageSrc: "/home/landingComponent/1.png",
-      icon: "faArrowRight",
-      learnMoreLink: "#",
-    },
-    {
-      title: "Application Development",
-      imageSrc: "/home/landingComponent/2.png",
-      icon: "faArrowRight",
-      learnMoreLink: "#",
-    },
-    {
-      title: "UI/UX Designing",
-      imageSrc: "/home/landingComponent/3.png",
-      icon: "faArrowRight",
-      learnMoreLink: "#",
-    },
-    {
-      title: "DevOps Services",
-      imageSrc: "/home/landingComponent/4.png",
-      icon: "faArrowRight",
-      learnMoreLink: "#",
-    },
-    {
-      title: "QA & Testing",
-      imageSrc: "/home/landingComponent/5.png",
-      icon: "faArrowRight",
-      learnMoreLink: "#",
-    },
-    {
-      title: "Cloud Manage Services",
-      imageSrc: "/home/landingComponent/6.png",
-      icon: "faArrowRight",
-      learnMoreLink: "#",
-    },
-  ];
+  const getFreePropText = { head: "Let's get things begun", para: "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online" }
 
   const mapIcons = {
     faArrowRight,
@@ -90,7 +54,7 @@ const Home = (skill) => {
               width={0}
               height={0}
               sizes="100vw"
-              className="md:hidden" 
+              className="md:hidden"
               style={{ width: "80%", height: "auto", margin: "auto" }}
             />
             <p className="mt-12 text-justify font-spaceGrotesk sm:pr-48 px-0">
@@ -108,14 +72,14 @@ const Home = (skill) => {
         <Projectlogos />
         <Awards />
         <Headline title={title} desc={desc} width={''} titleCss={'md:font-bold md:text-4xl'} descCss={' w-[25rem] ml-0 md:w-[40rem] mt-7'} />
-        <div className="flex flex-col justify-center   px-6 mt-10 overflow-hidden sm:flex-row sm:flex-wrap sm:px-0  ">
-          {skillsArray.map((skill, index) => (
+        <div className="flex flex-col justify-center   px-6 mt-10 overflow-hidden sm:flex-row sm:flex-wrap sm:px-0 ">
+          {serviceData?.arr?.map((skill, index) => (
             <Technology key={index} skill={skill} index={index} />
           ))}
         </div>
 
         <div className="hidden md:flex justify-end  ">
-          <div className="mr-7 mt-4 p-[8px] bg-l_black transform -rotate-[30deg] text-[4px] scale-150 cursor-pointer" style={{borderRadius:'50%'}}>
+          <div className="mr-7 mt-4 p-[8px] bg-l_black transform -rotate-[30deg] text-[4px] scale-150 cursor-pointer" style={{ borderRadius: '50%' }}>
             <span className="text-white">
               <FontAwesomeIcon icon={faArrowRight} size="4x" />
             </span>
@@ -124,10 +88,10 @@ const Home = (skill) => {
             <Link href={'/services'}>Learn More</Link>
           </div>
         </div>
-        <GetFreeProp 
-        head={getFreePropText.head}
-        para={getFreePropText.para}
-        buttonText="Get your proposal"
+        <GetFreeProp
+          head={getFreePropText.head}
+          para={getFreePropText.para}
+          buttonText="Get your proposal"
         />
         <Marksheet />
         <Testimonials />
