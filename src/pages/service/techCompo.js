@@ -67,7 +67,7 @@ const techCompo = ({serviceTypes}) => {
       />
 
       <div className="flex flex-wrap sm:flex-row justify-center  mt-10 ">
-        {compoArray.map((head, index) => (
+        {compoArray?.map((head, index) => (
           <div key={index} className=" md:w-6/12">
             <Section5 mainCss={'p-3'} head={head} index={index} />
           </div>
