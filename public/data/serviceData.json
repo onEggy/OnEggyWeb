@@ -27,7 +27,41 @@
         "../service/react.svg",
         "../service/angular.svg"
       ],
-      "imageSrc": "../home/landingComponent/1.png"
+      "imageSrc": "../home/landingComponent/1.png",
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        }
+      ]
     },
     {
       "meta-title": "App Development Service - OnEggy Technologies",
@@ -50,7 +84,41 @@
         "../service/react.svg",
         "../service/angular.svg"
       ],
-      "imageSrc": "../home/landingComponent/2.png"
+      "imageSrc": "../home/landingComponent/2.png",
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        }
+      ]
     },
     {
       "meta-title": "MVP Development Service - OnEggy Technologies",
@@ -73,7 +141,41 @@
         "../service/react.svg",
         "../service/angular.svg"
       ],
-      "imageSrc": "../home/landingComponent/3.png"
+      "imageSrc": "../home/landingComponent/3.png",
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        }
+      ]
     },
     {
       "meta-title": "Custom App & Softwares Development Service - OnEggy Technologies",
@@ -96,7 +198,41 @@
         "../service/react.svg",
         "../service/angular.svg"
       ],
-      "imageSrc": "../home/landingComponent/4.png"
+      "imageSrc": "../home/landingComponent/4.png",
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        }
+      ]
     },
     {
       "meta-title": "UI/UX Design Service - OnEggy Technologies",
@@ -119,7 +255,41 @@
         "../service/react.svg",
         "../service/angular.svg"
       ],
-      "imageSrc": "../home/landingComponent/5.png"
+      "imageSrc": "../home/landingComponent/5.png",
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        }
+      ]
     },
     {
       "meta-title": "QA Testing App or Softwares Service - OnEggy Technologies",
@@ -142,7 +312,41 @@
         "../service/react.svg",
         "../service/angular.svg"
       ],
-      "imageSrc": "../home/landingComponent/6.png"
+      "imageSrc": "../home/landingComponent/6.png",
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        }
+      ]
     },
     {
       "meta-title": "IT Staffing Service - OnEggy Technologies",
@@ -164,9 +368,77 @@
         "../service/vue.svg",
         "../service/react.svg",
         "../service/angular.svg"
+      ],
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image":"../service/speaker.png"
+        }
       ]
     }
   ],
   "head2": "Let's get things begun",
-  "para2": "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online"
+  "para2": "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online",
+  "serviceType": "Web Development Services",
+  "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+  "serviceTypes": [
+    {
+      "head": "Front-end Development",
+      "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+      "image":"../service/speaker.png"
+    },
+    {
+      "head": "Back-end Development",
+      "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+      "image":"../service/speaker.png"
+    },
+    {
+      "head": "CMS Development",
+      "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+      "image":"../service/speaker.png"
+    },
+    {
+      "head": "eCommerce Development",
+      "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+      "image":"../service/speaker.png"
+    },
+    {
+      "head": "SaaS-Apps Development",
+      "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+      "image":"../service/speaker.png"
+    },
+    {
+      "head": "Custom-Web Development",
+      "subHead":"Contact us today to learn more about how our digital marketing services can succeed online.",
+      "image":"../service/speaker.png"
+    }
+  ]
 }

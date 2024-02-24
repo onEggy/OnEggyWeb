@@ -119,7 +119,7 @@ const service = (props) => {
         </div>
       </div>
 
-      <TechCompo />
+      <TechCompo serviceTypes={props.serviceTypes}  />
       <TechnologyStack />
       <Testimonials />
       <GetFreeProp
