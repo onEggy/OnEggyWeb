@@ -3,7 +3,7 @@ import Headline from "../components/headline";
 import Section5 from "../about/section5";
 
 const techCompo = ({serviceTypes}) => {
-  // console.log('serviceTypes',serviceTypes)
+  console.log('serviceTypes',serviceTypes)
   const title = "Web Development Services";
   const desc =
     "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies";

@@ -11,15 +11,11 @@ const TechCompo = ({ development, index, content, image, ...props }) => {
   // console.log('isExpanded',props)
 
   function bg_color(index) {
-    if (index === 0 || index === 2 || index === 4 || index === 6)
-      return "bg-blue";
-    else return "bg-offWhite";
+    return index % 2 === 0 ? "bg-offWhite" : "bg-blue";
   }
-
+  
   function arrow_color(index) {
-    if (index === 0 || index === 2 || index === 4 || index === 6)
-      return "text-blue";
-    else return "text-offWhite";
+    return index % 2 === 0 ? "text-offWhite" : "text-blue";
   }
 
   const handleMouseEnter = () => {

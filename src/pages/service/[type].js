@@ -18,6 +18,7 @@ import Head from "next/head";
 
 const service = (props) => {
 
+  // console.log('porps',props)
   const head = props.development || "Web Development";
   const head2 = "Making Benchmarking Products"
   const sentence =
