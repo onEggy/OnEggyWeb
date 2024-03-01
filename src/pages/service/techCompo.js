@@ -2,48 +2,60 @@ import React from "react";
 import Headline from "../components/headline";
 import Section5 from "../about/section5";
 
-const techCompo = () => {
+const techCompo = ({serviceTypes}) => {
+  console.log('serviceTypes',serviceTypes)
   const title = "Web Development Services";
   const desc =
     "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies";
-  const compoArray = [
-    {
-      head: "Front-end Development",
-      para: "Contact us today to learn more about how our digital marketing services can succeed online.",
-      image: "/service/speaker.png",
+  // let compoArray = [
+  //   {
+  //     head: "Front-end Development",
+  //     para: "Contact us today to learn more about how our digital marketing services can succeed online.",
+  //     image: "/service/speaker.png",
+  //     alt: "Speaker Image",
+  //   },
+  //   {
+  //     head: "Back-end Development",
+  //     para: "Contact us today to learn more about how our digital marketing services can succeed online.",
+  //     image: "/service/speaker.png",
+  //     alt: "Speaker Image",
+  //   },
+  //   {
+  //     head: "CMS Development",
+  //     para: "Contact us today to learn more about how our digital marketing services can succeed online.",
+  //     image: "/service/speaker.png",
+  //     alt: "Speaker Image",
+  //   },
+  //   {
+  //     head: "eCommerce Development",
+  //     para: "Contact us today to learn more about how our digital marketing services can succeed online.",
+  //     image: "/service/speaker.png",
+  //     alt: "Speaker Image",
+  //   },
+  //   {
+  //     head: "SaaS-Apps Development",
+  //     para: "Contact us today to learn more about how our digital marketing services can succeed online.",
+  //     image: "/service/speaker.png",
+  //     alt: "Speaker Image",
+  //   },
+  //   {
+  //     head: "Custom-Web Development",
+  //     para: "Contact us today to learn more about how our digital marketing services can succeed online.",
+  //     image: "/service/speaker.png",
+  //     alt: "Speaker Image",
+  //   },
+  // ];
+
+  let compoArray = serviceTypes?.map(x => {
+    return {
+      head: x?.head,
+      para: x?.subHead,
+      image: x?.image,
       alt: "Speaker Image",
-    },
-    {
-      head: "Back-end Development",
-      para: "Contact us today to learn more about how our digital marketing services can succeed online.",
-      image: "/service/speaker.png",
-      alt: "Speaker Image",
-    },
-    {
-      head: "CMS Development",
-      para: "Contact us today to learn more about how our digital marketing services can succeed online.",
-      image: "/service/speaker.png",
-      alt: "Speaker Image",
-    },
-    {
-      head: "eCommerce Development",
-      para: "Contact us today to learn more about how our digital marketing services can succeed online.",
-      image: "/service/speaker.png",
-      alt: "Speaker Image",
-    },
-    {
-      head: "SaaS-Apps Development",
-      para: "Contact us today to learn more about how our digital marketing services can succeed online.",
-      image: "/service/speaker.png",
-      alt: "Speaker Image",
-    },
-    {
-      head: "Custom-Web Development",
-      para: "Contact us today to learn more about how our digital marketing services can succeed online.",
-      image: "/service/speaker.png",
-      alt: "Speaker Image",
-    },
-  ];
+    }})
+
+
+
 
   return (
     <div className="mt-10 px-4">
@@ -55,9 +67,9 @@ const techCompo = () => {
       />
 
       <div className="flex flex-wrap sm:flex-row justify-center  mt-10 ">
-        {compoArray.map((head, index) => (
+        {compoArray?.map((head, index) => (
           <div key={index} className=" md:w-6/12">
-          <Section5 mainCss={'p-3'}  head={head} index={index} />
+            <Section5 mainCss={'p-3'} head={head} index={index} />
           </div>
         ))}
       </div>

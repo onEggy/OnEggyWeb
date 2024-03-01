@@ -18,6 +18,7 @@ import Head from "next/head";
 
 const service = (props) => {
 
+  // console.log('porps',props)
   const head = props.development || "Web Development";
   const head2 = "Making Benchmarking Products"
   const sentence =
@@ -119,7 +120,7 @@ const service = (props) => {
         </div>
       </div>
 
-      <TechCompo />
+      <TechCompo serviceTypes={props.serviceTypes}  />
       <TechnologyStack />
       <Testimonials />
       <GetFreeProp
