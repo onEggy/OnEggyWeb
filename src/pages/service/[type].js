@@ -92,7 +92,7 @@ const service = (props) => {
 
         <div className="mt-24 md:-ml-0">
           <Slider {...sliderSettings}>
-            {props?.projects.map((data, index) => (
+            {props?.projects?.map((data, index) => (
               <div key={index} className="h-auto w-auto p-10 ">
                 <img src={data.image} alt={`Project Image ${index + 1}`} />
               </div>
