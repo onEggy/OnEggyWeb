@@ -5,17 +5,17 @@ import "slick-carousel/slick/slick-theme.css";
 
 const CarouselImages = () => {
   const images = [
-    "/team/people.png",
-    "/team/people.png",
-    "/team/people.png",
-    "/team/people.png",
-    "/team/people.png",
-    "/team/people.png",
-    "/team/people.png",
-    "/team/people.png",
-    "/team/people.png",
-    "/team/people.png",
-    "/team/people.png",
+    "/team/people.jpg",
+    "/team/people2.jpg",
+    "/team/people3.jpg",
+    "/team/people4.jpg",
+    "/team/people5.jpg",
+    "/team/people.jpg",
+    "/team/people.jpg",
+    "/team/people.jpg",
+    "/team/people.jpg",
+    "/team/people.jpg",
+    "/team/people.jpg",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -61,7 +61,7 @@ const CarouselImages = () => {
           <div key={index} className="carousel-item w-full">
             <img
               src={image}
-              alt={`Carousel Image ${index + 1}`}
+              alt={`oneggy-technologies-image-${index + 1}`}
               className="w-auto lg:h-40 px-2 lg:px-0"
             />
           </div>

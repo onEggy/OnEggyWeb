@@ -30,10 +30,10 @@ const footer = () => {
         </ul>
         <div className=" space-x-4 self-center hidden sm:flex">
           <div className="bg-white w-8 h-8 flex justify-center items-center rounded-full text-l_black">
-            <FontAwesomeIcon icon={faLinkedinIn} />
+            <a href="https://www.linkedin.com/company/oneggy" target="_blank"> <FontAwesomeIcon icon={faLinkedinIn} /> </a>
           </div>
           <div className="bg-white  w-8 h-8 flex justify-center items-center rounded-full text-l_black">
-            <FontAwesomeIcon icon={faFacebookF} />
+            <a href="https://www.facebook.com/oneggytechnologies" target="_blank"><FontAwesomeIcon icon={faFacebookF} /> </a>
           </div>
           <div className="bg-white  w-8 h-8 flex justify-center items-center rounded-full text-l_black">
             <FontAwesomeIcon icon={faTwitter} />
@@ -72,11 +72,12 @@ const footer = () => {
         </div>
       </div>
       <div className="flex space-x-4 justify-center sm:hidden mt-4 mb-8">
+
         <div className="bg-white w-8 h-8 flex justify-center items-center rounded-full text-l_black">
-          <FontAwesomeIcon icon={faLinkedinIn} />
+          <a href="https://www.linkedin.com/company/oneggy" target="_blank"> <FontAwesomeIcon icon={faLinkedinIn} /> </a>
         </div>
         <div className="bg-white  w-8 h-8 flex justify-center items-center rounded-full text-l_black">
-          <FontAwesomeIcon icon={faFacebookF} />
+          <a href="https://www.facebook.com/oneggytechnologies" target="_blank"><FontAwesomeIcon icon={faFacebookF} /> </a>
         </div>
         <div className="bg-white  w-8 h-8 flex justify-center items-center rounded-full text-l_black">
           <FontAwesomeIcon icon={faTwitter} />

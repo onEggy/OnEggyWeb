@@ -45,7 +45,7 @@ const Home = (skill) => {
           {/*WRAPPER*/}
           <div style={{ width: "589px" }}>
             {/*HEADINGS*/}
-            <h1 className="text-[45px] font-medium mb-2 leading-tight md:text-6xl md:font-semibold theme-heading">
+            <h1 className="text-[45px] lg:-ml-2 font-medium mb-2 leading-tight md:text-6xl md:font-semibold theme-heading">
               Transforming Technology with a Human Touch
             </h1>
             <Image
@@ -71,7 +71,14 @@ const Home = (skill) => {
 
         <Projectlogos />
         <Awards />
-        <Headline title={title} desc={desc} width={''} titleCss={'md:font-bold md:text-4xl'} descCss={' w-[25rem] ml-0 md:w-[40rem] mt-7'} />
+        <Headline
+          mainCss="md:ml-4"
+          title={title}
+          desc={desc}
+          width={''}
+          titleCss={'md:font-bold md:text-4xl '}
+          descCss={' w-[25rem] ml-0 md:w-[40rem] mt-7'}
+        />
         <div className="flex flex-col justify-center   px-6 mt-10 overflow-hidden sm:flex-row sm:flex-wrap sm:px-0 ">
           {serviceData?.arr?.map((skill, index) => (
             <Technology key={index} skill={skill} index={index} />

@@ -8,7 +8,10 @@ import seoData from "../../public/data/seo-data.json";
 import nextseo, { NextSeo } from "next-seo";
 
 import clientPageData from "../../public/data/clientPage.json";
+import serviceData from "../../public/data/serviceData.json";
 import Head from "next/head";
+import Image from "next/image";
+import Slider from "react-slick";
 
 const Client = () => {
   const currentPageData = seoData["/client"];
@@ -22,6 +25,65 @@ const Client = () => {
     sentence,
     buttonPlaceholder,
   } = clientPageData;
+
+  let allProjects = []
+
+  serviceData?.arr?.map(types => {
+
+    types?.projects?.map(project => {
+      allProjects.push({ ...project, image: project.image?.replace('../', '/') })
+    })
+
+  })
+
+
+  const settings = {
+    // dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 0.98,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    easing: 'linear',
+    pauseOnHover: false,
+    arrows: true,
+    centerMode: true,
+    centerPadding: "35.33%",
+
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+          centerPadding: "22%",
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 0.98,
+          slidesToScroll: 1,
+          centerPadding: "4%",
+        },
+      },
+    ],
+    // customPaging: function (i) {
+    //   const isActive = i === currentSlide;
+    //   return isActive ? <ActiveDot /> : <NormalDot />;
+    // },
+    // nextArrow: <SampleNextArrow />,
+    // prevArrow: <SamplePrevArrow />
+  };
+
+
+  console.log(allProjects[0])
+
+
+
 
   return (
     <div className="max-w-7xl mx-auto">
@@ -40,18 +102,20 @@ const Client = () => {
         showButton={showButton}
         buttonPlaceholder={buttonPlaceholder}
       />
-      <div className="sm:flex mt-10">
-        {projects1.map((data, index) => (
+      {/* <div className="sm:flex mt-10 ">
+        {allProjects?.map((data, index) => (
           <div
             key={index}
             className="mx-auto p-4 h-[350px] w-[329px] sm:h-[378px] sm:w-[356px] sm:mx-10"
           >
             <img src={data.image} alt={`Project Image ${index}`} />
+
           </div>
         ))}
-      </div>
-      <div className="sm:flex sm:mt-10">
-        {projects2.map((data, index) => (
+      </div> */}
+
+      <Slider {...settings} className="md:ml-10">
+        {allProjects.map((data, index) => (
           <div
             key={index}
             className="mx-auto p-4 h-[226.85px] w-[329px] sm:h-[378px] sm:w-[595px] sm:mx-10"
@@ -59,18 +123,38 @@ const Client = () => {
             <img src={data.image} alt={`Project Image ${index}`} />
           </div>
         ))}
-      </div>
-      <GetFreeProp />
-      <div className="sm:flex sm:mt-10">
-        {projects3.map((data, index) => (
+      </Slider>
+
+
+
+
+
+      <Slider {...settings} className="mt-16 md:ml-10">
+        {allProjects.map((data, index) => (
           <div
             key={index}
-            className="mx-auto p-4 h-[350px] w-[329px] sm:h-[378px] sm:w-[356px] sm:mx-10"
+            className="mx-auto p-4 h-[226.85px] w-[329px] sm:h-[378px] sm:w-[595px] sm:mx-10"
           >
             <img src={data.image} alt={`Project Image ${index}`} />
           </div>
         ))}
-      </div>
+      </Slider>
+
+      <GetFreeProp
+        head
+        para={sentence} />
+
+      <Slider {...settings} className="md:ml-10">
+        {allProjects.map((data, index) => (
+          <div
+            key={index}
+            className="mx-auto p-4 h-[226.85px] w-[329px] sm:h-[378px] sm:w-[595px] sm:mx-10"
+          >
+            <img src={data.image} alt={`Project Image ${index}`} />
+          </div>
+        ))}
+      </Slider>
+
       <Footer />
     </div>
   );

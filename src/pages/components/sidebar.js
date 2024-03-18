@@ -1,3 +1,5 @@
+import { faFacebookF, faLinkedinIn, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -80,12 +82,26 @@ const Sidebar = () => {
 
             <div className="follow">
               <p className="sidebar-para">Follow us on</p>
-              <ul className="sidebar-list">
-                {/* Add social media links here */}
-              </ul>
+              {/* <ul className="sidebar-list">
+                
+              </ul> */}
+
+              <div className="flex space-x-4 justify-start mt-4 mb-8 ">
+
+                <div className="bg-black w-8 h-8 flex justify-center items-center rounded-full text-white">
+                  <a href="https://www.linkedin.com/company/oneggy" target="_blank"> <FontAwesomeIcon icon={faLinkedinIn} /> </a>
+                </div>
+                <div className="bg-black  w-8 h-8 flex justify-center items-center rounded-full text-white">
+                  <a href="https://www.facebook.com/oneggytechnologies" target="_blank"><FontAwesomeIcon icon={faFacebookF} /> </a>
+                </div>
+                <div className="bg-black  w-8 h-8 flex justify-center items-center rounded-full text-white">
+                  <FontAwesomeIcon icon={faTwitter} />
+                </div>
+              </div>
+
             </div>
             {/* <p>Additional Text</p> */}
-            <li>{/* add  the button here bro */}</li>
+          
           </div>
         </div>
       </div>

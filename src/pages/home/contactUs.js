@@ -38,7 +38,7 @@ const contactUs = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ _subject: "OnEggy Contact WebPage Submission", ...formData })
+        body: JSON.stringify({ _subject: selectedOption + " " + "OnEggy Contact WebPage Submission", ...formData })
       }).then(res => {
         settoast(true)
         settoastMsg({
@@ -81,7 +81,7 @@ const contactUs = () => {
   };
 
   return (
-    <div className="px-4 sm:px-0">
+    <div id='contactUs' className="px-4 sm:px-0">
 
       <Headline title={title} desc={desc} titleCss={'md:font-bold md:text-4xl'} descCss={'md:w-[18rem] mt-7 md:ml-16'} />
       {/* <div className="sm:mt-20 mt-10 bg-offWhite p-14 rounded-3xl flex relative overflow-hidden"> */}
