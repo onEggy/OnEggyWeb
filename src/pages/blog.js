@@ -8,6 +8,7 @@ import Sidebar from "./components/sidebar";
 import seoData from "../../public/data/seo-data.json";
 import { NextSeo } from "next-seo";
 import Head from "next/head";
+import seggregateData from "../../public/data/blogTags.json"
 
 const blogOne = () => {
   const currentPageData = seoData["/blog"];
@@ -37,8 +38,8 @@ const blogOne = () => {
     },
   ];
 
-  const CategoryList = ['Web Design', 'Development', 'UI/UX', 'Branding']
-  const tagList = ['Business', 'Experience', 'Screen', 'Technology', 'Marketing', 'Life']
+  const CategoryList = seggregateData.category
+  const tagList = seggregateData.tags
 
 
 

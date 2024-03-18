@@ -13,7 +13,7 @@ const section1 = ({ head,head2='', sentence, showButton, buttonPlaceholder, main
       <p className={`mt-7 sm:w-2/3 text-center px-6 ${pCss}`}>
         {sentence}
       </p>
-      {showButton && <ConsultationButton buttonPlaceholder={buttonPlaceholder} />}
+      {showButton && <ConsultationButton buttonPlaceholder={buttonPlaceholder} redirect="/contact" />}
     </div>
   );
 };

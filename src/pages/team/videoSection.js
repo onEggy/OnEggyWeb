@@ -25,7 +25,7 @@ const VideoSection = () => {
         </div>
       </div>
       <div className="hidden lg:block ">
-        <img className="scale-[1.7] position: relative right-60 top-6" src="../team/figure.png" alt="Right Image" />
+        <img className="scale-[1.7] position: relative right-60 top-14" src="../team/figure.png" alt="Right Image" />
       </div>
     </div>
   );

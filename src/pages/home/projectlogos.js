@@ -12,8 +12,8 @@ const ProjectLogos = () => {
     slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 0,
-    cssEase: "linear",
+    autoplaySpeed: 2000,
+    // cssEase: "linear",
     pauseOnHover: false,
     responsive: [
       {
@@ -26,7 +26,7 @@ const ProjectLogos = () => {
   };
 
   return (
-    <main className="sm:mt-14 my-12">
+    <main className="sm:mt-14 my-12  md:ml-4">
       <div className="inner">
         <Slider {...sliderSettings}>
           {projectLogosData.projectLogos.map((logo) => (

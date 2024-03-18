@@ -12,11 +12,11 @@ const Section2 = () => {
           {/* Apply rounded and shadow classes */}
           <div className="rounded-xl shadow-lg">
             <Image
-              src="/about/people.png"
+              src="/about/people.jpg"
               alt="People Image"
-              sizes="100vw"
-              width={0}
-              height={0}
+              // sizes="100vw"
+              width={200}
+              height={200}
               className="w-full h-auto rounded-xl"
             />
           </div>
@@ -43,7 +43,7 @@ const Section2 = () => {
             </p>
           </div>
           <div className="sm:w-1/2 hidden sm:block p-10 mt-24 sm:mt-0">
-            <Image
+            {/* <Image
               src="/about/people.png"
               alt="People Image"
               height={0}
@@ -53,7 +53,17 @@ const Section2 = () => {
                 width: "100%",
                 height: "100%",
               }}
+            /> */}
+
+            <Image
+              src="/about/people.jpg"
+              alt="People Image"
+              // sizes="100vw"
+              width={150}
+              height={150}
+              className={`w-full h-full rounded-xl shadow-2xl ${styles["shadowfor-box"]}`}
             />
+
           </div>
         </div>
       </div>

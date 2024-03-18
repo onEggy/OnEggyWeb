@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import testimonialsData from "../../../public/data/testimonial.json";
+import Image from "next/image";
 
 const ActiveDot = () => (
   <div className="dot active-dot">
@@ -62,7 +63,7 @@ const Testimonials = () => {
   //       />
   //       );
   //     }
-      
+
   //     function SamplePrevArrow(props) {
   //       const { className, style, onClick } = props;
   //       return (
@@ -78,12 +79,12 @@ const Testimonials = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 0.98,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    easing:'linear',
-    pauseOnHover:false,
+    easing: 'linear',
+    pauseOnHover: false,
     arrows: true,
     centerMode: true,
     centerPadding: "25.33%",
@@ -104,7 +105,7 @@ const Testimonials = () => {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 0.96,
+          slidesToShow: 0.98,
           slidesToScroll: 1,
           centerPadding: "4%",
         },
@@ -130,13 +131,26 @@ const Testimonials = () => {
                   {testimonial.testimonial}
                 </p>
 
-                <div className="mb-20 mx-20">
-                  <h1 className="text-l_blue ml-10 mt-4 font-semibold text-left text-lg">
-                    {testimonial.name}
-                  </h1>
-                  <h2 className="text-left ml-10 text-white">
-                    {testimonial.designation}
-                  </h2>
+                <div className="mb-20 mx-20 flex flex-col w-auto md:w-auto">
+
+                  <div className="relative top-14 -left-10 md:-left-2">
+                    <Image
+                      src={testimonial?.avatar}
+                      alt="avatar image"
+                      width={35}
+                      height={35}
+                      className=""
+                    />
+                  </div>
+                  <div>
+                    <h1 className="text-l_blue md:ml-10 mt-4 font-semibold text-left text-lg">
+                      {testimonial.name}
+                    </h1>
+                    <h2 className="text-left md:ml-10 text-white text-sm md:text-lg">
+                      {testimonial.designation}
+                    </h2>
+                  </div>
+
                 </div>
               </div>
             ))}

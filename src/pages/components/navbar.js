@@ -69,7 +69,7 @@ export default function Navbar() {
                   )}
                 </Disclosure.Button> */}
               </div>
-              <nav className="py-4 lg:flex lg:justify-between mx-auto hidden lg:w-full order-1">
+              <nav className="py-4 lg:flex lg:justify-around xl:justify-between mx-auto hidden lg:w-full order-1">
                 <div className="flex flex-shrink-0 items-center">
                   <a href="/">
                     <Image src={logo} alt="Logasfo" width="150" height="55" />

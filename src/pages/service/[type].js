@@ -28,29 +28,6 @@ const service = (props) => {
   const title = "Our Work";
   const desc =
     "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies";
-  const projects = [
-    {
-      image: "../client/1.png",
-    },
-    {
-      image: "../client/2.png",
-    },
-    {
-      image: "../client/3.png",
-    },
-    {
-      image: "../client/3.png",
-    },
-    {
-      image: "../client/3.png",
-    },
-    {
-      image: "../client/3.png",
-    },
-    {
-      image: "../client/3.png",
-    },
-  ];
   const boxTitle1 = "Secured";
   const boxTitle2 = "Standardized";
   const boxParaTitle = "How we do it?";
@@ -62,6 +39,10 @@ const service = (props) => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    easing: 'linear',
+
     responsive: [
       {
         breakpoint: 768,
@@ -102,16 +83,16 @@ const service = (props) => {
           boxContent={boxContent}
         />
         <Headline
-          mainCss={''}
+          mainCss={'md:ml-12'}
           title={title}
           desc={desc}
           titleCss={'md:font-bold md:text-4xl'}
           descCss={'md:w-[32rem] font-semibold mt-7 md:ml-12 '}
         />
 
-        <div className="mt-24 md:-ml-10">
+        <div className="mt-24 md:-ml-0">
           <Slider {...sliderSettings}>
-            {projects.map((data, index) => (
+            {props?.projects.map((data, index) => (
               <div key={index} className="h-auto w-auto p-10 ">
                 <img src={data.image} alt={`Project Image ${index + 1}`} />
               </div>
@@ -120,7 +101,7 @@ const service = (props) => {
         </div>
       </div>
 
-      <TechCompo serviceTypes={props.serviceTypes}  />
+      <TechCompo serviceTypes={props.serviceTypes} />
       <TechnologyStack />
       <Testimonials />
       <GetFreeProp
@@ -140,8 +121,6 @@ export default service;
 
 export async function getStaticProps({ params: { type } }) {
 
-
-  // console.log('type is ', type)
   let path = await serviceData?.arr?.filter(x => x?.['meta-title-slug'] == type)
   return { props: path[0] }
 

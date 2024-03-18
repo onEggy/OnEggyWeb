@@ -34,12 +34,19 @@ const Awards = () => {
 
   return (
     <div className="mx-7">
-      <Headline title={title} desc={description} titleCss={'md:font-bold md:text-4xl'} descCss={'md:w-[36rem] mt-8 md:ml-20'} />
+      <Headline
+      mainCss="md:-ml-4"
+        title={title}
+        desc={description}
+        titleCss={'md:font-bold md:text-4xl'}
+        descCss={'md:w-[36rem] mt-8 md:ml-20'}
+      />
+
       <div className="flex flex-col md:flex-row mt-16">
-        <div className="w-full md:w-8/12 ">
+        <div className="w-full md:w-6/12  ">
           <Slider {...carouselSettings}>
             {images.map((image, index) => (
-              <div key={index} className="text-center p-10">
+              <div key={index} className="text-center p-5 md:-ml-10">
                 <img
                   src={image.url} // Use the image URL from JSON
                   alt={image.alt}
@@ -50,7 +57,7 @@ const Awards = () => {
             ))}
           </Slider>
         </div>
-        <div className="w-full md:w-5/12 p-5 mt-5 ">
+        <div className="w-full md:w-6/12 p-5 mt-5 ">
           <p>
             We create delectable dishes by combining design and technology with
             additional cheese of awesomeness. With demonstrated experience in
