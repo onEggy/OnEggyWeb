@@ -29,40 +29,50 @@
       ],
       "imageSrc": "../home/landingComponent/1.png",
       "serviceType": "Web Development Services",
-      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceInfo": "Discover our proven expertise in web development through real-life case studies showcasing our success.",
       "serviceTypes": [
         {
+          "head": "Requirement Analysis",
+          "subHead": "Thoroughly analyze your business needs and objectives to define clear requirements for your web development project.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "UI/UX Design",
+          "subHead": "Create visually appealing and user-friendly interfaces that enhance the overall user experience of your website.",
+          "image": "../service/speaker.png"
+        },
+        {
           "head": "Front-end Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "subHead": "Implement interactive and responsive front-end components to ensure seamless user interaction and engagement.",
           "image": "../service/speaker.png"
         },
         {
           "head": "Back-end Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "subHead": "Develop robust server-side architecture and functionalities to support the core functionality of your website.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "CMS Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Database Design & Integration",
+          "subHead": "Design and integrate databases seamlessly to store and manage your website's data efficiently.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "eCommerce Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Testing & Quality Assurance",
+          "subHead": "Conduct thorough testing and quality assurance to ensure your website functions flawlessly across different devices and browsers.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "SaaS-Apps Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Deployment & Maintenance",
+          "subHead": "Efficiently deploy your website and provide ongoing maintenance to keep it secure, updated, and optimized for performance.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "Custom-Web Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "SEO Optimization",
+          "subHead": "Optimize your website for search engines to improve visibility and drive organic traffic to your web pages.",
           "image": "../service/speaker.png"
         }
-      ],
-      "projects":[
+      ],    
+      "projects": [
         {
           "image": "../client/1.png"
         },
@@ -108,41 +118,51 @@
         "../service/angular.svg"
       ],
       "imageSrc": "../home/landingComponent/2.png",
-      "serviceType": "Web Development Services",
-      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceType": "App Development Services",
+      "serviceInfo": "Delve into actual instances illustrating our expertise in app development through our extensive case studies.",
       "serviceTypes": [
         {
-          "head": "Front-end Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Requirement Gathering",
+          "subHead": "Thoroughly understand your business needs and user requirements to define clear specifications for your app development project.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "Back-end Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "UI/UX Design",
+          "subHead": "Craft intuitive and visually appealing user interfaces that enhance user experience and engagement.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "CMS Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Native & Cross-platform Development",
+          "subHead": "Build high-quality mobile apps for iOS, Android, or both platforms using native or cross-platform development frameworks.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "eCommerce Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Backend Development",
+          "subHead": "Develop robust server-side components and APIs to power the functionality of your mobile app.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "SaaS-Apps Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Testing & Quality Assurance",
+          "subHead": "Ensure the reliability, performance, and security of your mobile app through comprehensive testing and quality assurance processes.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "Custom-Web Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Deployment & Launch",
+          "subHead": "Efficiently deploy your mobile app to app stores and ensure a successful launch to reach your target audience.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "App Maintenance & Support",
+          "subHead": "Provide ongoing maintenance and support services to keep your mobile app updated, secure, and running smoothly.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "App Analytics & Optimization",
+          "subHead": "Leverage app analytics to gather insights and optimize your app for improved user engagement and retention.",
           "image": "../service/speaker.png"
         }
-      ],
-      "projects":[
+      ],    
+      "projects": [
         {
           "image": "../client/1.png"
         },
@@ -188,41 +208,51 @@
         "../service/angular.svg"
       ],
       "imageSrc": "../home/landingComponent/3.png",
-      "serviceType": "Web Development Services",
-      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceType": "MVP Tech Development Services",
+      "serviceInfo": "Discover real-world instances showcasing our success in MVP tech development through our detailed case studies.",
       "serviceTypes": [
         {
-          "head": "Front-end Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Idea Validation",
+          "subHead": "Validate your business idea and concept quickly and cost-effectively with our MVP development services.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "Back-end Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Feature Prioritization",
+          "subHead": "Identify and prioritize essential features for your Minimum Viable Product (MVP) to maximize its value and usability.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "CMS Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Rapid Prototyping",
+          "subHead": "Quickly prototype and iterate on your MVP to visualize and refine its functionality and user experience.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "eCommerce Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Lean Development",
+          "subHead": "Adopt lean development principles to develop your MVP efficiently and minimize waste while maximizing value.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "SaaS-Apps Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "User Feedback Collection",
+          "subHead": "Gather valuable user feedback on your MVP to identify areas for improvement and guide future development efforts.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "Custom-Web Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Iterative Development",
+          "subHead": "Continuously iterate and improve upon your MVP based on user feedback and evolving business requirements.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Market Launch",
+          "subHead": "Successfully launch your MVP to the market and gather real-world insights to inform further product development and expansion.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Data-driven Decision Making",
+          "subHead": "Leverage data analytics and insights from your MVP to make informed decisions and drive product enhancements and growth.",
           "image": "../service/speaker.png"
         }
-      ],
-      "projects":[
+      ],    
+      "projects": [
         {
           "image": "../client/1.png"
         },
@@ -268,41 +298,51 @@
         "../service/angular.svg"
       ],
       "imageSrc": "../home/landingComponent/4.png",
-      "serviceType": "Web Development Services",
-      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceType": "Custom App/Software Development Services",
+      "serviceInfo": "Explore real-life examples of how we've successfully built custom apps and software solutions for our clients through our detailed case studies.",
       "serviceTypes": [
         {
-          "head": "Front-end Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Requirement Analysis",
+          "subHead": "Thoroughly analyze your business needs and objectives to define clear requirements for your custom app or software.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "Back-end Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Prototyping & MVP Development",
+          "subHead": "Quickly validate your ideas and concepts with our prototyping and Minimum Viable Product (MVP) development services.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "CMS Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Full-cycle Development",
+          "subHead": "From design to deployment, we handle every stage of the development lifecycle to deliver fully functional custom apps and software.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "eCommerce Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Quality Assurance & Testing",
+          "subHead": "Ensure the reliability, performance, and security of your custom app or software through rigorous quality assurance and testing.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "SaaS-Apps Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Deployment & Maintenance",
+          "subHead": "Efficiently deploy your custom app or software and provide ongoing support and maintenance to ensure optimal performance.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "Custom-Web Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Integration Services",
+          "subHead": "Integrate your custom app or software seamlessly with existing systems and third-party APIs to maximize functionality and efficiency.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Scalability & Performance Optimization",
+          "subHead": "Scale your custom app or software to accommodate growing user demands and optimize performance for enhanced user experience.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Security Enhancement",
+          "subHead": "Enhance the security of your custom app or software with advanced security measures and protocols to protect sensitive data and user privacy.",
           "image": "../service/speaker.png"
         }
-      ],
-      "projects":[
+      ],    
+      "projects": [
         {
           "image": "../client/1.png"
         },
@@ -348,41 +388,51 @@
         "../service/angular.svg"
       ],
       "imageSrc": "../home/landingComponent/5.png",
-      "serviceType": "Web Development Services",
-      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceType": "UI/UX Designing Services",
+      "serviceInfo": "Discover how our UI/UX designs have transformed digital experiences through our real-life case studies.",
       "serviceTypes": [
         {
-          "head": "Front-end Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "User Research",
+          "subHead": "Gain valuable insights into user behavior and preferences through our comprehensive user research services.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "Back-end Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Wireframing & Prototyping",
+          "subHead": "Visualize and refine your digital product's structure and functionality with our wireframing and prototyping solutions.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "CMS Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Visual Design",
+          "subHead": "Craft visually stunning interfaces and graphics that captivate users and reinforce your brand identity.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "eCommerce Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Interaction Design",
+          "subHead": "Create intuitive and engaging user interactions that enhance usability and drive user engagement.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "SaaS-Apps Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Usability Testing",
+          "subHead": "Evaluate the effectiveness and user-friendliness of your digital product through rigorous usability testing.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "Custom-Web Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Accessibility Compliance",
+          "subHead": "Ensure your digital product is accessible to users with disabilities by adhering to accessibility standards and guidelines.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "UI/UX Audit",
+          "subHead": "Identify strengths and weaknesses in your current UI/UX design with our comprehensive audit and recommendations.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Responsive Design",
+          "subHead": "Create a seamless user experience across all devices with our responsive design solutions.",
           "image": "../service/speaker.png"
         }
-      ],
-      "projects":[
+      ],    
+      "projects": [
         {
           "image": "../client/1.png"
         },
@@ -428,41 +478,56 @@
         "../service/angular.svg"
       ],
       "imageSrc": "../home/landingComponent/6.png",
-      "serviceType": "Web Development Services",
-      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceType": "Cloud Managed Services",
+      "serviceInfo": "Explore how our cloud management services optimize performance and efficiency for businesses like yours.",
       "serviceTypes": [
         {
-          "head": "Front-end Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Security Management",
+          "subHead": "Ensure the security of your cloud infrastructure with our advanced security management solutions.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "Back-end Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Server Hardening",
+          "subHead": "Strengthen the security of your cloud servers against potential threats with our server hardening solutions.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "CMS Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Disaster Recovery",
+          "subHead": "Protect your business against data loss and downtime with our robust disaster recovery solutions.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "eCommerce Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Migration Services",
+          "subHead": "Seamlessly migrate your applications and data to the cloud with our proven migration services.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "SaaS-Apps Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Auto-Scaling",
+          "subHead": "Automatically adjust resources to match workload demand and optimize performance with our auto-scaling solutions.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "Custom-Web Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Cost Optimization",
+          "subHead": "Optimize your cloud costs and maximize ROI through our comprehensive cost optimization strategies.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Backup Management",
+          "subHead": "Ensure data integrity and availability with our reliable backup management solutions for your cloud environment.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Server Monitoring",
+          "subHead": "Monitor the performance and health of your cloud servers in real-time with our proactive server monitoring services.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Infrastructure Management",
+          "subHead": "Effortlessly manage and maintain your cloud infrastructure with our reliable infrastructure management solutions.",
           "image": "../service/speaker.png"
         }
-      ],
-      "projects":[
+      ],    
+      "projects": [
         {
           "image": "../client/1.png"
         },
@@ -507,41 +572,51 @@
         "../service/react.svg",
         "../service/angular.svg"
       ],
-      "serviceType": "Web Development Services",
-      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceType": "Tech Support and Resolution Services",
+      "serviceInfo": "Explore real-life examples demonstrating our proficiency in providing technical support and resolving issues through our comprehensive case studies.",
       "serviceTypes": [
         {
-          "head": "Front-end Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Technical Support",
+          "subHead": "Receive prompt and reliable technical support for troubleshooting hardware, software, and network issues.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "Back-end Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Remote Assistance",
+          "subHead": "Get immediate assistance and troubleshooting support remotely to resolve IT-related issues quickly and efficiently.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "CMS Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Software Patching",
+          "subHead": "Stay protected against vulnerabilities and security threats by ensuring your software is up-to-date with the latest patches and updates.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "eCommerce Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Virus and Malware Removal",
+          "subHead": "Protect your systems and data from malicious software threats with our comprehensive virus and malware removal services.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "SaaS-Apps Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Network Maintenance",
+          "subHead": "Ensure the reliability and performance of your network infrastructure through regular maintenance and optimization.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "Custom-Web Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Data Backup and Recovery",
+          "subHead": "Safeguard your critical data against loss or corruption and recover it quickly in the event of data loss.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Bug Fixing",
+          "subHead": "Identify and resolve software bugs and glitches efficiently to ensure smooth and uninterrupted operation of your systems.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Performance Optimization",
+          "subHead": "Optimize the performance of your systems and applications to enhance efficiency and productivity.",
           "image": "../service/speaker.png"
         }
-      ],
-      "projects":[
+      ],    
+      "projects": [
         {
           "image": "../client/1.png"
         },
@@ -586,41 +661,51 @@
         "../service/react.svg",
         "../service/angular.svg"
       ],
-      "serviceType": "Web Development Services",
-      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceType": "QA Testing Services",
+      "serviceInfo": "Explore tangible examples showcasing our expertise in QA testing through our extensive case studies.",
       "serviceTypes": [
         {
-          "head": "Front-end Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Functional Testing",
+          "subHead": "Ensure that each function of your software application operates in conformance with the requirements.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "Back-end Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Regression Testing",
+          "subHead": "Detect any defects in previously developed and tested software when it is altered or interfaced.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "CMS Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "User Acceptance Testing (UAT)",
+          "subHead": "Validate that the software satisfies all requirements and functions for the end-users.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "eCommerce Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Performance Testing",
+          "subHead": "Evaluate the responsiveness, speed, and stability of a software application under various workloads.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "SaaS-Apps Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Load Testing",
+          "subHead": "Assess the behavior of a software application under both normal and peak load conditions.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "Custom-Web Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Stress Testing",
+          "subHead": "Determine the robustness of software by testing it under extreme conditions beyond normal operation.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Security Testing",
+          "subHead": "Identify vulnerabilities and weaknesses in the security of a software application to prevent potential breaches.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Compatibility Testing",
+          "subHead": "Ensure that a software application functions correctly across different devices, browsers, and operating systems.",
           "image": "../service/speaker.png"
         }
-      ],
-      "projects":[
+      ],    
+      "projects": [
         {
           "image": "../client/1.png"
         },
@@ -645,7 +730,7 @@
       ]
     },
     {
-      "meta-title": "IT Staffing and Outsourcing Services - OnEggy Technologies",
+      "meta-title": "IT Staffing or Outsourcing Services - OnEggy Technologies",
       "meta-title-slug": "it-staffing-and-outsourcing-services",
       "meta-keywords": "IT Staffing, Outsourcing Services, development, website, IT Resources, Outsourcing Staffing, DevOps, AWS",
       "meta-description": "Elevate your workforce with OnEggy Technologies' comprehensive IT Staffing and Outsourcing Services. We take pride in delivering top-tier IT staffing solutions, bringing a pool of competent experts directly to your workplace. Our specialized in-house staff collaborates with your organization, providing the technical assistance and experience required to establish and manage powerful IT resources.",
@@ -667,41 +752,51 @@
       ],
       "head2": "Let's get things begun",
       "para2": "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online.",
-      "serviceType": "Web Development Services",
-      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceType": "IT Staffing Services",
+      "serviceInfo": "Discover concrete instances illustrating our IT staffing or outsourcing services through our extensive case studies.",
       "serviceTypes": [
         {
-          "head": "Front-end Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Temporary Staffing",
+          "subHead": "Fill short-term gaps in your workforce with skilled IT professionals on a temporary basis.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "Back-end Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Permanent Staffing",
+          "subHead": "Hire qualified IT professionals for permanent positions within your organization to meet long-term staffing needs.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "CMS Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Contract Staffing",
+          "subHead": "Engage IT professionals for specific projects or tasks on a contract basis, providing flexibility and expertise as needed.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "eCommerce Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Project-based Outsourcing",
+          "subHead": "Outsource entire IT projects or specific tasks to external vendors or agencies to leverage specialized skills and resources.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "SaaS-Apps Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Offshore Development",
+          "subHead": "Utilize offshore teams to handle software development, testing, and other IT tasks, benefiting from cost savings and scalability.",
           "image": "../service/speaker.png"
         },
         {
-          "head": "Custom-Web Development",
-          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "head": "Nearshore Development",
+          "subHead": "Partner with nearby countries to outsource IT projects, taking advantage of geographical proximity and cultural alignment.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Managed Services",
+          "subHead": "Delegate IT operations and responsibilities to a third-party provider for proactive management and support.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Staff Augmentation",
+          "subHead": "Supplement your existing IT team with additional skilled resources to enhance capabilities and meet evolving business needs.",
           "image": "../service/speaker.png"
         }
-      ],
-      "projects":[
+      ],    
+      "projects": [
         {
           "image": "../client/1.png"
         },
@@ -726,6 +821,6 @@
       ]
     }
   ],
-  "head2":"Let’s make things happen",
-  "para2":"Contact us today to learn more about how our digital marketing services can help your business grow and succeed online."
+  "head2": "Let’s make things happen",
+  "para2": "Contact us today to learn more about how our digital marketing services can help your business grow and succeed online."
 }
