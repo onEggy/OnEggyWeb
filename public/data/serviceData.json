@@ -3,7 +3,7 @@
   "sentence": "With OnEggy's IT Services, you can leave your mark on the digital world. Transform your company with our cutting-edge and effective digital solutions to help you succeed.",
   "showButton": true,
   "buttonPlaceholder": "Book a consultation",
-  "title": "Our Services",
+  "title": "Our Range of Services - OnEggy Technologies",
   "desc": "Step-by-Step Guide to Achieving Your Business Goals",
   "arr": [
     {
@@ -524,6 +524,11 @@
         {
           "head": "Infrastructure Management",
           "subHead": "Effortlessly manage and maintain your cloud infrastructure with our reliable infrastructure management solutions.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Performance Optimization",
+          "subHead": "Maximize the efficiency and responsiveness of your cloud infrastructure with our performance optimization solutions.",
           "image": "../service/speaker.png"
         }
       ],    
