@@ -16,14 +16,14 @@ const section1 = () => {
     {
       name: "Aakash Sharma",
       position: "CEO and Founder",
-      image: "/contact/picture.png",
+      image: "/contact/Akash.png",
       alt: "Profile Image",
       sns: faLinkedin,
     },
     {
       name: "Akanshu Sharma",
       position: "Cloud Expert",
-      image: "/contact/picture.png",
+      image: "/contact/Akanshu.png",
       alt: "Profile Image",
       sns: faLinkedin,
     },
@@ -43,9 +43,9 @@ const section1 = () => {
       <h2 className="text-5xl text-center font-semibold mt-10">Let's Talk</h2>
       <div className="sm:flex grid sm:grid-cols-2 lg:grid-cols-3 mb-10 justify-center">
         <div className="sm:flex">
-          {profile.map((data) => (
+          {profile.map((data,index) => (
             <div
-              // key={index}
+              key={index}
               className="border border-d_blue rounded-[3rem] p-10 mx-6 mt-10 shadow-bottom"
             >
               <div className="flex sm:justify-evenly">

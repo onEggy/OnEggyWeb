@@ -3,6 +3,7 @@ import { DefaultSeo } from "next-seo";
 import { useRouter } from "next/router";
 import seoData from "../../public/data/seo-data.json";
 
+
 import "@/styles/globals.css";
 import "@/styles/tailwind.css";
 import "@/styles/style.css";
@@ -12,6 +13,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import Script from "next/script";
+import Head from "next/head";
 
 config.autoAddCss = false;
 
@@ -21,9 +23,7 @@ function App({ Component, pageProps }) {
 
   useEffect(() => {
     if (currentPageData) {
-      console.log(
-        `Viewing ${currentPageData.title} - ${currentPageData.description}`
-      );
+
     }
   }, [router.pathname]);
 
@@ -35,9 +35,13 @@ function App({ Component, pageProps }) {
           currentPageData ? currentPageData.description : "Default Description"
         }
       />
+      <Head>
+        <link rel="icon" href={'/logo.png'} />
+      </Head>
+
       <Component {...pageProps} />
 
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-93P0M9DCHW"/>
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-93P0M9DCHW" />
       <Script
         id={'gscript'}
       >

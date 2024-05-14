@@ -1,5 +1,5 @@
 import React from "react";
-import Compo from "./compo";
+import Compo from "../blog/compo";
 import ConsultationButton from "../components/consultButton";
 
 const information1 = () => {
@@ -55,32 +55,6 @@ const information1 = () => {
           requirements to fulfill that aim. Here are some examples of what you
           could be the primary goal of your website:
           <br />
-          {/* <ul className="list-disc ml-5">
-            <li>
-              Display your products or services with stunning visuals and
-              detailed descriptions to attract potential customers.
-            </li>
-            <li>
-              Set up an online store where potential customers can browse, add
-              to cart, and make purchases quickly.
-            </li>
-            <li>
-              Educate and engage your audience through valuable content, like
-              blog posts or articles.
-            </li>
-            <li>
-              Allow clients to book appointments or schedule services directly
-              through your website.
-            </li>
-            <li>
-              Create exclusive content for members or offer subscription-based
-              services.
-            </li>
-            <li>
-              Increase online presence and engagement by connecting your website
-              to social media platforms.
-            </li>
-          </ul> */}
           <br />
           Accordingly, you should decide on the budget of your website and hire
           an affordable web design agency.

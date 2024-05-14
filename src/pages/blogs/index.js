@@ -1,14 +1,17 @@
 import React from "react";
-import Navbar from "./components/navbar";
-import MainHeadline from "./components/mainHeadline";
-import Footer from "./components/footer";
-import GetFreeProp from "./home/getFreeProp";
-import Compo from "./blogOne/compo";
-import Sidebar from "./components/sidebar";
-import seoData from "../../public/data/seo-data.json";
+import seoData from "/public/data/seo-data.json";
+import seggregateData from "/public/data/blogTags.json"
 import { NextSeo } from "next-seo";
 import Head from "next/head";
-import seggregateData from "../../public/data/blogTags.json"
+import GetFreeProp from "../home/getFreeProp";
+import Footer from "../components/footer";
+
+import Navbar from "../components/navbar";
+import MainHeadline from "../components/mainHeadline";
+import Compo from "../blogOne/compo";
+import Sidebar from "../components/sidebar";
+import blogsData from '../../../public/AllBlogs/index.json'
+
 
 const blogOne = () => {
   const currentPageData = seoData["/blog"];
@@ -17,28 +20,8 @@ const blogOne = () => {
   const sentence =
     "Create your unique footprint in the digital world with OnEggy’s IT services. Transform your business with our cutting-edge and effective digital solutions to pave your path to success.";
   const showButton = false;
-  const arr = [
-    {
-      head: "Business",
-      title: "Top 6 free website mockup tools 2022",
-      content:
-        "We are a team of Artists, Innovators & Strategists who left their ordinary life to invent and reinvent the common. Our Passion for technologies changes problems into opportunities. Our heart is full of creative juice that shapes ideas, Our mind is on a quest to transform the ordinary into the extraordinary. This is our code that energizes deep-rooted human desires and makes people pursue their dreams. We took an oath to stick to the Code and call ourselves Code Theorem.",
-    },
-    {
-      head: "Business",
-      title: "Top 6 free website mockup tools 2022",
-      content:
-        "We are a team of Artists, Innovators & Strategists who left their ordinary life to invent and reinvent the common. Our Passion for technologies changes problems into opportunities. Our heart is full of creative juice that shapes ideas, Our mind is on a quest to transform the ordinary into the extraordinary. This is our code that energizes deep-rooted human desires and makes people pursue their dreams. We took an oath to stick to the Code and call ourselves Code Theorem.",
-    },
-    {
-      head: "Business",
-      title: "Top 6 free website mockup tools 2022",
-      content:
-        "We are a team of Artists, Innovators & Strategists who left their ordinary life to invent and reinvent the common. Our Passion for technologies changes problems into opportunities. Our heart is full of creative juice that shapes ideas, Our mind is on a quest to transform the ordinary into the extraordinary. This is our code that energizes deep-rooted human desires and makes people pursue their dreams. We took an oath to stick to the Code and call ourselves Code Theorem.",
-    },
-  ];
-
-  const CategoryList = seggregateData.category
+  const arr = blogsData.reverse().slice(0,5).map(x=>({...x,head:x.name,title:x.title,content:x.overview}))
+   const CategoryList = seggregateData.category
   const tagList = seggregateData.tags
 
 
@@ -71,9 +54,9 @@ const blogOne = () => {
         <div className="hidden lg:block w-full md:w-1/4 px-4 mt-10 md:mt-0">
           <h2 className="text-3xl font-bold sm:mb-10">Categories</h2>
           <ul className="font-semibold text-lg mt-4">
-            {CategoryList.map(category => {
+            {CategoryList.map((category, idx) => {
 
-              return (<li className="border rounded-xl px-6 py-4 my-2 hover:bg-l_blue cursor-pointer flex items-center">
+              return (<li key={idx} className="border rounded-xl px-6 py-4 my-2 hover:bg-l_blue cursor-pointer flex items-center">
                 <img
                   src="/blog/1.png"
                   alt="Seeing Something???"
