@@ -41,7 +41,7 @@ function App({ Component, pageProps }) {
 
       <Component {...pageProps} />
 
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-93P0M9DCHW" />
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-93P0M9DCHW"/>
       <Script
         id={'gscript'}
       >
