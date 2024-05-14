@@ -20,19 +20,16 @@ const service = (props) => {
 
   // console.log('porps',props)
   const head = props.development || "Web Development";
-  const head2 = "Making Benchmarking Products"
-  const sentence =
-    "Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.";
+  const head2 = props.heading
+  const sentence =props.headingContent;
   const showButton = true;
   const buttonPlaceholder = "Book a consultation";
-  const title = "Our Work";
-  const desc =
-    "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies";
-  const boxTitle1 = "Secured";
-  const boxTitle2 = "Standardized";
-  const boxParaTitle = "How we do it?";
-  const boxContent =
-    "Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.";
+  const boxTitle1 = props.boxTitleOne;
+  const boxTitle2 = props.boxTitleTwo;
+  const boxParaTitle = props.secondHeading;
+  const boxContent =props.secondHeadingContent;
+  const title = props.thirdHeading;
+  const desc =props.thirdHeadingContent;
 
   const sliderSettings = {
     infinite: true,
@@ -130,7 +127,6 @@ export async function getStaticProps({ params: { type } }) {
 export async function getStaticPaths() {
 
   let paths = await serviceData?.arr?.map(x => {
-
     return { params: { type: x?.['meta-title-slug'] } }
   })
 
@@ -138,6 +134,6 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: true
+    fallback: false
   }
 }

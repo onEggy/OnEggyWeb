@@ -824,6 +824,1806 @@
           "image": "../client/3.png"
         }
       ]
+    },
+    {
+      "publicVisible": false,
+      "meta-title": "Cloud Consulting Services - Your Trusted Cloud Solutions Partner",
+      "meta-title-slug": "cloud-consulting-services",
+      "meta-keywords": "Cloud consulting, Cloud solutions, Cloud services, Cloud migration, Cloud optimization",
+      "meta-description": "Partner with our expert team for Cloud Consulting Services. We provide strategic guidance, implementation support, and optimization solutions to help you navigate the complexities of cloud technology and achieve your business objectives.",
+      "development": "Cloud Consulting Services",
+      "content": "Partner with our expert team for Cloud Consulting Services. We provide strategic guidance, implementation support, and optimization solutions to help you navigate the complexities of cloud technology and achieve your business objectives. Whether you're considering cloud migration, optimizing your cloud infrastructure, or developing cloud-native applications, we have the expertise and experience to be your trusted cloud solutions partner.",
+      "heading": "Making Benchmarking Products Test",
+      "headingContent": "Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+      "boxTitleOne": "Secured",
+      "boxTitleTwo": "Standardized",
+      "secondHeading": "How we do it?",
+      "secondHeadingContent": "Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+      "thirdHeading": "Our Work",
+      "thirdHeadingContent": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "image": [
+        "../service/node.svg",
+        "../service/aws.svg",
+        "../service/python.svg",
+        "../service/mysql.svg",
+        "../service/php.svg",
+        "../service/mongodb.svg",
+        "../service/firebase.svg",
+        "../service/html.svg",
+        "../service/css.svg",
+        "../service/vue.svg",
+        "../service/react.svg",
+        "../service/angular.svg"
+      ],
+      "head2": "Let's get things begun",
+      "para2": "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online.",
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        }
+      ],
+      "projects": [
+        {
+          "image": "../client/1.png"
+        },
+        {
+          "image": "../client/2.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        }
+      ]
+    },
+    {
+      "publicVisible": false,
+      "meta-title": "AWS Consulting Services - Harness the Power of AWS",
+      "meta-title-slug": "aws-consulting-services",
+      "meta-keywords": "AWS consulting, AWS solutions, AWS architecture, AWS migration, AWS optimization",
+      "meta-description": "Maximize the benefits of AWS with our AWS Consulting Services. Our certified AWS experts provide end-to-end solutions, from architecture design to migration and optimization, to help you leverage the full potential of AWS.",
+      "development": "AWS Consulting Services",
+      "content": "Leverage the power of AWS with our AWS Consulting Services. Our team of certified AWS experts offers a wide range of solutions, including architecture design, migration assistance, and optimization strategies. Whether you're just starting with AWS or looking to optimize your existing infrastructure, we have the expertise to help you succeed.",
+      "heading": "Making Benchmarking Products Test",
+      "headingContent": "Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+      "boxTitleOne": "Secured",
+      "boxTitleTwo": "Standardized",
+      "secondHeading": "How we do it?",
+      "secondHeadingContent": "Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+      "thirdHeading": "Our Work",
+      "thirdHeadingContent": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "image": [
+        "../service/node.svg",
+        "../service/aws.svg",
+        "../service/python.svg",
+        "../service/mysql.svg",
+        "../service/php.svg",
+        "../service/mongodb.svg",
+        "../service/firebase.svg",
+        "../service/html.svg",
+        "../service/css.svg",
+        "../service/vue.svg",
+        "../service/react.svg",
+        "../service/angular.svg"
+      ],
+      "head2": "Let's get things begun",
+      "para2": "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online.",
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        }
+      ],
+      "projects": [
+        {
+          "image": "../client/1.png"
+        },
+        {
+          "image": "../client/2.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        }
+      ]
+    },
+    {
+      "publicVisible": false,
+      "meta-title": "GCP Consulting Services - Drive Innovation with Google Cloud",
+      "meta-title-slug": "gcp-consulting-services",
+      "meta-keywords": "GCP consulting, GCP solutions, Google Cloud consulting, Google Cloud solutions",
+      "meta-description": "Transform your business with our GCP Consulting Services. Our team of Google Cloud experts provides strategic guidance, migration support, and optimization solutions to help you innovate and grow with Google Cloud Platform.",
+      "development": "GCP Consulting Services",
+      "content": "Drive innovation with Google Cloud Platform using our GCP Consulting Services. Our team of Google Cloud experts offers strategic guidance, migration support, and optimization solutions tailored to your business needs. Whether you're looking to migrate to GCP, optimize your existing infrastructure, or develop new cloud-native applications, we have the expertise to help you succeed.",
+      "heading": "Making Benchmarking Products Test",
+      "headingContent": "Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+      "boxTitleOne": "Secured",
+      "boxTitleTwo": "Standardized",
+      "secondHeading": "How we do it?",
+      "secondHeadingContent": "Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+      "thirdHeading": "Our Work",
+      "thirdHeadingContent": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "image": [
+        "../service/node.svg",
+        "../service/aws.svg",
+        "../service/python.svg",
+        "../service/mysql.svg",
+        "../service/php.svg",
+        "../service/mongodb.svg",
+        "../service/firebase.svg",
+        "../service/html.svg",
+        "../service/css.svg",
+        "../service/vue.svg",
+        "../service/react.svg",
+        "../service/angular.svg"
+      ],
+      "head2": "Let's get things begun",
+      "para2": "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online.",
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        }
+      ],
+      "projects": [
+        {
+          "image": "../client/1.png"
+        },
+        {
+          "image": "../client/2.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        }
+      ]
+    },
+    {
+      "publicVisible": false,
+      "meta-title": "Azure Consulting Services - Accelerate Your Digital Transformation with Microsoft Azure",
+      "meta-title-slug": "azure-consulting-services",
+      "meta-keywords": "Azure consulting, Azure solutions, Microsoft Azure consulting, Microsoft Azure solutions",
+      "meta-description": "Accelerate your digital transformation with our Azure Consulting Services. Our team of Microsoft Azure experts offers strategic guidance, migration assistance, and optimization solutions to help you unlock the full potential of Microsoft Azure.",
+      "development": "Azure Consulting Services",
+      "content": "Accelerate your digital transformation with Microsoft Azure using our Azure Consulting Services. Our team of Azure experts provides strategic guidance, migration assistance, and optimization solutions tailored to your business needs. Whether you're looking to migrate to Azure, modernize your applications, or leverage Azure services for innovation, we have the expertise to help you succeed.",
+      "heading": "Making Benchmarking Products Test",
+      "headingContent": "Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+      "boxTitleOne": "Secured",
+      "boxTitleTwo": "Standardized",
+      "secondHeading": "How we do it?",
+      "secondHeadingContent": "Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+      "thirdHeading": "Our Work",
+      "thirdHeadingContent": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "image": [
+        "../service/node.svg",
+        "../service/aws.svg",
+        "../service/python.svg",
+        "../service/mysql.svg",
+        "../service/php.svg",
+        "../service/mongodb.svg",
+        "../service/firebase.svg",
+        "../service/html.svg",
+        "../service/css.svg",
+        "../service/vue.svg",
+        "../service/react.svg",
+        "../service/angular.svg"
+      ],
+      "head2": "Let's get things begun",
+      "para2": "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online.",
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        }
+      ],
+      "projects": [
+        {
+          "image": "../client/1.png"
+        },
+        {
+          "image": "../client/2.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        }
+      ]
+    },
+    {
+      "publicVisible": false,
+      "meta-title": "Python Application Development - Build Scalable and Robust Applications with Python",
+      "meta-title-slug": "python-application-development",
+      "meta-keywords": "Python development, Python programming, Python applications, Python web development",
+      "meta-description": "Build scalable and robust applications with our Python Application Development services. Our team of Python experts offers end-to-end development solutions, from prototyping to deployment, to help you bring your ideas to life.",
+      "development": "Python Application Development",
+      "content": "Bring your ideas to life with our Python Application Development services. Our team of Python experts specializes in building scalable and robust applications using the latest Python technologies and frameworks. Whether you need web applications, desktop applications, or data-driven solutions, we have the expertise to deliver high-quality Python applications tailored to your business needs.",
+      "heading": "Making Benchmarking Products Test",
+      "headingContent": "Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+      "boxTitleOne": "Secured",
+      "boxTitleTwo": "Standardized",
+      "secondHeading": "How we do it?",
+      "secondHeadingContent": "Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+      "thirdHeading": "Our Work",
+      "thirdHeadingContent": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "image": [
+        "../service/node.svg",
+        "../service/aws.svg",
+        "../service/python.svg",
+        "../service/mysql.svg",
+        "../service/php.svg",
+        "../service/mongodb.svg",
+        "../service/firebase.svg",
+        "../service/html.svg",
+        "../service/css.svg",
+        "../service/vue.svg",
+        "../service/react.svg",
+        "../service/angular.svg"
+      ],
+      "head2": "Let's get things begun",
+      "para2": "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online.",
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        }
+      ],
+      "projects": [
+        {
+          "image": "../client/1.png"
+        },
+        {
+          "image": "../client/2.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        }
+      ]
+    },
+    {
+      "publicVisible": false,
+      "meta-title": "Django Application Development - Rapidly Build Web Applications with Django",
+      "meta-title-slug": "django-application-development",
+      "meta-keywords": "Django development, Django programming, Django web development, Python web framework",
+      "meta-description": "Rapidly build web applications with our Django Application Development services. Our team of Django experts offers end-to-end development solutions, from design to deployment, to help you create modern and scalable web applications.",
+      "development": "Django Application Development",
+      "content": "Create modern and scalable web applications with our Django Application Development services. Our team of Django experts specializes in building web applications using the Django web framework. Whether you need a simple website or a complex web application, we have the expertise to deliver high-quality solutions tailored to your business needs.",
+      "heading": "Making Benchmarking Products Test",
+      "headingContent": "Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+      "boxTitleOne": "Secured",
+      "boxTitleTwo": "Standardized",
+      "secondHeading": "How we do it?",
+      "secondHeadingContent": "Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+      "thirdHeading": "Our Work",
+      "thirdHeadingContent": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "image": [
+        "../service/node.svg",
+        "../service/aws.svg",
+        "../service/python.svg",
+        "../service/mysql.svg",
+        "../service/php.svg",
+        "../service/mongodb.svg",
+        "../service/firebase.svg",
+        "../service/html.svg",
+        "../service/css.svg",
+        "../service/vue.svg",
+        "../service/react.svg",
+        "../service/angular.svg"
+      ],
+      "head2": "Let's get things begun",
+      "para2": "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online.",
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        }
+      ],
+      "projects": [
+        {
+          "image": "../client/1.png"
+        },
+        {
+          "image": "../client/2.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        }
+      ]
+    },
+    {
+      "publicVisible": false,
+      "meta-title": "Node.js Application Development - Build Fast and Scalable Applications with Node.js",
+      "meta-title-slug": "nodejs-application-development",
+      "meta-keywords": "Node.js development, Node.js programming, Node.js applications, JavaScript development",
+      "meta-description": "Build fast and scalable applications with our Node.js Application Development services. Our team of Node.js experts offers end-to-end development solutions, from architecture design to deployment, to help you create high-performance applications with Node.js.",
+      "development": "NodeJS Application Development",
+      "content": "Create high-performance applications with our Node.js Application Development services. Our team of Node.js experts specializes in building fast and scalable applications using the Node.js runtime environment. Whether you need real-time web applications, APIs, or server-side applications, we have the expertise to deliver high-quality solutions tailored to your business needs.",
+      "heading": "Making Benchmarking Products Test",
+      "headingContent": "Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+      "boxTitleOne": "Secured",
+      "boxTitleTwo": "Standardized",
+      "secondHeading": "How we do it?",
+      "secondHeadingContent": "Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+      "thirdHeading": "Our Work",
+      "thirdHeadingContent": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "image": [
+        "../service/node.svg",
+        "../service/aws.svg",
+        "../service/python.svg",
+        "../service/mysql.svg",
+        "../service/php.svg",
+        "../service/mongodb.svg",
+        "../service/firebase.svg",
+        "../service/html.svg",
+        "../service/css.svg",
+        "../service/vue.svg",
+        "../service/react.svg",
+        "../service/angular.svg"
+      ],
+      "head2": "Let's get things begun",
+      "para2": "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online.",
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        }
+      ],
+      "projects": [
+        {
+          "image": "../client/1.png"
+        },
+        {
+          "image": "../client/2.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        }
+      ]
+    },
+    {
+      "publicVisible": false,
+      "meta-title": "Magento Website Development - Create Powerful E-commerce Websites with Magento",
+      "meta-title-slug": "magento-website-development",
+      "meta-keywords": "Magento development, Magento web development, Magento e-commerce, Magento customization",
+      "meta-description": "Create powerful e-commerce websites with our Magento Website Development services. Our team of Magento experts offers end-to-end development solutions, from design to deployment, to help you build engaging and scalable e-commerce websites with Magento.",
+      "development": "Magento Website Development",
+      "content": "Build engaging and scalable e-commerce websites with our Magento Website Development services. Our team of Magento experts specializes in creating powerful e-commerce solutions using the Magento platform. Whether you're launching a new online store or upgrading your existing e-commerce website, we have the expertise to deliver high-quality solutions tailored to your business needs.",
+      "heading": "Making Benchmarking Products Test",
+      "headingContent": "Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+      "boxTitleOne": "Secured",
+      "boxTitleTwo": "Standardized",
+      "secondHeading": "How we do it?",
+      "secondHeadingContent": "Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+      "thirdHeading": "Our Work",
+      "thirdHeadingContent": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "image": [
+        "../service/node.svg",
+        "../service/aws.svg",
+        "../service/python.svg",
+        "../service/mysql.svg",
+        "../service/php.svg",
+        "../service/mongodb.svg",
+        "../service/firebase.svg",
+        "../service/html.svg",
+        "../service/css.svg",
+        "../service/vue.svg",
+        "../service/react.svg",
+        "../service/angular.svg"
+      ],
+      "head2": "Let's get things begun",
+      "para2": "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online.",
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        }
+      ],
+      "projects": [
+        {
+          "image": "../client/1.png"
+        },
+        {
+          "image": "../client/2.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        }
+      ]
+    },
+    {
+      "publicVisible": false,
+      "meta-title": "Cloud Managed Services - Optimize Your Cloud Infrastructure with Managed Services",
+      "meta-title-slug": "cloud-managed-services",
+      "meta-keywords": "Cloud managed services, cloud optimization, cloud maintenance, cloud monitoring, cloud support",
+      "meta-description": "Optimize your cloud infrastructure with our Cloud Managed Services. Our team of cloud experts provides proactive monitoring, maintenance, and optimization solutions to help you maximize the performance and efficiency of your cloud environment.",
+      "development": "Cloud Managed Services",
+      "content": "Maximize the performance and efficiency of your cloud environment with our Cloud Managed Services. Our team of cloud experts offers proactive monitoring, maintenance, and optimization solutions tailored to your business needs. Whether you're using AWS, Azure, Google Cloud, or other cloud platforms, we have the expertise to help you optimize your cloud infrastructure and drive business value.",
+      "heading": "Making Benchmarking Products Test",
+      "headingContent": "Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+      "boxTitleOne": "Secured",
+      "boxTitleTwo": "Standardized",
+      "secondHeading": "How we do it?",
+      "secondHeadingContent": "Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+      "thirdHeading": "Our Work",
+      "thirdHeadingContent": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "image": [
+        "../service/node.svg",
+        "../service/aws.svg",
+        "../service/python.svg",
+        "../service/mysql.svg",
+        "../service/php.svg",
+        "../service/mongodb.svg",
+        "../service/firebase.svg",
+        "../service/html.svg",
+        "../service/css.svg",
+        "../service/vue.svg",
+        "../service/react.svg",
+        "../service/angular.svg"
+      ],
+      "head2": "Let's get things begun",
+      "para2": "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online.",
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        }
+      ],
+      "projects": [
+        {
+          "image": "../client/1.png"
+        },
+        {
+          "image": "../client/2.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        }
+      ]
+    },
+    {
+      "publicVisible": false,
+      "meta-title": "DevOps Managed Services - Streamline Your Software Delivery with DevOps",
+      "meta-title-slug": "devops-managed-services",
+      "meta-keywords": "DevOps managed services, DevOps automation, DevOps consulting, DevOps support",
+      "meta-description": "Streamline your software delivery with our DevOps Managed Services. Our team of DevOps experts provides end-to-end solutions, from automation to continuous integration and deployment, to help you accelerate your software development lifecycle.",
+      "development": "DevOps Managed Services",
+      "content": "Accelerate your software development lifecycle with our DevOps Managed Services. Our team of DevOps experts offers end-to-end solutions tailored to your business needs. From automation and continuous integration to deployment and monitoring, we help you streamline your software delivery process and drive innovation with DevOps.",
+      "heading": "Making Benchmarking Products Test",
+      "headingContent": "Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+      "boxTitleOne": "Secured",
+      "boxTitleTwo": "Standardized",
+      "secondHeading": "How we do it?",
+      "secondHeadingContent": "Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+      "thirdHeading": "Our Work",
+      "thirdHeadingContent": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "image": [
+        "../service/node.svg",
+        "../service/aws.svg",
+        "../service/python.svg",
+        "../service/mysql.svg",
+        "../service/php.svg",
+        "../service/mongodb.svg",
+        "../service/firebase.svg",
+        "../service/html.svg",
+        "../service/css.svg",
+        "../service/vue.svg",
+        "../service/react.svg",
+        "../service/angular.svg"
+      ],
+      "head2": "Let's get things begun",
+      "para2": "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online.",
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        }
+      ],
+      "projects": [
+        {
+          "image": "../client/1.png"
+        },
+        {
+          "image": "../client/2.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        }
+      ]
+    },
+    {
+      "publicVisible": false,
+      "meta-title": "Serverless Architecture - Build Scalable and Cost-Efficient Applications with Serverless",
+      "meta-title-slug": "serverless-architecture",
+      "meta-keywords": "Serverless architecture, serverless applications, AWS Lambda, Azure Functions, Google Cloud Functions",
+      "meta-description": "Build scalable and cost-efficient applications with Serverless Architecture. Our team of experts helps you design and deploy serverless solutions using AWS Lambda, Azure Functions, Google Cloud Functions, and other serverless platforms.",
+      "development": "Serverless Architecture",
+      "content": "Build scalable and cost-efficient applications with Serverless Architecture. Our team of experts specializes in designing and deploying serverless solutions using AWS Lambda, Azure Functions, Google Cloud Functions, and other serverless platforms. Whether you're building APIs, data processing pipelines, or event-driven applications, we have the expertise to help you leverage the benefits of serverless computing.",
+      "heading": "Making Benchmarking Products Test",
+      "headingContent": "Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+      "boxTitleOne": "Secured",
+      "boxTitleTwo": "Standardized",
+      "secondHeading": "How we do it?",
+      "secondHeadingContent": "Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+      "thirdHeading": "Our Work",
+      "thirdHeadingContent": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "image": [
+        "../service/node.svg",
+        "../service/aws.svg",
+        "../service/python.svg",
+        "../service/mysql.svg",
+        "../service/php.svg",
+        "../service/mongodb.svg",
+        "../service/firebase.svg",
+        "../service/html.svg",
+        "../service/css.svg",
+        "../service/vue.svg",
+        "../service/react.svg",
+        "../service/angular.svg"
+      ],
+      "head2": "Let's get things begun",
+      "para2": "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online.",
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        }
+      ],
+      "projects": [
+        {
+          "image": "../client/1.png"
+        },
+        {
+          "image": "../client/2.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        }
+      ]
+    },
+    {
+      "publicVisible": false,
+      "meta-title": "Containerization and Kubernetes - Orchestrate Your Containers with Kubernetes",
+      "meta-title-slug": "containerization-and-kubernetes",
+      "meta-keywords": "Containerization, Kubernetes, Docker, Kubernetes consulting, Kubernetes deployment",
+      "meta-description": "Orchestrate your containers with Kubernetes. Our team of Kubernetes experts helps you containerize your applications and manage them efficiently with Kubernetes orchestration.",
+      "development": "Containerization and Kubernetes",
+      "content": "Orchestrate your containers with Kubernetes. Our team of Kubernetes experts helps you containerize your applications and manage them efficiently with Kubernetes orchestration. Whether you're deploying microservices, running batch jobs, or scaling your applications, we have the expertise to help you leverage the full power of Kubernetes.",
+      "heading": "Making Benchmarking Products Test",
+      "headingContent": "Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+      "boxTitleOne": "Secured",
+      "boxTitleTwo": "Standardized",
+      "secondHeading": "How we do it?",
+      "secondHeadingContent": "Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+      "thirdHeading": "Our Work",
+      "thirdHeadingContent": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "image": [
+        "../service/node.svg",
+        "../service/aws.svg",
+        "../service/python.svg",
+        "../service/mysql.svg",
+        "../service/php.svg",
+        "../service/mongodb.svg",
+        "../service/firebase.svg",
+        "../service/html.svg",
+        "../service/css.svg",
+        "../service/vue.svg",
+        "../service/react.svg",
+        "../service/angular.svg"
+      ],
+      "head2": "Let's get things begun",
+      "para2": "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online.",
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        }
+      ],
+      "projects": [
+        {
+          "image": "../client/1.png"
+        },
+        {
+          "image": "../client/2.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        }
+      ]
+    },
+    {
+      "publicVisible": false,
+      "meta-title": "CI/CD Pipelines - Automate Your Software Delivery with Continuous Integration and Continuous Deployment",
+      "meta-title-slug": "ci-cd-pipelines",
+      "meta-keywords": "CI/CD pipelines, continuous integration, continuous deployment, DevOps automation",
+      "meta-description": "Automate your software delivery with CI/CD Pipelines. Our team of DevOps experts helps you set up and optimize CI/CD pipelines to accelerate your development process and improve software quality.",
+      "development": "CI/CD Pipelines",
+      "content": "Automate your software delivery with CI/CD Pipelines. Our team of DevOps experts helps you set up and optimize CI/CD pipelines to accelerate your development process and improve software quality. Whether you're building web applications, mobile apps, or microservices, we have the expertise to help you streamline your deployment workflow and deliver software faster and more reliably.",
+      "heading": "Making Benchmarking Products Test",
+      "headingContent": "Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+      "boxTitleOne": "Secured",
+      "boxTitleTwo": "Standardized",
+      "secondHeading": "How we do it?",
+      "secondHeadingContent": "Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+      "thirdHeading": "Our Work",
+      "thirdHeadingContent": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "image": [
+        "../service/node.svg",
+        "../service/aws.svg",
+        "../service/python.svg",
+        "../service/mysql.svg",
+        "../service/php.svg",
+        "../service/mongodb.svg",
+        "../service/firebase.svg",
+        "../service/html.svg",
+        "../service/css.svg",
+        "../service/vue.svg",
+        "../service/react.svg",
+        "../service/angular.svg"
+      ],
+      "head2": "Let's get things begun",
+      "para2": "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online.",
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        }
+      ],
+      "projects": [
+        {
+          "image": "../client/1.png"
+        },
+        {
+          "image": "../client/2.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        }
+      ]
+    },
+    {
+      "publicVisible": false,
+      "meta-title": "Big Data and Analytics - Unlock Insights and Drive Decision-Making with Big Data Solutions",
+      "meta-title-slug": "big-data-and-analytics",
+      "meta-keywords": "Big data, analytics, data warehousing, data lakes, data processing",
+      "meta-description": "Unlock insights and drive decision-making with Big Data and Analytics solutions. Our team of data experts helps you collect, store, process, and analyze large volumes of data to uncover valuable insights and drive business growth.",
+      "development": "Big Data and Analytics",
+      "content": "Unlock insights and drive decision-making with Big Data and Analytics solutions. Our team of data experts helps you collect, store, process, and analyze large volumes of data to uncover valuable insights and drive business growth. Whether you're looking to build data pipelines, implement machine learning models, or create interactive dashboards, we have the expertise to help you harness the power of big data.",
+      "heading": "Making Benchmarking Products Test",
+      "headingContent": "Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+      "boxTitleOne": "Secured",
+      "boxTitleTwo": "Standardized",
+      "secondHeading": "How we do it?",
+      "secondHeadingContent": "Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+      "thirdHeading": "Our Work",
+      "thirdHeadingContent": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "image": [
+        "../service/node.svg",
+        "../service/aws.svg",
+        "../service/python.svg",
+        "../service/mysql.svg",
+        "../service/php.svg",
+        "../service/mongodb.svg",
+        "../service/firebase.svg",
+        "../service/html.svg",
+        "../service/css.svg",
+        "../service/vue.svg",
+        "../service/react.svg",
+        "../service/angular.svg"
+      ],
+      "head2": "Let's get things begun",
+      "para2": "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online.",
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        }
+      ],
+      "projects": [
+        {
+          "image": "../client/1.png"
+        },
+        {
+          "image": "../client/2.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        }
+      ]
+    },
+    {
+      "publicVisible": false,
+      "meta-title": "IoT Solutions - Connect, Monitor, and Control Your Devices with IoT Technology",
+      "meta-title-slug": "iot-solutions",
+      "meta-keywords": "IoT solutions, Internet of Things, IoT development, IoT devices",
+      "meta-description": "Connect, monitor, and control your devices with IoT Solutions. Our team of IoT experts helps you design, develop, and deploy IoT solutions to drive operational efficiency, enhance customer experiences, and unlock new revenue streams.",
+      "development": "IoT Solutions",
+      "content": "Connect, monitor, and control your devices with IoT Solutions. Our team of IoT experts helps you design, develop, and deploy IoT solutions to drive operational efficiency, enhance customer experiences, and unlock new revenue streams. Whether you're building smart devices, implementing IoT platforms, or integrating IoT with your existing systems, we have the expertise to help you succeed in the IoT space.",
+      "heading": "Making Benchmarking Products Test",
+      "headingContent": "Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+      "boxTitleOne": "Secured",
+      "boxTitleTwo": "Standardized",
+      "secondHeading": "How we do it?",
+      "secondHeadingContent": "Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+      "thirdHeading": "Our Work",
+      "thirdHeadingContent": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "image": [
+        "../service/node.svg",
+        "../service/aws.svg",
+        "../service/python.svg",
+        "../service/mysql.svg",
+        "../service/php.svg",
+        "../service/mongodb.svg",
+        "../service/firebase.svg",
+        "../service/html.svg",
+        "../service/css.svg",
+        "../service/vue.svg",
+        "../service/react.svg",
+        "../service/angular.svg"
+      ],
+      "head2": "Let's get things begun",
+      "para2": "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online.",
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        }
+      ],
+      "projects": [
+        {
+          "image": "../client/1.png"
+        },
+        {
+          "image": "../client/2.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        }
+      ]
+    },
+    {
+      "publicVisible": false,
+      "meta-title": "Edge Computing - Process Data Closer to the Source with Edge Computing Solutions",
+      "meta-title-slug": "edge-computing",
+      "meta-keywords": "Edge computing, edge devices, edge analytics, IoT edge",
+      "meta-description": "Process data closer to the source with Edge Computing Solutions. Our team of edge computing experts helps you deploy edge devices, build edge analytics solutions, and optimize your edge infrastructure for real-time processing and low-latency applications.",
+      "development": "Edge Computing",
+      "content": "Process data closer to the source with Edge Computing Solutions. Our team of edge computing experts helps you deploy edge devices, build edge analytics solutions, and optimize your edge infrastructure for real-time processing and low-latency applications. Whether you're dealing with IoT devices, autonomous vehicles, or industrial sensors, we have the expertise to help you leverage the benefits of edge computing.",
+      "heading": "Making Benchmarking Products Test",
+      "headingContent": "Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+      "boxTitleOne": "Secured",
+      "boxTitleTwo": "Standardized",
+      "secondHeading": "How we do it?",
+      "secondHeadingContent": "Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+      "thirdHeading": "Our Work",
+      "thirdHeadingContent": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "image": [
+        "../service/node.svg",
+        "../service/aws.svg",
+        "../service/python.svg",
+        "../service/mysql.svg",
+        "../service/php.svg",
+        "../service/mongodb.svg",
+        "../service/firebase.svg",
+        "../service/html.svg",
+        "../service/css.svg",
+        "../service/vue.svg",
+        "../service/react.svg",
+        "../service/angular.svg"
+      ],
+      "head2": "Let's get things begun",
+      "para2": "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online.",
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        }
+      ],
+      "projects": [
+        {
+          "image": "../client/1.png"
+        },
+        {
+          "image": "../client/2.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        }
+      ]
+    },
+    {
+      "publicVisible": false,
+      "meta-title": "Cybersecurity Consulting - Protect Your Business from Cyber Threats with Expert Consulting Services",
+      "meta-title-slug": "cybersecurity-consulting",
+      "meta-keywords": "Cybersecurity consulting, cybersecurity services, IT security, cybersecurity solutions",
+      "meta-description": "Protect your business from cyber threats with expert Cybersecurity Consulting services. Our team of cybersecurity experts offers strategic guidance, risk assessments, and security solutions to help you safeguard your digital assets and mitigate security risks.",
+      "development": "Cybersecurity Consulting",
+      "content": "Protect your business from cyber threats with expert Cybersecurity Consulting services. Our team of cybersecurity experts offers strategic guidance, risk assessments, and security solutions to help you safeguard your digital assets and mitigate security risks. Whether you're facing threats from hackers, malware, or insider attacks, we have the expertise to help you build a robust cybersecurity posture and defend against evolving threats.",
+      "heading": "Making Benchmarking Products Test",
+      "headingContent": "Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+      "boxTitleOne": "Secured",
+      "boxTitleTwo": "Standardized",
+      "secondHeading": "How we do it?",
+      "secondHeadingContent": "Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+      "thirdHeading": "Our Work",
+      "thirdHeadingContent": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "image": [
+        "../service/node.svg",
+        "../service/aws.svg",
+        "../service/python.svg",
+        "../service/mysql.svg",
+        "../service/php.svg",
+        "../service/mongodb.svg",
+        "../service/firebase.svg",
+        "../service/html.svg",
+        "../service/css.svg",
+        "../service/vue.svg",
+        "../service/react.svg",
+        "../service/angular.svg"
+      ],
+      "head2": "Let's get things begun",
+      "para2": "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online.",
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        }
+      ],
+      "projects": [
+        {
+          "image": "../client/1.png"
+        },
+        {
+          "image": "../client/2.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        }
+      ]
+    },
+    {
+      "publicVisible": false,
+      "meta-title": "Server Migration and Modernization - Migrate and Modernize Your Infrastructure with Confidence",
+      "meta-title-slug": "server-migration-and-modernization",
+      "meta-keywords": "Server migration, server modernization, infrastructure migration, legacy system migration",
+      "meta-description": "Migrate and modernize your infrastructure with confidence. Our team of experts helps you assess, plan, and execute server migration and modernization projects to reduce costs, improve performance, and enhance security.",
+      "development": "Server Migration and Modernization",
+      "content": "Migrate and modernize your infrastructure with confidence. Our team of experts helps you assess, plan, and execute server migration and modernization projects to reduce costs, improve performance, and enhance security. Whether you're moving to the cloud, consolidating data centers, or upgrading legacy systems, we have the expertise to help you achieve your migration and modernization goals.",
+      "heading": "Making Benchmarking Products Test",
+      "headingContent": "Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+      "boxTitleOne": "Secured",
+      "boxTitleTwo": "Standardized",
+      "secondHeading": "How we do it?",
+      "secondHeadingContent": "Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+      "thirdHeading": "Our Work",
+      "thirdHeadingContent": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "image": [
+        "../service/node.svg",
+        "../service/aws.svg",
+        "../service/python.svg",
+        "../service/mysql.svg",
+        "../service/php.svg",
+        "../service/mongodb.svg",
+        "../service/firebase.svg",
+        "../service/html.svg",
+        "../service/css.svg",
+        "../service/vue.svg",
+        "../service/react.svg",
+        "../service/angular.svg"
+      ],
+      "head2": "Let's get things begun",
+      "para2": "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online.",
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        }
+      ],
+      "projects": [
+        {
+          "image": "../client/1.png"
+        },
+        {
+          "image": "../client/2.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        }
+      ]
+    },
+    {
+      "publicVisible": false,
+      "meta-title": "Multi-cloud Management - Simplify and Optimize Your Multi-cloud Environment",
+      "meta-title-slug": "multi-cloud-management",
+      "meta-keywords": "Multi-cloud management, multi-cloud solutions, hybrid cloud management",
+      "meta-description": "Simplify and optimize your multi-cloud environment with Multi-cloud Management solutions. Our team of experts helps you manage, monitor, and secure your multi-cloud infrastructure to maximize efficiency and minimize complexity.",
+      "development": "Multi-cloud Management",
+      "content": "Simplify and optimize your multi-cloud environment with Multi-cloud Management solutions. Our team of experts helps you manage, monitor, and secure your multi-cloud infrastructure to maximize efficiency and minimize complexity. Whether you're using AWS, Azure, Google Cloud, or other cloud platforms, we have the expertise to help you streamline your multi-cloud operations and drive business value.",
+      "heading": "Making Benchmarking Products Test",
+      "headingContent": "Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+      "boxTitleOne": "Secured",
+      "boxTitleTwo": "Standardized",
+      "secondHeading": "How we do it?",
+      "secondHeadingContent": "Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+      "thirdHeading": "Our Work",
+      "thirdHeadingContent": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "image": [
+        "../service/node.svg",
+        "../service/aws.svg",
+        "../service/python.svg",
+        "../service/mysql.svg",
+        "../service/php.svg",
+        "../service/mongodb.svg",
+        "../service/firebase.svg",
+        "../service/html.svg",
+        "../service/css.svg",
+        "../service/vue.svg",
+        "../service/react.svg",
+        "../service/angular.svg"
+      ],
+      "head2": "Let's get things begun",
+      "para2": "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online.",
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        }
+      ],
+      "projects": [
+        {
+          "image": "../client/1.png"
+        },
+        {
+          "image": "../client/2.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        }
+      ]
+    },
+    {
+      "publicVisible": false,
+      "meta-title": "Blockchain Integration - Harness the Power of Blockchain for Your Business",
+      "meta-title-slug": "blockchain-integration",
+      "meta-keywords": "Blockchain integration, blockchain solutions, blockchain technology, decentralized applications",
+      "meta-description": "Harness the power of blockchain for your business with Blockchain Integration solutions. Our team of experts helps you integrate blockchain technology into your existing systems, build decentralized applications, and explore new business opportunities enabled by blockchain.",
+      "development": "Blockchain Integration",
+      "content": "Harness the power of blockchain for your business with Blockchain Integration solutions. Our team of experts helps you integrate blockchain technology into your existing systems, build decentralized applications, and explore new business opportunities enabled by blockchain. Whether you're looking to improve transparency, enhance security, or streamline operations, we have the expertise to help you leverage the benefits of blockchain technology.",
+      "heading": "Making Benchmarking Products Test",
+      "headingContent": "Code Theorems have the right strategies for providing well-structured, immensely secured, nicely interactive, and user-friendly website development services that are benchmarking in the industry and help you win the market in your domain.",
+      "boxTitleOne": "Secured",
+      "boxTitleTwo": "Standardized",
+      "secondHeading": "How we do it?",
+      "secondHeadingContent": "Your search for owning a website that is standard, secured and provides ease in growing your business virtually to get the top place in the industry ends here, at Code Theorem. Our talented tech geeks will drive you through the whole website development solutions to achieve your desired result of having a custom website.",
+      "thirdHeading": "Our Work",
+      "thirdHeadingContent": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "image": [
+        "../service/node.svg",
+        "../service/aws.svg",
+        "../service/python.svg",
+        "../service/mysql.svg",
+        "../service/php.svg",
+        "../service/mongodb.svg",
+        "../service/firebase.svg",
+        "../service/html.svg",
+        "../service/css.svg",
+        "../service/vue.svg",
+        "../service/react.svg",
+        "../service/angular.svg"
+      ],
+      "head2": "Let's get things begun",
+      "para2": "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online.",
+      "serviceType": "Web Development Services",
+      "serviceInfo": "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies",
+      "serviceTypes": [
+        {
+          "head": "Front-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Back-end Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "CMS Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "eCommerce Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "SaaS-Apps Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        },
+        {
+          "head": "Custom-Web Development",
+          "subHead": "Contact us today to learn more about how our digital marketing services can succeed online.",
+          "image": "../service/speaker.png"
+        }
+      ],
+      "projects": [
+        {
+          "image": "../client/1.png"
+        },
+        {
+          "image": "../client/2.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        },
+        {
+          "image": "../client/3.png"
+        }
+      ]
     }
   ],
   "head2": "Let’s make things happen",
