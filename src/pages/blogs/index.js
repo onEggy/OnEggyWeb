@@ -11,6 +11,7 @@ import MainHeadline from "../components/mainHeadline";
 import Compo from "../blogOne/compo";
 import Sidebar from "../components/sidebar";
 import blogsData from '../../../public/AllBlogs/index.json'
+import Link from "next/link";
 
 
 const blogOne = () => {
@@ -20,8 +21,8 @@ const blogOne = () => {
   const sentence =
     "Create your unique footprint in the digital world with OnEggy’s IT services. Transform your business with our cutting-edge and effective digital solutions to pave your path to success.";
   const showButton = false;
-  const arr = blogsData.reverse().slice(0,5).map(x=>({...x,head:x.name,title:x.title,content:x.overview}))
-   const CategoryList = seggregateData.category
+  const arr = blogsData.reverse().slice(0, 5).map(x => ({ ...x, head: x.name, title: x.title, content: x.overview }))
+  const CategoryList = seggregateData.category
   const tagList = seggregateData.tags
 
 
@@ -48,7 +49,7 @@ const blogOne = () => {
       <div className="flex flex-wrap">
         <div className="w-full md:w-3/4 px-4">
           {arr.map((props, index) => (
-            <Compo key={index} {...props} />
+            <Link href={`/blogs/${props.slug}`}> <Compo key={index} {...props} /></Link>
           ))}
         </div>
         <div className="hidden lg:block w-full md:w-1/4 px-4 mt-10 md:mt-0">
@@ -88,8 +89,8 @@ const blogOne = () => {
       />
 
       <div className="w-full md:w-3/4 px-4 md:mb-3 ">
-        {arr?.slice(0, 1).map((props, index) => (
-          <Compo key={index} {...props} />
+        {arr.map((props, index) => (
+          <Link href={`/blogs/${props.slug}`}> <Compo key={index} {...props} /></Link>
         ))}
       </div>
 

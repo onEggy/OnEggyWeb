@@ -23,7 +23,7 @@ import Head from "next/head";
 
 const Blog = (props) => {
 
-  console.log('props is',props)
+  // console.log('props is',props)
   const sideContent = [
     {
       head: "Business",
@@ -160,7 +160,7 @@ export async function getStaticProps({ params: { Blog } }) {
   let mdFileData = fs.readFileSync(path[0].mdFileLocation, "utf8")
   const { data, content } = matter(mdFileData);
   let renderedHtml = marked(content)
-  console.log('data is',data)
+  // console.log('data is',data)
   path[0] = { ...path[0], ...data }
   return { props: { ...path[0], renderedHtml } }
 
