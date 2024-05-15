@@ -104,11 +104,11 @@ const Blog = (props) => {
               alt="helo"
             />
           </div>
-          <div className="md:flex mt-10 mb-24 justify-center">
+          <div className="md:flex mt-10 mb-24 ">
 
-            <div className=" max-w-8/12 mx-auto pt-10 md:pr-3 prose" dangerouslySetInnerHTML={{ __html: props.renderedHtml }} />
+            <div className=" max-w-[800px] mx-auto pt-10 md:pr- scale-x-100 prose" dangerouslySetInnerHTML={{ __html: props.renderedHtml }} />
 
-            <div className="md:w-4/12  mt-10 md:pl-16">
+            <div className=" md:w-3/12  mt-10 md:mr-10">
               <div>
                 {sideContent.map((props, index) => (
                   <Compo key={index} {...props} />
