@@ -21,7 +21,7 @@ const blogOne = () => {
   const sentence =
     "Create your unique footprint in the digital world with OnEggy’s IT services. Transform your business with our cutting-edge and effective digital solutions to pave your path to success.";
   const showButton = false;
-  const arr = blogsData.reverse().slice(0, 5).map(x => ({ ...x, head: x.name, title: x.title, content: x.overview }))
+  const arr = blogsData.reverse().slice(0, 5).map(x => ({ ...x, head: x.category, title: x.title, content: x.overview }))
   const CategoryList = seggregateData.category
   const tagList = seggregateData.tags
 
@@ -93,7 +93,7 @@ const blogOne = () => {
           <Link href={`/blogs/${props.slug}`}> <Compo key={index} {...props} /></Link>
         ))}
       </div>
-
+     
       <Footer />
     </div>
   );

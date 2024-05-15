@@ -1,7 +1,7 @@
 [
     {
         "title": "hello this is blog one",
-        "name": "Blog 1",
+        "category": "Web Design",
         "overview": "We are a team of Artists, Innovators & Strategists who left their ordinary life to invent and reinvent the common. Our Passion for technologies changes problems into opportunities. Our heart is full of creative juice that shapes ideas, Our mind is on a quest to transform the ordinary into the extraordinary. This is our code that energizes deep-rooted human desires and makes people pursue their dreams. We took an oath to stick to the Code and call ourselves Code Theorem.",
         "slug": "blog-one-markdown-info",
         "mdFileLocation": "./public/AllBlogs/markDown/blog1.md"
