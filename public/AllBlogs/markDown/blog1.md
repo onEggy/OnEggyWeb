@@ -3,11 +3,8 @@ subTitle: Blog with NextJs, Tailwind and Markdown
 summary: Short description
 date: 12-March-2024
 readTime: 12 min
-title: hello this is blog one
 description: this is temp description
-name: Blog 1
 blogPageTitle: This is the Main Blog Title
-overview: We are a team of Artists, Innovators & Strategists who left their ordinary life to invent and reinvent the common. Our Passion for technologies changes problems into opportunities. Our heart is full of creative juice that shapes ideas, Our mind is on a quest to transform the ordinary into the extraordinary. This is our code that energizes deep-rooted human desires and makes people pursue their dreams. We took an oath to stick to the Code and call ourselves Code Theorem.
 keywords: markdown,md,md-language
 mainBigImage: /about/people.png
 ---

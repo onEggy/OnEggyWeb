@@ -23,7 +23,7 @@ import Head from "next/head";
 
 const Blog = (props) => {
 
-  console.log('props is',props)
+  // console.log('props is',props)
   const sideContent = [
     {
       head: "Business",
@@ -78,11 +78,11 @@ const Blog = (props) => {
 
         <Navbar />
         <Sidebar />
-        <h1 className="mx-auto text-center my-10 w-8/12  text-7xl font-medium tracking-tight">{props.blogPageTitle}</h1>
+        <h1 className="mx-auto text-center my-10 w-8/12 text-4xl  md:text-7xl font-medium tracking-tight">{props.blogPageTitle}</h1>
         <div className="mx-auto my-10 w-11/12">
 
 
-          <div className="flex justify-center">
+          <div className="hidden md:flex justify-center">
             <a
               href="https://codetheorem.co/blogs/category/ui-ux-design"
               className="font-bold"
@@ -104,11 +104,11 @@ const Blog = (props) => {
               alt="helo"
             />
           </div>
-          <div className="flex mt-10 justify-center">
+          <div className="md:flex mt-10 mb-24 justify-center">
 
-            <div className="w-8/12 max-w-[50vw] pt-10  pr-3 prose" dangerouslySetInnerHTML={{ __html: props.renderedHtml }} />
+            <div className=" max-w-8/12 mx-auto pt-10 md:pr-3 prose" dangerouslySetInnerHTML={{ __html: props.renderedHtml }} />
 
-            <div className="w-4/12 mt-10 pl-16">
+            <div className="md:w-4/12  mt-10 md:pl-16">
               <div>
                 {sideContent.map((props, index) => (
                   <Compo key={index} {...props} />
@@ -160,7 +160,7 @@ export async function getStaticProps({ params: { Blog } }) {
   let mdFileData = fs.readFileSync(path[0].mdFileLocation, "utf8")
   const { data, content } = matter(mdFileData);
   let renderedHtml = marked(content)
-  console.log('data is',data)
+  // console.log('data is',data)
   path[0] = { ...path[0], ...data }
   return { props: { ...path[0], renderedHtml } }
 

@@ -3,44 +3,44 @@
     "desc": "Digital Marvels are being created by tech heroes. Unlocking Potential",
     "profile": [
       {
-        "name": "John Smith",
-        "position": "CEO and Founder",
-        "image": "/team/john.png",
-        "alt": "Profile Image",
-        "sns": "faLinkedin",
-        "description": "10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy"
-      },
-      {
-        "name": "Akash Sharma",
-        "position": "Cloud Expert",
+        "name": "Aakash Sharma",
+        "position": "Founder",
         "image": "/team/Akash.png",
         "alt": "Profile Image",
         "sns": "faLinkedin",
-        "description": "7+ years of experience in project management and team leadership. Strong organizational and communication skills"
+        "description": "10+ years of experience in project management, team leadership and Tech Strategy. Strong organizational and tech skills and Founder of OnEggy Technologies."
       },
       {
         "name": "Akanshu Sharma",
-        "position": "Cloud Expert",
+        "position": "Senior DevOps Engineer",
         "image": "/team/Akanshu.png",
         "alt": "Profile Image",
         "sns": "faLinkedin",
-        "description": "5+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization"
+        "description": "5+ years of experience in DevOps Tech Tools and Cloud Tech."
       },
       {
-        "name": "Akanshu Sharma",
-        "position": "Cloud Expert",
+        "name": "Akash Sharma",
+        "position": "Full-Stack Developer",
         "image": "/team/pp2.png",
         "alt": "Profile Image",
         "sns": "faLinkedin",
-        "description": "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis"
+        "description": "4+ years of experience in paid search advertising. Skilled in campaign management and performance analysis"
       },
       {
-        "name": "Akanshu Sharma",
-        "position": "Cloud Expert",
+        "name": "Niraj",
+        "position": "Mentor in Growth",
         "image": "/team/pp1.png",
         "alt": "Profile Image",
         "sns": "faLinkedin",
-        "description": "4+ years of experience in social media marketing. Proficient in creating and scheduling content, analyzing metrics, and building engagement"
+        "description": "10+ years of experience in growth (Online and Offline). Proficient in creating and scheduling content, analyzing metrics, and building engagement"
+      },
+      {
+        "name": "John Smith",
+        "position": "Mobile App Developer",
+        "image": "/team/john.png",
+        "alt": "Profile Image",
+        "sns": "faLinkedin",
+        "description": "10+ years of experience in App Development. Expertise in Mobile App Development, PPC, and content strategy"
       }
     ]
   }
