@@ -7,6 +7,7 @@
   "desc": "Step-by-Step Guide to Achieving Your Business Goals",
   "arr": [
     {
+      "publicVisible": true,
       "meta-title": "Web Development Solutions by Leading Website Development Company",
       "meta-title-slug": "web-development-service",
       "meta-keywords": "web development service, website development company, web development company, website design services, website management services, web development agency",
@@ -97,6 +98,7 @@
       ]
     },
     {
+      "publicVisible": true,
       "meta-title": "Professional App Development Service for Your Business Needs",
       "meta-title-slug": "app-development-service",
       "meta-keywords": "app development service, mobile app development, app development company, mobile app development company, android app development, ios app development, android application development, best app development company, app development agency",
@@ -187,6 +189,7 @@
       ]
     },
     {
+      "publicVisible": true,
       "meta-title": "MVP Development Service for Startups and Businesses",
       "meta-title-slug": "mvp-development-service",
       "meta-keywords": "mvp development service, mvp software development, mvp development company, mvp development agency, startup mvp development company, mvp development services for startups, mvp software development services",
@@ -277,6 +280,7 @@
       ]
     },
     {
+      "publicVisible": true,
       "meta-title": "Advanced Custom Application Development Company | Reliable Solutions",
       "meta-title-slug": "custom-app-softwares-development-service",
       "meta-keywords": "custom application development company, custom application development, custom application development services, custom application software development company, custom software application, custom mobile application development, custom android app development",
@@ -367,6 +371,7 @@
       ]
     },
     {
+      "publicVisible": true,
       "meta-title": "Professional UI UX Design Agency | Customized Solutions for Your Brand",
       "meta-title-slug": "ui-ux-design-service",
       "meta-keywords": "ui ux design service, user interface design, ui ux design agency, ux design services, ui design agency, ui ux services, ui ux company, ui ux consulting services",
@@ -457,6 +462,7 @@
       ]
     },
     {
+      "publicVisible": true,
       "meta-title": "Best Cloud Management Service | Secure Solutions for Your Business",
       "meta-title-slug": "cloud-managed-services",
       "meta-keywords": "cloud management service, multicloud management platform, cloud cost management, aws management service",
@@ -557,6 +563,7 @@
       ]
     },
     {
+      "publicVisible": true,
       "meta-title": "IT Support Service | Trusted Provider for Seamless Operations",
       "meta-title-slug": "it-support-bugs-fixing",
       "meta-keywords": "it support service, it services for small businesses, it managed service provider, it support provider, it support outsourcing, it support for business",
@@ -646,6 +653,7 @@
       ]
     },
     {
+      "publicVisible": true,
       "meta-title": "Professional QA Testing Services | Comprehensive Software Quality Assurance",
       "meta-title-slug": "qa-and-load-testing-services",
       "meta-keywords": "qa testing, software tester, qa automation, qa outsourcing, software quality assurance, qa testing software, qa testing company, quality assurance tester",
@@ -735,6 +743,7 @@
       ]
     },
     {
+      "publicVisible": true,
       "meta-title": "Expert IT Staffing Service | Find Top Talent for Your Tech Needs",
       "meta-title-slug": "it-staffing-and-outsourcing-services",
       "meta-keywords": "it staffing service, it staffing agency, it staffing and consulting, it contracting agency, it contract staffing, best it staffing company",
