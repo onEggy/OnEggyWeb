@@ -2,492 +2,692 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://www.oneggy.com/service/web-development-service</loc>
-		<lastmod>2024-05-16T22:34:15.769660+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981030+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/app-development-service</loc>
-		<lastmod>2024-05-16T22:34:15.770122+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981449+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/mvp-development-service</loc>
-		<lastmod>2024-05-16T22:34:15.770124+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981450+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/custom-app-softwares-development-service</loc>
-		<lastmod>2024-05-16T22:34:15.770126+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981452+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/ui-ux-design-service</loc>
-		<lastmod>2024-05-16T22:34:15.770127+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981453+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/cloud-managed-services</loc>
-		<lastmod>2024-05-16T22:34:15.770129+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981454+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/it-support-bugs-fixing</loc>
-		<lastmod>2024-05-16T22:34:15.770130+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981455+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/qa-and-load-testing-services</loc>
-		<lastmod>2024-05-16T22:34:15.770133+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981458+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/it-staffing-and-outsourcing-services</loc>
-		<lastmod>2024-05-16T22:34:15.770135+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981459+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/cloud-consulting-services</loc>
-		<lastmod>2024-05-16T22:34:15.770136+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981461+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/aws-consulting-services</loc>
-		<lastmod>2024-05-16T22:34:15.770138+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981462+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/gcp-consulting-services</loc>
-		<lastmod>2024-05-16T22:34:15.770139+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981463+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/azure-consulting-services</loc>
-		<lastmod>2024-05-16T22:34:15.770140+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981463+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/python-application-development</loc>
-		<lastmod>2024-05-16T22:34:15.770141+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981465+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/django-application-development</loc>
-		<lastmod>2024-05-16T22:34:15.770142+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981465+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/nodejs-application-development</loc>
-		<lastmod>2024-05-16T22:34:15.770143+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981466+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/magento-website-development</loc>
-		<lastmod>2024-05-16T22:34:15.770144+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981467+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/devops-managed-services</loc>
-		<lastmod>2024-05-16T22:34:15.770145+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981468+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/serverless-architecture</loc>
-		<lastmod>2024-05-16T22:34:15.770146+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981469+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/containerization-and-kubernetes</loc>
-		<lastmod>2024-05-16T22:34:15.770147+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981470+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/ci-cd-pipelines</loc>
-		<lastmod>2024-05-16T22:34:15.770148+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981471+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/big-data-and-analytics</loc>
-		<lastmod>2024-05-16T22:34:15.770150+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981472+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/iot-solutions</loc>
-		<lastmod>2024-05-16T22:34:15.770151+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981473+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/edge-computing</loc>
-		<lastmod>2024-05-16T22:34:15.770152+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981474+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/cybersecurity-consulting</loc>
-		<lastmod>2024-05-16T22:34:15.770153+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981475+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/server-migration-and-modernization</loc>
-		<lastmod>2024-05-16T22:34:15.770154+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981476+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/multi-cloud-management</loc>
-		<lastmod>2024-05-16T22:34:15.770155+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981477+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/blockchain-integration</loc>
-		<lastmod>2024-05-16T22:34:15.770156+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981478+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/serverless-computing-solutions</loc>
-		<lastmod>2024-05-16T22:34:15.770157+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981479+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/container-security-consulting</loc>
-		<lastmod>2024-05-16T22:34:15.770158+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981480+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/hybrid-cloud-integration-services</loc>
-		<lastmod>2024-05-16T22:34:15.770159+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981481+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/security-information-event-management-siem</loc>
-		<lastmod>2024-05-16T22:34:15.770160+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981482+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/continuous-integration-and-continuous-deployment-cicd</loc>
-		<lastmod>2024-05-16T22:34:15.770161+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981483+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/data-analytics-and-business-intelligence-solutions</loc>
-		<lastmod>2024-05-16T22:34:15.770162+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981484+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/blockchain-integration-solutions</loc>
-		<lastmod>2024-05-16T22:34:15.770163+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981485+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/web-scraping-services</loc>
-		<lastmod>2024-05-16T22:34:15.770164+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981486+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/social-media-marketing-services</loc>
-		<lastmod>2024-05-16T22:34:15.770165+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981489+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/email-marketing-automation-services</loc>
-		<lastmod>2024-05-16T22:34:15.770166+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981490+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/content-marketing-services</loc>
-		<lastmod>2024-05-16T22:34:15.770167+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981490+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/ppc-management-services</loc>
-		<lastmod>2024-05-16T22:34:15.770168+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981491+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/seo-services</loc>
-		<lastmod>2024-05-16T22:34:15.770169+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981492+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/influencer-marketing-services</loc>
-		<lastmod>2024-05-16T22:34:15.770170+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981493+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/python-web-development-services</loc>
-		<lastmod>2024-05-16T22:34:15.770171+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981496+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/python-app-development-services</loc>
-		<lastmod>2024-05-16T22:34:15.770172+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981497+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/python-data-science-solutions</loc>
-		<lastmod>2024-05-16T22:34:15.770173+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981497+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/python-machine-learning-services</loc>
-		<lastmod>2024-05-16T22:34:15.770174+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981498+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/python-automation-solutions</loc>
-		<lastmod>2024-05-16T22:34:15.770175+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981499+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/python-cloud-solutions</loc>
-		<lastmod>2024-05-16T22:34:15.770176+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981500+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/aws-cloud-consulting-services</loc>
-		<lastmod>2024-05-16T22:34:15.770262+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981547+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/aws-cloud-managed-services</loc>
-		<lastmod>2024-05-16T22:34:15.770264+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981549+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/aws-serverless-solutions</loc>
-		<lastmod>2024-05-16T22:34:15.770265+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981550+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/aws-cloud-cost-optimization</loc>
-		<lastmod>2024-05-16T22:34:15.770266+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981551+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/aws-cloud-security-solutions</loc>
-		<lastmod>2024-05-16T22:34:15.770267+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981552+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/aws-devops-automation</loc>
-		<lastmod>2024-05-16T22:34:15.770268+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981553+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/devops-consulting-services</loc>
-		<lastmod>2024-05-16T22:34:15.770269+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981554+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/configuration-management-puppet</loc>
-		<lastmod>2024-05-16T22:34:15.770270+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981554+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/log-management-analysis-solutions</loc>
-		<lastmod>2024-05-16T22:34:15.770271+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981555+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/azure-cloud-managed-services</loc>
-		<lastmod>2024-05-16T22:34:15.770272+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981556+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/seo-audits</loc>
-		<lastmod>2024-05-16T22:34:15.770273+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981557+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/on-page-seo-optimization</loc>
-		<lastmod>2024-05-16T22:34:15.770274+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981558+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/off-page-seo-strategies</loc>
-		<lastmod>2024-05-16T22:34:15.770275+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981559+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/local-seo-services</loc>
-		<lastmod>2024-05-16T22:34:15.770276+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981560+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/seo-content-writing</loc>
-		<lastmod>2024-05-16T22:34:15.770277+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981561+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/seo-consulting-services</loc>
-		<lastmod>2024-05-16T22:34:15.770278+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981562+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/backend-development-services</loc>
-		<lastmod>2024-05-16T22:34:15.770279+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981563+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/frontend-development-solutions</loc>
-		<lastmod>2024-05-16T22:34:15.770280+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981564+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/kubernetes-services</loc>
-		<lastmod>2024-05-16T22:34:15.770281+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981565+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/kubernetes-cluster-management</loc>
-		<lastmod>2024-05-16T22:34:15.770282+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981566+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/kubernetes-consulting</loc>
-		<lastmod>2024-05-16T22:34:15.770283+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981566+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/kubernetes-application-deployment</loc>
-		<lastmod>2024-05-16T22:34:15.770284+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981568+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/kubernetes-monitoring-and-logging</loc>
-		<lastmod>2024-05-16T22:34:15.770285+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981568+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/kubernetes-security-solutions</loc>
-		<lastmod>2024-05-16T22:34:15.770286+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981569+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/kubernetes-training-and-workshops</loc>
-		<lastmod>2024-05-16T22:34:15.770286+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981570+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/python-data-science-solutions</loc>
-		<lastmod>2024-05-16T22:34:15.770288+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981571+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/data-analysis-with-python</loc>
-		<lastmod>2024-05-16T22:34:15.770288+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981572+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/machine-learning-solutions</loc>
-		<lastmod>2024-05-16T22:34:15.770289+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981573+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/fastapi-development-services</loc>
-		<lastmod>2024-05-16T22:34:15.770290+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981573+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/api-development-with-fastapi</loc>
-		<lastmod>2024-05-16T22:34:15.770291+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981574+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/real-time-data-processing-with-fastapi</loc>
-		<lastmod>2024-05-16T22:34:15.770292+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981575+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/microservice-architecture-with-fastapi</loc>
-		<lastmod>2024-05-16T22:34:15.770293+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981576+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/fastapi-consulting-services</loc>
-		<lastmod>2024-05-16T22:34:15.770294+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981577+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/infrastructure-as-code-with-terraform</loc>
-		<lastmod>2024-05-16T22:34:15.770295+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981578+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/terraform-consulting-services</loc>
-		<lastmod>2024-05-16T22:34:15.770296+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981579+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/terraform-module-development</loc>
-		<lastmod>2024-05-16T22:34:15.770297+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981580+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/terraform-migration-services</loc>
-		<lastmod>2024-05-16T22:34:15.770298+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981581+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/terraform-security-best-practices</loc>
-		<lastmod>2024-05-16T22:34:15.770299+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981581+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/terraform-training-and-workshops</loc>
-		<lastmod>2024-05-16T22:34:15.770299+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981582+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/relational-database-management</loc>
-		<lastmod>2024-05-16T22:34:15.770300+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981583+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/nosql-database-solutions</loc>
-		<lastmod>2024-05-16T22:34:15.770301+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981584+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/database-migration-and-modernization</loc>
-		<lastmod>2024-05-16T22:34:15.770302+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981585+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/database-performance-tuning</loc>
-		<lastmod>2024-05-16T22:34:15.770303+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981586+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/automation-and-autoscaling-solutions</loc>
-		<lastmod>2024-05-16T22:34:15.770304+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981587+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/hosting-solutions</loc>
-		<lastmod>2024-05-16T22:34:15.770305+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981588+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/automated-testing-solutions</loc>
-		<lastmod>2024-05-16T22:34:15.770306+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981588+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/grafana-monitoring-solutions</loc>
-		<lastmod>2024-05-16T22:34:15.770307+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981589+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/load-testing-services</loc>
-		<lastmod>2024-05-16T22:34:15.770308+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981590+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/security-testing-services</loc>
-		<lastmod>2024-05-16T22:34:15.770335+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981606+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 	<url>
 		<loc>https://www.oneggy.com/service/blockchain-as-a-service-baas</loc>
-		<lastmod>2024-05-16T22:34:15.770336+00:00</lastmod>
+		<lastmod>2024-05-19T19:40:45.981608+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/python-development-services-delhi</loc>
+		<lastmod>2024-05-19T19:40:45.981608+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/python-development-services-gurugram</loc>
+		<lastmod>2024-05-19T19:40:45.981609+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/python-development-services-gurgaon</loc>
+		<lastmod>2024-05-19T19:40:45.981610+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/python-development-services-noida</loc>
+		<lastmod>2024-05-19T19:40:45.981611+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/python-development-services-new-delhi</loc>
+		<lastmod>2024-05-19T19:40:45.981612+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/python-development-services-bangalore</loc>
+		<lastmod>2024-05-19T19:40:45.981613+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/python-development-services-mohali</loc>
+		<lastmod>2024-05-19T19:40:45.981614+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/python-development-services-punjab</loc>
+		<lastmod>2024-05-19T19:40:45.981615+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/django-development-services-delhi</loc>
+		<lastmod>2024-05-19T19:40:45.981615+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/django-development-services-gurugram</loc>
+		<lastmod>2024-05-19T19:40:45.981616+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/django-development-services-gurgaon</loc>
+		<lastmod>2024-05-19T19:40:45.981617+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/django-development-services-noida</loc>
+		<lastmod>2024-05-19T19:40:45.981618+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/django-development-services-new-delhi</loc>
+		<lastmod>2024-05-19T19:40:45.981619+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/django-development-services-bangalore</loc>
+		<lastmod>2024-05-19T19:40:45.981620+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/django-development-services-mohali</loc>
+		<lastmod>2024-05-19T19:40:45.981621+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/django-development-services-punjab</loc>
+		<lastmod>2024-05-19T19:40:45.981621+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/aws-managed-services-delhi</loc>
+		<lastmod>2024-05-19T19:40:45.981622+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/aws-managed-services-gurugram</loc>
+		<lastmod>2024-05-19T19:40:45.981623+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/aws-managed-services-gurgaon</loc>
+		<lastmod>2024-05-19T19:40:45.981624+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/aws-managed-services-noida</loc>
+		<lastmod>2024-05-19T19:40:45.981625+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/aws-managed-services-new-delhi</loc>
+		<lastmod>2024-05-19T19:40:45.981626+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/aws-managed-services-bangalore</loc>
+		<lastmod>2024-05-19T19:40:45.981627+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/aws-managed-services-mohali</loc>
+		<lastmod>2024-05-19T19:40:45.981628+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/aws-managed-services-punjab</loc>
+		<lastmod>2024-05-19T19:40:45.981629+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/cloud-managed-services-delhi</loc>
+		<lastmod>2024-05-19T19:40:45.981630+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/cloud-managed-services-gurugram</loc>
+		<lastmod>2024-05-19T19:40:45.981630+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/cloud-managed-services-gurgaon</loc>
+		<lastmod>2024-05-19T19:40:45.981631+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/cloud-managed-services-noida</loc>
+		<lastmod>2024-05-19T19:40:45.981632+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/cloud-managed-services-new-delhi</loc>
+		<lastmod>2024-05-19T19:40:45.981633+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/cloud-managed-services-bangalore</loc>
+		<lastmod>2024-05-19T19:40:45.981634+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/cloud-managed-services-mohali</loc>
+		<lastmod>2024-05-19T19:40:45.981635+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/cloud-managed-services-punjab</loc>
+		<lastmod>2024-05-19T19:40:45.981636+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/devops-managed-services-delhi</loc>
+		<lastmod>2024-05-19T19:40:45.981636+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/devops-managed-services-gurugram</loc>
+		<lastmod>2024-05-19T19:40:45.981637+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/devops-managed-services-gurgaon</loc>
+		<lastmod>2024-05-19T19:40:45.981638+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/devops-managed-services-noida</loc>
+		<lastmod>2024-05-19T19:40:45.981639+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/devops-managed-services-new-delhi</loc>
+		<lastmod>2024-05-19T19:40:45.981640+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/devops-managed-services-bangalore</loc>
+		<lastmod>2024-05-19T19:40:45.981641+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/devops-managed-services-mohali</loc>
+		<lastmod>2024-05-19T19:40:45.981642+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://www.oneggy.com/service/devops-managed-services-punjab</loc>
+		<lastmod>2024-05-19T19:40:45.981642+00:00</lastmod>
 		<priority>0.80</priority>
 	</url>
 </urlset>
