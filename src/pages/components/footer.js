@@ -8,8 +8,11 @@ import {
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
+import serviceData from '../../data/serviceData.json';
 
 const footer = () => {
+  const services = serviceData.arr;
+
   return (
     // <div className="w-full">
     <div className=" bg-l_black rounded-tl-[3rem] rounded-tr-[3rem] mt-10 px-8">
@@ -71,6 +74,27 @@ const footer = () => {
           </button>
         </div>
       </div>
+
+
+              <div className="hidden">
+                {services.map((service) => (
+                    <div key={service["meta-title-slug"]} className="mb-4">
+                        <h3 className="text-xl font-bold">{service.development}</h3>
+                        <p className="text-sm">{service.content}</p>
+                        <a
+                            href={`https://www.oneggy.com/service/${service["meta-title-slug"]}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-500 hover:underline"
+                        >
+                            Learn more
+                        </a>
+                    </div>
+                ))}
+            </div>
+
+
+              
       <div className="flex space-x-4 justify-center sm:hidden mt-4 mb-8">
 
         <div className="bg-white w-8 h-8 flex justify-center items-center rounded-full text-l_black">
