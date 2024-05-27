@@ -8,7 +8,7 @@ import {
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
-import serviceData from '../../../data/serviceData.json';
+import serviceData from '../../../public/data/serviceData.json';
 
 const footer = () => {
   const services = serviceData.arr;
