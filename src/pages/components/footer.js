@@ -79,7 +79,7 @@ const footer = () => {
               <div className="hidden">
                 {services.map((service) => (
                     <div key={service["meta-title-slug"]} className="mb-4">
-                        <h3 className="text-xl font-bold">{service.development}</h3>
+                        <h3 className="text-xl font-bold">{service.meta-title}</h3>
                         <p className="text-sm">{service.content}</p>
                         <a
                             href={`https://www.oneggy.com/service/${service["meta-title-slug"]}`}
