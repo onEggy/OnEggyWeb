@@ -6,13 +6,8 @@ const Sitemap = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      {/* Embed sitemap generator code */}
-      <script
-        id="mysitemapgenerator_loadcorsdata"
-        data-token="ceb620f77f14f824d9cc8c0138aee5bd"
-        data-domain="www.mysitemapgenerator.com"
-        src="https://cdn.mysitemapgenerator.com/api/embedmap.m.js"
-      />
+      <div id="mysitemapgenerator_loadcorsdata" data-token="6a3b469f166e1080690423656d946be4" data-domain="www.mysitemapgenerator.com"></div>
+      <script src="https://cdn.mysitemapgenerator.com/api/embedmap.m.js"></script>
       <Footer />
     </div>
   );
