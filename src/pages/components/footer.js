@@ -111,8 +111,8 @@ const footer = () => {
       {/* <footer className="text-white px-4 mt-10 flex flex-col space-y-2 pb-10 md:flex-row md:justify-between md:items-center"> */}
       <footer className="text-white px-4 mt-10 flex flex-col space-y-2 pb-10 md:flex-row md:justify-start md:items-center md:w-8/12 ml-4 ">
         <p className="mt-2">&copy; {new Date().getFullYear()} OnEggy. All Rights Reserved.</p>
-        <a href="#" className="ml-28 ">
-          Privacy Policy
+        <a href="/sitemap" className="ml-28 ">
+          Sitemaps
         </a>
       </footer>
     </div>
