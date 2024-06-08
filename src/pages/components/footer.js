@@ -87,7 +87,7 @@ const footer = () => {
                             rel="noopener noreferrer"
                             className="text-blue-500 hover:underline"
                         >
-                            Learn more
+                              {service["meta-title"]}
                         </a>
                     </div>
                 ))}
