@@ -43,5 +43,20 @@
         "title": "Our Clients - OnEggy Technologies",
         "description": "Discover the success stories of our valued clients at OnEggy Technologies. Learn how our tech solutions have empowered businesses across diverse industries, fostering growth and innovation.",
         "keywords": "OnEggy Technologies clients, success stories, tech solutions, business empowerment, growth, innovation, India, Delhi, New Delhi, Gurugram, Bangalore, pan India"
+    },
+    "/privacy-policy": {
+    "title": "Privacy Policy - OnEggy Technologies",
+    "description": "Learn how OnEggy Technologies collects, uses, and safeguards your personal data. Read our comprehensive Privacy Policy to understand your rights and our data protection practices.",
+    "keywords": "OnEggy Technologies privacy policy, data protection, personal information, data collection, data usage, data security, user rights, privacy practices"
+    },
+    "/terms-and-conditions": {
+    "title": "Terms and Conditions - OnEggy Technologies",
+    "description": "Review the terms and conditions for using OnEggy Technologies' website and services. Understand your responsibilities and our commitments to providing exceptional tech solutions.",
+    "keywords": "OnEggy Technologies terms and conditions, user agreement, service terms, website terms, responsibilities, commitments, tech solutions"
+    },
+    "/refund-policy": {
+    "title": "Refund Policy - OnEggy Technologies",
+    "description": "Understand the refund policy of OnEggy Technologies. Learn about eligibility, the refund process, and conditions to ensure a smooth and transparent experience.",
+    "keywords": "OnEggy Technologies refund policy, refund eligibility, refund process, service dissatisfaction, technical issues, refund conditions, transparent experience"
     }
 }

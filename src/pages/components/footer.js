@@ -114,6 +114,15 @@ const footer = () => {
         <a href="/sitemap" className="ml-28 ">
           Sitemaps
         </a>
+        <a href="/privacy-policy" className="ml-28 ">
+          Privacy Policy
+        </a>
+        <a href="/terms-and-conditions" className="ml-28 ">
+          Terms and Conditions
+        </a>
+        <a href="/refund-policy" className="ml-28 ">
+          Refund Policy
+        </a>
       </footer>
     </div>
     // </div>
