@@ -1,8 +1,8 @@
 // pages/refund-policy.js
 import React from "react";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
-import Sidebar from "../components/sidebar";
+import Navbar from "./components/navbar";
+import Footer from "./components/footer";
+import Sidebar from "./components/sidebar";
 import seoData from "../../public/data/seo-data.json";
 import { NextSeo } from "next-seo";
 
