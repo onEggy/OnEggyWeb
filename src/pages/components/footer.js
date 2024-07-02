@@ -29,7 +29,7 @@ const footer = () => {
           <li className="mx-5 cursor-pointer"><Link href={'/services'}> Service </Link></li>
           <li className="mx-5 cursor-pointer"><Link href={'/team'}> Team </Link></li>
           <li className="mx-5 cursor-pointer"> <Link href={'/client'}> Portfolio</Link></li>
-          <li className="mx-5 cursor-pointer"><Link href={'/blog'}>Blog </Link></li>
+          <li className="mx-5 cursor-pointer"><Link href={'/blogs'}>Blog </Link></li>
         </ul>
         <div className=" space-x-4 self-center hidden sm:flex">
           <div className="bg-white w-8 h-8 flex justify-center items-center rounded-full text-l_black">
