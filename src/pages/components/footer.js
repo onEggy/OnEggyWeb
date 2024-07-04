@@ -29,7 +29,7 @@ const footer = () => {
           <li className="mx-5 cursor-pointer"><Link href={'/services'}> Service </Link></li>
           <li className="mx-5 cursor-pointer"><Link href={'/team'}> Team </Link></li>
           <li className="mx-5 cursor-pointer"> <Link href={'/client'}> Portfolio</Link></li>
-          <li className="mx-5 cursor-pointer"><Link href={'/blog'}>Blog </Link></li>
+          <li className="mx-5 cursor-pointer"><Link href={'/blogs'}>Blog </Link></li>
         </ul>
         <div className=" space-x-4 self-center hidden sm:flex">
           <div className="bg-white w-8 h-8 flex justify-center items-center rounded-full text-l_black">
@@ -79,7 +79,7 @@ const footer = () => {
               <div className="hidden">
                 {services.map((service) => (
                     <div key={service["meta-title-slug"]} className="mb-4">
-                        <h3 className="text-xl font-bold">{service.development}</h3>
+                        <h3 className="text-xl font-bold">{service["meta-title"]}</h3>
                         <p className="text-sm">{service.content}</p>
                         <a
                             href={`https://www.oneggy.com/service/${service["meta-title-slug"]}`}
@@ -109,7 +109,7 @@ const footer = () => {
       </div>
       <hr className="mx-auto w-[94%]" />
       {/* <footer className="text-white px-4 mt-10 flex flex-col space-y-2 pb-10 md:flex-row md:justify-between md:items-center"> */}
-      <footer className="text-white px-4 mt-10 flex flex-col space-y-2 pb-10 md:flex-row md:justify-start md:items-center md:w-8/12 ml-4 ">
+      <footer className="text-white px-4 mt-10 flex flex-col space-y-2 pb-10 md:flex-row md:justify-start md:items-center md:w-10/12 ml-4 ">
         <p className="mt-2">&copy; {new Date().getFullYear()} OnEggy. All Rights Reserved.</p>
         <a href="/sitemap" className="ml-28 ">
           Sitemaps
