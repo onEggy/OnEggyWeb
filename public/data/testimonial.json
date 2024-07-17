@@ -9,6 +9,24 @@
             "avatar": "/home/awards/image1.png"
         },
         {
+            "name": "Bharat Bhushan",
+            "designation": "Senior DevOps at PineLabs",
+            "testimonial": "We faced significant challenges with Kubernetes scaling in EKS. OnEggy Technologies provided an exceptional solution. They analyzed our infrastructure, identified bottlenecks, and implemented a robust, tailored scaling solution. Their expertise ensured minimal disruption and improved our system's efficiency. Now, our applications scale automatically, providing a seamless user experience and better resource utilization. The professionalism and dedication of the OnEggy Technologies team have been outstanding. I highly recommend them for enhancing Kubernetes infrastructure.",
+            "avatar": "/home/awards/image1.png"
+        },
+        {
+            "name": "Praveen",
+            "designation": "Senior DevOps at PayU",
+            "testimonial": "We needed a reliable solution to ensure our APIs were consistently operational. OnEggy Technologies delivered an exceptional Python scripting solution that automates API checks, providing us with real-time insights into their performance. Their expertise and precision in scripting have greatly enhanced our monitoring capabilities. The team at OnEggy Technologies was professional, responsive, and dedicated, ensuring seamless integration with our existing systems. This solution has been instrumental in maintaining the reliability and efficiency of our services. I highly recommend OnEggy Technologies for their outstanding work.",
+            "avatar": "/home/awards/image1.png"
+        },
+        {
+            "name": "Naveen",
+            "designation": "Founder of KanTag-Solutions",
+            "testimonial": "OnEggy Technologies provided exceptional support for our client, Adel India. They expertly resolved bugs and significantly improved website performance, ensuring a smooth and efficient user experience. Their team's professionalism, technical prowess, and dedication to excellence were evident throughout the project. OnEggy Technologies delivered timely solutions and greatly enhanced our client's satisfaction. I highly recommend OnEggy Technologies for their outstanding work and commitment to quality.",
+            "avatar": "/home/awards/image1.png"
+        },
+        {
             "name": "Mayank Gupta",
             "designation": "Founder at BitsMart, Growth Yogi",
             "testimonial": "OnEggy Technologies has played a crucial role in the growth journey of BitsMart and Growth Yogi. Their cutting-edge development services and strategic insights have been instrumental in achieving our business goals. We appreciate the professionalism and commitment of OnEggy's team.",
