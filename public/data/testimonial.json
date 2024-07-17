@@ -15,6 +15,12 @@
             "avatar": "/home/awards/image1.png"
         },
         {
+            "name": "Nikhil Gupta",
+            "designation": "Founder at Beyond Imagination Technologies",
+            "testimonial": "OnEggy Technologies developed a React Native mobile application for EastMojo, a client of mine. They designed an excellent UI/UX and delivered a robust app for both iOS and Android. Their expertise and dedication are impressive.",
+            "avatar": "/home/awards/image1.png"
+        },
+        {
             "name": "Munish Dugal",
             "designation": "Founder at Decide Precise Technologies",
             "testimonial": "OnEggy Technologies provided exceptional support with SAP Hana installation and configuration for our client. Their professionalism and expertise ensured a seamless setup.",
