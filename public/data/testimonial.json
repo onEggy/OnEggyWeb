@@ -27,6 +27,12 @@
             "avatar": "/home/awards/image1.png"
         },
         {
+            "name": "Anthony",
+            "designation": "CTO at Beyond Imagination Technologies",
+            "testimonial": "OnEggy Technologies developed a comprehensive solution for NumberWize, a client of mine. They designed a stellar UI/UX and built a robust React Native mobile application for iOS and Android, a React website, and a Django backend with a PostgreSQL database. Their expertise and commitment to excellence are unparalleled.",
+            "avatar": "/home/awards/image1.png"
+        },
+        {
             "name": "Sunil",
             "designation": "at Brahmatells",
             "testimonial": "OnEggy Technologies saved our servers over the AWS Cloud and fixed critical application issues that were halting our business. Their expertise and quick response were invaluable.",
