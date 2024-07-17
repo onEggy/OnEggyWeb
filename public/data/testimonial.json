@@ -11,19 +11,31 @@
         {
             "name": "Bharat Bhushan",
             "designation": "Senior DevOps at PineLabs",
-            "testimonial": "We faced significant challenges with Kubernetes scaling in EKS. OnEggy Technologies provided an exceptional solution. They analyzed our infrastructure, identified bottlenecks, and implemented a robust, tailored scaling solution. Their expertise ensured minimal disruption and improved our system's efficiency. Now, our applications scale automatically, providing a seamless user experience and better resource utilization. The professionalism and dedication of the OnEggy Technologies team have been outstanding. I highly recommend them for enhancing Kubernetes infrastructure.",
+            "testimonial": "OnEggy Technologies expertly scaled our EKS Kubernetes setup, improving performance and resource utilization. Their professionalism and expertise are commendable.",
+            "avatar": "/home/awards/image1.png"
+        },
+        {
+            "name": "Munish Dugal",
+            "designation": "Founder at Decide Precise Technologies",
+            "testimonial": "OnEggy Technologies provided exceptional support with SAP Hana installation and configuration for our client. Their professionalism and expertise ensured a seamless setup.",
+            "avatar": "/home/awards/image1.png"
+        },
+        {
+            "name": "Sunil",
+            "designation": "at Brahmatells",
+            "testimonial": "OnEggy Technologies saved our servers over the AWS Cloud and fixed critical application issues that were halting our business. Their expertise and quick response were invaluable.",
             "avatar": "/home/awards/image1.png"
         },
         {
             "name": "Praveen",
             "designation": "Senior DevOps at PayU",
-            "testimonial": "We needed a reliable solution to ensure our APIs were consistently operational. OnEggy Technologies delivered an exceptional Python scripting solution that automates API checks, providing us with real-time insights into their performance. Their expertise and precision in scripting have greatly enhanced our monitoring capabilities. The team at OnEggy Technologies was professional, responsive, and dedicated, ensuring seamless integration with our existing systems. This solution has been instrumental in maintaining the reliability and efficiency of our services. I highly recommend OnEggy Technologies for their outstanding work.",
+            "testimonial": "OnEggy Technologies automated our API checks with precise Python scripts, enhancing our monitoring. Their expertise and dedication are outstanding.",
             "avatar": "/home/awards/image1.png"
         },
         {
             "name": "Naveen",
             "designation": "Founder of KanTag-Solutions",
-            "testimonial": "OnEggy Technologies provided exceptional support for our client, Adel India. They expertly resolved bugs and significantly improved website performance, ensuring a smooth and efficient user experience. Their team's professionalism, technical prowess, and dedication to excellence were evident throughout the project. OnEggy Technologies delivered timely solutions and greatly enhanced our client's satisfaction. I highly recommend OnEggy Technologies for their outstanding work and commitment to quality.",
+            "testimonial": "OnEggy Technologies resolved bugs and boosted Adel India's website performance, showcasing professionalism and technical expertise. Highly recommended!",
             "avatar": "/home/awards/image1.png"
         },
         {
