@@ -36,7 +36,7 @@ function App({ Component, pageProps }) {
         }
       />
       <Head>
-        <link rel="icon" href={'/Faviconv1.png'} />
+        <link rel="icon" href={'/Favicon.png'} />
       </Head>
 
       <Component {...pageProps} />
