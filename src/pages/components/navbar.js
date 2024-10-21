@@ -52,7 +52,7 @@ export default function Navbar() {
             <div className="relative flex h-16 items-center justify-between">
               <div className="flex flex-shrink-0 items-center lg:hidden">
                 <a href="/">
-                  <Image src={logov1} alt="Logehehheo" width="110" height="55" />
+                  <Image src={logov1} alt="OnEggy Technologies Cloud & DevOps Company logo" width="110" height="55" />
                 </a>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center lg:hidden order-2">
@@ -73,7 +73,7 @@ export default function Navbar() {
               <nav className="py-4 lg:flex lg:justify-around xl:justify-between mx-auto hidden lg:w-full order-1">
                 <div className="flex flex-shrink-0 items-center">
                   <a href="/">
-                    <Image src={logo} alt="Logasfo" width="150" height="55" />
+                    <Image src={logov1} alt="OnEggy Technologies Cloud & DevOps Company logo" width="150" height="85" />
                   </a>
                 </div>
 
