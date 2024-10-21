@@ -22,7 +22,7 @@ const footer = () => {
           src={logov1}
           alt="Logo"
           width="165"
-          height="55"
+          height="85"
           className="logo_img"
         />
         <ul className="justify-center py-4 text-white underline hidden sm:flex">
