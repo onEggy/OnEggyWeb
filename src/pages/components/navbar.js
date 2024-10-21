@@ -5,6 +5,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../../../public/logo.png";
+import logov1 from "../../../public/logov1.png";
 
 const navigation = [
   { name: "About Us", href: "/about", current: true },
@@ -51,7 +52,7 @@ export default function Navbar() {
             <div className="relative flex h-16 items-center justify-between">
               <div className="flex flex-shrink-0 items-center lg:hidden">
                 <a href="/">
-                  <Image src={logo} alt="Logehehheo" width="110" height="55" />
+                  <Image src={logov1} alt="Logehehheo" width="110" height="55" />
                 </a>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center lg:hidden order-2">
