@@ -70,7 +70,7 @@ export default function Navbar() {
                   )}
                 </Disclosure.Button> */}
               </div>
-              <nav className="py-4 lg:flex lg:justify-around xl:justify-between mx-auto hidden lg:w-full order-1" style="margin-top: 1rem;">
+              <nav className="py-4 lg:flex lg:justify-around xl:justify-between mx-auto hidden lg:w-full order-1" style={{ marginTop: '1rem' }}>
                 <div className="flex flex-shrink-0 items-center">
                   <a href="/">
                     <Image src={logov1} alt="OnEggy Technologies Cloud & DevOps Company logo" width="150" height="85" />
