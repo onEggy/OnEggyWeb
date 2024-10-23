@@ -1,6 +1,7 @@
 import React from "react";
 import Headline from "../components/headline";
 import Slider from "react-slick"; // Import the Slider component
+import Marquee from "react-fast-marquee";
 
 const technologyStack = () => {
   const title = "Technology Stacks";
@@ -43,13 +44,11 @@ const technologyStack = () => {
   return (
     <div className="">
       <Headline title={title} desc={desc} descCss={' md:mt-8'} />
-      <Slider {...sliderSettings}>
+      <Marquee pauseOnHover={false} speed={30} pauseOnClick={false} gradient={true} gradientColor={"white"} autoFill={true}>
         {technologyStackImages.map((image, index) => (
-          <div key={index} className="mx-2 mt-16">
-            <img src={image} alt={`Tech Stack Image ${index + 1}`} />
-          </div>
+          <img key={index} src={image} alt={`Tech Stack Image ${index + 1}`} className="mx-2 mt-16" />
         ))}
-      </Slider>
+      </Marquee>
     </div>
   );
 };
