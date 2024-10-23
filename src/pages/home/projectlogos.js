@@ -3,7 +3,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Marquee from "react-fast-marquee";
-import "react-fast-marquee/dist/index.css";
 import projectLogosData from "../../../public/data/projectlogos.json";
 
 const ProjectLogos = () => {
@@ -30,7 +29,7 @@ const ProjectLogos = () => {
   return (
     <main className="sm:mt-14 my-12  md:ml-4">
       <div className="inner">
-        <Marquee pauseOnHover={true} speed={50}>
+        <Marquee pauseOnHover={false} speed={30} pauseOnClick={false} gradient={true} gradientColor={"white"} autoFill={true}>
           {projectLogosData.projectLogos.map((logo) => (
             <img
               key={logo.id}
