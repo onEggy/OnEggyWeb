@@ -46,7 +46,7 @@ const technologyStack = () => {
       <Headline title={title} desc={desc} descCss={' md:mt-8'} />
       <Marquee pauseOnHover={false} speed={30} pauseOnClick={false} gradient={true} gradientColor={"white"} autoFill={true}>
         {technologyStackImages.map((image, index) => (
-          <img key={index} src={image} alt={`Tech Stack Image ${index + 1}`} className="mx-2 mt-16 sm:mx-3 md:mx-4 lg:mx-6" />
+          <img key={index} src={image} alt={`Tech Stack Image ${index + 1}`} className="mt-16 mx-[2.5rem] sm:mx-[3rem] md:mx-[3.5rem] lg:mx-[4rem]" />
         ))}
       </Marquee>
     </div>
