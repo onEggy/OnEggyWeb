@@ -36,7 +36,13 @@ function App({ Component, pageProps }) {
         }
       />
       <Head>
-        <link rel="icon" href={'/Favicon.png'} />
+        <link rel="icon" href={'/favicon-v1.ico'} />
+        {/* Apple Touch Icon */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-v1.png" />
+
+        {/* Favicon for browsers */}
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32-v1.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16-v1.png" />
       </Head>
 
       <Component {...pageProps} />
