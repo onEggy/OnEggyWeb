@@ -50,7 +50,7 @@ const Home = (skill) => {
             </h1>
             <Image
               src="/ai.png"
-              alt="aiImage"
+              alt="OnEggy Technologies DevOps and Cloud Consulting and Managed tech"
               width={0}
               height={0}
               sizes="100vw"
