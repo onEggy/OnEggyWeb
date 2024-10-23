@@ -2,6 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Marquee from "react-fast-marquee";
 import projectLogosData from "../../../public/data/projectlogos.json";
 
 const ProjectLogos = () => {
@@ -28,22 +29,17 @@ const ProjectLogos = () => {
   return (
     <main className="sm:mt-14 my-12  md:ml-4">
       <div className="inner">
-        <Slider {...sliderSettings}>
+        <Marquee pauseOnHover={true} speed={50}>
           {projectLogosData.projectLogos.map((logo) => (
-            <div key={logo.id}>
-              <img
-                src={logo.url}
-                alt={logo.alt}
-                className="project_logo"
-                style={{
-                  filter: "grayscale(100%)",
-                  width: "160px",
-                  height: "54px",
-                }}
-              />
-            </div>
+            <img
+              key={logo.id}
+              src={logo.url}
+              alt={logo.alt}
+              className="project_logo mx-4"  // Adjust margin for spacing between logos
+              style={{ filter: "grayscale(100%)", width: "160px", height: "54px" }}
+            />
           ))}
-        </Slider>
+        </Marquee>
       </div>
     </main>
   );
