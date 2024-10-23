@@ -35,7 +35,7 @@ const ProjectLogos = () => {
               key={logo.id}
               src={logo.url}
               alt={logo.alt}
-              className="project_logo mx-4"  // Adjust margin for spacing between logos
+              className="project_logo mx-4 mx-[1.5rem] sm:mx-[2.5rem] md:mx-[3rem] lg:mx-[3.5rem]"  // Adjust margin for spacing between logos
               style={{ filter: "grayscale(100%)", width: "160px", height: "54px" }}
             />
           ))}
