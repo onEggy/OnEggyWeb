@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Marquee from "react-fast-marquee";
+import "react-fast-marquee/dist/index.css";
 import projectLogosData from "../../../public/data/projectlogos.json";
 
 const ProjectLogos = () => {
