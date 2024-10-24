@@ -2,8 +2,15 @@
     {
         "title": "How Cloud Managed Services and DevOps Managed Services Transform Your IT Infrastructure",
         "category": "DevOps",
-        "overview": "We are a team of Artists, Innovators & Strategists who left their ordinary life to invent and reinvent the common. Our Passion for technologies changes problems into opportunities. Our heart is full of creative juice that shapes ideas, Our mind is on a quest to transform the ordinary into the extraordinary. This is our code that energizes deep-rooted human desires and makes people pursue their dreams. We took an oath to stick to the Code and call ourselves Code Theorem.",
+        "overview": "OnEggy Technologies specializes in DevOps Services and Consulting, aiming to streamline and accelerate software development cycles. Our expert team integrates development and operations, offering bespoke solutions that enhance productivity and foster innovation. With a focus on automation, continuous integration (CI), and continuous deployment (CD), we help businesses optimize their processes and reduce time-to-market. Our services include comprehensive cloud infrastructure management, ensuring robust, scalable, and efficient operations. This strategic approach not only enhances software quality but also supports businesses in adapting to dynamic market demands, maintaining a competitive edge in the fast-evolving tech landscape.",
         "slug": "devops-services-and-consulting",
         "mdFileLocation": "./public/AllBlogs/markDown/how-cloud-managed-services-devops-managed-services-transform-it-infra.md"
+    },
+    {
+        "title": "DevOps Consulting and AWS with Kubernetes Managed Services",
+        "category": "DevOps",
+        "overview": "Integrating DevOps consulting with AWS and Kubernetes managed services revolutionizes software development and IT infrastructure management. By aligning development and operations, DevOps enhances communication, automation, and process efficiency. AWS offers scalable infrastructure, while Kubernetes optimizes containerized applications, boosting scalability, reliability, and cost-efficiency. This strategic integration fosters seamless CI/CD, real-time monitoring, and continuous improvement, maximizing cloud investments and competitive advantage.",
+        "slug": "devops-aws-kubernetes-integration-guide",
+        "mdFileLocation": "./public/AllBlogs/markDown/devops-aws-kubernetes-services.md"
     }
 ]

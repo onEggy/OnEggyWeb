@@ -45,6 +45,11 @@
         <lastmod>2024-10-24T23:34:41+00:00</lastmod>
         <priority>0.80</priority>
     </url>
+	<url>
+        <loc>https://www.oneggy.com/blogs/devops-aws-kubernetes-integration-guide</loc>
+        <lastmod>2024-10-24T23:34:41+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
 
     <!-- Services URLs -->
     <url>

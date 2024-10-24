@@ -16,10 +16,10 @@ import Link from "next/link";
 
 const blogOne = () => {
   const currentPageData = seoData["/blog"];
-  const head = "We Serve ";
-  const head2 = "Trending Brews!"
+  const head = "Tech Talk by OnEggy";
+  const head2 = "Blogs on Cloud, DevOps & More"
   const sentence =
-    "Create your unique footprint in the digital world with OnEggy’s IT services. Transform your business with our cutting-edge and effective digital solutions to pave your path to success.";
+    "Empower your digital presence with OnEggy’s IT expertise. Leverage our innovative solutions to transform your business and drive success in the cloud-driven era.";
   const showButton = false;
   const arr = blogsData.reverse().slice(0, 5).map(x => ({ ...x, head: x.category, title: x.title, content: x.overview }))
   const CategoryList = seggregateData.category

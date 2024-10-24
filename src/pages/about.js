@@ -54,7 +54,7 @@ const About = () => {
         showButton={showButton}
         buttonPlaceholder={buttonPlaceholder}
         mainCss={'mt-16'}
-        headCss={'sm:tracking-wider font-[500] sm:leading-tight'}
+        headCss={'font-[500] sm:leading-tight'}
       />
       <Section2 />
       <Section3
