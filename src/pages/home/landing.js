@@ -43,10 +43,10 @@ const Home = (skill) => {
       <div className="mt-16 sm:max-h-screen justify-between ">
         <div className="flex px-4">
           {/*WRAPPER*/}
-          <div style={{ width: "589px" }}>
+          <div style={{ width: "50rem" }}>
             {/*HEADINGS*/}
             <h1 className="text-[45px] lg:-ml-2 font-medium mb-2 leading-tight md:text-6xl md:font-semibold theme-heading">
-              Transforming Technology with a Human Touch
+              Empowering Businesses with Cloud, DevOps & Beyond
             </h1>
             <Image
               src="/ai.png"
@@ -58,9 +58,7 @@ const Home = (skill) => {
               style={{ width: "80%", height: "auto", margin: "auto" }}
             />
             <p className="mt-12 text-justify font-spaceGrotesk sm:pr-48 px-0">
-              With OnEggy's IT services, you can leave your mark in the digital
-              world. Transform your company with our cutting-edge and effective
-              digital solutions to set you on the way to success.
+            OnEggy’s IT solutions focus on leveraging cutting-edge Cloud and DevOps practices, transforming your business with a personal touch.
             </p>
             <ConsultationButton buttonPlaceholder={buttonPlaceholder} />
           </div>
