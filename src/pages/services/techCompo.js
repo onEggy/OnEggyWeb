@@ -78,18 +78,18 @@ const TechCompo = ({ development, index, content, image, ...props }) => {
         <div className={`content overflow-hidden text-md ${isExpanded ? "expanded" : ""}`}>
             <p className="text-sm md:text-md">{content}</p>
             {isExpanded && (
-              <Marquee pauseOnHover={false} speed={30} pauseOnClick={false} gradient={true} gradientColor={"white"} autoFill={true} className={"mt-14 scale-150 w-8/12 mx-auto p-1 ease-in duration-300"}>
+              <Marquee pauseOnHover={false} speed={30} pauseOnClick={false} autoFill={true} className={"mt-14 scale-150 w-8/12 mx-auto p-1 ease-in duration-300"}>
                 {Array.isArray(image) ? (
                   image.map((imageName, i) => (
                     <img
                       key={i}
                       src={imageName}
                       alt={`Icon ${i + 1}`}
-                      className="h-14 w-5/12 px-10 mt-5 "
+                      className="h-20 w-auto px-10 mt-5 "  // Adjusted the height to 'h-20' and width to 'w-auto' to maintain aspect ratio
                     />
                   ))
                 ) : (
-                  <img src={image} alt="Icon" className="h-20" />
+                  <img src={image} alt="Icon" className="h-20 w-auto" />  // Adjusted for a single image scenario
                 )}
               </Marquee>
             )}
