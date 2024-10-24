@@ -39,6 +39,7 @@ const TechCompo = ({ development, index, content, image, ...props }) => {
   };
 
   return (
+    <Link href={`/service/${props?.['meta-title-slug']}`}>
     <div
       className={` ${bg_color(
         index
@@ -72,6 +73,7 @@ const TechCompo = ({ development, index, content, image, ...props }) => {
           </Link>
         </div>
       </div>
+      </Link>
       <hr className="border-t-2 border-black my-10" />
       <div className={`content overflow-hidde text-md${isExpanded ? "expanded" : ""}`}>
         <p className="text-sm md:text-md">{content} </p>
