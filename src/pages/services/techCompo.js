@@ -68,9 +68,7 @@ const TechCompo = ({ development, index, content, image, ...props }) => {
               </span>
             </Link>
           </div>
-          <Link href={`/service/${props?.['meta-title-slug']}`}>
             <p className="ml-4 md:ml-0">Learn more</p>
-          </Link>
         </div>
       </div>
       </Link>
