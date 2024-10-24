@@ -85,11 +85,11 @@ const TechCompo = ({ development, index, content, image, ...props }) => {
                       key={i}
                       src={imageName}
                       alt={`Icon ${i + 1}`}
-                      className="h-20 w-auto px-10 mt-5 "  // Adjusted the height to 'h-20' and width to 'w-auto' to maintain aspect ratio
+                      className="h-20 w-auto mx-[1rem] px-10 mt-5 "  // Adjusted the height to 'h-20' and width to 'w-auto' to maintain aspect ratio
                     />
                   ))
                 ) : (
-                  <img src={image} alt="Icon" className="h-20 w-auto" />  // Adjusted for a single image scenario
+                  <img src={image} alt="Icon" className="h-20 mx-[1rem] w-auto" />  // Adjusted for a single image scenario
                 )}
               </Marquee>
             )}
