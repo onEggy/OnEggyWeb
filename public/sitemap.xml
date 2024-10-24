@@ -38,6 +38,14 @@
         <priority>1.00</priority>
     </url>
 
+	<!-- Blogs URLs -->
+
+	<url>
+        <loc>https://www.oneggy.com/blogs/devops-services-and-consulting</loc>
+        <lastmod>2024-10-24T23:34:41+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+
     <!-- Services URLs -->
     <url>
 		<loc>https://www.oneggy.com/service/web-development-service</loc>
