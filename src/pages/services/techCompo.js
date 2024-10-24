@@ -5,6 +5,7 @@ import Link from "next/link";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Marquee from "react-fast-marquee";
 
 const TechCompo = ({ development, index, content, image, ...props }) => {
   const [isExpanded, setExpanded] = useState(false);
@@ -74,25 +75,25 @@ const TechCompo = ({ development, index, content, image, ...props }) => {
         </div>
       </div>
       <hr className="border-t-2 border-black my-10" />
-      <div className={`content overflow-hidde text-md${isExpanded ? "expanded" : ""}`}>
-        <p className="text-sm md:text-md">{content} </p>
-        {isExpanded && (
-          <Slider {...sliderSettings} className="hidden sm:block mt-14 scale-150 w-8/12 mx-auto p-1 ease-in duration-300" >
-            {Array.isArray(image) ? (
-              image.map((imageName, i) => (
-                <img
-                  key={i}
-                  src={imageName}
-                  alt={`Icon ${i + 1}`}
-                  className="h-14 w-5/12 px-10 mt-5 "
-                />
-              ))
-            ) : (
-              <img src={image} alt="Icon" className="h-20" />
+        <div className={`content overflow-hidden text-md ${isExpanded ? "expanded" : ""}`}>
+            <p className="text-sm md:text-md">{content}</p>
+            {isExpanded && (
+              <Marquee pauseOnHover={false} speed={30} pauseOnClick={false} gradient={true} gradientColor={"white"} autoFill={true} className={"mt-14 scale-150 w-8/12 mx-auto p-1 ease-in duration-300"}>
+                {Array.isArray(image) ? (
+                  image.map((imageName, i) => (
+                    <img
+                      key={i}
+                      src={imageName}
+                      alt={`Icon ${i + 1}`}
+                      className="h-14 w-5/12 px-10 mt-5 "
+                    />
+                  ))
+                ) : (
+                  <img src={image} alt="Icon" className="h-20" />
+                )}
+              </Marquee>
             )}
-          </Slider>
-        )}
-      </div>
+        </div>
     </div >
   </Link>
   );
