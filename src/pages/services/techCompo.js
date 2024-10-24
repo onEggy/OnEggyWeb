@@ -5,6 +5,7 @@ import Link from "next/link";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Marquee from "react-fast-marquee";
 
 const TechCompo = ({ development, index, content, image, ...props }) => {
   const [isExpanded, setExpanded] = useState(false);
@@ -13,7 +14,7 @@ const TechCompo = ({ development, index, content, image, ...props }) => {
   function bg_color(index) {
     return index % 2 === 0 ? "bg-offWhite" : "bg-blue";
   }
-  
+
   function arrow_color(index) {
     return index % 2 === 0 ? "text-offWhite" : "text-blue";
   }
@@ -39,6 +40,7 @@ const TechCompo = ({ development, index, content, image, ...props }) => {
   };
 
   return (
+    <Link href={`/service/${props?.['meta-title-slug']}`}>
     <div
       className={` ${bg_color(
         index
@@ -73,26 +75,27 @@ const TechCompo = ({ development, index, content, image, ...props }) => {
         </div>
       </div>
       <hr className="border-t-2 border-black my-10" />
-      <div className={`content overflow-hidde text-md${isExpanded ? "expanded" : ""}`}>
-        <p className="text-sm md:text-md">{content} </p>
-        {isExpanded && (
-          <Slider {...sliderSettings} className="hidden sm:block mt-14 scale-150 w-8/12 mx-auto p-1 ease-in duration-300" >
-            {Array.isArray(image) ? (
-              image.map((imageName, i) => (
-                <img
-                  key={i}
-                  src={imageName}
-                  alt={`Icon ${i + 1}`}
-                  className="h-14 w-5/12 px-10 mt-5 "
-                />
-              ))
-            ) : (
-              <img src={image} alt="Icon" className="h-20" />
+        <div className={`content overflow-hidden text-md ${isExpanded ? "expanded" : ""}`}>
+            <p className="text-sm md:text-md">{content}</p>
+            {isExpanded && (
+              <Marquee pauseOnHover={false} speed={30} pauseOnClick={false} autoFill={true} className={"mt-14 scale-150 w-8/12 mx-auto p-1 ease-in duration-300"}>
+                {Array.isArray(image) ? (
+                  image.map((imageName, i) => (
+                    <img
+                      key={i}
+                      src={imageName}
+                      alt={`OnEggy Technologies techstacks can working on ${i + 1}`}
+                      className="h-15 w-auto mx-[1.5rem] px-10 mt-5 "  // Adjusted the height to 'h-20' and width to 'w-auto' to maintain aspect ratio
+                    />
+                  ))
+                ) : (
+                  <img src={image} alt="OnEggy Technologies techstacks can working on" className="h-15 mx-[1.5rem] w-auto" />  // Adjusted for a single image scenario
+                )}
+              </Marquee>
             )}
-          </Slider>
-        )}
-      </div>
-    </div>
+        </div>
+    </div >
+  </Link>
   );
 };
 
