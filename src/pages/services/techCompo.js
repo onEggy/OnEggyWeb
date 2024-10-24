@@ -13,7 +13,7 @@ const TechCompo = ({ development, index, content, image, ...props }) => {
   function bg_color(index) {
     return index % 2 === 0 ? "bg-offWhite" : "bg-blue";
   }
-  
+
   function arrow_color(index) {
     return index % 2 === 0 ? "text-offWhite" : "text-blue";
   }
@@ -68,10 +68,11 @@ const TechCompo = ({ development, index, content, image, ...props }) => {
               </span>
             </Link>
           </div>
+          <Link href={`/service/${props?.['meta-title-slug']}`}>
             <p className="ml-4 md:ml-0">Learn more</p>
+          </Link>
         </div>
       </div>
-      </Link>
       <hr className="border-t-2 border-black my-10" />
       <div className={`content overflow-hidde text-md${isExpanded ? "expanded" : ""}`}>
         <p className="text-sm md:text-md">{content} </p>
@@ -92,7 +93,8 @@ const TechCompo = ({ development, index, content, image, ...props }) => {
           </Slider>
         )}
       </div>
-    </div>
+    </div >
+  </Link>
   );
 };
 
