@@ -84,7 +84,7 @@ const Blog = (props) => {
 
           <div className="hidden md:flex justify-center">
             <a
-              href="https://codetheorem.co/blogs/category/ui-ux-design"
+              href="#"
               className="font-bold"
             >
               {props.subTitle}
