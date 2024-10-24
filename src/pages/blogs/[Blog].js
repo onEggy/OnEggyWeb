@@ -101,7 +101,7 @@ const Blog = (props) => {
               className="w-full mx-auto"
               height={100}
               width={100}
-              alt="helo"
+              alt={props.blogPageTitle}
             />
           </div>
           <div className="md:flex mt-10 mb-24 ">
