@@ -61,8 +61,8 @@ const Sidebar = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="sidebar-a sidebar-a-left">
-                  Blog
+                <Link href="/blogs" className="sidebar-a sidebar-a-left">
+                  Blogs
                 </Link>
               </li>
             </ul>
