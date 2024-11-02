@@ -15,6 +15,7 @@ import { NextSeo } from "next-seo";
 import seoData from "../../../public/data/service-seo.json";
 import serviceData from "../../../public/data/serviceData.json";
 import Head from "next/head";
+import EnquiryModal from "../components/EnquiryModal";
 
 const service = (props) => {
 
@@ -106,6 +107,7 @@ const service = (props) => {
         para={'Contact us today to learn more about how our digital marketing services can help your business grow and succeed online.'}
         buttonText="Get your free proposal" />
       <Marksheet />
+      <EnquiryModal />
       <Footer />
     </div>
   );

@@ -18,6 +18,7 @@ import seoData from "../../public/data/seo-data.json";
 import { NextSeo } from "next-seo";
 import ProjectLogos from "./home/projectlogos";
 import Head from "next/head";
+import EnquiryModal from "./components/EnquiryModal";
 
 const About = () => {
   const currentPageData = seoData["/about"];
@@ -84,6 +85,7 @@ const About = () => {
           )
         )}
       </div>
+      <EnquiryModal />
       <Footer />
     </div>
   );

@@ -12,6 +12,7 @@ import serviceData from "../../public/data/serviceData.json";
 import Head from "next/head";
 import Image from "next/image";
 import Slider from "react-slick";
+import EnquiryModal from "./components/EnquiryModal";
 
 const Client = () => {
   const currentPageData = seoData["/client"];
@@ -154,7 +155,7 @@ const Client = () => {
           </div>
         ))}
       </Slider>
-
+      <EnquiryModal />
       <Footer />
     </div>
   );

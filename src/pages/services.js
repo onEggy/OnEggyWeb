@@ -11,6 +11,7 @@ import serviceData from "../../public/data/serviceData.json";
 import { NextSeo } from "next-seo";
 import seoData from "../../public/data/seo-data.json";
 import Head from "next/head";
+import EnquiryModal from "./components/EnquiryModal";
 
 const services = () => {
   const { head, sentence, showButton, buttonPlaceholder, title, desc, arr, head2, para2 } =
@@ -53,6 +54,7 @@ const services = () => {
         <GetFreeProp head={head2} para={para2} />
         <EngagementModel />
       </div>
+      <EnquiryModal />
       <Footer />
     </div>
   );
