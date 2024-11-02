@@ -2,8 +2,12 @@ import { useState, useEffect } from "react";
 
 export default function EnquiryModal() {
     const [isOpen, setIsOpen] = useState(false);
+    const [nextUrl, setNextUrl] = useState("");
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
+        setNextUrl(window.location.href);
+        setMounted(true);
         const timer = setTimeout(() => {
             setIsOpen(true);
         }, 5000);
@@ -12,6 +16,7 @@ export default function EnquiryModal() {
     }, []);
 
     const closeModal = () => setIsOpen(false);
+    if (!mounted) return null;
 
     return (
         isOpen && (
@@ -52,6 +57,10 @@ export default function EnquiryModal() {
                         
                         {/* Form */}
                         <form action="https://formsubmit.co/ask@oneggy.com" method="post">
+                            {/* Hidden Inputs for FormSubmit */}
+                            <input type="hidden" name="_captcha" value="false" />
+                            <input type="hidden" name="_next" value="https://www.oneggy.com/thankyou" /> {/* Dynamic Redirect */}
+                            <input type="hidden" name="_subject" value="New submission by Popup Form!" />
                             {/* Name Field */}
                             <div className="mb-4">
                                 <label htmlFor="name" className="block text-gray-700 font-medium mb-2">Name</label>
