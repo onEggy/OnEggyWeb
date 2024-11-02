@@ -18,6 +18,7 @@ import matter from "gray-matter"
 import { marked } from "marked";
 import Image from "next/image";
 import Head from "next/head";
+import EnquiryModal from "../components/EnquiryModal";
 
 
 
@@ -132,6 +133,7 @@ const Blog = (props) => {
 
           </div>
         </div>
+        <EnquiryModal />
         <div className="bg-cover bg-right max-w-7xl mx-auto">
           <Footer />
         </div>

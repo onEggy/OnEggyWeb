@@ -10,6 +10,7 @@ import { NextSeo } from "next-seo";
 import seoData from "../../public/data/seo-data.json";
 import teamPageData from "../../public/data/teamPage.json";
 import Head from "next/head";
+import EnquiryModal from "./components/EnquiryModal";
 
 const Team = () => {
   const showButton = true;
@@ -39,6 +40,7 @@ const Team = () => {
       <VideoSection />
       <CarouselImages />
       <TeamCompo />
+      <EnquiryModal />
       <Footer />
     </div>
   );
