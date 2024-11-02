@@ -1,0 +1,121 @@
+import { useState, useEffect } from "react";
+
+export default function EnquiryModal() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsOpen(true);
+        }, 5000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    const closeModal = () => setIsOpen(false);
+
+    return (
+        isOpen && (
+            <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+                <div className="bg-white rounded-2xl shadow-2xl transform transition-all duration-300 scale-100 w-full max-w-lg md:max-w-3xl relative animate-fadeIn flex flex-col md:flex-row">
+                    
+                    {/* Close Button */}
+                    <button
+                        className="absolute top-4 right-4 text-gray-500 hover:text-red-600"
+                        onClick={closeModal}
+                        aria-label="Close"
+                    >
+                        ✕
+                    </button>
+
+                    {/* Image Section */}
+                    <div className="hidden md:flex md:w-1/2">
+                        <img
+                            src="/OnEggyTechnologiesContactImage.png"
+                            alt="Enquiry illustration"
+                            className="w-full h-full object-cover rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none"
+                        />
+                    </div>
+
+                    {/* Form Section */}
+                    <div className="w-full md:w-1/2 p-6 sm:p-8">
+                        {/* Company Branding */}
+                        <div className="flex items-center justify-center mb-6">
+                            <div className="bg-blue-600 rounded-full w-12 h-12 flex items-center justify-center text-white text-lg font-semibold">
+                                
+                            </div>
+                        </div>
+
+                        {/* Modal Header */}
+                        <h2 className="text-2xl sm:text-3xl font-bold text-center text-blue-800 mb-6">
+                            Let’s Work Together
+                        </h2>
+                        
+                        {/* Form */}
+                        <form action="https://formsubmit.co/ask@oneggy.com" method="post">
+                            {/* Name Field */}
+                            <div className="mb-4">
+                                <label htmlFor="name" className="block text-gray-700 font-medium mb-2">Name</label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    id="name"
+                                    className="w-full px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    placeholder="Enter your name"
+                                    required
+                                />
+                            </div>
+
+                            {/* Email Field */}
+                            <div className="mb-4">
+                                <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Email</label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    id="email"
+                                    className="w-full px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    placeholder="Your email address"
+                                    required
+                                />
+                            </div>
+
+                            {/* Phone Field */}
+                            <div className="mb-4">
+                                <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">Phone</label>
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    id="phone"
+                                    className="w-full px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    placeholder="Your phone number"
+                                    required
+                                />
+                            </div>
+
+                            {/* Service Field */}
+                            <div className="mb-6">
+                                <label htmlFor="service" className="block text-gray-700 font-medium mb-2">Service Looking for?</label>
+                                <textarea
+                                    id="service"
+                                    name="service"
+                                    className="w-full px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    placeholder="Describe the service you're looking for"
+                                    rows="4"
+                                    required
+                                ></textarea>
+                            </div>
+
+                            {/* Submit Button with Custom Color */}
+                            <button
+                                type="submit"
+                                className="w-full text-black font-semibold py-3 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                                style={{ backgroundColor: "rgb(55 255 244 / var(--tw-bg-opacity))" }}
+                            >
+                                Connect Now
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        )
+    );
+}
