@@ -2,13 +2,14 @@ import React from 'react';
 import Image from 'next/image';
 import AWSpartnerImage from "../../../public/partnerlogos/AWSpartner.png";
 import xloudtechnologiesImage from "../../../public/partnerlogos/xloudtechnologies.png";
+import shivaamiImage from "../../../public/partnerlogos/shivaami.png";
 
 const PartnerShowcase = () => {
 
     const partners = [
         { name: "AWS Partner", logo: AWSpartnerImage, rating: 4.5 },
         { name: "Xloud Technologies", logo: xloudtechnologiesImage, rating: 4.5 },
-        // { name: "Xloud Technologies", logo: "/partnerlogos/xloudtechnologies.png" },
+        { name: "Shivaami", logo: shivaamiImage, rating: 4.5 },
         // { name: "Xloud Technologies", logo: "/partnerlogos/xloudtechnologies.png" },
         // Add more partners as needed
     ];
