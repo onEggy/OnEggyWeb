@@ -14,27 +14,45 @@
       },
       {
         "id": 3,
-        "name": "East Mojo Logo",
+        "name": "BitsMemoir",
         "url": "/home/projectLogos/bit-logo.png",
-        "alt": "bit logo"
+        "alt": "BitsMemoir logo"
       },
       {
         "id": 4,
-        "name": "East Mojo Logo",
+        "name": "mgmt Logo",
         "url": "/home/projectLogos/mgmt-logo.png",
-        "alt": "mgmt logo"
+        "alt": "mgmt Company Logo"
       },
       {
         "id": 5,
-        "name": "East Mojo Logo",
+        "name": "Numberwize Logo",
         "url": "/home/projectLogos/numwize-logo.png",
         "alt": "Numwize logo"
       },
       {
         "id": 6,
-        "name": "Beyond Logo",
+        "name": "Smile Foundation Logo",
         "url": "/home/projectLogos/smile-logo.png",
         "alt": "Smile Logo"
+      },
+      {
+        "id": 7,
+        "name": "MobileGoo Logo",
+        "url": "/home/projectLogos/mobileGoo.webp",
+        "alt": "Smile Logo"
+      },
+      {
+        "id": 8,
+        "name": "BeingBitsmart",
+        "url": "/home/projectLogos/beingbitsmart.png",
+        "alt": "BeingBitsmart Logo"
+      },
+      {
+        "id": 9,
+        "name": "EklyLine",
+        "url": "/home/projectLogos/eklyline.png",
+        "alt": "EklyLine Logo"
       }
     ]
   }
