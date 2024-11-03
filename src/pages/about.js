@@ -76,7 +76,7 @@ const About = () => {
         {/* <Platforms /> */}
         <ProjectLogos />
         <ProjectLogos direction="right" />
-        <ProjectLogos />
+        {/* <ProjectLogos /> */}
       </div>
       <Headline title={titleAbout} desc={descAbout} titleCss={'md:font-bold md:text-4xl'} descCss={'md:w-36rem] mt-7 md:ml-16 md:font-semibold'} />
       <div className="grid grid-cols-1 sm:grid-cols-2  gap-y-6 sm:gap-y-16 gap-10 mb-16 justify-items-stretch] px-4 sm:px-0 my-16 ">
