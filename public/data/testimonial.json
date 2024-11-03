@@ -9,6 +9,48 @@
             "avatar": "/home/awards/image1.png"
         },
         {
+            "name": "Bharat Bhushan",
+            "designation": "Senior DevOps at PineLabs",
+            "testimonial": "OnEggy Technologies expertly scaled our EKS Kubernetes setup, improving performance and resource utilization. Their professionalism and expertise are commendable.",
+            "avatar": "/home/awards/image1.png"
+        },
+        {
+            "name": "Nikhil Gupta",
+            "designation": "Founder at Beyond Imagination Technologies",
+            "testimonial": "OnEggy Technologies developed a React Native mobile application for EastMojo, a client of mine. They designed an excellent UI/UX and delivered a robust app for both iOS and Android. Their expertise and dedication are impressive.",
+            "avatar": "/home/awards/image1.png"
+        },
+        {
+            "name": "Munish Dugal",
+            "designation": "Founder at Decide Precise Technologies",
+            "testimonial": "OnEggy Technologies provided exceptional support with SAP Hana installation and configuration for our client. Their professionalism and expertise ensured a seamless setup.",
+            "avatar": "/home/awards/image1.png"
+        },
+        {
+            "name": "Anthony",
+            "designation": "CTO at Beyond Imagination Technologies",
+            "testimonial": "OnEggy Technologies developed a comprehensive solution for NumberWize, a client of mine. They designed a stellar UI/UX and built a robust React Native mobile application for iOS and Android, a React website, and a Django backend with a PostgreSQL database. Their expertise and commitment to excellence are unparalleled.",
+            "avatar": "/home/awards/image1.png"
+        },
+        {
+            "name": "Sunil",
+            "designation": "at Brahmatells",
+            "testimonial": "OnEggy Technologies saved our servers over the AWS Cloud and fixed critical application issues that were halting our business. Their expertise and quick response were invaluable.",
+            "avatar": "/home/awards/image1.png"
+        },
+        {
+            "name": "Praveen",
+            "designation": "Senior DevOps at PayU",
+            "testimonial": "OnEggy Technologies automated our API checks with precise Python scripts, enhancing our monitoring. Their expertise and dedication are outstanding.",
+            "avatar": "/home/awards/image1.png"
+        },
+        {
+            "name": "Naveen",
+            "designation": "Founder of KanTag-Solutions",
+            "testimonial": "OnEggy Technologies resolved bugs and boosted Adel India's website performance, showcasing professionalism and technical expertise. Highly recommended!",
+            "avatar": "/home/awards/image1.png"
+        },
+        {
             "name": "Mayank Gupta",
             "designation": "Founder at BitsMart, Growth Yogi",
             "testimonial": "OnEggy Technologies has played a crucial role in the growth journey of BitsMart and Growth Yogi. Their cutting-edge development services and strategic insights have been instrumental in achieving our business goals. We appreciate the professionalism and commitment of OnEggy's team.",
