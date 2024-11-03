@@ -128,7 +128,7 @@ const Testimonials = () => {
       <div className="bg-gradient-to-br from-gray-900 to-gray-800 py-16 rounded-3xl mt-16 mb-12 sm:mb-0">
         <div className="container mx-auto px-4">
           {/* Marquee for scrolling testimonials */}
-          <Marquee pauseOnHover={true} speed={50} gradient={false}>
+          <Marquee pauseOnHover={true} speed={60}>
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
@@ -136,7 +136,7 @@ const Testimonials = () => {
                 style={{ minWidth: "300px", height: "300px" }} // Set consistent height
               >
                 {/* Quotation Icon */}
-                <div className="absolute -top-8 left-6 bg-indigo-500 p-3 rounded-full">
+                <div className="absolute -top-8 left-6 bg-cyan-500 p-3 rounded-full">
                   <svg
                     width="24"
                     height="24"
@@ -155,7 +155,7 @@ const Testimonials = () => {
 
                 {/* User Info */}
                 <div className="flex items-center mt-6">
-                  <div className="w-16 h-16 rounded-full overflow-hidden border-4 border-indigo-500 shadow-lg">
+                  <div className="w-16 h-16 rounded-full overflow-hidden border-4 border-cyan-500 shadow-lg">
                     <Image
                       src={testimonial.avatar}
                       alt={`${testimonial.name} avatar`}
