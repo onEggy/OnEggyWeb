@@ -25,14 +25,6 @@ import ContactUs from "./home/contactUs";
 
 const About = () => {
 
-  const partners = [
-    { name: "AWS Partner", logo: "/partnerlogos/AWSpartner.png", rating: 4.5 },
-    { name: "Xloud Technologies", logo: "/partnerlogos/xloudtechnologies.png", rating: 4.5 },
-    // { name: "Xloud Technologies", logo: "/partnerlogos/xloudtechnologies.png" },
-    // { name: "Xloud Technologies", logo: "/partnerlogos/xloudtechnologies.png" },
-    // Add more partners as needed
-  ];
-
   const currentPageData = seoData["/about"];
   const {
     brands,
@@ -76,7 +68,7 @@ const About = () => {
         boxParaTitle={boxParaTitle}
         boxContent={boxContent}
       />
-      <PartnerShowcase partners={partners} />
+      <PartnerShowcase />
       <Section4 />
       <GetFreeProp
         head={"Let's get things begun"}

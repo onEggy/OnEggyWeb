@@ -22,14 +22,6 @@ import FaqSection from "../components/faq";
 const Home = (skill) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const partners = [
-    { name: "AWS Partner", logo: "/partnerlogos/AWSpartner.png", rating: 4.5 },
-    { name: "Xloud Technologies", logo: "/partnerlogos/xloudtechnologies.png", rating: 4.5 },
-    // { name: "Xloud Technologies", logo: "/partnerlogos/xloudtechnologies.png" },
-    // { name: "Xloud Technologies", logo: "/partnerlogos/xloudtechnologies.png" },
-    // Add more partners as needed
-  ];
-
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
@@ -83,7 +75,7 @@ const Home = (skill) => {
 
       {/* Rest of the page components */}
       <Projectlogos />
-      <PartnerShowcase partners={partners} />
+      <PartnerShowcase />
       <Awards />
       <Headline
         mainCss="md:ml-4"

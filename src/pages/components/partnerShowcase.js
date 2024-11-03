@@ -1,13 +1,24 @@
 import React from 'react';
 import Image from 'next/image';
+import AWSpartnerImage from "../../../public/partnerlogos/AWSpartner.png";
+import xloudtechnologiesImage from "../../../public/partnerlogos/xloudtechnologies.png";
 
-const PartnerShowcase = ({ partners }) => {
+const PartnerShowcase = () => {
+
+    const partners = [
+        { name: "AWS Partner", logo: AWSpartnerImage, rating: 4.5 },
+        { name: "Xloud Technologies", logo: xloudtechnologiesImage, rating: 4.5 },
+        // { name: "Xloud Technologies", logo: "/partnerlogos/xloudtechnologies.png" },
+        // { name: "Xloud Technologies", logo: "/partnerlogos/xloudtechnologies.png" },
+        // Add more partners as needed
+    ];
+
     return (
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between py-10 md:py-20 px-6 md:px-20 space-y-8 md:space-y-0">
             {/* Title Section */}
             <div className="text-left max-w-sm md:max-w-none">
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-                Certified Partners in < br /> Cloud Excellence
+                    Certified Partners in <br /> Cloud Excellence
                 </h2>
             </div>
 
@@ -16,13 +27,14 @@ const PartnerShowcase = ({ partners }) => {
                 {partners.map((partner, index) => (
                     <div key={index} className="flex flex-col items-center space-y-2">
                         {/* Partner Logo */}
-                        <div className="w-20 h-20 md:w-24 md:h-24 relative">
+                        <div className="relative w-20 h-20 md:w-24 md:h-24">
                             <Image
                                 src={partner.logo}
                                 alt={`${partner.name} logo`}
                                 layout="fill"
                                 objectFit="contain"
                                 className="rounded-md"
+                                priority // Use priority for faster loading
                             />
                         </div>
 
