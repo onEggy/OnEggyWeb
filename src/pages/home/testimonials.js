@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import testimonialsData from "../../../public/data/testimonial.json";
 import Image from "next/image";
+import Marquee from "react-fast-marquee";
 
 const ActiveDot = () => (
   <div className="dot active-dot">
@@ -122,41 +123,62 @@ const Testimonials = () => {
   return (
     <div className="px-4 sm:px-0">
       <Headline title={title} desc={desc} titleCss={'md:font-bold md:text-4xl'} descCss={'md:w-[32rem] md:mt-7 md:ml-16'} />
-      <div className="bg-l_black py-16 rounded-3xl mt-16 mb-12 sm:mb-0">
-        <div className="max-w-2xl mx-auto lg:max-w-none lg:w-606px ">
-          <Slider {...settings}>
+
+
+      <div className="bg-gradient-to-br from-gray-900 to-gray-800 py-16 rounded-3xl mt-16 mb-12 sm:mb-0">
+        <div className="container mx-auto px-4">
+          {/* Marquee for scrolling testimonials */}
+          <Marquee pauseOnHover={true} speed={50} gradient={false}>
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="mx-2">
-                <p className="box-testimonial box-testimonial-content text-left text-sm text-white p-6 sm:p-14 w-11/12 md:bg-[#284660] ">
-                  {testimonial.testimonial}
+              <div
+                key={index}
+                className="max-w-lg mx-4 bg-gray-700 rounded-2xl shadow-lg p-8 md:p-10 transform transition duration-500 hover:scale-105 relative"
+                style={{ minWidth: "300px", height: "300px" }} // Set consistent height
+              >
+                {/* Quotation Icon */}
+                <div className="absolute -top-8 left-6 bg-indigo-500 p-3 rounded-full">
+                  <svg
+                    width="24"
+                    height="24"
+                    fill="white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M7.96 9.002c.33 0 .6.272.6.6 0 3.46-1.3 5.647-3.58 6.755.178-.675.48-1.823.877-2.824a5.72 5.72 0 00.33-1.08c.4-1.922 1.228-2.946 2.46-2.946.33 0 .6.272.6.6zm9.48 0c.33 0 .6.272.6.6 0 3.46-1.3 5.647-3.58 6.755.178-.675.48-1.823.877-2.824.141-.361.264-.713.33-1.08.4-1.922 1.228-2.946 2.46-2.946.33 0 .6.272.6.6z" />
+                  </svg>
+                </div>
+
+                {/* Testimonial Content with Line Clamp */}
+                <p className="text-left text-gray-300 text-sm sm:text-base leading-relaxed mb-8 line-clamp-5">
+                  "{testimonial.testimonial}"
                 </p>
 
-                <div className="mb-20 mx-20 flex flex-col w-auto md:w-auto">
-
-                  <div className="relative top-14 -left-10 md:-left-2">
+                {/* User Info */}
+                <div className="flex items-center mt-6">
+                  <div className="w-16 h-16 rounded-full overflow-hidden border-4 border-indigo-500 shadow-lg">
                     <Image
-                      src={testimonial?.avatar}
-                      alt="avatar image"
-                      width={35}
-                      height={35}
-                      className=""
+                      src={testimonial.avatar}
+                      alt={`${testimonial.name} avatar`}
+                      width={64}
+                      height={64}
+                      className="object-cover"
                     />
                   </div>
-                  <div>
-                    <h1 className="text-l_blue md:ml-10 mt-4 font-semibold text-left text-lg">
+                  <div className="ml-4">
+                    <h1 className="text-lg sm:text-xl font-semibold text-white">
                       {testimonial.name}
                     </h1>
-                    <h2 className="text-left md:ml-10 text-white text-sm md:text-lg">
+                    <h2 className="text-gray-400 text-sm sm:text-base">
                       {testimonial.designation}
                     </h2>
                   </div>
-
                 </div>
               </div>
             ))}
-          </Slider>
+          </Marquee>
         </div>
       </div>
+
     </div>
   );
 };
