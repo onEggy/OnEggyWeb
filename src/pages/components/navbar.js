@@ -1,7 +1,7 @@
 import { Fragment, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../../../public/logo.png";
@@ -48,81 +48,75 @@ export default function Navbar() {
     <Disclosure as="nav" className={`lg:sticky top-0 z-50 bg-white`}>
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl px-2 md:px-6 lg:px-4 md:pt-2">
-            <div className="relative flex h-16 items-center justify-between">
-              <div className="flex flex-shrink-0 items-center lg:hidden">
-                <a href="/">
-                  <Image src={logov1} alt="OnEggy Technologies Cloud & DevOps Company logo" width="110" height="55" />
-                </a>
+          <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8 py-2">
+            <div className="relative flex h-14 items-center justify-between">
+              
+              {/* Mobile Logo */}
+              <div className="flex items-center lg:hidden">
+                <Link href="/">
+                  <Image 
+                    src={logov1} 
+                    alt="OnEggy Technologies Cloud & DevOps Company logo" 
+                    className="w-20 sm:w-24 md:w-28 lg:hidden h-auto" // Reduced sizes for a more compact mobile view
+                    priority
+                  />
+                </Link>
               </div>
-              <div className="absolute inset-y-0 right-0 flex items-center lg:hidden order-2">
-                {/* Mobile menu button*/}
-                {/* <Disclosure.Button
-                  className="relative inline-flex items-center justify-end 
-                rounded-md p-2 text-black hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                >
-                  <span className="absolute -inset-0.5" />
+
+              {/* Mobile Menu Button */}
+              <div className="absolute inset-y-0 right-0 flex items-center lg:hidden">
+                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-200 focus:outline-none">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
                   ) : (
                     <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
                   )}
-                </Disclosure.Button> */}
+                </Disclosure.Button>
               </div>
-              <nav className="py-4 lg:flex lg:justify-around xl:justify-between mx-auto hidden lg:w-full order-1" style={{ marginTop: '20px' }}>
-                <div className="flex flex-shrink-0 items-center">
-                  <a href="/">
-                    <Image src={logov1} alt="OnEggy Technologies Cloud & DevOps Company logo" width="150" height="85" />
-                  </a>
-                </div>
 
-                <div className="hidden lg:ml-6 sm:block">
-                  <ul className="flex justify-end py-4">
-                    {navigation.map((item) => {
-                      // console.log(item.href);
-
-                      if (item.href !== "/contact/contact")
-                        return (
-                          <Link
-                            href={item.href}
-                            className={`mx-5 cursor-pointer pt-2 ${isLinkActive(
-                              item.href
-                            )}`}
-                          >
-                            {item.name}
-                          </Link>
-                        );
-                      else {
-                        return (
-                          <Link
-                            href="/contact/contact"
-                            className={`text-black py-2 px-6 rounded-md border border-black  ${isLinkActive(
-                              "/contact/contact"
-                            )}`}
-                          >
-                            Request a Quote
-                          </Link>
-                        );
-                      }
-                    })}
-                  </ul>
+              {/* Desktop Logo and Navigation */}
+              <nav className="hidden lg:flex lg:items-center lg:justify-between w-full">
+                <div className="flex items-center">
+                  <Link href="/">
+                    <Image 
+                      src={logov1} 
+                      alt="OnEggy Technologies Cloud & DevOps Company logo" 
+                      className="w-20 lg:w-24 xl:w-28 h-auto" // Desktop sizes remain compact
+                      priority
+                    />
+                  </Link>
                 </div>
+                <ul className="flex space-x-6 ml-6">
+                  {navigation.map((item) => (
+                    <li key={item.name}>
+                      <Link href={item.href} className={`text-gray-800 hover:text-blue-500 ${isLinkActive(item.href)}`}>
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                  <li>
+                    <Link href="/contact" className="text-black py-2 px-4 rounded-md border border-black hover:bg-black hover:text-white">
+                      Request a Quote
+                    </Link>
+                  </li>
+                </ul>
               </nav>
             </div>
           </div>
 
-          {/* <Disclosure.Panel className="lg:hidden">
-            <div className="space-y-1 px-2 pb-3 pt-2">
+          {/* Mobile Menu Panel */}
+          <Disclosure.Panel className="lg:hidden">
+            <div className="space-y-1 px-4 pt-2 pb-3 bg-white shadow-md">
               {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
-                  as="a"
+                  as={Link}
                   href={item.href}
                   className={classNames(
-                    item.href === router.pathname
-                      ? "bg-[#37FFF4] text-black"
-                      : "text-gray-700 hover:bg-[#37FFF4] hover:text-white",
+                    router.pathname === item.href
+                      ? "bg-blue-100 text-blue-800"
+                      : "text-gray-800 hover:bg-gray-100",
                     "block rounded-md px-3 py-2 text-base font-medium"
                   )}
                   aria-current={item.current ? "page" : undefined}
@@ -130,8 +124,15 @@ export default function Navbar() {
                   {item.name}
                 </Disclosure.Button>
               ))}
+              <Disclosure.Button
+                as={Link}
+                href="/contact"
+                className="block text-center text-black py-2 px-4 mt-1 rounded-md border border-black hover:bg-black hover:text-white"
+              >
+                Request a Quote
+              </Disclosure.Button>
             </div>
-          </Disclosure.Panel> */}
+          </Disclosure.Panel>
         </>
       )}
     </Disclosure>

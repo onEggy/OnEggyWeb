@@ -119,7 +119,7 @@ img:last-of-type {
   position: relative;
   width: 100%;
   overflow: hidden;
-  height: 5rem;
+  height: auto;
 }
 
 .wrapper {

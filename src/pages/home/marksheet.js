@@ -17,13 +17,13 @@ const marksheet = () => {
       <div className="w-[70%] h-0.5 bg-white sm:hidden"></div>
        <div className="hidden mt-5 sm:block border-white border-2 before:absolute before:w-[0.1px] before:h-40" />
         <div className="mt-5 mb-5 beforeAfter">
-          <h2 className="text-7xl md:text-8xl  font-bold text-shadow-blue">100+</h2>
+          <h2 className="text-7xl md:text-8xl  font-bold text-shadow-blue">20+</h2>
           <p className="mt-10 ml-5 md:ml-10">Experts in the team</p>
         </div>
           <div className="hidden sm:block mt-5 border-white border-2 before:absolute before:w-[0.1px] before:h-40" />
           <div className="w-[70%] h-0.5 bg-white sm:hidden"></div>
         <div className="mt-5 mb-5">
-          <h2 className="text-7xl md:text-8xl font-bold text-shadow-blue">100+</h2>
+          <h2 className="text-7xl md:text-8xl font-bold text-shadow-blue">200+</h2>
           <p className="mt-10 ml-5 md:ml-10">Happy Customers</p>
         </div>
       </div>

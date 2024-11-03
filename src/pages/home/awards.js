@@ -12,58 +12,58 @@ const Awards = () => {
     dots: false,
     infinite: true,
     speed: 300,
-    slidesToShow: 3,
+    slidesToShow: 1, // Show 1 slide at a time on mobile for better focus
     centerMode: true,
-    centerPadding: "10",
+    centerPadding: "20px", // Adds padding on sides for centered image effect
     autoplay: true,
-    autoplaySpeed: 1500,
+    autoplaySpeed: 2000,
     responsive: [
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 0.98,
+          slidesToShow: 1, // Show 1 image for screens < 768px
           centerMode: true,
         },
       },
     ],
   };
 
-  const imageStyle = {
-    margin: "0 10px",
-  };
-
   return (
-    <div className="mx-7">
+    <div className="mx-4 sm:mx-8 my-10">
+      {/* Title and Description */}
       <Headline
-      mainCss="md:-ml-4"
+        mainCss="text-center mb-6"
         title={title}
         desc={description}
-        titleCss={'md:font-bold md:text-4xl'}
-        descCss={'md:w-[36rem] mt-8 md:ml-20'}
+        titleCss="text-2xl sm:text-3xl font-semibold text-center text-l_black"
+        descCss="text-base text-center text-gray-600 mt-2"
       />
 
-      <div className="flex flex-col md:flex-row mt-16">
-        <div className="w-full md:w-6/12  ">
+      {/* Slider and Content */}
+      <div className="flex flex-col items-center md:flex-row mt-8 space-y-6 md:space-y-0 md:space-x-8">
+        {/* Image Carousel */}
+        <div className="w-full md:w-6/12">
           <Slider {...carouselSettings}>
             {images.map((image, index) => (
-              <div key={index} className="text-center p-5 md:-ml-10">
+              <div key={index} className="p-4">
                 <img
-                  src={image.url} // Use the image URL from JSON
+                  src={image.url}
                   alt={image.alt}
-                  className="mx-auto"
-                  style={imageStyle}
+                  className="mx-auto max-w-xs sm:max-w-sm md:max-w-md rounded-lg"
                 />
               </div>
             ))}
           </Slider>
         </div>
-        <div className="w-full md:w-6/12 p-5 mt-5 ">
-          <p>
+
+        {/* Text Content */}
+        <div className="w-full md:w-6/12 px-4 text-center md:text-left">
+          <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
             We create delectable dishes by combining design and technology with
-            additional cheese of awesomeness. With demonstrated experience in
+            an additional dash of awesomeness. With demonstrated experience in
             accelerating the growth of start-ups by analyzing their needs and
-            delivering the growth package. We make your dreams a reality. We're
-            Oneggy.
+            delivering a comprehensive growth package, we make your dreams a
+            reality. We're OnEggy.
           </p>
         </div>
       </div>

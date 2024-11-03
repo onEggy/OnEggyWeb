@@ -1,133 +1,99 @@
 import React from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import logo from "../../../public/logoWhite.png";
 import logov1 from "../../../public/logov1.png";
 import {
   faFacebookF,
   faTwitter,
+  faInstagram,
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
-import serviceData from '../../../public/data/serviceData.json';
+import serviceData from "../../../public/data/serviceData.json";
 
-const footer = () => {
+const Footer = () => {
   const services = serviceData.arr;
 
   return (
-    // <div className="w-full">
-    <div className=" bg-l_black rounded-tl-[3rem] rounded-tr-[3rem] mt-10 px-8">
-      <nav className="py-10 flex flex-col sm:flex-row justify-between w-full px-12">
-        <Image
-          src={logov1}
-          alt="Logo"
-          width="165"
-          height="85"
-          className="logo_img"
-        />
-        <ul className="justify-center py-4 text-white underline hidden sm:flex">
-          <li className="mx-5 cursor-pointer"><Link href={'/about'}> About us </Link></li>
-          <li className="mx-5 cursor-pointer"><Link href={'/services'}> Service </Link></li>
-          <li className="mx-5 cursor-pointer"><Link href={'/team'}> Team </Link></li>
-          <li className="mx-5 cursor-pointer"> <Link href={'/client'}> Portfolio</Link></li>
-          <li className="mx-5 cursor-pointer"><Link href={'/blogs'}>Blog </Link></li>
+    <div className="bg-l_black rounded-tl-3xl rounded-tr-3xl mt-10 px-8 py-8 text-white">
+      {/* Top Section with Logo, Links, and Socials */}
+      <nav className="flex flex-col items-center sm:flex-row sm:justify-between sm:px-12 py-6">
+        <Image src={logov1} alt="Logo" width={165} height={85} className="mb-6 sm:mb-0" />
+
+        <ul className="hidden sm:flex space-x-8 text-center">
+          <li><Link href="/about" className="hover:underline">About Us</Link></li>
+          <li><Link href="/services" className="hover:underline">Services</Link></li>
+          <li><Link href="/team" className="hover:underline">Team</Link></li>
+          <li><Link href="/client" className="hover:underline">Portfolio</Link></li>
+          <li><Link href="/blogs" className="hover:underline">Blog</Link></li>
         </ul>
-        <div className=" space-x-4 self-center hidden sm:flex">
-          <div className="bg-white w-8 h-8 flex justify-center items-center rounded-full text-l_black">
-            <a href="https://www.linkedin.com/company/oneggy" target="_blank"> <FontAwesomeIcon icon={faLinkedinIn} /> </a>
-          </div>
-          <div className="bg-white  w-8 h-8 flex justify-center items-center rounded-full text-l_black">
-            <a href="https://www.facebook.com/oneggytechnologies" target="_blank"><FontAwesomeIcon icon={faFacebookF} /> </a>
-          </div>
-          <div className="bg-white  w-8 h-8 flex justify-center items-center rounded-full text-l_black">
+
+        <div className="hidden sm:flex space-x-4">
+          <a href="https://www.linkedin.com/company/oneggy" target="_blank" className="bg-white text-l_black w-8 h-8 flex items-center justify-center rounded-full">
+            <FontAwesomeIcon icon={faLinkedinIn} />
+          </a>
+          <a href="https://www.facebook.com/oneggytechnologies" target="_blank" className="bg-white text-l_black w-8 h-8 flex items-center justify-center rounded-full">
+            <FontAwesomeIcon icon={faFacebookF} />
+          </a>
+          <a href="https://www.instagram.com/oneggytechnologies" target="_blank" className="bg-white text-l_black w-8 h-8 flex items-center justify-center rounded-full">
+            <FontAwesomeIcon icon={faInstagram} />
+          </a>
+          <a href="https://twitter.com/oneggy" target="_blank" className="bg-white text-l_black w-8 h-8 flex items-center justify-center rounded-full">
             <FontAwesomeIcon icon={faTwitter} />
-          </div>
+          </a>
         </div>
       </nav>
 
-      <div className="flex sm:flex-row flex-col sm:ml-10 sm:mr-10 sm:mt-5">
-        <div className="sm:w-1/2 w-full sm:block flex items-center flex-col">
-          <h2 className="bg-l_blue rounded-md mb-4 sm:mb-0 p-1 w-28 font-semibold text-center sm:text-left">
-            Contact us:
-          </h2>
-          <p className="text-white mt-4">
-            Email: <span className="underline">ask@oneggy.com</span>
-          </p>
-          <p className="text-white mt-4">
-            Phone: <span className="underline">+91 9811133005</span>
-          </p>
-          <p className="text-white mt-4 md:w-1/2 w-4/6 text-center sm:text-left">
-            Address: 172, Block M, Shakurpur New Delhi, Delhi 110034
-          </p>
+      {/* Contact and Subscription Section */}
+      <div className="flex flex-col sm:flex-row sm:space-x-8 mt-8 sm:px-12">
+        <div className="sm:w-1/2 mb-8 sm:mb-0">
+          <h2 className="bg-l_blue rounded-md p-2 w-32 text-center font-semibold">Contact us</h2>
+          <p className="mt-4">Email: <a href="mailto:ask@oneggy.com" className="underline">ask@oneggy.com</a></p>
+          <p className="mt-2">Phone: <a href="tel:+919811133005" className="underline">+91 9811133005</a></p>
+          <p className="mt-2">Address: 172, Block M, Shakurpur, New Delhi, Delhi 110034</p>
         </div>
-        <div className="bg-greyblack flex sm:flex-row flex-col p-6 sm:xspace-x-4 rounded-2xl mb-4 sm:mb-12 mt-8 sm:mt-0 sm:w-1/2 w-full">
+
+        <div className="bg-greyblack p-6 rounded-xl flex flex-col sm:flex-row sm:w-1/2">
           <input
             type="email"
-            id="email"
-            name="email"
-            placeholder="Email"
-            className="w-full px-3 h-14 py-3 sm:my-10 border placeholder-white bg-greyblack rounded-lg focus:outline-none focus:ring focus:border-blue-300 border-white
-              sm:mr-4"
-            required
+            placeholder="Join our newsletter – your email"
+            className="w-full h-12 mb-4 sm:mb-0 sm:mr-4 px-4 text-black rounded-md focus:outline-none"
           />
-          <button className="bg-l_blue text-black hover:bg-l_black border hover:border-l_blue hover:text-white px-3 h-14 py-3 sm:mt-10 sm:mb-10 mt-4 rounded-xl w-full">
-            Subscribe to blogs
+          <button className="bg-l_blue text-black hover:bg-black hover:text-white rounded-md w-full h-12 sm:w-auto sm:px-6">
+            Newsletters
           </button>
         </div>
       </div>
 
-
-              <div className="hidden">
-                {services.map((service) => (
-                    <div key={service["meta-title-slug"]} className="mb-4">
-                        <h3 className="text-xl font-bold">{service["meta-title"]}</h3>
-                        <p className="text-sm">{service.content}</p>
-                        <a
-                            href={`https://www.oneggy.com/service/${service["meta-title-slug"]}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-500 hover:underline"
-                        >
-                              {service["meta-title"]}
-                        </a>
-                    </div>
-                ))}
-            </div>
-
-
-              
-      <div className="flex space-x-4 justify-center sm:hidden mt-4 mb-8">
-
-        <div className="bg-white w-8 h-8 flex justify-center items-center rounded-full text-l_black">
-          <a href="https://www.linkedin.com/company/oneggy" target="_blank"> <FontAwesomeIcon icon={faLinkedinIn} /> </a>
-        </div>
-        <div className="bg-white  w-8 h-8 flex justify-center items-center rounded-full text-l_black">
-          <a href="https://www.facebook.com/oneggytechnologies" target="_blank"><FontAwesomeIcon icon={faFacebookF} /> </a>
-        </div>
-        <div className="bg-white  w-8 h-8 flex justify-center items-center rounded-full text-l_black">
+      {/* Social Icons for Mobile */}
+      <div className="flex justify-center space-x-4 mt-6 sm:hidden">
+        <a href="https://www.linkedin.com/company/oneggy" target="_blank" className="bg-white text-l_black w-8 h-8 flex items-center justify-center rounded-full">
+          <FontAwesomeIcon icon={faLinkedinIn} />
+        </a>
+        <a href="https://www.facebook.com/oneggytechnologies" target="_blank" className="bg-white text-l_black w-8 h-8 flex items-center justify-center rounded-full">
+          <FontAwesomeIcon icon={faFacebookF} />
+        </a>
+        <a href="https://www.instagram.com/oneggytechnologies" target="_blank" className="bg-white text-l_black w-8 h-8 flex items-center justify-center rounded-full">
+          <FontAwesomeIcon icon={faInstagram} />
+        </a>
+        <a href="https://twitter.com/oneggy" target="_blank" className="bg-white text-l_black w-8 h-8 flex items-center justify-center rounded-full">
           <FontAwesomeIcon icon={faTwitter} />
-        </div>
+        </a>
       </div>
-      <hr className="mx-auto w-[94%]" />
-      {/* <footer className="text-white px-4 mt-10 flex flex-col space-y-2 pb-10 md:flex-row md:justify-between md:items-center"> */}
-      <footer className="text-white px-4 mt-10 flex flex-col space-y-2 pb-10 md:flex-row md:justify-start md:items-center md:w-10/12 ml-4 ">
-        <p className="mt-2">&copy; {new Date().getFullYear()} OnEggy. All Rights Reserved.</p>
-        <a href="/sitemap" className="ml-28 ">
-          Sitemaps
-        </a>
-        <a href="/privacy-policy" className="ml-28 ">
-          Privacy Policy
-        </a>
-        <a href="/terms-and-conditions" className="ml-28 ">
-          Terms and Conditions
-        </a>
-        <a href="/refund-policy" className="ml-28 ">
-          Refund Policy
-        </a>
+
+      {/* Divider and Legal Links */}
+      <hr className="border-gray-700 mt-8 sm:mx-12" />
+      <footer className="flex flex-col sm:flex-row sm:justify-between items-center text-center mt-6 sm:mt-4">
+        <p>&copy; {new Date().getFullYear()} ONEGGY TECHNOLOGIES OPC PVT LTD.</p>
+        <div className="flex flex-col sm:flex-row sm:space-x-8 mt-4 sm:mt-0 text-sm">
+          <Link href="/sitemap" className="hover:underline">Sitemap</Link>
+          <Link href="/privacy-policy" className="hover:underline">Privacy Policy</Link>
+          <Link href="/terms-and-conditions" className="hover:underline">Terms and Conditions</Link>
+          <Link href="/refund-policy" className="hover:underline">Refund Policy</Link>
+        </div>
       </footer>
     </div>
-    // </div>
   );
 };
 
-export default footer;
+export default Footer;

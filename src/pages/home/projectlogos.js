@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Marquee from "react-fast-marquee";
 import projectLogosData from "../../../public/data/projectlogos.json";
 
-const ProjectLogos = () => {
+const ProjectLogos = ({ direction = "left" }) => {
   const sliderSettings = {
     dots: false,
     infinite: true,
@@ -29,14 +29,19 @@ const ProjectLogos = () => {
   return (
     <main className="sm:mt-14 my-12  md:ml-4">
       <div className="inner">
-        <Marquee pauseOnHover={false} speed={30} pauseOnClick={false} gradient={true} gradientColor={"white"} autoFill={true}>
+        <Marquee pauseOnHover={false} direction={direction} speed={40} pauseOnClick={false} gradient={true} gradientColor={"white"} autoFill={true}>
           {projectLogosData.projectLogos.map((logo) => (
             <img
               key={logo.id}
               src={logo.url}
               alt={logo.alt}
-              className="project_logo mx-4 mx-[1.5rem] sm:mx-[2.5rem] md:mx-[3rem] lg:mx-[3.5rem]"  // Adjust margin for spacing between logos
-              style={{ filter: "grayscale(100%)", width: "160px", height: "54px" }}
+              className="project_logo mx-6 sm:mx-8 md:mx-10 object-contain"  // Adjust margin for spacing between logos
+              style={{ 
+                width: "120px",   // Default size for mobile screens
+                height: "auto",
+                maxWidth: "180px", // Larger size for larger screens
+                maxHeight: "90px"  // Set a maximum height for consistency
+              }}
             />
           ))}
         </Marquee>
