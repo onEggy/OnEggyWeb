@@ -19,8 +19,12 @@ import { NextSeo } from "next-seo";
 import ProjectLogos from "./home/projectlogos";
 import Head from "next/head";
 import EnquiryModal from "./components/EnquiryModal";
+import FaqSection from "./components/faq";
+import PartnerShowcase from "./components/partnerShowcase";
+import ContactUs from "./home/contactUs";
 
 const About = () => {
+
   const currentPageData = seoData["/about"];
   const {
     brands,
@@ -64,6 +68,7 @@ const About = () => {
         boxParaTitle={boxParaTitle}
         boxContent={boxContent}
       />
+      <PartnerShowcase />
       <Section4 />
       <GetFreeProp
         head={"Let's get things begun"}
@@ -87,6 +92,8 @@ const About = () => {
           )
         )}
       </div>
+      <FaqSection />
+      <ContactUs />
       <EnquiryModal />
       <Footer />
     </div>

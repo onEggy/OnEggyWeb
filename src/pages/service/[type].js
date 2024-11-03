@@ -16,6 +16,8 @@ import seoData from "../../../public/data/service-seo.json";
 import serviceData from "../../../public/data/serviceData.json";
 import Head from "next/head";
 import EnquiryModal from "../components/EnquiryModal";
+import ContactUs from "../home/contactUs";
+import PartnerShowcase from "../components/partnerShowcase";
 
 const service = (props) => {
 
@@ -100,13 +102,15 @@ const service = (props) => {
       </div>
 
       <TechCompo serviceTypes={props.serviceTypes} />
-      <TechnologyStack />
+      <PartnerShowcase />
       <Testimonials />
       <GetFreeProp
         head={'Let’s make things happen'}
         para={'Contact us today to learn more about how our digital marketing services can help your business grow and succeed online.'}
         buttonText="Get your free proposal" />
+      <TechnologyStack />
       <Marksheet />
+      <ContactUs />
       <EnquiryModal />
       <Footer />
     </div>

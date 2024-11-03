@@ -16,6 +16,8 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Sidebar from "../components/sidebar";
 import Link from "next/link";
 import serviceData from "../../../public/data/serviceData.json";
+import PartnerShowcase from "../components/partnerShowcase";
+import FaqSection from "../components/faq";
 
 const Home = (skill) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -73,6 +75,7 @@ const Home = (skill) => {
 
       {/* Rest of the page components */}
       <Projectlogos />
+      <PartnerShowcase />
       <Awards />
       <Headline
         mainCss="md:ml-4"
@@ -105,6 +108,7 @@ const Home = (skill) => {
       />
       <Marksheet />
       <Testimonials />
+      <FaqSection />
       <ContactUs />
       <Footer />
     </div>

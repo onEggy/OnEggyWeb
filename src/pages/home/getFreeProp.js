@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const getFreeProp = ({head,para,buttonText='Get your free consultation'}) => {
   return (
@@ -10,9 +11,11 @@ const getFreeProp = ({head,para,buttonText='Get your free consultation'}) => {
         <p className="mt-8 md:w-5/12 text-lg text-center sm:text-left">
           {para}
         </p>
-        <button className="bg-l_black md:text-2xl text-white hover:bg-white border hover:border-l_black hover:text-l_black px-6 py-4 mx-auto self-center mt-8 rounded-xl">
-          {buttonText}
-        </button>
+        <Link href={"/contact"}>
+          <button className="bg-l_black md:text-2xl text-white hover:bg-white border hover:border-l_black hover:text-l_black px-6 py-4 mx-auto self-center mt-8 rounded-xl">
+            {buttonText}
+          </button>
+        </Link>
       </div>
       <div className="absolute -right-12 -bottom-8 hidden sm:block ">
         <img
