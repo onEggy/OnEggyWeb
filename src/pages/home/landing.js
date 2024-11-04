@@ -68,6 +68,7 @@ const Home = (skill) => {
             alt="OnEggy Technologies DevOps and Cloud Consulting and Managed tech"
             width={500}
             height={478}
+            priority
             className="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-full"
           />
         </div>
