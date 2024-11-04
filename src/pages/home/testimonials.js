@@ -132,7 +132,7 @@ const Testimonials = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="max-w-lg mx-4 bg-gray-700 rounded-2xl shadow-lg p-8 md:p-10 transform transition duration-500 hover:scale-105 relative"
+                className="max-w-lg mx-4 bg-gray-700 rounded-2xl shadow-lg p-8 md:p-10 transform transition duration-500 relative"
                 style={{ minWidth: "300px", height: "300px" }} // Set consistent height
               >
                 {/* Quotation Icon */}
