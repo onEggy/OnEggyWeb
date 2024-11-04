@@ -5,8 +5,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Technology = ({ skill, index }) => {
+  
   if (!skill || typeof skill !== "object" || !skill.development || !skill.imageSrc) {
-    console.error("Invalid skill object or missing title:", skill);
+    // console.error("Invalid skill object or missing properties:", skill);
     return null;
   }
 
@@ -111,6 +112,7 @@ const Technology = ({ skill, index }) => {
               className={`text-blue-500 hover:underline ml-2 ${linkColor(
                 index
               )} text-base sm:text-lg`}
+              aria-label={`Learn more about ${skill.development}`} // Accessible label
             >
               Learn More
             </Link>
@@ -122,9 +124,9 @@ const Technology = ({ skill, index }) => {
           <div className="relative w-full max-w-[180px] h-[120px] sm:max-w-[240px] sm:h-[180px] overflow-hidden rounded-[1.5rem]">
             <Image
               src={skill.imageSrc}
-              alt={skill.development}
-              layout="fill"
-              objectFit="cover"
+              alt={`${skill.development} illustration`}
+              fill // This replaces layout="fill"
+              style={{ objectFit: 'cover' }} // This replaces objectFit="cover"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 240px"
               priority={index < 2}
               quality={75}
