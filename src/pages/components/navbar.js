@@ -119,7 +119,7 @@ export default function Navbar() {
                       : "text-gray-800 hover:bg-gray-100",
                     "block rounded-md px-3 py-2 text-base font-medium"
                   )}
-                  aria-current={item.current ? "page" : undefined}
+                  aria-current={router.pathname === item.href ? "page" : undefined}
                 >
                   {item.name}
                 </Disclosure.Button>
@@ -127,6 +127,7 @@ export default function Navbar() {
               <Disclosure.Button
                 as={Link}
                 href="/contact"
+                aria-label="Request a Quote"
                 className="block text-center text-black py-2 px-4 mt-1 rounded-md border border-black hover:bg-black hover:text-white"
               >
                 Request a Quote
