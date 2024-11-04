@@ -111,6 +111,7 @@ const Technology = ({ skill, index }) => {
               className={`text-blue-500 hover:underline ml-2 ${linkColor(
                 index
               )} text-base sm:text-lg`}
+              aria-label={`Learn more about ${skill.development}`} // Accessible label
             >
               Learn More
             </Link>
@@ -122,7 +123,7 @@ const Technology = ({ skill, index }) => {
           <div className="relative w-full max-w-[180px] h-[120px] sm:max-w-[240px] sm:h-[180px] overflow-hidden rounded-[1.5rem]">
             <Image
               src={skill.imageSrc}
-              alt={skill.development}
+              alt={`${skill.development} illustration`}
               layout="fill"
               objectFit="cover"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 240px"
