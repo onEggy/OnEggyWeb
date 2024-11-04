@@ -36,7 +36,7 @@
           "../service/react.svg",
           "../service/angular.svg"
         ],
-        "imageSrc": "../home/landingComponent/1.png",
+        "imageSrc": "/home/landingComponent/1.png",
         "serviceType": "Web Development Services",
         "serviceInfo": "Discover our proven expertise in web development through real-life case studies showcasing our success.",
         "serviceTypes": [
@@ -135,7 +135,7 @@
           "../service/react.svg",
           "../service/angular.svg"
         ],
-        "imageSrc": "../home/landingComponent/2.png",
+        "imageSrc": "/home/landingComponent/2.png",
         "serviceType": "App Development Services",
         "serviceInfo": "Delve into actual instances illustrating our expertise in app development through our extensive case studies.",
         "serviceTypes": [
@@ -234,7 +234,7 @@
           "../service/react.svg",
           "../service/angular.svg"
         ],
-        "imageSrc": "../home/landingComponent/3.png",
+        "imageSrc": "/home/landingComponent/3.png",
         "serviceType": "MVP Tech Development Services",
         "serviceInfo": "Discover real-world instances showcasing our success in MVP tech development through our detailed case studies.",
         "serviceTypes": [
@@ -333,7 +333,7 @@
           "../service/react.svg",
           "../service/angular.svg"
         ],
-        "imageSrc": "../home/landingComponent/4.png",
+        "imageSrc": "/home/landingComponent/4.png",
         "serviceType": "Custom App/Software Development Services",
         "serviceInfo": "Explore real-life examples of how we've successfully built custom apps and software solutions for our clients through our detailed case studies.",
         "serviceTypes": [
@@ -432,7 +432,7 @@
           "../service/react.svg",
           "../service/angular.svg"
         ],
-        "imageSrc": "../home/landingComponent/5.png",
+        "imageSrc": "/home/landingComponent/5.png",
         "serviceType": "UI/UX Designing Services",
         "serviceInfo": "Discover how our UI/UX designs have transformed digital experiences through our real-life case studies.",
         "serviceTypes": [
@@ -531,7 +531,7 @@
           "../service/react.svg",
           "../service/angular.svg"
         ],
-        "imageSrc": "../home/landingComponent/6.png",
+        "imageSrc": "/home/landingComponent/6.png",
         "serviceType": "Cloud Managed Services",
         "serviceInfo": "Explore how our cloud management services optimize performance and efficiency for businesses like yours.",
         "serviceTypes": [

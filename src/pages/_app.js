@@ -2,8 +2,6 @@ import { useEffect } from "react";
 import { DefaultSeo } from "next-seo";
 import { useRouter } from "next/router";
 import seoData from "../../public/data/seo-data.json";
-
-
 import "@/styles/globals.css";
 import "@/styles/tailwind.css";
 import "@/styles/style.css";
@@ -43,6 +41,14 @@ function App({ Component, pageProps }) {
         {/* Favicon for browsers */}
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32-v1.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16-v1.png" />
+        {/* Preconnect to Google Fonts to establish early connection */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        {/* Load Google Fonts asynchronously with display=swap */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
       <Component {...pageProps} />
@@ -61,7 +67,8 @@ function App({ Component, pageProps }) {
       </Script>
         
         <Script 
-        strategy="afterInteractive" 
+        strategy="lazyOnload"
+        onLoad={() => console.log('Clarity script loaded')}
         dangerouslySetInnerHTML={{
           __html: `
             (function(c,l,a,r,i,t,y){
