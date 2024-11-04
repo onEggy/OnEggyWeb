@@ -7,6 +7,7 @@ export default function Document() {
       <body>
 
         <script
+            strategy="lazyOnload"
             dangerouslySetInnerHTML={{
               __html: `
                 (function(){

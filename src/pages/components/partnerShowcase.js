@@ -32,8 +32,8 @@ const PartnerShowcase = () => {
                             <Image
                                 src={partner.logo}
                                 alt={`${partner.name} logo`}
-                                layout="fill"
-                                objectFit="contain"
+                                fill // This replaces layout="fill"
+                                style={{ objectFit: 'contain' }} // This replaces objectFit="cover"
                                 className="rounded-md"
                                 priority // Use priority for faster loading
                             />
