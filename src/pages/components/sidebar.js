@@ -1,11 +1,20 @@
 import { faFacebookF, faLinkedinIn, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Sidebar = () => {
   const [sidebarexpanded, setSidebarExpanded] = useState(false);
+  const [viewportWidth, setViewportWidth] = useState(null);
+
+  // Track viewport width for responsive styles
+  useEffect(() => {
+    const handleResize = () => setViewportWidth(window.innerWidth);
+    handleResize(); // Set initial width
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleMenuClick = () => {
     setSidebarExpanded(!sidebarexpanded);
@@ -14,7 +23,7 @@ const Sidebar = () => {
   return (
     <div className="relative">
       {/* Sidebar Toggle Button */}
-      <button className="normal-button z-50" onClick={handleMenuClick}>
+      <button className="normal-button z-50 fixed top-4 right-4" onClick={handleMenuClick}>
         {sidebarexpanded ? <FaTimes /> : <FaBars />}
       </button>
 
@@ -23,7 +32,7 @@ const Sidebar = () => {
         className={`fixed inset-y-0 right-0 transform ${
           sidebarexpanded ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-500 ease-in-out z-40`}
-        style={{ width: sidebarexpanded ? (window.innerWidth <= 600 ? "100%" : "50%") : "0" }}
+        style={{ width: sidebarexpanded ? (viewportWidth <= 600 ? "100%" : "50%") : "0" }}
       >
         {/* Overlay, only visible when sidebar is expanded */}
         <div
