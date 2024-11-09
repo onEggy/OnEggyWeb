@@ -14,6 +14,7 @@ import BlogsData from "/public/AllBlogs/index.json";
 import fs from "fs";
 import matter from "gray-matter";
 import { marked } from "marked";
+import ManagedServices from "../components/blogServicePromote";
 
 const Blog = (props) => {
   // State to manage scroll progress
@@ -112,6 +113,10 @@ const Blog = (props) => {
         </div>
 
         {/* Author Bio */}
+        <div className="my-10">
+          {/* Managed Services content here */}
+          <ManagedServices />
+        </div>
         <AuthorBio />
       </div>
 
