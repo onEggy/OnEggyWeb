@@ -88,11 +88,11 @@ const blogOne = () => {
         para={'Contact us today to learn more about how our digital marketing services can help your business grow and succeed online.'}
       />
 
-      <div className="w-full md:w-3/4 px-4 md:mb-3 ">
+      {/* <div className="w-full md:w-3/4 px-4 md:mb-3 ">
         {arr.map((props, index) => (
           <Link href={`/blogs/${props.slug}`}> <Compo key={index} {...props} /></Link>
         ))}
-      </div>
+      </div> */}
      
       <Footer />
     </div>
