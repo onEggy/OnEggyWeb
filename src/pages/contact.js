@@ -8,6 +8,7 @@ import Sidebar from "./components/sidebar";
 import seoData from "../../public/data/seo-data.json";
 import { NextSeo } from "next-seo";
 import Head from "next/head";
+import Link from "next/link";
 
 const section1 = () => {
   const currentPageData = seoData["/contact"];

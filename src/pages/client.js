@@ -72,7 +72,8 @@ const Client = () => {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {currentProjects.map((project, index) => (
-            <Link href={`/service/${project.slug}`} key={index} passHref>
+            <Link href={`/services`} key={index} passHref>
+              {/* <Link href={`/service/${project.slug}`} key={index} passHref> */}
               <div className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
                 {/* Image */}
                 <div className="relative h-48 md:h-60">
