@@ -1,37 +1,33 @@
-{
-    "projects1": [
-      {
-        "image": "/client/1.png"
-      },
-      {
-        "image": "/client/2.png"
-      },
-      {
-        "image": "/client/3.png"
-      }
+[
+  {
+    "slug": "case-study-1",
+    "title": "Optimizing Cloud Infrastructure for ABC Corp",
+    "company": "ABC Corp",
+    "metaDescription": "Learn how ABC Corp improved efficiency by optimizing cloud infrastructure with our solutions.",
+    "keywords": ["DevOps automation", "healthcare solutions", "workflow efficiency", "automated testing"],
+    "summary": "Streamlining operations and reducing costs for ABC Corp through innovative cloud solutions.",
+    "description": "A comprehensive look at how our team helped ABC Corp achieve cost-efficiency in their cloud infrastructure.",
+    "image": "/team/people3.jpg",
+    "content": "Our team worked with ABC Corp to revamp their cloud infrastructure, enhancing efficiency and reducing costs.",
+    "keyMetrics": [
+      "25% reduction in cloud spending",
+      "40% faster deployment times",
+      "99.9% uptime achieved"
     ],
-    "projects2": [
+    "challenges": "ABC Corp faced frequent downtime and high costs with their existing cloud infrastructure.",
+    "solutions": "Our team designed and implemented a custom cloud architecture with optimized cost management.",
+    "conclusion": "This collaboration resulted in a highly reliable and cost-efficient cloud setup, supporting ABC Corp's growth.",
+    "testimonials": [
       {
-        "image": "/client/4.png"
+        "author": "John Doe",
+        "position": "CTO, FinTech Co.",
+        "content": "OnEggy transformed our cloud infrastructure, enabling us to scale effortlessly. Their expertise and dedication are unmatched!"
       },
       {
-        "image": "/client/5.png"
+        "author": "Jane Smith",
+        "position": "Operations Manager, FinTech Co.",
+        "content": "Working with OnEggy was a game-changer for our operations. We now achieve faster deployment and greater reliability."
       }
-    ],
-    "projects3": [
-      {
-        "image": "/client/6.png"
-      },
-      {
-        "image": "/client/7.png"
-      },
-      {
-        "image": "/client/8.png"
-      }
-    ],
-    "showButton": true,
-    "head": "Transforming Vision into Innovation",
-    "sentence": "OnEggy turns visionary dreams into groundbreaking products. Through bold creativity and cutting-edge technology, we drive transformative success, empowering businesses to redefine industries and achieve extraordinary growth.",
-    "buttonPlaceholder": "Book a consultation"
+    ]
   }
-  
+]
