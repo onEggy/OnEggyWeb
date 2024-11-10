@@ -7,10 +7,9 @@ import Footer from "./components/footer";
 import Sidebar from "./components/sidebar";
 import { NextSeo } from "next-seo";
 import Head from "next/head";
-import Image from "next/image";
 import clientPageData from "../../public/data/clientPage.json";
 import seoData from "../../public/data/seo-data.json";
-import serviceData from "../../public/data/serviceData.json";
+import clientData from "../../public/data/clientData.json";
 import Link from "next/link";
 
 const EnquiryModal = dynamic(() => import('./components/EnquiryModal'), { ssr: false });
@@ -19,24 +18,20 @@ const Client = () => {
   const currentPageData = seoData["/client"];
   const { head, sentence, showButton, buttonPlaceholder } = clientPageData;
 
-  const getFreePropText = { head: "Let's get things begun", para: "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online" }
-
-  const allProjects = serviceData?.arr?.flatMap(types =>
-    types?.projects?.map(project => ({
-      ...project,
-      image: project.image?.replace('../', '/')
-    }))
-  ) || [];
+  const getFreePropText = {
+    head: "Let's get things begun",
+    para: "Contact us today to learn more about how our digital services may assist your company in growing and succeeding online"
+  };
 
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
   const projectsPerPage = 6;
-  const totalPages = Math.ceil(allProjects.length / projectsPerPage);
+  const totalPages = Math.ceil(clientData.length / projectsPerPage);
 
   // Calculate the projects to display based on the current page
   const indexOfLastProject = currentPage * projectsPerPage;
   const indexOfFirstProject = indexOfLastProject - projectsPerPage;
-  const currentProjects = allProjects.slice(indexOfFirstProject, indexOfLastProject);
+  const currentProjects = clientData.slice(indexOfFirstProject, indexOfLastProject);
 
   const handleNextPage = () => {
     if (currentPage < totalPages) setCurrentPage(currentPage + 1);
@@ -71,30 +66,17 @@ const Client = () => {
         <h2 className="text-center text-3xl font-bold mb-8">Our Case Studies</h2>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {currentProjects.map((project, index) => (
-            <Link href={`/services`} key={index} passHref>
-              {/* <Link href={`/service/${project.slug}`} key={index} passHref> */}
-              <div className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-                {/* Image */}
-                <div className="relative h-48 md:h-60">
-                  <Image
-                    src={project.image}
-                    alt={`Project Image ${index + 1}`}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-t-lg"
-                  />
-                </div>
-                
-                {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2 line-clamp-1">{project.title || `Project ${index + 1}`}</h3>
-                  <p className="text-gray-600 text-sm line-clamp-3">
-                    {project.description || "Explore how our solutions have helped transform businesses across various industries."}
-                  </p>
-                  <div className="mt-4 text-cyan-600 font-medium">View Case Study &rarr;</div>
-                </div>
-              </div>
+          {currentProjects.map((caseStudy, index) => (
+            <Link href={`/client/${caseStudy.slug}`} key={index} passHref>
+              <a className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl p-6 block">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2 line-clamp-1">
+                  {caseStudy.title}
+                </h3>
+                <p className="text-gray-600 text-sm line-clamp-3">
+                  {caseStudy.description || "Explore how our solutions have helped transform businesses across various industries."}
+                </p>
+                <div className="mt-4 text-cyan-600 font-medium">View Case Study &rarr;</div>
+              </a>
             </Link>
           ))}
         </div>
@@ -126,13 +108,6 @@ const Client = () => {
           </button>
         </div>
       </div>
-
-      {/* Call to Action */}
-      {/* <div className="my-12 py-8 bg-blue-100 text-center rounded-lg mx-4 sm:mx-auto sm:w-3/4 lg:w-2/3 xl:w-1/2">
-        <h2 className="text-2xl font-bold mb-4">Want to Learn More About Our Work?</h2>
-        <p className="text-gray-700 mb-6">Discover how we can help transform your business with our innovative solutions.</p>
-        <GetFreeProp head="Get in Touch" para="Reach out for a free consultation and let's discuss your project." />
-      </div> */}
 
       <GetFreeProp
         head={getFreePropText.head}
