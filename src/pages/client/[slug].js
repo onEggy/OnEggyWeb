@@ -51,7 +51,7 @@ const CaseStudy = ({ caseStudy }) => {
                 <meta name="keywords" content={caseStudy.keywords?.join(", ") || ""} />
                 <link
                     rel="canonical"
-                    href={`${baseUrl}service/${props?.['meta-title-slug']}`}
+                    href={`${baseUrl}client/${caseStudy?.['slug']}`}
                 />
             </Head>
 
