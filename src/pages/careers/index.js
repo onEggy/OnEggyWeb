@@ -26,8 +26,7 @@ const Career = () => {
   };
 
   return (
-    <>
-      {/* SEO Configuration */}
+    <div className="container max-w-7xl mx-auto px-4 md:px-10">
       <NextSeo
         title="Careers at OnEggy Technologies"
         description="Explore opportunities at OnEggy Technologies and join our mission to create value through technology."
@@ -39,17 +38,22 @@ const Career = () => {
         />
       </Head>
 
-      {/* Navbar and Sidebar */}
       <Navbar />
       <Sidebar />
 
-      {/* Title Section */}
-      <h1 className="mx-auto text-center my-10 w-10/12 text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
-        Join Our Team
-      </h1>
-
       {/* Main Content */}
-      <div className="container mx-auto px-6 md:px-10 lg:px-16 xl:px-20 max-w-7xl my-16">
+      <div className="flex-grow container mx-auto px-6 md:px-10 lg:px-16 xl:px-20 max-w-6xl my-16">
+        {/* Hero Section */}
+        <div className="text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+            Join Our Team
+          </h1>
+          <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-12">
+            Discover career opportunities and become a part of our journey at
+            OnEggy Technologies.
+          </p>
+        </div>
+
         {/* Job Listings */}
         <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2">
           {currentJobs.map((job, index) => (
@@ -127,10 +131,8 @@ const Career = () => {
       </div>
 
       {/* Footer Section */}
-      <div className="bg-cover bg-right max-w-7xl mx-auto">
-        <Footer />
-      </div>
-    </>
+      <Footer />
+    </div>
   );
 };
 
