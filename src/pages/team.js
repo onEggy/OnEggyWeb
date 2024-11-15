@@ -16,6 +16,7 @@ const Team = () => {
   const showButton = true;
   const { head, sentence, buttonPlaceholder } = teamPageData;
   const currentPageData = seoData["/team"];
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.oneggy.com/';
   return (
     <div className="mx-auto max-w-7xl">
       <NextSeo
@@ -24,6 +25,10 @@ const Team = () => {
       />
        <Head>
         <meta name="keywords" content={currentPageData?.keywords} />
+        <link
+          rel="canonical"
+          href={`${baseUrl}service/${props?.['meta-title-slug']}`}
+        />
       </Head>
       <Navbar />
       <Sidebar />

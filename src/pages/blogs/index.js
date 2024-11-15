@@ -15,6 +15,8 @@ import Link from "next/link";
 
 
 const blogOne = () => {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.oneggy.com/';
+
   const currentPageData = seoData["/blog"];
   const head = "Tech Talk by OnEggy";
   const head2 = "Blogs on Cloud, DevOps & More"
@@ -35,6 +37,10 @@ const blogOne = () => {
       />
       <Head>
         <meta name="keywords" content={currentPageData?.keywords} />
+        <link
+          rel="canonical"
+          href={`${baseUrl}service/${props?.['meta-title-slug']}`}
+        />
       </Head>
       <Navbar />
       <Sidebar />

@@ -8,6 +8,7 @@ import { NextSeo } from "next-seo";
 
 const PrivacyPolicy = () => {
   const currentPageData = seoData["/privacy-policy"];
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.oneggy.com/';
 
   return (
     <div className="max-w-7xl mx-auto">

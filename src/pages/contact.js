@@ -12,6 +12,7 @@ import Link from "next/link";
 
 const section1 = () => {
   const currentPageData = seoData["/contact"];
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.oneggy.com/';
 
   const profile = [
     {
@@ -37,6 +38,10 @@ const section1 = () => {
       />
       <Head>
         <meta name="keywords" content={currentPageData?.keywords} />
+        <link
+          rel="canonical"
+          href={`${baseUrl}service/${props?.['meta-title-slug']}`}
+        />
       </Head>
 
       <Navbar />

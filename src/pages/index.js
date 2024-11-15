@@ -9,6 +9,9 @@ import EnquiryModal from "./components/EnquiryModal";
 const currentPageData = seoData["/"];
 
 export default function App() {
+
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.oneggy.com/';
+
   return (
     <div>
       <NextSeo
@@ -17,6 +20,10 @@ export default function App() {
       />
       <Head>
         <meta name="keywords" content={currentPageData?.keywords} />
+        <link
+          rel="canonical"
+          href={`${baseUrl}service/${props?.['meta-title-slug']}`}
+        />
       </Head>
       <Landing />
       <EnquiryModal />
