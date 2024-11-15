@@ -26,7 +26,7 @@ const JobDetail = ({ job }) => {
       <meta name="keywords" content={job.keywords?.join(", ") || ""} />
       <link
         rel="canonical"
-        href={`${baseUrl}service/${props?.['meta-title-slug']}`}
+        href={`${baseUrl}careers/${job.slug}`}
       />
       </Head>
       <Navbar />

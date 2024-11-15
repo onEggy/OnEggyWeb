@@ -1,144 +1,159 @@
-import React, { useState } from "react";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
-import Sidebar from "../components/sidebar";
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import { NextSeo } from "next-seo";
 import Head from "next/head";
-import careerData from "../../../public/data/careers.json";
-import Link from "next/link";
+import Navbar from "../components/navbar";
+import Sidebar from "../components/sidebar";
+import AuthorBio from "../components/blogAuthor";
+import PartnerShowcase from "../components/partnerShowcase";
+import ContactUs from "../home/contactUs";
+import Footer from "../components/footer";
+import EnquiryModal from "../components/EnquiryModal";
+import ConsultationButton from "../components/consultButton";
+import BlogsData from "/public/AllBlogs/index.json";
+import fs from "fs";
+import matter from "gray-matter";
+import { marked } from "marked";
+import ManagedServices from "../components/blogServicePromote";
 
-const Career = () => {
+const Blog = (props) => {
+  // State to manage scroll progress
+  const [scrollProgress, setScrollProgress] = useState(0);
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.oneggy.com/';
-
-  const jobsPerPage = 5;
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const totalPages = Math.ceil(careerData.length / jobsPerPage);
-  const currentJobs = careerData.slice(
-    (currentPage - 1) * jobsPerPage,
-    currentPage * jobsPerPage
-  );
-
-  const handleNextPage = () => {
-    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
+  // Calculate scroll progress
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercentage = (scrollPosition / windowHeight) * 100;
+    setScrollProgress(scrollPercentage);
   };
 
-  const handlePreviousPage = () => {
-    if (currentPage > 1) setCurrentPage(currentPage - 1);
-  };
+  // Attach the scroll event listener
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
       {/* SEO Configuration */}
       <NextSeo
-        title="Careers at OnEggy Technologies"
-        description="Explore opportunities at OnEggy Technologies and join our mission to create value through technology."
+        title={props?.title}
+        description={props?.description}
+        openGraph={{
+          title: props?.title,
+          description: props?.description,
+          url: `https://www.oneggy.com/blogs/${props.slug}`,
+          article: { tags: props?.keywords },
+        }}
       />
       <Head>
-        <meta
-          name="keywords"
-          content="careers, jobs, OnEggy Technologies, DevOps, cloud"
-        />
+        <meta name="keywords" content={props.keywords} />
         <link
           rel="canonical"
-          href={`${baseUrl}service/${props?.['meta-title-slug']}`}
+          href={`${baseUrl}blogs/${props.slug}`}
         />
       </Head>
+
+      {/* Progress Bar */}
+      <div className="fixed top-0 left-0 w-full h-1 z-50">
+        <div
+          className="h-full bg-cyan-500 transition-all duration-200"
+          style={{ width: `${scrollProgress}%` }}
+        ></div>
+      </div>
 
       {/* Navbar and Sidebar */}
       <Navbar />
       <Sidebar />
 
       {/* Title Section */}
-      <h1 className="mx-auto text-center my-10 w-10/12 text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
-        Join Our Team
+      <h1 className="mx-auto text-center my-10 w-10/12 text-3xl sm:text-4xl md:text-6xl font-medium tracking-tight">
+        {props.blogPageTitle}
       </h1>
 
-      {/* Main Content */}
-      <div className="container mx-auto px-6 md:px-10 lg:px-16 xl:px-20 max-w-7xl my-16">
-        {/* Job Listings */}
-        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2">
-          {currentJobs.map((job, index) => (
-            <Link
-              href={`/careers/${job.slug}`}
-              key={index}
-              className="block bg-white border border-gray-200 shadow-md hover:shadow-lg transition-transform transform hover:-translate-y-1 p-6 rounded-lg"
-            >
-              <h2 className="text-2xl font-semibold text-gray-900 mb-2">
-                {job.title}
-              </h2>
-              <p className="text-gray-500 text-md mb-3 font-medium">
-                {job.location}
+      {/* Content Container */}
+      <div className="mx-auto my-10 w-11/12 sm:w-10/12 lg:w-8/12">
+        {/* Subtitle, Date, and Read Time */}
+        <div className="hidden md:flex justify-center text-gray-700">
+          <a href="#" className="font-bold text-lg md:text-xl">{props.subTitle}</a>
+          <div className="h-5 mx-4 border-r border-gray-400" />
+          <h1>{props.date}</h1>
+          <div className="h-5 mx-4 border-r border-gray-400" />
+          <h2>{props.readTime} read</h2>
+        </div>
+
+        {/* Main Image */}
+        <div className="mt-10 px-4 sm:px-10 md:px-16">
+          <Image
+            src={props.mainBigImage}
+            className="w-full rounded-lg"
+            height={400}
+            width={800}
+            alt={props.blogPageTitle}
+            layout="responsive"
+          />
+        </div>
+
+        {/* Content and Sidebar */}
+        <div className="md:flex mt-10 mb-20">
+          {/* Main Content */}
+          <div
+            className="max-w-2xl mx-auto md:w-8/12 prose prose-sm sm:prose lg:prose-lg"
+            dangerouslySetInnerHTML={{ __html: props.renderedHtml }}
+          />
+
+          {/* Sidebar Section */}
+          {/* Uncomment the section below to use sidebar */}
+          {/* <div className="md:w-4/12 mt-10 md:mt-0 md:pl-10">
+            <div className="bg-gray-100 rounded-lg p-6 shadow-lg">
+              <h2 className="text-2xl font-semibold">Looking for personalized service?</h2>
+              <p className="mt-4 text-gray-700">
+                Contact us today to learn how our digital services can help grow your business.
               </p>
-              <p className="text-gray-600 mb-4">{job.shortDescription}</p>
-
-              {/* Job Details */}
-              <div className="flex items-center justify-between text-gray-500 text-sm mt-4">
-                <div className="flex items-center space-x-2">
-                  <svg
-                    className="w-5 h-5 text-cyan-500"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 2a10 10 0 1010 10A10.013 10.013 0 0012 2zm-1 14H9v-2h2zm0-4H9V7h2zm4 4h-2v-2h2zm0-4h-2V7h2z" />
-                  </svg>
-                  <span>{job.type}</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <svg
-                    className="w-5 h-5 text-cyan-500"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 2a10 10 0 1010 10A10.013 10.013 0 0012 2zm-1 14H9v-2h2zm0-4H9V7h2zm4 4h-2v-2h2zm0-4h-2V7h2z" />
-                  </svg>
-                  <span>{job.experience} experience</span>
-                </div>
-              </div>
-              <div className="mt-6 text-cyan-600 font-medium text-right">
-                View Details &rarr;
-              </div>
-            </Link>
-          ))}
+              <ConsultationButton buttonPlaceholder="Get your free consultation" />
+            </div>
+          </div> */}
         </div>
 
-        {/* Pagination Controls */}
-        <div className="flex justify-center items-center mt-12 space-x-6">
-          <button
-            onClick={handlePreviousPage}
-            disabled={currentPage === 1}
-            className={`px-6 py-3 font-semibold border rounded ${
-              currentPage === 1
-                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                : "bg-cyan-500 text-white hover:bg-blue-600"
-            }`}
-          >
-            Previous
-          </button>
-          <span className="font-semibold text-gray-700">
-            Page {currentPage} of {totalPages}
-          </span>
-          <button
-            onClick={handleNextPage}
-            disabled={currentPage === totalPages}
-            className={`px-6 py-3 font-semibold border rounded ${
-              currentPage === totalPages
-                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                : "bg-cyan-500 text-white hover:bg-blue-600"
-            }`}
-          >
-            Next
-          </button>
+        {/* Author Bio */}
+        <div className="my-10">
+          {/* Managed Services content here */}
+          <ManagedServices />
         </div>
+        <AuthorBio />
       </div>
 
-      {/* Footer Section */}
+      {/* Enquiry Modal and Footer */}
+      <EnquiryModal />
       <div className="bg-cover bg-right max-w-7xl mx-auto">
+        <PartnerShowcase />
+        <ContactUs />
         <Footer />
       </div>
     </>
   );
 };
 
-export default Career;
+export default Blog;
+
+export async function getStaticProps({ params: { Blog } }) {
+  let path = await BlogsData?.filter((x) => x?.["slug"] == Blog);
+
+  let mdFileData = fs.readFileSync(path[0].mdFileLocation, "utf8");
+  const { data, content } = matter(mdFileData);
+  let renderedHtml = marked(content);
+  path[0] = { ...path[0], ...data };
+  return { props: { ...path[0], renderedHtml } };
+}
+
+export async function getStaticPaths() {
+  let paths = await BlogsData?.map((x) => {
+    return { params: { Blog: x?.["slug"] } };
+  });
+
+  return {
+    paths,
+    fallback: false,
+  };
+}

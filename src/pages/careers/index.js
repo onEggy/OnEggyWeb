@@ -39,7 +39,7 @@ const Career = () => {
         />
         <link
           rel="canonical"
-          href={`${baseUrl}service/${props?.['meta-title-slug']}`}
+          href={`${baseUrl}careers/`}
         />
       </Head>
 

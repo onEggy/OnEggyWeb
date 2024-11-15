@@ -27,7 +27,7 @@ const Team = () => {
         <meta name="keywords" content={currentPageData?.keywords} />
         <link
           rel="canonical"
-          href={`${baseUrl}service/${props?.['meta-title-slug']}`}
+          href={`${baseUrl}team`}
         />
       </Head>
       <Navbar />
