@@ -21,6 +21,8 @@ import PartnerShowcase from "../components/partnerShowcase";
 
 const service = (props) => {
 
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.oneggy.com/';
+
   // console.log('porps',props)
   const head = props.development || "Web Development";
   const head2 = props.heading
@@ -61,6 +63,10 @@ const service = (props) => {
       />
       <Head>
         <meta name="keywords" content={props?.['meta-keywords']} />
+        <link
+          rel="canonical"
+          href={`${baseUrl}/services/${props?.['meta-title-slug']}`}
+        />
       </Head>
       <Navbar />
       <Sidebar />
