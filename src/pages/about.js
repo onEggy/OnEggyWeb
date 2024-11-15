@@ -25,6 +25,7 @@ import ContactUs from "./home/contactUs";
 
 const About = () => {
 
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.oneggy.com/';
   const currentPageData = seoData["/about"];
   const {
     brands,
@@ -50,6 +51,10 @@ const About = () => {
       />
       <Head>
        <meta name="keywords" content={currentPageData?.keywords} />
+       <link
+          rel="canonical"
+          href={`${baseUrl}service/${props?.['meta-title-slug']}`}
+        />
       </Head>
       <Navbar />
       <Sidebar />

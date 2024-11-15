@@ -8,6 +8,9 @@ import careerData from "../../../public/data/careers.json";
 import Link from "next/link";
 
 const Career = () => {
+
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.oneggy.com/';
+
   const jobsPerPage = 5;
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -36,6 +39,10 @@ const Career = () => {
         <meta
           name="keywords"
           content="careers, jobs, OnEggy Technologies, DevOps, cloud"
+        />
+        <link
+          rel="canonical"
+          href={`${baseUrl}service/${props?.['meta-title-slug']}`}
         />
       </Head>
 

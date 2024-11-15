@@ -16,6 +16,7 @@ import Link from "next/link";
 const EnquiryModal = dynamic(() => import('../components/EnquiryModal'), { ssr: false });
 
 const Client = () => {
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.oneggy.com/';
     const currentPageData = seoData["/client"];
     const { head, sentence, showButton, buttonPlaceholder } = clientPageData;
 
@@ -47,6 +48,10 @@ const Client = () => {
             <NextSeo title={currentPageData.title} description={currentPageData.description} />
             <Head>
                 <meta name="keywords" content={currentPageData?.keywords} />
+                <link
+                    rel="canonical"
+                    href={`${baseUrl}service/${props?.['meta-title-slug']}`}
+                />
             </Head>
 
             <Navbar />
@@ -69,14 +74,14 @@ const Client = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {currentProjects.map((caseStudy, index) => (
                         <Link href={`/client/${caseStudy.slug}`} key={index} passHref className={"block p-4 bg-gray-100 rounded-lg shadow-lg hover:shadow-md transition-transform duration-300 hover:scale-105"}>
-                                {/* Content Section */}
-                                <div className="p-6">
-                                    <h3 className="text-2xl font-semibold text-gray-900 mb-2">{caseStudy.title}</h3>
-                                    <p className="text-gray-600 text-sm line-clamp-3">
-                                        {caseStudy.description || "Explore how our solutions have helped transform businesses across various industries."}
-                                    </p>
-                                    <div className="mt-4 text-cyan-600 font-medium">View Case Study &rarr;</div>
-                                </div>
+                            {/* Content Section */}
+                            <div className="p-6">
+                                <h3 className="text-2xl font-semibold text-gray-900 mb-2">{caseStudy.title}</h3>
+                                <p className="text-gray-600 text-sm line-clamp-3">
+                                    {caseStudy.description || "Explore how our solutions have helped transform businesses across various industries."}
+                                </p>
+                                <div className="mt-4 text-cyan-600 font-medium">View Case Study &rarr;</div>
+                            </div>
                         </Link>
                     ))}
                 </div>

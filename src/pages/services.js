@@ -16,6 +16,7 @@ import EnquiryModal from "./components/EnquiryModal";
 const services = () => {
   const { head, sentence, showButton, buttonPlaceholder, title, desc, arr, head2, para2 } =
     serviceData;
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.oneggy.com/';
 
   return (
     <div className="max-w-7xl container mx-auto">
@@ -26,6 +27,10 @@ const services = () => {
 
       <Head>
         <meta name="keywords" content={seoData['/services']?.keywords} />
+        <link
+          rel="canonical"
+          href={`${baseUrl}service/${props?.['meta-title-slug']}`}
+        />
       </Head>
       <Navbar />
       <Sidebar />

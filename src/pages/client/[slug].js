@@ -26,6 +26,7 @@ const getIconForMetric = (metric) => {
 };
 
 const CaseStudy = ({ caseStudy }) => {
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.oneggy.com/';
     if (!caseStudy) return <div>Case study not found</div>;
 
     useEffect(() => {
@@ -48,6 +49,10 @@ const CaseStudy = ({ caseStudy }) => {
             {/* Custom Meta Tags */}
             <Head>
                 <meta name="keywords" content={caseStudy.keywords?.join(", ") || ""} />
+                <link
+                    rel="canonical"
+                    href={`${baseUrl}service/${props?.['meta-title-slug']}`}
+                />
             </Head>
 
             {/* Main Page Layout */}

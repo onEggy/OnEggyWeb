@@ -13,6 +13,7 @@ import {
 } from "@heroicons/react/24/outline";
 
 const JobDetail = ({ job }) => {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.oneggy.com/';
   if (!job) return <div>Job not found</div>;
 
   return (
@@ -21,6 +22,13 @@ const JobDetail = ({ job }) => {
         title={`${job.title} - Careers at OnEggy`}
         description={job.description}
       />
+      <Head>
+      <meta name="keywords" content={job.keywords?.join(", ") || ""} />
+      <link
+        rel="canonical"
+        href={`${baseUrl}service/${props?.['meta-title-slug']}`}
+      />
+      </Head>
       <Navbar />
       <Sidebar />
 
