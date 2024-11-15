@@ -29,7 +29,7 @@ const services = () => {
         <meta name="keywords" content={seoData['/services']?.keywords} />
         <link
           rel="canonical"
-          href={`${baseUrl}service/${props?.['meta-title-slug']}`}
+          href={`${baseUrl}services`}
         />
       </Head>
       <Navbar />

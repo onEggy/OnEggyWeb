@@ -39,7 +39,7 @@ const blogOne = () => {
         <meta name="keywords" content={currentPageData?.keywords} />
         <link
           rel="canonical"
-          href={`${baseUrl}service/${props?.['meta-title-slug']}`}
+          href={`${baseUrl}blogs`}
         />
       </Head>
       <Navbar />
