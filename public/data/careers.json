@@ -1,132 +1,81 @@
 [
-    {
-      "title": "Senior DevOps Engineer",
-      "slug": "senior-devops-engineer-1",
-      "shortDescription": "Manage and build relationships with multiple clients, driving adoption and expanding the client base.",
-      "openPositions": 1,
-      "location": "Remote",
-      "type": "Full-Time",
-      "experience": "5+ years",
-      "description": "As a Senior DevOps Engineer at OnEggy Technologies, you will play a pivotal role in enhancing our infrastructure and deployment processes. You’ll collaborate with our engineering, product, and operations teams to design and implement systems that ensure high availability, performance, and reliability. You will be responsible for architecting solutions, automating processes, and ensuring smooth and secure deployments.",
-      "responsibilities": [
-        "Design and implement CI/CD pipelines.",
-        "Automate infrastructure provisioning using Terraform.",
-        "Collaborate with developers to ensure system reliability."
-      ],
-      "requirements": [
-        "5+ years of experience in DevOps.",
-        "Proficiency with AWS, Docker, Kubernetes.",
-        "Strong scripting skills in Python or Bash."
-      ],
-      "benefits": [
-        "Remote work environment.",
-        "Competitive salary and benefits.",
-        "Opportunity to work with cutting-edge technologies."
-      ],
-      "keywords": ["DevOps", "Cloud", "AWS", "Kubernetes"]
-    },
-    {
-        "title": "Senior DevOps Engineer",
-        "slug": "senior-devops-engineer-2",
-        "shortDescription": "Manage and build relationships with multiple clients, driving adoption and expanding the client base.",
-        "openPositions": 1,
-        "location": "Remote",
-        "type": "Full-Time",
-        "experience": "5+ years",
-        "description": "As a Senior DevOps Engineer at OnEggy Technologies, you will play a pivotal role in enhancing our infrastructure and deployment processes. You’ll collaborate with our engineering, product, and operations teams to design and implement systems that ensure high availability, performance, and reliability. You will be responsible for architecting solutions, automating processes, and ensuring smooth and secure deployments.",
-        "responsibilities": [
-          "Design and implement CI/CD pipelines.",
-          "Automate infrastructure provisioning using Terraform.",
-          "Collaborate with developers to ensure system reliability."
-        ],
-        "requirements": [
-          "5+ years of experience in DevOps.",
-          "Proficiency with AWS, Docker, Kubernetes.",
-          "Strong scripting skills in Python or Bash."
-        ],
-        "benefits": [
-          "Remote work environment.",
-          "Competitive salary and benefits.",
-          "Opportunity to work with cutting-edge technologies."
-        ],
-        "keywords": ["DevOps", "Cloud", "AWS", "Kubernetes"]
-      },
-      {
-        "title": "Senior DevOps Engineer",
-        "slug": "senior-devops-engineer-3",
-        "shortDescription": "Manage and build relationships with multiple clients, driving adoption and expanding the client base.",
-        "openPositions": 1,
-        "location": "Remote",
-        "type": "Full-Time",
-        "experience": "5+ years",
-        "description": "We are looking for a Senior DevOps Engineer to streamline deployments and optimize infrastructure.",
-        "responsibilities": [
-          "Design and implement CI/CD pipelines.",
-          "Automate infrastructure provisioning using Terraform.",
-          "Collaborate with developers to ensure system reliability."
-        ],
-        "requirements": [
-          "5+ years of experience in DevOps.",
-          "Proficiency with AWS, Docker, Kubernetes.",
-          "Strong scripting skills in Python or Bash."
-        ],
-        "benefits": [
-          "Remote work environment.",
-          "Competitive salary and benefits.",
-          "Opportunity to work with cutting-edge technologies."
-        ],
-        "keywords": ["DevOps", "Cloud", "AWS", "Kubernetes"]
-      },
-      {
-        "title": "Senior DevOps Engineer",
-        "slug": "senior-devops-engineer-4",
-        "shortDescription": "Manage and build relationships with multiple clients, driving adoption and expanding the client base.",
-        "openPositions": 1,
-        "location": "Remote",
-        "type": "Full-Time",
-        "experience": "5+ years",
-        "description": "We are looking for a Senior DevOps Engineer to streamline deployments and optimize infrastructure.",
-        "responsibilities": [
-          "Design and implement CI/CD pipelines.",
-          "Automate infrastructure provisioning using Terraform.",
-          "Collaborate with developers to ensure system reliability."
-        ],
-        "requirements": [
-          "5+ years of experience in DevOps.",
-          "Proficiency with AWS, Docker, Kubernetes.",
-          "Strong scripting skills in Python or Bash."
-        ],
-        "benefits": [
-          "Remote work environment.",
-          "Competitive salary and benefits.",
-          "Opportunity to work with cutting-edge technologies."
-        ],
-        "keywords": ["DevOps", "Cloud", "AWS", "Kubernetes"]
-      },
-      {
-        "title": "Senior DevOps Engineer",
-        "slug": "senior-devops-engineer-5",
-        "shortDescription": "Manage and build relationships with multiple clients, driving adoption and expanding the client base.",
-        "openPositions": 1,
-        "location": "Remote",
-        "type": "Full-Time",
-        "experience": "5+ years",
-        "description": "We are looking for a Senior DevOps Engineer to streamline deployments and optimize infrastructure.",
-        "responsibilities": [
-          "Design and implement CI/CD pipelines.",
-          "Automate infrastructure provisioning using Terraform.",
-          "Collaborate with developers to ensure system reliability."
-        ],
-        "requirements": [
-          "5+ years of experience in DevOps.",
-          "Proficiency with AWS, Docker, Kubernetes.",
-          "Strong scripting skills in Python or Bash."
-        ],
-        "benefits": [
-          "Remote work environment.",
-          "Competitive salary and benefits.",
-          "Opportunity to work with cutting-edge technologies."
-        ],
-        "keywords": ["DevOps", "Cloud", "AWS", "Kubernetes"]
-      }
+  {
+    "title": "DevOps Engineer Intern",
+    "slug": "devops-engineer-intern",
+    "shortDescription": "Gain hands-on experience in DevOps by supporting infrastructure automation and CI/CD pipelines.",
+    "openPositions": 2,
+    "location": "Remote",
+    "type": "Internship",
+    "experience": "0-1 years",
+    "description": "As a DevOps Engineer Intern at OnEggy Technologies, you will assist in automating infrastructure and improving deployment pipelines. This role is perfect for individuals eager to learn and contribute to real-world projects under the guidance of senior engineers.",
+    "responsibilities": [
+      "Assist in building and maintaining CI/CD pipelines.",
+      "Support infrastructure automation using tools like Terraform.",
+      "Monitor system health and performance."
+    ],
+    "requirements": [
+      "Basic understanding of cloud platforms like AWS or Azure.",
+      "Familiarity with Docker and Kubernetes is a plus.",
+      "Knowledge of scripting languages like Python or Bash."
+    ],
+    "benefits": [
+      "Opportunity to learn from experienced professionals.",
+      "Hands-on experience with industry-standard tools and technologies.",
+      "Flexible work schedule."
+    ],
+    "keywords": ["DevOps", "Internship", "Cloud", "Automation"]
+  },
+  {
+    "title": "Business Development Manager",
+    "slug": "business-development-manager",
+    "shortDescription": "Drive business growth by identifying new opportunities, managing client relationships, and closing deals.",
+    "openPositions": 1,
+    "location": "Hybrid (Remote/Office)",
+    "type": "Full-Time",
+    "experience": "3+ years",
+    "description": "As a Business Development Manager at OnEggy Technologies, you will identify and develop new business opportunities while managing relationships with existing clients. Your goal will be to drive revenue growth by crafting solutions that align with client needs.",
+    "responsibilities": [
+      "Identify and cultivate new business opportunities.",
+      "Develop and maintain strong relationships with clients.",
+      "Collaborate with internal teams to create tailored proposals.",
+      "Achieve sales targets and contribute to revenue growth."
+    ],
+    "requirements": [
+      "Proven track record in business development or sales.",
+      "Strong communication and negotiation skills.",
+      "Ability to understand and present technical solutions."
+    ],
+    "benefits": [
+      "Competitive salary with performance-based incentives.",
+      "Hybrid work environment for flexibility.",
+      "Professional development opportunities."
+    ],
+    "keywords": ["Business Development", "Sales", "Client Management", "Growth"]
+  },
+  {
+    "title": "NextJS Developer Intern",
+    "slug": "nextjs-developer-intern",
+    "shortDescription": "Work on cutting-edge projects using Next.js and React to build modern web applications.",
+    "openPositions": 2,
+    "location": "Remote",
+    "type": "Internship",
+    "experience": "0-1 years",
+    "description": "As a NextJS Developer Intern at OnEggy Technologies, you will assist in developing scalable and performant web applications using Next.js and React. This is an exciting opportunity to gain hands-on experience with modern front-end development technologies.",
+    "responsibilities": [
+      "Develop user interfaces using Next.js and React.",
+      "Collaborate with designers to implement responsive designs.",
+      "Optimize web applications for performance and scalability."
+    ],
+    "requirements": [
+      "Basic knowledge of React.js and Next.js.",
+      "Familiarity with HTML, CSS, and JavaScript.",
+      "Eagerness to learn and contribute to a team environment."
+    ],
+    "benefits": [
+      "Work on real-world projects under professional guidance.",
+      "Exposure to modern front-end development workflows.",
+      "Opportunity for full-time placement based on performance."
+    ],
+    "keywords": ["Next.js", "React", "Frontend Development", "Internship"]
+  }
 ]

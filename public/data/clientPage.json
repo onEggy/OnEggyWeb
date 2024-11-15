@@ -1,32 +1,82 @@
 [
   {
-    "slug": "case-study-1",
-    "title": "Optimizing Cloud Infrastructure for ABC Corp",
-    "company": "ABC Corp",
-    "metaDescription": "Learn how ABC Corp improved efficiency by optimizing cloud infrastructure with our solutions.",
-    "keywords": ["DevOps automation", "healthcare solutions", "workflow efficiency", "automated testing"],
-    "summary": "Streamlining operations and reducing costs for ABC Corp through innovative cloud solutions.",
-    "description": "A comprehensive look at how our team helped ABC Corp achieve cost-efficiency in their cloud infrastructure.",
-    "image": "/team/people3.jpg",
-    "content": "Our team worked with ABC Corp to revamp their cloud infrastructure, enhancing efficiency and reducing costs.",
+    "slug": "cloud-devops-services-smile-foundation-oneggy",
+    "title": "Empowering Smile Foundation with Advanced Cloud and DevOps Services by OnEggy Technologies",
+    "company": "Smile Foundation India NGO",
+    "metaDescription": "OnEggy Technologies optimized Smile Foundation's digital platforms with expert cloud and DevOps services, driving efficiency and impact.",
+    "keywords": ["Cloud optimization", "DevOps consulting", "non-profit technology services", "NGO infrastructure solutions"],
+    "summary": "OnEggy Technologies partnered with Smile Foundation to enhance their digital operations through cloud infrastructure optimization and DevOps consulting.",
+    "description": "A comprehensive case study detailing how OnEggy Technologies improved Smile Foundation's operational efficiency and scalability by providing tailored cloud and DevOps services.",
+    "image": "/case-study/smile-foundation-case-study-oneggy-technologies.png",
+    "content": "OnEggy Technologies is proud to collaborate with Smile Foundation, one of India’s leading NGOs committed to social change. Our team has been instrumental in transforming their digital infrastructure by providing cloud management and expert DevOps services. By ensuring robust, scalable, and efficient systems, we’ve enabled Smile Foundation to amplify their impact and outreach.",
     "keyMetrics": [
-      "25% reduction in cloud spending",
-      "40% faster deployment times",
-      "99.9% uptime achieved"
+      "40% reduction in operational costs",
+      "50% faster application updates and deployments",
+      "99.98% website uptime"
     ],
-    "challenges": "ABC Corp faced frequent downtime and high costs with their existing cloud infrastructure.",
-    "solutions": "Our team designed and implemented a custom cloud architecture with optimized cost management.",
-    "conclusion": "This collaboration resulted in a highly reliable and cost-efficient cloud setup, supporting ABC Corp's growth.",
+    "challenges": "Smile Foundation faced frequent performance lags on their website, high server costs, and delays in deploying updates, which affected their ability to connect with donors and beneficiaries effectively.",
+    "solutions": "Our services included re-architecting their cloud infrastructure to optimize costs and improve performance. We implemented automated CI/CD pipelines, real-time monitoring, and efficient resource allocation to ensure their systems were resilient and highly available.",
+    "team": {
+      "techTeamLeader": "Irteza Hussain",
+      "manager": "MD Istaf"
+    },
+    "conclusion": "Our partnership with Smile Foundation has empowered them with a reliable and scalable digital ecosystem, enabling them to focus on their mission of societal upliftment. By leveraging advanced cloud and DevOps practices, we’ve ensured their operations are seamless, cost-effective, and future-ready.",
     "testimonials": [
       {
-        "author": "John Doe",
-        "position": "CTO, FinTech Co.",
-        "content": "OnEggy transformed our cloud infrastructure, enabling us to scale effortlessly. Their expertise and dedication are unmatched!"
+        "author": "Irteza Hussain",
+        "position": "Tech Team Leader, Smile Foundation",
+        "content": "OnEggy Technologies has been instrumental in elevating our digital operations. Their solutions have brought significant improvements to our platforms' efficiency and reliability."
       },
       {
-        "author": "Jane Smith",
-        "position": "Operations Manager, FinTech Co.",
-        "content": "Working with OnEggy was a game-changer for our operations. We now achieve faster deployment and greater reliability."
+        "author": "MD Istaf",
+        "position": "Manager, Smile Foundation",
+        "content": "The OnEggy team has delivered beyond our expectations. Their expertise in cloud and DevOps has transformed the way we manage our systems and support our mission."
+      }
+    ]
+  },
+  {
+    "slug": "mobile-application-blockchain-eastmojo",
+    "title": "Innovative Mobile Application with Blockchain Wallet for EastMojo by OnEggy Technologies",
+    "company": "EastMojo",
+    "metaDescription": "OnEggy Technologies developed EastMojo's mobile app with blockchain integration, empowering user-generated content approval workflows.",
+    "keywords": ["Mobile application", "Blockchain wallet", "React Native development", "Django APIs", "Content approval system"],
+    "summary": "OnEggy Technologies designed and deployed a user-centric mobile application for EastMojo featuring blockchain wallet integration and advanced content approval workflows.",
+    "description": "A detailed case study on how OnEggy Technologies created a scalable and interactive mobile app for EastMojo using React Native, blockchain technology, and Django APIs, deployed with AWS autoscaling for high performance.",
+    "image": "/case-study/eastmojo-case-study-oneggy-technologies.png",
+    "content": "EastMojo, a leading digital media platform, partnered with OnEggy Technologies to develop a feature-rich mobile application that redefines user engagement. The app incorporates blockchain wallet functionality, allowing secure user interaction. It enables users to post content, which then undergoes a two-step approval process: first by a community manager, and subsequently by the editorial team. The approved posts seamlessly integrate into the feed section, providing a streamlined publishing workflow.",
+    "keyMetrics": [
+      "Successful launch with 99.9% uptime",
+      "Increased user engagement by 45%",
+      "Scalable infrastructure with AWS autoscaling"
+    ],
+    "challenges": "EastMojo required a robust mobile application that could manage user-generated content securely while providing a seamless approval process. Additionally, the app needed to handle high traffic volumes and maintain scalability.",
+    "solutions": "We built the mobile application using React Native for a cross-platform experience, integrated blockchain wallet for secure transactions, and implemented Django REST Framework (DRF) APIs for the backend. The system includes a user-friendly interface and an efficient two-step content approval system. To ensure scalability and performance, we deployed the application using AWS autoscaling services.",
+    "team": {
+      "clients": [
+        {
+          "name": "Nikhil Gupta",
+          "company": "Beyond Imagination Technologies"
+        },
+        {
+          "name": "Mayank",
+          "company": "Growthyogi"
+        }
+      ],
+      "frontendTeam": "React Native Developers",
+      "backendTeam": "Django and DRF Experts",
+      "deploymentTeam": "AWS DevOps Specialists"
+    },
+    "conclusion": "Our collaboration with EastMojo resulted in a cutting-edge mobile application that enhances user engagement and ensures secure, scalable operations. With blockchain integration and advanced approval workflows, EastMojo is poised to lead the digital media space with innovation.",
+    "testimonials": [
+      {
+        "author": "Nikhil Gupta",
+        "position": "Founder, Beyond Imagination Technologies",
+        "content": "OnEggy Technologies exceeded our expectations by delivering a feature-rich and highly efficient mobile application. Their expertise and dedication are unmatched."
+      },
+      {
+        "author": "Mayank",
+        "position": "Co-Founder, Growthyogi",
+        "content": "The innovative solutions provided by OnEggy Technologies have streamlined our operations and significantly improved user engagement. We couldn’t be happier with the results."
       }
     ]
   }
