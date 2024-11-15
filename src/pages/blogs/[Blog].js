@@ -18,6 +18,7 @@ import ManagedServices from "../components/blogServicePromote";
 
 const Blog = (props) => {
   // State to manage scroll progress
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.oneggy.com/';
   const [scrollProgress, setScrollProgress] = useState(0);
 
   // Calculate scroll progress
