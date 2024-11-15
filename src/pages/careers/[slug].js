@@ -3,6 +3,7 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import Sidebar from "../components/sidebar";
 import { NextSeo } from "next-seo";
+import Head from "next/head";
 import careerData from "../../../public/data/careers.json";
 import {
   MapPinIcon,
