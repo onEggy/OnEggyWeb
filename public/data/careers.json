@@ -1,0 +1,132 @@
+[
+    {
+      "title": "Senior DevOps Engineer",
+      "slug": "senior-devops-engineer-1",
+      "shortDescription": "Manage and build relationships with multiple clients, driving adoption and expanding the client base.",
+      "openPositions": 1,
+      "location": "Remote",
+      "type": "Full-Time",
+      "experience": "5+ years",
+      "description": "As a Senior DevOps Engineer at OnEggy Technologies, you will play a pivotal role in enhancing our infrastructure and deployment processes. You’ll collaborate with our engineering, product, and operations teams to design and implement systems that ensure high availability, performance, and reliability. You will be responsible for architecting solutions, automating processes, and ensuring smooth and secure deployments.",
+      "responsibilities": [
+        "Design and implement CI/CD pipelines.",
+        "Automate infrastructure provisioning using Terraform.",
+        "Collaborate with developers to ensure system reliability."
+      ],
+      "requirements": [
+        "5+ years of experience in DevOps.",
+        "Proficiency with AWS, Docker, Kubernetes.",
+        "Strong scripting skills in Python or Bash."
+      ],
+      "benefits": [
+        "Remote work environment.",
+        "Competitive salary and benefits.",
+        "Opportunity to work with cutting-edge technologies."
+      ],
+      "keywords": ["DevOps", "Cloud", "AWS", "Kubernetes"]
+    },
+    {
+        "title": "Senior DevOps Engineer",
+        "slug": "senior-devops-engineer-2",
+        "shortDescription": "Manage and build relationships with multiple clients, driving adoption and expanding the client base.",
+        "openPositions": 1,
+        "location": "Remote",
+        "type": "Full-Time",
+        "experience": "5+ years",
+        "description": "As a Senior DevOps Engineer at OnEggy Technologies, you will play a pivotal role in enhancing our infrastructure and deployment processes. You’ll collaborate with our engineering, product, and operations teams to design and implement systems that ensure high availability, performance, and reliability. You will be responsible for architecting solutions, automating processes, and ensuring smooth and secure deployments.",
+        "responsibilities": [
+          "Design and implement CI/CD pipelines.",
+          "Automate infrastructure provisioning using Terraform.",
+          "Collaborate with developers to ensure system reliability."
+        ],
+        "requirements": [
+          "5+ years of experience in DevOps.",
+          "Proficiency with AWS, Docker, Kubernetes.",
+          "Strong scripting skills in Python or Bash."
+        ],
+        "benefits": [
+          "Remote work environment.",
+          "Competitive salary and benefits.",
+          "Opportunity to work with cutting-edge technologies."
+        ],
+        "keywords": ["DevOps", "Cloud", "AWS", "Kubernetes"]
+      },
+      {
+        "title": "Senior DevOps Engineer",
+        "slug": "senior-devops-engineer-3",
+        "shortDescription": "Manage and build relationships with multiple clients, driving adoption and expanding the client base.",
+        "openPositions": 1,
+        "location": "Remote",
+        "type": "Full-Time",
+        "experience": "5+ years",
+        "description": "We are looking for a Senior DevOps Engineer to streamline deployments and optimize infrastructure.",
+        "responsibilities": [
+          "Design and implement CI/CD pipelines.",
+          "Automate infrastructure provisioning using Terraform.",
+          "Collaborate with developers to ensure system reliability."
+        ],
+        "requirements": [
+          "5+ years of experience in DevOps.",
+          "Proficiency with AWS, Docker, Kubernetes.",
+          "Strong scripting skills in Python or Bash."
+        ],
+        "benefits": [
+          "Remote work environment.",
+          "Competitive salary and benefits.",
+          "Opportunity to work with cutting-edge technologies."
+        ],
+        "keywords": ["DevOps", "Cloud", "AWS", "Kubernetes"]
+      },
+      {
+        "title": "Senior DevOps Engineer",
+        "slug": "senior-devops-engineer-4",
+        "shortDescription": "Manage and build relationships with multiple clients, driving adoption and expanding the client base.",
+        "openPositions": 1,
+        "location": "Remote",
+        "type": "Full-Time",
+        "experience": "5+ years",
+        "description": "We are looking for a Senior DevOps Engineer to streamline deployments and optimize infrastructure.",
+        "responsibilities": [
+          "Design and implement CI/CD pipelines.",
+          "Automate infrastructure provisioning using Terraform.",
+          "Collaborate with developers to ensure system reliability."
+        ],
+        "requirements": [
+          "5+ years of experience in DevOps.",
+          "Proficiency with AWS, Docker, Kubernetes.",
+          "Strong scripting skills in Python or Bash."
+        ],
+        "benefits": [
+          "Remote work environment.",
+          "Competitive salary and benefits.",
+          "Opportunity to work with cutting-edge technologies."
+        ],
+        "keywords": ["DevOps", "Cloud", "AWS", "Kubernetes"]
+      },
+      {
+        "title": "Senior DevOps Engineer",
+        "slug": "senior-devops-engineer-5",
+        "shortDescription": "Manage and build relationships with multiple clients, driving adoption and expanding the client base.",
+        "openPositions": 1,
+        "location": "Remote",
+        "type": "Full-Time",
+        "experience": "5+ years",
+        "description": "We are looking for a Senior DevOps Engineer to streamline deployments and optimize infrastructure.",
+        "responsibilities": [
+          "Design and implement CI/CD pipelines.",
+          "Automate infrastructure provisioning using Terraform.",
+          "Collaborate with developers to ensure system reliability."
+        ],
+        "requirements": [
+          "5+ years of experience in DevOps.",
+          "Proficiency with AWS, Docker, Kubernetes.",
+          "Strong scripting skills in Python or Bash."
+        ],
+        "benefits": [
+          "Remote work environment.",
+          "Competitive salary and benefits.",
+          "Opportunity to work with cutting-edge technologies."
+        ],
+        "keywords": ["DevOps", "Cloud", "AWS", "Kubernetes"]
+      }
+]

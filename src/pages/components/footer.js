@@ -25,6 +25,7 @@ const Footer = () => {
           <li><Link href="/services" className="hover:underline">Services</Link></li>
           <li><Link href="/team" className="hover:underline">Team</Link></li>
           <li><Link href="/client" className="hover:underline">Portfolio</Link></li>
+          <li><Link href="/careers" className="hover:underline">Careers</Link></li>
           <li><Link href="/blogs" className="hover:underline">Blog</Link></li>
         </ul>
 
