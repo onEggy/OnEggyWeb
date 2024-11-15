@@ -65,7 +65,7 @@ const service = (props) => {
         <meta name="keywords" content={props?.['meta-keywords']} />
         <link
           rel="canonical"
-          href={`${baseUrl}/service/${props?.['meta-title-slug']}`}
+          href={`${baseUrl}service/${props?.['meta-title-slug']}`}
         />
       </Head>
       <Navbar />
