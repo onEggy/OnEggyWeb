@@ -10,9 +10,11 @@ import { NextSeo } from "next-seo";
 import seoData from "../../public/data/seo-data.json";
 import teamPageData from "../../public/data/teamPage.json";
 import Head from "next/head";
-import EnquiryModal from "./components/EnquiryModal";
+import dynamic from "next/dynamic";
+// import EnquiryModal from "./components/EnquiryModal";
 
 const Team = () => {
+  const EnquiryModal = dynamic(() => import('./components/EnquiryModal'), { ssr: false });
   const showButton = true;
   const { head, sentence, buttonPlaceholder } = teamPageData;
   const currentPageData = seoData["/team"];

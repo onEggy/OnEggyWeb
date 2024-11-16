@@ -18,13 +18,14 @@ import seoData from "../../public/data/seo-data.json";
 import { NextSeo } from "next-seo";
 import ProjectLogos from "./home/projectlogos";
 import Head from "next/head";
-import EnquiryModal from "./components/EnquiryModal";
+import dynamic from "next/dynamic";
+// import EnquiryModal from "./components/EnquiryModal";
 import FaqSection from "./components/faq";
 import PartnerShowcase from "./components/partnerShowcase";
 import ContactUs from "./home/contactUs";
 
 const About = () => {
-
+  const EnquiryModal = dynamic(() => import('./components/EnquiryModal'), { ssr: false });
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.oneggy.com/';
   const currentPageData = seoData["/about"];
   const {

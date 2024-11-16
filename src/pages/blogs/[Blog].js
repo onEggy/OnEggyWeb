@@ -8,7 +8,8 @@ import AuthorBio from "../components/blogAuthor";
 import PartnerShowcase from "../components/partnerShowcase";
 import ContactUs from "../home/contactUs";
 import Footer from "../components/footer";
-import EnquiryModal from "../components/EnquiryModal";
+// import EnquiryModal from "../components/EnquiryModal";
+import dynamic from "next/dynamic";
 import ConsultationButton from "../components/consultButton";
 import BlogsData from "/public/AllBlogs/index.json";
 import fs from "fs";
@@ -17,6 +18,7 @@ import { marked } from "marked";
 import ManagedServices from "../components/blogServicePromote";
 
 const Blog = (props) => {
+  const EnquiryModal = dynamic(() => import('../components/EnquiryModal'), { ssr: false });
   // State to manage scroll progress
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.oneggy.com/';
   const [scrollProgress, setScrollProgress] = useState(0);
