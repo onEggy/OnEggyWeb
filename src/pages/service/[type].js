@@ -15,12 +15,13 @@ import { NextSeo } from "next-seo";
 import seoData from "../../../public/data/service-seo.json";
 import serviceData from "../../../public/data/serviceData.json";
 import Head from "next/head";
-import EnquiryModal from "../components/EnquiryModal";
+// import EnquiryModal from "../components/EnquiryModal";
+import dynamic from "next/dynamic";
 import ContactUs from "../home/contactUs";
 import PartnerShowcase from "../components/partnerShowcase";
 
 const service = (props) => {
-
+  const EnquiryModal = dynamic(() => import('../components/EnquiryModal'), { ssr: false });
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.oneggy.com/';
 
   // console.log('porps',props)

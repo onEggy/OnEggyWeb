@@ -3,12 +3,14 @@ import Head from "next/head";
 import Landing from "./home/landing";
 import seoData from "../../public/data/seo-data.json";
 import { NextSeo } from "next-seo";
-import EnquiryModal from "./components/EnquiryModal";
+import dynamic from "next/dynamic";
+// import EnquiryModal from "./components/EnquiryModal";
 
 // const inter = Inter({ subsets: ["latin"] });
 const currentPageData = seoData["/"];
 
 export default function App() {
+  const EnquiryModal = dynamic(() => import('./components/EnquiryModal'), { ssr: false });
 
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.oneggy.com/';
 

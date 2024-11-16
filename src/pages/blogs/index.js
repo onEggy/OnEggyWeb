@@ -29,7 +29,8 @@ const blogOne = () => {
   const totalPosts = blogsData.length;
   const totalPages = Math.ceil(totalPosts / postsPerPage);
 
-  const paginatedBlogs = blogsData
+  // Create a copy of the blogs array to avoid mutating the original during .reverse()
+  const paginatedBlogs = [...blogsData]
     .reverse()
     .slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage)
     .map((x) => ({ ...x, head: x.category, title: x.title, content: x.overview }));
