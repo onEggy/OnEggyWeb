@@ -1,5 +1,12 @@
 [
     {
+        "title": "DevOps Consulting and AWS with Kubernetes Managed Services",
+        "category": "DevOps",
+        "overview": "Integrating DevOps consulting with AWS and Kubernetes managed services revolutionizes software development and IT infrastructure management. By aligning development and operations, DevOps enhances communication, automation, and process efficiency. AWS offers scalable infrastructure, while Kubernetes optimizes containerized applications, boosting scalability, reliability, and cost-efficiency. This strategic integration fosters seamless CI/CD, real-time monitoring, and continuous improvement, maximizing cloud investments and competitive advantage.",
+        "slug": "devops-aws-kubernetes-integration-guide",
+        "mdFileLocation": "./public/AllBlogs/markDown/devops-aws-kubernetes-services.md"
+    },
+    {
         "title": "How Cloud Managed Services and DevOps Managed Services Transform Your IT Infrastructure",
         "category": "DevOps",
         "overview": "OnEggy Technologies specializes in DevOps Services and Consulting, aiming to streamline and accelerate software development cycles. Our expert team integrates development and operations, offering bespoke solutions that enhance productivity and foster innovation. With a focus on automation, continuous integration (CI), and continuous deployment (CD), we help businesses optimize their processes and reduce time-to-market. Our services include comprehensive cloud infrastructure management, ensuring robust, scalable, and efficient operations. This strategic approach not only enhances software quality but also supports businesses in adapting to dynamic market demands, maintaining a competitive edge in the fast-evolving tech landscape.",
@@ -7,10 +14,17 @@
         "mdFileLocation": "./public/AllBlogs/markDown/how-cloud-managed-services-devops-managed-services-transform-it-infra.md"
     },
     {
-        "title": "DevOps Consulting and AWS with Kubernetes Managed Services",
+        "title": "Revolutionize IT with DevOps, AWS, and Kubernetes Integration",
         "category": "DevOps",
-        "overview": "Integrating DevOps consulting with AWS and Kubernetes managed services revolutionizes software development and IT infrastructure management. By aligning development and operations, DevOps enhances communication, automation, and process efficiency. AWS offers scalable infrastructure, while Kubernetes optimizes containerized applications, boosting scalability, reliability, and cost-efficiency. This strategic integration fosters seamless CI/CD, real-time monitoring, and continuous improvement, maximizing cloud investments and competitive advantage.",
-        "slug": "devops-aws-kubernetes-integration-guide",
-        "mdFileLocation": "./public/AllBlogs/markDown/devops-aws-kubernetes-services.md"
+        "overview": "Integrating DevOps consulting with AWS and Kubernetes managed services transforms software development and IT infrastructure management. By uniting development and operations, DevOps promotes collaboration, automation, and streamlined workflows. AWS provides robust, scalable cloud infrastructure, while Kubernetes efficiently manages containerized applications, ensuring scalability, resilience, and cost optimization. This synergy enables seamless CI/CD pipelines, proactive monitoring, and continuous enhancement, driving operational efficiency and innovation. Together, these solutions unlock the full potential of cloud environments, empowering businesses to maximize their cloud investments, accelerate delivery cycles, and gain a competitive edge in an ever-evolving digital landscape.",
+        "slug": "prometheus-grafana-for-kubernetes",
+        "mdFileLocation": "./public/AllBlogs/markDown/prometheus-grafana-for-kubernetes.md"
+    },
+    {
+        "title": "Transform Your IT Operations with DevOps Managed Services by OnEggy Technologies",
+        "category": "DevOps",
+        "overview": "Streamline your IT operations and accelerate delivery with OnEggy Technologies' DevOps Managed Services. By integrating advanced automation, CI/CD pipelines, and cloud infrastructure optimization, we help businesses achieve operational excellence, reduce costs, and improve scalability. With expertise in Kubernetes, AWS, and cutting-edge DevOps tools, we tailor solutions to meet your unique needs, enabling seamless collaboration and faster innovation. Transform your IT infrastructure with proactive monitoring, enhanced security, and continuous improvement, and stay ahead in today’s competitive digital landscape.",
+        "slug": "devops-managed-services-oneggy-technologies",
+        "mdFileLocation": "./public/AllBlogs/markDown/devops-managed-services-oneggy-technologies.md"
     }
 ]
