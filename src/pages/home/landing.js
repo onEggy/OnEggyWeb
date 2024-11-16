@@ -18,6 +18,7 @@ import Link from "next/link";
 import serviceData from "../../../public/data/serviceData.json";
 import PartnerShowcase from "../components/partnerShowcase";
 import FaqSection from "../components/faq";
+import HiringBanner from "../components/hiring";
 
 const Home = (skill) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -77,6 +78,7 @@ const Home = (skill) => {
       {/* Rest of the page components */}
       <Projectlogos />
       <PartnerShowcase />
+      <HiringBanner />
       <Awards />
       <Headline
         mainCss="md:ml-4"
