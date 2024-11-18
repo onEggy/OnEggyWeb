@@ -47,5 +47,19 @@
         "overview": "Deploying MongoDB on Kubernetes can be complex, but with the right approach and tools, you can achieve a robust, scalable, and efficient database setup. In this blog, we outline the step-by-step process to install MongoDB on Kubernetes and highlight how OnEggy Technologies can manage and optimize your MongoDB clusters for seamless performance. Learn how Kubernetes and MongoDB combine to offer unparalleled scalability, automation, and reliability for your database needs.",
         "slug": "install-mongodb-on-kubernetes-oneggy",
         "mdFileLocation": "./public/AllBlogs/markDown/install-mongodb-on-kubernetes-oneggy.md"
+    },
+    {
+        "title": "20 Best Kubernetes Tools for Easier Deployments and Management by OnEggy Technologies",
+        "category": "Kubernetes",
+        "overview": "Streamlining Kubernetes deployments and management can be challenging without the right tools. This blog covers 20 essential Kubernetes tools that optimize deployment workflows, automate scaling, simplify monitoring, and improve cluster management. Learn how OnEggy Technologies leverages these tools to help businesses enhance their Kubernetes efficiency and achieve seamless application performance.",
+        "slug": "20-best-kubernetes-tools-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/20-best-kubernetes-tools-oneggy.md"
+    },
+    {
+        "title": "Kong vs. NGINX: Which Is Best for API Management and Reverse Proxy by OnEggy Technologies",
+        "category": "API Management",
+        "overview": "Kong and NGINX are two of the most popular tools for API management and reverse proxy. While Kong excels in advanced API gateway capabilities, NGINX offers robust reverse proxy and web server features. In this blog, we compare their strengths, weaknesses, and use cases to help you decide the best fit for your infrastructure. Learn how OnEggy Technologies deploys and manages these tools for seamless performance and scalability.",
+        "slug": "kong-vs-nginx-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/kong-vs-nginx-oneggy.md"
     }
 ]
