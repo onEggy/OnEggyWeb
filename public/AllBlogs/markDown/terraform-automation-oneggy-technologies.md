@@ -1,7 +1,7 @@
 ---
 subTitle: Unlock the Power of Infrastructure Automation with Terraform  
 summary: Simplify your infrastructure management with Terraform by OnEggy Technologies. Automate, scale, and secure your cloud environments with ease.  
-date: 16-Nov-2024  
+date: 18-Nov-2024
 readTime: 12 min  
 description: OnEggy Technologies provides expert Terraform consulting services to automate, scale, and optimize your cloud infrastructure effortlessly.  
 blogPageTitle: The Ultimate Guide to Infrastructure Automation with Terraform by OnEggy Technologies  

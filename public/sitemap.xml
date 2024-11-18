@@ -113,6 +113,12 @@
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
+	<url>
+        <loc>https://www.oneggy.com/blogs/why-kubernetes-is-best-for-application</loc>
+        <lastmod>2024-10-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
 
     <!-- Services URLs -->
     <url>
