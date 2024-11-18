@@ -143,4 +143,4 @@ Both Kong and NGINX have their unique strengths. Kong is the go-to choice for AP
 
 With **OnEggy Technologies**, you don’t have to choose blindly. We assess your requirements and implement the best solution tailored to your needs. Whether you’re using Kong, NGINX, or a hybrid approach, our expertise ensures seamless performance and scalability.  
 
-**Ready to streamline your API and web traffic management? [Contact](https://www.oneggy.com/contact) OnEggy Technologies today!**  
+**Ready to streamline your API and web traffic management? [Contact](/contact) OnEggy Technologies today!**  

@@ -61,5 +61,19 @@
         "overview": "Kong and NGINX are two of the most popular tools for API management and reverse proxy. While Kong excels in advanced API gateway capabilities, NGINX offers robust reverse proxy and web server features. In this blog, we compare their strengths, weaknesses, and use cases to help you decide the best fit for your infrastructure. Learn how OnEggy Technologies deploys and manages these tools for seamless performance and scalability.",
         "slug": "kong-vs-nginx-oneggy",
         "mdFileLocation": "./public/AllBlogs/markDown/kong-vs-nginx-oneggy.md"
+    },
+    {
+        "title": "Top Open-Source Technologies in Demand by OnEggy Technologies",
+        "category": "Open-Source Technologies",
+        "overview": "Open-source technologies are revolutionizing industries, enabling businesses to innovate faster and scale seamlessly. In this blog, we explore the top open-source tools like Kubernetes, Terraform, Prometheus, and Docker that are shaping the future of DevOps, cloud computing, and application development. Learn how OnEggy Technologies harnesses these tools to empower businesses with scalable, secure, and efficient solutions.",
+        "slug": "in-demand-open-source-technologies-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/in-demand-open-source-technologies-oneggy.md"
+    },
+    {
+        "title": "DevOps Consulting Services for Startups by OnEggy Technologies",  
+        "category": "DevOps Consulting",  
+        "overview": "Startups face unique challenges in scaling infrastructure and delivering software quickly. OnEggy Technologies provides tailored DevOps consulting services to help startups adopt CI/CD pipelines, automate workflows, and build cloud-native architectures. Learn how we empower startups with scalable, secure, and agile DevOps solutions, enabling them to innovate faster and achieve sustainable growth.",  
+        "slug": "devops-consulting-for-startups-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/devops-consulting-for-startups-oneggy.md"
     }
 ]
