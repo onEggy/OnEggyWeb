@@ -9,6 +9,7 @@ import PartnerShowcase from "../components/partnerShowcase";
 import ContactUs from "../home/contactUs";
 import Footer from "../components/footer";
 // import EnquiryModal from "../components/EnquiryModal";
+import SharableIcons from "../components/sharableIcons";
 import dynamic from "next/dynamic";
 import ConsultationButton from "../components/consultButton";
 import BlogsData from "/public/AllBlogs/index.json";
@@ -57,6 +58,8 @@ const Blog = (props) => {
           href={`${baseUrl}blogs/${props.slug}`}
         />
       </Head>
+
+      <SharableIcons url={`${baseUrl}blogs/${props.slug}`} />
 
       {/* Progress Bar */}
       <div className="fixed top-0 left-0 w-full h-1 z-50">
