@@ -26,5 +26,12 @@
         "overview": "Streamline your IT operations and accelerate delivery with OnEggy Technologies' DevOps Managed Services. By integrating advanced automation, CI/CD pipelines, and cloud infrastructure optimization, we help businesses achieve operational excellence, reduce costs, and improve scalability. With expertise in Kubernetes, AWS, and cutting-edge DevOps tools, we tailor solutions to meet your unique needs, enabling seamless collaboration and faster innovation. Transform your IT infrastructure with proactive monitoring, enhanced security, and continuous improvement, and stay ahead in today’s competitive digital landscape.",
         "slug": "devops-managed-services-oneggy-technologies",
         "mdFileLocation": "./public/AllBlogs/markDown/devops-managed-services-oneggy-technologies.md"
+    },
+    {
+        "title": "The Ultimate Guide to Infrastructure Automation with Terraform by OnEggy Technologies",
+        "category": "DevOps",
+        "overview": "Simplify your infrastructure management and unlock scalability with Terraform. OnEggy Technologies provides expert consulting services to help businesses automate infrastructure, optimize cloud environments, and achieve operational excellence. Using tools like Terraform, we enable organizations to manage multi-cloud strategies, streamline workflows, and secure their IT operations for the future. With our tailored Terraform solutions, your business can focus on innovation and leave the complexities of infrastructure to the experts.",
+        "slug": "terraform-automation-oneggy-technologies",
+        "mdFileLocation": "./public/AllBlogs/markDown/terraform-automation-oneggy-technologies.md"
     }
 ]
