@@ -40,5 +40,12 @@
         "overview": "Kubernetes is transforming how applications are deployed and managed. From ensuring high scalability and automation to supporting multi-cloud strategies, Kubernetes has become the cornerstone of modern application development. This blog explores the key benefits of Kubernetes, including its unmatched reliability, self-healing capabilities, and seamless integration with DevOps workflows. Learn how Kubernetes empowers businesses to optimize application performance, reduce operational overhead, and innovate faster in today’s competitive landscape.",
         "slug": "why-kubernetes-is-best-for-application",
         "mdFileLocation": "./public/AllBlogs/markDown/why-kubernetes-is-best-for-application.md"
+    },
+    {
+        "title": "How to Install MongoDB on Kubernetes with OnEggy Technologies",
+        "category": "Database Management",
+        "overview": "Deploying MongoDB on Kubernetes can be complex, but with the right approach and tools, you can achieve a robust, scalable, and efficient database setup. In this blog, we outline the step-by-step process to install MongoDB on Kubernetes and highlight how OnEggy Technologies can manage and optimize your MongoDB clusters for seamless performance. Learn how Kubernetes and MongoDB combine to offer unparalleled scalability, automation, and reliability for your database needs.",
+        "slug": "install-mongodb-on-kubernetes-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/install-mongodb-on-kubernetes-oneggy.md"
     }
 ]
