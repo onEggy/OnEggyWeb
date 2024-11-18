@@ -142,6 +142,18 @@
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
+	<url>
+        <loc>https://www.oneggy.com/blogs/in-demand-open-source-technologies-oneggy</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+	<url>
+        <loc>https://www.oneggy.com/blogs/devops-consulting-for-startups-oneggy</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
 
     <!-- Services URLs -->
     <url>

@@ -169,4 +169,4 @@ We adopt a DevSecOps approach, incorporating security practices at every stage o
 
 DevOps is no longer a luxury; it’s a necessity for businesses aiming to stay competitive in today’s fast-paced digital world. By partnering with OnEggy Technologies for DevOps managed services, you unlock the potential for faster delivery, streamlined workflows, and optimized IT operations.  
 
-Ready to transform your IT infrastructure? Contact [**OnEggy Technologies**](https://www.oneggy.com/contact) and let our experts take your operations to the next level!  
+Ready to transform your IT infrastructure? Contact [**OnEggy Technologies**](/contact) and let our experts take your operations to the next level!  
