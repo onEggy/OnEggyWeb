@@ -95,6 +95,7 @@ const Blog = (props) => {
             width={800}
             alt={props.blogPageTitle}
             layout="responsive"
+            priority
           />
         </div>
 
