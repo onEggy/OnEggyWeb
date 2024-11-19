@@ -42,13 +42,30 @@ const Blog = (props) => {
     <>
       {/* SEO Configuration */}
       <NextSeo
-        title={props?.title}
-        description={props?.description}
+        title={props.title}
+        description={props.description}
+        canonical={`${process.env.NEXT_PUBLIC_SITE_URL}/blogs/${props.slug}`}
         openGraph={{
-          title: props?.title,
-          description: props?.description,
-          url: `https://www.oneggy.com/blogs/${props.slug}`,
-          article: { tags: props?.keywords },
+          title: props.title,
+          description: props.description,
+          url: `${process.env.NEXT_PUBLIC_SITE_URL}/blogs/${props.slug}`,
+          type: 'article',
+          article: {
+            tags: props.keywords.split(','),
+          },
+          images: [
+            {
+              url: props.mainBigImage,
+              width: 800,
+              height: 400,
+              alt: props.title,
+            }
+          ],
+        }}
+        twitter={{
+          handle: '@handle',
+          site: '@site',
+          cardType: 'summary_large_image',
         }}
       />
       <Head>
