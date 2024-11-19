@@ -42,21 +42,34 @@ const Blog = (props) => {
     <>
       {/* SEO Configuration */}
       <NextSeo
-        title={props?.title}
-        description={props?.description}
+        title={props.title}
+        description={props.description}
+        canonical={`{${baseUrl}blogs/${props.slug}}`}
         openGraph={{
-          title: props?.title,
-          description: props?.description,
-          url: `https://www.oneggy.com/blogs/${props.slug}`,
-          article: { tags: props?.keywords },
+          title: props.title,
+          description: props.description,
+          url: `{${baseUrl}blogs/${props.slug}}`,
+          type: 'article',
+          article: {
+            tags: props.keywords.split(','),
+          },
+          images: [
+            {
+              url: props.mainBigImage,
+              width: 800,
+              height: 400,
+              alt: props.title,
+            }
+          ],
+        }}
+        twitter={{
+          handle: '@handle',
+          site: '@site',
+          cardType: 'summary_large_image',
         }}
       />
       <Head>
         <meta name="keywords" content={props.keywords} />
-        <link
-          rel="canonical"
-          href={`${baseUrl}blogs/${props.slug}`}
-        />
       </Head>
 
       <SharableIcons url={`${baseUrl}blogs/${props.slug}`} />
