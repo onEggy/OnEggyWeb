@@ -75,5 +75,33 @@
         "overview": "Startups face unique challenges in scaling infrastructure and delivering software quickly. OnEggy Technologies provides tailored DevOps consulting services to help startups adopt CI/CD pipelines, automate workflows, and build cloud-native architectures. Learn how we empower startups with scalable, secure, and agile DevOps solutions, enabling them to innovate faster and achieve sustainable growth.",  
         "slug": "devops-consulting-for-startups-oneggy",
         "mdFileLocation": "./public/AllBlogs/markDown/devops-consulting-for-startups-oneggy.md"
+    },
+    {
+        "title": "AWS Consulting Services in Delhi by OnEggy Technologies",  
+        "category": "Cloud Consulting",  
+        "overview": "AWS consulting services by OnEggy Technologies in Delhi empower businesses to leverage Amazon Web Services for scalability, cost efficiency, and innovation. From cloud migration to infrastructure optimization, our tailored solutions enable startups and enterprises to achieve their goals. Learn how OnEggy Technologies supports Delhi businesses with seamless AWS adoption and management.",  
+        "slug": "aws-consulting-services-delhi-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/aws-consulting-services-delhi-oneggy.md"
+    },
+    {
+        "title": "Cloud Managed Services and DevOps for Delhi Startups by OnEggy Technologies",  
+        "category": "Cloud and DevOps",  
+        "overview": "Startups in Delhi face unique challenges when scaling infrastructure and delivering software efficiently. OnEggy Technologies provides tailored Cloud Managed Services and DevOps solutions to help startups optimize costs, accelerate deployments, and enhance security. Learn how we empower Delhi startups with scalable cloud solutions, CI/CD pipelines, and proactive support to achieve sustainable growth.",  
+        "slug": "cloud-managed-devops-delhi-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/cloud-managed-devops-delhi-oneggy.md"
+    },
+    {
+        "title": "What is Kubecost in Kubernetes and How OnEggy Technologies Optimizes Costs with It",  
+        "category": "Kubernetes Cost Optimization",  
+        "overview": "Managing costs in Kubernetes can be challenging without proper insights into resource utilization and spending. Kubecost provides real-time cost monitoring and resource efficiency analytics, enabling businesses to control cloud spending. Learn how OnEggy Technologies integrates Kubecost into Kubernetes environments to optimize costs, reduce waste, and improve financial predictability.",  
+        "slug": "what-is-kubecost-kubernetes-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/what-is-kubecost-kubernetes-oneggy.md"
+    },
+    {
+        "title": "Install Kubecost in Kubernetes and Manage Your Cluster with OnEggy Technologies",  
+        "category": "Kubernetes Management",  
+        "overview": "Kubecost is a powerful tool for monitoring and optimizing Kubernetes costs, providing businesses with real-time insights and cost-saving recommendations. This blog outlines the step-by-step process for installing Kubecost in Kubernetes and highlights how OnEggy Technologies helps businesses manage Kubernetes clusters efficiently. From deployment to ongoing support, we ensure your Kubernetes environment is cost-effective and high-performing.",  
+        "slug": "install-kubecost-kubernetes-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/install-kubecost-kubernetes-oneggy.md"
     }
 ]
