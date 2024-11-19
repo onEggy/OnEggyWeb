@@ -44,11 +44,11 @@ const Blog = (props) => {
       <NextSeo
         title={props.title}
         description={props.description}
-        canonical={`${process.env.NEXT_PUBLIC_SITE_URL}/blogs/${props.slug}`}
+        canonical={`{${baseUrl}blogs/${props.slug}}`}
         openGraph={{
           title: props.title,
           description: props.description,
-          url: `${process.env.NEXT_PUBLIC_SITE_URL}/blogs/${props.slug}`,
+          url: `{${baseUrl}blogs/${props.slug}}`,
           type: 'article',
           article: {
             tags: props.keywords.split(','),
@@ -70,10 +70,6 @@ const Blog = (props) => {
       />
       <Head>
         <meta name="keywords" content={props.keywords} />
-        <link
-          rel="canonical"
-          href={`${baseUrl}blogs/${props.slug}`}
-        />
       </Head>
 
       <SharableIcons url={`${baseUrl}blogs/${props.slug}`} />
