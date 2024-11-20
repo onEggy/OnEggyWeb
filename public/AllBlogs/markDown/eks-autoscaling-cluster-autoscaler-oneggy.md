@@ -1,7 +1,7 @@
 ---
 subTitle: Install Cluster Autoscaler on EKS for Seamless Scaling  
 summary: Learn how to install Cluster Autoscaler on EKS to enable automatic scaling of your Kubernetes workloads. OnEggy Technologies ensures optimized scaling and cost efficiency.  
-date: 16-Nov-2024  
+date: 20-Nov-2024  
 readTime: 12 min  
 description: Discover how to enable autoscaling on AWS EKS by installing Cluster Autoscaler. OnEggy Technologies helps you achieve seamless scaling for your Kubernetes clusters.  
 blogPageTitle: AWS EKS Autoscaling Installing Cluster Autoscaler with OnEggy Technologies  
