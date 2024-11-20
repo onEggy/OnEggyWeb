@@ -159,5 +159,12 @@
         "overview": "Scaling Kubernetes clusters in AWS EKS can be simplified with Cluster Autoscaler. This open-source tool automatically adjusts the size of your EKS cluster based on workload demands. Learn how to install Cluster Autoscaler on EKS and how OnEggy Technologies helps optimize scaling for performance and cost efficiency.",  
         "slug": "eks-autoscaling-cluster-autoscaler-oneggy",
         "mdFileLocation": "./public/AllBlogs/markDown/eks-autoscaling-cluster-autoscaler-oneggy.md"
+    },
+    {
+        "title": "Business Tech Infrastructure: Designed, Developed, and Managed by OnEggy Technologies",  
+        "category": "Tech Infrastructure Services",  
+        "overview": "Modern businesses need robust, scalable, and secure tech infrastructure to thrive. At OnEggy Technologies, we specialize in designing, developing, deploying, and managing tailored IT solutions to help businesses grow. Learn how our end-to-end services ensure seamless operations, optimized performance, and reduced costs.",  
+        "slug": "business-tech-infrastructure-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/business-tech-infrastructure-oneggy.md"
     }
 ]
