@@ -131,5 +131,33 @@
         "overview": "In today’s fast-paced world, businesses need robust, scalable, and secure tech infrastructure to stay ahead. At OnEggy Technologies, we prioritize your business by delivering tailored IT solutions that align with your goals. From cloud optimization and DevOps automation to ongoing support, we ensure your technology infrastructure empowers success.",  
         "slug": "business-priority-tech-infrastructure-oneggy",
         "mdFileLocation": "./public/AllBlogs/markDown/business-priority-tech-infrastructure-oneggy.md"
+    },
+    {
+        "title": "Safe Your Applications from Hackers: Leverage VAPT Services by OnEggy Technologies",  
+        "category": "Cybersecurity Services",  
+        "overview": "In an era of increasing cyber threats, securing your applications is more critical than ever. OnEggy Technologies offers comprehensive Vulnerability Assessment and Penetration Testing (VAPT) services to identify and mitigate security vulnerabilities. Learn how we protect your applications, ensuring compliance, and safeguarding your business from hackers.",  
+        "slug": "vapt-services-secure-applications-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/vapt-services-secure-applications-oneggy.md"
+    },
+    {
+        "title": "Jaeger is a Game-Changer for Application Performance by OnEggy Technologies",  
+        "category": "Application Performance Monitoring",  
+        "overview": "Modern applications rely on distributed systems, making performance monitoring and debugging complex. Jaeger, an open-source distributed tracing tool, simplifies observability, helping teams identify bottlenecks and optimize workflows. Learn how Jaeger is revolutionizing application performance monitoring and how OnEggy Technologies can help you implement it for maximum efficiency.",  
+        "slug": "jaeger-game-changer-performance-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/jaeger-game-changer-performance-oneggy.md"
+    },
+    {
+        "title": "ArgoCD Can Replace Jenkins for Kubernetes Automation by OnEggy Technologies",  
+        "category": "Kubernetes Automation",  
+        "overview": "Jenkins has long been a staple for CI/CD pipelines, but ArgoCD is emerging as a powerful alternative for Kubernetes automation. Leveraging GitOps principles, ArgoCD simplifies Kubernetes deployments with declarative configurations and continuous synchronization. Learn how OnEggy Technologies helps businesses transition to ArgoCD for optimized automation workflows.",  
+        "slug": "argocd-replace-jenkins-kubernetes-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/argocd-replace-jenkins-kubernetes-oneggy.md"
+    },
+    {
+        "title": "EKS Autoscaling: Install Cluster Autoscaler in AWS by OnEggy Technologies",  
+        "category": "Kubernetes Scaling Solutions",  
+        "overview": "Scaling Kubernetes clusters in AWS EKS can be simplified with Cluster Autoscaler. This open-source tool automatically adjusts the size of your EKS cluster based on workload demands. Learn how to install Cluster Autoscaler on EKS and how OnEggy Technologies helps optimize scaling for performance and cost efficiency.",  
+        "slug": "eks-autoscaling-cluster-autoscaler-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/eks-autoscaling-cluster-autoscaler-oneggy.md"
     }
 ]
