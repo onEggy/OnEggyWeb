@@ -166,5 +166,33 @@
         "overview": "Modern businesses need robust, scalable, and secure tech infrastructure to thrive. At OnEggy Technologies, we specialize in designing, developing, deploying, and managing tailored IT solutions to help businesses grow. Learn how our end-to-end services ensure seamless operations, optimized performance, and reduced costs.",  
         "slug": "business-tech-infrastructure-oneggy",
         "mdFileLocation": "./public/AllBlogs/markDown/business-tech-infrastructure-oneggy.md"
+    },
+    {
+        "title": "Where Django is Best for Development by OnEggy Technologies",  
+        "category": "Web Development Frameworks",  
+        "overview": "Django, a high-level Python web framework, is renowned for its simplicity, scalability, and security. From startups to enterprises, Django is the perfect choice for building robust applications quickly and efficiently. Learn how OnEggy Technologies leverages Django's strengths to create tailor-made solutions for businesses.",  
+        "slug": "where-django-excels-development-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/where-django-excels-development-oneggy.md"
+    },
+    {
+        "title": "Django with Elasticsearch: A Game Changer for Complex Applications by OnEggy Technologies",  
+        "category": "Web Development and Data Analytics",  
+        "overview": "Elasticsearch, paired with Django, is transforming how complex applications handle data, search, and analytics. With its real-time indexing and search capabilities, Elasticsearch enhances Django applications, making them faster, scalable, and more user-centric. Learn how OnEggy Technologies leverages this powerful duo to build robust solutions for businesses.",  
+        "slug": "django-elasticsearch-complex-apps-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/django-elasticsearch-complex-apps-oneggy.md"
+    },
+    {
+        "title": "How DevOps Automation Reduces Costs and Speeds Up Delivery by OnEggy Technologies",  
+        "category": "DevOps Automation",  
+        "overview": "DevOps automation is revolutionizing how businesses operate by reducing costs and accelerating delivery. Through CI/CD pipelines, cloud optimization, and real-time monitoring, DevOps ensures faster, more efficient workflows. Learn how OnEggy Technologies helps businesses harness DevOps automation for improved scalability and cost savings.",  
+        "slug": "devops-automation-cost-delivery-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/devops-automation-cost-delivery-oneggy.md"
+    },
+    {
+        "title": "5 Mobile App Trends Businesses Must Watch in 2024",  
+        "category": "Mobile App Development",  
+        "overview": "The mobile app landscape is evolving rapidly, with new trends shaping how businesses engage with users. From AI-powered personalization to super apps, staying ahead of these trends is crucial. Learn about the top 5 mobile app trends for 2024 and how OnEggy Technologies can help businesses leverage them for success.",  
+        "slug": "mobile-app-trends-2024-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/mobile-app-trends-2024-oneggy.md"
     }
 ]
