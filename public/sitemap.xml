@@ -202,7 +202,30 @@
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
-
+	<url>
+        <loc>https://www.oneggy.com/blogs/vapt-services-secure-applications-oneggy</loc>
+        <lastmod>2024-11-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+	<url>
+        <loc>https://www.oneggy.com/blogs/jaeger-game-changer-performance-oneggy</loc>
+        <lastmod>2024-11-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+	<url>
+        <loc>https://www.oneggy.com/blogs/argocd-replace-jenkins-kubernetes-oneggy</loc>
+        <lastmod>2024-11-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+	<url>
+        <loc>https://www.oneggy.com/blogs/eks-autoscaling-cluster-autoscaler-oneggy</loc>
+        <lastmod>2024-11-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
 
     <!-- Services URLs -->
     <url>
