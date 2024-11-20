@@ -103,5 +103,33 @@
         "overview": "Kubecost is a powerful tool for monitoring and optimizing Kubernetes costs, providing businesses with real-time insights and cost-saving recommendations. This blog outlines the step-by-step process for installing Kubecost in Kubernetes and highlights how OnEggy Technologies helps businesses manage Kubernetes clusters efficiently. From deployment to ongoing support, we ensure your Kubernetes environment is cost-effective and high-performing.",  
         "slug": "install-kubecost-kubernetes-oneggy",
         "mdFileLocation": "./public/AllBlogs/markDown/install-kubecost-kubernetes-oneggy.md"
+    },
+    {
+        "title": "How DevOps Can Automate Your Fintech Applications",  
+        "category": "DevOps and Fintech",  
+        "overview": "DevOps automation has transformed the fintech industry, enabling rapid deployment, robust security, and seamless scaling. This blog explores how DevOps tools and practices, such as CI/CD pipelines, infrastructure as code, and Kubernetes, revolutionize fintech applications. Learn how OnEggy Technologies helps fintech companies automate their operations for efficiency and compliance.",  
+        "slug": "devops-automation-fintech-applications",
+        "mdFileLocation": "./public/AllBlogs/markDown/devops-automation-fintech-applications.md"
+    },
+    {
+        "title": "Deploying SaaS on AWS and Simplifying Workflows with DevOps by OnEggy Technologies",  
+        "category": "Cloud and DevOps",  
+        "overview": "SaaS applications require robust, scalable, and secure infrastructure to meet user demands. AWS provides the ideal platform for SaaS deployment, offering flexibility and reliability. Coupled with DevOps practices, SaaS workflows can be automated, streamlined, and optimized for faster delivery and better performance. Learn how OnEggy Technologies helps businesses deploy SaaS on AWS and simplify their workflows with DevOps.",  
+        "slug": "deploy-saas-aws-devops-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/deploy-saas-aws-devops-oneggy.md"
+    },
+    {
+        "title": "How AWS Partners Like OnEggy Technologies Help Save Costs",  
+        "category": "AWS Cost Optimization",  
+        "overview": "AWS offers robust cloud solutions, but without effective cost management, businesses can overspend. AWS Partners like OnEggy Technologies specialize in implementing cost-saving strategies, such as workload optimization, Savings Plans, and spot instances. Learn how we help businesses reduce cloud expenses while maintaining performance and scalability.",  
+        "slug": "aws-partners-cost-optimization-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/aws-partners-cost-optimization-oneggy.md"
+    },
+    {
+        "title": "Your Business Is Our Priority: Tailored Tech Infrastructure by OnEggy Technologies",  
+        "category": "Tech Infrastructure Services",  
+        "overview": "In today’s fast-paced world, businesses need robust, scalable, and secure tech infrastructure to stay ahead. At OnEggy Technologies, we prioritize your business by delivering tailored IT solutions that align with your goals. From cloud optimization and DevOps automation to ongoing support, we ensure your technology infrastructure empowers success.",  
+        "slug": "business-priority-tech-infrastructure-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/business-priority-tech-infrastructure-oneggy.md"
     }
 ]
