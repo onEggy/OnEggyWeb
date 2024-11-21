@@ -304,6 +304,48 @@
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
+	<url>
+        <loc>https://www.oneggy.com/blogs/aws-managed-services-bangalore-oneggy</loc>
+        <lastmod>2024-11-21</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+	<url>
+        <loc>https://www.oneggy.com/blogs/aws-cloud-management-bangalore-startups-oneggy</loc>
+        <lastmod>2024-11-21</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+	<url>
+        <loc>https://www.oneggy.com/blogs/aws-managed-services-cost-bangalore-oneggy</loc>
+        <lastmod>2024-11-21</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+	<url>
+        <loc>https://www.oneggy.com/blogs/aws-migration-guide-bangalore-oneggy</loc>
+        <lastmod>2024-11-21</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+	<url>
+        <loc>https://www.oneggy.com/blogs/aws-managed-services-cloud-optimization-bangalore-oneggy</loc>
+        <lastmod>2024-11-21</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+	<url>
+        <loc>https://www.oneggy.com/blogs/bangalore-it-firm-aws-uptime-case-study-oneggy</loc>
+        <lastmod>2024-11-21</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+	<url>
+        <loc>https://www.oneggy.com/blogs/aws-cloud-management-challenges-bangalore-oneggy</loc>
+        <lastmod>2024-11-21</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
 
     <!-- Services URLs -->
     <url>
