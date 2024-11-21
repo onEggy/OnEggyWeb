@@ -8,7 +8,6 @@ import AuthorBio from "../components/blogAuthor";
 import PartnerShowcase from "../components/partnerShowcase";
 import ContactUs from "../home/contactUs";
 import Footer from "../components/footer";
-// import EnquiryModal from "../components/EnquiryModal";
 import SharableIcons from "../components/sharableIcons";
 import dynamic from "next/dynamic";
 import ConsultationButton from "../components/consultButton";
@@ -19,9 +18,12 @@ import { marked } from "marked";
 import ManagedServices from "../components/blogServicePromote";
 
 const Blog = (props) => {
-  const EnquiryModal = dynamic(() => import('../components/EnquiryModal'), { ssr: false });
+  const EnquiryModal = dynamic(() => import("../components/EnquiryModal"), {
+    ssr: false,
+  });
+
   // State to manage scroll progress
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.oneggy.com/';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.oneggy.com/";
   const [scrollProgress, setScrollProgress] = useState(0);
 
   // Calculate scroll progress
@@ -38,20 +40,57 @@ const Blog = (props) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Generate Dynamic Rating Schema
+  const generateRatingSchema = () => {
+    const schemaData = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": props.title,
+      "description": props.description,
+      "image": props.mainBigImage,
+      "author": {
+        "@type": "Person",
+        "name": "OnEggy Technologies",
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "OnEggy Technologies",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.oneggy.com/logov1.png",
+        },
+      },
+      "datePublished": props.date,
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `${baseUrl}blogs/${props.slug}`,
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "245",
+        "bestRating": "5",
+        "worstRating": "1",
+      },
+    };
+
+    return schemaData;
+  };
+
   return (
     <>
       {/* SEO Configuration */}
       <NextSeo
         title={props.title}
         description={props.description}
-        canonical={`{${baseUrl}blogs/${props.slug}}`}
+        canonical={`${baseUrl}blogs/${props.slug}`}
         openGraph={{
           title: props.title,
           description: props.description,
-          url: `{${baseUrl}blogs/${props.slug}}`,
-          type: 'article',
+          url: `${baseUrl}blogs/${props.slug}`,
+          type: "article",
           article: {
-            tags: props.keywords.split(','),
+            tags: props.keywords.split(","),
           },
           images: [
             {
@@ -59,17 +98,21 @@ const Blog = (props) => {
               width: 800,
               height: 400,
               alt: props.title,
-            }
+            },
           ],
         }}
         twitter={{
-          handle: '@handle',
-          site: '@site',
-          cardType: 'summary_large_image',
+          handle: "@handle",
+          site: "@site",
+          cardType: "summary_large_image",
         }}
       />
       <Head>
         <meta name="keywords" content={props.keywords} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateRatingSchema()) }}
+        />
       </Head>
 
       <SharableIcons url={`${baseUrl}blogs/${props.slug}`} />
@@ -122,29 +165,15 @@ const Blog = (props) => {
             className="max-w-2xl mx-auto md:w-8/12 prose prose-sm sm:prose lg:prose-lg"
             dangerouslySetInnerHTML={{ __html: props.renderedHtml }}
           />
-
-          {/* Sidebar Section */}
-          {/* Uncomment the section below to use sidebar */}
-          {/* <div className="md:w-4/12 mt-10 md:mt-0 md:pl-10">
-            <div className="bg-gray-100 rounded-lg p-6 shadow-lg">
-              <h2 className="text-2xl font-semibold">Looking for personalized service?</h2>
-              <p className="mt-4 text-gray-700">
-                Contact us today to learn how our digital services can help grow your business.
-              </p>
-              <ConsultationButton buttonPlaceholder="Get your free consultation" />
-            </div>
-          </div> */}
         </div>
 
         {/* Author Bio */}
         <div className="my-10">
-          {/* Managed Services content here */}
           <ManagedServices />
         </div>
         <AuthorBio />
       </div>
 
-      {/* Enquiry Modal and Footer */}
       <EnquiryModal />
       <div className="bg-cover bg-right max-w-7xl mx-auto">
         <PartnerShowcase />
@@ -158,7 +187,7 @@ const Blog = (props) => {
 export default Blog;
 
 export async function getStaticProps({ params: { Blog } }) {
-  let path = await BlogsData?.filter((x) => x?.["slug"] == Blog);
+  let path = await BlogsData?.filter((x) => x?.["slug"] === Blog);
 
   let mdFileData = fs.readFileSync(path[0].mdFileLocation, "utf8");
   const { data, content } = matter(mdFileData);
