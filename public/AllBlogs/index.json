@@ -250,5 +250,54 @@
         "overview": "Managing infrastructure across multiple cloud providers can be challenging, with varying APIs, tools, and configurations. Terraform simplifies this process by providing a unified interface for defining and automating infrastructure provisioning. Learn how Terraform helps businesses achieve seamless multi-cloud management while optimizing scalability, cost, and operational efficiency.",  
         "slug": "terraform-multi-cloud-management-oneggy",
         "mdFileLocation": "./public/AllBlogs/markDown/terraform-multi-cloud-management-oneggy.md"
+    },
+    {
+        "title": "Why AWS Managed Services Are Transforming Bangalore's Tech Industry",  
+        "category": "Cloud Computing",  
+        "overview": "Bangalore, India's Silicon Valley, is witnessing a tech transformation fueled by AWS Managed Services. These services empower startups and enterprises with scalable cloud solutions, reduced operational costs, and enhanced innovation. Learn how AWS is reshaping Bangalore’s tech landscape and how OnEggy Technologies helps businesses leverage AWS for growth.",  
+        "slug": "aws-managed-services-bangalore-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/aws-managed-services-bangalore-oneggy.md"
+    },
+    {
+        "title": "Top Reasons Bangalore Startups Are Opting for AWS Cloud Management",  
+        "category": "Cloud Computing",  
+        "overview": "Bangalore, India's startup capital, is witnessing a surge in AWS adoption. Startups are leveraging AWS Cloud Management for its scalability, cost-efficiency, and cutting-edge tools. Learn the top reasons behind this trend and how OnEggy Technologies helps startups maximize AWS’s potential.",  
+        "slug": "aws-cloud-management-bangalore-startups-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/aws-cloud-management-bangalore-startups-oneggy.md"
+    },
+    {
+        "title": "How AWS Managed Services Reduce Costs for Businesses in Bangalore",  
+        "category": "Cloud Computing",  
+        "overview": "AWS Managed Services are revolutionizing how businesses in Bangalore optimize their cloud infrastructure and reduce costs. By leveraging automation, scalability, and advanced cost management tools, AWS enables companies to streamline operations and focus on growth. Learn how OnEggy Technologies helps Bangalore businesses maximize cost efficiency with AWS.",  
+        "slug": "aws-managed-services-cost-bangalore-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/aws-managed-services-cost-bangalore-oneggy.md"
+    },
+    {
+        "title": "A Step-by-Step Guide to Migrating to AWS for Bangalore-Based Businesses",  
+        "category": "Cloud Migration",  
+        "overview": "Migrating to AWS can transform how Bangalore-based businesses scale, operate, and innovate. This step-by-step guide covers everything from planning and execution to optimization for a seamless transition to AWS. Learn how OnEggy Technologies supports businesses in Bangalore through every stage of their AWS migration journey.",  
+        "slug": "aws-migration-guide-bangalore-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/aws-migration-guide-bangalore-oneggy.md"
+    },
+    {
+        "title": "AWS Managed Services for Seamless Cloud Optimization in Bangalore",  
+        "category": "Cloud Optimization",  
+        "overview": "AWS Managed Services are transforming cloud management for Bangalore businesses by offering advanced tools for automation, optimization, and scalability. Learn how OnEggy Technologies helps companies leverage AWS to streamline operations, reduce costs, and drive business growth.",  
+        "slug": "aws-managed-services-cloud-optimization-bangalore-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/aws-migration-guide-bangalore-oneggy.md"
+    },
+    {
+        "title": "Case Study: How a Bangalore IT Firm Achieved 99.9% Uptime with AWS",  
+        "category": "Cloud Solutions",  
+        "overview": "Bangalore's competitive tech industry demands high uptime and reliable cloud solutions. Learn how a Bangalore-based IT firm partnered with OnEggy Technologies to implement AWS services, achieving 99.9% uptime, reducing downtime, and driving business growth.",  
+        "slug": "bangalore-it-firm-aws-uptime-case-study-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/bangalore-it-firm-aws-uptime-case-study-oneggy.md"
+    },
+    {
+        "title": "5 Common Cloud Management Challenges Solved by AWS in Bangalore",  
+        "category": "Cloud Management",  
+        "overview": "Bangalore businesses face unique challenges when managing cloud infrastructure, from cost control to scalability. AWS addresses these issues with advanced tools and services. Learn how AWS helps businesses in Bangalore overcome common cloud management challenges to improve performance, security, and efficiency.",  
+        "slug": "aws-cloud-management-challenges-bangalore-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/aws-cloud-management-challenges-bangalore-oneggy.md"
     }
 ]
