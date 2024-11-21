@@ -306,5 +306,19 @@
         "overview": "In today’s competitive landscape, startups must deliver exceptional user experiences to stand out. Professional UI/UX design services not only enhance usability but also drive user engagement, brand credibility, and business growth. Discover the top 5 benefits of investing in UI/UX design for your startup.",  
         "slug": "benefits-ui-ux-design-services-startups",
         "mdFileLocation": "./public/AllBlogs/markDown/benefits-ui-ux-design-services-startups.md"
+    },
+    {
+        "title": "10 Questions to Ask Before Hiring a UI/UX Design Agency",  
+        "category": "Design & Development",  
+        "overview": "Choosing the right UI/UX design agency is critical for the success of your project. By asking the right questions, you can assess their expertise, workflow, and compatibility with your goals. This guide outlines the top 10 questions to ask before hiring a UI/UX design agency.",  
+        "slug": "questions-before-hiring-ui-ux-design-agency",
+        "mdFileLocation": "./public/AllBlogs/markDown/questions-before-hiring-ui-ux-design-agency.md"
+    },
+    {
+        "title": "Top Benefits of AWS and DevOps for Gurugram and Noida Startups",  
+        "category": "Cloud and DevOps Solutions",  
+        "overview": "Startups in Gurugram and Noida are leveraging AWS and DevOps to accelerate growth, enhance scalability, and streamline operations. By combining the power of cloud computing with DevOps automation, startups can build robust and efficient workflows. Explore the top benefits of AWS and DevOps for startups in India’s emerging tech hubs.",  
+        "slug": "aws-devops-benefits-startups-gurugram-noida",
+        "mdFileLocation": "./public/AllBlogs/markDown/questions-before-hiring-ui-ux-design-agency.md"
     }
 ]
