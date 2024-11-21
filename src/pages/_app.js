@@ -43,6 +43,25 @@ function App({ Component, pageProps }) {
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-v1.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32-v1.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16-v1.png" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "OnEggy Technologies",
+                "url": "https://www.oneggy.com",
+                "logo": "https://www.oneggy.com/logov1.png",
+                "sameAs": [
+                  "https://www.linkedin.com/company/oneggy",
+                  "https://www.instagram.com/oneggytechnologies",
+                  "https://www.facebook.com/oneggytechnologies"
+                ]
+              }
+            )
+          }}
+        />
       </Head>
 
       <Component {...pageProps} />
