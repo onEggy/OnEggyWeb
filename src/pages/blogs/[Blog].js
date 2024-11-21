@@ -113,6 +113,62 @@ const Blog = (props) => {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(generateRatingSchema()) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": `${baseUrl}blogs/${props.slug}`,
+              },
+              "headline": props.title,
+              "description": props.description,
+              "image": {
+                "@type": "ImageObject",
+                "url": props.mainBigImage,
+                "width": 800,
+                "height": 400,
+              },
+              "author": {
+                "@type": "Person",
+                "name": "Aakash Sharma",
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "OnEggy Technologies",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://www.oneggy.com/logov1.png",
+                  "width": 200,
+                  "height": 50,
+                },
+              },
+              "datePublished": props.datePublished,
+              "dateModified": props.dateModified || props.datePublished,
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "name": "Blog Detail Page",
+              "url": `${baseUrl}blogs/${props.slug}`,
+              "description": props.description,
+              "publisher": {
+                "@type": "Organization",
+                "name": "OnEggy Technologies",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://www.oneggy.com/logov1.png",
+                  "width": 200,
+                  "height": 50,
+                },
+              },
+            },
+          ]),
+          }}
+        />
       </Head>
 
       <SharableIcons url={`${baseUrl}blogs/${props.slug}`} />
