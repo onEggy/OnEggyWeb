@@ -155,28 +155,28 @@
     },
     {
         "title": "EKS Autoscaling: Install Cluster Autoscaler in AWS by OnEggy Technologies",  
-        "category": "Kubernetes Scaling Solutions",  
+        "category": "Kubernetes Automation",  
         "overview": "Scaling Kubernetes clusters in AWS EKS can be simplified with Cluster Autoscaler. This open-source tool automatically adjusts the size of your EKS cluster based on workload demands. Learn how to install Cluster Autoscaler on EKS and how OnEggy Technologies helps optimize scaling for performance and cost efficiency.",  
         "slug": "eks-autoscaling-cluster-autoscaler-oneggy",
         "mdFileLocation": "./public/AllBlogs/markDown/eks-autoscaling-cluster-autoscaler-oneggy.md"
     },
     {
         "title": "Business Tech Infrastructure: Designed, Developed, and Managed by OnEggy Technologies",  
-        "category": "Tech Infrastructure Services",  
+        "category": "Tech Infrastructure",  
         "overview": "Modern businesses need robust, scalable, and secure tech infrastructure to thrive. At OnEggy Technologies, we specialize in designing, developing, deploying, and managing tailored IT solutions to help businesses grow. Learn how our end-to-end services ensure seamless operations, optimized performance, and reduced costs.",  
         "slug": "business-tech-infrastructure-oneggy",
         "mdFileLocation": "./public/AllBlogs/markDown/business-tech-infrastructure-oneggy.md"
     },
     {
         "title": "Where Django is Best for Development by OnEggy Technologies",  
-        "category": "Web Development Frameworks",  
+        "category": "Web Development",  
         "overview": "Django, a high-level Python web framework, is renowned for its simplicity, scalability, and security. From startups to enterprises, Django is the perfect choice for building robust applications quickly and efficiently. Learn how OnEggy Technologies leverages Django's strengths to create tailor-made solutions for businesses.",  
         "slug": "where-django-excels-development-oneggy",
         "mdFileLocation": "./public/AllBlogs/markDown/where-django-excels-development-oneggy.md"
     },
     {
         "title": "Django with Elasticsearch: A Game Changer for Complex Applications by OnEggy Technologies",  
-        "category": "Web Development and Data Analytics",  
+        "category": "Web Development",  
         "overview": "Elasticsearch, paired with Django, is transforming how complex applications handle data, search, and analytics. With its real-time indexing and search capabilities, Elasticsearch enhances Django applications, making them faster, scalable, and more user-centric. Learn how OnEggy Technologies leverages this powerful duo to build robust solutions for businesses.",  
         "slug": "django-elasticsearch-complex-apps-oneggy",
         "mdFileLocation": "./public/AllBlogs/markDown/django-elasticsearch-complex-apps-oneggy.md"
@@ -194,5 +194,61 @@
         "overview": "The mobile app landscape is evolving rapidly, with new trends shaping how businesses engage with users. From AI-powered personalization to super apps, staying ahead of these trends is crucial. Learn about the top 5 mobile app trends for 2024 and how OnEggy Technologies can help businesses leverage them for success.",  
         "slug": "mobile-app-trends-2024-oneggy",
         "mdFileLocation": "./public/AllBlogs/markDown/mobile-app-trends-2024-oneggy.md"
+    },
+    {
+        "title": "How Ansible Simplifies IT Automation for Modern Businesses by OnEggy Technologies",  
+        "category": "IT Automation",  
+        "overview": "Ansible is transforming IT automation for businesses by simplifying deployment, configuration, and scaling. Its agentless, easy-to-use framework makes it a top choice for modern businesses. Learn how OnEggy Technologies implements Ansible to streamline operations and reduce costs.",  
+        "slug": "ansible-it-automation-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/ansible-it-automation-oneggy.md"
+    },
+    {
+        "title": "5 Common Ansible Playbook Mistakes and How to Avoid Them",  
+        "category": "IT Automation",  
+        "overview": "Ansible playbooks are powerful tools for IT automation, but even experienced users can make mistakes that impact efficiency and reliability. From improper YAML syntax to failing to use idempotency, these common errors can slow down your workflows. Learn how to avoid these pitfalls and optimize your Ansible playbooks for seamless automation.",  
+        "slug": "common-ansible-playbook-mistakes-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/common-ansible-playbook-mistakes-oneggy.md"
+    },
+    {
+        "title": "Getting Started with Ansible for Cloud Configuration Management",  
+        "category": "Cloud Automation",  
+        "overview": "Ansible simplifies cloud configuration management by automating tasks like provisioning, scaling, and deployment. This guide provides a beginner-friendly introduction to using Ansible for managing cloud infrastructure, including tools, benefits, and actionable steps. Learn how OnEggy Technologies can help implement Ansible for your business.",  
+        "slug": "ansible-cloud-configuration-management-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/ansible-cloud-configuration-management-oneggy.md"
+    },
+    {
+        "title": "The Role of Ansible in Hybrid Cloud Environments",  
+        "category": "Cloud Automation Solutions",  
+        "overview": "Hybrid cloud environments present unique challenges, including managing diverse infrastructure and ensuring consistent deployments. Ansible, with its agentless architecture and robust automation capabilities, plays a pivotal role in unifying hybrid cloud management. Learn how OnEggy Technologies uses Ansible to streamline operations across on-premises and cloud platforms.",  
+        "slug": "ansible-hybrid-cloud-management-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/ansible-hybrid-cloud-management-oneggy.md"
+    },
+    {
+        "title": "How Ansible Can Enhance Your Infrastructure as Code Strategy",  
+        "category": "Infrastructure Automation",  
+        "overview": "Infrastructure as Code (IaC) is a critical component of modern IT, enabling automated, consistent, and scalable infrastructure management. Ansible, with its simple YAML syntax, agentless design, and extensive modules, is a powerful tool for implementing and enhancing IaC strategies. Learn how OnEggy Technologies helps businesses optimize their IaC workflows with Ansible.",  
+        "slug": "ansible-enhance-infrastructure-as-code-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/ansible-enhance-infrastructure-as-code-oneggy.md"
+    },
+    {
+        "title": "Terraform Basics: Automating Infrastructure as Code for Beginners",  
+        "category": "Infrastructure as Code",  
+        "overview": "Terraform, an open-source Infrastructure as Code (IaC) tool, is transforming how businesses manage cloud resources. With its declarative approach, Terraform allows beginners to automate provisioning, scaling, and configuration. This guide covers Terraform basics, key features, and a step-by-step tutorial to help you get started with IaC.",  
+        "slug": "terraform-basics-infrastructure-code-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/terraform-basics-infrastructure-code-oneggy.md"
+    },
+    {
+        "title": "Terraform vs. CloudFormation: Which IaC Tool Fits Your Business?",  
+        "category": "Infrastructure Automation",  
+        "overview": "Choosing the right Infrastructure as Code (IaC) tool is critical for automating cloud resource management. Terraform and AWS CloudFormation are two leading IaC tools, each with unique strengths. Learn how they compare in terms of flexibility, multi-cloud support, and ease of use to determine the best fit for your business.",  
+        "slug": "terraform-vs-cloudformation-business-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/terraform-vs-cloudformation-business-oneggy.md"
+    },
+    {
+        "title": "How Terraform Simplifies Multi-Cloud Management",  
+        "category": "Infrastructure Automation",
+        "overview": "Managing infrastructure across multiple cloud providers can be challenging, with varying APIs, tools, and configurations. Terraform simplifies this process by providing a unified interface for defining and automating infrastructure provisioning. Learn how Terraform helps businesses achieve seamless multi-cloud management while optimizing scalability, cost, and operational efficiency.",  
+        "slug": "terraform-multi-cloud-management-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/terraform-multi-cloud-management-oneggy.md"
     }
 ]
