@@ -15,7 +15,7 @@ import Head from "next/head";
 import Marquee from "react-fast-marquee";
 import seoData from "../../../public/data/service-seo.json";
 import serviceData from "../../../public/data/serviceData.json";
-import CaseStudyComponent from "../components/CaseStudiesMarquee";
+import CaseStudyComponent from "../components/caseStudiesMarquee";
 
 // Dynamically Imported Components
 const PartnerShowcase = dynamic(() => import("../components/partnerShowcase"), { ssr: false });
