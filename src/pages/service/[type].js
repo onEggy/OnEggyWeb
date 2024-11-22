@@ -15,6 +15,7 @@ import Head from "next/head";
 import Marquee from "react-fast-marquee";
 import seoData from "../../../public/data/service-seo.json";
 import serviceData from "../../../public/data/serviceData.json";
+import CaseStudyComponent from "../components/caseStudiesMarquee";
 
 // Dynamically Imported Components
 const PartnerShowcase = dynamic(() => import("../components/partnerShowcase"), { ssr: false });
@@ -79,7 +80,7 @@ const service = (props) => {
 
         {/* Marquee for Project Showcase */}
         <div className="mt-24">
-          <Marquee gradient={false} pauseOnHover={true} speed={50} gradientWidth={50}>
+          {/* <Marquee gradient={false} pauseOnHover={true} speed={50} gradientWidth={50}>
             {props?.projects?.map((data, index) => (
               <div key={index} className="h-auto w-auto px-6">
                 <Image
@@ -93,7 +94,8 @@ const service = (props) => {
                 />
               </div>
             ))}
-          </Marquee>
+          </Marquee> */}
+          <CaseStudyComponent />
         </div>
       </div>
 
