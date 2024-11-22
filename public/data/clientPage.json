@@ -32,7 +32,8 @@
         "position": "Manager, Smile Foundation",
         "content": "The OnEggy team has delivered beyond our expectations. Their expertise in cloud and DevOps has transformed the way we manage our systems and support our mission."
       }
-    ]
+    ],
+    "category": "cloud-managed-services"
   },
   {
     "slug": "mobile-application-blockchain-eastmojo",
@@ -78,6 +79,7 @@
         "position": "Co-Founder, Growthyogi",
         "content": "The innovative solutions provided by OnEggy Technologies have streamlined our operations and significantly improved user engagement. We couldn’t be happier with the results."
       }
-    ]
+    ],
+    "category": "mobile-app-development"
   }
 ]

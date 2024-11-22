@@ -2,11 +2,8 @@ import React from "react";
 import Headline from "../components/headline";
 import Section5 from "../about/section5";
 
-const techCompo = ({serviceTypes}) => {
+const techCompo = ({serviceTypeHeading, serviceTypeDescription, serviceTypes}) => {
   // console.log('serviceTypes',serviceTypes)
-  const title = "Web Development Services";
-  const desc =
-    "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies";
   // let compoArray = [
   //   {
   //     head: "Front-end Development",
@@ -54,8 +51,8 @@ const techCompo = ({serviceTypes}) => {
       alt: "Speaker Image",
     }})
 
-
-
+  const title = serviceTypeHeading;
+  const desc = serviceTypeDescription;
 
   return (
     <div className="mt-10 px-4">
