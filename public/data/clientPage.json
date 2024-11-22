@@ -4,7 +4,12 @@
     "title": "Empowering Smile Foundation with Advanced Cloud and DevOps Services by OnEggy Technologies",
     "company": "Smile Foundation India NGO",
     "metaDescription": "OnEggy Technologies optimized Smile Foundation's digital platforms with expert cloud and DevOps services, driving efficiency and impact.",
-    "keywords": ["Cloud optimization", "DevOps consulting", "non-profit technology services", "NGO infrastructure solutions"],
+    "keywords": [
+      "Cloud optimization",
+      "DevOps consulting",
+      "non-profit technology services",
+      "NGO infrastructure solutions"
+    ],
     "summary": "OnEggy Technologies partnered with Smile Foundation to enhance their digital operations through cloud infrastructure optimization and DevOps consulting.",
     "description": "A comprehensive case study detailing how OnEggy Technologies improved Smile Foundation's operational efficiency and scalability by providing tailored cloud and DevOps services.",
     "image": "/case-study/smile-foundation-case-study-oneggy-technologies.png",
@@ -40,7 +45,13 @@
     "title": "Innovative Mobile Application with Blockchain Wallet for EastMojo by OnEggy Technologies",
     "company": "EastMojo",
     "metaDescription": "OnEggy Technologies developed EastMojo's mobile app with blockchain integration, empowering user-generated content approval workflows.",
-    "keywords": ["Mobile application", "Blockchain wallet", "React Native development", "Django APIs", "Content approval system"],
+    "keywords": [
+      "Mobile application",
+      "Blockchain wallet",
+      "React Native development",
+      "Django APIs",
+      "Content approval system"
+    ],
     "summary": "OnEggy Technologies designed and deployed a user-centric mobile application for EastMojo featuring blockchain wallet integration and advanced content approval workflows.",
     "description": "A detailed case study on how OnEggy Technologies created a scalable and interactive mobile app for EastMojo using React Native, blockchain technology, and Django APIs, deployed with AWS autoscaling for high performance.",
     "image": "/case-study/eastmojo-case-study-oneggy-technologies.png",
@@ -81,5 +92,380 @@
       }
     ],
     "category": "mobile-app-development"
+  },
+  {
+    "slug": "mobile-application-redesign-beyond-imagination",
+    "title": "Comprehensive Mobile Application and UI/UX Redesign for Beyond Imagination Technologies",
+    "company": "Beyond Imagination Technologies",
+    "metaDescription": "OnEggy Technologies revamped Beyond Imagination's mobile applications and React Native platform, delivering optimized UI/UX design and robust functionality.",
+    "keywords": [
+      "Mobile application development",
+      "React Native fixes",
+      "UI/UX design",
+      "Bitmemoir redesign",
+      "Beyond Imagination Technologies"
+    ],
+    "summary": "OnEggy Technologies enhanced Beyond Imagination Technologies' mobile application with React Native fixes and a streamlined UI/UX design for Bitmemoir screens and processes.",
+    "description": "Beyond Imagination Technologies partnered with OnEggy Technologies for a comprehensive mobile application upgrade. We resolved React Native issues, optimized performance, and reimagined the UI/UX design of their Bitmemoir application, creating a seamless and engaging user experience.",
+    "image": "/case-study/beyond-imagination-case-study-oneggy-technologies.png",
+    "content": "Beyond Imagination Technologies sought to enhance their mobile applications and improve their platform’s usability. OnEggy Technologies addressed React Native application bugs, redesigned Bitmemoir's UI/UX for all screens and processes, and delivered a polished, user-friendly experience that exceeded client expectations.",
+    "keyMetrics": [
+      "UI/UX redesign completed within 3 months",
+      "React Native application bugs resolved with a 95% success rate",
+      "Increased user retention by 40%"
+    ],
+    "challenges": "The project required resolving existing issues in the React Native application while revamping the UI/UX design for better user engagement.",
+    "solutions": "We implemented efficient fixes for React Native application bugs and provided a complete UI/UX redesign for Bitmemoir screens. Our team ensured the updated application was both aesthetically appealing and highly functional.",
+    "team": {
+      "clients": [
+        {
+          "name": "Nikhil Gupta",
+          "company": "Beyond Imagination Technologies"
+        },
+        {
+          "name": "Anthony",
+          "company": "Beyond Imagination Technologies"
+        }
+      ],
+      "frontendTeam": "React Native Developers",
+      "uiUxTeam": "UI/UX Designers"
+    },
+    "conclusion": "Our collaboration with Beyond Imagination Technologies resulted in a robust mobile application with enhanced UI/UX design. The updated platform ensures higher user retention and delivers a seamless experience for its users.",
+    "testimonials": [
+      {
+        "author": "Nikhil Gupta",
+        "position": "Co-Founder, Beyond Imagination Technologies",
+        "content": "OnEggy Technologies transformed our mobile application, resolving major issues and providing an exceptional user interface redesign. We’re thrilled with the results."
+      },
+      {
+        "author": "Anthony",
+        "position": "Project Lead, Beyond Imagination Technologies",
+        "content": "Their ability to tackle challenges and deliver quality solutions is impressive. OnEggy Technologies has set a new standard for us."
+      }
+    ],
+    "category": "mobile-app-development"
+  },
+  {
+    "slug": "aws-managed-services-smile-foundation",
+    "title": "AWS Managed Services and DevOps Consulting for Smile Foundation NGO",
+    "company": "Smile Foundation",
+    "metaDescription": "OnEggy Technologies manages Smile Foundation's AWS infrastructure, optimizing website performance and ensuring seamless operations.",
+    "keywords": [
+      "AWS managed services",
+      "DevOps consulting",
+      "Web server optimization",
+      "Smile Foundation",
+      "WordPress optimization"
+    ],
+    "summary": "OnEggy Technologies provides AWS managed services and DevOps consulting for Smile Foundation, ensuring fast website performance and efficient AWS infrastructure.",
+    "description": "Smile Foundation partnered with OnEggy Technologies for comprehensive AWS management and DevOps consulting. Our team optimized their WordPress websites, deployed multiple sites on a single web server, and improved website performance using PHP pools. This collaboration ensures their digital presence remains fast and reliable.",
+    "image": "/case-study/smile-foundation-case-study-oneggy-technologies.png",
+    "content": "Smile Foundation, a leading NGO, needed optimized AWS infrastructure and enhanced website performance. OnEggy Technologies provided AWS managed services, streamlined their DevOps processes, and improved WordPress site speed through server optimization and PHP pools management.",
+    "keyMetrics": [
+      "Improved website speed by 60%",
+      "Optimized AWS infrastructure for cost efficiency",
+      "Multiple websites deployed on a single web server"
+    ],
+    "challenges": "Managing multiple websites on a single server while ensuring optimal performance and cost efficiency.",
+    "solutions": "We optimized Smile Foundation's AWS infrastructure, implemented efficient DevOps practices, and fine-tuned WordPress websites for enhanced speed and performance.",
+    "team": {
+      "clients": [
+        {
+          "name": "Irteza Husain",
+          "company": "Smile Foundation"
+        },
+        {
+          "name": "MD Istaf",
+          "company": "Smile Foundation"
+        }
+      ],
+      "cloudTeam": "AWS Engineers",
+      "devOpsTeam": "DevOps Consultants"
+    },
+    "conclusion": "Our partnership with Smile Foundation has ensured a reliable AWS infrastructure and significantly improved website performance, enhancing their online outreach capabilities.",
+    "testimonials": [
+      {
+        "author": "Irteza Husain",
+        "position": "Operations Head, Smile Foundation",
+        "content": "OnEggy Technologies has been instrumental in optimizing our AWS setup and website performance. Their solutions have been transformative for our digital presence."
+      },
+      {
+        "author": "MD Istaf",
+        "position": "IT Manager, Smile Foundation",
+        "content": "Their expertise in AWS and DevOps has ensured our infrastructure runs smoothly and efficiently. We highly recommend OnEggy Technologies."
+      }
+    ],
+    "category": "aws-managed-services"
+  },
+  {
+    "slug": "mobile-application-beingbitsmart",
+    "title": "Mobile Application Development for BeingBitsMart Using React Native and Django APIs",
+    "company": "BeingBitsMart",
+    "metaDescription": "OnEggy Technologies developed a feature-rich mobile app for BeingBitsMart using React Native and Django APIs, deployed on AWS for scalability.",
+    "keywords": [
+      "Mobile app development",
+      "React Native",
+      "Django APIs",
+      "AWS deployment",
+      "BeingBitsMart"
+    ],
+    "summary": "OnEggy Technologies built a scalable and user-friendly mobile application for BeingBitsMart, leveraging React Native, Django APIs, and AWS deployment.",
+    "description": "BeingBitsMart approached OnEggy Technologies to develop a robust mobile application for their clients. We designed the app using React Native, integrated Django APIs for backend functionality, and deployed it on AWS for secure and scalable operations.",
+    "image": "/case-study/beingbitsmart-case-study-oneggy-technologies.png",
+    "content": "BeingBitsMart needed a mobile application that offered a seamless experience for their clients. OnEggy Technologies developed the app with React Native, implemented Django APIs for advanced backend capabilities, and ensured secure deployment on AWS cloud.",
+    "keyMetrics": [
+      "Delivered within 4 months",
+      "Improved client engagement by 35%",
+      "Seamless AWS deployment with zero downtime"
+    ],
+    "challenges": "Creating a mobile application with advanced functionality while ensuring scalability and secure cloud deployment.",
+    "solutions": "We utilized React Native for cross-platform development, Django APIs for backend functionality, and AWS services for secure and scalable deployment.",
+    "team": {
+      "clients": [
+        {
+          "name": "Mayank Gupta",
+          "company": "BeingBitsMart"
+        },
+        {
+          "name": "Nikhil Gupta",
+          "company": "BeingBitsMart"
+        }
+      ],
+      "frontendTeam": "React Native Developers",
+      "backendTeam": "Django Developers",
+      "cloudTeam": "AWS Specialists"
+    },
+    "conclusion": "The collaboration with BeingBitsMart resulted in a robust and scalable mobile application, enhancing client engagement and operational efficiency.",
+    "testimonials": [
+      {
+        "author": "Mayank Gupta",
+        "position": "Co-Founder, BeingBitsMart",
+        "content": "OnEggy Technologies delivered exactly what we needed—a seamless and user-friendly mobile app. Their expertise is unmatched."
+      },
+      {
+        "author": "Nikhil Gupta",
+        "position": "CTO, BeingBitsMart",
+        "content": "Their ability to handle complex requirements and deliver on time has made OnEggy Technologies our go-to partner for development."
+      }
+    ],
+    "category": "mobile-app-development"
+  },
+  {
+    "slug": "army-mobile-application-beyond-imagination",
+    "title": "Secure Army Mobile Application Development for Beyond Imagination Technologies",
+    "company": "Beyond Imagination Technologies",
+    "metaDescription": "OnEggy Technologies developed a secure and private mobile application for Army personnel, enabling announcements and user verification with Flutter and Django APIs.",
+    "keywords": [
+      "Army mobile application",
+      "Flutter development",
+      "Django APIs",
+      "Private app for Army",
+      "User verification portal"
+    ],
+    "summary": "OnEggy Technologies built a secure mobile application for Army personnel using Flutter and Django APIs. The app includes an admin portal for announcements and user verification.",
+    "description": "Beyond Imagination Technologies collaborated with OnEggy Technologies to create a private mobile application for Army personnel. This secure app allows users to read announcements and provides an admin portal for managing content and verifying user registrations. Developed using Flutter for the frontend and Django APIs for the backend, the app ensures privacy and functionality.",
+    "image": "/case-study/beyond-imagination-case-study-oneggy-technologies.png",
+    "content": "The Army Mobile Application, developed by OnEggy Technologies, is a secure and private platform for Army personnel. Built using Flutter for cross-platform mobile app development and Django APIs for backend services, the app features a user-friendly interface. An admin portal enables authority figures to publish announcements and verify users after registration. Unverified users are restricted from accessing the app, ensuring privacy and security for sensitive information.",
+    "keyMetrics": [
+      "100% user verification before access",
+      "Real-time announcement updates",
+      "Admin portal for seamless content management"
+    ],
+    "challenges": "Developing a secure mobile application with a user verification system and a robust admin portal to manage sensitive Army announcements.",
+    "solutions": "We developed the mobile application using Flutter for a seamless user experience and Django APIs for secure backend functionality. An admin portal was created to enable user verification and content management, ensuring only authorized personnel could access the app.",
+    "team": {
+      "clients": [
+        {
+          "name": "Nikhil Gupta",
+          "company": "Beyond Imagination Technologies"
+        },
+        {
+          "name": "Anthony",
+          "company": "Beyond Imagination Technologies"
+        }
+      ],
+      "frontendTeam": "Flutter Developers",
+      "backendTeam": "Django Developers"
+    },
+    "conclusion": "The Army Mobile Application is a private and secure platform that ensures only verified personnel have access. With its robust user verification process and admin-controlled announcements, the app delivers exceptional privacy and functionality for Army personnel.",
+    "testimonials": [
+      {
+        "author": "Nikhil Gupta",
+        "position": "Co-Founder, Beyond Imagination Technologies",
+        "content": "OnEggy Technologies has delivered a secure and feature-rich mobile application that perfectly meets our requirements. Their expertise in Flutter and Django is outstanding."
+      },
+      {
+        "author": "Anthony",
+        "position": "Project Lead, Beyond Imagination Technologies",
+        "content": "Their ability to develop secure and user-friendly solutions is impressive. The Army Mobile Application exceeded all our expectations."
+      }
+    ],
+    "category": "mobile-app-development"
+  },
+  {
+    "slug": "cloud-magento-support-kantag-solutions",
+    "title": "Cloud Management and Magento Support for KanTag Solutions and AdelIndia Pharmaceutical",
+    "company": "KanTag Solutions",
+    "metaDescription": "OnEggy Technologies resolved cloud issues, optimized Magento website performance, and ensured seamless deployment for KanTag Solutions and AdelIndia Pharmaceutical.",
+    "keywords": [
+      "Cloud management",
+      "Magento support",
+      "Website deployment",
+      "Cloud issue resolution",
+      "KanTag Solutions",
+      "AdelIndia Pharmaceutical"
+    ],
+    "summary": "OnEggy Technologies provided cloud management services, resolved Magento website issues, and ensured seamless deployment for KanTag Solutions and AdelIndia Pharmaceutical.",
+    "description": "KanTag Solutions and AdelIndia Pharmaceutical partnered with OnEggy Technologies to address critical cloud management challenges and improve Magento website performance. Our team successfully resolved their cloud issues, optimized the Magento platform, and deployed the website to production, ensuring a seamless experience for their clients.",
+    "image": "/case-study/kantag-solutions-case-study-oneggy-technologies.png",
+    "content": "KanTag Solutions and AdelIndia Pharmaceutical required assistance with their cloud management and Magento website for critical client projects. OnEggy Technologies resolved ongoing cloud issues, optimized the performance of the Magento website, and deployed the website to a production-ready environment. Our services ensured high reliability, optimal speed, and seamless client satisfaction.",
+    "keyMetrics": [
+      "Resolved 100% of cloud-related issues",
+      "Improved website performance by 50%",
+      "Successful production deployment with zero downtime"
+    ],
+    "challenges": "KanTag Solutions and AdelIndia Pharmaceutical faced challenges with cloud stability and the performance of their Magento websites. Ensuring seamless deployment and resolving technical issues were critical requirements.",
+    "solutions": "OnEggy Technologies implemented robust cloud management solutions to stabilize infrastructure. We optimized the Magento websites for improved performance and completed zero-downtime deployments to production environments.",
+    "team": {
+      "clients": [
+        {
+          "name": "Naveen Yadav",
+          "company": "KanTag Solutions"
+        },
+        {
+          "name": "Ashvini Kumar",
+          "company": "KanTag Solutions"
+        }
+      ],
+      "cloudTeam": "Cloud Management Experts",
+      "backendTeam": "Magento Specialists"
+    },
+    "conclusion": "Our collaboration with KanTag Solutions and AdelIndia Pharmaceutical resulted in reliable cloud infrastructure and optimized Magento websites for their clients. The successful deployments have ensured enhanced performance and client satisfaction.",
+    "testimonials": [
+      {
+        "author": "Naveen Yadav",
+        "position": "Founder, KanTag Solutions",
+        "content": "OnEggy Technologies provided exceptional support and expertise, resolving all our cloud and Magento challenges with ease. We highly recommend their services."
+      },
+      {
+        "author": "Ashvini Kumar",
+        "position": "CTO, KanTag Solutions",
+        "content": "Their ability to stabilize our cloud infrastructure and improve website performance has been game-changing. OnEggy Technologies is a trusted partner for us."
+      },
+      {
+        "author": "AdelIndia Pharmaceutical",
+        "position": "Client, KanTag Solutions",
+        "content": "The solutions provided by OnEggy Technologies have significantly improved our website's performance and reliability. Their expertise is evident in every aspect of their work."
+      }
+    ],
+    "category": "cloud-management"
+  },
+  {
+    "slug": "django-kubernetes-eks-cloudstok",
+    "title": "Django Application Development and Kubernetes Optimization for Cloudstok",
+    "company": "Cloudstok",
+    "metaDescription": "OnEggy Technologies developed and deployed a Django application for Cloudstok using AWS EKS and Terraform for Kubernetes and cloud resource management.",
+    "keywords": [
+      "Django application",
+      "Kubernetes optimization",
+      "AWS EKS cluster",
+      "Terraform IaC",
+      "Cloudstok",
+      "ElastiCache integration"
+    ],
+    "summary": "OnEggy Technologies built and deployed a Django application for Cloudstok, optimized for Kubernetes on AWS EKS using Terraform for Infrastructure as Code (IaC).",
+    "description": "Cloudstok partnered with OnEggy Technologies to develop and deploy a robust Django application optimized for Kubernetes. Leveraging AWS EKS for scalability, Terraform for Infrastructure as Code (IaC), and ElastiCache for efficient caching, we delivered a high-performing, scalable solution.",
+    "image": "/case-study/cloudstok-case-study-oneggy-technologies.png",
+    "content": "Cloudstok required a scalable and high-performance Django application for their client. OnEggy Technologies developed the application, optimized it for Kubernetes, and deployed it on AWS EKS. We used Terraform for managing Infrastructure as Code (IaC) to deploy AWS services and Kubernetes resources efficiently. The integration of ElastiCache further improved application performance and caching capabilities.",
+    "keyMetrics": [
+      "100% automated deployment using Terraform",
+      "Seamless scaling with AWS EKS",
+      "Improved application performance with ElastiCache"
+    ],
+    "challenges": "Building and deploying a scalable Django application with Kubernetes optimization and ensuring seamless integration with AWS services.",
+    "solutions": "OnEggy Technologies developed the Django application, optimized it for Kubernetes, and used Terraform for IaC to deploy AWS resources, including EKS and ElastiCache. The solution ensures scalability, high performance, and efficient resource management.",
+    "team": {
+      "clients": [
+        {
+          "name": "Prateek Rawat",
+          "company": "Cloudstok"
+        },
+        {
+          "name": "Dhruv",
+          "company": "Cloudstok"
+        }
+      ],
+      "backendTeam": "Django Developers",
+      "cloudTeam": "Kubernetes and AWS EKS Specialists",
+      "devOpsTeam": "Terraform and IaC Experts"
+    },
+    "conclusion": "The collaboration with Cloudstok resulted in a robust Django application deployed on AWS EKS, optimized for Kubernetes. With Terraform IaC and ElastiCache integration, the solution ensures high performance, scalability, and cost efficiency.",
+    "testimonials": [
+      {
+        "author": "Prateek Rawat",
+        "position": "Co-Founder, Cloudstok",
+        "content": "OnEggy Technologies has delivered a top-notch solution, optimizing our Django application for Kubernetes and AWS EKS with exceptional expertise."
+      },
+      {
+        "author": "Dhruv",
+        "position": "CTO & Founder, Cloudstok",
+        "content": "Their deep understanding of Kubernetes, Terraform, and AWS has enabled us to deploy a scalable, high-performance application. We’re extremely satisfied with the results."
+      }
+    ],
+    "category": "cloud-management"
+  },
+  {
+    "slug": "shopify-fastapi-mobilegoo",
+    "title": "Shopify Management and API Development for MobileGoo",
+    "company": "MobileGoo",
+    "metaDescription": "OnEggy Technologies manages Shopify for MobileGoo's e-commerce platform, providing design upgrades, bug fixes, and API development using Python FastAPI.",
+    "keywords": [
+      "Shopify management",
+      "e-commerce platform",
+      "API development",
+      "Python FastAPI",
+      "MobileGoo",
+      "Shopify bug fixing",
+      "website upgrades"
+    ],
+    "summary": "OnEggy Technologies manages Shopify for MobileGoo's e-commerce website, handling design improvements, bug fixes, and building APIs with Python FastAPI.",
+    "description": "MobileGoo partnered with OnEggy Technologies to manage their Shopify e-commerce platform. We provide services such as upgrading website design components, fixing bugs, implementing improvements, and building APIs using Python FastAPI. Our solutions ensure a seamless and enhanced user experience for their customers.",
+    "image": "/case-study/mobilegoo-case-study-oneggy-technologies.png",
+    "content": "MobileGoo, an e-commerce platform, entrusted OnEggy Technologies to manage their Shopify store. Our team has upgraded the website design, resolved bugs, and implemented new features to improve functionality. Additionally, we developed APIs using Python FastAPI to enable advanced integrations and seamless operations.",
+    "keyMetrics": [
+      "Improved website design with a 40% increase in user engagement",
+      "Resolved critical bugs within 2 weeks",
+      "Enhanced API functionality using Python FastAPI"
+    ],
+    "challenges": "MobileGoo required regular updates to their Shopify platform, along with efficient API development for improved integrations and functionality.",
+    "solutions": "OnEggy Technologies provided end-to-end Shopify management, including design improvements, bug fixing, and API development using Python FastAPI. These updates ensured a modern and efficient e-commerce experience.",
+    "team": {
+      "clients": [
+        {
+          "name": "Sourabh",
+          "company": "MobileGoo"
+        },
+        {
+          "name": "Muskan",
+          "company": "MobileGoo"
+        }
+      ],
+      "frontendTeam": "Shopify Developers",
+      "backendTeam": "Python FastAPI Specialists"
+    },
+    "conclusion": "Our collaboration with MobileGoo has resulted in an upgraded, bug-free e-commerce platform. With improved design and API functionality, the Shopify store delivers an enhanced user experience and seamless operations.",
+    "testimonials": [
+      {
+        "author": "Sourabh",
+        "position": "Co-Founder, MobileGoo",
+        "content": "OnEggy Technologies has done a fantastic job managing our Shopify platform. Their expertise in design improvements and API development has significantly boosted our website's performance."
+      },
+      {
+        "author": "Muskan",
+        "position": "Co-Founder, MobileGoo",
+        "content": "Their ability to solve issues quickly and implement modern features has been invaluable. OnEggy Technologies is a reliable partner for our e-commerce needs."
+      }
+    ],
+    "category": "e-commerce-management"
   }
 ]

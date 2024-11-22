@@ -85,6 +85,48 @@
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
+	<url>
+        <loc>https://www.oneggy.com/client/mobile-application-redesign-beyond-imagination</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+	<url>
+        <loc>https://www.oneggy.com/client/aws-managed-services-smile-foundation</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+	<url>
+        <loc>https://www.oneggy.com/client/mobile-application-beingbitsmart</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+	<url>
+        <loc>https://www.oneggy.com/client/army-mobile-application-beyond-imagination</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+	<url>
+        <loc>https://www.oneggy.com/client/cloud-magento-support-kantag-solutions</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+	<url>
+        <loc>https://www.oneggy.com/client/django-kubernetes-eks-cloudstok</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+	<url>
+        <loc>https://www.oneggy.com/client/shopify-fastapi-mobilegoo</loc>
+        <lastmod>2024-11-18</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
 
 	<!-- Blogs URLs -->
 
