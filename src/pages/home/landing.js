@@ -19,6 +19,7 @@ import serviceData from "../../../public/data/serviceData.json";
 import PartnerShowcase from "../components/partnerShowcase";
 import FaqSection from "../components/faq";
 import HiringBanner from "../components/hiring";
+import LatestBlogs from "../components/latestBlogs";
 
 const Home = (skill) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -110,6 +111,7 @@ const Home = (skill) => {
         buttonText="Get your proposal"
       />
       <Marksheet />
+      <LatestBlogs />
       <Testimonials />
       <FaqSection />
       <ContactUs />
