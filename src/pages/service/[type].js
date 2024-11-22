@@ -16,6 +16,7 @@ import Marquee from "react-fast-marquee";
 import seoData from "../../../public/data/service-seo.json";
 import serviceData from "../../../public/data/serviceData.json";
 import CaseStudyComponent from "../components/caseStudiesMarquee";
+import LatestBlogs from "../components/latestBlogs";
 
 // Dynamically Imported Components
 const PartnerShowcase = dynamic(() => import("../components/partnerShowcase"), { ssr: false });
@@ -115,6 +116,7 @@ const service = (props) => {
         buttonText="Get your free proposal"
       />
       <TechnologyStack />
+      <LatestBlogs />
       <Marksheet />
       <ContactUs />
       <EnquiryModal />
