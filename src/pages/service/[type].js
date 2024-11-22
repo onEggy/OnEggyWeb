@@ -98,7 +98,11 @@ const service = (props) => {
       </div>
 
       {/* Modular Components */}
-      <TechCompo serviceTypes={props.serviceTypes} />
+      <TechCompo
+        serviceTypeHeading={props.serviceType}
+        serviceTypeDescription={props.serviceInfo}
+        serviceTypes={props.serviceTypes}
+      />
       <PartnerShowcase />
       <Testimonials />
       <GetFreeProp
