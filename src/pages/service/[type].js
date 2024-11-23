@@ -17,6 +17,7 @@ import seoData from "../../../public/data/service-seo.json";
 import serviceData from "../../../public/data/serviceData.json";
 import CaseStudyComponent from "../components/caseStudiesMarquee";
 import LatestBlogs from "../components/latestBlogs";
+import ScheduleCall from "../components/scheduleCall";
 
 // Dynamically Imported Components
 const PartnerShowcase = dynamic(() => import("../components/partnerShowcase"), { ssr: false });
@@ -118,6 +119,7 @@ const service = (props) => {
       <TechnologyStack />
       <LatestBlogs />
       <Marksheet />
+      {/* <ScheduleCall /> */}
       <ContactUs />
       <EnquiryModal />
       <Footer />

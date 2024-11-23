@@ -16,6 +16,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import { marked } from "marked";
 import ManagedServices from "../components/blogServicePromote";
+import ScheduleCall from "../components/scheduleCall";
 
 const Blog = (props) => {
   const EnquiryModal = dynamic(() => import("../components/EnquiryModal"), {
@@ -233,6 +234,7 @@ const Blog = (props) => {
       <EnquiryModal />
       <div className="bg-cover bg-right max-w-7xl mx-auto">
         <PartnerShowcase />
+        {/* <ScheduleCall /> */}
         <ContactUs />
         <Footer />
       </div>

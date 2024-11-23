@@ -406,6 +406,12 @@
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
+	<url>
+        <loc>https://www.oneggy.com/blogs/choosing-right-terraform-partner-cloud-success</loc>
+        <lastmod>2024-11-21</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
 
     <!-- Services URLs -->
     <url>

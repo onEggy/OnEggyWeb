@@ -20,6 +20,7 @@ import PartnerShowcase from "../components/partnerShowcase";
 import FaqSection from "../components/faq";
 import HiringBanner from "../components/hiring";
 import LatestBlogs from "../components/latestBlogs";
+import ScheduleCall from "../components/scheduleCall";
 
 const Home = (skill) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -114,6 +115,7 @@ const Home = (skill) => {
       <LatestBlogs />
       <Testimonials />
       <FaqSection />
+      {/* <ScheduleCall /> */}
       <ContactUs />
       <Footer />
     </div>
