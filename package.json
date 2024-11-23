@@ -40,7 +40,8 @@
     "remark-html": "^16.0.1",
     "slick-carousel": "^1.8.1",
     "swiper": "^10.3.1",
-    "react-syntax-highlighter": "15.6.1"
+    "react-syntax-highlighter": "15.6.1",
+    "@calcom/embed-react": "^1.5.1"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.13",
