@@ -383,5 +383,19 @@
         "overview": "AWS Managed Services are essential for optimizing cloud infrastructure, but choosing the right partner is critical for success. This guide highlights the key factors businesses in South Korea should consider when selecting an AWS Managed Services provider to ensure seamless operations and long-term value.",  
         "slug": "choose-aws-managed-services-partner-south-korea",
         "mdFileLocation": "./public/AllBlogs/markDown/choose-aws-managed-services-partner-south-korea.md"
+    },
+    {
+        "title": "Facing Downtime and Overheads? How Kubernetes Consulting Saves the Day",  
+        "category": "Cloud Solutions",  
+        "overview": "Downtime and high operational overheads can severely impact business performance. Kubernetes consulting offers a solution with container orchestration, automated scaling, and cost efficiency. Learn how Kubernetes consulting services help businesses regain control and optimize operations effectively.",  
+        "slug": "kubernetes-consulting-solutions-overheads",
+        "mdFileLocation": "./public/AllBlogs/markDown/kubernetes-consulting-solutions-overheads.md"
+    },
+    {
+        "title": "How Kubernetes Consulting Saved This Startup Over $50,000 in Infrastructure Costs",  
+        "category": "Cost Optimization",  
+        "overview": "Kubernetes consulting is revolutionizing cost management for startups. This case study highlights how a startup operating in India, South Korea, and Singapore reduced infrastructure expenses by over $50,000. Through container orchestration, resource optimization, and automation, Kubernetes enabled significant savings while enhancing scalability and performance.",  
+        "slug": "kubernetes-consulting-saved-50000-costs-startups",
+        "mdFileLocation": "./public/AllBlogs/markDown/kubernetes-consulting-saved-50000-costs-startups.md"
     }
 ]
