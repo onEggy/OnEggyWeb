@@ -327,5 +327,33 @@
         "overview": "Terraform, a leading Infrastructure as Code (IaC) tool, is key to automating and optimizing cloud infrastructure. However, implementing Terraform effectively requires expertise. Choosing the right Terraform partner ensures seamless deployment, cost optimization, and scalable solutions for cloud success.",  
         "slug": "choosing-right-terraform-partner-cloud-success",
         "mdFileLocation": "./public/AllBlogs/markDown/choosing-right-terraform-partner-cloud-success.md"
+    },
+    {
+        "title": "Top 5 Factors to Consider When Selecting a Terraform Consulting Partner",  
+        "category": "Cloud Infrastructure",  
+        "overview": "Selecting the right Terraform consulting partner is critical for achieving seamless cloud operations and infrastructure automation. This guide highlights the top 5 factors to evaluate when choosing a partner, including expertise, support, and customization capabilities. Learn how the right partner can ensure your Terraform implementation is a success.",  
+        "slug": "terraform-consulting-partner-selection-guide",
+        "mdFileLocation": "./public/AllBlogs/markDown/terraform-consulting-partner-selection-guide.md"
+    },
+    {
+        "title": "Top 5 Benefits of Partnering with OnEggy Technologies for Terraform Consulting",  
+        "category": "Cloud Consulting",  
+        "overview": "Terraform’s capabilities are transformative for businesses seeking scalable and efficient cloud infrastructure. Partnering with OnEggy Technologies for Terraform consulting ensures seamless implementation, expert guidance, and ongoing optimization. Learn the top 5 benefits of working with OnEggy Technologies for your cloud success.",  
+        "slug": "terraform-consulting-benefits-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/terraform-consulting-benefits-oneggy.md"
+    },
+    {
+        "title": "Why Businesses Trust OnEggy Technologies for Terraform-Based Cloud Solutions in South Korea Gangwon-do",  
+        "category": "Cloud Consulting",  
+        "overview": "OnEggy Technologies is a trusted name for Terraform-based cloud solutions in Gangwon-do, South Korea. We help businesses achieve seamless scalability, operational efficiency, and cost optimization with tailored Terraform implementations. Explore why companies in Gangwon-do rely on OnEggy Technologies to transform their cloud infrastructure.",  
+        "slug": "terraform-cloud-solutions-gangwon-do-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/terraform-cloud-solutions-gangwon-do-oneggy.md"
+    },
+    {
+        "title": "How OnEggy’s CI/CD Solutions Accelerate Software Delivery in Gangwon-do",  
+        "category": "DevOps and Automation",  
+        "overview": "In the fast-paced tech environment of Gangwon-do, South Korea, accelerating software delivery is critical for staying competitive. OnEggy Technologies provides end-to-end CI/CD solutions that streamline workflows, improve efficiency, and ensure seamless deployments. Learn how our CI/CD solutions are transforming businesses in Gangwon-do.",  
+        "slug": "cicd-solutions-gangwon-do-oneggy",
+        "mdFileLocation": "./public/AllBlogs/markDown/cicd-solutions-gangwon-do-oneggy.md"
     }
 ]
