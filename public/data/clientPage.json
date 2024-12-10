@@ -467,5 +467,252 @@
       }
     ],
     "category": "e-commerce-management"
+  },
+  {
+    "slug": "consulting-services-app-numberwize",
+    "title": "Comprehensive Consulting Services App Development for NumberWize",
+    "company": "NumberWize",
+    "metaDescription": "OnEggy Technologies developed a mobile application for NumberWize, offering seamless consulting services in legal and finance, including GST and company registration.",
+    "keywords": [
+      "Consulting services app",
+      "Legal services app",
+      "Finance app development",
+      "GST registration app",
+      "Company registration app",
+      "NumberWize",
+      "React Native development"
+    ],
+    "summary": "OnEggy Technologies built a mobile application for NumberWize, empowering users to access consulting services in legal and financial domains like GST registration and company formation.",
+    "description": "NumberWize partnered with OnEggy Technologies to develop a user-friendly mobile application for their consulting services. The app allows clients to access a wide range of legal and financial services, including GST registration, company formation, and other advisory services. Built using React Native for a seamless user experience and Django APIs for robust backend functionality, the app ensures high performance and scalability.",
+    "image": "/case-study/beyond-imagination-case-study-oneggy-technologies.png",
+    "content": "OnEggy Technologies developed a cutting-edge mobile application for NumberWize to streamline their consulting services in legal and financial domains. The app offers features like GST registration, company formation assistance, and other advisory services. Developed using React Native and Django APIs, it provides an intuitive interface and ensures secure, efficient service delivery. The app is deployed on AWS for scalability and reliability.",
+    "keyMetrics": [
+      "Increased client onboarding by 35%",
+      "99.9% uptime ensured through AWS deployment",
+      "Streamlined consulting workflows with intuitive UI/UX"
+    ],
+    "challenges": "NumberWize required a comprehensive mobile solution to streamline their consulting services, ensure secure client interactions, and handle high user engagement efficiently.",
+    "solutions": "OnEggy Technologies built the mobile application using React Native for a seamless cross-platform experience and Django APIs for secure backend functionality. The app was deployed on AWS cloud, ensuring scalability and reliability.",
+    "team": {
+      "clients": [
+        {
+          "name": "Nikhil Gupta",
+          "company": "NumberWize"
+        },
+        {
+          "name": "Anthony",
+          "company": "NumberWize"
+        }
+      ],
+      "frontendTeam": "React Native Developers",
+      "backendTeam": "Django Specialists",
+      "cloudTeam": "AWS Deployment Experts"
+    },
+    "conclusion": "The consulting services app developed for NumberWize has streamlined their operations, improved client engagement, and enhanced the efficiency of their legal and financial advisory services. With advanced features and robust scalability, the app is a valuable tool for their clients.",
+    "testimonials": [
+      {
+        "author": "Nikhil Gupta",
+        "position": "Co-Founder, NumberWize",
+        "content": "OnEggy Technologies has built an exceptional mobile application that has transformed how we deliver our consulting services. Their expertise and support are commendable."
+      },
+      {
+        "author": "Anthony",
+        "position": "CTO, NumberWize",
+        "content": "The app has streamlined our workflows and provided our clients with a seamless experience. OnEggy Technologies delivered exactly what we needed."
+      }
+    ],
+    "category": "consulting-app-development"
+  },
+  {
+    "slug": "cloud-dr-automated-backups-smile-foundation",
+    "title": "Cost-Effective Cloud DR and Automated Backup Solutions for Smile Foundation",
+    "company": "Smile Foundation",
+    "metaDescription": "OnEggy Technologies configured a cost-effective Cloud DR solution with automated backups using AWS Lambda and Python scripting for Smile Foundation.",
+    "keywords": [
+      "Cloud disaster recovery",
+      "Automated backups",
+      "AWS Lambda",
+      "Python backup script",
+      "Cost-effective cloud DR",
+      "Smile Foundation"
+    ],
+    "summary": "OnEggy Technologies implemented a cost-effective Cloud DR solution with automated backups for Smile Foundation using AWS Lambda and Python scripting.",
+    "description": "Smile Foundation partnered with OnEggy Technologies to implement a robust and cost-effective cloud disaster recovery (DR) and automated backup solution. Using AWS Lambda for serverless automation and Python scripting for efficient backups, we ensured data reliability and minimized operational costs. This solution allows for seamless and secure data recovery while maintaining cost efficiency.",
+    "image": "/case-study/smile-foundation-case-study-oneggy-technologies.png",
+    "content": "To ensure data reliability and cost efficiency, OnEggy Technologies configured a Cloud DR solution for Smile Foundation using AWS services. We implemented automated backups using AWS Lambda for serverless execution and created Python scripts to schedule and manage these backups seamlessly. This setup ensures that critical data is always backed up and ready for recovery, reducing downtime and operational risks.",
+    "keyMetrics": [
+      "50% reduction in backup management costs",
+      "Automated daily backups with AWS Lambda",
+      "Zero data loss incidents since implementation"
+    ],
+    "challenges": "Smile Foundation needed a reliable cloud disaster recovery solution with automated backups to ensure data security while minimizing costs.",
+    "solutions": "We configured AWS Lambda for serverless backup automation and developed Python scripts for efficient and scheduled backups. This streamlined solution ensured cost-effective disaster recovery with minimal operational overhead.",
+    "team": {
+      "clients": [
+        {
+          "name": "Irteza Husain",
+          "company": "Smile Foundation"
+        },
+        {
+          "name": "MD Istaf",
+          "company": "Smile Foundation"
+        }
+      ],
+      "cloudTeam": "AWS Engineers",
+      "devOpsTeam": "Python Scripting and Automation Specialists"
+    },
+    "conclusion": "The Cloud DR and automated backup solution implemented for Smile Foundation provides robust data security and reliability. This cost-effective approach ensures seamless backups and recovery, empowering Smile Foundation with uninterrupted operations.",
+    "testimonials": [
+      {
+        "author": "Irteza Husain",
+        "position": "Operations Head, Smile Foundation",
+        "content": "OnEggy Technologies delivered a highly reliable and automated backup solution tailored to our needs. Their expertise in AWS and Python is exceptional."
+      },
+      {
+        "author": "MD Istaf",
+        "position": "IT Manager, Smile Foundation",
+        "content": "Their Cloud DR solution has provided us with peace of mind, knowing our data is secure and recoverable at any time. A highly commendable team!"
+      }
+    ],
+    "category": "cloud-disaster-recovery"
+  },
+  {
+    "slug": "nodejs-electron-app-fix-prozone-engineers",
+    "title": "NodeJS Electron Desktop Application Fix for Prozone Engineers",
+    "company": "Prozone Engineers",
+    "metaDescription": "OnEggy Technologies resolved file path and storage issues in Prozone Engineers' NodeJS Electron desktop app, ensuring seamless integration with the Parivahan website for pollution checks.",
+    "keywords": [
+      "NodeJS application fix",
+      "Electron desktop app",
+      "Pollution check app",
+      "Prozone Engineers",
+      "Parivahan website integration"
+    ],
+    "summary": "OnEggy Technologies fixed critical issues in Prozone Engineers' NodeJS Electron desktop app, ensuring accurate file path handling and seamless data storage for vehicle pollution checks integrated with the Parivahan website.",
+    "description": "Prozone Engineers partnered with OnEggy Technologies to fix their NodeJS Electron desktop application. The app, designed to check pollution values of vehicles, faced issues with reading file paths and storing data in correct locations. We resolved these issues, ensuring the app's seamless operation and accurate integration with the India Government's Parivahan website for real-time pollution data management.",
+    "image": "/case-study/prozone-engineers-nodejs-electron-oneggy-technologies.png",
+    "content": "OnEggy Technologies resolved critical issues in Prozone Engineers' NodeJS Electron desktop application. The app is used to check vehicle pollution levels and is integrated with the India Government's Parivahan website. We fixed errors related to incorrect file path handling and improper data storage, ensuring the app's functionality aligns with the required standards for pollution checks.",
+    "keyMetrics": [
+      "100% resolution of file path and storage issues",
+      "Seamless integration with the Parivahan website",
+      "Enhanced app reliability for pollution checks"
+    ],
+    "challenges": "The NodeJS Electron app faced issues with reading and storing files in the correct paths, which disrupted its operation and integration with the Parivahan website.",
+    "solutions": "OnEggy Technologies debugged and resolved file handling and storage issues in the NodeJS Electron app. This ensured accurate file path management and proper data storage for seamless functionality with the Parivahan website.",
+    "team": {
+      "clients": [
+        {
+          "name": "Prozone Engineers",
+          "company": "Prozone Engineers"
+        }
+      ],
+      "backendTeam": "NodeJS and Electron Developers",
+      "integrationTeam": "API and Data Handling Specialists"
+    },
+    "conclusion": "The NodeJS Electron desktop application for Prozone Engineers now operates seamlessly, with accurate file path handling and proper data storage. The app's integration with the Parivahan website ensures reliable pollution checks for vehicles, meeting government standards.",
+    "testimonials": [
+      {
+        "author": "Prozone Engineers",
+        "position": "Client, Prozone Engineers",
+        "content": "OnEggy Technologies resolved critical issues in our NodeJS Electron app with expertise and efficiency. Their work ensures the app now operates flawlessly and integrates seamlessly with the Parivahan website."
+      }
+    ],
+    "category": "application-support"
+  },
+  {
+    "slug": "terraform-iac-smile-foundation",
+    "title": "Terraform Infrastructure as Code (IaC) for Cloud Management at Smile Foundation",
+    "company": "Smile Foundation",
+    "metaDescription": "OnEggy Technologies implemented Terraform IaC for Smile Foundation, automating and managing their cloud services and applications efficiently.",
+    "keywords": [
+      "Terraform IaC",
+      "Cloud management",
+      "Infrastructure as Code",
+      "AWS cloud automation",
+      "Smile Foundation"
+    ],
+    "summary": "OnEggy Technologies implemented Terraform IaC for Smile Foundation to efficiently automate and manage their cloud services and applications.",
+    "description": "Smile Foundation partnered with OnEggy Technologies to leverage Terraform Infrastructure as Code (IaC) for managing their cloud services. This implementation automated the deployment and management of cloud resources, ensuring cost efficiency, scalability, and streamlined operations across their applications.",
+    "image": "/case-study/smile-foundation-case-study-oneggy-technologies.png",
+    "content": "OnEggy Technologies introduced Terraform IaC for Smile Foundation to automate and manage their cloud services and applications. Using Terraform, we enabled scalable and cost-effective resource provisioning and management, ensuring their cloud infrastructure supports high availability and optimized performance. This solution streamlined the deployment of applications and ensured consistency across their cloud environment.",
+    "keyMetrics": [
+      "100% automation of cloud resource provisioning",
+      "Reduced manual intervention by 70%",
+      "Improved scalability and cost efficiency for cloud operations"
+    ],
+    "challenges": "Smile Foundation required a scalable and automated solution to manage their diverse cloud services and applications efficiently, while minimizing manual processes.",
+    "solutions": "OnEggy Technologies implemented Terraform IaC to automate the deployment and management of cloud resources, ensuring seamless scalability and consistent infrastructure for their applications.",
+    "team": {
+      "clients": [
+        {
+          "name": "Irteza Husain",
+          "company": "Smile Foundation"
+        },
+        {
+          "name": "MD Istaf",
+          "company": "Smile Foundation"
+        }
+      ],
+      "cloudTeam": "AWS Cloud Engineers",
+      "devOpsTeam": "Terraform Specialists"
+    },
+    "conclusion": "The Terraform IaC solution provided by OnEggy Technologies has streamlined cloud operations for Smile Foundation. This scalable and automated approach ensures efficient resource management and cost-effective cloud infrastructure.",
+    "testimonials": [
+      {
+        "author": "Irteza Husain",
+        "position": "Operations Head, Smile Foundation",
+        "content": "OnEggy Technologies Terraform IaC implementation has revolutionized how we manage our cloud infrastructure. Their expertise has made a significant difference in our operations."
+      },
+      {
+        "author": "MD Istaf",
+        "position": "IT Manager, Smile Foundation",
+        "content": "The automation and scalability achieved through Terraform have simplified our cloud management tasks. OnEggy Technologies is an exceptional partner."
+      }
+    ],
+    "category": "cloud-automation"
+  },
+  {
+    "slug": "kubernetes-eks-management-meradoc-healthtech",
+    "title": "Kubernetes and EKS Cluster Management for MeraDoc HealthTech",
+    "company": "MeraDoc HealthTech",
+    "metaDescription": "OnEggy Technologies manages Kubernetes and AWS EKS clusters for MeraDoc HealthTech, ensuring seamless deployment, scalability, and performance of healthcare applications.",
+    "keywords": [
+      "Kubernetes cluster management",
+      "EKS cluster management",
+      "AWS EKS",
+      "Healthcare applications",
+      "MeraDoc HealthTech",
+      "Kubernetes monitoring"
+    ],
+    "summary": "OnEggy Technologies manages Kubernetes and EKS clusters for MeraDoc HealthTech, ensuring optimized scalability and seamless performance for healthcare applications.",
+    "description": "MeraDoc HealthTech partnered with OnEggy Technologies to manage their Kubernetes and AWS EKS clusters. Our solutions ensure high availability, seamless deployment, and optimized performance of healthcare applications, supporting their mission to provide advanced healthtech solutions. Our expertise in Kubernetes and AWS EKS enables MeraDoc HealthTech to maintain scalable and efficient operations.",
+    "image": "/case-study/prozone-engineers-nodejs-electron-oneggy-technologies.png",
+    "content": "OnEggy Technologies provides end-to-end Kubernetes and EKS cluster management for MeraDoc HealthTech. By leveraging Kubernetes for container orchestration and AWS EKS for scalable deployments, we ensure the reliability and performance of their healthcare applications. Our solutions include cluster monitoring, workload balancing, and automated scaling to support their dynamic requirements.",
+    "keyMetrics": [
+      "99.9% uptime ensured for healthcare applications",
+      "Seamless deployment of microservices across Kubernetes clusters",
+      "Improved resource utilization with automated scaling"
+    ],
+    "challenges": "MeraDoc HealthTech required a reliable and scalable cluster management solution to handle their dynamic healthcare applications, ensuring uninterrupted service delivery.",
+    "solutions": "OnEggy Technologies implemented a robust Kubernetes cluster management strategy, utilizing AWS EKS for scalability and automated resource optimization. This ensured high availability and seamless operation of healthcare applications.",
+    "team": {
+      "clients": [
+        {
+          "name": "MeraDoc HealthTech",
+          "company": "MeraDoc HealthTech"
+        }
+      ],
+      "cloudTeam": "AWS and Kubernetes Specialists",
+      "devOpsTeam": "Cluster Management Experts"
+    },
+    "conclusion": "Our Kubernetes and EKS cluster management solutions have enabled MeraDoc HealthTech to achieve high availability, scalability, and seamless performance for their healthcare applications, supporting their mission of delivering cutting-edge healthtech solutions.",
+    "testimonials": [
+      {
+        "author": "MeraDoc HealthTech",
+        "position": "Client, MeraDoc HealthTech",
+        "content": "OnEggy Technologies expertise in Kubernetes and AWS EKS management has been invaluable. Their solutions ensure our healthcare applications run reliably and efficiently."
+      }
+    ],
+    "category": "cloud-management"
   }
 ]
