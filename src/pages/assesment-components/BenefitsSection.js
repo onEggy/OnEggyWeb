@@ -81,7 +81,7 @@ const BenefitsSection = () => {
             </div>
             <div className="text-center">
               <a
-                href="#"
+                href="#free-assessment-form"
                 className="inline-block bg-white text-cyan-600 font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-gray-100 transition"
               >
                 {FreeAssessmentCTA.buttonText}

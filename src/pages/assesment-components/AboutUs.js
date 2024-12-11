@@ -43,7 +43,7 @@ const AboutUsSection = () => {
             with smart strategies and expert support.
           </p>
           <a
-            href="#contact"
+            href="#free-assessment-form"
             className="inline-block bg-cyan-600 text-white font-semibold px-8 py-4 rounded-lg shadow-lg hover:bg-cyan-700 transition-transform transform"
           >
             Learn More About Us

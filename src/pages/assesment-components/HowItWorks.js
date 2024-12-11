@@ -12,7 +12,7 @@ const EnhancedHowItWorks = () => {
       >
         {/* Section Title */}
         <h2 className="text-4xl font-extrabold text-gray-900 mb-12">
-          How It Works
+          How It <span className="text-cyan-600">Works</span>
         </h2>
 
         {/* Image Representation */}

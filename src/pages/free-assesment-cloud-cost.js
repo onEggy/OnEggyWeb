@@ -17,7 +17,7 @@ const Marquee = dynamic(() => import("react-fast-marquee"), { ssr: false });
 
 // Import icons from simple-icons
 import {
-    siAmazonaws,
+    siAmazonwebservices,
     siDigitalocean,
     siHeroku,
     siOpenstack,
@@ -28,11 +28,14 @@ import {
     siDocker,
     siGrafana,
     siPrometheus,
-    siRedis
+    siRedis,
+    siElasticsearch,
+    siMysql,
+    siMongodb
 } from "simple-icons";
 
 const techIcons = [
-    { icon: siAmazonaws, label: "AWS" },
+    { icon: siAmazonwebservices, label: "AWS" },
     { icon: siDigitalocean, label: "DigiOcean" },
     { icon: siHeroku, label: "Heroku" },
     { icon: siOpenstack, label: "Openstack" },
@@ -44,6 +47,9 @@ const techIcons = [
     { icon: siPrometheus, label: "Promet." },
     { icon: siRedis, label: "Redis" },
     { icon: siDocker, label: "Docker" },
+    { icon: siElasticsearch, label: "ELK" },
+    { icon: siMysql, label: "MySQL" },
+    { icon: siMongodb, label: "MongoDB" }
 ];
 
 const CloudOptimizationPage = () => {
@@ -57,7 +63,7 @@ const CloudOptimizationPage = () => {
             <Head>
                 <meta
                     name="keywords"
-                    content="cloud cost optimization, free assessment, AWS, Azure, GCP, cost savings"
+                    content="AWS cloud cost optimization, Free AWS cost assessment, Optimize AWS expenses, AWS cost management services, Reduce AWS billing, Save money on AWS cloud, Free AWS cost optimization consultation, AWS cost-saving tips, Detailed AWS usage analysis, Expert AWS cost reduction services, Start saving on AWS costs, Best AWS cost optimization strategies, Claim free AWS assessment, Cloud cost optimization for enterprises, AWS expense management for startups, cloud cost optimization"
                 />
             </Head>
 
