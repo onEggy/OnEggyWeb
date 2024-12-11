@@ -11,6 +11,9 @@ import Testimonials from "./assesment-components/Testimonials";
 import BenefitsSection from "./assesment-components/BenefitsSection";
 import AboutUsSection from "./assesment-components/AboutUs";
 import HowItWorks from "./assesment-components/HowItWorks";
+import CustomerSuccessSection from "./assesment-components/CustomerSuccessSection";
+import PartnerShowcase from "./components/partnerShowcase";
+import SecurityAssurance from "./assesment-components/SecurityAssurance";
 
 // Import marquee library
 const Marquee = dynamic(() => import("react-fast-marquee"), { ssr: false });
@@ -199,16 +202,22 @@ const CloudOptimizationPage = () => {
 
             <AboutUsSection />
 
+            <PartnerShowcase />
+
+            <CustomerSuccessSection />
+
             <HowItWorks />
 
             <BenefitsSection />
+
+            <SecurityAssurance />
 
             {/* Services Section */}
             <div className="py-20">
                 <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-20">
                     {/* Main Heading */}
                     <h2 className="text-4xl font-semibold text-center text-gray-900 mb-16">
-                        Elevate Your Business with Our Expertise
+                        Elevate Your Business with <span className="text-cyan-600">Our Expertise</span>
                     </h2>
 
                     {/* Services Container */}

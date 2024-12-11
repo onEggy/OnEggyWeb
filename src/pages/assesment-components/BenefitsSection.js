@@ -51,7 +51,7 @@ const BenefitsSection = () => {
         {/* Benefits Section */}
         <div className="text-center">
           <h2 className="text-4xl font-semibold text-gray-900 mb-6">
-            Why Optimize Your Cloud?
+            Why Optimize Your <span className="text-cyan-600">Cloud?</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Cloud cost optimization is not just about saving money, It's about achieving maximum efficiency and scalability for your business.

@@ -64,7 +64,7 @@ const Testimonials = () => {
             >
                 {/* Left Section */}
                 <div className="md:w-1/3 text-center md:text-left">
-                    <h2 className="text-4xl font-semibold text-gray-900 mb-4">
+                    <h2 className="text-4xl font-semibold text-cyan-600 mb-4">
                         Testimonials
                     </h2>
                     <p className="text-lg text-gray-700">
