@@ -46,7 +46,7 @@ const services = () => {
       />
       <div className="mt-16 m-4">
         {arr.map((props, index) => (
-         props.publicVisible &&  <TechCompo key={index} {...props} index={index} />
+          props.publicVisible && <TechCompo key={index} {...props} index={index} />
         ))}
       </div>
       <div className="px-4 sm:px-0">

@@ -77,25 +77,25 @@ const footer = () => {
       </div>
 
 
-              <div className="hidden">
-                {services.map((service) => (
-                    <div key={service["meta-title-slug"]} className="mb-4">
-                        <h3 className="text-xl font-bold">{service["meta-title"]}</h3>
-                        <p className="text-sm">{service.content}</p>
-                        <a
-                            href={`https://www.oneggy.com/service/${service["meta-title-slug"]}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-500 hover:underline"
-                        >
-                              {service["meta-title"]}
-                        </a>
-                    </div>
-                ))}
-            </div>
+      <div className="hidden">
+        {services.map((service) => (
+          <div key={service["meta-title-slug"]} className="mb-4">
+            <h3 className="text-xl font-bold">{service["meta-title"]}</h3>
+            <p className="text-sm">{service.content}</p>
+            <a
+              href={`https://www.oneggy.com/service/${service["meta-title-slug"]}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 hover:underline"
+            >
+              {service["meta-title"]}
+            </a>
+          </div>
+        ))}
+      </div>
 
 
-              
+
       <div className="flex space-x-4 justify-center sm:hidden mt-4 mb-8">
 
         <div className="bg-white w-8 h-8 flex justify-center items-center rounded-full text-l_black">
