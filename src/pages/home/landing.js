@@ -20,7 +20,9 @@ import PartnerShowcase from "../components/partnerShowcase";
 import FaqSection from "../components/faq";
 import HiringBanner from "../components/hiring";
 import LatestBlogs from "../components/latestBlogs";
-import ScheduleCall from "../components/scheduleCall";
+// import ScheduleCall from "../components/scheduleCall";
+// import OffersMarquee from "../components/OffersSection";
+import SlidingBanner from "../components/SlindingBanner";
 
 const Home = (skill) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,6 +46,7 @@ const Home = (skill) => {
     <div className="landingPage1 container max-w-7xl mx-auto overflow-x-hidden md:overflow-x-visible">
       <Navbar />
       <Sidebar />
+      <SlidingBanner />
       <div className="mt-16 sm:max-h-screen flex flex-col md:flex-row items-center justify-between px-4">
         
         {/* Left Content */}
