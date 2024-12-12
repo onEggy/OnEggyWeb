@@ -20,6 +20,7 @@ import PartnerShowcase from "../components/partnerShowcase";
 import FaqSection from "../components/faq";
 import HiringBanner from "../components/hiring";
 import LatestBlogs from "../components/latestBlogs";
+// import Lottie from 'react-lottie-player';
 // import ScheduleCall from "../components/scheduleCall";
 // import OffersMarquee from "../components/OffersSection";
 import SlidingBanner from "../components/SlindingBanner";
@@ -48,7 +49,7 @@ const Home = (skill) => {
       <Sidebar />
       <SlidingBanner />
       <div className="mt-16 sm:max-h-screen flex flex-col md:flex-row items-center justify-between px-4">
-        
+
         {/* Left Content */}
         <div className="md:w-1/2 lg:w-[50%] space-y-6 text-center md:text-left">
           {/* Main Heading */}
@@ -70,7 +71,7 @@ const Home = (skill) => {
         {/* Right Image */}
         <div className="md:w-1/2 lg:w-[40%] flex justify-center md:justify-end mt-10 md:mt-0">
           <Image
-            src="/ai.png"
+            src="/hero-oneggy-technologeis.png"
             alt="OnEggy Technologies DevOps and Cloud Consulting and Managed tech"
             width={500}
             height={478}
