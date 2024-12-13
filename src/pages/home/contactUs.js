@@ -1,25 +1,24 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Headline from "../components/headline";
-import Toast from "@/utils/toast";
 
 const contactUs = () => {
   const title = "Contact Us";
   const desc = "Let's talk about your digital services requirements.";
 
   const [selectedOption, setSelectedOption] = useState("sayHi");
-  const [toast, settoast] = useState(false)
-  const [toastMsg, settoastMsg] = useState({ type: '', message: '' })
-
-  const handleOptionChange = (event) => {
-    setSelectedOption(event.target.value);
-  };
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     mobileNumber: "",
     message: "",
   });
+  const [isLoading, setIsLoading] = useState(false); // Loading state for button
+  const [successMessage, setSuccessMessage] = useState(""); // Success message
+
+  const handleOptionChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -31,62 +30,49 @@ const contactUs = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
+    setIsLoading(true);
 
-      fetch('https://formsubmit.co/ajax/ask@oneggy.com', {
-        method: 'POST',
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/ask@oneggy.com", {
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ _subject: selectedOption + " " + "OnEggy Contact WebPage Submission", ...formData })
-      }).then(res => {
-        settoast(true)
-        settoastMsg({
-          message: 'Request sent. Will contact You shortly..!',
-          type: 'success'
-        })
+        body: JSON.stringify({
+          _subject: `${selectedOption} OnEggy Contact WebPage Submission`,
+          ...formData,
+        }),
+      });
 
-
-        setTimeout(() => {
-          settoast(false)
-          setFormData({
-            name: "",
-            email: "",
-            mobileNumber: "",
-            message: "",
-          })
-        }, 2000);
-
-
-
-      }).catch(err => {
-        console.log('error is', err)
-
-        settoast(true)
-        settoastMsg({
-          message: 'server error, Please try again.',
-          type: 'error'
-        })
-
-        setTimeout(() => {
-          settoast(false)
-        }, 2000);
-
-
-      })
-
+      if (response.ok) {
+        setSuccessMessage("Request sent successfully! We'll contact you shortly.");
+        setFormData({
+          name: "",
+          email: "",
+          mobileNumber: "",
+          message: "",
+        });
+      } else {
+        throw new Error("Server error");
+      }
     } catch (error) {
-      console.log('error is', error)
+      setSuccessMessage("There was an issue. Please try again.");
+    } finally {
+      setIsLoading(false);
+      setTimeout(() => setSuccessMessage(""), 3000); // Hide success message after 3 seconds
     }
   };
 
   return (
-    <div id='contactUs' className="px-4 sm:px-0">
-
-      <Headline title={title} desc={desc} titleCss={'md:font-bold md:text-4xl'} descCss={'md:w-[18rem] mt-7 md:ml-16'} />
-      {/* <div className="sm:mt-20 mt-10 bg-offWhite p-14 rounded-3xl flex relative overflow-hidden"> */}
-      <div className="sm:mt-20 mt-10 bg-offWhite p-6 sm:p-16  rounded-3xl flex relative overflow-hidden">
-        <div className="sm:w-7/12   sm:p-10 w-full">
+    <div id="contactUs" className="px-4 sm:px-0">
+      <Headline
+        title={title}
+        desc={desc}
+        titleCss={"md:font-bold md:text-4xl"}
+        descCss={"md:w-[18rem] mt-7 md:ml-16"}
+      />
+      <div className="sm:mt-20 mt-10 bg-offWhite p-6 sm:p-16 rounded-3xl flex relative overflow-hidden">
+        <div className="sm:w-7/12 sm:p-10 w-full">
           <div className="flex justify-center sm:justify-start items-center space-x-4 mb-8">
             <label className="flex">
               <input
@@ -106,7 +92,7 @@ const contactUs = () => {
                 onChange={handleOptionChange}
                 className="mr-2 ml-8 sm:ml-0 w-6 h-6"
               />
-              <div>Get a Qoute</div>
+              <div>Get a Quote</div>
             </label>
           </div>
           <form className="sm:w-10/12" onSubmit={handleSubmit}>
@@ -117,6 +103,7 @@ const contactUs = () => {
               <input
                 type="text"
                 id="name"
+                placeholder="John Doe"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
@@ -131,6 +118,7 @@ const contactUs = () => {
               <input
                 type="email"
                 id="email"
+                placeholder="john.doe@example.com"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
@@ -139,12 +127,13 @@ const contactUs = () => {
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="email" className="block mb-2 text-sm font-medium">
+              <label htmlFor="mobileNumber" className="block mb-2 text-sm font-medium">
                 Mobile Number*
               </label>
               <input
                 type="text"
                 id="mobileNumber"
+                placeholder="+919811133005"
                 name="mobileNumber"
                 minLength={10}
                 maxLength={10}
@@ -155,14 +144,12 @@ const contactUs = () => {
               />
             </div>
             <div className="sm:mb-4">
-              <label
-                htmlFor="message"
-                className="block mb-2 text-sm font-medium"
-              >
+              <label htmlFor="message" className="block mb-2 text-sm font-medium">
                 Message*
               </label>
               <textarea
                 id="message"
+                placeholder="Describe your service you're looking for"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
@@ -171,34 +158,45 @@ const contactUs = () => {
                 required
               />
             </div>
-            <button className="bg-l_black text-white hover:bg-white border hover:border-l_black hover:text-l_black px-6 py-4 mt-8 rounded-xl w-full hidden sm:block"
-
+            <button
+              type="submit"
+              className="bg-l_black text-white hover:bg-white border hover:border-l_black hover:text-l_black px-6 py-4 mt-8 rounded-xl w-full hidden sm:block"
+              disabled={isLoading}
             >
-              Send Message
+              {isLoading ? "Sending..." : "Send Message"}
             </button>
-
-            {toast && <Toast message={toastMsg.message} type={toastMsg.type} />}
-
           </form>
         </div>
         <div className="hidden sm:block">
           <img
             src="/home/contactUs/Illustration1.svg"
-            alt="illustraion"
-            // width={"494px"}
-            // height={'394px'}
+            alt="Illustration"
             className="absolute -right-[300px] top-[13px]"
-          // className="scale-125 translate-y-14"  
           />
         </div>
       </div>
-      <button className="bg-l_black text-white hover:bg-white border hover:border-l_black hover:text-l_black px-6 py-4 mt-8 rounded-xl w-full sm:relative sm:hidden"
 
+      <AnimatePresence>
+        {successMessage && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+            className="fixed bottom-10 left-10 bg-green-500 text-white px-6 py-3 rounded-lg shadow-md"
+          >
+            {successMessage}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <button
+        type="submit"
+        className="bg-l_black text-white hover:bg-white border hover:border-l_black hover:text-l_black px-6 py-4 mt-8 rounded-xl w-full sm:relative sm:hidden"
+        disabled={isLoading}
       >
-        Send Message
+        {isLoading ? "Sending..." : "Send Message"}
       </button>
-
-
     </div>
   );
 };
