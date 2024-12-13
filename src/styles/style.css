@@ -256,5 +256,13 @@ span i {
   }
 }
 
+.svgContainer {
+  background-image: url("/SVG curve.svg");
+  background-size: 100% 210%;
+  background-position-y: center;
+  background-position-x: -100%;
+  background-repeat: no-repeat;
+}
+
 
 

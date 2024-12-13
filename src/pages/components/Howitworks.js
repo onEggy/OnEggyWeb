@@ -1,17 +1,8 @@
-import SVGCurve from '../../../public/curve.svg';
-
+import svgmobile from "../../../public/svg_mobile.svg";
+import Image from "next/image";
 const HowItWorks = () => {
     return (
         <div className="py-16 bg-gray-50 max-md:py-1">
-            <style jsx>{`
-                .svgContainer {
-                    background-image: url(${SVGCurve});
-                    background-size: 104% 145%;
-                    background-position-y: center;
-                    background-position-x: -100%;
-                    background-repeat: no-repeat;
-                }
-            `}</style>
             <h2 className="text-[50px] text-left font-bold mb-6 mx-12 max-md:mx-4 max-md:mb-0 max-md:text-3xl">
                 How It Works?
             </h2>
@@ -22,9 +13,9 @@ const HowItWorks = () => {
                 consultation at no cost.
             </p>
 
-            <div className="hidden md:block relative max-w-screen-lg mx-auto mt-[12vh]">
+            <div className="hidden md:block relative mx-auto mt-[12vh]">
                 <div className="flex svgContainer justify-around items-center z-10 relative h-[300px]">
-                    <div className="absolute bg-[#191A23] text-white rounded-lg p-6 shadow-lg w-56 left-[15%] z-10 top-[-32%]">
+                    <div className="absolute bg-[#191A23] text-white rounded-lg p-6 shadow-lg w-[297px] left-[2%] z-10 top-[-2%]">
                         <h3 className="text-[55.17px] text-center font-bold mb-2">
                             01
                         </h3>
@@ -37,7 +28,7 @@ const HowItWorks = () => {
                         </p>
                     </div>
 
-                    <div className="absolute z-10 bg-[#222938] text-white rounded-lg p-6 shadow-lg w-56 left-[37%] top-[40%]">
+                    <div className="absolute z-10 bg-[#222938] text-white rounded-lg p-6 shadow-lg w-[297px] left-[30%] top-[15%]">
                         <h3 className="text-[55.17px] text-center font-bold mb-2">
                             02
                         </h3>
@@ -50,7 +41,7 @@ const HowItWorks = () => {
                         </p>
                     </div>
 
-                    <div className="absolute z-10 bg-[#191A23] text-white rounded-lg p-6 shadow-lg w-56 left-[59%] top-[-32%]">
+                    <div className="absolute z-10 bg-[#191A23] text-white rounded-lg p-6 shadow-lg w-[297px] left-[54%] top-[-32%]">
                         <h3 className="text-[55.17px] text-center font-bold mb-2">
                             03
                         </h3>
@@ -63,11 +54,11 @@ const HowItWorks = () => {
                         </p>
                     </div>
 
-                    <div className="absolute z-10 bg-[#222938] text-white rounded-lg p-6 shadow-lg w-56 left-[81%] top-[40%]">
+                    <div className="absolute z-10 bg-[#222938] text-white rounded-lg p-6 shadow-lg w-[297px] left-[76%] top-[40%]">
                         <h3 className="text-[55.17px] text-center font-bold mb-2">
                             04
                         </h3>
-                        <h4 className="text-[25.45px] text-center font-semibold mb-2">
+                        <h4 className="ttext-[25.45px] text-center font-semibold mb-2">
                             Ongoing Support & Monitoring
                         </h4>
                         <p className="text-[16px] text-center">
@@ -78,7 +69,7 @@ const HowItWorks = () => {
                 </div>
             </div>
             <div className="flex flex-wrap gap-4 md:hidden mx-auto relative overflow-hidden h-fit">
-                <img src="/svg_mobile.svg" alt="svg" className="absolute z-0 top-[50%] left-1/2 rotate-90 translate-x-[-50%] translate-y-[-53%] w-full h-full" />
+                <Image src={svgmobile} alt="svg" className="absolute z-0 top-[50%] left-1/2 rotate-90 translate-x-[-50%] translate-y-[-53%] w-full h-full" />
                 <div className="flex-[40%] max-w-[50%] z-20">
                     <div className="w-full bg-[#222938] text-white rounded-lg py-6 px-4 shadow-lg mt-10 min-h-56 max-w-60 flex flex-col items-cente mx-auto gap-4">
                         <h3 className="text-3xl text-center font-bold">
