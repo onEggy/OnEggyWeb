@@ -21,6 +21,7 @@ const section1 = () => {
       image: "/contact/Akash.png",
       alt: "Profile Image",
       sns: faLinkedin,
+      href: "https://www.linkedin.com/in/redaakash"
     },
     {
       name: "Akanshu Sharma",
@@ -28,6 +29,7 @@ const section1 = () => {
       image: "/contact/Akanshu.png",
       alt: "Profile Image",
       sns: faLinkedin,
+      href: "https://www.linkedin.com/in/redaakash"
     },
   ];
   return (
@@ -68,7 +70,9 @@ const section1 = () => {
                   <p>{data.position}</p>
                 </div>
                 <div className="bg-l_black p-1 pr-2 pl-2 rounded-full text-blue m-auto items-start mb-16">
-                  <FontAwesomeIcon icon={data.sns} />
+                  <Link href={data.href} target="_blank">
+                    <FontAwesomeIcon icon={data.sns} />
+                  </Link>
                 </div>
               </div>
             </div>

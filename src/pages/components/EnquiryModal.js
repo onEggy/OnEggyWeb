@@ -1,9 +1,18 @@
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 export default function EnquiryModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [nextUrl, setNextUrl] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    service: "",
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -18,6 +27,50 @@ export default function EnquiryModal() {
   }, []);
 
   const closeModal = () => setIsOpen(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/ask@oneggy.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          _subject: "New submission by Popup Form!",
+          _next: "https://www.oneggy.com/thankyou",
+        }),
+      });
+
+      if (response.ok) {
+        setSuccessMessage("Your request has been submitted successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          service: "",
+        });
+      } else {
+        setSuccessMessage("There was an error. Please try again.");
+      }
+    } catch (error) {
+      setSuccessMessage("There was an error. Please try again.");
+    } finally {
+      setIsLoading(false);
+      setTimeout(() => setSuccessMessage(""), 3000); // Clear the success message after 3 seconds
+    }
+  };
 
   if (!isOpen) return null; // Prevent rendering when modal is closed
 
@@ -52,16 +105,7 @@ export default function EnquiryModal() {
           </h2>
 
           {/* Form */}
-          <form
-            action="https://formsubmit.co/ask@oneggy.com"
-            method="post"
-            className="space-y-4"
-          >
-            {/* Hidden Inputs for FormSubmit */}
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="https://www.oneggy.com/thankyou" />
-            <input type="hidden" name="_subject" value="New submission by Popup Form!" />
-
+          <form onSubmit={handleSubmit} className="space-y-4">
             {/* Name Field */}
             <div>
               <label htmlFor="name" className="block text-gray-700 font-medium mb-1">
@@ -71,6 +115,8 @@ export default function EnquiryModal() {
                 type="text"
                 name="name"
                 id="name"
+                value={formData.name}
+                onChange={handleChange}
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Enter your name"
                 required
@@ -86,6 +132,8 @@ export default function EnquiryModal() {
                 type="email"
                 name="email"
                 id="email"
+                value={formData.email}
+                onChange={handleChange}
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Your email address"
                 required
@@ -101,6 +149,8 @@ export default function EnquiryModal() {
                 type="tel"
                 name="phone"
                 id="phone"
+                value={formData.phone}
+                onChange={handleChange}
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Your phone number"
                 required
@@ -115,6 +165,8 @@ export default function EnquiryModal() {
               <textarea
                 id="service"
                 name="service"
+                value={formData.service}
+                onChange={handleChange}
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Describe the service you're looking for"
                 rows="4"
@@ -126,15 +178,31 @@ export default function EnquiryModal() {
             <button
               type="submit"
               className="w-full text-black font-semibold py-2 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              disabled={isLoading}
               style={{
                 backgroundColor: "rgb(55 255 244 / var(--tw-bg-opacity))",
               }}
             >
-              Connect Now
+              {isLoading ? "Submitting..." : "Connect Now"}
             </button>
           </form>
         </div>
       </div>
+
+      {/* Success Message */}
+      <AnimatePresence>
+        {successMessage && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+            className="fixed bottom-10 left-10 bg-green-500 text-white px-6 py-3 rounded-lg shadow-md"
+          >
+            {successMessage}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

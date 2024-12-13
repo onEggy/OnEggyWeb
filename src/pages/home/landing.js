@@ -71,7 +71,7 @@ const Home = (skill) => {
         {/* Right Image */}
         <div className="md:w-1/2 lg:w-[40%] flex justify-center md:justify-end mt-10 md:mt-0">
           <Image
-            src="/hero-oneggy-technologeis.png"
+            src="/hero-oneggy-technologeis.svg"
             alt="OnEggy Technologies DevOps and Cloud Consulting and Managed tech"
             width={500}
             height={478}
