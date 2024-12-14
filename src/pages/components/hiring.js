@@ -24,6 +24,7 @@ const HiringBanner = () => {
     <div className="py-6 overflow-hidden">
       {/* First Marquee Row */}
       <Marquee
+        className={"overflow-hidden"}
         speed={30}
         gradient={true}
         pauseOnHover
@@ -42,6 +43,7 @@ const HiringBanner = () => {
 
       {/* Second Marquee Row */}
       <Marquee
+        className={"overflow-hidden"}
         speed={40}
         gradient={true}
         direction="right"
