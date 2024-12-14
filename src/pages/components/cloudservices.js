@@ -66,7 +66,7 @@ const CloudServices = () => {
             ref={containerRef}
             className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-400 text-black flex flex-col items-center justify-center px-8 py-12"
         >
-            <div className="flex flex-row items-center justify-between gap-6 flex-wrap mb-12">
+            <div className="flex  flex-row items-center justify-between gap-[100px] flex-wrap mb-12">
                 <div>
                     <h2 className="text-[46px] font-bold text-gray-900">
                         Our Cloud <br /> Services
@@ -89,7 +89,7 @@ const CloudServices = () => {
                 <p>Active Card Index: {activeCardIndex}</p>
             </div> */}
 
-            <div className="w-full max-w-6xl flex space-x-4 overflow-x-auto">
+            <div className="w-full max-w-[77rem] flex space-x-4 overflow-x-auto">
                 {services.map((service, index) => (
                     <motion.div
                         key={index}

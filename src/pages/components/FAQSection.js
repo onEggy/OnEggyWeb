@@ -18,7 +18,7 @@ const FAQSection = () => {
     };
 
     return (
-        <div className="flex flex-col lg:flex-row items-center justify-between p-8">
+        <div className="flex mx-[5rem] flex-col lg:flex-row items-center justify-between p-8">
             {/* Left Side: FAQs */}
             <div className="lg:w-2/3 w-full space-y-4">
                 <h2 className="text-[40px] font-bold mb-4">FAQ</h2>

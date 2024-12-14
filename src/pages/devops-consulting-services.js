@@ -12,6 +12,7 @@ import FooterDevops from "./components/footer-devops.js";
 import NavbarDevops from "./components/navbar-devops.js";
 import ProjectLogosDevops from "./home/project-logosDevops.js";
 import ToolsAndTech from "./components/ToolsandTech.js";
+import NewSection from "./home/eknayasectionekdum";
 
 const DevOpsConsultingServices = () => {
     const currentPageData = seoData["/privacy-policy"];
@@ -29,7 +30,8 @@ const DevOpsConsultingServices = () => {
             <CloudServices />
             <CloudTestimonials />
             <HowItWorks />
-            <ToolsAndTech />
+            <NewSection />
+            {/* <ToolsAndTech /> */}
             <FAQSection />
             <GetStarted />
             <FooterDevops />

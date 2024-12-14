@@ -2,16 +2,18 @@ import svgmobile from "../../../public/svg_mobile.svg";
 import Image from "next/image";
 const HowItWorks = () => {
     return (
-        <div className="py-16 bg-gray-50 max-md:py-1">
-            <h2 className="text-[50px] text-left font-bold mb-6 mx-12 max-md:mx-4 max-md:mb-0 max-md:text-3xl">
-                How It Works?
-            </h2>
-            <p className="text-gray-600 text-left text-[16px] mb-12 max-w-2xl mx-12 max-md:mx-4 max-md:max-w-lg max-md:mb-2 max-md:text-sm">
-                Whether you are looking to develop a strategy, migrating to
-                Cloud, obtain managed services, or further modernize and secure
-                your applications and infrastructure, request an expert
-                consultation at no cost.
-            </p>
+        <div className="py-16 md:mx-[5rem] bg-gray-50 max-md:py-1">
+            <div className="">
+                <h2 className="text-[50px] text-left font-bold mb-6 mx-12 max-md:mx-4 max-md:mb-0 max-md:text-3xl">
+                    How It Works?
+                </h2>
+                <p className="text-gray-600 text-left text-[16px] mb-12 max-w-2xl mx-12 max-md:mx-4 max-md:max-w-lg max-md:mb-2 max-md:text-sm">
+                    Whether you are looking to develop a strategy, migrating to
+                    Cloud, obtain managed services, or further modernize and secure
+                    your applications and infrastructure, request an expert
+                    consultation at no cost.
+                </p>
+            </div>
 
             <div className="hidden md:block relative mx-auto mt-[12vh]">
                 <div className="flex svgContainer justify-around items-center z-10 relative h-[300px]">

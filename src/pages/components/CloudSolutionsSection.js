@@ -3,7 +3,7 @@ export default function CloudSolutionsSection() {
         <div className="bg-gray-900 text-white py-12">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 {/* Content Wrapper */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="mt-[80px] mb-[77px] grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {/* Left Column */}
                     <div>
                         <h2 className="text-[40px] font-bold mb-4">

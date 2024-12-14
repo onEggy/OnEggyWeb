@@ -16,7 +16,7 @@ const FooterDevops = () => {
 
     return (
         // <div className="w-full">
-        <div className=" bg-l_black  px-8">
+        <div className=" bg-l_black  px-[4rem]">
             <nav className="py-10 flex flex-col sm:flex-row justify-between w-full px-12">
                 <Image
                     src={logov1}
