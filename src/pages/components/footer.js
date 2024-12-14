@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import logo from "../../../public/logoWhite.png";
-import logo from "../../../public/logoWhite.png";
 import logov1 from "../../../public/logov1.png";
 import {
   faFacebookF,
