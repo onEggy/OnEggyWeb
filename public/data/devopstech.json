@@ -1,0 +1,77 @@
+{
+    "projectLogos": [
+        {
+            "id": 1,
+            "name": "East Mojo Logo",
+            "url": "/service/node.svg",
+            "alt": "east-mojo-logo"
+          },
+      {
+        "id": 2,
+        "name": "East Mojo Logo",
+        "url": "/service/aws.svg",
+        "alt": "beyond logo"
+      },
+      {
+        "id": 3,
+        "name": "BitsMemoir",
+        "url": "/service/python.svg",
+        "alt": "BitsMemoir logo"
+      },
+      {
+        "id": 4,
+        "name": "mgmt Logo",
+        "url": "/service/mysql.svg",
+        "alt": "mgmt Company Logo"
+      },
+      {
+        "id": 5,
+        "name": "Numberwize Logo",
+        "url": "/service/php.svg",
+        "alt": "Numwize logo"
+      },
+      {
+        "id": 6,
+        "name": "Smile Foundation Logo",
+        "url": "/service/mongodb.svg",
+        "alt": "Smile Logo"
+      },
+      {
+        "id": 7,
+        "name": "MobileGoo Logo",
+        "url": "/service/firebase.svg",
+        "alt": "Smile Logo"
+      },
+      {
+        "id": 8,
+        "name": "BeingBitsmart",
+        "url": "/service/html.svg",
+        "alt": "BeingBitsmart Logo"
+      },
+      {
+        "id": 9,
+        "name": "EklyLine",
+        "url": "/service/css.svg",
+        "alt": "EklyLine Logo"
+      },
+      {
+        "id": 10,
+        "name": "EklyLine",
+        "url": "/service/vue.svg",
+        "alt": "EklyLine Logo"
+      },
+      {
+        "id": 11,
+        "name": "EklyLine",
+        "url": "/service/react.svg",
+        "alt": "EklyLine Logo"
+      },
+      {
+        "id": 12,
+        "name": "EklyLine",
+        "url": "/service/angular.svg",
+        "alt": "EklyLine Logo"
+      }
+    ]
+  }
+  

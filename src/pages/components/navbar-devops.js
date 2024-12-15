@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "../../../public/logo.png";
 import logov1 from "../../../public/logodevops.png";
+import logomobile from "../../../public/logomobilewaala.png";
 
 const navigation = [
     { name: "About Us", href: "/about", current: true },
@@ -44,14 +45,14 @@ export default function NavbarDevops() {
     }, []);
 
     return (
-        <Disclosure as="nav" className={`lg:sticky top-0 z-50 bg-white`}>
+        <Disclosure as="nav" className={`lg:sticky top-0 z-50 bg-[radial-gradient(circle_at_top_left,_#37FFF4_-500%,_#ffffff_70%)]`}>
             {({ open }) => (
                 <>
-                    <div className="mx-auto mt-4 max-w-7xl px-2 md:px-6 lg:px-4 md:pt-2">
+                    <div className="mx-auto pt-[69px] max-w-7xl px-2 md:px-6 lg:px-4 md:pt-2">
                         <div className="relative flex h-16 items-center justify-between">
                             <div className="flex flex-shrink-0 items-center lg:hidden">
                                 <a href="/">
-                                    <Image src={logov1} alt="OnEggy Technologies Cloud & DevOps Company logo" width="305" height="61.17" />
+                                    <Image src={logomobile} alt="OnEggy Technologies Cloud & DevOps Company logo" width="122" height="40" className="mb-4" />
                                 </a>
                             </div>
                             <div className="absolute inset-y-0 right-0 flex items-center lg:hidden order-2">

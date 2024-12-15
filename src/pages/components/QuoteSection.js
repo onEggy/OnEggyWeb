@@ -4,7 +4,7 @@ import tick from '../../../public/tick.svg';
 
 export default function QuoteSection() {
     return (
-        <div className="bg-gradient-to-b mt-12 from-white to-sky-50 py-12">
+        <div className=" py-12 bg-[radial-gradient(circle_at_top_left,_#37FFF4_-500%,_#ffffff_70%)]">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 {/* Left Content */}
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">

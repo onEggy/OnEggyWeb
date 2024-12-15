@@ -1,59 +1,61 @@
 export default function CloudSolutionsSection() {
     return (
-        <div className="bg-gray-900 text-white py-12">
+        <div className="bg-gray-900 text-white py-[46px] md:py-12">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 {/* Content Wrapper */}
-                <div className="mt-[80px] mb-[77px] grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="mt-[46px] md:mt-[80px] mb-[77px] grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {/* Left Column */}
                     <div>
-                        <h2 className="text-[40px] font-bold mb-4">
+                        <h2 className="md:text-[40px] text-[30px] font-bold mb-4">
                             Unlock innovation with the right cloud solutions
                         </h2>
-                        <p className="text-[16px] text-gray-400 mb-6">
+                        <p className="text-[10px] md:text-[16px] text-gray-400 mb-6">
                             Cloud has emerged as an enabler of transformation, but there are still significant barriers to cloud expansion, and many enterprises are struggling to prove transformation value or to tie IT value to business outcomes. Kyndryl Cloud Services provide a 360-degree approach, identifying and solving challenges and driving transformation forward.
                         </p>
-                        <div className="flex space-x-8">
-                            <div>
-                                <div className="flex flex-row">
-                                    <svg width="24" height="22" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
-                                    </svg>
-                                    <svg width="24" height="22" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
-                                    </svg>
-                                    <svg width="24" height="22" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
-                                    </svg>
-                                    <svg width="24" height="22" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
-                                    </svg>
-                                    <svg width="24" height="22" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
-                                    </svg>
+                        <div className="md:block hidden">
+                            <div className=" flex  space-x-8">
+                                <div>
+                                    <div className="flex flex-row">
+                                        <svg width="24" height="22" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
+                                        </svg>
+                                        <svg width="24" height="22" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
+                                        </svg>
+                                        <svg width="24" height="22" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
+                                        </svg>
+                                        <svg width="24" height="22" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
+                                        </svg>
+                                        <svg width="24" height="22" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
+                                        </svg>
+                                    </div>
+                                    <p className="text-xl font-semibold"> 4.9 / 5 rating</p>
+                                    <p className="text-gray-400">databricks</p>
                                 </div>
-                                <p className="text-xl font-semibold"> 4.9 / 5 rating</p>
-                                <p className="text-gray-400">databricks</p>
-                            </div>
-                            <div>
-                                <div className="flex flex-row">
-                                    <svg width="24" height="22" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
-                                    </svg>
-                                    <svg width="24" height="22" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
-                                    </svg>
-                                    <svg width="24" height="22" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
-                                    </svg>
-                                    <svg width="24" height="22" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
-                                    </svg>
-                                    <svg width="24" height="22" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
-                                    </svg>
+                                <div>
+                                    <div className="flex flex-row">
+                                        <svg width="24" height="22" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
+                                        </svg>
+                                        <svg width="24" height="22" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
+                                        </svg>
+                                        <svg width="24" height="22" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
+                                        </svg>
+                                        <svg width="24" height="22" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
+                                        </svg>
+                                        <svg width="24" height="22" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
+                                        </svg>
+                                    </div>
+                                    <p className="text-xl font-semibold">4.8 / 5 rating</p>
+                                    <p className="text-gray-400">Chainalysis</p>
                                 </div>
-                                <p className="text-xl font-semibold">4.8 / 5 rating</p>
-                                <p className="text-gray-400">Chainalysis</p>
                             </div>
                         </div>
                     </div>
@@ -69,8 +71,8 @@ export default function CloudSolutionsSection() {
 
                             </div>
                             <div>
-                                <h3 className="text-[28px] font-semibold">Reduce Risk</h3>
-                                <p className=" text-[18px] text-gray-400">
+                                <h3 className="text:[19.37px] md:text-[28px] font-semibold">Reduce Risk</h3>
+                                <p className="text:[12.45px] md:text-[18px] text-gray-400">
                                     Our cloud services are designed with integrated industry best practices, processes, and methodologies that are reinforced by 24/7 support.
                                 </p>
                             </div>
@@ -86,8 +88,8 @@ export default function CloudSolutionsSection() {
 
                             </div>
                             <div>
-                                <h3 className="text-[28px] font-semibold">Manage</h3>
-                                <p className="text-[18px] text-gray-400">
+                                <h3 className="text:[19.37px] md:text-[28px] font-semibold">Manage</h3>
+                                <p className="text:[12.45px] md:text-[18px] text-gray-400">
                                     Prioritize your business objectives by entrusting the management of your IT estate.
                                 </p>
                             </div>
@@ -102,13 +104,58 @@ export default function CloudSolutionsSection() {
 
                             </div>
                             <div>
-                                <h3 className="text-[28px] font-semibold">Secure</h3>
-                                <p className="text-[18px] text-gray-400">
+                                <h3 className="text:[19.37px] md:text-[28px] font-semibold">Secure</h3>
+                                <p className="text:[12.45px] md:text-[18px] text-gray-400">
                                     Our modern security and privacy measures safeguard your data.
                                 </p>
                             </div>
                         </div>
                     </div>
+                    <div className="block md:hidden flex space-x-8">
+                        <div>
+                            <div className="flex flex-row">
+                                <svg width="20" height="28" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
+                                </svg>
+                                <svg width="20" height="28" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
+                                </svg>
+                                <svg width="20" height="28" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
+                                </svg>
+                                <svg width="20" height="28" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
+                                </svg>
+                                <svg width="20" height="28" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
+                                </svg>
+                            </div>
+                            <p className="text-[13.99px] font-semibold"> 4.9 / 5 rating</p>
+                            <p className="text-gray-400">databricks</p>
+                        </div>
+                        <div>
+                            <div className="flex flex-row">
+                                <svg width="24" height="22" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
+                                </svg>
+                                <svg width="24" height="22" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
+                                </svg>
+                                <svg width="24" height="22" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
+                                </svg>
+                                <svg width="24" height="22" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
+                                </svg>
+                                <svg width="24" height="22" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13 0L15.9187 8.98278H25.3637L17.7225 14.5344L20.6412 23.5172L13 17.9656L5.35879 23.5172L8.27747 14.5344L0.636266 8.98278H10.0813L13 0Z" fill="#FFC728" />
+                                </svg>
+                            </div>
+                            <p className="text-[13.99px] font-semibold">4.8 / 5 rating</p>
+                            <p className="text-gray-400">Chainalysis</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

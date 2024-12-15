@@ -2,12 +2,12 @@ import svgmobile from "../../../public/svg_mobile.svg";
 import Image from "next/image";
 const HowItWorks = () => {
     return (
-        <div className="py-16 md:mx-[5rem] bg-gray-50 max-md:py-1">
-            <div className="">
-                <h2 className="text-[50px] text-left font-bold mb-6 mx-12 max-md:mx-4 max-md:mb-0 max-md:text-3xl">
+        <div className="py-16 md:px-[5rem] bg-gray-50 max-md:py-1 bg-[radial-gradient(circle_at_top_left,_#37FFF4_-400%,_#ffffff_70%)]">
+            <div className="mt-[61px] md:mt-0">
+                <h2 className="text-[29.76px] md:text-[50px] text-left font-bold mb-6 mx-12 max-md:mx-4 max-md:mb-0 max-md:text-3xl">
                     How It Works?
                 </h2>
-                <p className="text-gray-600 text-left text-[16px] mb-12 max-w-2xl mx-12 max-md:mx-4 max-md:max-w-lg max-md:mb-2 max-md:text-sm">
+                <p className="text-gray-600 text-left text-[10.92px] md:text-[16px] mb-12 max-w-2xl mx-12 max-md:mx-4 max-md:max-w-lg max-md:mb-2 max-md:text-sm">
                     Whether you are looking to develop a strategy, migrating to
                     Cloud, obtain managed services, or further modernize and secure
                     your applications and infrastructure, request an expert
@@ -70,55 +70,55 @@ const HowItWorks = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex flex-wrap gap-4 md:hidden mx-auto relative overflow-hidden h-fit">
-                <Image src={svgmobile} alt="svg" className="absolute z-0 top-[50%] left-1/2 rotate-90 translate-x-[-50%] translate-y-[-53%] w-full h-full" />
-                <div className="flex-[40%] max-w-[50%] z-20">
-                    <div className="w-full bg-[#222938] text-white rounded-lg py-6 px-4 shadow-lg mt-10 min-h-56 max-w-60 flex flex-col items-cente mx-auto gap-4">
-                        <h3 className="text-3xl text-center font-bold">
+            <div className="flex bg-[radial-gradient(circle_at_l,_#37FFF4_-500%,_#ffffff_30%)] flex-wrap gap-4 md:hidden mx-[2%] relative overflow-hidden h-fit">
+                <Image src={svgmobile} alt="svg" className="absolute z-0 top-[55%] left-1/2  translate-x-[-50%] translate-y-[-53%] w-[216px] h-[344px]" />
+                <div className="flex-[40%]  max-w-[50%] z-20">
+                    <div className="w-full bg-[#222938] text-white rounded-lg py-6 px-4 shadow-lg mt-10 min-h-56 max-w-60 flex flex-col items-center mx-auto gap-4">
+                        <h3 className="text-[33.58px] text-center font-bold">
                             01
                         </h3>
-                        <h4 className="text-xl text-center font-semibold">
+                        <h4 className="text-[15.49px] text-center font-semibold">
                             Assessment And Strategy
                         </h4>
-                        <p className="text-sm text-center">
+                        <p className="text-[9.74px] text-center">
                             Hundreds of thriving businesses and Fortune 500
                             firms worldwide
                         </p>
                     </div>
-                    <div className="w-full bg-[#222938] text-white rounded-lg py-6 px-4 shadow-lg mt-2 min-h-56 max-w-60 flex flex-col items-cente mx-auto gap-4">
-                        <h3 className="text-3xl text-center font-bold mb-2">
+                    <div className="w-full bg-[#222938] text-white rounded-lg py-6 px-4 shadow-lg mt-[26.87px] min-h-56 max-w-60 flex flex-col items-cente mx-auto gap-4">
+                        <h3 className="text-[33.58px] text-center font-bold mb-2">
                             03
                         </h3>
-                        <h4 className="text-xl text-center font-semibold mb-2">
+                        <h4 className="text-[15.49px] text-center font-semibold mb-2">
                             Optimization
                         </h4>
-                        <p className="text-sm text-center">
+                        <p className="text-[9.74px] text-center">
                             Hundreds of thriving businesses and Fortune 500
                             firms worldwide
                         </p>
                     </div>
                 </div>
-                <div className="flex-[40%] max-w-[50%] gap-2 mt-10 z-20">
-                    <div className="w-full align-middle bg-[#222938] text-white rounded-lg py-6 px-4 shadow-lg mt-10 min-h-56 max-w-60 flex flex-col items-cente mx-auto gap-4">
-                        <h3 className="text-3xl text-center font-bold mb-2">
+                <div className="flex-[40%] max-w-[50%] gap-2 mt-[40%] z-20">
+                    <div className="w-full align-middle bg-[#222938] text-white rounded-lg py-6 px-4 shadow-lg mt-[10%] min-h-56 max-w-60 flex flex-col items-cente mx-auto gap-4">
+                        <h3 className="text-[33.58px] text-center font-bold mb-2">
                             02
                         </h3>
-                        <h4 className="text-xl text-center font-semibold mb-2">
+                        <h4 className="text-[15.49px] text-center font-semibold mb-2">
                             Implementation
                         </h4>
-                        <p className="text-sm text-center">
+                        <p className="text-[9.74px] text-center">
                             DevOps service provider for their mission-critical
                             projects.
                         </p>
                     </div>
-                    <div className="w-full align-middle bg-[#222938] text-white rounded-lg py-6 px-4 shadow-lg mt-2 min-h-56 max-w-60 flex flex-col items-cente mx-auto gap-4">
-                        <h3 className="text-3xl text-center font-bold mb-2">
+                    <div className="w-full align-middle bg-[#222938] text-white rounded-lg py-6 px-4 shadow-lg mt-[26.87px] min-h-56 max-w-60 flex flex-col items-cente mx-auto gap-4">
+                        <h3 className="text-[33.58px] text-center font-bold mb-2">
                             04
                         </h3>
-                        <h4 className="text-xl text-center font-semibold mb-2">
+                        <h4 className="text-[15.49px] text-center font-semibold mb-2">
                             Ongoing Support & Monitoring
                         </h4>
-                        <p className="text-sm text-center">
+                        <p className="text-[9.74px] text-center">
                             Hundreds of thriving businesses and Fortune 500
                             firms worldwide
                         </p>

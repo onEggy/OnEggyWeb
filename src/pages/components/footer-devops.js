@@ -16,7 +16,7 @@ const FooterDevops = () => {
 
     return (
         // <div className="w-full">
-        <div className=" bg-l_black  px-[4rem]">
+        <div className=" bg-l_black px-[16px] md:px-[4rem] rounded-t-[49px] md:rounded-t-[0px]">
             <nav className="py-10 flex flex-col sm:flex-row justify-between w-full px-12">
                 <Image
                     src={logov1}
@@ -112,17 +112,8 @@ const FooterDevops = () => {
             {/* <footer className="text-white px-4 mt-10 flex flex-col space-y-2 pb-10 md:flex-row md:justify-between md:items-center"> */}
             <footer className="text-white px-4 mt-10 flex flex-col space-y-2 pb-10 md:flex-row md:justify-start md:items-center md:w-10/12 ml-4 ">
                 <p className="mt-2">&copy; {new Date().getFullYear()} OnEggy. All Rights Reserved.</p>
-                <a href="/sitemap" className="ml-28 ">
-                    Sitemaps
-                </a>
-                <a href="/privacy-policy" className="ml-28 ">
+                <a href="/privacy-policy" className="text-center ">
                     Privacy Policy
-                </a>
-                <a href="/terms-and-conditions" className="ml-28 ">
-                    Terms and Conditions
-                </a>
-                <a href="/refund-policy" className="ml-28 ">
-                    Refund Policy
                 </a>
             </footer>
         </div>
