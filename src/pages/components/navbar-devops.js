@@ -52,7 +52,7 @@ export default function NavbarDevops() {
                         <div className="relative flex h-16 items-center justify-between">
                             <div className="flex flex-shrink-0 items-center lg:hidden">
                                 <a href="/">
-                                    <Image src={logomobile} alt="OnEggy Technologies Cloud & DevOps Company logo" width="122" height="40" className="mb-4" />
+                                    <Image src={logov1} alt="OnEggy Technologies Cloud & DevOps Company logo" width="305" height="61.87" className="mb-4" />
                                 </a>
                             </div>
                             <div className="absolute inset-y-0 right-0 flex items-center lg:hidden order-2">

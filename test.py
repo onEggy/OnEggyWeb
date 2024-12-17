@@ -1,297 +1,133 @@
-import numpy as np
 import re
-import pathlib
-import json
-from functools import reduce, cmp_to_key
-from string import ascii_lowercase
-from math import prod, gcd, sqrt
-from itertools import permutations, product
-from llist import dllist as llist
-from copy import deepcopy
-from hashlib import md5, sha256
-from os import environ
+
+from aoc import parse_ints
+
+DAY = int(__file__.split('/')[-1][3:5])
+INPUT_FILE = f'input.txt'
+
+regex_register = re.compile(r'Register ([A-C]): (\d+)')
 
 
-def read():
-    with open(DIR / "input") as f:
-        top, bottom = (f.read() if teststr == "" else teststr).split("\n\n")
+class Computer:
+  opcodes = {
+    0: 'adv',
+    1: 'bxl',
+    2: 'bst',
+    3: 'jnz',
+    4: 'bxc',
+    5: 'out',
+    6: 'bdv',
+    7: 'cdv',
+  }
 
-    return lmap(lambda r: lmap(str, r), top.splitlines()), [
-        mv_c.index(c) for c in bottom.replace("\n", "")
-    ]
+  def __init__(self, file):
+    with open(file) as f:
+      sections = f.read().strip().split('\n\n')
+    for m in regex_register.finditer(sections[0]):
+      label, n = m.groups()
+      setattr(self, label.lower(), int(n))  # assigns self.a, self.b, self.c
+    self.initial_state = (self.a, self.b, self.c)
+    self.program = parse_ints(sections[1])
+    self.ip = 0
+    self.q_out = []
 
+  def reset(self):
+    self.a, self.b, self.c = self.initial_state
+    self.ip = 0
+    self.q_out = []
 
-def maybeint(line):
-    try:
-        return int(line)
-    except:
-        return line
+  def adv(self, combo_operand):
+    """opcode 0"""
+    self.a //= 2 ** self.combo(combo_operand)
+    self.ip += 2
 
+  def bxl(self, literal_operand):
+    """opcode 1"""
+    self.b ^= literal_operand
+    self.ip += 2
 
-mv = [
-    (-1, 0),  # U
-    (0, 1),  # R
-    (1, 0),  # D
-    (0, -1),  # L
-]
+  def bst(self, combo_operand):
+    """opcode 2"""
+    self.b = self.combo(combo_operand) % 8
+    self.ip += 2
 
-mv_c = ["^", ">", "v", "<"]
+  def jnz(self, literal_operand):
+    """opcode 3"""
+    if self.a != 0:
+      self.ip = literal_operand
+    else:
+      self.ip += 2
 
-mv_3d = [
-    (-1, 0, 0),  # U
-    (1, 0, 0),  # D
-    (0, -1, 0),  # L
-    (0, 1, 0),  # R
-    (0, 0, -1),  # B
-    (0, 0, 1),  # F
-]
+  def bxc(self, operand):
+    """opcode 4"""
+    self.b ^= self.c
+    self.ip += 2
 
+  def out(self, combo_operand):
+    """opcode 5"""
+    self.q_out.append(self.combo(combo_operand) % 8)
+    self.ip += 2
 
-def BFS(start, can_walk, goal, cost_fn=None):
-    cost_fn = (lambda _, __: 1) if cost_fn is None else cost_fn
+  def bdv(self, combo_operand):
+    """opcode 6"""
+    self.b = self.a // (2 ** self.combo(combo_operand))
+    self.ip += 2
 
-    options = [(start, 0)]
-    visited = set([start])
+  def cdv(self, combo_operand):
+    """opcode 7"""
+    self.c = self.a // (2 ** self.combo(combo_operand))
+    self.ip += 2
 
-    while options:
-        new_o = []
-        for pos, cost in options:
-            for d in mv:
-                new_p = (pos[0] + d[0], pos[1] + d[1])
-                if new_p[0] < 0:  # lower bound check
-                    continue
-                if new_p[1] < 0:  # lower bound check
-                    continue
-                try:
-                    assert can_walk(pos, new_p)
-                except:
-                    continue  # upper bound check
-                if new_p in visited:
-                    continue
-                visited.add(new_p)
-                cost_ = cost + cost_fn(pos, new_p)
-                new_o.append((new_p, cost_))
-                if goal(new_p):
-                    return cost_
-        options = new_o
-    return None
+  def combo(self, operand):
+    if operand <= 3:
+      return operand
+    if operand == 4:
+      return self.a
+    if operand == 5:
+      return self.b
+    if operand == 6:
+      return self.c
+    raise ValueError
 
+  def run(self, a=None):
+    self.reset()
+    if a is not None:
+      self.a = a
+    program_length = len(self.program)
+    while 0 <= self.ip < program_length:
+      opcode, operand = self.program[self.ip:self.ip+2]
+      getattr(self, self.opcodes[opcode])(operand)
+    return ','.join(map(str, self.q_out))
 
-def can_move(mv_idx, pos, A):
-    new_pos = (pos[0] + mv[mv_idx][0], pos[1] + mv[mv_idx][1])
-    if new_pos[0] < 0 or new_pos[1] < 0:
-        return False
-    if new_pos[0] >= len(A) or new_pos[1] >= len(A[0]):
-        return False
-    if A[new_pos[0]][new_pos[1]] == "#":
-        return False
-
-    if A[new_pos[0]][new_pos[1]] == ".":
-        return True
-
-    if not can_move(mv_idx, new_pos, A):
-        return False
-
-    # move circle
-    newer_pos = (new_pos[0] + mv[mv_idx][0], new_pos[1] + mv[mv_idx][1])
-    A[new_pos[0]][new_pos[1]] = "."
-    A[newer_pos[0]][newer_pos[1]] = "O"
-
-    return True
-
-
-def can_move_two(mv_idx, pos, A, do_move=True):
-    new_pos = (pos[0] + mv[mv_idx][0], pos[1] + mv[mv_idx][1])
-    if new_pos[0] < 0 or new_pos[1] < 0:
-        return False
-    if new_pos[0] >= len(A) or new_pos[1] >= len(A[0]):
-        return False
-    if A[new_pos[0]][new_pos[1]] == "#":
-        return False
-
-    if A[new_pos[0]][new_pos[1]] == ".":
-        return True
-
-    if mv_idx in [1, 3]:
-        if not can_move_two(mv_idx, new_pos, A):
-            return False
-
-        # move circle
-        if do_move:
-            newer_pos = (new_pos[0] + mv[mv_idx][0], new_pos[1] + mv[mv_idx][1])
-            A[newer_pos[0]][newer_pos[1]] = A[new_pos[0]][new_pos[1]]
-            A[new_pos[0]][new_pos[1]] = "."
-
-        return True
-
-    other = (new_pos[0], new_pos[1] - 1)
-    if A[new_pos[0]][new_pos[1]] == "[":
-        other = (new_pos[0], new_pos[1] + 1)
-
-    if not can_move_two(mv_idx, new_pos, A, do_move=False):
-        return False
-    if not can_move_two(mv_idx, other, A, do_move=False):
-        return False
-
-    if not do_move:
-        return True
-
-    can_move_two(mv_idx, new_pos, A, do_move=True)
-    can_move_two(mv_idx, other, A, do_move=True)
-
-    # move circle
-    newer_pos = (new_pos[0] + mv[mv_idx][0], new_pos[1] + mv[mv_idx][1])
-    A[newer_pos[0]][newer_pos[1]] = A[new_pos[0]][new_pos[1]]
-    A[new_pos[0]][new_pos[1]] = "."
-    newer_pos = (other[0] + mv[mv_idx][0], other[1] + mv[mv_idx][1])
-    A[newer_pos[0]][newer_pos[1]] = A[other[0]][other[1]]
-    A[other[0]][other[1]] = "."
-
-    return True
+  def search(self):
+    # in the real input,
+    # it seems like whatever value X of A matches the last N digits of the output,
+    # the smallest value of A that matches the last N+1 digits of the output
+    # is equal to or slightly greater than 8 * X.
+    program = ','.join(map(str, self.program))
+    a = 0
+    while True:
+      output = self.run(a)
+      if output == program[-len(output):]:
+        break
+      a += 1
+    # found last digit, can now start pattern
+    while len(output) < len(program):
+      a *= 8
+      while True:
+        output = self.run(a)
+        if output == program[-len(output):]:
+          break
+        a += 1
+    return a
 
 
-def easy():
-    A = deepcopy(t[0])
-    for x, row in enumerate(A):
-        for y, c in enumerate(row):
-            if c == "@":
-                start = (x, y)
-                A[x][y] = "."
-    for m in t[1]:
-        v = mv[m]
-        if can_move(m, start, A):
-            start = (start[0] + v[0], start[1] + v[1])
+def main():
+  print(f'Day {DAY} part 1: {Computer(INPUT_FILE).run()}')
+  print(f'Day {DAY} part 2: {Computer(INPUT_FILE).search()}')
+  pass
 
-    print("\n".join(["".join(r) for r in A]))
+if __name__ == '__main__':
+  main()
 
-    s = 0
-    for x, row in enumerate(A):
-        for y, c in enumerate(row):
-            if c != "O":
-                continue
-            s += x * 100 + y
-
-    print(s)
-
-
-def hard():
-    A = [
-        [
-            c
-            for c in "".join(
-                [
-                    {
-                        "#": "##",
-                        "O": "[]",
-                        ".": "..",
-                        "@": "@.",
-                    }[c]
-                    for c in r
-                ]
-            )
-        ]
-        for r in t[0]
-    ]
-    print(A[4])
-    for x, row in enumerate(A):
-        for y, c in enumerate(row):
-            if c == "@":
-                start = (x, y)
-                A[x][y] = "."
-    for m in t[1]:
-        v = mv[m]
-        if can_move_two(m, start, A):
-            start = (start[0] + v[0], start[1] + v[1])
-
-    print("\n".join(["".join(r) for r in A]))
-
-    s = 0
-    for x, row in enumerate(A):
-        for y, c in enumerate(row):
-            if c != "[":
-                continue
-            s += x * 100 + y
-
-    print(s)
-
-
-teststr = """##################################################
-##.OO.O.O#........#..O.......O......O..O..O.O...O#
-#O.O#.O......#.#O......O....O.O.....#.#.......#..#
-#.##O.O..#OO...O..O.O..O#.#.O.............O..OO..#
-#.OO#......OOO.OO.OO.O...O.O.................O.O.#
-#.#....#O.......O.#OO.#..O#.O...O.O...O....O.O#O.#
-#O..O...#O.O..#OO#O....O...#....OOO...O.###.#.OO.#
-#.....O.....OO..O......O......O..........OOO..OO##
-#.O#..O...O.......O.....OO...O#...O..OO...O......#
-#O....O...#O......O..O.OO....O..O.OO....#......O##
-##.O..O..#.OO#....#..O.#......O....#.....O..O#..##
-#..#....OO.##.......O..O..#.#..O.O...OO#..O#....O#
-##O.O....O.O.O....OO...O.......O#..........O..O..#
-#.##.O.OO..................#.##O.O...#OO.......OO#
-#O....#O.....OOOO.O.#.OOO#O.....OO...OO..O....#..#
-#.#O.O.......OO..OO.O..O..#.O.O......O.O..#O.O...#
-##..OO.O...#.....O#O.O..O.OO#.O.OOO...O....#O.#.O#
-#....O.....O#O..O.O..O...............OO.O.O.O.OO.#
-#.OO.O...O..O..OO#O..#....OO...O...O.O#.O.#......#
-#..OO.....O...O..#O........O..O.O.O..#...O...#...#
-#O......OO.O.........O#OOO.O..O...OO..........#O.#
-#.O.....#.......#O......O........#.O.O...OO.O..OO#
-#.#OO...#.#.O...OO.O.....#OO.O...O.....O.O#.O.O..#
-#.O........#.O..O.O..#.#O#.OOO.....O..#.....#....#
-#..O.O..#O#....OO#OO.#O#@.O..O.O.#...#.O.........#
-#O....O.....O...O.#........O.OO.O..#...O....OO...#
-#..OO.....O#.........O#........OOO...OO...#O#O..O#
-#O....O...#O.O......O..OOO....OO#O..OO...........#
-#O#.O..O...OO..........O.O...O.......OOO.........#
-#...O.....O...O..#OOOO..O......#....#.O....O.....#
-#..O..O.OOOO.O.......O.....O...#....O...O..OO.O.O#
-#..OOO..O..OO.OO..O......O...#O...#.....O.....O..#
-#..OO.O..O..#O....OO.....OO..O#O..#..O.#..#....O.#
-#.O.#.#..##O.....O.....#OO...#......O.OO.O..OOOO.#
-#..OO.O..O#.....#....O#......#......#.O..#..O..O.#
-#O#...O.O..#....O.OO#.O.#....O.....#O......O..O.##
-#......##O.OO.O#.O...O..OO#.O..###........O.OOO..#
-#...O..#..O....O.#..#......O..O..#O...O...O......#
-#.OO.OOOO.OO..#...OO......O.O.....O...O....#..O#O#
-#O..#OOOO..#.O.O.......O...O.OO...O.........OO...#
-#.O.....OO..O.....O.O#..OO...O#......O.....O....O#
-#O.O..O.O...OO.O.....##...O..O....#O...OOO...O.#.#
-##.O..O.O.O..##O#......O.OOO.#.....O.....O..#....#
-#....#...O#...#..##.O.............O..#O..O..#.O..#
-#...O..O#O....O...O...#.....O#OO...O.....#.O.....#
-#.#O...O.O.O..O.#.O....O..O#..O.OOO..O....OO.....#
-#......O..........O..#.#.....O...O..OO..O.O.##..##
-#.O..O..OO.OOO..O...O.....O....O.......OOOOOO.O..#
-#...#.O.#O#....#.O....OO..O.##....O.O.#.....#..O.#
-##################################################
-
->vv^v>^^<>vv>v>^^<<^^>>^><^v<v<^>>v^><><<<<vv<^vv<^<>>><<v<^>>>>^^>>>v^v>^<v>>^^<>>^>^v><vv>v<^<^>><<v>^v^^v<^><<<<^><^v>^<>>^^vv<<<v^^><>vv<<<^<^v<>v<<<>>>v>v^>><v<>>^v^<v^v><<v<<^>^^<<^v>^v>vv^<><v^<v<^>v^<>^><<<^>>>^v^>>^^^^<<v<^>vv<^<><<>vvv<><vv><><v><^<v^^^v><<<<<vvv<>^<^>>vv^^^>v^>^v^^^v>^^><<<>^^v>^<^<>vv>>v^v<^^<<v><>>><^^v^<^<^v<^><^vv>vvvvv><>v<^^v<^v<<v>>>v<v<<>>^<v^>vv^>v<<^^<^<>v<><^v>vv>>^>><v<v<>^^<^><>v<v<>^^<v^vvv>>><v>><vvv><>v^v^<^<<v<v^^v<^^v^>^vv>^^<>v^^^^>vv<v^^^<^^v^^<>^><v><>v>^<v^vvv^<<^>>^^>^<>vv>v>v<^><v^v^<>^<^^><>^<v>vv<>v>^>>v^^^^>>v<v<^v<<v<>v<>^<>vv<>><<>v<vv^^<v<v^<^><v>^^^<^>vvv<^<<vv<v>^^^^<^>>><>>>v>>v><^<vv^<v^<^vv>><>v^<v<>>>><<v><v^>v^v^^<v<v<^v>^><<>>>v<v^<<>^^^^^v^^^<<v^<v>>>v<^vvv^>>^v^<^vv^v>^vvv>>^^^>v^>>^><^>^^<^<<^v><^<^<<>^^<<^<vv>>v^vvvvvv><v<^^v><^><><>^<<>v^><<>v<v>><<v^^vv^^v<>^>>>>>^>>^>><<v>v<v<>^>v<v^v^^<^<vv^^>>v>v<<<>^v^<<<^>^>^vv^^>v>>>^^>><v><>^<><^>><v>>v^<<<<^v^>v^>^v^v<>v^>v<^v><<>^^<>>v<>^<>vv^>v>^v<^><v>v><^><<<^>>v^<<>>^v
-<>>>^v<<>^<<v<>^<>>><^v<<<>^<^<<vvv>^<v><>^vv^<<>v^vvv<<^v><>^v>^v><v<>>>^vv^v<vvv>^<>^<v<^^<>vvv<<^>v^^^v^>>^vv>^vv>^^>>>^<v<^v<vv>^>v>v<v<>><vv<^v>^^^vvv^^vv<>^<v><^>^<^>>v>><>><^v>^>^>^^<<vv>v>v>>^<^><<^<v<<<^<v><<^v^><^><v^^<^^<<<><>>^v><^^<<>>v^^<^v><^<v>v><>><>v<>^v^<<>>v^<>><<^<<v>^<^>v<v<vv<<v><<^<<>>v>>^>v<v^><^>^><<<><v<<<^^>vv<v^^vv^>>><v^<>v>^v<<><^<^<<>>>^vv^>^^<<<<vv>v>^^<><><^>>v>v>v>v<><vvv^>>^<>v^<^v^>v^<<><vv^>^^vvv<<<<v>^<vv<<>>>v^v^v^<><<v^<^<>><^^vv^v><v^vv<<^^<v^<>v><^><v^<>^^>^<<>vv<^><>^vv>><v>v><><<vv<v>>^><<^^><^>^vv>^v^><>v>v<>^<<v<<>^>><>v^vv>vvv>v>v>v^v^>^<vv>^<<v>^>v<^vvvv<<^^v<^^<>v<>v^>>v^v^<^v>v>><<<^v>v><vvvv<v>^<^<<<><>v>v<<^>><^vvv><<>^<>>vv>^>^<v>>>vv^<v^>><><^vv>v>v<^^><<<<<<v>^v>v>^^<v>v><<v^^v^vv>>><^v<<<v^v<<>><>^v<>>^<^v^^vv>>>^>v>^vv<<vv>^><^<>>vv>>^^<^><^^>><v^vv^<v^>vv<v<vvv>>vv^v<<>v^>><<vv>><^<>v>vv>^<v>^^>>v><<><^<>><><>^^^^v><^>^^<v^<>v>^^<^<v<vv^^^<>>v^vv^>>^^^vv<<>^^>>^v>>>>^><^^<^<v<>>><v<^<^>vv^v>^^^v^>><>vv><v<>^>>^<<v^v^v^^vv^<v>^<
-><<vv<v^^^<>>>^>v>^<^^^<v<vv<^^<>><^<>><^>><<>v<^>v^><<^><>><<v^>^<<v><^>v>><vv<^v>><>v<<^^v>v><>>><^>v>>^v>>^v<>v>><v^<v<<>>>>^v><<v>^<>>v^^v><>^v<v>>v><^^<vv<<<v><^><><<><^><v^^>v^>>^<<>^v<<^^^v^<<<><^^<><vv<>>^>^>^^>>^><>>v>v><v^>><<v^v<>^v>^^^^<^>>>>vvv>v^v>v>^<>v>v<v>>>^vv<>^><v>^<^<v<<<<>vv^v<v<v^<>^>^^^><>v^^^>v^<>>^vvv^^<>>>^<<<vv>>^v<><^>vv>v^^^<v^>>v>^v>v^>vv>vv>>>vv^vv>>v<>v^vv<v<^><^v^><^vvv^vv<vv^>vvvv<vvv><><>><^<<<^>vv^>>>v<<>v><<^>v^<<<><v<<^^<><<<><<^><>v<><<>v<^v<^^v^^>>><<^vvv<<>>^>><<vv<v<^<<^<^<<<>><<v>^v<>^^^>>>^^<^^^v^^v<<^^v^>v^<<^<>^><>^v>>>^^vvvv>v^<v^<^<v<>><v^^>>v^v^^v^^><v^^^^^^v^v><^<><><<^<vvv^><vv^<<^<v<v<^^^^><>^vvv<v>>>v<v<<v^>v>vv<>^>><<v<v<v^^^>v<<>v<><v>v>><><<v><<^^^v>^vvv>^<^>^v<<>>^><>>v><><^v<v<<^v^<<v^v>v^^<^v>>^v^v>^^^<<<<>v^>>vv<vv<<><>>^^^v^v^^^><><v<><v<<v><<v>vvv>>^^<v>v^^>^><<v<v>>>vv<>^<>^>>v>>^>v>^v>^v>>vv<^<>v>>vv<<v><>^^>><>vv<<><<^>v>>^>><>><<>v><<v>><v^<>v<>>>>v<<v>>v^>^<^>>^<>^v<<vv^<<^v>>v<>v>^>v>>^<>^<vv><^v><>^<<v>^v^^^v>^>v>^^v
-<v^<^^vvv^v<<^<v^<^vv^v>><>><<><>^v^^v^^^<v>v<^v<v^><v<>vv^<vv<^>^>^^>v<>vv^v^^><^^>>><vv<>><v><^>vv>>><^>v>v<^<<><<<v>v<v<>^>>>>v<^><^v^<>^>^><v>^vv<<^>>^v>^^^>^>v^v<>>^<>vv^^v^^<^<vv>v>^v>>>vv^>><v>vv<>><^<><v><v>^v>>>>^<^^<<>v<^vv><<^^<<v<v<v<<v>v>^vv>>vv<<>><^<^<v<>v<>^<^<<>v^vv>v<>^vvv>^<vv><v>^^vvv^^^>^v<^v^v^<<>^vvv>^>^vv>v^>^><vv^^v>vv<<v^><v>v<>>>>>^^>vv>vvv<vv<<^v<^<^v>^<^><v>^><<^<^<v<vv<><<v>^v><<v>>v^vv<^<<v<^>^>v<vv<^v><v^>^<v<>>v<>>^v^v^><^<<^v<vv><v^^^v<>>><>v<vvv><>^vv<>^><v>^><<<^v>>v^^>^^<^v>><^^>v<^<<>^v>><<v<^>>v<><>vv>vv>^^<v<^^<^<<^^<^^><v^>v>><<^^>v<<<^<v^><<^vv><>>v<><>^>v<^<<^>^>v><>v>^vvv<<<^>^^vv^>v<<v>^^^v<<>v^>v>><>>^v<^^><>><>v<v<vv>v<<>^>>^v^^<vv<^>^^>vvv^>v^>><><^<<>^<^<>v^>>^^^<^^v<vv>^<<<<<^vvv<><>^>>><^v<>^^^^v<^>>v>^v<<>>v^v<^>vvv<v^vvv><^^<>^v>^v>>>>^^<^^<<v><<>>>>>^v><>^><^v<>v>v<^^v^vv^^^<^>v^>^^<<v>^>>>^>^^vv<v<^v^<>v<vv^^vv^<^>v>v<<>>>^><<<^v>v<<vv^<>><v<><<>v^<^vv<>v><<^<>^><vvvv>v><<><^^<>v>>^<>vvvvv<<^^^>><v^<v>><>v><><^>><>^>>^><^<^^^^v^^vv
->v^v^^v^>v>^vv<>^<^^vvvv<>^vvv^<^<><v<vv^^>v^^^>^vv>>^^<^<^v^>v^v<^>>v^>^^v>v^<v<^>^>v>^^^<v^v^<v>><v^^^v^>vv^v<>^>>^^<v><^^<><<<v^v><v^v<><^>v^<^<<>>^v><>^^>^^<v^<<><>v<>v<><^<>v<>vv<<^><vv>v>^<>^v^v<v<^^>>^><<v>^<vv^v^^v<^^^v>v<v<vv>>v^>v<^>>^<v<^^>^vv<v^<><>vv><>v<><<>v><v>>>><<<vv>^<<><^>>^vv^>v<^<>v<^^v<v>vv^>v><<v<^^><>><v^<^v^^>>>>>>>v^<v>^>^^<^><^v>^^<<>^^>>^><v>^<vv<^^<<^v>v<^>>vv<^^>vvvv>^^>v>>>^^<<<^<^<^^<^<^v>>^>vv^<v<v^v^<v<><<>v^v^<><<vv>><^<^^v<<vvvv<<<<>>^v><>v^v^<^<^<v^<>vvv^v^>^vv^>^<^><><^v>^v<v>>^v<v^^^v^v^v><v<<v^><<>v<^>^<>v><><>><>v<>v^<v^><v^^<>^^<>v><v>^^>^^v^>v>v<^^<>^>^>v^vvv<>vvv<<^vv<v^^^vvvv^^<<vvvvvv>v<^>>^^vv<^^><<<>v<^^<v><v^>v<^^v><v^<><^<><><^^<<><><<vvv^<<^^><>>v^^<v^^v^>v>vv>^v<^><>vv^^>v<>^v<^^><>^^^><^<<v>v^<<<v<>vv>vv<><^<^<^<^<v>v<v>^v^vv<v<><>v<<^v^^>^>>v>^>v^>^v^<^^^<<<^<<<>^<^v<>v<<vvv<>><<<v^<<>^v<<><vv^<>^vv<^^<<>v<<<^^^<v<v<>v^<^^vvv<<^^^>><^<>v><v<><v<><v^<<vv^^v>>v<v<v><vv<^v><v>v>>v^v^^v><^v><>^v^v^^v^<^^v>><<<vv><^<v^^v>><>^^<v^>^>>><^
-^v^vv>><^><^>>>v>>>>v<>><<vv<vvv^<><>^^>v<<><><^^>>^><^><><^^^^v<^^<><>>>^^<<<^v>>>><<^^^<>v<v>><<v<v^^v^<^>v<^<v>><>v^>v>>^><vvv^^>^v<><><vv>^<<<^vv^<^vv<v>v>v>^<>>^<<v^^^v^>v^<<<v<^^^^v^v<v>>><<<>v>v^><>^vvv<v<v<<<><>><^v^>>^<><<v^v^>vvv^v>^^^><<^v>^>v>^<<^^v>v>>^<v^^<vvv>^>vv^^><<><v<^^<v><>>>^<>><v<<<^^v^v>v^>v<<<^<^<^<^v^>^^v<^<v<>><<>>v<vv^<^>v<^vvv<^>v><>>>^>vv^^>><^>^<v<><v<v^v<<>^^<^^><>^v>^^v^^vv^<>v><^v<>^v<v^v>><v^^<v^<vv<<<<^><^^^^vvv>^v^>^<><v<^>>v><<v><^^>v<^v<v>>><v><<^v^<v^><<<v<>vv>vv<^^vv^^^v<>vv^<v<vv>^v><v<vv>v<<>^^vv>v^<<^<^^v><>vv<>v<v>vv^<v<^><<<v><^v<><<<v^<>>vv>v<v>^v^>v<<<>v^v<^>^^^^^<v<<<v^<^^^<vv>^><>>>v>v<^<v^^>^><<<^^><><v<v<^v>vv^^^<^<>>>^>^v<>v^><>><v^^v>vv<>^<^vv^<<>><>>v^<>>v>>>>^^<v^v<^<v^v^^>v><>v<v^^v^>v^<^^>^^^vv^v<>vvv>^>^^<v^v<^^v>^^v^<>v<^<vvvvvv>>^v<^^v>^<^^<><<v<>>>vv^v<<^<vv>^^><<<<<>^<^v<<v^v<<<<<vvvv<v<>v><^^<>^<<>^v<>^v><>v<v>><^<>><v<><v^>>^<>vv^<v^v<^vv^<><<<v^<>><^>v>v^>v>v^>>^^^>>^>v<<^<>v<>^^v>>>>>v^>v<<^^^^<^^^v<>^>^^v^<<><>><>^<v>v
-v>v^^^^><v^v<vv>v>vv^v>v><>^>v<^><^>>v<>v<<<<v^v^^^^<<<<v^>^<v<v>><v>><^>v><<v><v>^vv^<vvv^^<<<>^<^<v^v>^^<^>v>>vv^vvv<v^><^^v><v<<^<^^<<^^><>>^vvv^<^<>v^>>^v><v<^^<v^<v>v^>^^<<v^<>^<<^<vv^^v<<^v<^vv><^^^v>^vv^v>v>^><^>^^^^<>^^^>v>>v<^v^v>>v>^<<>^<^^<>v^<><<^>^v^v^v^>v<<^vvvv^<<^^<^<^vv>^v>v<^<><v>^><^<><v<<<>>v^<<^<^^^^v>v^<^>v^>>^v^<>v>^v<>>>v>^>^^>>v>>>^^^^><^v<^>vv^>v<>>>v^v^vv^<>^><><^<>^<><vv<v^v>v<^v><>^<<v>>vv<><vvvv>vvvv<^v<<<>vv^<^<^v^<>v^v<v^<<>^v^<vv>>v>><vvv<^>>v^^v>vv^vv<v^<v^v>^^>vv^^>^<>^<^><><<>^>^^<<<>^v>v^<>v^>>><<>>^<>v<<v<^v<v>vvvvv><<<v<^<<>>v^>v^^<^v><^>vv^>vv^<><<>vv>vv^<>^^v^v<vv<>v>^<><^<<>^v<v<^^<>^<>>^<<>^^^<<v>^>><v<^^<><v><><v<v>^>v^<vv<<>>^v<>>^>v^v^>^vvv^><<v<<v<^<v<<><^^^^<<^^<<^<v>^>^>^<>>>^^>v<<^<>v<^<^<>><>v^>v>>>^^^v<^^><^><>v<v>>v^^vv>^v<v<^<^<^>^v>>^<^vv>^^<^^^<^>^<^<v^^<><v^><v^v<v<<^v^<>v>v^^v>^vvv^<^^v<^<>vv<v<v<^v<><^v<>v^><<^vv<v^<<<v<<v<vv<^v<>>^^<v<v>^v<<>v<^^<>v<^^^^<vv^^v<^><<v^>>^<<^<<<<><>>^v<<<>^><<^>vvv^v<^v<v^vv<vv^<>^^<^^^<<^<^<><<v
->vv^>^vv^<>^>>>^<^<vv<v><>>v>^>>v^<><<<^vv^<v^^v^vvv><<^>>v<^v>><^><vvv^>^v^<><<v<^>>^<>^v><v>^<>><><<<^>^<v^<<v<>><^^v><>^<><<<<v<^>>>v>v>v^v<^<^v>^>^><vv<>>><><^v>^v>>v^^>^<v<><^>>>vv>^v>^<>>v><^>^>^v>v<>^>vvv<>>^>vv>^v<><<<<v>>>v<<v^v^<v^vvv>><>^^<vv<^>v>vv<<^^<>^^v^>vv^>>v><><v><^><><v><<^><<^v^>><><><><^^^vv>vvv>v<>>v<><>^<><vv^v<^^>v>><>^>^>^^^v^>v>><><v^vv^>^^<^vvvvv^^<vv^<<v^v<<^^^<<v^^><^v<^>>>^v>v<<<^^><<v<>^vvv^<>^^<^^^v^<^v<<>>^v<<^^^vvv<v><vv><<vvvvv^^vv>><<^><<vv^><<v^v^>^^<>>v^<<>vv>v^v>><^<^>^^<><<v>^^^v<^<<^v>>^>vv^<<>>^v<>v^><<v^vvvv^^<<vv^<><^^^<>v>>^><<^vv><^><<v><<<<v>v^v<^^<v^v^>>><^v<^><<v^vv^^>v>v><>v^<v^<^<<v^^<<^^<>><v^<>^><<>><<>v>><<>^>>^v<^<^>vv<<<^<v>^v<^<v^^>v>>v<v^<<<v^<^v>v^v<^><vv^v<<<<^v>^<>^<<^>v<vv<<^><v<>^>^>v^<<^^v<<^>^>>>v^^^>>v><vvv<^vvv<><^>^>^v^<<^<^v>v^^<><vv^^><^v<<vv^^^<v^vv<<>><<<^<>><v<v<v<<^<<v>>><^vv^v><v^v<<<>v^^><>^<v<vv^^<<^<>v>v<^<vv>^>^v><v>^<^<<^<^^v<v^^v<^><v<<vv>vv<vv<<<vvvv><>^^v>vv>^<<^vvv>vvv<^^<^<<>v^v<v<>^vv><<>^>v>>^<vvv^>
-vvvv^v^^>^>v^<>><<>>^>>>v<><>v<v>v>v><<<^^<>^^v^^^<>vv<v^^<<^v>>^vv^><^^>>>>^^^<<^<<>^>>vv^<>^^^>>vv<>>>^v>v^^<>>>>^^vv>^><^^vvv<^>^^>v>^<<^^><><>>v<>>^<v>>><^<<v>vv>v><^v^^v<<vv>^<v><<>vvv^>^>^<<^>>>^v^><>^^^v<<^v^>>v>v><>vv^v><vvv>vv^<<v<<^^<v<vv<<v>v<^^>>v>>v><>><>v><>v>vv<^^v><v<vv^v<>v<v<<v><<<<<>><>>v^>^^<^<<v<^^^>>^>>v>>>^v>v>^><<<^^>v>^<v^><v>v<>>^<<>^<>v<<^^<<<^<>><^<>v<>vvv<v<<><v^<v<>^><^^<^<^>>>v^>v^>v<v<v<^><>v<>v>^v>v<>><^<^<<><<^<<<>vvv>>>^^^<<vvv>^>^<v<>v^v<<^vvv><>>v>v><vv^vv^^<>^<>v>>^^<<>>><^>><v^<vvvv^>v<^v<<<><>vv^v^>^v>>>^v^<<v<>^>>^>>v>^vvv^v^^<<^^<>vvvvvv>>>v^>>>^vv>^v<<><><v<<^<>vv^^v^<^vv<<<><^v^vvv>v<>>vv>>vv<v<^^<vv<v^<<>vv^v^<<>><^v^^^>^v<<^><>^>><>v>^^<v^><v^>vvv^<>vv<<^^>><^<v<v<>vv>v<v^v<><vv^<<<>v><v>^>^>^<^v>^<^v<^>^^<v^<<<>^<^^v><>v<<^vv><<><vv<v<vv>v^v^v>>v>v>>^^><v<^v^<v>v<>vv^<<v><>><vv>>v<>^>^vv><>^^>v<<^v<v<v>>vv^>><<<v^<><<<^^><<^v^v^<^^<>v^>>>><>^<vv<v>^<v<<^>v^>vv<<<<v><v<v^>>^>v<vv^>vv<^^>^v>>^^^v>>^^v>>^>^<v<^<<<^<v><^>^^<v^>^>><>>>^v>>^<^<^
->><>>>v^><^>>>^<^>v^<^^<><^<^>v<><^><^>v^<><<v>>>>>^>vvv<^><>^>vv>>^^<v<<v^^>>>>^<>><v^>>^v^^^^^>>><<<<>>v<^^v><>>vv^>>vv^v^v<^<^<>>v><>v^^>v><>v>^^<^v<^>>>>>vv<v^vv^<><^^^v^vv>v><<^<v<vv^v>vv^^<^vv<v<v<<<>v<>>vv<><<>v><^<<vv^^v^^<v^v<vv>><^<><^>v<^<><><<^<><^v^<^^v<^<vv^>^<^vv^v>^<^<^<>v^v^<v<v^><><>v>>v<><v<^v^^<<<^>^^^<v><>><><>>>v^>>^>vv>>^vvv^^><^<<<>^^v^v^>v>^v><>^^vvv<^<^^><v^>^>>>^vv^><v<<<<^><<>v>><v<>>v<>^^^>><<<<v^<>^>^v^^<<v^>^^<v<>^v^<>^^<>><<^v<<^>^v>>^><^^<^>^^<<^^<<v<v^<vv^v>^>v^><>>^^^vv><^>>>>>^^v>^<>^<<^^v^^>>v^<<><^v<^v^v>v>v<><^vv<vv>v^^^<v<^^<^<^<^<>^^^<vv^<>v<><<><<v<v<<>v^>>v<>^<^^^^^><<<^>v<v><><>><^<<^^>^>>vvv^><>>><^>>vvv^^>><>^>>vv>v><^>^<v<v<^v^>vv>>v^v>vvvv^^^>vv<<<v>><v<v<>^>v<v^v<><v<>vv^^<vv><^^^v>^v>>v>^v><v<^<<v>vv>vv><<>>>><^v<<^>v>>^<vv^<v<^<v>v>vv^v^v>>>v><<^v^v^v>vvv<>>>>v>v^<<<<^^>^^>v^vv><v^v<vv<^<^^>>v^v><<><v><vv<<vv<v>^<>v^>>v^v>>>>^<>><>v^<^>v^<^<>>^vv<><v<<^v><>^>^<^v>><v^<>v><^v^>^^>v^>^vvv^<<>v^^^>>^<<<v<^v^^><^v^>vv>^vv^v^<>^>vv>vv>>>^>v
-^^^^^>>><<^v><v>>v^>^<^>>>>v^>v>vv<>><^^^v^>^^^v<<><^v^^<^<<^<v<v<v>>v^><v^>^^^^><><<<^vv><<v^^>^v^<>v>^>^>>v>v^v^<>^v^>v^<v><>^<v>v><v^^>^><v^v<>^<v><>^>><vv>^v<>><v^v^v>vv^^<vv>^<^>><^v^^^vv>v>v<<^v>>>^^>v^>^<><^^>^<<v<v>^<<><v><>^^<<>vv>^>vv^vvv>><>>v<>>^vvv><>^^<vvv<<>>><^<v<v<<^>><<<>v^>^<v<>^^<^^<>vvv^v<^^vv<^^^>vv>>v<>v^v<<<>v>>^>v><vv>v^<vv><><>v>>vvvv^>v^v^vv>vv>^>^^<v^^>vv^^v>>^><>>>v<<<>^>^vvv^v^v><>v^^^>^>>v^><><v<^v>v>v>v>vv><<<><<^<>^vvv<<^<><v>vv>^^<<><^v>v>v>v>^vvv<>^v<v^<^^^>>vv^>v<^<<>^<>vv<v<^<vv><v^>^<^>^vv>^^>^>>>>>^vvv>^<<<v^v^v<<>v>^>>>^^<^>vvv>^v>^<v>v>>v><<^<>><^<^^^<>^<v^<><v^vv>^^><^^^<>><v<^>><v^^^v<<>><>><>><>>^^v<>>v><<v^<^^<vv^v^v<v^<v^v><<^v^>v>><v^><v<><^v>^<v^<<^>>^>vv>>v<><>v<v<<>><vvv><^>vv><v^v^^^<>v>v<^v^v<v>v<v>^^>v><><<v>>^>v<vv<>>^v>><^v^>><<>^>>v^v<>vv>^^^>^^vv^<^>v^^^>^<<vv<<^>^>^><>vv<^vv<^^<v<v<><<^v><^>>><^>^v>^v<<^^<<>^<v^v>^v<>>>^>v>v<vv^<v^vv<>>>^vv>><vv>^<vv^^>^^>>>vv>v>v^v>^vv<><>^<>>v<^^<>>v^>>>v>^>>^>v<<<>v^<^vvvv>v>^<v>^<^vv>>><vv^v
-<^><>v><><>^vv^^v^<^<>>^>>v<><<<^>>^<vvvv<>vvv><>v>^>^<^^v<>^<<v^v>vv<v>v<<^v^<>>v>v>^>v>^^v^v^^<^v>^v<<><^v<<<<><<^><^>^v^^vv><>^^vvv<vvv>^>v^v^<>vv>v>^^^v>v>^<<vv^v<>^<^<vvvv^<>v><v^<<<>>vvv^>^^>>v<<v>^^<^v<<v>>v<>><>>^><v<v>>^><^<v^vvv^^>>>>>^>>>vv<v>^>v>>^<<>>v^v^^vv^>v<<><^><v><>^^<>^vvv^v<<^<^v<<><><v>v>>^>v><v>^>v<v^<v>><vv><><><v^v^^>^v<v>>>vv<^><<<v<^v^><<v><<v<^^v>>>vvv^>vv^<v^^><v^<<>v<v>^<>vvv<<^><<>^<^><^><><>>v><>>^vv<^^^^vvv<^v>>v>^<>>>^vv<>^^v<^v<<^><v^^^v<vvvvv><<vvv>v<<v><v<<v<vvv<<^>v^^v^>>^v^<^<vv^v<vvv^<<<><>>^>v>^v<^<>vv>>^><v^>^<<><^>^>><^<><^>v>^^^><v^<><v<v>^<><>>^^>^vv<v^>><>^>>><><>^<<<<v^<<^<v^>^<v<v^^<v<<<v>v<><v^<<^>^^>^>^><^vv>v>>v><v^v<^^v>>v<<>v<^^>v>vv^<v^^<v><v^^<vv<^<v><<vv^v>>^><vv<<><^>^>>v^vv><><^^<<>^^^<>^>>>^v^<>v<<v><vvv<^>v>^<>v^^<^^<v<^^<^v^<><<^<^^<vv^<<<v^><v><<><>><<<v>>v^>><vv<vv^<^>v>v>vvv><^<^v^^<>^<<>>><<^>>vv>v<v<v>vv>>>v^v><<v<>vv^>v<>>v^^<v^v^><^^^<^<>^><<<v^>^>^<>v>vv<<>^v>^<<><^^vv<v>>vvv>>^<<^>^vv<^>>>vv^<^<vv>v<v<<^>vv^<^v>>v>v^
-^<^><v<<>v>v<<^<>^>>v^>>>vv<>v^^<vvv><<v^<<<v>>>vvvv><v<^<<^<>^vv<v^vv>>^^^v^<vv<<v^<>vv^<^vv<<>^^><v<vvvv<<>>v<^<<>^><<><<v<><<v>^><^v^v>v>v<>^vv^v<>>>^v^^>v^>v^v<vv^^>v^><^^^^>>v<vv<^>v>>^^><^<^>>v><v<><<<<v^<>^>><v>>>v^>>v>v^>v<vvv<^^>v<>^<^<^v^^v><^>>v<<v<<<<>v<^^vv>^vv>^^v<>^><>v<<v^<>v>><<^^<v>>^^<<<^v<v<<v^<<v<^v><>^<vv<<>><<v^^^<v>>^<v<^>^>v^>^>vv<v>^v<<>vv<^vv^<<<vv<<><v^^v>^^vvv^v>^<vv>><><<<<v^v^<v^v^>^vvv^v^<<>^>^<<<<^><><>>vv<>^v^<>>vv<>^^><>vv>v>vv><><^<<^<^vv>>v>>^<^^v<v>^^<v<^v<v<vvv>^><>v>v^v>>>vv^<^^^v^<^^>vv>^vvv^v^^v<vv^^<^^v><^v<<<^>v>vv^>^^<^<>vv>^<v^>vvv>^<>>>>vvvvv^^^<^v^>>>v<v>>>v^>^^<<><<v><v^>>^<^vv>^<<v^v^v>v>v<vv<<^<^^^<><^^><>v>^>v<^<^^^^^<^^^>^vv<>>>v><><>v<<<>v>vv><v><><^>^<<v^<^vv<>v^><^vv^^<<>v<<<>v><<>^<^>^^^><<v^>><<<vv^^v>^^<^^vv<<<vvvv^><v>>>v<<<<>^^<<<<>v^<<>^<v^v^>v><v<v><><<>>^^<>^v>^v>>vv^<<<v<><<^v>><v>><<>>^>vv>v>v>>v<>>^><><<><<<><>v<>>^^vv<>^<<<^^><>><v^<v<^>^<v<^^<<<>v>><^<<>v<v^>>^^>^^vv^<^>^^^v^^<v<<<^<vv^<<>>vv>vvv>^>v^vv<><^><>v^^<>vv<
-^v^v>v^><^<<vv^<>^vv^v>>^>v>v^vvv>^>^v<<<<>^<v>>>v^vv>v>>^vv^<><<^><>v>>>v>v>^>v^vvv>^>^^<<<<^<vv^<v<<><>^^v^>vvv>>>^<>>^v<>^^>>>^<<>^>v>>>v<<><v>><<v<<<vv^<><v<^v>>>^vv>>>^>^^<>v^vvv<>vv<v<^<^vv<^^>>>v>v^^^v><^>>vv>>v<<vv^>v>^><<v>^vv^v<><v>^v>vvv^<<<^^>>>>^^v^vv><<<<<<<><^^v^^<v^v^>^^v^^v<>><v^>>v>>v<^^vv>^<^<<v>^<v<<v<>>vv<^<vvv<^v^<v><^<><<<^>>>><>^^v>v<^v<^<vvvv^^<v<^<v<^<>vvv>><<<vv^<vv><vv^v<><<>^v^<^<<v>^>>><^>^^>^<^>^vv^^<>v<^>v^^^^^><<<vv><>v<^v^<>v^>^><>v<<^v>>>^v<^v<^<^vvv>vv<>^v^>>^v^v>vv<v>>v>v^v^>>v>><><v^v<^>vv<<vvv^^<<vv^^<^v^<>v>^<<^>^<<<>v><^<<v>><^vv>^>>vv^vv^<^^^<^v>vvv<v<^v^<>^>>>^v<<<>v^^<^v<>^^^<^v^<>>>v<^<<^vv<>v>^^<v^><<vv<^v<<^v<v<v^<v<<^<<v<^>>>v><>^<><<^^^<^>^>vv<^vvv^><v^v>^^<v^<>^<^<^<<<^v>^^<v<vv>vvvv^<<<>^<^>v^^>^>>vv>^v^><>>^<<^^v>>v<^v>v>^^^>v^^>^>>>>><^^>>v^>^v<>><<vv^^v<^>v^v^vv><<>v^><<>v^>^^^vvvvv^^^>^^>v<>>>^><^v^<^>v><>>>>>vv^^<^v<<<<<<v^^^<^>v<^><><<^v^^<v><<<v>>^^<<v<>v<<>>v>v<<>v^v>vv<>>^><^<>v<v<<^>v^<v<^^^v>^<<v>>vv>>v^<<><<<<<^<<>vv^><^^>>
-<><>^v^^^<vv><<^>^><^<><<v>^<v<>><v><<v>>vv^<^^^<v<^v>^^<^>v<v>v^v^<^><>>^>^^^v>^v^>>><v>^^^^vv<>v>>>^v<<<v<<v<^<v^v>>^>>>>vv><><^^<><vv<^v<vv<v<vv<vv>v<>v<^v>>^>v<><v>^^v^^>^^<<^><<v<<<<v<v><^^v^<^<<<>v>v^<^v<>>^>vv<^>^<>v>v^<^vv^<>>^^v>><vv^<>v>^<<<><^<>v<<v<<>^>><vv>^>v^><<v^>>vvv^v>>>^^<v<<v<v<^>^vv^v>>^^v^>vv>^>>v<>v<>v>><^<v^v>^<^^v<<>v<vv><vv^^>>v>v>v<><^v^v<<>^v>>>><v<>vv^><<>v<v^>>v^^v><<^<vvv^><<^><v<^^v^>^>v<>^<<^><^<>><>>v^<>^v^^<^<>>>><<<v>^^^vvv<<vv>v^<vv^^<^<v><v<vvvvvv>>vvvv^<v<^^>v<>><^<v^>^<^<^<>v<>^>v<>^^>v^^>vv>><v>^>^v^<>vv>>>^>vvv>^<>^<^<>^>v^v^<vv<>vv^<>^<v>><>^^>>vv^<><vv^^v><^>^^vv<>^<<<<vv<<vv^<v<v>^vv><^<<><v<vv^<<v<><>^>v<^^vvv^<^v>v^>>>^<v><^v<<v>^v<vvv>^^<^^vv>>v^^>v<<^>v>><^<v><v^>^>v^^<<v^vv^^vv>^^^<<<v><<<^<^v<v<^>v<^>>v^<<^<^>^v><<<>>>>>><>v^v^><>v^><^^^v>>v^v<<^v^<vv<>>^^<v^vv>v<^<v>>^<<<>><^<>^v>>><>>>^>>^v<<vvv^<<^<v>>^v>vvv<^^^^vv>v<>><>^<<><<vvv>^<^<^v>><>v<^>v^>v>v<<<>vv<>^v^^>>>>^<<>v><>>>^v^>^><<<>v<>><^>>^^<vv^^>^<^vv>>v<v>vv<<><^><<^v<>^v<<v<
-v>^><v^^vvv>>>^<<<>v<v^v>>v>^<^>v^<<^>>^^<^vv>>>><>^><^^^vv><v<^^<<^<<>v^><<v<<v><>v>v<>^>>v^<<^>^<<v>^><^^v<<^>>vv>^^^^^v<^>>>v^v<^v>>>^^>v^<><<vvvv<^<v^>^<><^v^vvvvv^^<<>><<>>v^vv<^v<>>^<<vv<vv>^<<v>^^>v>>^<>><v>>v^v>v>^><<<>>>><<<<<v>^v>>>>^vv<<<^>^>vv><v^v^^vv^v^<v^<^>v><><v>><^^<^>>v^^<^><^<<v<<v>^v>vv^<^><<>v^>><>>v<^>^><vvv<>vv<<vv>^v>v<<^>^<v><<<<>^<^^v<vv<>>><^vv^v<<<>^^v<<><v^v^v>^<v>v^<<v^><v<<^v^^>v^^^^<>^<<>v<>>^>vvv<^^v><^><<vv<<^<<vvv^<>^^<<>v^<^^<<<>^v^<^<><v>v<^v>v<^v>^^<<^^><<<v<^<v>^<<^^><^>><^^<v>v<^^<vv<<>>^v^>^<^<^>v>>^<^>v>vv^<v>vv>vv<<<<<<<<v^<^<v<^<^v<>^<v>^v>^>vv<<^^<v><v<^<v<^>vv>v>^^v^v<>>^^>>>v<^^>><>>vvv^v^<>>vv^<>v^v^v<^>>^>><^><^<v^^vv<<><<<v<^v^vv<<<>vvv>^v^<>><v<v<<<^^^^v^>^><>^v^v>vv^v><^>^<vv^>vv<^<^>>vv<^^^><v^v^>^>v>><<v^v>vvvv^<>v<^>^vv^^^v^<^^v>v>^v>v>>^<v^>v>>>v^^<^v><<<>v<v^v<v^v<vv<<>vv^^<>vvv<><>^<v^>^v<^<^>v>^vv><>vvv^<>><<^v<>^^^<<<vvv^^>^vv<<^>><^v><>vv>vv<^<vv<^v><^>vvv<<^>^^<<^<^>v<^><^^v^^<v<<v>^v<^v>^^<<^^<>v^v^v^<^v^>>><>v^v^v^<<^<><v
-<vv>^<v<<^<v>^^v><>vvvvvvvvv<vv<^v<>v<v><v>^><v<^^v^<^^v^v><v^^^<<<vvv<v^^^><><<<>><^><^vv<<><<^vv<>^v^<>>v>^vv^>v>v<^vvv^><<vv<vvv<v^^>v^v>v>v><v^><v^<^v<v^>>^<>v<>>^<^<^^><vv^^^>>v^^><<>^<^v^^vv^<<vv^<>><v^v^<^^v^v^>>^^<>v<^v>v>v<vvv>^^v<><>>vv>v<v>><^v>^>^>v<^<>^v<<vvv^v>^v>^^>>>vv<>v><vv>>>>^>>v^<<v^v<>v><><^^v>v<v^<vv^>>><<>>>vvv<>^<<v<<<<vv<>>>vv><^vv>><<v>><^v>^<<^v^vvv^v^>^>^v<v^<>v>><v<^v^>><>>>vv^>^>v<^><^^>>><^^v^<>v^^<^>>^<vv^>>v><^^>^^>^^v^>>v^<>^^<<<>><><>>^>^<>^><^><<^>><v>>vvvv^^^vv<><<>>^v<<<<>^^v><^v<<v>vv>>v<><>^^^>^<>v>>v^v<v<>^<<^>v^vv>^^v>v<>^>vvv^^v>^^v<^<>^v><<v^v^<>^^><^vv<<>>>^>v^>^>>><<<v^<<v<<<^v><^^>^v^^>v^^v<^v<>^>^<v<>><^>>>^>><<v^^<<<^><<<v><^>><^>>><v<>^><^vv<^>v>vvv^<^><^v<<<^v^^vv<^<v<>^vvv<>v>^<^><>>>^v^v^^>^^<<>>>^<>>^>^><><><^^<^^^<>>^<^>^><<vv>^<v><^>^^v><>>^>^>v^v<<<v<>v^<><^>v>v>v<>^^>vv^><v>>^v^<>^^>v<><><^<>><^><^v<<<<v^vv><^^v<<^v<v<<<v^<vv^<<<vv>v<<<>vvv<^^<<vv^>^<^vvv^^v^<>v>v^>><>^v>><v^^^><^^<<>^<>^<v>v^<<vv>><<^>><>^v>>>^v^vvv<v^vv^>^>v<
-^>v^^<>^>v^^<>^<<v<><v^>^><<^<>^vv^vvv>>v^vv<<^^>^v<v^<vv>>^^^^vvv>>^^<>^v><<^^>>^><^<^>^v>^v<>^v<<v<<v>^><<v<v^vvv>v<v<<^^>>>^vv^vvv>vv<>^>v<vvv<^^vv>^v^><v^>vv><>><^>^^>^v^^<<^vvvv<v^v>>^>><^>>^<<v^>v>^v><v<<<v>>v<^<>^^^^vv>v>><>><v><><vv<<v<<^<^<^<^v<v^^>>>^<^<v^>>^v<><^<>^<vv<^<v<v^>>vv^>>>v<v^<^v^v^^>v><>^^v<<^^><^^>v^>v^^>>v^^<vv<v^>>^v>><>v>>>^v<<>^vv<^^>>>><v<>^>vvv>^v^>v^>^^<^>>>>>v^^<<>v>v<<>>>><>v<<>>>v^v<><>><<>^vvv<^^^>^v<^<v<^<><<<><^^<<>>v^^<v>^vv<^^v^^^>v^<><<^^v^^v<<<>v>^^^<>v<v<^>>>v^^>^v^^v>^^^v<>^^^>>v^^>>^v^<v<<>>><>><^>^><^v<<<^<<vvv^>>vv<v<vv^><>>^>^^v>v<^v>^^><>>v>>v>v>^^<>^vv<^v^vv^>vv>v<^v>><^v>vv^^>^vv<v<^>v<^v<<<^>^^>^<>>^<v<^>^<^>>v<vv^^<^<>^v<^v^<>>^^v^vv^>v<v^<<vv^<><^v><><^^<v^v<v^><<<>><><<^<^^^vv^v<v<><vvvv<>v<>vv^v^v>v<^v><^>v<<v>><^v<v<<^v<><^^^^v>v^v>v<^^^v^>v<vv>v<<vvv^<^v^<^>><<v<^v<><v<<vv^<>v<v<<>>v>v>>v^^v<<^v>><^<<<><>^^v^^<v<><>^<vv<>v<^<><>>v>v<^<^>><v<<><<>>>^v>^<v>><^>^v^vv<<^>^^v<^v<^^<<>^^vvv<>v<v<>>><v^^v^^v^^>^^<^^>v>^^<<>^>^^^><v>v>v>
-v>v^vvvv^<<<>v<v>v><<<vv<>^>>v<><<<vvv>v>v^^<<<v<^v<<v<>v>v<^v>v^^><^<^^>><^^><^^^><^^v^v^<>>^<^v^^^>^<>^>v<<<vvv^<<^>><<>^<><<v^^<<<vvv><^v>vv<^>v>v>^vv>^<vvv<<v>v<<<>v<>vvv<v^^v<><v<v^v>>v^<<^v>^v^^>>v<>^<<>v>><^^^><^<<><v>><>^^>>^vv^<^^<v^^><<^v^^v<>v<>vv>v^>^>^>^<><><^^<^v>^><^^v^>v>>>^<^^^>vv^^>^>^^<vv><^><><^<<>^v<^<v^<^<v<v<^v<<<>vvv^>^^<><^^<<v>><^>v<^^^>v<v^><v>>>>^v<v>><^v<>v><^^vv^^<v<v<v<v>^<^v>vv><v>^<^<v^v>^<<><^<^v<>vv<<v>v>^<v<<^v<<^<<>^<<v<^>vvv^>^>v<>>^<v^^<^<>v>>v<>^v>>v<v^<>^>>^<^<v^vv>v>>v>>>v>^<<><^<>><><><vv>^<<<<v<<<v^^>^<^<vv>v<>^^>v^^<>v>><^>><vv<vv>>v<vv^v><<<<^>^<<<>><v>>^^^>^>^^v>>>^<<v^v><<^v><>v>^>>>>v^^^<^v>v^>>>^<>^<vv<>v^<><>>>^>^>^^^^<<<>>v><^^<<^><>vv>^<>^<><^vv<^>>vv^^>v^vv<v^<^^^^vv>vv>vv^vv^^^vvv^<>^v^<vv<><^^<<><>v^<^^^<v^<<>>^><<v<^v^><<^>v>>v^<v>^<>>>^v>^<<<v^^v<^>vv^^v<^v^vv>><>><^>^^>v>^^v^<^^v^^><>v<<<v>^>vv^><>v^v^><<>^^<v^<><v><v><>^v><>v><^^v^<v>^><<v>v<v>>>^v><<>^>^^>>v<v<v<vv<<<^>><^<vv<^v>^vvv>>v>>^<<>><v<^>vvv^v^^v><v<><<v<v>v^v^v<<v^
->>^v<v^v><>^^>v<>>v<v^^<vv>^v^>v<v^>>^>><^v>^^>^<^v<>v>>^>v<v>v><vvv^><vv^^^<v>>>>^<><v<^<>v>^v<^v^vv<>^<v>^vvv^>^><v<^v^<<<^^^>>>^<<^v^vv^>>^v^v^^<^v><<v<>^v<v>vv<v^vvv^<<>vvvv<^^v<^<vv<><v<^<>v^^<<>v<<>v^^<<><<<<>v^>^v<^^^<^^<^<^^><>>^<v>^^<^vv<>v>>^^^<>><^<^^v<vv><v^<><<^v><><<^v^>^>^^^<^^><vvv>^>v^<^v>v^>v<v<v^>><<v^^><^v^<<vvv^<>vv>^v<><v>>><>^v<v>^<<<v<>v>v>^<<<^^v<>>v<>v<>v<>v>^<^v><^^v<<^^>v><<<<>^^<vvv>>^^><<v<>><<v><^v^^vv><vv^>^^><v<>^v>^>vv>^<^><>^<v>v>><<^><>>>v^v>>^>v^><^<v<<><<>^vvv<v<<^>vv>v^<><<v^^<v<^<<><v<<>>^><v><>^^^^<v^v<^><>^<^<^<v><<v>v<^v>v<>><>>vv<v^>>v<^<<^^>^<<^^^^<v<v>^v^<^^v^vvv><<v>>>v<<v^><<^>>v>>v<<^^>>v^v><<<^>^^<vv<^^^<<vv>>^vv>>^<vv><<v>vvvv<<<<>vv>^<>>v<^<v>^<v^>><^<^>^vv^<vv><<<<<<<<>v>>>^v<>>^>^<^^><v>vv^v>^<^^<<<v^>^>^^v><vv^^<><v>><<^<<>v<vv^v<vvv<<v<^<^^v>^v<^^<v^>vv<>vv>>^>v<<>^vv^<>>^>vvv<>^^^v^<v^><>>vv^vv^^>>v^v<^^<>>v<>v>>>^<vv>^<><<>v<><>vv^v^v>^<<v^<^>><vv^v>vv>v>>>>^^^vv<^>v>vv^<<><>^^><^<<^>vv^>^^<<>><<><>^>^^<>>v^v<v^v^vvv><^v^^v<>vvv"""
-if environ.get("AOC_SOLVE", "") == "1":
-    teststr = ""
-DIR = pathlib.Path(__file__).parent.absolute()
-lmap = lambda *a: list(map(*a))
-inf = float("inf")
-t = read()
-if __name__ == "__main__":
-    easy()
-    hard()
+# part 1: not 2,2,6,7,1,4,2,6,3

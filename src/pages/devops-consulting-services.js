@@ -31,7 +31,6 @@ const DevOpsConsultingServices = () => {
             <CloudTestimonials />
             <HowItWorks />
             <NewSection />
-            {/* <ToolsAndTech /> */}
             <FAQSection />
             <GetStarted />
             <FooterDevops />
