@@ -446,5 +446,12 @@
         "overview": "Kubernetes is the chessboard of modern IT infrastructure, orchestrating containers with precision and strategic control. Just like a chessboard coordinates pieces to achieve a win, Kubernetes manages pods, nodes, and clusters to deliver high-performance applications. Explore how OnEggy Technologies leverages Kubernetes to ensure seamless coordination and control for your IT environment.",  
         "slug": "kubernetes-chessboard-coordination-oneggy",
         "mdFileLocation": "./public/AllBlogs/markDown/kubernetes-chessboard-coordination-oneggy.md"
+    },
+    {
+        "title": "Plan Your 2025 IT Budget With Our Free Cloud Cost Assessment",  
+        "category": "Cloud Cost Optimization",  
+        "overview": "As businesses prepare their 2025 IT budgets, managing cloud costs effectively is critical. A free cloud cost assessment offers valuable insights into resource usage, cost-saving opportunities, and strategic alignment with your goals. Learn how OnEggy Technologies can help you optimize your cloud spending and streamline your IT budget for the year ahead.",  
+        "slug": "2025-it-budget-cloud-cost-assessment",
+        "mdFileLocation": "./public/AllBlogs/markDown/2025-it-budget-cloud-cost-assessment.md"
     }
 ]
