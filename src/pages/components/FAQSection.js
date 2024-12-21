@@ -18,7 +18,7 @@ const FAQSection = () => {
     };
 
     return (
-        <div className="flex md:px-[5rem] flex-col lg:flex-row items-center justify-between p-8 bg-[radial-gradient(circle_at_top_left,_#37FFF4_-500%,_#ffffff_70%)]">
+        <div className="flex md:px-[5rem] flex-col lg:flex-row items-center justify-between p-8 bg-[radial-gradient(circle_at_bottom_left,_#37FFF4_-400%,_#ffffff_50%)] bg-[radial-gradient(circle_at_top_left,_#37FFF4_-400%,_#ffffff_70%)]">
             {/* Left Side: FAQs */}
             <div className="lg:w-2/3 w-full space-y-4">
                 <h2 className="text-[29.76px] md:text-[40px] font-bold mb-4">FAQ</h2>
