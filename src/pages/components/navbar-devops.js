@@ -48,7 +48,7 @@ export default function NavbarDevops() {
         <Disclosure as="nav" className={`lg:sticky  top-0 z-50 bg-[radial-gradient(circle_at_top_left,_#37FFF4_-500%,_#ffffff_70%)]`}>
             {({ open }) => (
                 <>
-                    <div className="mx-auto  pt-[69px] max-w-7xl px-2 md:px-6 lg:px-4 md:pt-4">
+                    <div className="mx-auto  pt-[40px] max-w-7xl px-2 md:px-6 lg:px-4 md:pt-4">
                         <div className="relative flex h-16 items-center justify-between">
                             <div className="flex flex-shrink-0 items-center lg:hidden">
                                 <a href="/">
