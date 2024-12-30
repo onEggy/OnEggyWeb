@@ -45,10 +45,10 @@ export default function NavbarDevops() {
     }, []);
 
     return (
-        <Disclosure as="nav" className={`lg:sticky top-0 z-50 bg-[radial-gradient(circle_at_top_left,_#37FFF4_-500%,_#ffffff_70%)]`}>
+        <Disclosure as="nav" className={`lg:sticky  top-0 z-50 bg-[radial-gradient(circle_at_top_left,_#37FFF4_-500%,_#ffffff_70%)]`}>
             {({ open }) => (
                 <>
-                    <div className="mx-auto pt-[69px] max-w-7xl px-2 md:px-6 lg:px-4 md:pt-2">
+                    <div className="mx-auto  pt-[69px] max-w-7xl px-2 md:px-6 lg:px-4 md:pt-4">
                         <div className="relative flex h-16 items-center justify-between">
                             <div className="flex flex-shrink-0 items-center lg:hidden">
                                 <a href="/">
@@ -70,7 +70,7 @@ export default function NavbarDevops() {
                   )}
                 </Disclosure.Button> */}
                             </div>
-                            <nav className="py-4 lg:flex lg:justify-around xl:justify-between mx-auto hidden lg:w-full order-1" style={{ marginTop: '20px' }}>
+                            <nav className="py-4 lg:flex lg:justify-around xl:justify-between mx-auto hidden lg:w-full order-1" style={{ marginTop: '0px' }}>
                                 <div className="flex flex-shrink-0 items-center">
                                     <a href="/">
                                         <Image src={logov1} alt="OnEggy Technologies Cloud & DevOps Company logo" width="305" height="61.87" />
