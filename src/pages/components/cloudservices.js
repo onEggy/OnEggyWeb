@@ -81,6 +81,29 @@ const CloudServices = () => {
         return () => scrollHandler.kill();
     }, [services.length, activeCardIndex]);
 
+    useEffect(() => {
+        if (window.innerWidth <= 768) {
+            // Add fade-in/out animation from right to left for mobile view
+            services.forEach((_, index) => {
+                gsap.fromTo(
+                    `.service-card-${index}`,
+                    { opacity: 0, x: 100 },
+                    {
+                        opacity: 1,
+                        x: 0,
+                        scrollTrigger: {
+                            trigger: `.service-card-${index}`,
+                            start: "top 80%",
+                            end: "top 20%",
+                            toggleActions: "play none none reverse",
+                        },
+                        duration: 1, // Slow animation
+                    }
+                );
+            });
+        }
+    }, [services]);
+
     return (
         <section
             ref={containerRef}
@@ -103,7 +126,7 @@ const CloudServices = () => {
                 {services.map((service, index) => (
                     <div
                         key={index}
-                        className={`service-card px-2 flex-grow bg-white rounded-[40px] shadow-lg cursor-pointer overflow-hidden transition-all duration-300 ${activeCardIndex === index ? "w-80" : "w-16"} md:h-[580px] h-[404px] ${activeCardIndex !== index ? "hidden-mobile" : ""}`}
+                        className={`service-card service-card-${index} px-2 flex-grow bg-white rounded-[40px] shadow-lg cursor-pointer overflow-hidden transition-all duration-300 ${activeCardIndex === index ? "w-80" : "w-16"} md:h-[580px] h-[404px] ${activeCardIndex !== index ? "hidden-mobile" : ""}`}
                         style={{
                             transformOrigin: "left",
                             transition: "width 0.5s ease-in-out",
