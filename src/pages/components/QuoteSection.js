@@ -4,12 +4,12 @@ import tick from '../../../public/tick.svg';
 
 export default function QuoteSection() {
     return (
-        <div className=" py-12 bg-[radial-gradient(circle_at_top_left,_#37FFF4_-500%,_#ffffff_70%)]">
+        <div className=" py-[100px] font-inter bg-[radial-gradient(circle_at_top_left,_#37FFF4_-500%,_#ffffff_70%)]">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 {/* Left Content */}
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
                     <div className="lg:col-span-3">
-                        <h1 className="text-[32px] sm:text-[40px] md:text-[50px] lg:text-[62.22px] text-left lg:text-left font-bold text-[#191A15] mb-4">
+                        <h1 className="text-[32px]  sm:text-[40px] md:text-[50px] lg:text-[62.22px] text-left lg:text-left font-bold text-[#191A15] mb-4">
                             #1 DevOps Company for Cloud Services.
                         </h1>
                         <Image

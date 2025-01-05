@@ -28,7 +28,7 @@ const ProjectLogosDevops = () => {
     };
 
     return (
-        <main className="sm:mt-14 my-12  md:ml-4">
+        <main className="sm:mt-14 font-inter my-12  md:ml-4">
             <div className="block md:block mt-5 md:inner md:ml-[7%] md:max-w-[80%]">
                 <Marquee pauseOnHover={false} speed={30} pauseOnClick={false} gradient={true} gradientColor={""} autoFill={true}>
                     {projectLogosData.projectLogos.map((logo) => (

@@ -2,7 +2,7 @@ import svgmobile from "../../../public/svg_mobile.svg";
 import Image from "next/image";
 const HowItWorks = () => {
     return (
-        <div className="py-16 md:px-[5rem] bg-gray-50 max-md:py-1 bg-[radial-gradient(circle_at_bottom_left,_#37FFF4_-400%,_#ffffff_50%)] bg-[radial-gradient(circle_at_top_left,_#37FFF4_-400%,_#ffffff_70%)]">
+        <div className="py-16 font-inter md:px-[5rem] bg-gray-50 max-md:py-1 bg-[radial-gradient(circle_at_bottom_left,_#37FFF4_-400%,_#ffffff_50%)] bg-[radial-gradient(circle_at_top_left,_#37FFF4_-400%,_#ffffff_70%)]">
             <div className="mt-[61px] md:mt-0">
                 <h2 className="text-[29.76px] md:text-[50px] text-left font-bold mb-6 mx-12 max-md:mx-4 max-md:mb-0 max-md:text-3xl">
                     How It Works?

@@ -58,7 +58,7 @@ const CloudTestimonials = () => {
     };
 
     return (
-        <section className="bg-gray-900 text-white py-12 px-6">
+        <section className="bg-gray-900 font-inter text-white py-12 px-6">
             <div className="max-w-[77rem] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 {/* Left Section */}
                 <div className="space-y-6">

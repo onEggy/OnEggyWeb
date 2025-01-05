@@ -107,7 +107,7 @@ const CloudServices = () => {
     return (
         <section
             ref={containerRef}
-            className="min-h-screen bg-[radial-gradient(circle_at_top_left,_#37FFF4_-400%,_#ffffff_50%)] text-black flex flex-col items-center justify-center px-8 py-12"
+            className="min-h-screen font-inter bg-[radial-gradient(circle_at_top_left,_#37FFF4_-400%,_#ffffff_50%)] text-black flex flex-col items-center justify-center px-8 py-12"
         >
             <div className="flex flex-row items-center justify-between md:gap-[100px] flex-wrap mb-12">
                 <div>

@@ -1,6 +1,6 @@
 export default function GetStarted() {
     return (
-        <div className="bg-l_black hidden md:block text-white py-16 px-[16px] md:px-[7rem]">
+        <div className="bg-l_black font-inter hidden md:block text-white py-16 px-[16px] md:px-[7rem]">
             <div className=" mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Left Section */}
                 <div>

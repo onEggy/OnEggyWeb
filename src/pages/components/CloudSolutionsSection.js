@@ -1,6 +1,6 @@
 export default function CloudSolutionsSection() {
     return (
-        <div className="bg-gray-900 text-white py-[46px] md:py-12">
+        <div className="bg-gray-900 font-inter text-white py-[46px] md:py-12">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 {/* Content Wrapper */}
                 <div className="mt-[46px] md:mt-[80px] mb-[77px] grid grid-cols-1 lg:grid-cols-2 gap-8">

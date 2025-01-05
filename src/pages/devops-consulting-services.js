@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import seoData from "../../public/data/seo-data.json";
 import { NextSeo } from "next-seo";
 import QuoteSection from "./components/QuoteSection.js";
@@ -17,13 +17,41 @@ import NewSection from "./home/eknayasectionekdum";
 const DevOpsConsultingServices = () => {
     const currentPageData = seoData["/privacy-policy"];
 
+    const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+    const [lastScrollPosition, setLastScrollPosition] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollPosition = window.scrollY;
+
+            if (currentScrollPosition > lastScrollPosition) {
+                // Scrolling down
+                setIsNavbarVisible(false);
+            } else {
+                // Scrolling up
+                setIsNavbarVisible(true);
+            }
+
+            setLastScrollPosition(currentScrollPosition);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [lastScrollPosition]);
+
     return (
-        <div className=" mx-auto">
+        <div className="mx-auto">
             <NextSeo
                 title={currentPageData.title}
                 description={currentPageData.description}
             />
-            <NavbarDevops />
+            {/* Pass a class to hide/show the navbar */}
+            <div className={`fixed top-0 w-full  z-50 transition-transform duration-300 ${isNavbarVisible ? "translate-y-0" : "-translate-y-full"}`}>
+                <NavbarDevops />
+            </div>
             <QuoteSection />
             <ProjectLogosDevops />
             <CloudSolutionsSection />
