@@ -13,6 +13,7 @@ import NavbarDevops from "./components/navbar-devops.js";
 import ProjectLogosDevops from "./home/project-logosDevops.js";
 import ToolsAndTech from "./components/ToolsandTech.js";
 import NewSection from "./home/eknayasectionekdum";
+import ServicesMobile from "./components/cloudservicesMobile.jsx";
 
 const DevOpsConsultingServices = () => {
     const currentPageData = seoData["/privacy-policy"];
@@ -56,6 +57,7 @@ const DevOpsConsultingServices = () => {
             <ProjectLogosDevops />
             <CloudSolutionsSection />
             <CloudServices />
+            <ServicesMobile />
             <CloudTestimonials />
             <HowItWorks />
             <NewSection />

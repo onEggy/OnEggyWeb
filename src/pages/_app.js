@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { DefaultSeo } from "next-seo";
 import { useRouter } from "next/router";
 import seoData from "../../public/data/seo-data.json";
-import "@/styles/globals.css";
-import "@/styles/tailwind.css";
-import "@/styles/style.css";
-import "@/styles/benefits.css";
+import "../styles/globals.css";
+import "../styles/tailwind.css";
+import "../styles/style.css";
+import "../styles/benefits.css";
 import Script from "next/script";
 import Head from "next/head";
 import { Space_Grotesk } from "next/font/google";
@@ -67,7 +67,7 @@ function App({ Component, pageProps }) {
       <Component {...pageProps} />
 
       {/* Google Tag Manager */}
-      <Script 
+      <Script
         strategy="afterInteractive"
         src="https://www.googletagmanager.com/gtag/js?id=G-93P0M9DCHW"
       />
@@ -81,7 +81,7 @@ function App({ Component, pageProps }) {
       </Script>
 
       {/* Clarity Tracking Script */}
-      <Script 
+      <Script
         strategy="afterInteractive"
         id="clarity-script"
         dangerouslySetInnerHTML={{
