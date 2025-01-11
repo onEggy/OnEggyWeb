@@ -17,9 +17,9 @@ export default function CalConnect() {
   }, []);
 
   return (
-    <div className="flex font-inter flex-col md:flex-row gap-[200px]  justify-between bg-[radial-gradient(circle_at_top_left,_#37FFF4_-400%,_#ffffff_50%)] px-[80px] py-16 min-h-screen">
+    <div className="flex font-inter flex-col md:flex-row gap-0 md:gap-[200px]  justify-between bg-[radial-gradient(circle_at_top_left,_#37FFF4_-400%,_#ffffff_50%)] px-[5px] md:px-[80px] py-16 min-h-screen">
       {/* Left Column: Text Content */}
-      <div className="flex-1 ml-[20px] md:pr-8 text-center md:text-left mb-8 md:mb-0">
+      <div className="flex-1 ml-[20px] md:pr-8 text-left md:text-left mb-8 md:mb-0">
         <h3 className="text-[29.76px] md:text-[50px] font-bold text-black mb-4">
           Get a 30-minute, no-cost strategy session with a Cloud Services expert
         </h3>
