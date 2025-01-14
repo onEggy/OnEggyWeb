@@ -4,12 +4,17 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
+
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+      />
       <body>
 
         <script
-            strategy="lazyOnload"
-            dangerouslySetInnerHTML={{
-              __html: `
+          strategy="lazyOnload"
+          dangerouslySetInnerHTML={{
+            __html: `
                 (function(){
                   var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
                   var scriptLoaded = false;
@@ -30,9 +35,9 @@ export default function Document() {
                   }
                 })();
               `,
-            }}
-          />
-        
+          }}
+        />
+
         <Main />
         <NextScript />
       </body>
