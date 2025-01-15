@@ -9,43 +9,49 @@ import Image from "next/image";
 const CloudTestimonials = () => {
     const testimonials = [
         {
-            content:
-                "Glad that I made the decision to hire full stack services from CONTUS TECH, they understood the complexity of our needs and gave us different options to choose from. Their attention to detail and commitment to deliver the solutions were unmatchable, from my previous experiences with full stack development companies, CONTUS TECH is my absolute go-to full stack development company.",
-            name: "Sagar Mittal",
-            designation: "CEO Infotech Pvt. Ltd.",
-            image: "/sagar.png",
+            "content": "Working with SmileFoundation has been an incredible experience. Their commitment to improving lives through healthcare and education is unmatched. The team’s dedication and professionalism make them a leader in their field, and it’s an honor to collaborate with them on impactful projects.",
+            "name": "Irteza Hussain",
+            "designation": "Tech Manager @ Smile Foundation",
+            "image": "/sagar.png"
         },
         {
-            content:
-                "Glad that I made the decision to hire full stack services from CONTUS TECH, they understood the complexity of our needs and gave us different options to choose from. Their attention to detail and commitment to deliver the solutions were unmatchable, from my previous experiences with full stack development companies, CONTUS TECH is my absolute go-to full stack development company.",
-            name: "Sagar Mittal",
-            designation: "CEO Infotech Pvt. Ltd.",
-            image: "/sagar.png",
+            "content": "PrinterPoint has truly revolutionized how we manage our printing needs. Their seamless integration of technology and expert customer service allows us to run our operations smoothly without worrying about printer downtime. We can’t imagine our business without them.",
+            "name": "Rakesh Aggarwal",
+            "designation": "Director @ PrinterPoint",
+            "image": "/sagar.png"
         },
         {
-            content:
-                "Glad that I made the decision to hire full stack services from CONTUS TECH, they understood the complexity of our needs and gave us different options to choose from. Their attention to detail and commitment to deliver the solutions were unmatchable, from my previous experiences with full stack development companies, CONTUS TECH is my absolute go-to full stack development company.",
-            name: "Sagar Mittal",
-            designation: "CEO Infotech Pvt. Ltd.",
-            image: "/sagar.png",
+            "content": "Anveshan helped us accelerate our market research with deep insights and innovative strategies. Their professionalism, attention to detail, and customer-centric approach have helped us drive better business decisions. We highly recommend them for anyone looking to stay ahead of the curve.",
+            "name": "Kuldeep Parewa",
+            "designation": "CEO, Anveshan Farm",
+            "image": "/sagar.png"
         },
         {
-            content:
-                "Glad that I made the decision to hire full stack services from CONTUS TECH, they understood the complexity of our needs and gave us different options to choose from. Their attention to detail and commitment to deliver the solutions were unmatchable, from my previous experiences with full stack development companies, CONTUS TECH is my absolute go-to full stack development company.",
-            name: "Sagar Mittal",
-            designation: "CEO Infotech Pvt. Ltd.",
-            image: "/sagar.png",
+            "content": "CloudStok has transformed our infrastructure with their state-of-the-art cloud solutions. Their expertise in AWS and cloud migration services has allowed us to scale faster and more efficiently, all while reducing costs and improving security. We are more agile than ever.",
+            "name": "Prateek Rawat",
+            "designation": "CTO, CloudStok Technologies",
+            "image": "/sagar.png"
         },
         {
-            content:
-                "Glad that I made the decision to hire full stack services from CONTUS TECH, they understood the complexity of our needs and gave us different options to choose from. Their attention to detail and commitment to deliver the solutions were unmatchable, from my previous experiences with full stack development companies, CONTUS TECH is my absolute go-to full stack development company.",
-            name: "Sagar Mittal",
-            designation: "CEO Infotech Pvt. Ltd.",
-            image: "/sagar.png",
+            "content": "MobileGoo's app development services have taken our business to the next level. Their team not only delivered a high-quality app but also provided valuable insights that enhanced user experience. Thanks to them, we have a powerful platform to engage with our customers.",
+            "name": "Saurabh",
+            "designation": "CEO, MobileGoo",
+            "image": "/sagar.png"
         },
+        {
+            "content": "BitMemoir’s blockchain expertise is second to none. Their solution helped us streamline our transactions and increase transparency across the board. The implementation was smooth, and the results exceeded our expectations, making them our go-to for all blockchain needs.",
+            "name": "Nikhil Gupta",
+            "designation": "Founder, BitMemoir",
+            "image": "/sagar.png"
+        },
+        {
+            "content": "BeingBitsMart's digital marketing strategies have helped us increase our online presence and sales significantly. Their tailored campaigns and deep understanding of consumer behavior have made a massive difference to our bottom line. Their expertise is truly invaluable.",
+            "name": "Mayank Gupta",
+            "designation": "CEO, BitsMart Technologies",
+            "image": "/sagar.png"
+        }
 
     ];
-
     const sliderRef = React.useRef(null);
 
     const settings = {
@@ -70,7 +76,7 @@ const CloudTestimonials = () => {
                     </h2>
                     <p className="text-[10.31px] md:text-[16px] text-gray-400">
                         Hundreds of thriving businesses and Fortune 500 firms worldwide
-                        choose CONTUS Tech as their DevOps service provider for their
+                        choose OnEggy Technologies Tech as their DevOps service provider for their
                         mission-critical projects.
                     </p>
                     <div className="flex space-x-4">

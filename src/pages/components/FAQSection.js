@@ -7,11 +7,31 @@ const FAQSection = () => {
     const [activeIndex, setActiveIndex] = useState(null);
 
     const faqs = [
-        { question: 'How Do I Get An Appointment For Consultations?', answer: 'You can book an appointment via our website or call our helpline.' },
-        { question: 'How Helpful Is An Online Janam Kundli?', answer: 'An online Janam Kundli provides insights based on your birth details.' },
-        { question: 'Do I Need Any Prior Knowledge Of Astrology To Enroll?', answer: 'No prior knowledge is required to start your journey.' },
-        { question: 'What Is The Course Duration & Is It Offered In Multiple Languages?', answer: 'The course lasts 3 months and is available in 5 languages.' },
-    ];
+        {
+            "question": "What Are DevOps Cloud Consulting Services?",
+            "answer": "DevOps Cloud Consulting services involve a set of practices and tools that streamline your development, operations, and infrastructure. OnEggy Technologies helps you automate processes, integrate workflows, and achieve seamless cloud scalability with expertise in AWS, Azure, and GCP."
+        },
+        {
+            "question": "How Can DevOps Help My Business?",
+            "answer": "DevOps improves collaboration between development and operations teams, enabling faster releases and higher quality. By leveraging cloud platforms, we ensure enhanced scalability, security, and optimized infrastructure to boost business performance and reduce costs."
+        },
+        {
+            "question": "What Cloud Platforms Do You Work With?",
+            "answer": "We specialize in AWS, Azure, and Google Cloud. Our experts help you choose the best platform tailored to your business needs, ensuring optimal performance, cost efficiency, and scalability."
+        },
+        {
+            "question": "How Do You Ensure Security In Cloud Implementations?",
+            "answer": "OnEggy Technologies follows best security practices, including strong access controls, encryption, and regular security audits. We ensure your cloud infrastructure is secure, resilient, and compliant with industry standards."
+        },
+        {
+            "question": "What Is The Process For Engaging With OnEggy Technologies For DevOps Cloud Consulting?",
+            "answer": "Our process starts with understanding your specific needs and business objectives. We then create a customized DevOps roadmap, implement cloud solutions, automate workflows, and ensure continuous monitoring and improvements to maximize efficiency and scalability."
+        },
+        {
+            "question": "Do You Provide Ongoing Support After Implementation?",
+            "answer": "Yes, we provide ongoing support to monitor and optimize your cloud infrastructure, address any issues, and implement necessary updates. Our team ensures continuous improvements for enhanced performance and security as your business evolves."
+        }
+    ];    
 
     const toggleFAQ = (index) => {
         setActiveIndex(activeIndex === index ? null : index);
@@ -23,7 +43,7 @@ const FAQSection = () => {
             <div className="lg:w-2/3 w-full space-y-4">
                 <h2 className="text-[29.76px] md:text-[40px] font-bold mb-4">FAQ</h2>
                 <p className="mb-6  text-[10.92px] md:text-[16px] text-gray-600">
-                    Hundreds of thriving businesses and Fortune 500 firms worldwide choose CONTUS Tech as their DevOps service provider for their mission-critical projects.
+                    Hundreds of thriving businesses and Fortune 500 firms worldwide choose OnEggy Technologies Tech as their DevOps service provider for their mission-critical projects.
                 </p>
                 {faqs.map((faq, index) => (
                     <div key={index} className="border rounded-lg overflow-hidden">

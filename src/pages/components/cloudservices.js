@@ -14,31 +14,31 @@ const CloudServices = () => {
         {
             title: "AWS DevOps Services",
             description:
-                "Optimize your cloud experience with our AWS DevOps Services. We enable seamless integration and deployment, enhancing scalability and efficiency while leveraging AWS tools for automated workflows and robust performance.",
+                "Accelerate your cloud transformation with OnEggy Technologies' AWS DevOps Managed Services. We streamline your CI/CD pipelines, automate deployments, and ensure seamless integration with AWS tools to maximize performance, security, and scalability for your applications.",
             imageUrl: cardImage,
         },
         {
-            title: "AWS Analytics Services",
+            title: "Cloud Automation",
             description:
-                "Optimize your cloud experience with our AWS DevOps Services. We enable seamless integration and deployment, enhancing scalability and efficiency while leveraging AWS tools for automated workflows and robust performance.",
+                "Optimize your cloud infrastructure with OnEggy Technologies' Cloud Infrastructure Automation services. We leverage AWS services like CloudFormation and Terraform to automate provisioning, management, and scaling, allowing you to focus on your business growth while we handle the cloud.",
             imageUrl: cardImage,
         },
         {
-            title: "AWS Storage Services",
+            title: "Monitoring & Optimization",
             description:
-                "Optimize your cloud experience with our AWS DevOps Services. We enable seamless integration and deployment, enhancing scalability and efficiency while leveraging AWS tools for automated workflows and robust performance.",
+                "Maximize your cloud investment with our AWS Monitoring & Optimization services. We provide end-to-end monitoring of your cloud environment using AWS CloudWatch, ensure high availability, and optimize costs with Kubernetes and EC2 instance management, ensuring optimal performance and cost efficiency.",
             imageUrl: cardImage,
         },
         {
-            title: "AWS AI Services",
+            title: "Security & Compliance",
             description:
-                "Optimize your cloud experience with our AWS DevOps Services. We enable seamless integration and deployment, enhancing scalability and efficiency while leveraging AWS tools for automated workflows and robust performance.",
+                "Protect your business with OnEggy Technologies' AWS Security & Compliance services. We ensure that your cloud infrastructure follows industry best practices, maintain robust security measures, and ensure compliance with frameworks like HIPAA and GDPR to mitigate risk and ensure data integrity.",
             imageUrl: cardImage,
         },
         {
-            title: "AWS IoT Services",
+            title: "DevOps Consulting",
             description:
-                "Optimize your cloud experience with our AWS DevOps Services. We enable seamless integration and deployment, enhancing scalability and efficiency while leveraging AWS tools for automated workflows and robust performance.",
+                "Transform your business with our expert DevOps Consulting & Strategy services. We work with you to create a tailored DevOps roadmap that integrates AWS services for continuous improvement, enhanced collaboration, and faster delivery cycles, helping you stay ahead in a competitive market.",
             imageUrl: cardImage,
         },
     ];
