@@ -29,7 +29,7 @@ export default function NavbarDevops({ onScrollToCalConnect }) {
                         <div className="relative flex h-16 items-center justify-between">
                             <div className="flex flex-shrink-0 items-center lg:hidden">
                                 <a href="/">
-                                    <Image src={logov1} alt="OnEggy Technologies Cloud & DevOps Company logo" width="305" height="61.87" className="mb-4" />
+                                    <Image src={logov1} alt="OnEggy Technologies Cloud & DevOps Company logo" width="250" height="61.87" className="mb-4" />
                                 </a>
                             </div>
                             <nav className="py-4 lg:flex lg:justify-around xl:justify-between mx-auto hidden lg:w-full order-1">
