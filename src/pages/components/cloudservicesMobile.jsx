@@ -14,26 +14,26 @@ const servicesItem = [
   },
   {
     id: 2,
-    title: "AWS Analytics Services",
-    description: "Optimize your cloud experience with our AWS DevOps Services. We enable seamless integration and deployment, enhancing scalability and efficiency while leveraging AWS tools for automated workflows and robust performance.",
+    title: "Cloud Automation",
+    description: "Optimize your cloud infrastructure with OnEggy Technologies' Cloud Infrastructure Automation services. We leverage AWS services like CloudFormation and Terraform to automate provisioning, management, and scaling, allowing you to focus on your business growth while we handle the cloud.",
     img: cardImage,
   },
   {
     id: 3,
-    title: "AWS Storage Services",
-    description: "Optimize your cloud experience with our AWS DevOps Services. We enable seamless integration and deployment, enhancing scalability and efficiency while leveraging AWS tools for automated workflows and robust performance.",
+    title: "Monitoring & Optimization",
+    description: "Maximize your cloud investment with our AWS Monitoring & Optimization services. We provide end-to-end monitoring of your cloud environment using AWS CloudWatch, ensure high availability, and optimize costs with Kubernetes and EC2 instance management, ensuring optimal performance and cost efficiency.",
     img: cardImage,
   },
   {
     id: 4,
-    title: "AWS AI Services",
-    description: "Optimize your cloud experience with our AWS DevOps Services. We enable seamless integration and deployment, enhancing scalability and efficiency while leveraging AWS tools for automated workflows and robust performance.",
+    title: "Security & Compliance",
+    description: "Protect your business with OnEggy Technologies' AWS Security & Compliance services. We ensure that your cloud infrastructure follows industry best practices, maintain robust security measures, and ensure compliance with frameworks like HIPAA and GDPR to mitigate risk and ensure data integrity.",
     img: cardImage,
   },
   {
     id: 5,
-    title: "AWS IoT Services",
-    description: "Optimize your cloud experience with our AWS DevOps Services. We enable seamless integration and deployment, enhancing scalability and efficiency while leveraging AWS tools for automated workflows and robust performance.",
+    title: "DevOps Consulting",
+    description: "Transform your business with our expert DevOps Consulting & Strategy services. We work with you to create a tailored DevOps roadmap that integrates AWS services for continuous improvement, enhanced collaboration, and faster delivery cycles, helping you stay ahead in a competitive market.",
     img: cardImage,
   },
 ];
@@ -162,7 +162,7 @@ export default function ServicesMobile() {
                 </h2>
               </div>
               <div>
-                <p className="text-[16px] leading-tight">{card.description}</p>
+                <p className="text-[14px] leading-tight">{card.description}</p>
               </div>
             </div>
           </div>
