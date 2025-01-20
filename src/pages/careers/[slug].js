@@ -141,10 +141,10 @@ const JobDetail = ({ job }) => {
           <p className="text-lg text-gray-700 mb-6">
             Send your resume and cover letter to{" "}
             <a
-              href="mailto:hr@oneggy.com"
+              href="mailto:hiring@oneggy.com"
               className="text-cyan-600 underline hover:text-blue-600"
             >
-              hr@oneggy.com
+              hiring@oneggy.com
             </a>
           </p>
           <p className="text-sm text-gray-500">
