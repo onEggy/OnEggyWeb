@@ -1,59 +1,64 @@
 {
-    "projectLogos": [
-        {
-            "id": 1,
-            "name": "East Mojo Logo",
-            "url": "/home/projectLogos/east-mojo-logo.png",
-            "alt": "east-mojo-logo"
-          },
-      {
-        "id": 2,
-        "name": "East Mojo Logo",
-        "url": "/home/projectLogos/beyond-logo.png",
-        "alt": "beyond logo"
-      },
-      {
-        "id": 3,
-        "name": "BitsMemoir",
-        "url": "/home/projectLogos/bit-logo.png",
-        "alt": "BitsMemoir logo"
-      },
-      {
-        "id": 4,
-        "name": "mgmt Logo",
-        "url": "/home/projectLogos/mgmt-logo.png",
-        "alt": "mgmt Company Logo"
-      },
-      {
-        "id": 5,
-        "name": "Numberwize Logo",
-        "url": "/home/projectLogos/numwize-logo.png",
-        "alt": "Numwize logo"
-      },
-      {
-        "id": 6,
-        "name": "Smile Foundation Logo",
-        "url": "/home/projectLogos/smile-logo.png",
-        "alt": "Smile Logo"
-      },
-      {
-        "id": 7,
-        "name": "MobileGoo Logo",
-        "url": "/home/projectLogos/mobileGoo.webp",
-        "alt": "Smile Logo"
-      },
-      {
-        "id": 8,
-        "name": "BeingBitsmart",
-        "url": "/home/projectLogos/beingbitsmart.png",
-        "alt": "BeingBitsmart Logo"
-      },
-      {
-        "id": 9,
-        "name": "EklyLine",
-        "url": "/home/projectLogos/eklyline.png",
-        "alt": "EklyLine Logo"
-      }
-    ]
-  }
-  
+  "projectLogos": [
+    {
+      "id": 1,
+      "name": "East Mojo Logo",
+      "url": "/home/projectLogos/east-mojo-logo.png",
+      "alt": "east-mojo-logo"
+    },
+    {
+      "id": 2,
+      "name": "East Mojo Logo",
+      "url": "/home/projectLogos/beyond-logo.png",
+      "alt": "beyond logo"
+    },
+    {
+      "id": 3,
+      "name": "BitsMemoir",
+      "url": "/home/projectLogos/bit-logo.png",
+      "alt": "BitsMemoir logo"
+    },
+    {
+      "id": 4,
+      "name": "mgmt Logo",
+      "url": "/home/projectLogos/mgmt-logo.png",
+      "alt": "mgmt Company Logo"
+    },
+    {
+      "id": 5,
+      "name": "Numberwize Logo",
+      "url": "/home/projectLogos/numwize-logo.png",
+      "alt": "Numwize logo"
+    },
+    {
+      "id": 6,
+      "name": "Smile Foundation Logo",
+      "url": "/home/projectLogos/smile-logo.png",
+      "alt": "Smile Logo"
+    },
+    {
+      "id": 7,
+      "name": "MobileGoo Logo",
+      "url": "/home/projectLogos/mobileGoo.webp",
+      "alt": "Smile Logo"
+    },
+    {
+      "id": 8,
+      "name": "BeingBitsmart",
+      "url": "/home/projectLogos/beingbitsmart.png",
+      "alt": "BeingBitsmart Logo"
+    },
+    {
+      "id": 9,
+      "name": "EklyLine",
+      "url": "/home/projectLogos/eklyline.png",
+      "alt": "EklyLine Logo"
+    },
+    {
+      "id": 10,
+      "name": "MeraDoc Healthtech Services Pvt Ltd",
+      "url": "/home/projectLogos/meradoc-logo.png",
+      "alt": "MeraDoc Healthtech Services Pvt Ltd"
+    }
+  ]
+}
