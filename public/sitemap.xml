@@ -83,6 +83,18 @@
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
+	<url>
+        <loc>https://www.oneggy.com/careers/marketing-lead-generation-intern</loc>
+        <lastmod>2024-11-22</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+	<url>
+        <loc>https://www.oneggy.com/careers/shopify-api-integration-developer-intern</loc>
+        <lastmod>2024-11-22</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
 
 	<!-- Case Study -->
 

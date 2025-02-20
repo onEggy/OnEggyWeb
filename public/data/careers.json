@@ -23,34 +23,135 @@
       "Hands-on experience with industry-standard tools and technologies.",
       "Flexible work schedule."
     ],
-    "keywords": ["DevOps", "Internship", "Cloud", "Automation"]
+    "keywords": [
+      "DevOps",
+      "Internship",
+      "Cloud",
+      "Automation"
+    ]
   },
   {
     "title": "Business Development Manager",
     "slug": "business-development-manager",
-    "shortDescription": "Drive business growth by identifying new opportunities, managing client relationships, and closing deals.",
+    "shortDescription": "Lead business growth by identifying high-value opportunities, building strong client relationships, and closing strategic deals.",
     "openPositions": 1,
-    "location": "Hybrid (Remote/Office)",
+    "location": "Office",
     "type": "Full-Time",
-    "experience": "3+ years",
-    "description": "As a Business Development Manager at OnEggy Technologies, you will identify and develop new business opportunities while managing relationships with existing clients. Your goal will be to drive revenue growth by crafting solutions that align with client needs.",
+    "experience": "2+ years",
+    "description": "As a Business Development Manager at OnEggy Technologies, you will play a pivotal role in driving revenue growth and expanding our client base. Your primary focus will be identifying new business opportunities, nurturing client relationships, and developing strategies to position OnEggy Technologies as a leading provider of DevOps, cloud solutions, and managed IT services.",
     "responsibilities": [
-      "Identify and cultivate new business opportunities.",
-      "Develop and maintain strong relationships with clients.",
-      "Collaborate with internal teams to create tailored proposals.",
-      "Achieve sales targets and contribute to revenue growth."
+      "Identify, research, and pursue new business opportunities to expand OnEggy Technologies' market reach.",
+      "Develop and maintain strong relationships with potential and existing clients, ensuring long-term partnerships.",
+      "Understand client needs and present tailored DevOps and cloud solutions that align with their business goals.",
+      "Collaborate with technical teams to develop proposals, pricing models, and customized service offerings.",
+      "Lead negotiations and close deals while ensuring client satisfaction and business profitability.",
+      "Stay updated on industry trends, competitor activities, and emerging technologies to refine business strategies.",
+      "Achieve sales and revenue targets through proactive business development efforts."
     ],
     "requirements": [
-      "Proven track record in business development or sales.",
-      "Strong communication and negotiation skills.",
-      "Ability to understand and present technical solutions."
+      "Proven experience in business development, sales, or account management, preferably in the IT, cloud, or DevOps industry.",
+      "Strong understanding of cloud solutions, DevOps, and managed IT services.",
+      "Excellent communication, negotiation, and interpersonal skills.",
+      "Ability to strategize, analyze market trends, and develop business expansion plans.",
+      "Self-motivated, goal-oriented, and capable of working in a fast-paced environment."
     ],
     "benefits": [
-      "Competitive salary with performance-based incentives.",
-      "Hybrid work environment for flexibility.",
-      "Professional development opportunities."
+      "Attractive salary with performance-based incentives.",
+      "Opportunity to work with cutting-edge cloud and DevOps technologies.",
+      "Professional development and growth opportunities.",
+      "Dynamic and innovative work environment."
     ],
-    "keywords": ["Business Development", "Sales", "Client Management", "Growth"]
+    "keywords": [
+      "Business Development",
+      "Sales",
+      "DevOps",
+      "Cloud Solutions",
+      "Client Acquisition",
+      "Revenue Growth",
+      "IT Services"
+    ]
+  },
+  {
+    "title": "Marketing & Lead Generation Intern",
+    "slug": "marketing-lead-generation-intern",
+    "shortDescription": "Gain hands-on experience in crafting marketing strategies and generating quality leads to drive growth for service-based businesses.",
+    "openPositions": 1,
+    "location": "Remote",
+    "type": "Internship",
+    "experience": "Freshers / Students",
+    "description": "As a Marketing & Lead Generation Intern at OnEggy Technologies, you will support our marketing team in developing and executing strategies that boost business growth. You will also be involved in identifying and nurturing potential leads, helping to create a pipeline that drives our service-based business forward. This internship offers hands-on experience in digital marketing, social media management, content creation, and market research, alongside lead generation techniques.",
+    "responsibilities": [
+      "Assist in creating and executing marketing campaigns tailored to our services.",
+      "Conduct market research to identify trends, new opportunities, and potential leads.",
+      "Support the development of engaging content for social media, blogs, and marketing materials.",
+      "Help manage and grow our social media presence.",
+      "Monitor, analyze, and report on the performance of marketing initiatives.",
+      "Collaborate with the marketing team to brainstorm and implement innovative growth strategies.",
+      "Identify, qualify, and nurture potential leads to build a strong sales pipeline."
+    ],
+    "requirements": [
+      "Basic understanding of marketing principles and digital marketing strategies.",
+      "Familiarity with lead generation techniques and tools.",
+      "Strong communication and creative skills.",
+      "Ability to work both independently and collaboratively within a team.",
+      "Eagerness to learn, adapt, and contribute in a fast-paced environment.",
+      "Familiarity with social media platforms and basic analytics tools is a plus."
+    ],
+    "benefits": [
+      "Real-world experience in marketing and lead generation within a service-based business.",
+      "Mentorship from experienced marketing professionals.",
+      "Opportunity to contribute to impactful marketing and lead generation strategies.",
+      "Flexible remote work environment and professional development opportunities."
+    ],
+    "keywords": [
+      "Marketing",
+      "Digital Marketing",
+      "Lead Generation",
+      "Social Media",
+      "Content Creation",
+      "Market Research",
+      "Growth Strategies",
+      "Internship"
+    ]
+  },
+  {
+    "title": "Shopify & API Integration Developer Intern",
+    "slug": "shopify-api-integration-developer-intern",
+    "shortDescription": "Gain hands-on experience in Shopify development and API integration to create dynamic, full-stack e-commerce solutions.",
+    "openPositions": 2,
+    "location": "Remote",
+    "type": "Internship",
+    "experience": "Freshers / Students",
+    "description": "As a Shopify & API Integration Developer Intern at OnEggy Technologies, you will work closely with our development team to build and customize Shopify stores while integrating APIs to connect front-end functionalities with robust backend systems. This role offers a unique opportunity to develop comprehensive e-commerce solutions and gain exposure to both frontend and backend technologies.",
+    "responsibilities": [
+      "Assist in developing and customizing Shopify themes using Liquid, HTML, CSS, and JavaScript.",
+      "Develop and integrate Shopify APIs to connect storefronts with backend systems.",
+      "Collaborate with designers and backend developers to enhance store functionality and user experience.",
+      "Troubleshoot and resolve issues related to Shopify development and API integrations.",
+      "Participate in performance optimization and SEO improvements for Shopify stores."
+    ],
+    "requirements": [
+      "Basic understanding of Shopify development, including Liquid, HTML, CSS, and JavaScript.",
+      "Familiarity with API integration concepts, RESTful APIs, and backend technologies.",
+      "Strong problem-solving skills and attention to detail.",
+      "Ability to work independently and collaboratively within a team.",
+      "Passion for web development and eagerness to learn new technologies."
+    ],
+    "benefits": [
+      "Hands-on experience in both Shopify development and API integration.",
+      "Opportunity to work on real-world e-commerce projects.",
+      "Flexible remote work environment.",
+      "Mentorship from experienced developers with potential for future full-time opportunities."
+    ],
+    "keywords": [
+      "Shopify",
+      "API Integration",
+      "E-commerce",
+      "Web Development",
+      "Internship",
+      "Liquid",
+      "RESTful"
+    ]
   },
   {
     "title": "NextJS Developer Intern",
@@ -76,6 +177,11 @@
       "Exposure to modern front-end development workflows.",
       "Opportunity for full-time placement based on performance."
     ],
-    "keywords": ["Next.js", "React", "Frontend Development", "Internship"]
+    "keywords": [
+      "Next.js",
+      "React",
+      "Frontend Development",
+      "Internship"
+    ]
   }
 ]
