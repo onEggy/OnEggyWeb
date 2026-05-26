@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Navbar } from "@/components/common/navbar";
 import { Footer } from "@/components/common/footer";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import { ScrollProvider } from "@/components/providers/scroll-provider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -71,9 +72,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          <main className="flex-grow pt-24 pb-16">{children}</main>
-          <Footer />
+          <ScrollProvider>
+            <Navbar />
+            <main className="flex-grow pt-24 pb-16">{children}</main>
+            <Footer />
+          </ScrollProvider>
         </ThemeProvider>
       </body>
     </html>
