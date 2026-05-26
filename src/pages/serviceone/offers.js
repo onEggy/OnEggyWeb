@@ -15,7 +15,7 @@ const Accordion = ({ title, content, initiallyOpen }) => {
     >
       <img className="offer-list-img" src={`./assets/offer-${title}.png`} />
       <div>
-        <h1>{title}</h1>
+        <h2>{title}</h2>
         {isOpen && <p className="offer-list-p">{content}</p>}
       </div>
     </div>

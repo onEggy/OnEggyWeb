@@ -54,7 +54,7 @@ export default function GetStarted() {
             <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Left Section */}
                 <div>
-                    <h1 className="text-[50px] font-bold mb-4">People are Saying About OnEggy</h1>
+                    <h2 className="text-[50px] font-bold mb-4">People are Saying About OnEggy</h2>
                     <p className="text-gray-400 text-[18px] mb-8">
                         Everything you need to accept to payment and grow your money or manage anywhere on planet
                     </p>
@@ -84,7 +84,7 @@ export default function GetStarted() {
                                 value={formData.email}
                                 onChange={handleChange}
                                 placeholder="Enter your email"
-                                className="w-full p-3 rounded-[10px] bg-white text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                                className="w-full p-3 rounded-[10px] bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-500"
                                 required
                             />
                         </div>
@@ -94,7 +94,7 @@ export default function GetStarted() {
                                 value={formData.message}
                                 onChange={handleChange}
                                 placeholder="What are you saying?"
-                                className="w-full p-3 h-32 rounded-[10px] bg-white text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                                className="w-full p-3 h-32 rounded-[10px] bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-500"
                                 required
                             />
                         </div>

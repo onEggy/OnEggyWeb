@@ -39,7 +39,7 @@ const Career = () => {
         />
         <link
           rel="canonical"
-          href={`${baseUrl}careers/`}
+          href={`${baseUrl}careers`}
         />
       </Head>
 

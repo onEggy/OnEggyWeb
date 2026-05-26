@@ -77,7 +77,7 @@ const SecurityAssurance = () => {
                     {securityPoints.map((point, index) => (
                         <motion.div
                             key={index}
-                            className="flex flex-col items-center p-6 bg-white-50 rounded-lg border border-gray-150"
+                            className="flex flex-col items-center p-6 bg-slate-50 rounded-lg border border-gray-200"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{

@@ -45,9 +45,9 @@ const FaqSection = () => {
             {/* Header */}
             <header className="text-center mb-12 max-w-2xl mx-auto">
                 <h2 className="text-green-600 text-sm font-semibold uppercase tracking-wide">Question & Answers</h2>
-                <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mt-2">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mt-2">
                     Frequently Asked Questions
-                </h1>
+                </h2>
                 <p className="text-gray-500 mt-3 md:text-lg">
                     Have more queries? Our team is just a message away. <a href="/contact" className="text-blue-600 underline">Get in touch here</a> for further assistance.
                 </p>

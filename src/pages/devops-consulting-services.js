@@ -20,6 +20,7 @@ const DevOpsConsultingServices = () => {
     const currentPageData = seoData["/privacy-policy"];
 
     const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+    const [isMobileViewport, setIsMobileViewport] = useState(null);
     const lastScrollPositionRef = useRef(0);
     const calConnectRef = useRef(null);
 
@@ -28,6 +29,15 @@ const DevOpsConsultingServices = () => {
             calConnectRef.current.scrollIntoView({ behavior: "smooth" });
         }
     };
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobileViewport(window.innerWidth < 768);
+        };
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -191,8 +201,9 @@ const DevOpsConsultingServices = () => {
             <QuoteSection />
             <ProjectLogosDevops />
             <CloudSolutionsSection />
-            <CloudServices />
-            <ServicesMobile />
+            {isMobileViewport !== null && (
+                isMobileViewport ? <ServicesMobile /> : <CloudServices />
+            )}
             <CloudTestimonials />
             <HowItWorks />
             <div ref={calConnectRef}>

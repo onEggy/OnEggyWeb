@@ -7,9 +7,9 @@ const section1 = ({ head,head2='', sentence, showButton, buttonPlaceholder, main
       <h1 className={`sm:text-6xl text-4xl font-semibold mt-0 text-center w-4/5 ${headCss}`}>
         {head}
       </h1>
-     {head2 && <h1 className={`sm:text-6xl text-4xl font-semibold mt-8 text-center w-3/5 ${head2Css}`}>
+     {head2 && <h2 className={`sm:text-6xl text-4xl font-semibold mt-8 text-center w-3/5 ${head2Css}`}>
         {head2}
-      </h1>}
+      </h2>}
       <p className={`mt-7 sm:w-2/3 text-center px-6 ${pCss}`}>
         {sentence}
       </p>

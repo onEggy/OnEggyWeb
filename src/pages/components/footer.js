@@ -92,23 +92,18 @@ const Footer = () => {
           <Link href="/terms-and-conditions" className="hover:underline">Terms and Conditions</Link>
           <Link href="/refund-policy" className="hover:underline">Refund Policy</Link>
         </div>
-      </footer>
-
-      <div className="hidden">
-        {services.map((service) => (
-          <div key={service["meta-title-slug"]} className="mb-4">
-            <h3 className="text-xl font-bold">{service["meta-title"]}</h3>
-            <p className="text-sm">{service.content}</p>
-            <a
-              href={`https://www.oneggy.com/service/${service["meta-title-slug"]}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-500 hover:underline"
-            >
-              {service["meta-title"]}
-            </a>
-          </div>
-        ))}
+      </footer>      {/* Services Directory Section (Fully Visible for Users and SEO Crawlers) */}
+      <div className="mt-12 sm:mx-12 border-t border-gray-800 pt-8">
+        <h2 className="text-sm font-bold mb-6 text-l_blue uppercase tracking-wide">Our Services</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs text-gray-400">
+          {services.map((service) => (
+            <div key={service["meta-title-slug"]}>
+              <Link href={`/service/${service["meta-title-slug"]}`} className="hover:text-white hover:underline transition-colors duration-200">
+                {service["development"]}
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

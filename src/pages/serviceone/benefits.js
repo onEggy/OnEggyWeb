@@ -334,7 +334,7 @@ const benefits = () => {
           </div>
         </div>
         <div className="secured-right">
-          <h1>How we do it?</h1>
+          <h2>How we do it?</h2>
           <p>
             Your search for owning a website that is standard, secured and
             provides ease in growing your business virtually to get the top

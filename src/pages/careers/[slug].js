@@ -66,7 +66,7 @@ const JobDetail = ({ job }) => {
             <StarIcon className="h-8 w-8 text-cyan-500 mr-2" />
             Responsibilities
           </h2>
-          <div className="bg-gray-50 p-8 rounded-lg border-l-8 border-gradient-to-r from-teal-500 to-cyan-500">
+          <div className="bg-gray-50 p-8 rounded-lg border-l-8 border-cyan-500">
             <ul className="list-disc list-inside text-gray-700 space-y-4">
               {job.responsibilities.map((resp, index) => (
                 <li key={index} className="flex items-start">
@@ -90,7 +90,7 @@ const JobDetail = ({ job }) => {
             <StarIcon className="h-8 w-8 text-cyan-500 mr-2" />
             Requirements
           </h2>
-          <div className="bg-gray-50 p-8 rounded-lg border-l-8 border-gradient-to-r from-teal-500 to-cyan-500">
+          <div className="bg-gray-50 p-8 rounded-lg border-l-8 border-cyan-500">
             <ul className="list-disc list-inside text-gray-700 space-y-4">
               {job.requirements.map((req, index) => (
                 <li key={index} className="flex items-start">
@@ -114,7 +114,7 @@ const JobDetail = ({ job }) => {
             <StarIcon className="h-8 w-8 text-cyan-500 mr-2" />
             What We Offer
           </h2>
-          <div className="bg-gray-50 p-8 rounded-lg border-l-8 border-gradient-to-r from-teal-500 to-cyan-500">
+          <div className="bg-gray-50 p-8 rounded-lg border-l-8 border-cyan-500">
             <ul className="list-disc list-inside text-gray-700 space-y-4">
               {job.benefits.map((benefit, index) => (
                 <li key={index} className="flex items-start">
