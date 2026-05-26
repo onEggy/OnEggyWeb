@@ -1,8 +1,7 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
-import { Calendar, User, Clock, ArrowRight } from "lucide-react";
+import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { FadeUp, StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
 
 const posts = [

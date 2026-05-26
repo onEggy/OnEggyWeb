@@ -49,7 +49,7 @@ export default function IndustriesPage() {
         </FadeUp>
         <FadeUp delay={0.2}>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Every sector requires specialized security, data, and compliance layouts. We design systems engineered to match your industry's exact standards.
+            Every sector requires specialized security, data, and compliance layouts. We design systems engineered to match your industry&apos;s exact standards.
           </p>
         </FadeUp>
       </div>

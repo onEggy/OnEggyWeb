@@ -42,7 +42,7 @@ export default function CaseStudiesPage() {
         </FadeUp>
         <FadeUp delay={0.2}>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Real outcomes. Discover how we've helped companies improve deployment speed, reduce cloud waste, and build high-performance products.
+            Real outcomes. Discover how we&apos;ve helped companies improve deployment speed, reduce cloud waste, and build high-performance products.
           </p>
         </FadeUp>
       </div>

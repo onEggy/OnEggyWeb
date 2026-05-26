@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Briefcase, MapPin, Clock, ArrowRight } from "lucide-react";
+import { Briefcase, MapPin, ArrowRight } from "lucide-react";
 import { FadeUp, StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
 
 const openings = [
