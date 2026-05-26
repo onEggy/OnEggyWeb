@@ -22,7 +22,7 @@ const EnquiryModal = dynamic(() => import('./components/EnquiryModal'), { ssr: f
 
 const CloudOptimizationPage = () => {
     return (
-        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 bg-white-50 text-black-900">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 bg-slate-50 text-gray-900">
             {/* SEO Config */}
             <NextSeo
                 title="Free Cloud Cost Optimization Assessment"

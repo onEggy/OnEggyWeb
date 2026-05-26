@@ -165,12 +165,12 @@ const Testimonials = () => {
                     />
                   </div>
                   <div className="ml-4">
-                    <h1 className="text-lg sm:text-xl font-semibold text-white">
+                    <h3 className="text-lg sm:text-xl font-semibold text-white">
                       {testimonial.name}
-                    </h1>
-                    <h2 className="text-gray-400 text-sm sm:text-base">
+                    </h3>
+                    <span className="text-gray-400 text-sm sm:text-base block">
                       {testimonial.designation}
-                    </h2>
+                    </span>
                   </div>
                 </div>
               </div>

@@ -197,9 +197,9 @@ const Blog = (props) => {
         <div className="hidden md:flex justify-center text-gray-700">
           <a href="#" className="font-bold text-lg md:text-xl">{props.subTitle}</a>
           <div className="h-5 mx-4 border-r border-gray-400" />
-          <h1>{props.date}</h1>
+          <span>{props.date}</span>
           <div className="h-5 mx-4 border-r border-gray-400" />
-          <h2>{props.readTime} read</h2>
+          <span>{props.readTime} read</span>
         </div>
 
         {/* Main Image */}

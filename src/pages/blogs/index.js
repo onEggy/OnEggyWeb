@@ -16,7 +16,7 @@ import Link from "next/link";
 const blogOne = () => {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.oneggy.com/";
 
-  const currentPageData = seoData["/blog"];
+  const currentPageData = seoData["/blogs"];
   const head = "Tech Talk by OnEggy";
   const head2 = "Blogs on Cloud, DevOps & More";
   const sentence =

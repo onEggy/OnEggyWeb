@@ -29,23 +29,16 @@ const section5 = ({mainCss, head, index }) => {
         <div className={` w-28 sm:w-40 h-50 m-auto platform-image p-4 ${textColor(index)}`}>
           <img src={head.image} alt={head.alt} />
         </div>
-
         <div className="px-5 w-10/12 mt-2 md:ml-2">
-          <h2
-            className={` sm:text-3xl text-xl font-semibold rounded-md px-2 ${bgColor(
-              index
-            )}  sm:ml-0 service_heading`}
-          >
-            {head.head.split(" ")[0]}
-          </h2>
-          <h2
-            className={` sm:text-3xl text-xl font-semibold rounded-md px-1 ${bgColor(
-              index
-            )}  sm:ml-0 service_heading`}
-          >
-            {head.head.split(" ").length == 2
-              ? head.head.split(" ")[1]
-              : head.head.split(" ").slice(1).join(" ")}
+          <h2 className="sm:text-3xl text-xl font-semibold sm:ml-0 flex flex-col items-start gap-1">
+            <span className={`rounded-md px-2 ${bgColor(index)} service_heading inline-block`}>
+              {head.head.split(" ")[0]}
+            </span>
+            <span className={`rounded-md px-1 ${bgColor(index)} service_heading inline-block`}>
+              {head.head.split(" ").length == 2
+                ? head.head.split(" ")[1]
+                : head.head.split(" ").slice(1).join(" ")}
+            </span>
           </h2>
           <p className="text-white text-sm mt-4">{head.para}</p>
         </div>
