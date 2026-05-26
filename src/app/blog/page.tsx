@@ -2,7 +2,9 @@
 
 import React from "react";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
-import { FadeUp, StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
+import { StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
+import { SectionHeader } from "@/components/common/section-header";
+import { CtaBlock } from "@/components/common/cta-block";
 
 const posts = [
   {
@@ -30,25 +32,16 @@ const posts = [
 
 export default function BlogPage() {
   return (
-    <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24">
+    <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-16">
       {/* Decorative Orb */}
       <div className="absolute top-[30%] right-[-10%] w-[300px] h-[300px] rounded-full bg-cyan-500/5 blur-[80px] pointer-events-none" />
 
-      <div className="max-w-3xl mb-16 space-y-6">
-        <FadeUp>
-          <span className="text-xs uppercase tracking-widest text-cyan-500 font-semibold">Our Insights</span>
-        </FadeUp>
-        <FadeUp delay={0.1}>
-          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight">
-            The OnEggy <span className="gradient-text">Engineering Blog</span>
-          </h1>
-        </FadeUp>
-        <FadeUp delay={0.2}>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Stay up to date with the latest industry insights, tutorials, and best practices in DevOps, Kubernetes, and Cloud-Native platforms.
-          </p>
-        </FadeUp>
-      </div>
+      <SectionHeader
+        tag="Our Insights"
+        title={<>The OnEggy <span className="gradient-text">Engineering Blog</span></>}
+        subtitle="Stay up to date with the latest industry insights, tutorials, and best practices in DevOps, Kubernetes, and Cloud-Native platforms."
+        align="left"
+      />
 
       <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {posts.map((post, index) => (
@@ -83,6 +76,13 @@ export default function BlogPage() {
           </StaggerItem>
         ))}
       </StaggerContainer>
+
+      <CtaBlock
+        title="Want custom insights for your tech stack?"
+        description="Reach out to our cloud engineers to find out how to design pipelines and auto-scale environments for your startup."
+        btnText="Talk to an Engineer"
+        btnHref="/contact"
+      />
     </div>
   );
 }

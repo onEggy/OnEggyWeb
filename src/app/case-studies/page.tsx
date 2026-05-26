@@ -2,7 +2,9 @@
 
 import React from "react";
 import { ArrowUpRight, TrendingUp, ShieldCheck, Zap } from "lucide-react";
-import { FadeUp, StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
+import { StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
+import { SectionHeader } from "@/components/common/section-header";
+import { CtaBlock } from "@/components/common/cta-block";
 
 const cases = [
   {
@@ -27,25 +29,16 @@ const cases = [
 
 export default function CaseStudiesPage() {
   return (
-    <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24">
+    <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-16">
       {/* Decorative Orbs */}
       <div className="absolute top-[20%] right-[-10%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[80px] pointer-events-none" />
 
-      <div className="max-w-3xl mb-16 space-y-6">
-        <FadeUp>
-          <span className="text-xs uppercase tracking-widest text-cyan-500 font-semibold">Our Proven Outcomes</span>
-        </FadeUp>
-        <FadeUp delay={0.1}>
-          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight">
-            Client Success <span className="gradient-text">Case Studies</span>
-          </h1>
-        </FadeUp>
-        <FadeUp delay={0.2}>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Real outcomes. Discover how we&apos;ve helped companies improve deployment speed, reduce cloud waste, and build high-performance products.
-          </p>
-        </FadeUp>
-      </div>
+      <SectionHeader
+        tag="Our Proven Outcomes"
+        title={<>Client Success <span className="gradient-text">Case Studies</span></>}
+        subtitle="Real outcomes. Discover how we've helped companies improve deployment speed, reduce cloud waste, and build high-performance products."
+        align="left"
+      />
 
       <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {cases.map((item, index) => (
@@ -75,6 +68,13 @@ export default function CaseStudiesPage() {
           </StaggerItem>
         ))}
       </StaggerContainer>
+
+      <CtaBlock
+        title="Ready to achieve similar engineering outcomes?"
+        description="Connect with our platform team to optimize your Kubernetes infrastructure or AWS setups for scalability and efficiency."
+        btnText="Schedule Assessment"
+        btnHref="/contact"
+      />
     </div>
   );
 }

@@ -2,7 +2,9 @@
 
 import React from "react";
 import { Landmark, HeartPulse, ShoppingCart, CloudLightning, ShieldCheck } from "lucide-react";
-import { FadeUp, StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
+import { StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
+import { SectionHeader } from "@/components/common/section-header";
+import { CtaBlock } from "@/components/common/cta-block";
 
 const sectors = [
   {
@@ -34,25 +36,16 @@ const sectors = [
 
 export default function IndustriesPage() {
   return (
-    <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24">
+    <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-16">
       {/* Decorative Orb */}
       <div className="absolute top-[20%] left-[-10%] w-[300px] h-[300px] rounded-full bg-cyan-500/5 blur-[70px] pointer-events-none" />
 
-      <div className="max-w-3xl mb-16 space-y-6">
-        <FadeUp>
-          <span className="text-xs uppercase tracking-widest text-cyan-500 font-semibold">Who We Serve</span>
-        </FadeUp>
-        <FadeUp delay={0.1}>
-          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight">
-            Tailored Industry <span className="gradient-text">Cloud Architectures</span>
-          </h1>
-        </FadeUp>
-        <FadeUp delay={0.2}>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Every sector requires specialized security, data, and compliance layouts. We design systems engineered to match your industry&apos;s exact standards.
-          </p>
-        </FadeUp>
-      </div>
+      <SectionHeader
+        tag="Who We Serve"
+        title={<>Tailored Industry <span className="gradient-text">Cloud Architectures</span></>}
+        subtitle="Every sector requires specialized security, data, and compliance layouts. We design systems engineered to match your industry's exact standards."
+        align="left"
+      />
 
       <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {sectors.map((item, index) => (
@@ -70,6 +63,13 @@ export default function IndustriesPage() {
           </StaggerItem>
         ))}
       </StaggerContainer>
+
+      <CtaBlock
+        title="Need a compliance-heavy cloud setup?"
+        description="We implement HIPAA, PCI-DSS, and custom enterprise security standardizations on top of AWS, Azure, GCP, and Kubernetes configurations."
+        btnText="Talk to a Architect"
+        btnHref="/contact"
+      />
     </div>
   );
 }

@@ -155,11 +155,18 @@ export function Navbar() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "text-sm font-medium transition-colors hover:text-cyan-500",
-                    isActive ? "text-cyan-500 font-semibold" : "text-muted-foreground"
+                    "relative py-1.5 text-sm font-medium transition-colors hover:text-cyan-500",
+                    isActive ? "text-cyan-500" : "text-muted-foreground"
                   )}
                 >
-                  {item.name}
+                  <span className="relative z-10">{item.name}</span>
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeNav"
+                      className="absolute bottom-0 left-0 w-full h-[2px] bg-cyan-500"
+                      transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                    />
+                  )}
                 </Link>
               );
             })}
@@ -172,9 +179,10 @@ export function Navbar() {
             <ThemeToggle />
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center text-xs sm:text-sm font-medium h-10 px-5 rounded-lg bg-foreground text-background hover:bg-foreground/90 transition-all shadow-md shadow-foreground/10 cursor-pointer"
+              className="relative inline-flex items-center justify-center text-xs sm:text-sm font-medium h-10 px-5 rounded-lg bg-foreground text-background hover:bg-foreground/90 transition-all shadow-md shadow-foreground/10 cursor-pointer overflow-hidden group isolate"
             >
-              Book Free Consultation
+              <span className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-teal-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
+              <span className="relative z-10 group-hover:text-black transition-colors">Book Free Consultation</span>
             </Link>
           </div>
         </nav>

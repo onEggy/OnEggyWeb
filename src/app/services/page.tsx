@@ -2,7 +2,9 @@
 
 import React from "react";
 import { Cpu, Cloud, Settings, Layers, Code, Shield } from "lucide-react";
-import { FadeUp, StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
+import { StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
+import { SectionHeader } from "@/components/common/section-header";
+import { CtaBlock } from "@/components/common/cta-block";
 
 const services = [
   {
@@ -39,25 +41,16 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24">
+    <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-16">
       {/* Decorative Blur */}
       <div className="absolute top-0 right-[20%] w-[400px] h-[400px] rounded-full bg-cyan-500/5 blur-[80px] pointer-events-none" />
 
-      <div className="max-w-3xl mb-16 space-y-6">
-        <FadeUp>
-          <span className="text-xs uppercase tracking-widest text-cyan-500 font-semibold">Our Capabilities</span>
-        </FadeUp>
-        <FadeUp delay={0.1}>
-          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight">
-            Cloud-Native <span className="gradient-text">Engineering Services</span>
-          </h1>
-        </FadeUp>
-        <FadeUp delay={0.2}>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            We help startup founders and enterprise CTOs build, automate, and scale secure modern software products on AWS and Kubernetes.
-          </p>
-        </FadeUp>
-      </div>
+      <SectionHeader
+        tag="Our Capabilities"
+        title={<>Cloud-Native <span className="gradient-text">Engineering Services</span></>}
+        subtitle="We help startup founders and enterprise CTOs build, automate, and scale secure modern software products on AWS and Kubernetes."
+        align="left"
+      />
 
       <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {services.map((service, index) => (
@@ -77,6 +70,13 @@ export default function ServicesPage() {
           </StaggerItem>
         ))}
       </StaggerContainer>
+
+      <CtaBlock
+        title="Ready to automate and scale your architecture?"
+        description="Schedule a free 30-minute cloud-native engineering assessment with our senior architect to discuss your business requirements."
+        btnText="Book Free Consultation"
+        btnHref="/contact"
+      />
     </div>
   );
 }

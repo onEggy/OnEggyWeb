@@ -2,7 +2,9 @@
 
 import React from "react";
 import { Handshake, Heart, Shield, Sparkles } from "lucide-react";
-import { FadeUp, StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
+import { StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
+import { SectionHeader } from "@/components/common/section-header";
+import { CtaBlock } from "@/components/common/cta-block";
 
 const values = [
   {
@@ -32,27 +34,16 @@ export default function AboutPage() {
     <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-20">
       
       {/* Hero Header */}
-      <div className="max-w-3xl space-y-6">
-        <FadeUp>
-          <span className="text-xs uppercase tracking-widest text-cyan-500 font-semibold">About OnEggy</span>
-        </FadeUp>
-        <FadeUp delay={0.1}>
-          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight">
-            Your Partners in <span className="gradient-text">Cloud & Tech Excellence</span>
-          </h1>
-        </FadeUp>
-        <FadeUp delay={0.2}>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            At OnEggy Technologies, we help modern startups and enterprises architect high-performance, cost-effective infrastructures. We merge state-of-the-art automation tools with expert product engineering.
-          </p>
-        </FadeUp>
-      </div>
+      <SectionHeader
+        tag="About OnEggy"
+        title={<>Your Partners in <span className="gradient-text">Cloud & Tech Excellence</span></>}
+        subtitle="At OnEggy Technologies, we help modern startups and enterprises architect high-performance, cost-effective infrastructures. We merge state-of-the-art automation tools with expert product engineering."
+        align="left"
+      />
 
       {/* Core Values Section */}
       <div className="space-y-12">
-        <FadeUp>
-          <h2 className="text-3xl font-bold text-foreground">Our Core Values</h2>
-        </FadeUp>
+        <h2 className="text-3xl font-bold text-foreground">Our Core Values</h2>
         
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {values.map((item, index) => (
@@ -71,6 +62,13 @@ export default function AboutPage() {
           ))}
         </StaggerContainer>
       </div>
+
+      <CtaBlock
+        title="We are here to support your growth"
+        description="Partner with OnEggy Technologies to build stable platforms, optimize resources, and enable rapid cycles."
+        btnText="Get in Touch"
+        btnHref="/contact"
+      />
     </div>
   );
 }

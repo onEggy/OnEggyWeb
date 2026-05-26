@@ -2,7 +2,9 @@
 
 import React from "react";
 import { Briefcase, MapPin, ArrowRight } from "lucide-react";
-import { FadeUp, StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
+import { StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
+import { SectionHeader } from "@/components/common/section-header";
+import { CtaBlock } from "@/components/common/cta-block";
 
 const openings = [
   {
@@ -39,27 +41,16 @@ export default function CareersPage() {
       <div className="absolute top-[20%] left-[-15%] w-[400px] h-[400px] rounded-full bg-cyan-500/5 blur-[90px] pointer-events-none" />
 
       {/* Header */}
-      <div className="max-w-3xl space-y-6">
-        <FadeUp>
-          <span className="text-xs uppercase tracking-widest text-cyan-500 font-semibold">Join the Team</span>
-        </FadeUp>
-        <FadeUp delay={0.1}>
-          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight">
-            Build the Future of <span className="gradient-text">Cloud Infrastructure</span>
-          </h1>
-        </FadeUp>
-        <FadeUp delay={0.2}>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            At OnEggy Technologies, we value autonomy, technical mastery, and transparency. Join our remote-first, high-growth engineering team and tackle critical cloud challenges.
-          </p>
-        </FadeUp>
-      </div>
+      <SectionHeader
+        tag="Join the Team"
+        title={<>Build the Future of <span className="gradient-text">Cloud Infrastructure</span></>}
+        subtitle="At OnEggy Technologies, we value autonomy, technical mastery, and transparency. Join our remote-first, high-growth engineering team and tackle critical cloud challenges."
+        align="left"
+      />
 
       {/* Openings Grid */}
       <div className="space-y-8">
-        <FadeUp>
-          <h2 className="text-3xl font-bold text-foreground">Open Roles</h2>
-        </FadeUp>
+        <h2 className="text-3xl font-bold text-foreground">Open Roles</h2>
 
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {openings.map((role, index) => (
@@ -90,6 +81,13 @@ export default function CareersPage() {
           ))}
         </StaggerContainer>
       </div>
+
+      <CtaBlock
+        title="Don't see a matching position?"
+        description="We are always looking for smart engineers, cloud specialists, and builders. Send us your resume and we will contact you when roles open."
+        btnText="Send Open Application"
+        btnHref="/contact"
+      />
     </div>
   );
 }
