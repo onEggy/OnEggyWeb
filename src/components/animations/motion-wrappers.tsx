@@ -73,7 +73,7 @@ export const StaggerItem = ({ children, ...props }: HTMLMotionProps<"div">) => {
   );
 };
 
-export const Float = ({ children, speed = 3, ...props }: { children: React.ReactNode; speed?: number }) => {
+export const Float = ({ children, speed = 3, ...props }: import("framer-motion").HTMLMotionProps<"div"> & { speed?: number }) => {
   return (
     <motion.div
       animate={{
