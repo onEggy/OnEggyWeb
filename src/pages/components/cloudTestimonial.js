@@ -76,7 +76,7 @@ const CloudTestimonials = () => {
                     </h2>
                     <p className="text-[10.31px] md:text-[16px] text-gray-400">
                         Hundreds of thriving businesses and Fortune 500 firms worldwide
-                        choose OnEggy Technologies Tech as their DevOps service provider for their
+                        choose OnEggy Technologies as their DevOps service provider for their
                         mission-critical projects.
                     </p>
                     <div className="flex space-x-4">
@@ -107,8 +107,8 @@ const CloudTestimonials = () => {
                                 <p className="text-[11.8px] md:text-[17.4px] mb-4">{testimonial.content}</p>
                                 <div className="flex items-center space-x-4">
                                     <Image
-                                        width={12}
-                                        height={12}
+                                        width={48}
+                                        height={48}
                                         src={testimonial.image || hehe}
                                         alt={testimonial.name}
                                         className="w-12 h-12 rounded-full"

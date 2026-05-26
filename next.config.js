@@ -13,6 +13,65 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: '/components/:path*',
+        destination: '/404',
+        permanent: false,
+      },
+      {
+        source: '/home/:path*',
+        destination: '/404',
+        permanent: false,
+      },
+      {
+        source: '/landing/:path*',
+        destination: '/404',
+        permanent: false,
+      },
+      {
+        source: '/assesment-components/:path*',
+        destination: '/404',
+        permanent: false,
+      },
+      {
+        source: '/about/:path+',
+        destination: '/404',
+        permanent: false,
+      },
+      {
+        source: '/team/:path+',
+        destination: '/404',
+        permanent: false,
+      },
+      {
+        source: '/serviceone/:path+',
+        destination: '/404',
+        permanent: false,
+      },
+      {
+        source: '/services/engagementModel',
+        destination: '/404',
+        permanent: false,
+      },
+      {
+        source: '/services/techCompo',
+        destination: '/404',
+        permanent: false,
+      },
+      {
+        source: '/service/techCompo',
+        destination: '/404',
+        permanent: false,
+      },
+      {
+        source: '/service/technologyStack',
+        destination: '/404',
+        permanent: false,
+      },
+    ];
+  },
   reactStrictMode: true,
   swcMinify: true, // Enables faster and more efficient minification
   compress: true, // Enables gzip compression

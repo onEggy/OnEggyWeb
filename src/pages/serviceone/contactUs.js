@@ -1,21 +1,23 @@
 import React, { useState } from "react";
 import Headline from "../components/headline";
+import { motion, AnimatePresence } from "framer-motion";
 
 const contactUs = () => {
   const title = "Contact Us";
   const desc = "Let's talk about your digital services requirements.";
 
   const [selectedOption, setSelectedOption] = useState("sayHi");
-
-  const handleOptionChange = (event) => {
-    setSelectedOption(event.target.value);
-  };
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+
+  const handleOptionChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,10 +27,38 @@ const contactUs = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // You can add your submission logic here
-    console.log("Form submitted:", formData);
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/ask@oneggy.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `${selectedOption} OnEggy Kubernetes Page Submission`,
+          ...formData,
+        }),
+      });
+
+      if (response.ok) {
+        setSuccessMessage("Request sent successfully! We'll contact you shortly.");
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        throw new Error("Server error");
+      }
+    } catch (error) {
+      setSuccessMessage("There was an issue. Please try again.");
+    } finally {
+      setIsLoading(false);
+      setTimeout(() => setSuccessMessage(""), 3000);
+    }
   };
 
   return (
@@ -55,7 +85,7 @@ const contactUs = () => {
                 onChange={handleOptionChange}
                 className="mr-2 ml-8 sm:ml-0 w-6 h-6"
               />
-              <div>Get a Qoute</div>
+              <div>Get a Quote</div>
             </label>
           </div>
           <form className="sm:w-3/5" onSubmit={handleSubmit}>
@@ -104,28 +134,48 @@ const contactUs = () => {
                 required
               />
             </div>
-            <button className="bg-l_black text-white hover:bg-white border hover:border-l_black hover:text-l_black px-6 py-4 mt-8 rounded-xl w-full hidden sm:block"
-              
+            <button 
+              type="submit"
+              className="bg-l_black text-white hover:bg-white border hover:border-l_black hover:text-l_black px-6 py-4 mt-8 rounded-xl w-full hidden sm:block"
+              disabled={isLoading}
             >
-              Send Message
+              {isLoading ? "Sending..." : "Send Message"}
             </button>
           </form>
         </div>
         <div className="hidden sm:block">
           <img 
             src="../home/contactUs/illustration.png"
-            alt="illustraion"
+            alt="illustration"
             width={494}
             height={394}
             className="absolute -right-[232px] top-[63px]"  
           />
         </div>
       </div>
-      <button className="bg-l_black text-white hover:bg-white border hover:border-l_black hover:text-l_black px-6 py-4 mt-8 rounded-xl w-full sm:relative sm:hidden"
-              
-              >
-                Send Message
-              </button>
+      
+      <AnimatePresence>
+        {successMessage && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+            className="fixed bottom-10 left-10 bg-green-500 text-white px-6 py-3 rounded-lg shadow-md"
+          >
+            {successMessage}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <button 
+        type="submit"
+        className="bg-l_black text-white hover:bg-white border hover:border-l_black hover:text-l_black px-6 py-4 mt-8 rounded-xl w-full sm:relative sm:hidden"
+        disabled={isLoading}
+        onClick={handleSubmit}
+      >
+        {isLoading ? "Sending..." : "Send Message"}
+      </button>
     </div>
   );
 };

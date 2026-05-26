@@ -182,7 +182,7 @@ export default function QuoteSection() {
                 {/* Footer */}
                 <div className="mt-12 text-center text-[#191A15]">
                     <p className="text-[24px] sm:text-[32px] md:text-[40px] font-semibold">
-                        More than 25,000 teams use Collabs
+                        Trusted by leading brands and teams worldwide
                     </p>
                 </div>
             </div>

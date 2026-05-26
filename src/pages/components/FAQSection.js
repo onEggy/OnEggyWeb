@@ -43,7 +43,7 @@ const FAQSection = () => {
             <div className="lg:w-2/3 w-full space-y-4">
                 <h2 className="text-[29.76px] md:text-[40px] font-bold mb-4">FAQ</h2>
                 <p className="mb-6  text-[10.92px] md:text-[16px] text-gray-600">
-                    Hundreds of thriving businesses and Fortune 500 firms worldwide choose OnEggy Technologies Tech as their DevOps service provider for their mission-critical projects.
+                    Hundreds of thriving businesses and Fortune 500 firms worldwide choose OnEggy Technologies as their DevOps service provider for their mission-critical projects.
                 </p>
                 {faqs.map((faq, index) => (
                     <div key={index} className="border rounded-lg overflow-hidden">

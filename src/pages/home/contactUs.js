@@ -136,7 +136,7 @@ const contactUs = () => {
                 placeholder="+919811133005"
                 name="mobileNumber"
                 minLength={10}
-                maxLength={10}
+                maxLength={15}
                 value={formData.mobileNumber}
                 onChange={handleChange}
                 className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300 border-black"

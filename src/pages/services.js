@@ -23,8 +23,8 @@ const services = () => {
   return (
     <div className="max-w-7xl container mx-auto">
       <NextSeo
-        title={serviceData.title}
-        description={serviceData.desc}
+        title={seoData["/services"]?.title || serviceData.title}
+        description={seoData["/services"]?.description || serviceData.desc}
       />
 
       <Head>

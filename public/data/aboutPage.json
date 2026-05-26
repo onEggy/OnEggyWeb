@@ -17,7 +17,7 @@
     ],
     "compoArray": [
       {
-        "head": "Customer Satisfacton",
+        "head": "Customer Satisfaction",
         "para": "Customer Satisfaction first. OpenSource Dev & DevOps. Elevate website with top-notch designs, UI, and growth.",
         "image": "/about/thumb.png",
         "alt": "Thumb"
@@ -44,7 +44,7 @@
     "titleAbout": "Our core values",
     "descAbout": "We investigate the basics of innovation while retaining the synergy that channels implementation.",
     "head": "Your Partner in Cloud, DevOps, and Digital Excellence",
-    "sentence": " This is the stage at which your solution is introduced on the real market with real clients.",
+    "sentence": "This is the stage at which your solution is introduced on the real market with real clients.",
     "showButton": true,
     "buttonPlaceholder": "Book a consultation",
     "boxTitle1": "Your dreams",

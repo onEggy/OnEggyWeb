@@ -48,7 +48,7 @@ const section1 = () => {
 
       <Navbar />
       <Sidebar />
-      <h2 className="text-5xl text-center font-semibold mt-10">Ready to Transform?<br />We’re Just a Message Away</h2>
+      <h1 className="text-5xl text-center font-semibold mt-10">Ready to Transform?<br />We’re Just a Message Away</h1>
       <div className="sm:flex grid sm:grid-cols-2 lg:grid-cols-3 mb-10 justify-center">
         <div className="sm:flex">
           {profile.map((data,index) => (

@@ -54,9 +54,9 @@ export default function GetStarted() {
             <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Left Section */}
                 <div>
-                    <h2 className="text-[50px] font-bold mb-4">People are Saying About OnEggy</h2>
+                    <h2 className="text-[50px] font-bold mb-4">Accelerate Your Digital Journey with OnEggy</h2>
                     <p className="text-gray-400 text-[18px] mb-8">
-                        Everything you need to accept to payment and grow your money or manage anywhere on planet
+                        We provide secure, managed cloud infrastructure and software solutions tailored to help your business innovate and grow.
                     </p>
                     <ul className="space-y-4">
                         <li className="hover:underline cursor-pointer">DevOps and Cloud Manage Services</li>

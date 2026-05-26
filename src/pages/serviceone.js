@@ -20,7 +20,8 @@ import Section5 from "./about/section5";
 import aboutPageData from "../../public/data/aboutPage.json";
 import TechnologyStack from "./service/technologyStack";
 import { NextSeo } from "next-seo";
-import seoData from "../../public/data/service-seo.json";
+import seoData from "../../public/data/seo-data.json";
+import Head from "next/head";
 
 const Home = (skill) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -90,9 +91,22 @@ const Home = (skill) => {
   const desc =
     "At our firm, we provide a variety of services to assist businesses in growing and succeeding online. These services include";
   const buttonPlaceholder = "Talk to Kubernetes Expert";
+  const currentPageData = seoData["/serviceone"];
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.oneggy.com/';
 
   return (
     <div className="landingPage1 container max-w-7xl mx-auto">
+      <NextSeo
+        title={currentPageData?.title}
+        description={currentPageData?.description}
+      />
+      <Head>
+        <meta name="keywords" content={currentPageData?.keywords} />
+        <link
+          rel="canonical"
+          href={`${baseUrl}serviceone`}
+        />
+      </Head>
       <Navbar />
       <Sidebar />
       <div className="mt-16 sm:max-h-screen justify-between">
