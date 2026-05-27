@@ -119,21 +119,21 @@ export function Hero() {
             <FadeIn>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-background/50 backdrop-blur-sm text-xs text-muted-foreground shadow-sm">
                 <Sparkles className="h-3.5 w-3.5 text-cyan-400" />
-                <span>Cloud-Native Infrastructure Enablement</span>
+                <span>Your Dedicated Cloud & Platform Engineering Partner</span>
               </div>
             </FadeIn>
 
             <FadeUp delay={0.1}>
               <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] text-foreground">
-                Scale Your Cloud.<br />
+                Scale Your Platform.<br />
                 <span className="gradient-text">Automate DevOps.</span><br />
-                Accelerate Release.
+                Startup to Enterprise.
               </h1>
             </FadeUp>
 
             <FadeUp delay={0.2}>
               <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl">
-                Partner with senior cloud architects to engineer robust platforms. We build secure Terraform foundations, orchestrate Kubernetes clusters, and audit cloud cost to help SaaS, Fintech, and Healthcare companies scale.
+                We engineer production-grade cloud environments, automate Kubernetes pipelines, and optimize infrastructure spend. Partner with senior architects to accelerate release cycles with 100% transparency.
               </p>
             </FadeUp>
           </div>
@@ -146,29 +146,29 @@ export function Hero() {
             >
               <span className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-teal-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
               <span className="relative z-10 group-hover:text-black transition-colors flex items-center gap-2">
-                Book Free Consultation <ArrowRight className="h-4 w-4" />
+                Schedule Architecture Discussion <ArrowRight className="h-4 w-4" />
               </span>
             </Link>
             
             <Link
-              href="/case-studies"
+              href="/contact"
               className="inline-flex items-center justify-center h-12 px-6 rounded-lg border border-border/80 bg-background/40 hover:bg-accent/40 text-sm font-medium transition-all"
             >
-              Explore Case Studies
+              Get Free Cloud Audit
             </Link>
           </FadeUp>
 
           {/* Trust Indicators banner */}
           <FadeIn delay={0.4} className="border-t border-border/40 pt-6 space-y-3">
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest font-mono flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-cyan-400" /> Enterprise-Grade Trust
+              <CheckCircle2 className="h-4 w-4 text-cyan-400" /> Compliance-Ready & Production-Grade
             </p>
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-muted-foreground font-medium">
-              <span>Smile Foundation</span>
+              <span>HIPAA Alignments</span>
               <span className="text-border">•</span>
-              <span>CloudStok Technologies</span>
+              <span>PCI-DSS Architectures</span>
               <span className="text-border">•</span>
-              <span>Beyond Imagination</span>
+              <span>ISO 27001 Ready blueprints</span>
             </div>
           </FadeIn>
 

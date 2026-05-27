@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight, ChevronDown, Cloud, Server, Code, Layers, Settings, ShieldAlert, Laptop } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
@@ -82,8 +83,21 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="relative w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-teal-400 flex items-center justify-center text-white font-bold text-lg shadow-md shadow-cyan-500/20">
-            O
+          <div className="relative w-8 h-8 flex items-center justify-center">
+            <Image 
+              src="/logoWhite.png" 
+              alt="OnEggy Technologies" 
+              width={32}
+              height={32}
+              className="hidden dark:block object-contain"
+            />
+            <Image 
+              src="/logo.png" 
+              alt="OnEggy Technologies" 
+              width={32}
+              height={32}
+              className="block dark:hidden object-contain"
+            />
           </div>
           <span className="font-semibold text-lg tracking-tight text-foreground">
             OnEggy<span className="text-cyan-500">.</span>

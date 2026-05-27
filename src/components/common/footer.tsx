@@ -2,15 +2,16 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin, Send, Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const services = [
-  { name: "AWS Cloud Services", href: "/services" },
-  { name: "DevOps Consulting", href: "/services" },
-  { name: "Kubernetes Setup", href: "/services" },
-  { name: "Platform Engineering", href: "/services" },
-  { name: "Full Stack Development", href: "/services" },
+  { name: "AWS Cloud Services", href: "/services/aws-cloud-managed-services" },
+  { name: "DevOps Consulting", href: "/services/devops-consulting" },
+  { name: "Kubernetes Setup", href: "/services/kubernetes" },
+  { name: "Platform Engineering", href: "/services/platform-engineering" },
+  { name: "Full Stack Development", href: "/services/full-stack-web-development" },
 ];
 
 const company = [
@@ -22,8 +23,8 @@ const company = [
 
 const legal = [
   { name: "Privacy Policy", href: "/privacy-policy" },
-  { name: "Terms of Service", href: "/terms" },
-  { name: "Sitemap", href: "/sitemap" },
+  { name: "Terms of Service", href: "/terms-and-conditions" },
+  { name: "Sitemap", href: "/sitemap.xml" },
 ];
 
 export function Footer() {
@@ -55,8 +56,14 @@ export function Footer() {
         {/* Column 1: Brand & Socials */}
         <div className="lg:col-span-2 space-y-6">
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="relative w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-teal-400 flex items-center justify-center text-white font-bold text-lg shadow-md shadow-cyan-500/20 group-hover:scale-105 transition-transform">
-              O
+            <div className="relative w-8 h-8 flex items-center justify-center">
+              <Image 
+                src="/logoWhite.png" 
+                alt="OnEggy Technologies" 
+                width={32}
+                height={32}
+                className="object-contain"
+              />
             </div>
             <span className="font-semibold text-lg tracking-tight text-foreground">
               OnEggy<span className="text-cyan-500">.</span>

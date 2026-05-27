@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function SplashScreen() {
@@ -46,9 +47,15 @@ export function SplashScreen() {
               ease: "easeOut",
               times: [0, 0.6, 1],
             }}
-            className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-cyan-500 to-teal-400 flex items-center justify-center text-white font-bold text-3xl shadow-lg shadow-cyan-500/20"
+            className="w-16 h-16 flex items-center justify-center relative"
           >
-            O
+            <Image 
+              src="/logoWhite.png" 
+              alt="OnEggy Logo" 
+              width={64}
+              height={64}
+              className="object-contain"
+            />
           </motion.div>
 
           {/* Tagline animation */}
