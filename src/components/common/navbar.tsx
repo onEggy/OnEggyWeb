@@ -82,13 +82,13 @@ export function Navbar() {
 
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <Link href="/" className="flex items-center">
-          <div className="relative w-10 h-10 flex items-center justify-center">
+          <div className="relative h-8 w-24 md:h-10 md:w-32">
             <Image 
               src="/logov1.png" 
               alt="OnEggy Technologies" 
-              width={40}
-              height={40}
-              className="object-contain"
+              fill
+              sizes="(max-width: 768px) 96px, 128px"
+              className="object-contain object-left"
               priority
             />
           </div>

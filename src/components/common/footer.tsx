@@ -55,14 +55,16 @@ export function Footer() {
         
         {/* Column 1: Brand & Socials */}
         <div className="lg:col-span-2 space-y-6">
-          <Link href="/" className="flex items-center group">
-            <div className="relative w-10 h-10 flex items-center justify-center">
+          <Link href="/" className="inline-block group relative">
+            {/* Subtle glow effect behind footer logo */}
+            <div className="absolute inset-0 bg-cyan-500/10 rounded-lg blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+            <div className="relative h-12 w-36 transition-transform duration-300 group-hover:scale-[1.03]">
               <Image 
                 src="/logov1.png" 
                 alt="OnEggy Technologies" 
-                width={40}
-                height={40}
-                className="object-contain"
+                fill
+                sizes="(max-width: 768px) 120px, 144px"
+                className="object-contain object-left"
               />
             </div>
           </Link>

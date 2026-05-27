@@ -47,14 +47,15 @@ export function SplashScreen() {
               ease: "easeOut",
               times: [0, 0.6, 1],
             }}
-            className="w-20 h-20 flex items-center justify-center relative"
+            className="w-36 h-20 relative"
           >
             <Image 
               src="/logov1.png" 
               alt="OnEggy Logo" 
-              width={80}
-              height={80}
+              fill
+              sizes="144px"
               className="object-contain"
+              priority
             />
           </motion.div>
 

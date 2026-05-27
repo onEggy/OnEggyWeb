@@ -8,6 +8,8 @@ import { ProcessTimeline } from "@/components/home/process-timeline";
 import { Testimonials } from "@/components/home/testimonials";
 import { FaqAccordion } from "@/components/home/faq-accordion";
 import { CtaBlock } from "@/components/common/cta-block";
+import { ClientMarquee } from "@/components/home/client-marquee";
+
 
 export const metadata: Metadata = {
   title: "OnEggy Technologies | Cloud-Native Engineering & DevOps Consulting",
@@ -44,6 +46,9 @@ export default function Home() {
       <div className="relative overflow-hidden min-h-screen">
         {/* 1. Cinematic Hero Section */}
         <Hero />
+
+        {/* Client Logos Motion Marquee */}
+        <ClientMarquee />
 
         {/* 2. Services Showcase Section */}
         <ServicesShowcase />
