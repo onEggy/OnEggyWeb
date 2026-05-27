@@ -1,9 +1,16 @@
-"use client";
-
+import { Metadata } from "next";
 import { Landmark, HeartPulse, ShoppingCart, CloudLightning, GraduationCap, Rocket, Building2 } from "lucide-react";
 import { StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
 import { SectionHeader } from "@/components/common/section-header";
 import { CtaBlock } from "@/components/common/cta-block";
+
+export const metadata: Metadata = {
+  title: "Industries We Serve | OnEggy Technologies",
+  description: "Browse our industry-specific cloud engineering solutions: HIPAA-compliant architectures for Healthcare, PCI-DSS configurations for Fintech, multi-tenant SaaS scaling, and E-Commerce storefronts.",
+  alternates: {
+    canonical: "https://www.oneggy.com/industries",
+  },
+};
 
 const sectors = [
   {
@@ -52,7 +59,8 @@ const sectors = [
 
 export default function IndustriesPage() {
   return (
-    <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-16">
+    <>
+      <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-16">
       {/* Decorative Orbs */}
       <div className="absolute top-[10%] left-[-10%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[95px] pointer-events-none -z-10 animate-pulse" />
       <div className="absolute bottom-[20%] right-[-10%] w-[400px] h-[400px] rounded-full bg-teal-500/5 blur-[100px] pointer-events-none -z-10" />
@@ -103,5 +111,6 @@ export default function IndustriesPage() {
         />
       </div>
     </div>
-  );
+  </>
+);
 }

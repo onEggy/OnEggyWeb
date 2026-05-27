@@ -1,11 +1,18 @@
-"use client";
-
 import React from "react";
+import { Metadata } from "next";
 import { Briefcase, MapPin, ArrowRight, Laptop, GraduationCap, Heart, Moon } from "lucide-react";
 import { StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
 import { SectionHeader } from "@/components/common/section-header";
 import { CtaBlock } from "@/components/common/cta-block";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Careers | OnEggy Technologies",
+  description: "Join our remote-first, high-growth cloud-native engineering team. Explore open positions for DevOps engineers, frontend builders, and platform specialists.",
+  alternates: {
+    canonical: "https://www.oneggy.com/careers",
+  },
+};
 
 const openings = [
   {
@@ -58,8 +65,25 @@ const benefits = [
 ];
 
 export default function CareersPage() {
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "Careers at OnEggy Technologies",
+    "description": "Join our remote-first, high-growth cloud-native engineering team. Explore open positions for DevOps engineers, frontend builders, and platform specialists.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "OnEggy Technologies",
+      "url": "https://www.oneggy.com"
+    }
+  };
+
   return (
-    <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-20">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+      />
+      <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-20">
       {/* Decorative Orbs */}
       <div className="absolute top-[10%] left-[-10%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[95px] pointer-events-none -z-10 animate-pulse" />
       <div className="absolute bottom-[20%] right-[-10%] w-[400px] h-[400px] rounded-full bg-teal-500/5 blur-[100px] pointer-events-none -z-10" />
@@ -174,5 +198,6 @@ export default function CareersPage() {
         />
       </div>
     </div>
-  );
+  </>
+);
 }

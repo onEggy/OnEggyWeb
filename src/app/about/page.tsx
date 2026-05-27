@@ -1,10 +1,17 @@
-"use client";
-
 import React from "react";
+import { Metadata } from "next";
 import { Terminal, Cpu, Eye, Lock, Rocket, Target, Users } from "lucide-react";
 import { StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
 import { SectionHeader } from "@/components/common/section-header";
 import { CtaBlock } from "@/components/common/cta-block";
+
+export const metadata: Metadata = {
+  title: "About Us | OnEggy Technologies",
+  description: "At OnEggy Technologies, we help modern startups and enterprises architect high-performance, cost-effective infrastructures. Learn about our story, mission, and DevOps automation culture.",
+  alternates: {
+    canonical: "https://www.oneggy.com/about",
+  },
+};
 
 const philosophy = [
   {
@@ -48,8 +55,25 @@ const focusAreas = [
 ];
 
 export default function AboutPage() {
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Us | OnEggy Technologies",
+    "description": "At OnEggy Technologies, we help modern startups and enterprises architect high-performance, cost-effective infrastructures. Learn about our story, mission, and DevOps automation culture.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "OnEggy Technologies",
+      "url": "https://www.oneggy.com"
+    }
+  };
+
   return (
-    <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-20">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+      />
+      <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-20">
       {/* Decorative Blur Orbs */}
       <div className="absolute top-[10%] left-[-10%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[95px] pointer-events-none -z-10" />
       <div className="absolute bottom-[20%] right-[-10%] w-[400px] h-[400px] rounded-full bg-teal-500/5 blur-[100px] pointer-events-none -z-10 animate-pulse" />
@@ -155,5 +179,6 @@ export default function AboutPage() {
         />
       </div>
     </div>
-  );
+  </>
+);
 }
