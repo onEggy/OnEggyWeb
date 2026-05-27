@@ -12,25 +12,25 @@ const megaMenuServices = [
   {
     category: "Cloud Solutions",
     items: [
-      { name: "AWS Cloud Services", desc: "Enterprise account setup & operations", href: "/services", icon: <Cloud className="h-4 w-4 text-cyan-400" /> },
-      { name: "Cost Optimization", desc: "Audit cloud bills & reduce waste", href: "/services", icon: <Layers className="h-4 w-4 text-teal-400" /> },
-      { name: "Azure & GCP Consulting", desc: "Multi-cloud architecture & deployment", href: "/services", icon: <Laptop className="h-4 w-4 text-indigo-400" /> }
+      { name: "AWS Cloud Services", desc: "Enterprise account setup & operations", href: "/services/aws-cloud-managed-services", icon: <Cloud className="h-4 w-4 text-cyan-400" /> },
+      { name: "Cost Optimization", desc: "Audit cloud bills & reduce waste", href: "/services/cloud-cost-optimization", icon: <Layers className="h-4 w-4 text-teal-400" /> },
+      { name: "Cloud Migration", desc: "Multi-cloud architecture & migration", href: "/services/cloud-migration", icon: <Laptop className="h-4 w-4 text-indigo-400" /> }
     ]
   },
   {
     category: "DevOps & IaC",
     items: [
-      { name: "Kubernetes Orchestration", desc: "Deploy & scale containerized apps", href: "/services", icon: <Server className="h-4 w-4 text-cyan-400" /> },
-      { name: "CI/CD & Delivery", desc: "Automate build & release pipelines", href: "/services", icon: <Settings className="h-4 w-4 text-teal-400" /> },
-      { name: "Platform Engineering", desc: "Developer self-service templates", href: "/services", icon: <Code className="h-4 w-4 text-indigo-400" /> }
+      { name: "Kubernetes Orchestration", desc: "Deploy & scale containerized apps", href: "/services/kubernetes", icon: <Server className="h-4 w-4 text-cyan-400" /> },
+      { name: "CI/CD & Delivery", desc: "Automate build & release pipelines", href: "/services/cicd-pipeline-automation", icon: <Settings className="h-4 w-4 text-teal-400" /> },
+      { name: "Platform Engineering", desc: "Developer self-service templates", href: "/services/platform-engineering", icon: <Code className="h-4 w-4 text-indigo-400" /> }
     ]
   },
   {
     category: "Engineering & QA",
     items: [
-      { name: "Full Stack Development", desc: "Scalable Next.js & backend software", href: "/services", icon: <Code className="h-4 w-4 text-cyan-400" /> },
-      { name: "React Native Mobile Apps", desc: "Cross-platform iOS & Android apps", href: "/services", icon: <Laptop className="h-4 w-4 text-teal-400" /> },
-      { name: "Security & VAPT Audits", desc: "Rigorous pentesting & compliance checks", href: "/services", icon: <ShieldAlert className="h-4 w-4 text-indigo-400" /> }
+      { name: "Full Stack Development", desc: "Scalable Next.js & backend software", href: "/services/full-stack-web-development", icon: <Code className="h-4 w-4 text-cyan-400" /> },
+      { name: "React Native Mobile Apps", desc: "Cross-platform iOS & Android apps", href: "/services/mobile-app-development", icon: <Laptop className="h-4 w-4 text-teal-400" /> },
+      { name: "Security & DevSecOps", desc: "Rigorous pentesting & compliance checks", href: "/services/security-devsecops", icon: <ShieldAlert className="h-4 w-4 text-indigo-400" /> }
     ]
   }
 ];
@@ -218,22 +218,22 @@ export function Navbar() {
                 </span>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <li>
-                    <Link href="/services" onClick={() => setIsOpen(false)} className="text-sm text-muted-foreground block py-1.5 hover:text-cyan-500">
+                    <Link href="/services/aws-cloud-managed-services" onClick={() => setIsOpen(false)} className="text-sm text-muted-foreground block py-1.5 hover:text-cyan-500">
                       AWS Cloud Management
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services" onClick={() => setIsOpen(false)} className="text-sm text-muted-foreground block py-1.5 hover:text-cyan-500">
+                    <Link href="/services/devops-consulting" onClick={() => setIsOpen(false)} className="text-sm text-muted-foreground block py-1.5 hover:text-cyan-500">
                       DevOps Automation
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services" onClick={() => setIsOpen(false)} className="text-sm text-muted-foreground block py-1.5 hover:text-cyan-500">
+                    <Link href="/services/kubernetes" onClick={() => setIsOpen(false)} className="text-sm text-muted-foreground block py-1.5 hover:text-cyan-500">
                       Kubernetes setup
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services" onClick={() => setIsOpen(false)} className="text-sm text-muted-foreground block py-1.5 hover:text-cyan-500">
+                    <Link href="/services/platform-engineering" onClick={() => setIsOpen(false)} className="text-sm text-muted-foreground block py-1.5 hover:text-cyan-500">
                       Platform Engineering
                     </Link>
                   </li>
