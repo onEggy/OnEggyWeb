@@ -47,13 +47,13 @@ export function SplashScreen() {
               ease: "easeOut",
               times: [0, 0.6, 1],
             }}
-            className="w-16 h-16 flex items-center justify-center relative"
+            className="w-20 h-20 flex items-center justify-center relative"
           >
             <Image 
-              src="/logoWhite.png" 
+              src="/logov1.png" 
               alt="OnEggy Logo" 
-              width={64}
-              height={64}
+              width={80}
+              height={80}
               className="object-contain"
             />
           </motion.div>
@@ -65,9 +65,6 @@ export function SplashScreen() {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="font-bold text-xl tracking-wider text-foreground">
-              OnEggy<span className="text-cyan-500">.</span>
-            </h1>
             <p className="text-[10px] font-mono tracking-widest text-muted-foreground uppercase mt-1">
               Cloud. DevOps. Scale.
             </p>

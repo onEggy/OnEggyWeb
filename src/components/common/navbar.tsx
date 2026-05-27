@@ -81,27 +81,17 @@ export function Navbar() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <div className="relative w-8 h-8 flex items-center justify-center">
+        <Link href="/" className="flex items-center">
+          <div className="relative w-10 h-10 flex items-center justify-center">
             <Image 
-              src="/logoWhite.png" 
+              src="/logov1.png" 
               alt="OnEggy Technologies" 
-              width={32}
-              height={32}
-              className="hidden dark:block object-contain"
-            />
-            <Image 
-              src="/logo.png" 
-              alt="OnEggy Technologies" 
-              width={32}
-              height={32}
-              className="block dark:hidden object-contain"
+              width={40}
+              height={40}
+              className="object-contain"
+              priority
             />
           </div>
-          <span className="font-semibold text-lg tracking-tight text-foreground">
-            OnEggy<span className="text-cyan-500">.</span>
-          </span>
         </Link>
 
         {/* Desktop Menu */}

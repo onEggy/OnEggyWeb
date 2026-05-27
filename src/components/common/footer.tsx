@@ -55,19 +55,16 @@ export function Footer() {
         
         {/* Column 1: Brand & Socials */}
         <div className="lg:col-span-2 space-y-6">
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="relative w-8 h-8 flex items-center justify-center">
+          <Link href="/" className="flex items-center group">
+            <div className="relative w-10 h-10 flex items-center justify-center">
               <Image 
-                src="/logoWhite.png" 
+                src="/logov1.png" 
                 alt="OnEggy Technologies" 
-                width={32}
-                height={32}
+                width={40}
+                height={40}
                 className="object-contain"
               />
             </div>
-            <span className="font-semibold text-lg tracking-tight text-foreground">
-              OnEggy<span className="text-cyan-500">.</span>
-            </span>
           </Link>
           <div className="space-y-2">
             <p className="text-xs font-semibold text-cyan-500 uppercase tracking-widest font-mono">

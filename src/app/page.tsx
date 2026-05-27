@@ -23,7 +23,7 @@ export default function Home() {
     "@type": "Organization",
     "name": "OnEggy Technologies",
     "url": "https://www.oneggy.com",
-    "logo": "https://www.oneggy.com/logo.png",
+    "logo": "https://www.oneggy.com/logov1.png",
     "sameAs": [
       "https://github.com/onEggy",
       "https://linkedin.com/company/oneggy"
