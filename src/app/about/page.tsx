@@ -1,6 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { 
   Users, 
   Terminal, 
@@ -179,9 +180,21 @@ export default function AboutPage() {
                     </Link>
                   </div>
 
-                  {/* Gradient Avatar circle */}
-                  <div className={`w-20 h-20 rounded-full bg-gradient-to-tr ${gradientClass} flex items-center justify-center text-white font-bold font-mono text-3xl shadow-lg border border-white/10 shrink-0`}>
-                    {getInitials(leader.name)}
+                  {/* Leadership Avatar / Image */}
+                  <div className="relative w-20 h-20 rounded-full overflow-hidden bg-background/50 border border-border/40 shrink-0 shadow-lg group-hover:border-cyan-500/30 transition-colors">
+                    {leader.image ? (
+                      <Image
+                        src={leader.image}
+                        alt={leader.alt || leader.name}
+                        fill
+                        sizes="80px"
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                    ) : (
+                      <div className={`w-full h-full bg-gradient-to-tr ${gradientClass} flex items-center justify-center text-white font-bold font-mono text-3xl`}>
+                        {getInitials(leader.name)}
+                      </div>
+                    )}
                   </div>
 
                   <div className="space-y-3 flex-1 min-w-0">
@@ -223,9 +236,21 @@ export default function AboutPage() {
                 >
                   <div className="space-y-6">
                     <div className="flex items-start justify-between w-full">
-                      {/* Gradient Avatar */}
-                      <div className={`w-14 h-14 rounded-full bg-gradient-to-tr ${gradientClass} flex items-center justify-center text-white font-bold font-mono text-xl shadow-md border border-white/10`}>
-                        {getInitials(member.name)}
+                      {/* Member Avatar / Image */}
+                      <div className="relative w-14 h-14 rounded-full overflow-hidden bg-background/50 border border-border/40 shrink-0 shadow-md group-hover:border-cyan-500/30 transition-colors">
+                        {member.image ? (
+                          <Image
+                            src={member.image}
+                            alt={member.alt || member.name}
+                            fill
+                            sizes="56px"
+                            className="object-cover transition-transform duration-500 group-hover:scale-110"
+                          />
+                        ) : (
+                          <div className={`w-full h-full bg-gradient-to-tr ${gradientClass} flex items-center justify-center text-white font-bold font-mono text-xl`}>
+                            {getInitials(member.name)}
+                          </div>
+                        )}
                       </div>
                       
                       <Link
