@@ -16,11 +16,42 @@ import { AssessmentCta } from "@/components/home/assessment-cta";
 
 
 export const metadata: Metadata = {
-  title: "OnEggy Technologies | Cloud-Native Engineering & DevOps Consulting",
-  description: "Modern cloud-native engineering partner specializing in AWS Cloud, Kubernetes infrastructure orchestration, DevOps automation, and high-performance digital apps.",
+  title: "OnEggy Technologies | AWS Cloud Managed Services & DevOps Consulting Company India",
+  description: "Scale secure AWS cloud deployments, automate CI/CD pipelines, and migrate to Kubernetes EKS with OnEggy's premium DevOps consulting company in India. Request a free cloud cost audit.",
   alternates: {
     canonical: "https://www.oneggy.com",
   },
+  keywords: [
+    "AWS Cloud Managed Services India",
+    "DevOps Consulting Company India",
+    "Kubernetes Consulting Services",
+    "Cloud Infrastructure Company",
+    "AWS DevOps Company",
+    "DevOps company in India",
+    "AWS consulting India",
+    "cloud engineering company Delhi",
+    "Kubernetes experts India"
+  ],
+  openGraph: {
+    title: "OnEggy Technologies | AWS Cloud Managed Services & DevOps Consulting Company India",
+    description: "Scale secure AWS cloud deployments, automate CI/CD pipelines, and migrate to Kubernetes EKS with OnEggy's premium DevOps consulting company in India.",
+    url: "https://www.oneggy.com",
+    type: "website",
+    images: [
+      {
+        url: "https://www.oneggy.com/logov1.png",
+        width: 800,
+        height: 600,
+        alt: "OnEggy Technologies Logo",
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "OnEggy Technologies | AWS Cloud Managed Services & DevOps Consulting Company India",
+    description: "Scale secure AWS cloud deployments, automate CI/CD pipelines, and migrate to Kubernetes EKS with OnEggy's premium DevOps consulting company.",
+    images: ["https://www.oneggy.com/logov1.png"],
+  }
 };
 
 export default function Home() {

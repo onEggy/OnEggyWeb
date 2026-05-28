@@ -74,8 +74,33 @@ const cases = [
 ];
 
 export default function CaseStudiesPage() {
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "OnEggy Technologies Case Studies",
+    "description": "Real-life cloud restructuring, EKS containerization, and React Native fintech case studies.",
+    "url": "https://www.oneggy.com/case-studies",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": cases.map((item, idx) => ({
+        "@type": "ListItem",
+        "position": idx + 1,
+        "item": {
+          "@type": "CreativeWork",
+          "name": item.title,
+          "description": item.solution,
+          "genre": item.sector
+        }
+      }))
+    }
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+      />
       <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-20">
       {/* Decorative Orbs */}
       <div className="absolute top-[10%] left-[-10%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[95px] pointer-events-none -z-10" />

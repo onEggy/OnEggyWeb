@@ -1,2 +1,5 @@
 User-agent: *
 Disallow:
+
+Sitemap: https://www.oneggy.com/sitemap.xml
+Sitemap: https://www.oneggy.com/blogs-sitemap.xml
