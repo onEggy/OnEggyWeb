@@ -2,7 +2,8 @@
 
 import React from "react";
 import { motion, MotionValue, useTransform } from "framer-motion";
-import { Server, Cpu, Database, Activity, GitBranch, Terminal } from "lucide-react";
+import { Cpu, GitBranch, Terminal } from "lucide-react";
+import Image from "next/image";
 
 interface HeroVisualProps {
   mouseX: MotionValue<number>;
@@ -89,38 +90,62 @@ export function HeroVisual({ mouseX, mouseY }: HeroVisualProps) {
         style={{ x: layer2X, y: layer2Y }}
         className="absolute inset-0 w-full h-full"
       >
-        {/* Node 1: Ingress Gateway (Left) */}
+        {/* Node 1: AWS Node (Left) */}
         <div className="absolute top-[50%] left-[12%] -translate-x-1/2 -translate-y-1/2 group">
           <div className="relative w-12 h-12 rounded-xl bg-background/80 border border-border/80 flex items-center justify-center shadow-lg group-hover:border-cyan-500/50 group-hover:shadow-cyan-500/10 transition-all cursor-pointer">
-            <Activity className="h-5 w-5 text-cyan-400 group-hover:scale-105 transition-transform" />
+            <div className="relative w-6 h-6 group-hover:scale-105 transition-transform">
+              <Image 
+                src="/service/aws.svg" 
+                alt="AWS Cloud" 
+                fill 
+                sizes="24px" 
+                className="object-contain" 
+              />
+            </div>
             {/* Pulsing ring */}
             <span className="absolute inset-0 rounded-xl border border-cyan-500/20 scale-110 animate-ping opacity-60 pointer-events-none" />
           </div>
           <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-mono text-muted-foreground whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
-            ingress-gw
+            aws-cloud
           </span>
         </div>
 
-        {/* Node 2: K8s Namespace Cluster (Center) */}
+        {/* Node 2: Kubernetes Node (Center) */}
         <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 group">
           <div className="relative w-16 h-16 rounded-2xl bg-background/90 border border-border/80 flex items-center justify-center shadow-2xl group-hover:border-teal-500/50 group-hover:shadow-teal-500/15 transition-all cursor-pointer">
-            <Server className="h-6 w-6 text-teal-400 group-hover:rotate-6 transition-transform" />
+            <div className="relative w-9 h-9 group-hover:rotate-6 transition-transform">
+              <Image 
+                src="/kubernetes.png" 
+                alt="Kubernetes Container Platform" 
+                fill 
+                sizes="36px" 
+                className="object-contain" 
+              />
+            </div>
             
             {/* Scaling inner pod indicators */}
             <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-green-500 border-2 border-background animate-pulse" />
           </div>
           <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-mono text-muted-foreground whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
-            k8s-cluster
+            k8s-platform
           </span>
         </div>
 
-        {/* Node 3: Database Clusters (Right) */}
+        {/* Node 3: MongoDB Database Node (Right) */}
         <div className="absolute top-[50%] left-[88%] -translate-x-1/2 -translate-y-1/2 group">
           <div className="relative w-12 h-12 rounded-xl bg-background/80 border border-border/80 flex items-center justify-center shadow-lg group-hover:border-indigo-500/50 group-hover:shadow-indigo-500/10 transition-all cursor-pointer">
-            <Database className="h-5 w-5 text-indigo-400 group-hover:scale-105 transition-transform" />
+            <div className="relative w-6 h-6 group-hover:scale-105 transition-transform">
+              <Image 
+                src="/service/mongodb.svg" 
+                alt="MongoDB database" 
+                fill 
+                sizes="24px" 
+                className="object-contain" 
+              />
+            </div>
           </div>
           <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-mono text-muted-foreground whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
-            replica-db
+            mongodb-replica
           </span>
         </div>
       </motion.div>

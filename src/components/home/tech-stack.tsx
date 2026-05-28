@@ -1,40 +1,354 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { SectionHeader } from "../common/section-header";
 import { motion, AnimatePresence } from "framer-motion";
+import { 
+  Cloud, 
+  Settings, 
+  Code, 
+  Database, 
+  Activity, 
+  Cpu, 
+  Layers, 
+  GitBranch 
+} from "lucide-react";
 
-const categories = [
+interface TechItem {
+  name: string;
+  desc: string;
+  icon: string | React.ReactNode;
+  isAsset?: boolean;
+  color: string;
+}
+
+interface Category {
+  id: string;
+  name: string;
+  icon: React.ReactNode;
+  items: TechItem[];
+}
+
+const categories: Category[] = [
   {
-    id: "cloud-devops",
-    name: "Cloud & DevOps",
+    id: "cloud-platforms",
+    name: "Cloud Platforms",
+    icon: <Cloud className="h-4 w-4" />,
     items: [
-      { name: "AWS", desc: "EC2, EKS, RDS, IAM, Lambda, S3, CloudFront", icon: "☁️", color: "from-orange-500/20 to-amber-500/10 border-orange-500/30 text-orange-400" },
-      { name: "Kubernetes", desc: "Cluster setups, Ingress, Pod scheduling, Helm, Kustomize", icon: "☸️", color: "from-blue-500/20 to-cyan-500/10 border-blue-500/30 text-blue-400" },
-      { name: "Docker", desc: "Image orchestration, container configuration, Docker Compose", icon: "🐳", color: "from-cyan-500/20 to-teal-500/10 border-cyan-500/30 text-cyan-400" },
-      { name: "Terraform", desc: "Declarative Infrastructure as Code (IaC), State lock files", icon: "🏗️", color: "from-purple-500/20 to-indigo-500/10 border-purple-500/30 text-purple-400" },
-      { name: "Ansible", desc: "Configuration provisioning, automated server hardening", icon: "⚙️", color: "from-red-500/20 to-rose-500/10 border-red-500/30 text-rose-400" },
+      { 
+        name: "AWS", 
+        desc: "EC2, EKS, RDS, IAM, Lambda, S3, CloudFront", 
+        icon: "/service/aws.svg", 
+        isAsset: true, 
+        color: "from-orange-500/10 to-amber-500/5 border-orange-500/20 text-orange-400 hover:border-orange-500/40" 
+      },
+      { 
+        name: "Google Cloud", 
+        desc: "GKE, Compute Engine, BigQuery, Cloud Run, Cloud SQL", 
+        icon: (
+          <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" />
+          </svg>
+        ), 
+        color: "from-blue-500/10 to-red-500/5 border-blue-500/20 text-blue-400 hover:border-blue-500/40" 
+      },
+      { 
+        name: "Azure", 
+        desc: "AKS, Azure Functions, Blob Storage, Cosmos DB, Entra ID", 
+        icon: (
+          <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zM24 11.4H12.6V0H24v11.4z" />
+          </svg>
+        ), 
+        color: "from-blue-600/10 to-cyan-500/5 border-blue-600/20 text-cyan-400 hover:border-blue-600/40" 
+      }
     ]
   },
   {
-    id: "languages-frameworks",
-    name: "Languages & Frameworks",
+    id: "devops-tools",
+    name: "DevOps Tools",
+    icon: <Settings className="h-4 w-4" />,
     items: [
-      { name: "Next.js", desc: "Server side rendering, layouts routing, high performance SEO", icon: "▲", color: "from-neutral-500/20 to-neutral-800/10 border-neutral-500/30 text-foreground" },
-      { name: "FastAPI", desc: "High-performance Python APIs, auto Swagger OpenAPI validation", icon: "⚡", color: "from-teal-500/20 to-emerald-500/10 border-teal-500/30 text-teal-400" },
-      { name: "Go Lang", desc: "Concurreny pipelines, fast microservices compile models", icon: "🐹", color: "from-sky-500/20 to-blue-500/10 border-sky-500/30 text-sky-400" },
-      { name: "Python", desc: "Data pipelines, automation scripts, Django/Flask architectures", icon: "🐍", color: "from-yellow-500/20 to-amber-500/10 border-yellow-500/30 text-yellow-400" },
-      { name: "React Native", desc: "Cross-platform iOS & Android apps, mobile components design", icon: "⚛️", color: "from-indigo-500/20 to-blue-500/10 border-indigo-500/30 text-indigo-400" },
+      { 
+        name: "Kubernetes", 
+        desc: "EKS deployment, Ingress controllers, Helm releases, horizontal pod scaling", 
+        icon: "/kubernetes.png", 
+        isAsset: true, 
+        color: "from-blue-500/10 to-indigo-500/5 border-blue-500/20 text-blue-400 hover:border-blue-500/40" 
+      },
+      { 
+        name: "Docker", 
+        desc: "Multi-stage builds, container orchestration, microservice isolation", 
+        icon: (
+          <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M13.983 8.871h-1.996v1.996h1.996V8.871zm-2.495 0H9.492v1.996h1.996V8.871zm-2.495 0H7.04v1.996h1.996V8.871zm-2.495 0H4.55v1.996h1.996V8.871zm0-2.495H4.55v1.996h1.996V6.376zm0-2.495H4.55v1.996h1.996V3.881zm2.495 2.495H9.492v1.996h1.996V6.376zm0-2.495H9.492v1.996h1.996V3.881zm2.495 2.495h-1.996v1.996h1.996V6.376zM3.61 10.873L1.87 11.23l-.15 1.02c-.22 1.45.17 2.94 1.13 4.14C4.34 18.25 6.44 19 8.64 19h10.96c2.3 0 4.23-1.63 4.4-3.92.1-1.33-.28-2.61-1.07-3.62l-.76-.98-.44.75c-.83 1.4-2.31 2.27-3.93 2.27H8.64c-1.84 0-3.32-1.48-3.32-3.32 0-.46.09-.9.27-1.31z"/>
+          </svg>
+        ), 
+        color: "from-cyan-500/10 to-blue-500/5 border-cyan-500/20 text-cyan-400 hover:border-cyan-500/40" 
+      },
+      { 
+        name: "Ansible", 
+        desc: "Configuration management, server hardening, agentless host configurations", 
+        icon: (
+          <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 4.2c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5-2.5-1.12-2.5-2.5 1.12-2.5 2.5-2.5zm4.8 12.6h-1.8c-.3 0-.6-.2-.7-.5l-.8-2.2H10.5l-.8 2.2c-.1.3-.4.5-.7.5H7.2c-.4 0-.7-.4-.5-.8L10.5 7h3l3.8 8.8c.2.4-.1.8-.5.8z"/>
+          </svg>
+        ), 
+        color: "from-red-500/10 to-rose-500/5 border-red-500/20 text-red-400 hover:border-red-500/40" 
+      }
     ]
   },
   {
-    id: "monitoring-observability",
+    id: "frontend",
+    name: "Frontend Technologies",
+    icon: <Code className="h-4 w-4" />,
+    items: [
+      { 
+        name: "React", 
+        desc: "Interactive components, client application architectures, hook states", 
+        icon: "/service/react.svg", 
+        isAsset: true, 
+        color: "from-sky-500/10 to-blue-500/5 border-sky-500/20 text-sky-400 hover:border-sky-500/40" 
+      },
+      { 
+        name: "Next.js", 
+        desc: "React framework, Server Side Rendering (SSR), App router layouts, Static Generation", 
+        icon: "/next.svg", 
+        isAsset: true, 
+        color: "from-neutral-500/10 to-neutral-800/5 border-neutral-500/20 text-foreground hover:border-neutral-500/40" 
+      },
+      { 
+        name: "Vue", 
+        desc: "Sleek frontend dashboards, modular templates, reactive composition systems", 
+        icon: "/service/vue.svg", 
+        isAsset: true, 
+        color: "from-emerald-500/10 to-teal-500/5 border-emerald-500/20 text-emerald-400 hover:border-emerald-500/40" 
+      },
+      { 
+        name: "Angular", 
+        desc: "Enterprise client panels, strict typing structure, component modularity", 
+        icon: "/service/angular.svg", 
+        isAsset: true, 
+        color: "from-red-600/10 to-rose-500/5 border-red-600/20 text-red-500 hover:border-red-600/40" 
+      },
+      { 
+        name: "HTML5", 
+        desc: "Semantic element trees, accessible tags, structural web standard bases", 
+        icon: "/service/html.svg", 
+        isAsset: true, 
+        color: "from-orange-500/10 to-red-500/5 border-orange-500/20 text-orange-400 hover:border-orange-500/40" 
+      },
+      { 
+        name: "CSS3", 
+        desc: "Fluid layouts, CSS variables tokenizing, media queries, animations", 
+        icon: "/service/css.svg", 
+        isAsset: true, 
+        color: "from-blue-500/10 to-indigo-500/5 border-blue-500/20 text-blue-400 hover:border-blue-500/40" 
+      }
+    ]
+  },
+  {
+    id: "backend",
+    name: "Backend Technologies",
+    icon: <Cpu className="h-4 w-4" />,
+    items: [
+      { 
+        name: "Node.js", 
+        desc: "Non-blocking JavaScript runtimes, Express and NestJS microservices", 
+        icon: "/service/node.svg", 
+        isAsset: true, 
+        color: "from-green-500/10 to-emerald-500/5 border-green-500/20 text-green-400 hover:border-green-500/40" 
+      },
+      { 
+        name: "Python", 
+        desc: "Automation scripts, machine learning integrations, Django data architectures", 
+        icon: "/service/python.svg", 
+        isAsset: true, 
+        color: "from-yellow-500/10 to-amber-500/5 border-yellow-500/20 text-yellow-400 hover:border-yellow-500/40" 
+      },
+      { 
+        name: "Go Lang", 
+        desc: "Statically typed compiled languages, high concurrency microservices, native performance", 
+        icon: (
+          <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M1.81 10.37h20.38v3.26H1.81zm0-4.89h20.38v3.26H1.81zm0 9.78h20.38V18.5H1.81z"/>
+          </svg>
+        ), 
+        color: "from-sky-400/10 to-blue-500/5 border-sky-400/20 text-sky-400 hover:border-sky-400/40" 
+      },
+      { 
+        name: "FastAPI", 
+        desc: "High-performance Python APIs, automated OpenAPI Swagger document configurations", 
+        icon: (
+          <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0L2 12h8v12l10-12h-8z"/>
+          </svg>
+        ), 
+        color: "from-teal-500/10 to-emerald-500/5 border-teal-500/20 text-teal-400 hover:border-teal-500/40" 
+      }
+    ]
+  },
+  {
+    id: "databases",
+    name: "Databases",
+    icon: <Database className="h-4 w-4" />,
+    items: [
+      { 
+        name: "MongoDB", 
+        desc: "Document store, flexible JSON models, automated scaling and sharding", 
+        icon: "/service/mongodb.svg", 
+        isAsset: true, 
+        color: "from-emerald-500/10 to-green-600/5 border-emerald-500/20 text-emerald-400 hover:border-emerald-500/40" 
+      },
+      { 
+        name: "MySQL", 
+        desc: "Relational database tables, robust schema configs, transactional database models", 
+        icon: "/service/mysql.svg", 
+        isAsset: true, 
+        color: "from-blue-500/10 to-orange-500/5 border-blue-500/20 text-blue-400 hover:border-blue-500/40" 
+      },
+      { 
+        name: "PostgreSQL", 
+        desc: "Advanced relational query schemas, geo-spatial configurations, transactional consistency", 
+        icon: (
+          <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+          </svg>
+        ), 
+        color: "from-blue-600/10 to-indigo-500/5 border-blue-600/20 text-indigo-400 hover:border-blue-600/40" 
+      },
+      { 
+        name: "Redis", 
+        desc: "Time-series caches, fast cluster caching, pub-sub configurations", 
+        icon: (
+          <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm1 13h-2v-2h2zm0-4h-2V7h2z"/>
+          </svg>
+        ), 
+        color: "from-red-600/10 to-rose-500/5 border-red-600/20 text-red-500 hover:border-red-600/40" 
+      }
+    ]
+  },
+  {
+    id: "monitoring",
     name: "Monitoring & Observability",
+    icon: <Activity className="h-4 w-4" />,
     items: [
-      { name: "Prometheus", desc: "Central time-series metric databases, alerting gateways", icon: "🔥", color: "from-orange-600/20 to-red-500/10 border-orange-600/30 text-orange-500" },
-      { name: "Grafana", desc: "Telemetry charts, log analysis dashboards, metrics monitoring", icon: "📊", color: "from-yellow-600/20 to-orange-500/10 border-yellow-600/30 text-yellow-500" },
-      { name: "Datadog", desc: "APM tracing, log index ingestions, container monitoring", icon: "🐕", color: "from-purple-600/20 to-indigo-500/10 border-purple-600/30 text-purple-400" },
-      { name: "OpenTelemetry", desc: "Standardized agent tracing metrics collection API formats", icon: "📡", color: "from-blue-600/20 to-indigo-500/10 border-blue-600/30 text-blue-400" },
+      { 
+        name: "Prometheus", 
+        desc: "Metric scraping rules, custom alert rules, time-series storage engines", 
+        icon: (
+          <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0A12 12 0 1024 12 12.01 12.01 0 0012 0zm4.5 17h-9l4.5-8.5z"/>
+          </svg>
+        ), 
+        color: "from-orange-600/10 to-red-500/5 border-orange-600/20 text-orange-500 hover:border-orange-600/40" 
+      },
+      { 
+        name: "Grafana", 
+        desc: "Log queries panels, cluster visual telemetry charts, dashboard configurations", 
+        icon: (
+          <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0C5.38 0 0 5.38 0 12s5.38 12 12 12 12-5.38 12-12S18.62 0 12 0zm1.76 17.65h-3.52c-1.34 0-2.43-1.09-2.43-2.43v-4.98c0-1.34 1.09-2.43 2.43-2.43h3.52c1.34 0 2.43 1.09 2.43 2.43v4.98c0 1.34-1.09 2.43-2.43 2.43z"/>
+          </svg>
+        ), 
+        color: "from-yellow-600/10 to-orange-500/5 border-yellow-600/20 text-yellow-500 hover:border-yellow-600/40" 
+      },
+      { 
+        name: "Datadog", 
+        desc: "APM call tracer tracing, automated error logs indexing, serverless alerts configuration", 
+        icon: (
+          <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.237 17.72c-.895.895-2.613.567-3.834-.73-1.221-1.298-1.503-3.064-.608-3.959.895-.895 2.613-.568 3.834.73 1.222 1.298 1.504 3.064.608 3.959z"/>
+          </svg>
+        ), 
+        color: "from-purple-600/10 to-indigo-500/5 border-purple-600/20 text-purple-400 hover:border-purple-600/40" 
+      }
+    ]
+  },
+  {
+    id: "infra",
+    name: "Infrastructure Tools",
+    icon: <Layers className="h-4 w-4" />,
+    items: [
+      { 
+        name: "Terraform", 
+        desc: "Infrastructure as Code (IaC) configuration scripts, cloud state synchronization locking", 
+        icon: (
+          <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M1.44 0h7.2v7.2H1.44zm8.64 0h7.2v7.2h-7.2zm8.64 8.64h7.2v7.2h-7.2zm-17.28 0h7.2v7.2H1.44z"/>
+          </svg>
+        ), 
+        color: "from-purple-500/10 to-indigo-500/5 border-purple-500/20 text-purple-400 hover:border-purple-500/40" 
+      },
+      { 
+        name: "Helm", 
+        desc: "Kubernetes YAML templates packaging, versioned chart configuration deployments", 
+        icon: (
+          <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5 16.5H7v-9h10v9z"/>
+          </svg>
+        ), 
+        color: "from-blue-900/10 to-indigo-800/5 border-blue-900/20 text-blue-400 hover:border-blue-900/40" 
+      },
+      { 
+        name: "Nginx", 
+        desc: "Reverse proxy routing rules, server-side caching, rate limiting, SSL termination", 
+        icon: (
+          <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm1-5.5h-2v-2h2v2z"/>
+          </svg>
+        ), 
+        color: "from-green-600/10 to-teal-500/5 border-green-600/20 text-green-400 hover:border-green-600/40" 
+      }
+    ]
+  },
+  {
+    id: "cicd",
+    name: "CI/CD Ecosystem",
+    icon: <GitBranch className="h-4 w-4" />,
+    items: [
+      { 
+        name: "Jenkins", 
+        desc: "Self-hosted build runner nodes, groovy-based pipeline automation scripts", 
+        icon: (
+          <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm2.222 17.778h-4.444v-1.111h4.444v1.111zm0-2.222h-4.444v-1.111h4.444v1.111zm1.111-5.556H8.667c-.613 0-1.111-.498-1.111-1.111V5.556c0-.613.498-1.111 1.111-1.111h4.444c.613 0 1.111.498 1.111 1.111v3.333c0 .613-.498 1.111-1.111 1.111z"/>
+          </svg>
+        ), 
+        color: "from-red-500/10 to-amber-500/5 border-red-500/20 text-red-400 hover:border-red-500/40" 
+      },
+      { 
+        name: "GitHub Actions", 
+        desc: "YAML workflows automation, remote hosted runners integration, deployment trigger hooks", 
+        icon: (
+          <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-2 17.5v-11l7 5.5-7 5.5z"/>
+          </svg>
+        ), 
+        color: "from-blue-500/10 to-neutral-700/5 border-blue-500/20 text-blue-400 hover:border-blue-500/40" 
+      },
+      { 
+        name: "GitLab CI", 
+        desc: "Runner orchestrations, shared cache build steps, Docker-in-Docker config stages", 
+        icon: (
+          <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+          </svg>
+        ), 
+        color: "from-orange-500/10 to-red-500/5 border-orange-500/20 text-orange-400 hover:border-orange-500/40" 
+      },
+      { 
+        name: "ArgoCD", 
+        desc: "GitOps deployment sync controller, automatic cluster drift reconciliation settings", 
+        icon: (
+          <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4 16H8v-2h8v2zm0-4H8v-2h8v2zm0-4H8V6h8v2z"/>
+          </svg>
+        ), 
+        color: "from-red-500/10 to-orange-500/5 border-red-500/20 text-red-400 hover:border-red-500/40" 
+      }
     ]
   }
 ];
@@ -45,69 +359,91 @@ export function TechStack() {
   const activeCategory = categories.find((cat) => cat.id === activeTab);
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-20 border-t border-border/40 relative">
+    <section className="max-w-7xl mx-auto px-6 py-20 border-t border-border/40 relative" id="technology-ecosystem">
       {/* Background glow orb */}
       <div className="absolute top-[20%] left-[20%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[95px] pointer-events-none -z-10" />
 
       <SectionHeader
         tag="Our Technical Stack"
-        title={<>Modern Technologies We <span className="gradient-text">Master</span></>}
-        subtitle="We avoid outdated tech. Our teams specialize in bleeding-edge automation tools, cloud infrastructures, and high-performance product frameworks."
+        title={<>Premium Technology <span className="gradient-text">Ecosystem</span></>}
+        subtitle="We build exclusively with standard, enterprise-grade tools. Our teams specialize in cloud-native infrastructure, declarative automation, and highly scaling framework stacks."
         align="center"
-        className="mb-12"
+        className="mb-16"
       />
 
-      {/* Tabs list */}
-      <div className="flex items-center justify-center gap-4 mb-12 flex-wrap">
-        {categories.map((cat) => (
-          <button
-            key={cat.id}
-            onClick={() => setActiveTab(cat.id)}
-            className={`px-5 py-2.5 rounded-lg text-sm font-medium border transition-all cursor-pointer ${
-              activeTab === cat.id
-                ? "bg-foreground text-background border-foreground shadow-md"
-                : "bg-background/40 hover:bg-accent/40 border-border text-muted-foreground"
-            }`}
-          >
-            {cat.name}
-          </button>
-        ))}
-      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        {/* Left Column: Dashboard Category Selector */}
+        <div className="lg:col-span-4 flex lg:flex-col gap-2 overflow-x-auto pb-4 lg:pb-0 scrollbar-none border-b lg:border-b-0 lg:border-r border-border/40 shrink-0">
+          {categories.map((cat) => {
+            const isActive = activeTab === cat.id;
+            return (
+              <button
+                key={cat.id}
+                onClick={() => setActiveTab(cat.id)}
+                className={`flex items-center gap-3 px-4 py-3.5 rounded-xl text-sm font-semibold border transition-all cursor-pointer text-left whitespace-nowrap lg:mr-6 ${
+                  isActive
+                    ? "bg-cyan-500/10 text-cyan-400 border-cyan-500/30 shadow-md shadow-cyan-500/5"
+                    : "bg-transparent hover:bg-accent/35 border-transparent text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                <div className={`p-1.5 rounded-lg border transition-colors ${
+                  isActive ? "bg-cyan-500/25 border-cyan-500/35" : "bg-background/40 border-border/40"
+                }`}>
+                  {cat.icon}
+                </div>
+                <span>{cat.name}</span>
+              </button>
+            );
+          })}
+        </div>
 
-      {/* Categorized Tech Items Grid */}
-      <div className="min-h-[280px]">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeTab}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            {activeCategory?.items.map((item, index) => {
-              const isLastAndOdd = index === activeCategory.items.length - 1 && activeCategory.items.length % 2 !== 0;
-              return (
+        {/* Right Column: Grid of Tech Cards */}
+        <div className="lg:col-span-8 min-h-[360px]">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, x: 15 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -15 }}
+              transition={{ duration: 0.25 }}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+            >
+              {activeCategory?.items.map((item) => (
                 <div
                   key={item.name}
-                  className={`glass-card p-6 rounded-xl border bg-gradient-to-tr ${item.color} flex gap-4 transition-all duration-300 hover:scale-[1.01] hover:shadow-lg ${
-                    isLastAndOdd ? "md:col-span-2 lg:col-span-1" : ""
-                  }`}
+                  className={`glass-card p-6 rounded-2xl border bg-gradient-to-tr ${item.color} flex gap-4 transition-all duration-300 hover:scale-[1.015] hover:shadow-xl group`}
                 >
-                  <div className="text-2xl w-10 h-10 rounded-lg bg-background border border-border/40 flex items-center justify-center shrink-0">
-                    {item.icon}
+                  <div className="w-12 h-12 rounded-xl bg-background/80 border border-border/40 flex items-center justify-center shrink-0 shadow-sm relative overflow-hidden group-hover:border-cyan-500/20 transition-colors">
+                    {item.isAsset && typeof item.icon === "string" ? (
+                      <div className="relative w-7 h-7">
+                        <Image
+                          src={item.icon}
+                          alt={item.name}
+                          fill
+                          sizes="28px"
+                          className="object-contain dark:invert-0 dark:opacity-90 group-hover:scale-105 transition-transform"
+                        />
+                      </div>
+                    ) : (
+                      <div className="text-muted-foreground group-hover:text-cyan-400 transition-colors">
+                        {item.icon}
+                      </div>
+                    )}
                   </div>
-                  <div className="space-y-1">
-                    <h4 className="text-lg font-bold text-foreground">{item.name}</h4>
-                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                  <div className="space-y-1.5 min-w-0">
+                    <h4 className="text-base font-bold text-foreground group-hover:text-cyan-400 transition-colors">
+                      {item.name}
+                    </h4>
+                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                      {item.desc}
+                    </p>
                   </div>
                 </div>
-              );
-            })}
-          </motion.div>
-        </AnimatePresence>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+        </div>
       </div>
-
     </section>
   );
 }

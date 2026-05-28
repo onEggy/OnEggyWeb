@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Sparkles, CheckCircle2 } from "lucide-react";
 import { useMotionValue } from "framer-motion";
 import { HeroVisual } from "./hero-visual";
@@ -75,9 +76,15 @@ export function Hero() {
       {/* AWS */}
       <Float speed={4} className="absolute left-[8%] top-[25%] z-20 hidden lg:block">
         <div className="glass-card px-3 py-1.5 rounded-full border border-orange-500/20 text-orange-400 flex items-center gap-1.5 shadow-md shadow-orange-500/5">
-          <svg className="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24">
-            <path d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12-12-5.373-12-12 5.373-12 12-12zm-3.666 17.067c2.518-.088 4.793-1.282 5.434-2.146.406-.549.444-1.042.102-1.341-.337-.294-.9-.236-1.428.149-.579.421-2.036 1.15-3.805 1.096-1.579-.049-2.28-.739-2.215-1.465.074-.823.953-1.401 2.92-1.401h3.332v-1.127c0-1.895-1.055-2.909-3.21-2.909-1.921 0-3.328.799-3.92 1.405-.286.292-.258.749.073.993.308.228.743.19 1.082-.102.392-.338 1.455-.89 2.684-.89 1.196 0 1.621.503 1.621 1.343v.681l-3.528.067c-3.136.061-4.295 1.488-4.295 3.013 0 1.954 1.545 3.298 4.633 3.234z" />
-          </svg>
+          <div className="relative w-3.5 h-3.5">
+            <Image 
+              src="/service/aws.svg" 
+              alt="AWS" 
+              fill 
+              sizes="14px" 
+              className="object-contain" 
+            />
+          </div>
           <span className="text-[11px] font-mono font-semibold uppercase tracking-wider">AWS</span>
         </div>
       </Float>
@@ -85,9 +92,15 @@ export function Hero() {
       {/* Kubernetes */}
       <Float speed={4.5} className="absolute left-[4%] top-[60%] z-20 hidden lg:block">
         <div className="glass-card px-3 py-1.5 rounded-full border border-blue-500/20 text-blue-400 flex items-center gap-1.5 shadow-md shadow-blue-500/5">
-          <svg className="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24">
-            <path d="M12.01 0l7.35 4.31v8.62l-7.35 4.31-7.36-4.31v-8.62zm0 1.63L6.1 5.09v6.92l5.91 3.46 5.91-3.46V5.09z" />
-          </svg>
+          <div className="relative w-3.5 h-3.5">
+            <Image 
+              src="/kubernetes.png" 
+              alt="Kubernetes" 
+              fill 
+              sizes="14px" 
+              className="object-contain" 
+            />
+          </div>
           <span className="text-[11px] font-mono font-semibold uppercase tracking-wider">Kubernetes</span>
         </div>
       </Float>
@@ -105,7 +118,15 @@ export function Hero() {
       {/* Next.js */}
       <Float speed={3.5} className="absolute right-[10%] top-[20%] z-20 hidden lg:block">
         <div className="glass-card px-3 py-1.5 rounded-full border border-border/80 text-foreground flex items-center gap-1.5 shadow-md">
-          <span className="w-2 h-2 rounded-full bg-foreground" />
+          <div className="relative w-3.5 h-3.5 dark:invert">
+            <Image 
+              src="/next.svg" 
+              alt="Next.js" 
+              fill 
+              sizes="14px" 
+              className="object-contain" 
+            />
+          </div>
           <span className="text-[11px] font-mono font-semibold uppercase tracking-wider">Next.js</span>
         </div>
       </Float>

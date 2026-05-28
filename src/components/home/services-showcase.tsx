@@ -3,6 +3,7 @@
 import React from "react";
 import { Cloud, Settings, Layers, Smartphone, Code, Palette, Cpu, Eye, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { SectionHeader } from "../common/section-header";
 import { StaggerContainer, StaggerItem } from "../animations/motion-wrappers";
 
@@ -12,48 +13,56 @@ const services = [
     title: "AWS Managed Services",
     desc: "Enterprise cloud configurations, multi-account structures (Landing Zones), cost audits, and secure resource automation.",
     tag: "AWS. Cost. Scale.",
+    techs: ["/service/aws.svg"]
   },
   {
     icon: <Settings className="h-6 w-6 text-teal-400" />,
     title: "DevOps Consulting",
     desc: "Eradicate manual errors. Build CI/CD pipelines, automate deployments, and configure Infrastructure as Code via Terraform.",
     tag: "IaC. CI/CD. Pipelines.",
+    techs: ["/service/aws.svg", "/kubernetes.png"]
   },
   {
     icon: <Layers className="h-6 w-6 text-indigo-400" />,
     title: "Kubernetes Engineering",
     desc: "Migrate containerized apps to EKS/AKS. Custom ingress configs, network policies, cluster auto-scaling, and Service Mesh.",
     tag: "Containers. EKS. Helm.",
+    techs: ["/kubernetes.png", "/service/aws.svg"]
   },
   {
     icon: <Cpu className="h-6 w-6 text-cyan-400" />,
     title: "Platform Engineering",
     desc: "Empower developer self-sufficiency. We engineer internal developer portals to abstract cloud complexity.",
     tag: "IDP. Developer Velocity.",
+    techs: ["/kubernetes.png", "/service/node.svg"]
   },
   {
     icon: <Code className="h-6 w-6 text-teal-400" />,
     title: "Full Stack Development",
     desc: "Design and build fast modern software. Clean Next.js, React, Node.js, and Django backend codebases.",
     tag: "Next.js. React. Django.",
+    techs: ["/service/react.svg", "/service/node.svg", "/service/python.svg"]
   },
   {
     icon: <Smartphone className="h-6 w-6 text-indigo-400" />,
     title: "Mobile App Development",
     desc: "Sleek iOS & Android mobile software built on top of React Native frameworks with offline syncing.",
     tag: "React Native. iOS. Android.",
+    techs: ["/service/react.svg"]
   },
   {
     icon: <Palette className="h-6 w-6 text-cyan-400" />,
     title: "UI/UX Design",
     desc: "Modern digital designs that convert. Wireframes, user experience research, premium visual interfaces, and prototypes.",
     tag: "Figma. SaaS Design.",
+    techs: ["/service/html.svg", "/service/css.svg"]
   },
   {
     icon: <Eye className="h-6 w-6 text-teal-400" />,
     title: "Monitoring & Observability",
     desc: "Zero blindspots. We configure centralized Prometheus, Grafana, OpenTelemetry, and Datadog alert boards.",
     tag: "Logs. Metrics. Traces.",
+    techs: ["/service/aws.svg", "/kubernetes.png"]
   },
 ];
 
@@ -96,7 +105,20 @@ export function ServicesShowcase() {
                 </p>
               </div>
             </div>
-            <div className="pt-4 flex justify-end">
+            <div className="pt-4 flex items-center justify-between border-t border-border/20 mt-4">
+              <div className="flex items-center gap-1.5">
+                {item.techs?.map((t, idx) => (
+                  <div key={idx} className="relative w-5 h-5 rounded bg-background/50 border border-border/40 flex items-center justify-center p-0.5" title={t.split('/').pop()?.split('.')[0]}>
+                    <Image 
+                      src={t} 
+                      alt="tech logo" 
+                      fill 
+                      sizes="20px" 
+                      className="object-contain" 
+                    />
+                  </div>
+                ))}
+              </div>
               <Link
                 href="/services"
                 className="text-[11px] font-semibold text-cyan-500 hover:text-cyan-400 inline-flex items-center gap-1 group/btn"

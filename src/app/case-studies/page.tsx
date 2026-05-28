@@ -1,9 +1,27 @@
 import React from "react";
 import { Metadata } from "next";
+import Image from "next/image";
 import { Layers, Cloud, Smartphone } from "lucide-react";
 import { StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
 import { SectionHeader } from "@/components/common/section-header";
 import { CtaBlock } from "@/components/common/cta-block";
+
+function getTechLogo(tech: string): string | null {
+  const t = tech.toLowerCase();
+  if (t.includes("aws") || t.includes("control tower") || t.includes("s3") || t.includes("cloudfront") || t.includes("cloudwatch")) return "/service/aws.svg";
+  if (t.includes("eks") || t.includes("kubernetes") || t.includes("k8s")) return "/kubernetes.png";
+  if (t.includes("react")) return "/service/react.svg";
+  if (t.includes("node")) return "/service/node.svg";
+  if (t.includes("python") || t.includes("django")) return "/service/python.svg";
+  if (t.includes("mongodb")) return "/service/mongodb.svg";
+  if (t.includes("mysql") || t.includes("sql") || t.includes("postgres")) return "/service/mysql.svg";
+  if (t.includes("firebase")) return "/service/firebase.svg";
+  if (t.includes("vue")) return "/service/vue.svg";
+  if (t.includes("angular")) return "/service/angular.svg";
+  if (t.includes("html")) return "/service/html.svg";
+  if (t.includes("css")) return "/service/css.svg";
+  return null;
+}
 
 export const metadata: Metadata = {
   title: "Case Studies | OnEggy Technologies",
@@ -106,14 +124,28 @@ export default function CaseStudiesPage() {
 
               {/* Technologies used tags */}
               <div className="flex flex-wrap gap-2 pt-4 border-t border-border/20">
-                {item.techs.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-2.5 py-0.5 rounded-full bg-background border border-border/60 text-xs text-muted-foreground font-medium"
-                  >
-                    {tech}
-                  </span>
-                ))}
+                {item.techs.map((tech) => {
+                  const logo = getTechLogo(tech);
+                  return (
+                    <span
+                      key={tech}
+                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-background border border-border/60 text-xs text-muted-foreground font-medium"
+                    >
+                      {logo && (
+                        <div className="relative w-3.5 h-3.5 shrink-0">
+                          <Image 
+                            src={logo} 
+                            alt={`${tech} logo`} 
+                            fill 
+                            sizes="14px" 
+                            className="object-contain" 
+                          />
+                        </div>
+                      )}
+                      <span>{tech}</span>
+                    </span>
+                  );
+                })}
               </div>
             </div>
 

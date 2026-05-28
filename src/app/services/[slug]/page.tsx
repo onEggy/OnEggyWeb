@@ -1,6 +1,24 @@
 import React from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
+
+function getTechLogo(tech: string): string | null {
+  const t = tech.toLowerCase();
+  if (t.includes("aws") || t.includes("control tower") || t.includes("s3") || t.includes("cloudfront") || t.includes("cloudwatch")) return "/service/aws.svg";
+  if (t.includes("eks") || t.includes("kubernetes") || t.includes("k8s")) return "/kubernetes.png";
+  if (t.includes("react")) return "/service/react.svg";
+  if (t.includes("node")) return "/service/node.svg";
+  if (t.includes("python") || t.includes("django")) return "/service/python.svg";
+  if (t.includes("mongodb")) return "/service/mongodb.svg";
+  if (t.includes("mysql") || t.includes("sql") || t.includes("postgres")) return "/service/mysql.svg";
+  if (t.includes("firebase")) return "/service/firebase.svg";
+  if (t.includes("vue")) return "/service/vue.svg";
+  if (t.includes("angular")) return "/service/angular.svg";
+  if (t.includes("html")) return "/service/html.svg";
+  if (t.includes("css")) return "/service/css.svg";
+  return null;
+}
 import { 
   ArrowRight, 
   AlertTriangle, 
@@ -181,14 +199,28 @@ export default async function ServicePage({ params }: PageProps) {
             {/* Float Badges / Tech Row */}
             <FadeUp delay={0.25}>
               <div className="flex flex-wrap justify-center gap-2 pt-4">
-                {service.techs.map((tech) => (
-                  <span 
-                    key={tech} 
-                    className="px-3 py-1 rounded-lg text-xs font-mono bg-accent/30 border border-border text-foreground/80 shadow-sm"
-                  >
-                    {tech}
-                  </span>
-                ))}
+                {service.techs.map((tech) => {
+                  const logo = getTechLogo(tech);
+                  return (
+                    <span 
+                      key={tech} 
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono bg-accent/30 border border-border text-foreground/80 shadow-sm"
+                    >
+                      {logo && (
+                        <div className="relative w-3.5 h-3.5 shrink-0">
+                          <Image 
+                            src={logo} 
+                            alt={`${tech} logo`} 
+                            fill 
+                            sizes="14px" 
+                            className="object-contain" 
+                          />
+                        </div>
+                      )}
+                      <span>{tech}</span>
+                    </span>
+                  );
+                })}
               </div>
             </FadeUp>
 
