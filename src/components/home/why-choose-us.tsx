@@ -49,15 +49,19 @@ export function WhyChooseUs() {
           <FadeUp delay={0.2} className="space-y-4 pt-4">
             <div className="flex items-center gap-3">
               <CheckCircle className="h-4.5 w-4.5 text-cyan-400 shrink-0" />
-              <span className="text-sm text-foreground font-semibold">100% Senior Certified Solutions Architects</span>
+              <span className="text-sm text-foreground font-semibold">AWS Certified Solutions Architects (Professional Level)</span>
             </div>
             <div className="flex items-center gap-3">
               <CheckCircle className="h-4.5 w-4.5 text-cyan-400 shrink-0" />
-              <span className="text-sm text-foreground font-semibold">Zero-Downtime Live Migrations & Upgrades</span>
+              <span className="text-sm text-foreground font-semibold">Zero-Downtime Live Workload Migrations & Database Syncing</span>
             </div>
             <div className="flex items-center gap-3">
               <CheckCircle className="h-4.5 w-4.5 text-cyan-400 shrink-0" />
-              <span className="text-sm text-foreground font-semibold">SOC2, HIPAA & PCI-DSS Compliant Infrastructure</span>
+              <span className="text-sm text-foreground font-semibold">SOC2 Type II, HIPAA & PCI-DSS Compliance Hardening</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <CheckCircle className="h-4.5 w-4.5 text-cyan-400 shrink-0" />
+              <span className="text-sm text-foreground font-semibold">Fractional CTO Strategic Architecture Advisory</span>
             </div>
           </FadeUp>
         </div>

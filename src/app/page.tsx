@@ -9,6 +9,10 @@ import { Testimonials } from "@/components/home/testimonials";
 import { FaqAccordion } from "@/components/home/faq-accordion";
 import { CtaBlock } from "@/components/common/cta-block";
 import { ClientMarquee } from "@/components/home/client-marquee";
+import { StatusBoard } from "@/components/home/status-board";
+import { RoiCalculator } from "@/components/home/roi-calculator";
+import { ScalingJourney } from "@/components/home/scaling-journey";
+import { AssessmentCta } from "@/components/home/assessment-cta";
 
 
 export const metadata: Metadata = {
@@ -50,25 +54,37 @@ export default function Home() {
         {/* Client Logos Motion Marquee */}
         <ClientMarquee />
 
-        {/* 2. Services Showcase Section */}
+        {/* 2. Systems Uptime Status board */}
+        <StatusBoard />
+
+        {/* 3. Services Showcase Section */}
         <ServicesShowcase />
 
-        {/* 3. Why Choose Us Section */}
+        {/* 4. Why Choose Us Section */}
         <WhyChooseUs />
 
-        {/* 4. Technologies We Use Section */}
+        {/* 5. Cloud Cost Savings ROI Calculator */}
+        <RoiCalculator />
+
+        {/* 6. Technologies We Use Section */}
         <TechStack />
 
-        {/* 5. Process Timeline Section */}
+        {/* 7. Startup Scaling Journey Milestones */}
+        <ScalingJourney />
+
+        {/* 8. Process Timeline Section */}
         <ProcessTimeline />
 
-        {/* 6. Testimonials Section */}
+        {/* 9. Testimonials Section */}
         <Testimonials />
 
-        {/* 7. FAQ Accordion Section */}
+        {/* 10. FAQ Accordion Section */}
         <FaqAccordion />
 
-        {/* 8. Final CTA Section */}
+        {/* 11. Cloud health assessment lead magnet */}
+        <AssessmentCta />
+
+        {/* 12. Final CTA Section */}
         <div className="py-12 border-t border-border/40">
           <CtaBlock
             title="Ready to automate and scale your cloud infrastructure?"
