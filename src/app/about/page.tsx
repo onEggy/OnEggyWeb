@@ -99,7 +99,7 @@ export default function AboutPage() {
           </p>
         </div>
         <div className="lg:col-span-6">
-          <div className="glass-card p-8 rounded-2xl border border-border/40 relative overflow-hidden shadow-2xl flex flex-col justify-center h-[260px]">
+          <div className="glass-card p-8 rounded-2xl border border-border/40 relative overflow-hidden shadow-2xl flex flex-col justify-center min-h-[260px] h-full">
             <div className="absolute top-4 right-4 text-xs font-mono font-semibold text-cyan-500">core values</div>
             <div className="space-y-4">
               <h3 className="text-xl font-bold text-foreground">Mission & Vision</h3>
@@ -125,7 +125,7 @@ export default function AboutPage() {
           {philosophy.map((item, index) => (
             <StaggerItem
               key={index}
-              className="glass-card hover:border-cyan-500/40 p-6 rounded-xl space-y-4 transition-all duration-300 flex flex-col justify-between h-[220px] group"
+              className="glass-card hover:border-cyan-500/40 p-6 rounded-xl space-y-4 transition-all duration-300 flex flex-col justify-between min-h-[220px] h-full group"
             >
               <div className="space-y-4">
                 <div className="w-10 h-10 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center group-hover:scale-105 transition-transform">

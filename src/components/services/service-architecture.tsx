@@ -197,7 +197,7 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
                 }`}
               />
               <text x="55" y="95" className={`font-semibold text-xs transition-colors ${activeTierId === "cloud-gateway" ? "fill-cyan-400" : "fill-foreground/80"}`}>
-                1. Transit Network (Route53, WAF & Public load balancer)
+                1. Transit Network & Security Edge
               </text>
             </g>
 
@@ -250,7 +250,7 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
                 }`}
               />
               <text x="55" y="250" className={`font-semibold text-xs transition-colors ${activeTierId === "cloud-data" ? "fill-cyan-400" : "fill-foreground/80"}`}>
-                4. Replicated Database Tier (Private subnets configuration)
+                4. Replicated Database Tier (Private Multi-AZ)
               </text>
               
               <rect x="55" y="270" width="180" height="35" rx="4" strokeDasharray="3, 3" className="stroke-muted-foreground/30 fill-background/40" />
@@ -377,7 +377,7 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
                 }`}
               />
               <text x="55" y="95" className={`font-semibold text-xs transition-colors ${activeTierId === "software-client" ? "fill-cyan-400" : "fill-foreground/80"}`}>
-                1. User Client tier (Next.js SSR / Mobile Apps)
+                1. User Interface (Next.js & Mobile)
               </text>
             </g>
 
@@ -394,7 +394,7 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
                 }`}
               />
               <text x="55" y="160" className={`font-semibold text-xs transition-colors ${activeTierId === "software-gateway" ? "fill-teal-400" : "fill-foreground/80"}`}>
-                2. API Gateway Routing & JWT Auths
+                2. API Gateway & JWT Auth
               </text>
             </g>
 
@@ -411,7 +411,7 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
                 }`}
               />
               <text x="55" y="225" className={`font-semibold text-xs transition-colors ${activeTierId === "software-backend" ? "fill-indigo-400" : "fill-foreground/80"}`}>
-                3. Business Async Microservices (FastAPI / Node.js)
+                3. Business Async Microservices
               </text>
             </g>
 
@@ -428,7 +428,7 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
                 }`}
               />
               <text x="55" y="290" className={`font-semibold text-xs transition-colors ${activeTierId === "software-storage" ? "fill-cyan-400" : "fill-foreground/80"}`}>
-                4. Data Tier (PostgreSQL + Redis Caches)
+                4. Data Tier (Postgres & Redis Cache)
               </text>
             </g>
 
@@ -464,28 +464,47 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
             {tiers.map((tier) => {
               const isActive = tier.id === activeTierId;
               return (
-                <button
+                <div
                   key={tier.id}
                   onClick={() => setActiveTierId(tier.id)}
                   onMouseEnter={() => setActiveTierId(tier.id)}
-                  className={`w-full text-left p-4 rounded-xl border transition-all flex items-start gap-4 cursor-pointer select-none ${
+                  className={`w-full text-left p-4 rounded-xl border transition-all flex flex-col gap-3 cursor-pointer select-none ${
                     isActive
                       ? "bg-accent/40 border-cyan-500/40 shadow-md scale-[1.01]"
                       : "bg-background/25 border-border/40 hover:bg-accent/20 hover:border-border/60"
                   }`}
                 >
-                  <div className="w-9 h-9 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center shrink-0">
-                    {tier.icon}
+                  <div className="flex items-start gap-4 w-full">
+                    <div className="w-9 h-9 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center shrink-0">
+                      {tier.icon}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className={`text-sm sm:text-base font-bold transition-colors ${isActive ? "text-cyan-400" : "text-foreground"}`}>
+                        {tier.title}
+                      </h4>
+                      <span className="text-[10px] font-mono text-muted-foreground block mt-0.5">
+                        {tier.sub}
+                      </span>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className={`text-sm sm:text-base font-bold transition-colors ${isActive ? "text-cyan-400" : "text-foreground"}`}>
-                      {tier.title}
-                    </h4>
-                    <span className="text-[10px] font-mono text-muted-foreground block mt-0.5">
-                      {tier.sub}
-                    </span>
-                  </div>
-                </button>
+                  
+                  {/* Inline Mobile Accordion (visible only below lg when active) */}
+                  <AnimatePresence initial={false}>
+                    {isActive && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden lg:hidden"
+                      >
+                        <p className="text-xs text-muted-foreground leading-relaxed pt-2 border-t border-border/20">
+                          {tier.desc}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
               );
             })}
           </div>
@@ -497,8 +516,8 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
             {renderSVGDiagram()}
           </div>
 
-          {/* Detailed Info Panel */}
-          <div className="min-h-[130px]">
+          {/* Detailed Info Panel (desktop only) */}
+          <div className="min-h-[130px] hidden lg:block">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTierId}

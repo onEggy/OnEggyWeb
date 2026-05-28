@@ -85,20 +85,25 @@ export function TechStack() {
             transition={{ duration: 0.3 }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
-            {activeCategory?.items.map((item) => (
-              <div
-                key={item.name}
-                className={`glass-card p-6 rounded-xl border bg-gradient-to-tr ${item.color} flex gap-4 transition-all duration-300 hover:scale-[1.01] hover:shadow-lg`}
-              >
-                <div className="text-2xl w-10 h-10 rounded-lg bg-background border border-border/40 flex items-center justify-center shrink-0">
-                  {item.icon}
+            {activeCategory?.items.map((item, index) => {
+              const isLastAndOdd = index === activeCategory.items.length - 1 && activeCategory.items.length % 2 !== 0;
+              return (
+                <div
+                  key={item.name}
+                  className={`glass-card p-6 rounded-xl border bg-gradient-to-tr ${item.color} flex gap-4 transition-all duration-300 hover:scale-[1.01] hover:shadow-lg ${
+                    isLastAndOdd ? "md:col-span-2 lg:col-span-1" : ""
+                  }`}
+                >
+                  <div className="text-2xl w-10 h-10 rounded-lg bg-background border border-border/40 flex items-center justify-center shrink-0">
+                    {item.icon}
+                  </div>
+                  <div className="space-y-1">
+                    <h4 className="text-lg font-bold text-foreground">{item.name}</h4>
+                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                  </div>
                 </div>
-                <div className="space-y-1">
-                  <h4 className="text-lg font-bold text-foreground">{item.name}</h4>
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </motion.div>
         </AnimatePresence>
       </div>

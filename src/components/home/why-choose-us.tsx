@@ -68,7 +68,7 @@ export function WhyChooseUs() {
             <FadeIn
               key={feat.title}
               delay={index * 0.1}
-              className="glass-card p-6 rounded-xl border border-border/40 hover:border-cyan-500/30 transition-all duration-300 flex flex-col justify-between h-[210px] group"
+              className="glass-card p-6 rounded-xl border border-border/40 hover:border-cyan-500/30 transition-all duration-300 flex flex-col justify-between min-h-[210px] h-full group"
             >
               <div className="space-y-4">
                 <div className="w-10 h-10 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center group-hover:scale-105 transition-transform">

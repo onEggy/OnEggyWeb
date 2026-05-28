@@ -68,13 +68,13 @@ export function EngagementModels() {
         className="mb-16"
       />
 
-      <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <StaggerContainer className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {models.map((model) => (
           <StaggerItem
             key={model.name}
-            className={`glass-card p-8 rounded-2xl flex flex-col justify-between h-[520px] transition-all relative ${
+            className={`glass-card p-8 rounded-2xl flex flex-col justify-between min-h-[520px] h-full transition-all relative ${
               model.highlight
-                ? "border-cyan-500/40 shadow-2xl scale-[1.02] bg-cyan-500/[0.02]"
+                ? "border-cyan-500/40 shadow-2xl lg:scale-[1.02] bg-cyan-500/[0.02] z-10"
                 : "border-border/40 hover:border-cyan-500/25"
             }`}
           >

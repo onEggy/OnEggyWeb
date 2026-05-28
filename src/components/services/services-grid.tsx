@@ -71,7 +71,9 @@ export function ServicesGrid() {
         {listServices.map((service, index) => (
           <StaggerItem
             key={index}
-            className="glass-card p-8 rounded-xl border border-border/40 hover:border-cyan-500/35 transition-all duration-300 flex flex-col justify-between h-[360px] group relative overflow-hidden"
+            className={`glass-card p-8 rounded-xl border border-border/40 hover:border-cyan-500/35 transition-all duration-300 flex flex-col justify-between min-h-[360px] h-full group relative overflow-hidden ${
+              index === 8 ? "md:col-span-2 lg:col-span-1" : ""
+            }`}
           >
             {/* Corner hover glow */}
             <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/0 via-cyan-500/0 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />

@@ -77,26 +77,35 @@ export default function IndustriesPage() {
         {sectors.map((item, index) => (
           <StaggerItem
             key={index}
-            className="glass-card hover:border-cyan-500/40 p-8 rounded-xl flex flex-col justify-between h-[300px] transition-all duration-300 group hover:-translate-y-1 relative overflow-hidden"
+            className={`glass-card hover:border-cyan-500/40 p-8 rounded-xl flex flex-col justify-between transition-all duration-300 group hover:-translate-y-1 relative overflow-hidden h-full ${
+              index === 6 ? "md:col-span-2 lg:col-span-3 min-h-[200px]" : "min-h-[300px]"
+            }`}
           >
             {/* Hover corner glow */}
             <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/0 via-cyan-500/0 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
+            <div className={`space-y-4 ${index === 6 ? "md:flex md:flex-row md:items-center md:gap-8 md:space-y-0 w-full" : ""}`}>
+              <div className="flex items-center justify-between shrink-0">
                 <div className="w-10 h-10 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center group-hover:scale-105 transition-transform">
                   {item.icon}
                 </div>
-                <span className="text-[10px] font-mono text-cyan-500 font-semibold tracking-wider">
+                <span className="text-[10px] font-mono text-cyan-500 font-semibold tracking-wider md:hidden">
                   {item.spec}
                 </span>
               </div>
-              <h2 className="text-xl font-bold text-foreground group-hover:text-cyan-500 transition-colors">
-                {item.title}
-              </h2>
-              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                {item.desc}
-              </p>
+              <div className={index === 6 ? "md:flex-1 space-y-2" : "space-y-2"}>
+                <div className="flex items-center justify-between">
+                  <h2 className="text-xl font-bold text-foreground group-hover:text-cyan-500 transition-colors">
+                    {item.title}
+                  </h2>
+                  <span className={`text-[10px] font-mono text-cyan-500 font-semibold tracking-wider hidden ${index === 6 ? "md:inline-block" : ""}`}>
+                    {item.spec}
+                  </span>
+                </div>
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
             </div>
           </StaggerItem>
         ))}

@@ -72,7 +72,7 @@ export function ProcessTimeline() {
                 }`}
               >
                 {/* Step Item Content Card */}
-                <div className="flex-1 md:w-1/2 flex items-center justify-end">
+                <div className="flex-1 md:w-1/2 flex items-center justify-end pl-14 md:pl-0">
                   <div className={`glass-card p-6 rounded-xl border border-border/40 hover:border-cyan-500/35 transition-all duration-300 w-full relative group ${
                     isEven ? "md:text-left" : "md:text-right"
                   }`}>

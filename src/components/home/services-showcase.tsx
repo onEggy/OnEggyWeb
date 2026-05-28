@@ -75,7 +75,7 @@ export function ServicesShowcase() {
         {services.map((item, index) => (
           <StaggerItem
             key={index}
-            className="glass-card hover:border-cyan-500/40 p-6 rounded-xl flex flex-col justify-between h-[270px] transition-all group hover:-translate-y-1 shadow-sm relative overflow-hidden"
+            className="glass-card hover:border-cyan-500/40 p-6 rounded-xl flex flex-col justify-between min-h-[270px] h-full transition-all group hover:-translate-y-1 shadow-sm relative overflow-hidden"
           >
             {/* Subtle glow border overlay */}
             <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/0 via-cyan-500/0 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />

@@ -95,7 +95,7 @@ export function BlogContent({ posts, categories }: BlogContentProps) {
           {regularPosts.map((post, index) => (
             <StaggerItem
               key={index}
-              className="glass-card hover:border-cyan-500/35 p-6 rounded-xl flex flex-col justify-between h-[300px] transition-all duration-300 group"
+              className="glass-card hover:border-cyan-500/35 p-6 rounded-xl flex flex-col justify-between min-h-[300px] h-full transition-all duration-300 group"
             >
               <div className="space-y-4">
                 <div className="flex justify-between items-center text-xs">

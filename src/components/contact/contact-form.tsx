@@ -10,7 +10,7 @@ export function ContactForm() {
     company: "",
     email: "",
     phone: "",
-    budget: "Infrastructure Audit",
+    budget: "Infrastructure Audit & Rightsizing",
     message: "",
   });
   const [isLoading, setIsLoading] = useState(false);

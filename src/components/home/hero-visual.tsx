@@ -90,7 +90,7 @@ export function HeroVisual({ mouseX, mouseY }: HeroVisualProps) {
         className="absolute inset-0 w-full h-full"
       >
         {/* Node 1: Ingress Gateway (Left) */}
-        <div className="absolute top-[176px] left-[32px] group">
+        <div className="absolute top-[50%] left-[12%] -translate-x-1/2 -translate-y-1/2 group">
           <div className="relative w-12 h-12 rounded-xl bg-background/80 border border-border/80 flex items-center justify-center shadow-lg group-hover:border-cyan-500/50 group-hover:shadow-cyan-500/10 transition-all cursor-pointer">
             <Activity className="h-5 w-5 text-cyan-400 group-hover:scale-105 transition-transform" />
             {/* Pulsing ring */}
@@ -102,7 +102,7 @@ export function HeroVisual({ mouseX, mouseY }: HeroVisualProps) {
         </div>
 
         {/* Node 2: K8s Namespace Cluster (Center) */}
-        <div className="absolute top-[168px] left-[218px] group">
+        <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 group">
           <div className="relative w-16 h-16 rounded-2xl bg-background/90 border border-border/80 flex items-center justify-center shadow-2xl group-hover:border-teal-500/50 group-hover:shadow-teal-500/15 transition-all cursor-pointer">
             <Server className="h-6 w-6 text-teal-400 group-hover:rotate-6 transition-transform" />
             
@@ -115,7 +115,7 @@ export function HeroVisual({ mouseX, mouseY }: HeroVisualProps) {
         </div>
 
         {/* Node 3: Database Clusters (Right) */}
-        <div className="absolute top-[176px] right-[28px] group">
+        <div className="absolute top-[50%] left-[88%] -translate-x-1/2 -translate-y-1/2 group">
           <div className="relative w-12 h-12 rounded-xl bg-background/80 border border-border/80 flex items-center justify-center shadow-lg group-hover:border-indigo-500/50 group-hover:shadow-indigo-500/10 transition-all cursor-pointer">
             <Database className="h-5 w-5 text-indigo-400 group-hover:scale-105 transition-transform" />
           </div>
@@ -134,7 +134,7 @@ export function HeroVisual({ mouseX, mouseY }: HeroVisualProps) {
         <motion.div
           animate={{ y: [0, -6, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-[40px] left-[15%] glass-card p-3 rounded-xl shadow-lg border border-white/5 flex items-center gap-2.5 pointer-events-auto hover:border-cyan-500/30 transition-colors w-[150px]"
+          className="absolute top-[10%] left-[15%] glass-card p-3 rounded-xl shadow-lg border border-white/5 flex items-center gap-2.5 pointer-events-auto hover:border-cyan-500/30 transition-colors w-[30%] max-w-[150px] min-w-[110px]"
         >
           <div className="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center shrink-0">
             <Cpu className="h-4 w-4 text-cyan-400" />
@@ -149,7 +149,7 @@ export function HeroVisual({ mouseX, mouseY }: HeroVisualProps) {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-          className="absolute bottom-[50px] left-[25%] glass-card p-3 rounded-xl shadow-lg border border-white/5 flex items-center gap-2.5 pointer-events-auto hover:border-teal-500/30 transition-colors w-[180px]"
+          className="absolute bottom-[12.5%] left-[25%] glass-card p-3 rounded-xl shadow-lg border border-white/5 flex items-center gap-2.5 pointer-events-auto hover:border-teal-500/30 transition-colors w-[36%] max-w-[180px] min-w-[120px]"
         >
           <div className="w-8 h-8 rounded-lg bg-teal-500/10 flex items-center justify-center shrink-0">
             <GitBranch className="h-4 w-4 text-teal-400 animate-pulse" />
@@ -164,7 +164,7 @@ export function HeroVisual({ mouseX, mouseY }: HeroVisualProps) {
         <motion.div
           animate={{ y: [0, -8, 0] }}
           transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute top-[60px] right-[10%] glass-card p-3 rounded-xl shadow-xl border border-white/5 flex flex-col gap-1.5 pointer-events-auto hover:border-indigo-500/30 transition-colors w-[170px]"
+          className="absolute top-[15%] right-[10%] glass-card p-3 rounded-xl shadow-xl border border-white/5 flex flex-col gap-1.5 pointer-events-auto hover:border-indigo-500/30 transition-colors w-[34%] max-w-[170px] min-w-[120px]"
         >
           <div className="flex items-center gap-1.5">
             <Terminal className="h-3.5 w-3.5 text-indigo-400" />

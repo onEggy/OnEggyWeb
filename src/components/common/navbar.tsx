@@ -212,7 +212,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden absolute top-full left-0 w-full bg-background border-b border-border py-6 px-6 shadow-xl overflow-hidden"
+            className="md:hidden absolute top-full left-0 w-full bg-background border-b border-border py-6 px-6 shadow-xl overflow-y-auto max-h-[calc(100vh-5rem)] scrollbar-none"
           >
             <nav className="flex flex-col gap-6">
               {/* Services List for Mobile */}

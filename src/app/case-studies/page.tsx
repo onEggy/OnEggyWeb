@@ -122,7 +122,7 @@ export default function CaseStudiesPage() {
               <div className="absolute top-3 right-4 text-[10px] font-mono font-semibold text-cyan-500">
                 metrics-dashboard
               </div>
-              <div className="grid grid-cols-3 lg:grid-cols-1 gap-6 text-center lg:text-left">
+              <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-6 text-center lg:text-left">
                 {item.metrics.map((m, i) => (
                   <div key={i} className="space-y-1">
                     <span className="text-2xl sm:text-3xl font-mono font-bold text-foreground block">

@@ -109,7 +109,7 @@ export default function CareersPage() {
           </p>
         </div>
         <div className="lg:col-span-6">
-          <div className="glass-card p-6 rounded-2xl border border-border/40 relative overflow-hidden shadow-2xl flex flex-col justify-center h-[220px]">
+          <div className="glass-card p-6 rounded-2xl border border-border/40 relative overflow-hidden shadow-2xl flex flex-col justify-center min-h-[220px] h-full">
             <div className="absolute top-4 right-4 text-[10px] font-mono font-semibold text-cyan-500">core value</div>
             <div className="space-y-3">
               <h3 className="text-lg font-bold text-foreground">Zero clickops. 100% automation.</h3>
@@ -135,7 +135,7 @@ export default function CareersPage() {
           {benefits.map((feat) => (
             <StaggerItem
               key={feat.title}
-              className="glass-card p-6 rounded-xl border border-border/40 hover:border-cyan-500/35 transition-all duration-300 flex flex-col justify-between h-[210px] group"
+              className="glass-card p-6 rounded-xl border border-border/40 hover:border-cyan-500/35 transition-all duration-300 flex flex-col justify-between min-h-[210px] h-full group"
             >
               <div className="space-y-4">
                 <div className="w-10 h-10 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center group-hover:scale-105 transition-transform">

@@ -308,7 +308,7 @@ export default async function ServicePage({ params }: PageProps) {
             className="mb-16"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
             {processSteps.map((step, idx) => (
               <div key={idx} className="glass-card p-6 rounded-xl border border-border/40 relative space-y-4 shadow-sm hover:border-cyan-500/20 transition-all duration-300">
                 <div className="absolute top-4 right-4 text-3xl font-extrabold text-cyan-500/10 font-mono">
@@ -335,7 +335,7 @@ export default async function ServicePage({ params }: PageProps) {
             className="mb-16"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="glass-card p-8 rounded-xl border border-border/40 hover:border-cyan-500/30 transition-all duration-300 flex flex-col justify-between relative group">
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed italic relative z-10 mb-8">
                 &ldquo;OnEggy completely overhauled our AWS architecture. We went from manual EC2 instances to a fully automated EKS Kubernetes setup via Terraform. Our monthly cloud spend dropped by 34% in the first 30 days.&rdquo;
