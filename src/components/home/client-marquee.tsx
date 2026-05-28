@@ -33,7 +33,7 @@ export function ClientMarquee() {
                   alt={logo.alt || logo.name}
                   fill
                   sizes="(max-width: 768px) 96px, 128px"
-                  className="object-contain transition-all duration-300 opacity-80 group-hover:opacity-100 group-hover:scale-105 filter dark:drop-shadow-[0_0_8px_rgba(255,255,255,0.65)]"
+                  className="object-contain transition-all duration-300 opacity-70 group-hover:opacity-100 group-hover:scale-105 filter dark:brightness-0 dark:invert"
                 />
               </div>
             </div>
