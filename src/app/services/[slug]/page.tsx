@@ -14,6 +14,29 @@ import { CtaBlock } from "@/components/common/cta-block";
 import { ServiceArchitecture } from "@/components/services/service-architecture";
 import { ServiceFaqAccordion } from "@/components/services/service-faq-accordion";
 import { FadeUp, StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
+import { testimonials as rawTestimonials } from "../../../../public/data/testimonial.json";
+
+function getInitials(name: string) {
+  const parts = name.trim().split(/\s+/);
+  if (parts.length >= 2) {
+    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+  }
+  return name.slice(0, 2).toUpperCase();
+}
+
+const gradientAvatars = [
+  "from-cyan-500 to-blue-500",
+  "from-teal-400 to-emerald-500",
+  "from-indigo-500 to-purple-500",
+  "from-cyan-400 to-teal-500",
+  "from-blue-500 to-indigo-600",
+];
+
+const getGradientClass = (name: string) => {
+  let sum = 0;
+  for (let i = 0; i < name.length; i++) sum += name.charCodeAt(i);
+  return gradientAvatars[sum % gradientAvatars.length];
+};
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -336,56 +359,41 @@ export default async function ServicePage({ params }: PageProps) {
           />
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="glass-card p-8 rounded-xl border border-border/40 hover:border-cyan-500/30 transition-all duration-300 flex flex-col justify-between relative group">
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed italic relative z-10 mb-8">
-                &ldquo;OnEggy completely overhauled our AWS architecture. We went from manual EC2 instances to a fully automated EKS Kubernetes setup via Terraform. Our monthly cloud spend dropped by 34% in the first 30 days.&rdquo;
-              </p>
-              <div className="flex items-center gap-4 border-t border-border/40 pt-6">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-cyan-500 to-teal-400 flex items-center justify-center text-white font-bold font-mono text-sm shadow-md">
-                  RS
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-foreground">Rajesh Sharma</h4>
-                  <p className="text-xs text-muted-foreground">
-                    CTO, <span className="text-cyan-500 font-semibold">CloudStok Technologies</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="glass-card p-8 rounded-xl border border-border/40 hover:border-cyan-500/30 transition-all duration-300 flex flex-col justify-between relative group">
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed italic relative z-10 mb-8">
-                &ldquo;The senior platform architects at OnEggy feel like an extension of our core team. They configured our secure HIPAA-compliant environment on AWS and built CI/CD pipelines that reduced our release times from hours to under five minutes.&rdquo;
-              </p>
-              <div className="flex items-center gap-4 border-t border-border/40 pt-6">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-cyan-500 to-teal-400 flex items-center justify-center text-white font-bold font-mono text-sm shadow-md">
-                  SJ
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-foreground">Sarah Jenkins</h4>
-                  <p className="text-xs text-muted-foreground">
-                    Founder & CEO, <span className="text-cyan-500 font-semibold">Lumina Health</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="glass-card p-8 rounded-xl border border-border/40 hover:border-cyan-500/30 transition-all duration-300 flex flex-col justify-between relative group">
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed italic relative z-10 mb-8">
-                &ldquo;We partnered with OnEggy for mobile app development and cloud infrastructure. Their React Native and backend engineering expertise allowed us to launch our Fintech app weeks ahead of schedule with robust security audits.&rdquo;
-              </p>
-              <div className="flex items-center gap-4 border-t border-border/40 pt-6">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-cyan-500 to-teal-400 flex items-center justify-center text-white font-bold font-mono text-sm shadow-md">
-                  VM
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-foreground">Vikram Malhotra</h4>
-                  <p className="text-xs text-muted-foreground">
-                    VP of Engineering, <span className="text-cyan-500 font-semibold">Beyond Imagination</span>
-                  </p>
-                </div>
-              </div>
-            </div>
+            {(() => {
+              const filteredReviews = rawTestimonials.filter((t) => {
+                const desc = t.designation.toLowerCase();
+                const test = t.testimonial.toLowerCase();
+                if (service.category === "cloud") {
+                  return desc.includes("cloud") || desc.includes("aws") || test.includes("aws") || test.includes("cloud") || desc.includes("brahmatells");
+                } else if (service.category === "devops") {
+                  return desc.includes("devops") || desc.includes("sre") || test.includes("kubernetes") || test.includes("eks") || test.includes("devops") || desc.includes("payu") || desc.includes("pinelabs");
+                } else { // software
+                  return desc.includes("developer") || desc.includes("full stack") || desc.includes("mobile") || desc.includes("app") || test.includes("react native") || test.includes("next") || test.includes("software") || desc.includes("anveshan") || desc.includes("digispeax");
+                }
+              });
+              const displayReviews = filteredReviews.length >= 3 ? filteredReviews.slice(0, 3) : rawTestimonials.slice(0, 3);
+              return displayReviews.map((item, index) => {
+                const gradientClass = getGradientClass(item.name);
+                return (
+                  <div key={index} className="glass-card p-8 rounded-xl border border-border/40 hover:border-cyan-500/30 transition-all duration-300 flex flex-col justify-between relative group">
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed italic relative z-10 mb-8">
+                      &ldquo;{item.testimonial}&rdquo;
+                    </p>
+                    <div className="flex items-center gap-4 border-t border-border/40 pt-6">
+                      <div className={`w-10 h-10 rounded-full bg-gradient-to-tr ${gradientClass} flex items-center justify-center text-white font-bold font-mono text-xs shadow-md shrink-0`}>
+                        {getInitials(item.name)}
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-bold text-foreground">{item.name}</h4>
+                        <p className="text-xs text-muted-foreground">
+                          {item.designation}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              });
+            })()}
           </div>
         </section>
 
