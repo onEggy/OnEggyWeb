@@ -25,15 +25,15 @@ export function ClientMarquee() {
           {doubledLogos.map((logo, idx) => (
             <div
               key={`${logo.id}-${idx}`}
-              className="flex items-center justify-center shrink-0 w-32 md:w-40 h-14 px-4 py-2 group"
+              className="flex items-center justify-center shrink-0 w-36 md:w-44 h-12 px-6 group"
             >
-              <div className="relative w-full h-8 flex items-center justify-center">
+              <div className="relative w-full h-7 flex items-center justify-center">
                 <Image
                   src={logo.url}
                   alt={logo.alt || logo.name}
                   fill
                   sizes="(max-width: 768px) 96px, 128px"
-                  className="object-contain transition-all duration-300 opacity-70 group-hover:opacity-100 group-hover:scale-105 filter dark:brightness-0 dark:invert"
+                  className="object-contain transition-all duration-300 opacity-60 group-hover:opacity-100 group-hover:scale-105 filter grayscale dark:invert dark:opacity-50 group-hover:grayscale-0 group-hover:invert-0"
                 />
               </div>
             </div>
