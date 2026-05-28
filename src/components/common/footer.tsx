@@ -24,6 +24,7 @@ const company = [
 const legal = [
   { name: "Privacy Policy", href: "/privacy-policy" },
   { name: "Terms of Service", href: "/terms-and-conditions" },
+  { name: "Refund Policy", href: "/refund-policy" },
   { name: "Sitemap", href: "/sitemap.xml" },
 ];
 
@@ -235,7 +236,12 @@ export function Footer() {
       {/* Copyright Line */}
       <div className="border-t border-border/40 py-8 px-6 relative z-10">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-          <p>© {currentYear} OnEggy Technologies. All rights reserved.</p>
+          <div className="space-y-1">
+            <p>© {currentYear} OnEggy Technologies. All rights reserved.</p>
+            <p className="text-[10px] text-muted-foreground/60 font-mono">
+              CIN: U72900DL2022OPC407567 &nbsp;|&nbsp; GSTIN: 07AADCO9485D1Z6
+            </p>
+          </div>
           <div className="flex gap-4 flex-wrap">
             {legal.map((item) => (
               <Link key={item.name} href={item.href} className="hover:text-cyan-500 transition-colors">
