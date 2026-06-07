@@ -39,7 +39,10 @@ export function StatusBoard() {
   // Auto-scroll logs to bottom if they update
   useEffect(() => {
     if (logEndRef.current) {
-      logEndRef.current.scrollIntoView({ behavior: "smooth" });
+      const container = logEndRef.current.parentElement;
+      if (container) {
+        container.scrollTop = container.scrollHeight;
+      }
     }
   }, [logs]);
 
