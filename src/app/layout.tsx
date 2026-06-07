@@ -7,6 +7,7 @@ import { ScrollProvider } from "@/components/providers/scroll-provider";
 import { CustomCursor } from "@/components/common/custom-cursor";
 import { SplashScreen } from "@/components/common/splash-screen";
 import { PageTransition } from "@/components/animations/page-transition";
+import { MotionConfig } from "framer-motion";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -75,15 +76,17 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ScrollProvider>
-            <CustomCursor />
-            <SplashScreen />
-            <Navbar />
-            <main className="flex-grow pt-24 pb-16">
-              <PageTransition>{children}</PageTransition>
-            </main>
-            <Footer />
-          </ScrollProvider>
+          <MotionConfig reducedMotion="user">
+            <ScrollProvider>
+              <CustomCursor />
+              <SplashScreen />
+              <Navbar />
+              <main className="flex-grow pt-24 pb-16">
+                <PageTransition>{children}</PageTransition>
+              </main>
+              <Footer />
+            </ScrollProvider>
+          </MotionConfig>
         </ThemeProvider>
       </body>
     </html>

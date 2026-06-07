@@ -181,7 +181,9 @@ export default async function BlogPostPage({ params }: PageProps) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaMarkup).replace(/</g, "\\u003c"),
+        }}
       />
       <article className="relative max-w-4xl mx-auto px-6 py-8 md:py-16 space-y-10 overflow-hidden">
         {/* Glow Backgrounds */}

@@ -164,7 +164,9 @@ export default async function ServicePage({ params }: PageProps) {
       {/* Inject Structured Data Schema */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaMarkup).replace(/</g, "\\u003c"),
+        }}
       />
 
       <div className="relative overflow-hidden min-h-screen">

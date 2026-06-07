@@ -7,6 +7,12 @@ export function CustomCursor() {
   const [isMounted, setIsMounted] = useState(false);
   const [isMobile, setIsMobile] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(() => {
+    if (typeof window !== "undefined") {
+      return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    }
+    return false;
+  });
 
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
@@ -30,6 +36,16 @@ export function CustomCursor() {
 
     checkDevice();
     window.addEventListener("resize", checkDevice);
+
+    const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const handleMotionChange = (e: MediaQueryListEvent) => {
+      setPrefersReducedMotion(e.matches);
+    };
+    if (motionQuery.addEventListener) {
+      motionQuery.addEventListener("change", handleMotionChange);
+    } else {
+      motionQuery.addListener(handleMotionChange);
+    }
 
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX);
@@ -62,10 +78,15 @@ export function CustomCursor() {
       window.removeEventListener("resize", checkDevice);
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseover", handleMouseOver);
+      if (motionQuery.removeEventListener) {
+        motionQuery.removeEventListener("change", handleMotionChange);
+      } else {
+        motionQuery.removeListener(handleMotionChange);
+      }
     };
   }, [isMobile, mouseX, mouseY]);
 
-  if (!isMounted || isMobile) return null;
+  if (!isMounted || isMobile || prefersReducedMotion) return null;
 
   return (
     <motion.div

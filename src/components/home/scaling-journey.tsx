@@ -1,165 +1,138 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { Check, Rocket, Zap, ShieldCheck } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { StaggerContainer, StaggerItem } from "../animations/motion-wrappers";
+import { SectionHeader } from "../common/section-header";
 
 const stages = [
   {
-    id: "seed-mvp",
-    phase: "01. Launch Velocity",
+    num: "01",
+    phase: "Launch Velocity",
     title: "Seed to MVP Stage",
     desc: "Speed and simplicity are critical. We set up initial secure environments that avoid lock-ins, allowing startup developers to write and deploy code in seconds.",
     focus: "Fast iteration, low cloud spend, reproducible staging sandboxes",
-    icon: <Rocket className="h-5 w-5 text-cyan-400" />,
+    icon: <Rocket className="h-4.5 w-4.5 text-cyan-400" />,
     features: [
-      "VPC networking with basic subnet isolation",
-      "Greenfield AWS landing zones in 5 business days",
-      "Clean serverless deployments (Lambda / Docker)",
-      "Next.js frontend and FastAPI backend templates",
+      "VPC networking with subnet isolation",
+      "Greenfield AWS landing zones in 5 days",
+      "Clean serverless configs (Lambda / Docker)",
+      "Next.js and FastAPI starter templates",
     ],
   },
   {
-    id: "series-scale",
-    phase: "02. Stability & Security",
-    title: "Series A to Scaling Stage",
-    desc: "As client numbers grow, manual deployments fail. We transition workloads into auto-scaling clusters, automate pipeline gates, and add central logging.",
-    focus: "No single point of failure, container scaling, deployment speedups",
-    icon: <Zap className="h-5 w-5 text-teal-400" />,
+    num: "02",
+    phase: "Stability & Scale",
+    title: "Series A to Growth",
+    desc: "As client numbers grow, manual deployments fail. We transition workloads into auto-scaling EKS clusters, automate pipeline gates, and add central logging.",
+    focus: "No single point of failure, container scaling, release automation",
+    icon: <Zap className="h-4.5 w-4.5 text-teal-400" />,
     features: [
       "AWS EKS Kubernetes migration via Helm",
-      "Automated CI/CD release pipelines (GitHub Actions)",
-      "Centralized monitoring dashboards (Prometheus/Grafana)",
-      "Secure key rotation via AWS Secrets Manager",
+      "Automated CI/CD release pipelines",
+      "Centralized Grafana observability panels",
+      "Secure key rotation via Secrets Manager",
     ],
   },
   {
-    id: "enterprise",
-    phase: "03. Enterprise Compliance",
+    num: "03",
+    phase: "Compliance Ready",
     title: "Enterprise Readiness",
     desc: "To close large-market enterprise deals, your infrastructure must be audit-ready. We enforce strict compliance policies and Transit Gateway security.",
-    focus: "SOC2 / HIPAA compliance audits, disaster recovery targets (RTO/RPO)",
-    icon: <ShieldCheck className="h-5 w-5 text-indigo-400" />,
+    focus: "SOC2 / HIPAA compliance audits, disaster recovery configurations",
+    icon: <ShieldCheck className="h-4.5 w-4.5 text-indigo-400" />,
     features: [
-      "HIPAA, PCI-DSS, or ISO 27001 landing zones",
-      "Transit Gateway hybrid-cloud network isolation",
-      "Multi-Region active disaster recovery replication",
-      "24/7/365 telemetry monitoring SLA response",
+      "HIPAA, PCI-DSS, or ISO 27001 zones",
+      "Transit Gateway network isolation",
+      "Multi-Region active disaster replication",
+      "24/7/365 telemetry monitoring alerts",
     ],
   },
 ];
 
 export function ScalingJourney() {
-  const [activeStageId, setActiveStageId] = useState(stages[0].id);
-
-  const activeStage = stages.find((s) => s.id === activeStageId) || stages[0];
-
   return (
-    <section className="max-w-7xl mx-auto px-6 py-20 border-t border-border/40 relative">
+    <section className="max-w-7xl mx-auto px-6 py-24 border-t border-border/40 relative">
       {/* Decorative Orb */}
-      <div className="absolute bottom-[10%] left-[-15%] w-[400px] h-[400px] rounded-full bg-cyan-500/5 blur-[110px] pointer-events-none -z-10 animate-pulse" />
+      <div className="absolute bottom-[10%] left-[-15%] w-[400px] h-[400px] rounded-full bg-cyan-500/5 blur-[110px] pointer-events-none -z-10" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        {/* Left Side: Interactive Stages Tab Selector (5 columns) */}
-        <div className="lg:col-span-5 space-y-6">
-          <div className="space-y-2">
-            <span className="text-xs font-mono font-semibold text-cyan-500 uppercase tracking-widest block">
-              Startup Acceleration
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground leading-tight">
-              Partnership for Your <br />
-              <span className="gradient-text">Entire Scaling Journey</span>
-            </h2>
-          </div>
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            Your platform needs change at each stage of growth. We structure your cloud setups to survive scale spikes and pass enterprise security audits with ease.
-          </p>
+      <SectionHeader
+        tag="Lifecycle Strategy"
+        title={<>Partnership for Your <span className="gradient-text">Entire Scaling Journey</span></>}
+        subtitle="Your infrastructure requirements change at each stage of company growth. We design your platforms to survive scale spikes and pass enterprise security audits."
+        align="left"
+        className="mb-16 max-w-3xl"
+      />
 
-          {/* Vertical selectors */}
-          <div className="space-y-3 pt-2">
-            {stages.map((stage) => {
-              const isActive = stage.id === activeStageId;
-              return (
-                <button
-                  key={stage.id}
-                  onClick={() => setActiveStageId(stage.id)}
-                  className={`w-full text-left p-4 rounded-xl border transition-all flex items-start gap-4 cursor-pointer select-none ${
-                    isActive
-                      ? "bg-accent/40 border-cyan-500/40 shadow-md"
-                      : "bg-background/25 border-border/40 hover:bg-accent/20 hover:border-border/60"
-                  }`}
-                >
-                  <div className="w-8 h-8 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center shrink-0">
+      {/* Rebuilt: 3-column horizontal progression board */}
+      <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        {stages.map((stage, index) => (
+          <StaggerItem
+            key={stage.num}
+            className="bg-background/25 border border-border/40 hover:border-cyan-500/30 p-6 rounded-2xl flex flex-col justify-between shadow-sm relative overflow-hidden transition-all duration-300 group"
+          >
+            {/* Horizontal step indicator line overlay (desktop only) */}
+            {index < 2 && (
+              <div className="hidden md:block absolute top-10 left-[calc(100%-1rem)] w-8 border-t-2 border-dashed border-border/40 z-10" />
+            )}
+
+            <div className="space-y-6">
+              {/* Header Badge */}
+              <div className="flex items-center justify-between border-b border-border/20 pb-4">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
                     {stage.icon}
                   </div>
                   <div>
                     <span className="text-[10px] font-mono text-cyan-500 font-semibold tracking-wider block">
-                      {stage.phase}
+                      STAGE {stage.num}
                     </span>
-                    <h4 className="text-sm sm:text-base font-bold text-foreground mt-0.5">
-                      {stage.title}
+                    <h4 className="text-xs font-bold text-foreground font-mono uppercase tracking-wider leading-none">
+                      {stage.phase}
                     </h4>
                   </div>
-                </button>
-              );
-            })}
-          </div>
-        </div>
+                </div>
+              </div>
 
-        {/* Right Side: Active Stage Detail Dashboard (7 columns) */}
-        <div className="lg:col-span-7">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeStageId}
-              initial={{ opacity: 0, x: 12 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -12 }}
-              transition={{ duration: 0.25 }}
-              className="glass-card rounded-2xl border border-border/40 p-6 md:p-8 shadow-2xl space-y-6 bg-background/25 relative overflow-hidden"
-            >
-              {/* Highlight background orb */}
-              <div className="absolute top-[-50px] right-[-50px] w-[180px] h-[180px] rounded-full bg-cyan-500/5 blur-[50px] pointer-events-none" />
-
-              <div className="space-y-3">
-                <span className="text-[10px] font-mono font-semibold text-cyan-500 uppercase tracking-widest block">
-                  Core Objective
-                </span>
-                <h3 className="text-xl sm:text-2xl font-bold text-foreground">
-                  {activeStage.title}
+              {/* Stage Description */}
+              <div className="space-y-2">
+                <h3 className="text-lg font-bold text-foreground group-hover:text-cyan-500 transition-colors">
+                  {stage.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                  {activeStage.desc}
+                  {stage.desc}
                 </p>
               </div>
 
-              <div className="p-4 rounded-xl border border-border/40 bg-background/50">
-                <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest block font-semibold mb-1">
+              {/* Primary Focus Box */}
+              <div className="p-3 bg-zinc-900/40 border border-zinc-800/80 rounded-xl">
+                <span className="text-[8px] font-mono text-muted-foreground uppercase tracking-widest block font-bold mb-0.5">
                   Primary Focus Area
                 </span>
-                <p className="text-xs text-foreground font-bold font-mono">
-                  {activeStage.focus}
+                <p className="text-xs text-foreground font-bold font-mono leading-snug">
+                  {stage.focus}
                 </p>
               </div>
 
-              <div className="space-y-3">
-                <span className="text-[10px] font-mono font-semibold text-cyan-500 uppercase tracking-widest block border-b border-border/40 pb-1.5">
+              {/* Outputs Checklist */}
+              <div className="space-y-2.5 pt-2 border-t border-border/25">
+                <span className="text-[9px] font-mono font-semibold text-cyan-500 uppercase tracking-widest block">
                   Actionable Infrastructure Outputs
                 </span>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-                  {activeStage.features.map((feat) => (
-                    <li key={feat} className="flex items-center gap-2.5 text-xs sm:text-sm text-muted-foreground leading-normal">
-                      <Check className="h-4 w-4 text-cyan-400 shrink-0" />
+                <ul className="space-y-2">
+                  {stage.features.map((feat) => (
+                    <li key={feat} className="flex items-start gap-2 text-xs text-muted-foreground leading-snug">
+                      <Check className="h-3.5 w-3.5 text-cyan-400 shrink-0 mt-0.5" />
                       <span>{feat}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
+            </div>
 
-      </div>
+          </StaggerItem>
+        ))}
+      </StaggerContainer>
     </section>
   );
 }

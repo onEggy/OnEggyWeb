@@ -1,18 +1,21 @@
 import React from "react";
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { Hero } from "@/components/home/hero";
-import { ServicesShowcase } from "@/components/home/services-showcase";
-import { WhyChooseUs } from "@/components/home/why-choose-us";
-import { TechStack } from "@/components/home/tech-stack";
-import { ProcessTimeline } from "@/components/home/process-timeline";
-import { Testimonials } from "@/components/home/testimonials";
-import { FaqAccordion } from "@/components/home/faq-accordion";
-import { CtaBlock } from "@/components/common/cta-block";
-import { ClientMarquee } from "@/components/home/client-marquee";
-import { StatusBoard } from "@/components/home/status-board";
-import { RoiCalculator } from "@/components/home/roi-calculator";
-import { ScalingJourney } from "@/components/home/scaling-journey";
-import { AssessmentCta } from "@/components/home/assessment-cta";
+
+const ClientMarquee = dynamic(() => import("@/components/home/client-marquee").then((mod) => mod.ClientMarquee));
+const StatusBoard = dynamic(() => import("@/components/home/status-board").then((mod) => mod.StatusBoard));
+const ServicesShowcase = dynamic(() => import("@/components/home/services-showcase").then((mod) => mod.ServicesShowcase));
+const WhyChooseUs = dynamic(() => import("@/components/home/why-choose-us").then((mod) => mod.WhyChooseUs));
+const RoiCalculator = dynamic(() => import("@/components/home/roi-calculator").then((mod) => mod.RoiCalculator));
+const TechStack = dynamic(() => import("@/components/home/tech-stack").then((mod) => mod.TechStack));
+const ScalingJourney = dynamic(() => import("@/components/home/scaling-journey").then((mod) => mod.ScalingJourney));
+const ProcessTimeline = dynamic(() => import("@/components/home/process-timeline").then((mod) => mod.ProcessTimeline));
+const Testimonials = dynamic(() => import("@/components/home/testimonials").then((mod) => mod.Testimonials));
+const FaqAccordion = dynamic(() => import("@/components/home/faq-accordion").then((mod) => mod.FaqAccordion));
+const AssessmentCta = dynamic(() => import("@/components/home/assessment-cta").then((mod) => mod.AssessmentCta));
+const CtaBlock = dynamic(() => import("@/components/common/cta-block").then((mod) => mod.CtaBlock));
+
 
 
 export const metadata: Metadata = {
@@ -76,7 +79,9 @@ export default function Home() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaMarkup).replace(/</g, "\\u003c"),
+        }}
       />
       <div className="relative overflow-hidden min-h-screen">
         {/* 1. Cinematic Hero Section */}
