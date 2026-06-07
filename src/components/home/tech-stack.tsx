@@ -333,7 +333,7 @@ export function TechStack() {
 
       <SectionHeader
         tag="Ecosystem"
-        title={<>Premium Technology <span className="gradient-text">Ecosystem</span></>}
+        title={<>Premium Technology <span className="text-cyan-400">Ecosystem</span></>}
         subtitle="We build exclusively with standard, enterprise-grade tools. Our teams specialize in cloud-native infrastructure, declarative automation, and highly scaling framework stacks."
         align="center"
         className="mb-16"
@@ -374,7 +374,7 @@ export function TechStack() {
             {activeCategory?.items.map((item) => (
               <div
                 key={item.name}
-                className="bg-background/20 border border-border/40 p-5 rounded-xl flex gap-4 transition-all duration-300 hover:border-cyan-500/30 hover:bg-background/45 hover:-translate-y-0.5 group"
+                className="bg-background/20 border border-border/40 p-5 rounded-xl flex gap-4 transition-all duration-300 hover:border-cyan-500/30 hover:bg-background/45 group"
               >
                 <div className="w-10 h-10 rounded-lg bg-zinc-900/60 border border-zinc-800/80 flex items-center justify-center shrink-0 shadow-sm relative overflow-hidden group-hover:border-cyan-500/30 transition-colors">
                   {item.isAsset && typeof item.icon === "string" ? (

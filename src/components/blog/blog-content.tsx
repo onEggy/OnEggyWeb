@@ -135,7 +135,7 @@ export function BlogContent({ posts, categories }: BlogContentProps) {
           {regularPosts.map((post) => (
             <StaggerItem
               key={post.slug}
-              className="glass-card hover:border-cyan-500/35 p-0 rounded-xl flex flex-col justify-between overflow-hidden transition-all duration-300 group hover:-translate-y-1"
+              className="glass-card hover:border-cyan-500/35 p-0 rounded-xl flex flex-col justify-between overflow-hidden transition-all duration-300 group"
             >
               {/* Optional Post Card Thumbnail */}
               {post.image && (

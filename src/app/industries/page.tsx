@@ -67,7 +67,7 @@ export default function IndustriesPage() {
 
       <SectionHeader
         tag="Who We Serve"
-        title={<>Tailored Industry <span className="gradient-text">Cloud Architectures</span></>}
+        title={<>Tailored Industry <span className="text-cyan-400">Cloud Architectures</span></>}
         subtitle="Every sector requires specialized security, data, and compliance layouts. We design systems engineered to match your industry's exact standards."
         align="left"
         className="max-w-3xl"
@@ -77,7 +77,7 @@ export default function IndustriesPage() {
         {sectors.map((item, index) => (
           <StaggerItem
             key={index}
-            className={`glass-card hover:border-cyan-500/40 p-8 rounded-xl flex flex-col justify-between transition-all duration-300 group hover:-translate-y-1 relative overflow-hidden h-full ${
+            className={`glass-card hover:border-cyan-500/40 p-8 rounded-xl flex flex-col justify-between transition-all duration-300 group relative overflow-hidden h-full ${
               index === 6 ? "md:col-span-2 lg:col-span-3 min-h-[200px]" : "min-h-[300px]"
             }`}
           >

@@ -42,18 +42,16 @@ function getInitials(name: string) {
   return name.slice(0, 2).toUpperCase();
 }
 
-const gradientAvatars = [
-  "from-cyan-500 to-blue-500",
-  "from-teal-400 to-emerald-500",
-  "from-indigo-500 to-purple-500",
-  "from-cyan-400 to-teal-500",
-  "from-blue-500 to-indigo-600",
+const avatarBgClasses = [
+  "bg-zinc-900 border border-zinc-800 text-zinc-400 font-mono",
+  "bg-zinc-950 border border-zinc-900/60 text-zinc-450 font-mono",
+  "bg-zinc-900/80 border border-zinc-850 text-zinc-400 font-mono",
 ];
 
-const getGradientClass = (name: string) => {
+const getAvatarStyle = (name: string) => {
   let sum = 0;
   for (let i = 0; i < name.length; i++) sum += name.charCodeAt(i);
-  return gradientAvatars[sum % gradientAvatars.length];
+  return avatarBgClasses[sum % avatarBgClasses.length];
 };
 
 interface PageProps {
@@ -188,7 +186,7 @@ export default async function ServicePage({ params }: PageProps) {
               <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-foreground leading-tight">
                 {service.title}
                 <br />
-                <span className="gradient-text">{service.headline}</span>
+                <span className="text-cyan-400">{service.headline}</span>
               </h1>
             </FadeUp>
 
@@ -247,7 +245,7 @@ export default async function ServicePage({ params }: PageProps) {
         <section className="max-w-7xl mx-auto px-6 py-16 md:py-24 border-t border-border/40">
           <SectionHeader
             tag="Solving Bottlenecks"
-            title={<>The Challenge & <span className="gradient-text">Our Solution</span></>}
+            title={<>The Challenge & <span className="text-cyan-400">Our Solution</span></>}
             subtitle="How we analyze pain points and build engineering workflows to achieve system scaling goals."
             align="center"
             className="mb-16"
@@ -300,7 +298,7 @@ export default async function ServicePage({ params }: PageProps) {
         <section className="max-w-7xl mx-auto px-6 py-16 md:py-24 border-t border-border/40">
           <SectionHeader
             tag="Scope of Work"
-            title={<>Engineered <span className="gradient-text">Platform Capabilities</span></>}
+            title={<>Engineered <span className="text-cyan-400">Platform Capabilities</span></>}
             subtitle="Explore our detailed technical features engineered following the industry's absolute best practices."
             align="center"
             className="mb-16"
@@ -310,7 +308,7 @@ export default async function ServicePage({ params }: PageProps) {
             {service.features.map((feature, idx) => (
               <StaggerItem 
                 key={idx}
-                className="glass-card hover:border-cyan-500/30 hover:scale-[1.01] p-8 rounded-xl border border-border/40 transition-all duration-300 flex flex-col justify-between space-y-6 relative group"
+                className="glass-card hover:border-cyan-500/30 p-8 rounded-xl border border-border/40 transition-all duration-300 flex flex-col justify-between space-y-6 relative group"
               >
                 <div className="space-y-3">
                   <span className="text-xs font-mono text-cyan-500/60 font-semibold uppercase">capability {idx + 1}</span>
@@ -338,7 +336,7 @@ export default async function ServicePage({ params }: PageProps) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-center">
               {service.benefits.map((benefit, idx) => (
                 <div key={idx} className="space-y-2">
-                  <div className="text-4xl sm:text-6xl font-extrabold tracking-tight gradient-text font-mono">
+                  <div className="text-4xl sm:text-6xl font-extrabold tracking-tight text-cyan-400 font-mono">
                     {benefit.num}
                   </div>
                   <div className="text-xs sm:text-sm font-mono uppercase tracking-widest text-muted-foreground">
@@ -359,7 +357,7 @@ export default async function ServicePage({ params }: PageProps) {
         <section className="max-w-7xl mx-auto px-6 py-16 md:py-24 border-t border-border/40">
           <SectionHeader
             tag="Our Workflow"
-            title={<>Timeline & <span className="gradient-text">Delivery Process</span></>}
+            title={<>Timeline & <span className="text-cyan-400">Delivery Process</span></>}
             subtitle="How we transition your workflows from requirements gathering to robust production setups."
             align="center"
             className="mb-16"
@@ -386,7 +384,7 @@ export default async function ServicePage({ params }: PageProps) {
           
           <SectionHeader
             tag="Validation"
-            title={<>Client <span className="gradient-text">Outcomes & Reviews</span></>}
+            title={<>Client <span className="text-cyan-400">Outcomes & Reviews</span></>}
             subtitle="See what our clients say about partnering with our senior engineering teams."
             align="center"
             className="mb-16"
@@ -407,14 +405,14 @@ export default async function ServicePage({ params }: PageProps) {
               });
               const displayReviews = filteredReviews.length >= 3 ? filteredReviews.slice(0, 3) : rawTestimonials.slice(0, 3);
               return displayReviews.map((item, index) => {
-                const gradientClass = getGradientClass(item.name);
+                const avatarStyle = getAvatarStyle(item.name);
                 return (
                   <div key={index} className="glass-card p-8 rounded-xl border border-border/40 hover:border-cyan-500/30 transition-all duration-300 flex flex-col justify-between relative group">
                     <p className="text-sm sm:text-base text-muted-foreground leading-relaxed italic relative z-10 mb-8">
                       &ldquo;{item.testimonial}&rdquo;
                     </p>
                     <div className="flex items-center gap-4 border-t border-border/40 pt-6">
-                      <div className={`w-10 h-10 rounded-full bg-gradient-to-tr ${gradientClass} flex items-center justify-center text-white font-bold font-mono text-xs shadow-md shrink-0`}>
+                      <div className={`w-10 h-10 rounded-full ${avatarStyle} flex items-center justify-center text-white font-bold font-mono text-xs shadow-md shrink-0`}>
                         {getInitials(item.name)}
                       </div>
                       <div>
@@ -437,7 +435,7 @@ export default async function ServicePage({ params }: PageProps) {
 
           <SectionHeader
             tag="Faqs"
-            title={<>Dedicated Service <span className="gradient-text">Faq Details</span></>}
+            title={<>Dedicated Service <span className="text-cyan-400">Faq Details</span></>}
             subtitle="Read quick technical answers regarding project durations, setups, and developer access."
             align="center"
             className="mb-16"

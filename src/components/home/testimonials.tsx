@@ -14,13 +14,17 @@ function getInitials(name: string) {
   return name.slice(0, 2).toUpperCase();
 }
 
-const gradientAvatars = [
-  "from-cyan-500 to-blue-500",
-  "from-teal-400 to-emerald-500",
-  "from-indigo-500 to-purple-500",
-  "from-cyan-400 to-teal-500",
-  "from-blue-500 to-indigo-600",
+const avatarBgClasses = [
+  "bg-zinc-900 border border-zinc-800 text-zinc-400 font-mono",
+  "bg-zinc-950 border border-zinc-900/60 text-zinc-450 font-mono",
+  "bg-zinc-900/80 border border-zinc-850 text-zinc-400 font-mono",
 ];
+
+const getAvatarStyle = (name: string) => {
+  let sum = 0;
+  for (let i = 0; i < name.length; i++) sum += name.charCodeAt(i);
+  return avatarBgClasses[sum % avatarBgClasses.length];
+};
 
 export function Testimonials() {
   const [showAll, setShowAll] = useState(false);
@@ -36,7 +40,7 @@ export function Testimonials() {
 
       <SectionHeader
         tag="Client Success"
-        title={<>Trusted by <span className="gradient-text">Engineers & Founders</span></>}
+        title={<>Trusted by <span className="text-cyan-400">Engineers & Founders</span></>}
         subtitle="Real outcomes. See how high-growth startups and global enterprises partner with OnEggy to scale production-grade platforms."
         align="center"
         className="mb-16"
@@ -47,7 +51,7 @@ export function Testimonials() {
         <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 [column-fill:_balance]">
           <AnimatePresence mode="popLayout">
             {visibleTestimonials.map((item, index) => {
-              const gradientClass = gradientAvatars[index % gradientAvatars.length];
+              const avatarStyle = getAvatarStyle(item.name);
               return (
                 <motion.div
                   key={`${item.name}-${index}`}
@@ -76,7 +80,7 @@ export function Testimonials() {
 
                   {/* Author Block */}
                   <div className="flex items-center gap-3 border-t border-border/20 pt-4 mt-5">
-                    <div className={`w-9 h-9 rounded-full bg-gradient-to-tr ${gradientClass} flex items-center justify-center text-white font-bold font-mono text-xs shadow-md shrink-0 select-none`}>
+                    <div className={`w-9 h-9 rounded-full ${avatarStyle} flex items-center justify-center text-white font-bold font-mono text-xs shadow-md shrink-0 select-none`}>
                       {getInitials(item.name)}
                     </div>
                     <div className="min-w-0">

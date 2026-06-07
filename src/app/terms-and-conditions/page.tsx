@@ -15,7 +15,7 @@ export default function TermsAndConditionsPage() {
     <div className="relative max-w-4xl mx-auto px-6 py-12 md:py-24 space-y-8">
       <SectionHeader
         tag="Agreement"
-        title={<>Terms & <span className="gradient-text">Conditions</span></>}
+        title={<>Terms & <span className="text-cyan-400">Conditions</span></>}
         subtitle="Last updated: May 28, 2026"
         align="left"
         className="mb-0"

@@ -113,12 +113,12 @@ export function ContactForm() {
           tabIndex={-1} 
           autoComplete="off"
         />
-
         {/* Name & Company */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-1.5">
-            <label className="text-xs font-semibold text-muted-foreground block">Full Name *</label>
+            <label htmlFor="fullname" className="text-xs font-semibold text-muted-foreground block">Full Name *</label>
             <input
+              id="fullname"
               type="text"
               required
               placeholder="Aakash Sharma"
@@ -129,8 +129,9 @@ export function ContactForm() {
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-xs font-semibold text-muted-foreground block">Company Name</label>
+            <label htmlFor="company" className="text-xs font-semibold text-muted-foreground block">Company Name</label>
             <input
+              id="company"
               type="text"
               placeholder="OnEggy Technologies"
               value={formData.company}
@@ -143,8 +144,9 @@ export function ContactForm() {
         {/* Email & Phone */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-1.5">
-            <label className="text-xs font-semibold text-muted-foreground block">Email Address *</label>
+            <label htmlFor="email" className="text-xs font-semibold text-muted-foreground block">Email Address *</label>
             <input
+              id="email"
               type="email"
               required
               placeholder="aakash@oneggy.com"
@@ -155,8 +157,9 @@ export function ContactForm() {
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-xs font-semibold text-muted-foreground block">Phone Number</label>
+            <label htmlFor="phone" className="text-xs font-semibold text-muted-foreground block">Phone Number</label>
             <input
+              id="phone"
               type="tel"
               placeholder="+91 98111 33005"
               value={formData.phone}
@@ -169,8 +172,9 @@ export function ContactForm() {
         {/* Service & Budget Selector */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-1.5">
-            <label className="text-xs font-semibold text-muted-foreground block">Service Interested In</label>
+            <label htmlFor="service" className="text-xs font-semibold text-muted-foreground block">Service Interested In</label>
             <select
+              id="service"
               value={formData.service}
               onChange={(e) => setFormData({ ...formData, service: e.target.value })}
               className="w-full h-11 px-4 rounded-md bg-background border border-border focus:ring-1 focus:ring-cyan-500 focus:outline-none text-sm cursor-pointer"
@@ -187,8 +191,9 @@ export function ContactForm() {
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-xs font-semibold text-muted-foreground block">Budget Range</label>
+            <label htmlFor="budget" className="text-xs font-semibold text-muted-foreground block">Budget Range</label>
             <select
+              id="budget"
               value={formData.budget}
               onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
               className="w-full h-11 px-4 rounded-md bg-background border border-border focus:ring-1 focus:ring-cyan-500 focus:outline-none text-sm cursor-pointer"
@@ -205,8 +210,9 @@ export function ContactForm() {
         {/* Timeline & Location */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-1.5">
-            <label className="text-xs font-semibold text-muted-foreground block">Target Timeline</label>
+            <label htmlFor="timeline" className="text-xs font-semibold text-muted-foreground block">Target Timeline</label>
             <select
+              id="timeline"
               value={formData.timeline}
               onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
               className="w-full h-11 px-4 rounded-md bg-background border border-border focus:ring-1 focus:ring-cyan-500 focus:outline-none text-sm cursor-pointer"
@@ -219,8 +225,9 @@ export function ContactForm() {
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-xs font-semibold text-muted-foreground block">Country / Location</label>
+            <label htmlFor="location" className="text-xs font-semibold text-muted-foreground block">Country / Location</label>
             <input
+              id="location"
               type="text"
               placeholder="e.g. India, USA, South Korea"
               value={formData.location}
@@ -232,8 +239,9 @@ export function ContactForm() {
 
         {/* Project Details message */}
         <div className="space-y-1.5">
-          <label className="text-xs font-semibold text-muted-foreground block">Project Details & Current Infrastructure *</label>
+          <label htmlFor="message" className="text-xs font-semibold text-muted-foreground block">Project Details & Current Infrastructure *</label>
           <textarea
+            id="message"
             required
             rows={4}
             placeholder="Tell us about your tech stack, number of developers, active cloud hosting cost challenges, or project scope..."
@@ -242,6 +250,7 @@ export function ContactForm() {
             className="w-full p-4 rounded-md bg-background border border-border focus:ring-1 focus:ring-cyan-500 focus:outline-none text-sm placeholder:text-muted-foreground/60 transition-all resize-y min-h-[100px]"
           />
         </div>
+
 
         {/* Submit Button */}
         <button

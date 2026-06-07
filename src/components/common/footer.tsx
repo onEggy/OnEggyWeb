@@ -179,7 +179,9 @@ export function Footer() {
             <p className="text-xs text-muted-foreground">Get DevOps & Kubernetes scaling tutorials.</p>
             
             <form onSubmit={handleSubscribe} className="relative mt-2">
+              <label htmlFor="footer-email" className="sr-only">Email Address</label>
               <input
+                id="footer-email"
                 type="email"
                 required
                 disabled={status === "loading" || status === "success"}
