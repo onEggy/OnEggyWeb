@@ -135,7 +135,7 @@ export default function CaseStudiesPage() {
 
         <SectionHeader
           tag="Proven Outcomes"
-          title={<>Client Success <span className="gradient-text">Case Studies</span></>}
+          title={<>Client Success <span className="text-cyan-400">Case Studies</span></>}
           subtitle="Real outcomes. Discover how we've helped companies improve deployment speed, reduce cloud waste, and build high-performance products."
           align="left"
           className="max-w-3xl"

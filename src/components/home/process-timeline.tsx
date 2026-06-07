@@ -9,11 +9,11 @@ const steps = [
   {
     num: "01",
     badge: "Assessment",
-    title: "Discovery & Waste Audit",
-    desc: "We analyze your AWS bills, EKS cluster specs, and build pipelines to identify resource leaks, slow releases, and compliance gaps.",
+    title: "Discovery & Cloud Cost Audit",
+    desc: "We analyze your AWS bills, EKS cluster resource configurations, and build pipelines to identify resource leaks, slow releases, and compliance gaps.",
     duration: "Duration: 3-5 Days",
-    deliverables: ["Cloud spend reports", "Security leak audit map", "SLA optimization target"],
-    icon: <ClipboardList className="h-4 w-4 text-cyan-400" />,
+    deliverables: ["AWS Cost Explorer audits", "IAM privilege analyzer maps", "EKS resource sizing reports"],
+    icon: <ClipboardList className="h-4 w-4 text-cyan-400 group-hover:text-cyan-300 transition-colors" />,
   },
   {
     num: "02",
@@ -21,8 +21,8 @@ const steps = [
     title: "Architecture Blueprint",
     desc: "We design a secure, highly scalable cloud configuration plan detailing landing zones, cluster scopes, databases, and network policies.",
     duration: "Duration: 5-7 Days",
-    deliverables: ["AWS Control Tower layout", "VPC routing blueprints", "IAM matrix proposal"],
-    icon: <PenTool className="h-4 w-4 text-teal-400" />,
+    deliverables: ["Multi-Account AWS Landing Zones", "VPC CIDR / Subnet routing tables", "Kubernetes RBAC matrix"],
+    icon: <PenTool className="h-4 w-4 text-teal-400 group-hover:text-teal-300 transition-colors" />,
   },
   {
     num: "03",
@@ -30,8 +30,8 @@ const steps = [
     title: "Declarative Infrastructure (IaC)",
     desc: "Our senior engineers write clean, modular Terraform files and Helm charts to provision staging and sandbox environments.",
     duration: "Duration: 2-3 Weeks",
-    deliverables: ["Git-versioned TF modules", "Kubernetes config states", "Secrets storage configs"],
-    icon: <Code className="h-4 w-4 text-indigo-400" />,
+    deliverables: ["Dry-run tested Terraform states", "Helm v3 custom templates", "HashiCorp Vault policy JSONs"],
+    icon: <Code className="h-4 w-4 text-indigo-400 group-hover:text-indigo-300 transition-colors" />,
   },
   {
     num: "04",
@@ -39,8 +39,8 @@ const steps = [
     title: "Continuous Delivery Pipelines",
     desc: "We configure robust pipelines to build, lint, and deploy updates into isolated cluster namespaces with zero downtime.",
     duration: "Duration: 1-2 Weeks",
-    deliverables: ["GitHub Actions workflow code", "ArgoCD sync maps", "Container build scanners"],
-    icon: <Cpu className="h-4 w-4 text-cyan-400" />,
+    deliverables: ["GitHub Actions runner configs", "ArgoCD GitOps application maps", "Trivy image vulnerability scans"],
+    icon: <Cpu className="h-4 w-4 text-cyan-400 group-hover:text-cyan-300 transition-colors" />,
   },
   {
     num: "05",
@@ -48,8 +48,8 @@ const steps = [
     title: "Production Launch & Telemetry",
     desc: "We transition live operations, configure Grafana/Prometheus alert monitoring systems, and supply persistent weekly audits.",
     duration: "Duration: Ongoing Support",
-    deliverables: ["Live systems cutover plan", "Grafana dashboards", "24/7 pager alert profiles"],
-    icon: <Activity className="h-4 w-4 text-teal-400" />,
+    deliverables: ["Prometheus rules & metrics configs", "Grafana infrastructure dashboards", "PagerDuty webhook alerts"],
+    icon: <Activity className="h-4 w-4 text-teal-400 group-hover:text-teal-300 transition-colors" />,
   },
 ];
 
@@ -61,7 +61,7 @@ export function ProcessTimeline() {
 
       <SectionHeader
         tag="Engineering Cycle"
-        title={<>Our Structured <span className="gradient-text">Automation Process</span></>}
+        title={<>Our Structured <span className="text-cyan-400">Automation Process</span></>}
         subtitle="We follow a systematic engineering lifecycle to guarantee compliance, eliminate cloud waste, and accelerate your release loops."
         align="left"
         className="mb-20 max-w-3xl"
@@ -69,18 +69,18 @@ export function ProcessTimeline() {
 
       <div className="relative pl-6 sm:pl-10 md:pl-16">
         {/* Glowing vertical tracking path line */}
-        <div className="absolute left-6 sm:left-10 md:left-16 top-6 bottom-6 w-[2px] bg-gradient-to-b from-cyan-500 via-teal-400 to-indigo-500/10 -translate-x-1/2 -z-10" />
+        <div className="absolute left-6 sm:left-10 md:left-16 top-6 bottom-6 w-[2px] bg-gradient-to-b from-cyan-500/20 via-teal-400/10 to-zinc-800/10 -translate-x-1/2 -z-10" />
 
         <StaggerContainer className="space-y-16">
           {steps.map((item) => (
             <StaggerItem
               key={item.num}
-              className="relative flex gap-6 sm:gap-10 md:gap-12 items-start"
+              className="relative flex gap-6 sm:gap-10 md:gap-12 items-start group"
             >
               
               {/* Timeline dot step circle */}
               <div className="absolute left-0 top-1 -translate-x-1/2 flex items-center justify-center z-10">
-                <div className="w-8 h-8 rounded-full bg-background border border-border flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                <div className="w-8 h-8 rounded-full bg-background border border-border group-hover:border-cyan-500/40 flex items-center justify-center shadow-lg transition-colors">
                   {item.icon}
                 </div>
               </div>
@@ -99,7 +99,7 @@ export function ProcessTimeline() {
                 </div>
 
                 <div className="space-y-2 max-w-3xl">
-                  <h3 className="text-xl sm:text-2xl font-bold text-foreground hover:text-cyan-500 transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-bold text-foreground group-hover:text-cyan-400 transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">

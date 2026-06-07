@@ -31,18 +31,16 @@ function getInitials(name: string) {
   return name.slice(0, 2).toUpperCase();
 }
 
-const gradientAvatars = [
-  "from-cyan-500 to-blue-500",
-  "from-teal-400 to-emerald-500",
-  "from-indigo-500 to-purple-500",
-  "from-cyan-400 to-teal-500",
-  "from-blue-500 to-indigo-600",
+const avatarBgClasses = [
+  "bg-zinc-900 border border-zinc-800 text-zinc-400 font-mono",
+  "bg-zinc-950 border border-zinc-900/60 text-zinc-450 font-mono",
+  "bg-zinc-900/80 border border-zinc-850 text-zinc-400 font-mono",
 ];
 
-const getGradientClass = (name: string) => {
+const getAvatarStyle = (name: string) => {
   let sum = 0;
   for (let i = 0; i < name.length; i++) sum += name.charCodeAt(i);
-  return gradientAvatars[sum % gradientAvatars.length];
+  return avatarBgClasses[sum % avatarBgClasses.length];
 };
 
 const companyValues = [
@@ -137,7 +135,7 @@ export default function AboutPage() {
             </div>
           </FadeUp>
           <SectionHeader
-            title={<>Built By Passionate <span className="gradient-text">Cloud & Product Engineers</span></>}
+            title={<>Built By Passionate <span className="text-cyan-400">Cloud & Product Engineers</span></>}
             subtitle="At OnEggy Technologies, we replace manual operational friction with standardized code templates. We merge expert infrastructure design with active development masterclasses."
             align="left"
             className="mb-0"
@@ -180,7 +178,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
             {leadership.map((leader, index) => {
-              const gradientClass = getGradientClass(leader.name);
+              const avatarStyle = getAvatarStyle(leader.name);
               return (
                 <FadeIn
                   key={leader.name}
@@ -212,7 +210,7 @@ export default function AboutPage() {
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     ) : (
-                      <div className={`w-full h-full bg-gradient-to-tr ${gradientClass} flex items-center justify-center text-white font-bold font-mono text-2xl`}>
+                      <div className={`w-full h-full ${avatarStyle} flex items-center justify-center font-bold text-2xl`}>
                         {getInitials(leader.name)}
                       </div>
                     )}
@@ -249,7 +247,7 @@ export default function AboutPage() {
 
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {engineering.map((member) => {
-              const gradientClass = getGradientClass(member.name);
+              const avatarStyle = getAvatarStyle(member.name);
               return (
                 <StaggerItem
                   key={member.name}
@@ -268,7 +266,7 @@ export default function AboutPage() {
                             className="object-cover transition-transform duration-500 group-hover:scale-105"
                           />
                         ) : (
-                          <div className={`w-full h-full bg-gradient-to-tr ${gradientClass} flex items-center justify-center text-white font-bold font-mono text-sm`}>
+                          <div className={`w-full h-full ${avatarStyle} flex items-center justify-center font-bold text-sm`}>
                             {getInitials(member.name)}
                           </div>
                         )}

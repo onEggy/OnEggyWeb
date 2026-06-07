@@ -86,38 +86,34 @@ export function Hero() {
             </FadeIn>
 
             <FadeUp delay={0.1}>
-              <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] text-foreground">
-                Scale Your Platform.<br />
-                <span className="gradient-text">Automate DevOps.</span><br />
-                Startup to Enterprise.
+              <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.08] text-foreground font-sans">
+                We build and automate <br className="hidden sm:inline" />
+                <span className="text-cyan-400">production-grade</span> cloud platforms.
               </h1>
             </FadeUp>
 
             <FadeUp delay={0.2}>
               <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl">
-                We engineer production-grade cloud environments, automate Kubernetes pipelines, and optimize infrastructure spend. Partner with senior architects to accelerate release cycles with 100% transparency.
+                OnEggy partners with CTOs and engineering teams to deploy automated Kubernetes workloads, restructure AWS Landing Zones, and build secure developer portals. Zero ClickOps. 100% Declarative GitOps.
               </p>
             </FadeUp>
           </div>
 
           {/* Interactive CTAs */}
           <div className="space-y-5">
-            <FadeUp delay={0.3} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <FadeUp delay={0.3} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <Link
                 href="/contact"
-                className="relative inline-flex items-center justify-center h-12 px-6 rounded-lg bg-foreground text-background font-medium hover:bg-foreground/90 transition-all shadow-lg overflow-hidden group isolate"
+                className="inline-flex items-center justify-center h-11 px-5 rounded-md bg-cyan-505 bg-cyan-500 text-black font-bold text-sm hover:bg-cyan-400 transition-colors shadow-sm focus-visible:ring-2 focus-visible:ring-cyan-500/50 focus-visible:outline-none cursor-pointer"
               >
-                <span className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-teal-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
-                <span className="relative z-10 group-hover:text-black transition-colors flex items-center gap-2">
-                  Schedule Architecture Discussion <ArrowRight className="h-4 w-4" />
-                </span>
+                Book Free Consultation <ArrowRight className="h-3.5 w-3.5 ml-1.5" />
               </Link>
               
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center h-12 px-6 rounded-lg border border-border/80 bg-background/40 hover:bg-accent/40 text-sm font-medium transition-all"
+                className="inline-flex items-center justify-center h-11 px-5 rounded-md border border-border/80 bg-background/50 hover:bg-zinc-900 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-cyan-500/50 focus-visible:outline-none cursor-pointer"
               >
-                Get Free Cloud Audit
+                Get Cloud Cost Audit
               </Link>
             </FadeUp>
 

@@ -25,8 +25,8 @@ export function ServicesShowcase() {
 
       <SectionHeader
         tag="Expertise"
-        title={<>Enterprise-Grade <span className="gradient-text">Engineering Services</span></>}
-        subtitle="We design, automate, and scale secure modern software products. Partner with us to speed up developer output and lower cloud costs."
+        title="Enterprise-grade platform engineering."
+        subtitle="We design, build, and automate secure cloud systems to help developer teams scale without friction."
         align="center"
         className="mb-16"
       />
@@ -34,12 +34,12 @@ export function ServicesShowcase() {
       <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         
         {/* Core Card 1: AWS Managed Services (2 Columns) */}
-        <StaggerItem className="lg:col-span-2 md:col-span-2 glass-card hover:border-cyan-500/40 p-6 rounded-xl flex flex-col justify-between min-h-[340px] transition-all group hover:-translate-y-1 shadow-sm relative overflow-hidden">
+        <StaggerItem className="lg:col-span-2 md:col-span-2 border border-border/40 bg-zinc-950/20 hover:border-cyan-500/30 p-6 rounded-lg flex flex-col justify-between min-h-[340px] transition-colors duration-200 group relative cursor-pointer overflow-hidden shadow-xs">
           <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/0 via-cyan-500/0 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           
           <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 h-full items-start">
             <div className="sm:col-span-7 space-y-4">
-              <div className="w-10 h-10 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center group-hover:scale-105 transition-transform">
+              <div className="w-10 h-10 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center">
                 <Cloud className="h-6 w-6 text-cyan-400" />
               </div>
               <div className="space-y-2">
@@ -96,12 +96,12 @@ export function ServicesShowcase() {
         </StaggerItem>
 
         {/* Core Card 2: DevOps Consulting (2 Columns) */}
-        <StaggerItem className="lg:col-span-2 md:col-span-2 glass-card hover:border-teal-500/40 p-6 rounded-xl flex flex-col justify-between min-h-[340px] transition-all group hover:-translate-y-1 shadow-sm relative overflow-hidden">
+        <StaggerItem className="lg:col-span-2 md:col-span-2 border border-border/40 bg-zinc-950/20 hover:border-teal-500/30 p-6 rounded-lg flex flex-col justify-between min-h-[340px] transition-colors duration-200 group relative cursor-pointer overflow-hidden shadow-xs">
           <div className="absolute inset-0 bg-gradient-to-tr from-teal-500/0 via-teal-500/0 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           
           <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 h-full items-start">
             <div className="sm:col-span-7 space-y-4">
-              <div className="w-10 h-10 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center group-hover:scale-105 transition-transform">
+              <div className="w-10 h-10 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center">
                 <Settings className="h-6 w-6 text-teal-400" />
               </div>
               <div className="space-y-2">
@@ -159,12 +159,12 @@ export function ServicesShowcase() {
         </StaggerItem>
 
         {/* Core Card 3: Kubernetes Engineering (2 Columns) */}
-        <StaggerItem className="lg:col-span-2 md:col-span-2 glass-card hover:border-purple-500/40 p-6 rounded-xl flex flex-col justify-between min-h-[340px] transition-all group hover:-translate-y-1 shadow-sm relative overflow-hidden">
+        <StaggerItem className="lg:col-span-2 md:col-span-2 border border-border/40 bg-zinc-950/20 hover:border-purple-500/30 p-6 rounded-lg flex flex-col justify-between min-h-[340px] transition-colors duration-200 group relative cursor-pointer overflow-hidden shadow-xs">
           <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/0 via-purple-500/0 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           
           <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 h-full items-start">
             <div className="sm:col-span-7 space-y-4">
-              <div className="w-10 h-10 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center group-hover:scale-105 transition-transform">
+              <div className="w-10 h-10 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center">
                 <Layers className="h-6 w-6 text-purple-400" />
               </div>
               <div className="space-y-2">
@@ -228,12 +228,12 @@ export function ServicesShowcase() {
         </StaggerItem>
 
         {/* Core Card 4: Platform Engineering (2 Columns) */}
-        <StaggerItem className="lg:col-span-2 md:col-span-2 glass-card hover:border-cyan-500/40 p-6 rounded-xl flex flex-col justify-between min-h-[340px] transition-all group hover:-translate-y-1 shadow-sm relative overflow-hidden">
+        <StaggerItem className="lg:col-span-2 md:col-span-2 border border-border/40 bg-zinc-950/20 hover:border-cyan-500/30 p-6 rounded-lg flex flex-col justify-between min-h-[340px] transition-colors duration-200 group relative cursor-pointer overflow-hidden shadow-xs">
           <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/0 via-cyan-500/0 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           
           <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 h-full items-start">
             <div className="sm:col-span-7 space-y-4">
-              <div className="w-10 h-10 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center group-hover:scale-105 transition-transform">
+              <div className="w-10 h-10 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center">
                 <Cpu className="h-6 w-6 text-cyan-400" />
               </div>
               <div className="space-y-2">
@@ -284,10 +284,10 @@ export function ServicesShowcase() {
         </StaggerItem>
 
         {/* Secondary Card 5: Full Stack Development (1 Column) */}
-        <StaggerItem className="glass-card hover:border-teal-500/40 p-5 rounded-xl flex flex-col justify-between min-h-[280px] transition-all group hover:-translate-y-1 shadow-sm relative overflow-hidden">
+        <StaggerItem className="border border-border/40 bg-zinc-950/20 hover:border-teal-500/30 p-5 rounded-lg flex flex-col justify-between min-h-[280px] transition-colors duration-200 group relative cursor-pointer overflow-hidden shadow-xs">
           <div className="absolute inset-0 bg-gradient-to-tr from-teal-500/0 via-teal-500/0 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           <div className="space-y-4">
-            <div className="w-9 h-9 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center group-hover:scale-105 transition-transform">
+            <div className="w-9 h-9 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center">
               <Code className="h-5 w-5 text-teal-400" />
             </div>
             <div className="space-y-2">
@@ -314,10 +314,10 @@ export function ServicesShowcase() {
         </StaggerItem>
 
         {/* Secondary Card 6: Mobile App Development (1 Column) */}
-        <StaggerItem className="glass-card hover:border-purple-500/40 p-5 rounded-xl flex flex-col justify-between min-h-[280px] transition-all group hover:-translate-y-1 shadow-sm relative overflow-hidden">
+        <StaggerItem className="border border-border/40 bg-zinc-950/20 hover:border-purple-500/30 p-5 rounded-lg flex flex-col justify-between min-h-[280px] transition-colors duration-200 group relative cursor-pointer overflow-hidden shadow-xs">
           <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/0 via-purple-500/0 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           <div className="space-y-4">
-            <div className="w-9 h-9 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center group-hover:scale-105 transition-transform">
+            <div className="w-9 h-9 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center">
               <Smartphone className="h-5 w-5 text-purple-400" />
             </div>
             <div className="space-y-2">
@@ -341,10 +341,10 @@ export function ServicesShowcase() {
         </StaggerItem>
 
         {/* Secondary Card 7: UI/UX Design (1 Column) */}
-        <StaggerItem className="glass-card hover:border-cyan-500/40 p-5 rounded-xl flex flex-col justify-between min-h-[280px] transition-all group hover:-translate-y-1 shadow-sm relative overflow-hidden">
+        <StaggerItem className="border border-border/40 bg-zinc-950/20 hover:border-cyan-500/30 p-5 rounded-lg flex flex-col justify-between min-h-[280px] transition-colors duration-200 group relative cursor-pointer overflow-hidden shadow-xs">
           <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/0 via-cyan-500/0 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           <div className="space-y-4">
-            <div className="w-9 h-9 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center group-hover:scale-105 transition-transform">
+            <div className="w-9 h-9 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center">
               <Palette className="h-5 w-5 text-cyan-400" />
             </div>
             <div className="space-y-2">
@@ -371,10 +371,10 @@ export function ServicesShowcase() {
         </StaggerItem>
 
         {/* Secondary Card 8: Monitoring & Observability (1 Column) */}
-        <StaggerItem className="glass-card hover:border-teal-500/40 p-5 rounded-xl flex flex-col justify-between min-h-[280px] transition-all group hover:-translate-y-1 shadow-sm relative overflow-hidden">
+        <StaggerItem className="border border-border/40 bg-zinc-950/20 hover:border-teal-500/30 p-5 rounded-lg flex flex-col justify-between min-h-[280px] transition-colors duration-200 group relative cursor-pointer overflow-hidden shadow-xs">
           <div className="absolute inset-0 bg-gradient-to-tr from-teal-500/0 via-teal-500/0 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           <div className="space-y-4">
-            <div className="w-9 h-9 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center group-hover:scale-105 transition-transform">
+            <div className="w-9 h-9 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center">
               <Eye className="h-5 w-5 text-teal-400" />
             </div>
             <div className="space-y-2">

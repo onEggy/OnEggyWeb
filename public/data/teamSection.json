@@ -1,47 +1,47 @@
 {
-    "title": "Team",
-    "desc": "Digital Marvels are being created by tech heroes. Unlocking Potential",
-    "profile": [
-      {
-        "name": "Aakash Sharma",
-        "position": "Founder",
-        "image": "/team/Akash.png",
-        "alt": "Profile Image",
-        "sns": "faLinkedin",
-        "description": "10+ years of experience in project management, team leadership and Tech Strategy. Strong organizational and tech skills and Founder of OnEggy Technologies."
-      },
-      {
-        "name": "Akanshu Sharma",
-        "position": "Senior DevOps Engineer",
-        "image": "/team/Akanshu.png",
-        "alt": "Profile Image",
-        "sns": "faLinkedin",
-        "description": "5+ years of experience in DevOps Tech Tools and Cloud Tech."
-      },
-      {
-        "name": "Akash Sharma",
-        "position": "Full-Stack Developer",
-        "image": "/team/pp2.png",
-        "alt": "Profile Image",
-        "sns": "faLinkedin",
-        "description": "4+ years of experience in paid search advertising. Skilled in campaign management and performance analysis"
-      },
-      {
-        "name": "Niraj",
-        "position": "Mentor in Growth",
-        "image": "/team/pp1.png",
-        "alt": "Profile Image",
-        "sns": "faLinkedin",
-        "description": "10+ years of experience in growth (Online and Offline). Proficient in creating and scheduling content, analyzing metrics, and building engagement"
-      },
-      {
-        "name": "John Smith",
-        "position": "Mobile App Developer",
-        "image": "/team/john.png",
-        "alt": "Profile Image",
-        "sns": "faLinkedin",
-        "description": "10+ years of experience in App Development. Expertise in Mobile App Development, PPC, and content strategy"
-      }
-    ]
-  }
+  "title": "Team",
+  "desc": "Digital Marvels are being created by tech heroes. Unlocking Potential",
+  "profile": [
+    {
+      "name": "Aakash Sharma",
+      "position": "Founder",
+      "image": "/team/Akash.png",
+      "alt": "Aakash Sharma - Founder & Cloud Architect",
+      "sns": "faLinkedin",
+      "description": "10+ years of experience in cloud systems design, enterprise infrastructure strategy, and technical team leadership. Founder of OnEggy Technologies."
+    },
+    {
+      "name": "Akanshu Sharma",
+      "position": "Senior DevOps Engineer",
+      "image": "/team/Akanshu.png",
+      "alt": "Akanshu Sharma - Senior DevOps Engineer",
+      "sns": "faLinkedin",
+      "description": "5+ years of experience specializing in automated Kubernetes clusters (EKS/AKS), custom CI/CD pipelines, and declarative IaC."
+    },
+    {
+      "name": "Akash Sharma",
+      "position": "Full-Stack Developer",
+      "image": "/team/pp2.png",
+      "alt": "Akash Sharma - Full-Stack Developer",
+      "sns": "faLinkedin",
+      "description": "4+ years of experience architecting high-performance Next.js frontends, type-safe APIs, and real-time data sync systems."
+    },
+    {
+      "name": "Niraj",
+      "position": "Mentor in Growth",
+      "image": "/team/pp1.png",
+      "alt": "Niraj - Mentor in Growth",
+      "sns": "faLinkedin",
+      "description": "10+ years of experience guiding tech startups from MVP to enterprise scale, focusing on infrastructure cost optimization and product growth."
+    },
+    {
+      "name": "John Smith",
+      "position": "Mobile App Developer",
+      "image": "/team/john.png",
+      "alt": "John Smith - Mobile App Developer",
+      "sns": "faLinkedin",
+      "description": "10+ years of experience building secure, offline-first mobile applications in React Native, with native iOS and Android integrations."
+    }
+  ]
+}
   

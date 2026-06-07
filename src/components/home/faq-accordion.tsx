@@ -49,7 +49,7 @@ export function FaqAccordion() {
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground leading-tight">
               Frequently Asked <br />
-              <span className="gradient-text">Questions</span>
+              <span className="text-cyan-400">Questions</span>
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
               Find answers to common questions about our DevOps, Kubernetes, and Cloud Management engineering solutions.
@@ -84,6 +84,9 @@ export function FaqAccordion() {
                 <div key={index} className="py-4 sm:py-5 first:pt-0 last:pb-0">
                   <button
                     onClick={() => toggleFAQ(index)}
+                    aria-expanded={isOpen}
+                    aria-controls={`faq-answer-${index}`}
+                    id={`faq-button-${index}`}
                     className="w-full flex items-center justify-between text-left font-semibold text-foreground hover:text-cyan-400 transition-colors cursor-pointer select-none py-2"
                   >
                     <span className="text-sm sm:text-base pr-4 font-semibold">{item.question}</span>
@@ -97,6 +100,9 @@ export function FaqAccordion() {
                   <AnimatePresence initial={false}>
                     {isOpen && (
                       <motion.div
+                        id={`faq-answer-${index}`}
+                        role="region"
+                        aria-labelledby={`faq-button-${index}`}
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
