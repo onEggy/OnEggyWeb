@@ -66,6 +66,44 @@ export function RoiCalculator() {
                 <span>$150,000 / mo</span>
               </div>
             </div>
+
+            {/* Dynamic Savings Allocation Breakdown */}
+            <div className="space-y-3 pt-4 border-t border-border/20">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground block font-semibold">
+                Projected Savings Allocation
+              </span>
+              <div className="w-full h-3 rounded-full bg-zinc-900 overflow-hidden flex">
+                <div 
+                  className="h-full bg-cyan-400 transition-all duration-300" 
+                  style={{ width: "45%" }} 
+                  title="Compute Rightsizing: 45%"
+                />
+                <div 
+                  className="h-full bg-teal-400 transition-all duration-300" 
+                  style={{ width: "25%" }} 
+                  title="Orphan Volume Cleanup: 25%"
+                />
+                <div 
+                  className="h-full bg-indigo-500 transition-all duration-300" 
+                  style={{ width: "30%" }} 
+                  title="CloudFront & Egress: 30%"
+                />
+              </div>
+              <div className="grid grid-cols-3 gap-2 text-[9px] sm:text-[11px] font-mono">
+                <div className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" />
+                  <span className="text-muted-foreground truncate">Compute (${Math.floor(monthlySavings * 0.45).toLocaleString()}/mo)</span>
+                </div>
+                <div className="flex items-center gap-1.5 justify-center">
+                  <span className="w-1.5 h-1.5 rounded-full bg-teal-400 shrink-0" />
+                  <span className="text-muted-foreground truncate">Storage (${Math.floor(monthlySavings * 0.25).toLocaleString()}/mo)</span>
+                </div>
+                <div className="flex items-center gap-1.5 justify-end">
+                  <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 shrink-0" />
+                  <span className="text-muted-foreground truncate">Network (${Math.floor(monthlySavings * 0.30).toLocaleString()}/mo)</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Quick Metrics display */}

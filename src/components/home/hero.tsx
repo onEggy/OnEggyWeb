@@ -6,7 +6,7 @@ import Image from "next/image";
 import { ArrowRight, Sparkles, CheckCircle2 } from "lucide-react";
 import { useMotionValue } from "framer-motion";
 import { HeroVisual } from "./hero-visual";
-import { FadeUp, FadeIn, StaggerContainer, StaggerItem, Float } from "../animations/motion-wrappers";
+import { FadeUp, FadeIn, StaggerContainer, StaggerItem } from "../animations/motion-wrappers";
 
 // Animated counter helper component for premium counts
 function StatCounter({ value, suffix = "", duration = 1.5 }: { value: number; suffix?: string; duration?: number }) {
@@ -72,65 +72,6 @@ export function Hero() {
       <div className="absolute top-[10%] left-[-10%] w-[450px] h-[450px] rounded-full bg-cyan-500/10 blur-[110px] pointer-events-none animate-pulse" style={{ animationDuration: "6s" }} />
       <div className="absolute bottom-[10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-teal-500/5 blur-[120px] pointer-events-none animate-pulse" style={{ animationDuration: "10s" }} />
 
-      {/* Floating Tech Badges - Left/Right sides */}
-      {/* AWS */}
-      <Float speed={4} className="absolute left-[8%] top-[25%] z-20 hidden lg:block">
-        <div className="glass-card px-3 py-1.5 rounded-full border border-orange-500/20 text-orange-400 flex items-center gap-1.5 shadow-md shadow-orange-500/5">
-          <div className="relative w-3.5 h-3.5">
-            <Image 
-              src="/service/aws.svg" 
-              alt="AWS" 
-              fill 
-              sizes="14px" 
-              className="object-contain" 
-            />
-          </div>
-          <span className="text-[11px] font-mono font-semibold uppercase tracking-wider">AWS</span>
-        </div>
-      </Float>
-
-      {/* Kubernetes */}
-      <Float speed={4.5} className="absolute left-[4%] top-[60%] z-20 hidden lg:block">
-        <div className="glass-card px-3 py-1.5 rounded-full border border-blue-500/20 text-blue-400 flex items-center gap-1.5 shadow-md shadow-blue-500/5">
-          <div className="relative w-3.5 h-3.5">
-            <Image 
-              src="/kubernetes.png" 
-              alt="Kubernetes" 
-              fill 
-              sizes="14px" 
-              className="object-contain" 
-            />
-          </div>
-          <span className="text-[11px] font-mono font-semibold uppercase tracking-wider">Kubernetes</span>
-        </div>
-      </Float>
-
-      {/* Terraform */}
-      <Float speed={5} className="absolute right-[5%] bottom-[20%] z-20 hidden lg:block">
-        <div className="glass-card px-3 py-1.5 rounded-full border border-purple-500/20 text-purple-400 flex items-center gap-1.5 shadow-md shadow-purple-500/5">
-          <svg className="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24">
-            <path d="M0 0h7.5v7.5h-7.5zm8.25 0h7.5v7.5h-7.5zm8.25 8.25h7.5v7.5h-7.5zm-16.5 0h7.5v7.5h-7.5z" />
-          </svg>
-          <span className="text-[11px] font-mono font-semibold uppercase tracking-wider">Terraform</span>
-        </div>
-      </Float>
-
-      {/* Next.js */}
-      <Float speed={3.5} className="absolute right-[10%] top-[20%] z-20 hidden lg:block">
-        <div className="glass-card px-3 py-1.5 rounded-full border border-border/80 text-foreground flex items-center gap-1.5 shadow-md">
-          <div className="relative w-3.5 h-3.5 dark:invert">
-            <Image 
-              src="/next.svg" 
-              alt="Next.js" 
-              fill 
-              sizes="14px" 
-              className="object-contain" 
-            />
-          </div>
-          <span className="text-[11px] font-mono font-semibold uppercase tracking-wider">Next.js</span>
-        </div>
-      </Float>
-
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10 w-full">
         
         {/* Left Column: Premium Marketing Copy & Stats */}
@@ -160,24 +101,48 @@ export function Hero() {
           </div>
 
           {/* Interactive CTAs */}
-          <FadeUp delay={0.3} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-            <Link
-              href="/contact"
-              className="relative inline-flex items-center justify-center h-12 px-6 rounded-lg bg-foreground text-background font-medium hover:bg-foreground/90 transition-all shadow-lg overflow-hidden group isolate"
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-teal-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
-              <span className="relative z-10 group-hover:text-black transition-colors flex items-center gap-2">
-                Schedule Architecture Discussion <ArrowRight className="h-4 w-4" />
-              </span>
-            </Link>
-            
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center h-12 px-6 rounded-lg border border-border/80 bg-background/40 hover:bg-accent/40 text-sm font-medium transition-all"
-            >
-              Get Free Cloud Audit
-            </Link>
-          </FadeUp>
+          <div className="space-y-5">
+            <FadeUp delay={0.3} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+              <Link
+                href="/contact"
+                className="relative inline-flex items-center justify-center h-12 px-6 rounded-lg bg-foreground text-background font-medium hover:bg-foreground/90 transition-all shadow-lg overflow-hidden group isolate"
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-teal-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
+                <span className="relative z-10 group-hover:text-black transition-colors flex items-center gap-2">
+                  Schedule Architecture Discussion <ArrowRight className="h-4 w-4" />
+                </span>
+              </Link>
+              
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center h-12 px-6 rounded-lg border border-border/80 bg-background/40 hover:bg-accent/40 text-sm font-medium transition-all"
+              >
+                Get Free Cloud Audit
+              </Link>
+            </FadeUp>
+
+            {/* Handcrafted Stack Bar */}
+            <FadeIn delay={0.35} className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-4 border-t border-border/20 max-w-xl">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground font-semibold">Supported Ecosystem:</span>
+              <div className="flex items-center gap-5">
+                <div className="relative w-5 h-5 shrink-0" title="AWS">
+                  <Image src="/service/aws.svg" alt="AWS" fill sizes="20px" className="object-contain opacity-50 hover:opacity-100 transition-opacity" />
+                </div>
+                <div className="relative w-5 h-5 shrink-0" title="Kubernetes">
+                  <Image src="/kubernetes.png" alt="Kubernetes" fill sizes="20px" className="object-contain opacity-50 hover:opacity-100 transition-opacity" />
+                </div>
+                <div className="flex items-center gap-1.5 opacity-50 hover:opacity-100 transition-opacity shrink-0" title="Terraform">
+                  <svg className="h-4.5 w-4.5 fill-current text-purple-400" viewBox="0 0 24 24">
+                    <path d="M0 0h7.5v7.5h-7.5zm8.25 0h7.5v7.5h-7.5zm8.25 8.25h7.5v7.5h-7.5zm-16.5 0h7.5v7.5h-7.5z" />
+                  </svg>
+                  <span className="text-[10px] font-mono font-bold tracking-wider text-purple-400">TERRAFORM</span>
+                </div>
+                <div className="relative w-12 h-4 dark:invert shrink-0" title="Next.js">
+                  <Image src="/next.svg" alt="Next.js" fill sizes="48px" className="object-contain opacity-50 hover:opacity-100 transition-opacity" />
+                </div>
+              </div>
+            </FadeIn>
+          </div>
 
           {/* Trust Indicators banner */}
           <FadeIn delay={0.4} className="border-t border-border/40 pt-6 space-y-3">

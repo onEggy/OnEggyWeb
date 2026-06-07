@@ -1,56 +1,104 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { CheckCircle2, ShieldAlert, Cpu, Database, Network, Activity, RefreshCw } from "lucide-react";
+import React, { useState, useEffect, useRef } from "react";
+import { ShieldAlert, RefreshCw, Lock, Terminal, Clock } from "lucide-react";
 
-const checks = [
-  {
-    id: "ingress",
-    name: "aws-ingress-gateway",
-    status: "healthy",
-    metrics: "ALB Routing | WAF Guard",
-    uptime: "99.99%",
-    icon: <Network className="h-4 w-4 text-cyan-400" />,
-  },
-  {
-    id: "k8s",
-    name: "k8s-pod-scaler",
-    status: "healthy",
-    metrics: "HPA Active | 14 Nodes",
-    uptime: "99.98%",
-    icon: <Cpu className="h-4 w-4 text-teal-400" />,
-  },
-  {
-    id: "db",
-    name: "replica-database-sync",
-    status: "healthy",
-    metrics: "Aurora Multi-AZ | 0ms lag",
-    uptime: "100%",
-    icon: <Database className="h-4 w-4 text-indigo-400" />,
-  },
+interface LogEntry {
+  timestamp: string;
+  level: "INFO" | "SUCCESS" | "WARN" | "ALERT";
+  service: string;
+  message: string;
+}
+
+const INITIAL_LOGS: LogEntry[] = [
+  { timestamp: "16:48:10", level: "INFO", service: "alb-ingress", message: "ALB router forwarding path matches /api/v1/auth" },
+  { timestamp: "16:48:12", level: "SUCCESS", service: "ssl-cert", message: "Certificates verified. 242 days left on Let's Encrypt" },
+  { timestamp: "16:48:15", level: "INFO", service: "k8s-hpa", message: "Replica check: target stable (cpu avg: 34%)" },
+  { timestamp: "16:48:18", level: "ALERT", service: "waf-block", message: "WAF blocked suspicious SQL pattern from IP 42.108.5.12" },
+  { timestamp: "16:48:22", level: "SUCCESS", service: "db-replica", message: "RDS Aurora PG replica check: 0ms replication lag verified" },
+];
+
+const SERVICE_POOL = [
+  { level: "INFO" as const, service: "alb-ingress", message: "ALB router target matched root context path /" },
+  { level: "SUCCESS" as const, service: "argocd", message: "GitOps Sync complete: deployed image tag commit-f182a" },
+  { level: "INFO" as const, service: "k8s-hpa", message: "Nodes active: 6 desired, 6 running across spot group" },
+  { level: "WARN" as const, service: "db-backup", message: "Daily snapshot auto-triggered on prod-cluster-az2" },
+  { level: "SUCCESS" as const, service: "route53", message: "DNS healthcheck check resolved to primary endpoint" },
+  { level: "ALERT" as const, service: "waf-block", message: "WAF blocked XSS attempt from IP 185.220.101.4" },
+  { level: "INFO" as const, service: "cloudfront", message: "Cache hit ratio optimized at 94.8% for static assets" },
 ];
 
 export function StatusBoard() {
-  const [blockedThreats, setBlockedThreats] = useState(4209);
-  const [lastCheckTime, setLastCheckTime] = useState("Just now");
+  const [logs, setLogs] = useState<LogEntry[]>(INITIAL_LOGS);
+  const [latencyPoints, setLatencyPoints] = useState<number[]>([14, 15, 12, 18, 14, 15, 13, 16, 14, 15, 14]);
+  const [currentLatency, setCurrentLatency] = useState(14);
+  const [threatCount, setThreatCount] = useState(4209);
   const [isRefreshing, setIsRefreshing] = useState(false);
+  const logEndRef = useRef<HTMLDivElement>(null);
 
+  // Auto-scroll logs to bottom if they update
   useEffect(() => {
-    const interval = setInterval(() => {
-      // Simulate random blocked threats increasing
-      setBlockedThreats((prev) => prev + Math.floor(Math.random() * 3));
-    }, 4000);
-    return () => clearInterval(interval);
+    if (logEndRef.current) {
+      logEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [logs]);
+
+  // Log simulation interval
+  useEffect(() => {
+    const logTimer = setInterval(() => {
+      const date = new Date();
+      const timestamp = date.toTimeString().split(" ")[0];
+      const randomItem = SERVICE_POOL[Math.floor(Math.random() * SERVICE_POOL.length)];
+      
+      const newLog: LogEntry = {
+        timestamp,
+        ...randomItem
+      };
+
+      setLogs(prev => [...prev.slice(1), newLog]);
+
+      // If threat block event occurs, increment threat counter
+      if (randomItem.level === "ALERT") {
+        setThreatCount(c => c + 1);
+      }
+
+      // Fluctuating latency
+      setCurrentLatency(prev => {
+        const delta = Math.floor(Math.random() * 5) - 2; // -2 to +2
+        const next = Math.max(10, Math.min(25, prev + delta));
+        setLatencyPoints(pts => [...pts.slice(1), next]);
+        return next;
+      });
+
+    }, 3200);
+
+    return () => clearInterval(logTimer);
   }, []);
 
   const handleManualRefresh = () => {
     setIsRefreshing(true);
     setTimeout(() => {
       setIsRefreshing(false);
-      const now = new Date();
-      setLastCheckTime(`Checked at ${now.toLocaleTimeString()}`);
-    }, 800);
+      // Trigger log refresh
+      const date = new Date();
+      const ts = date.toTimeString().split(" ")[0];
+      const manualLog: LogEntry = {
+        timestamp: ts,
+        level: "SUCCESS",
+        service: "manual-audit",
+        message: "Full cluster topology and DNS verification check succeeded manually."
+      };
+      setLogs(prev => [...prev.slice(1), manualLog]);
+    }, 850);
   };
+
+  // Build SVG path for latency sparkline
+  const sparklinePath = latencyPoints.reduce((path, pt, i) => {
+    const x = (i / (latencyPoints.length - 1)) * 140;
+    // Map latency 10-25 to SVG y-coords 40-5
+    const y = 40 - ((pt - 10) / 15) * 35;
+    return path + `${i === 0 ? "M" : "L"} ${x} ${y}`;
+  }, "");
 
   return (
     <section className="max-w-7xl mx-auto px-6 py-12 relative border-t border-border/40">
@@ -58,6 +106,7 @@ export function StatusBoard() {
       <div className="absolute top-[10%] left-[20%] w-[300px] h-[300px] rounded-full bg-cyan-500/5 blur-[90px] pointer-events-none -z-10" />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
         {/* Left Side: Storytelling & Trust Callout */}
         <div className="lg:col-span-5 space-y-6">
           <div className="space-y-2">
@@ -70,7 +119,7 @@ export function StatusBoard() {
             </h2>
           </div>
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-            We don&apos;t deploy and walk away. Our solutions are engineered with automated self-healing clusters, multi-AZ database replication, and real-time PagerDuty alarms to isolate security events before they impact your clients.
+            We don&apos;t deploy and walk away. Our solutions are engineered with automated self-healing clusters, multi-AZ database replication, and real-time security scanning alerts to catch infrastructure drift before it impacts users.
           </p>
           <div className="flex items-center gap-6 pt-2">
             <div className="space-y-1">
@@ -85,94 +134,97 @@ export function StatusBoard() {
           </div>
         </div>
 
-        {/* Right Side: Visual System Status Dashboard Panel */}
+        {/* Right Side: High-Density Telemetry Logs Board Dashboard */}
         <div className="lg:col-span-7">
-          <div className="glass-card rounded-2xl border border-border/40 p-6 md:p-8 shadow-2xl relative overflow-hidden bg-background/25">
-            {/* Edge glow overlay */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/0 via-cyan-500/0 to-cyan-500/5 opacity-40 pointer-events-none" />
-
-            {/* Header controls of status board */}
-            <div className="flex items-center justify-between border-b border-border/40 pb-5 mb-6">
+          <div className="bg-zinc-950/90 rounded-xl border border-zinc-800 p-4 sm:p-6 shadow-2xl relative overflow-hidden select-none font-mono">
+            {/* Window control buttons and title */}
+            <div className="flex items-center justify-between border-b border-zinc-800 pb-4 mb-4">
               <div className="flex items-center gap-3">
-                <div className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse" />
-                <span className="text-sm font-bold text-foreground">Systems Status Dashboard</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="text-[10px] font-mono text-muted-foreground hidden sm:inline-block">
-                  {lastCheckTime}
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
+                <span className="text-xs sm:text-sm font-bold text-zinc-300">oneggy-production-telemetry</span>
+              </div>
+              <div className="flex items-center gap-3">
                 <button
                   onClick={handleManualRefresh}
                   disabled={isRefreshing}
-                  className="p-1.5 rounded-lg border border-border/40 bg-background/40 hover:bg-accent/40 text-muted-foreground hover:text-foreground cursor-pointer transition-colors"
-                  aria-label="Refresh Status"
+                  className="p-1 rounded bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-foreground cursor-pointer transition-colors"
+                  aria-label="Refresh status manual"
                 >
-                  <RefreshCw className={`h-3.5 w-3.5 ${isRefreshing ? "animate-spin text-cyan-500" : ""}`} />
+                  <RefreshCw className={`h-3 w-3 ${isRefreshing ? "animate-spin text-cyan-400" : ""}`} />
                 </button>
               </div>
             </div>
 
-            {/* Metrics Checklist Stack */}
-            <div className="space-y-4">
-              {checks.map((item) => (
-                <div
-                  key={item.id}
-                  className="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-xl border border-border/30 bg-background/50 backdrop-blur-sm group hover:border-cyan-500/20 transition-all duration-300"
-                >
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-8 h-8 rounded-lg bg-background/80 border border-border/40 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-bold text-foreground font-mono">{item.name}</h4>
-                      <span className="text-[11px] text-muted-foreground block mt-0.5">{item.metrics}</span>
-                    </div>
-                  </div>
+            {/* High-density metrics counters row */}
+            <div className="grid grid-cols-3 gap-3 mb-4 text-[10px] sm:text-xs">
+              <div className="bg-zinc-900/60 border border-zinc-800/80 p-2.5 rounded flex items-center justify-between">
+                <div>
+                  <span className="text-zinc-500 text-[8px] uppercase block">Response Time</span>
+                  <span className="font-bold text-foreground font-mono">{currentLatency}ms</span>
+                </div>
+                <svg className="w-16 h-8 overflow-visible" fill="none">
+                  <path d={sparklinePath} stroke="#22d3ee" strokeWidth="1.5" />
+                </svg>
+              </div>
 
-                  <div className="flex items-center justify-between sm:justify-end gap-6 mt-3 sm:mt-0 pt-3 sm:pt-0 border-t border-border/10 sm:border-0">
-                    <div className="text-left sm:text-right">
-                      <span className="text-[9px] uppercase tracking-wider text-muted-foreground block font-mono">Uptime</span>
-                      <span className="text-xs font-mono font-bold text-foreground">{item.uptime}</span>
-                    </div>
-                    <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-[10px] text-green-400 font-bold uppercase tracking-wider font-mono">
-                      <CheckCircle2 className="h-3 w-3 shrink-0" />
-                      <span>Online</span>
-                    </div>
-                  </div>
+              <div className="bg-zinc-900/60 border border-zinc-800/80 p-2.5 rounded flex items-center justify-between">
+                <div>
+                  <span className="text-zinc-500 text-[8px] uppercase block">SSL Certificate</span>
+                  <span className="font-bold text-green-400">Valid</span>
                 </div>
-              ))}
+                <Lock className="h-4.5 w-4.5 text-green-400 opacity-80" />
+              </div>
 
-              {/* Firewall Security Live Telemetry Card */}
-              <div className="p-4 rounded-xl border border-red-500/10 bg-red-500/[0.01] flex flex-col sm:flex-row sm:items-center justify-between transition-all hover:border-red-500/25 duration-300">
-                <div className="flex items-center gap-3.5">
-                  <div className="w-8 h-8 rounded-lg bg-background/80 border border-red-500/10 flex items-center justify-center shrink-0">
-                    <ShieldAlert className="h-4 w-4 text-red-400" />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-foreground font-mono">aws-waf-firewall</h4>
-                    <span className="text-[11px] text-muted-foreground block mt-0.5">Threat Prevention Edge</span>
-                  </div>
+              <div className="bg-zinc-900/60 border border-zinc-800/80 p-2.5 rounded flex items-center justify-between">
+                <div>
+                  <span className="text-zinc-500 text-[8px] uppercase block">Threats Guarded</span>
+                  <span className="font-bold text-red-400">{threatCount}</span>
                 </div>
-                <div className="flex items-center justify-between sm:justify-end gap-6 mt-3 sm:mt-0 pt-3 sm:pt-0 border-t border-border/10 sm:border-0">
-                  <div className="text-left sm:text-right">
-                    <span className="text-[9px] uppercase tracking-wider text-muted-foreground block font-mono">Threats Blocked</span>
-                    <span className="text-xs font-mono font-bold text-red-400">{blockedThreats.toLocaleString()}</span>
-                  </div>
-                  <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-[10px] text-red-400 font-bold uppercase tracking-wider font-mono">
-                    <Activity className="h-3 w-3 shrink-0 animate-pulse" />
-                    <span>Active Protection</span>
-                  </div>
-                </div>
+                <ShieldAlert className="h-4.5 w-4.5 text-red-400 animate-pulse" />
               </div>
             </div>
 
-            {/* Bottom SLA assurance footer */}
-            <div className="mt-6 pt-5 border-t border-border/40 flex flex-wrap items-center justify-between gap-3 text-[11px] text-muted-foreground">
-              <span>SLA Response Target: &lt;15 mins for critical bugs</span>
-              <span>Centralized Log Shipping: Active</span>
+            {/* Streaming log terminal panel */}
+            <div className="bg-black/70 border border-zinc-850 rounded-lg p-3 h-[180px] overflow-y-auto flex flex-col gap-1.5 scrollbar-thin select-text">
+              <div className="flex items-center gap-1.5 text-zinc-500 text-[8px] border-b border-zinc-900 pb-1 mb-1 select-none">
+                <Terminal className="h-3.5 w-3.5 text-zinc-500" />
+                <span>LOG STREAM OVERLAY -- OUTPUT LIVE</span>
+              </div>
+              
+              {logs.map((log, index) => {
+                let colorClass = "text-zinc-400";
+                if (log.level === "SUCCESS") colorClass = "text-green-400";
+                if (log.level === "WARN") colorClass = "text-amber-400";
+                if (log.level === "ALERT") colorClass = "text-red-400 font-semibold";
+
+                return (
+                  <div key={index} className="text-[9px] sm:text-[10px] leading-relaxed flex items-start gap-1 font-mono">
+                    <span className="text-zinc-600 shrink-0">{log.timestamp}</span>
+                    <span className={`px-1 rounded bg-zinc-900 text-[8px] border border-zinc-800 shrink-0 ${colorClass}`}>
+                      {log.level}
+                    </span>
+                    <span className="text-cyan-400 shrink-0">[{log.service}]</span>
+                    <span className="text-zinc-300 truncate">{log.message}</span>
+                  </div>
+                );
+              })}
+              <div ref={logEndRef} />
+            </div>
+
+            {/* Bottom Telemetry Footer */}
+            <div className="mt-4 pt-3 border-t border-zinc-900 flex items-center justify-between text-[8px] sm:text-[9px] text-zinc-500">
+              <div className="flex items-center gap-1">
+                <Clock className="h-3 w-3" />
+                <span>Response Target SLA: &lt;15m</span>
+              </div>
+              <span>Logs linked directly to AWS CloudWatch & Grafana</span>
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );

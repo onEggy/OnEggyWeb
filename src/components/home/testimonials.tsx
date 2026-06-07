@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, useEffect, useRef, useCallback } from "react";
-import { Quote, ChevronLeft, ChevronRight, Star } from "lucide-react";
-import { motion, AnimatePresence, PanInfo } from "framer-motion";
+import React, { useState } from "react";
+import { Star, Quote, ArrowDown, ArrowUp } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { SectionHeader } from "../common/section-header";
 import { testimonials as rawTestimonials } from "../../../public/data/testimonial.json";
 
@@ -23,89 +23,11 @@ const gradientAvatars = [
 ];
 
 export function Testimonials() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(0); // -1 for prev, 1 for next
-  const [isHovered, setIsHovered] = useState(false);
-  const autoPlayTimer = useRef<NodeJS.Timeout | null>(null);
-
-  // We filter out any empty reviews or invalid elements
+  const [showAll, setShowAll] = useState(false);
   const list = rawTestimonials.filter((t) => t.name && t.testimonial);
-
-  const handleNext = useCallback(() => {
-    setDirection(1);
-    setCurrentIndex((prev) => (prev + 1) % list.length);
-  }, [list.length]);
-
-  const handlePrev = useCallback(() => {
-    setDirection(-1);
-    setCurrentIndex((prev) => (prev - 1 + list.length) % list.length);
-  }, [list.length]);
-
-  const stopAutoPlay = useCallback(() => {
-    if (autoPlayTimer.current) {
-      clearInterval(autoPlayTimer.current);
-      autoPlayTimer.current = null;
-    }
-  }, []);
-
-  const startAutoPlay = useCallback(() => {
-    stopAutoPlay();
-    autoPlayTimer.current = setInterval(() => {
-      handleNext();
-    }, 6000); // 6 seconds per review
-  }, [handleNext, stopAutoPlay]);
-
-  useEffect(() => {
-    if (!isHovered) {
-      startAutoPlay();
-    } else {
-      stopAutoPlay();
-    }
-    return () => stopAutoPlay();
-  }, [isHovered, currentIndex, startAutoPlay, stopAutoPlay]);
-
-  const handleDotClick = (idx: number) => {
-    setDirection(idx > currentIndex ? 1 : -1);
-    setCurrentIndex(idx);
-  };
-
-  // Drag handler for mobile swipe
-  const handleDragEnd = (event: unknown, info: PanInfo) => {
-    const swipeThreshold = 50;
-    if (info.offset.x > swipeThreshold) {
-      handlePrev();
-    } else if (info.offset.x < -swipeThreshold) {
-      handleNext();
-    }
-  };
-
-  const activeTestimonial = list[currentIndex];
-  if (!activeTestimonial) return null;
-
-  // Render a clean gradient fallback avatar using name characters to choose a stable gradient index
-  const getGradientIndex = (name: string) => {
-    let sum = 0;
-    for (let i = 0; i < name.length; i++) sum += name.charCodeAt(i);
-    return sum % gradientAvatars.length;
-  };
-
-  const gradientClass = gradientAvatars[getGradientIndex(activeTestimonial.name)];
-
-  // Framer Motion animation configs for sliding transitions
-  const slideVariants = {
-    enter: (dir: number) => ({
-      x: dir > 0 ? 120 : -120,
-      opacity: 0,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-    },
-    exit: (dir: number) => ({
-      x: dir > 0 ? -120 : 120,
-      opacity: 0,
-    }),
-  };
+  
+  // Show first 9 testimonials initially, expand to show all 18 on click
+  const visibleTestimonials = showAll ? list : list.slice(0, 9);
 
   return (
     <section className="max-w-7xl mx-auto px-6 py-20 border-t border-border/40 relative">
@@ -120,102 +42,81 @@ export function Testimonials() {
         className="mb-16"
       />
 
-      <div 
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        className="relative max-w-4xl mx-auto"
-      >
-        {/* Main Testimonial Slide Container */}
-        <div className="glass-card p-8 md:p-12 rounded-2xl border border-border/40 shadow-2xl relative overflow-hidden bg-background/25 min-h-[340px] md:min-h-[280px] flex flex-col justify-between select-none">
-          {/* Background Quote Icon Decoration */}
-          <div className="absolute top-6 right-8 text-muted-foreground/5 pointer-events-none">
-            <Quote className="h-28 w-28" />
-          </div>
+      {/* Masonry Layout Container */}
+      <div className="relative">
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 [column-fill:_balance]">
+          <AnimatePresence mode="popLayout">
+            {visibleTestimonials.map((item, index) => {
+              const gradientClass = gradientAvatars[index % gradientAvatars.length];
+              return (
+                <motion.div
+                  key={`${item.name}-${index}`}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.3, delay: (index % 3) * 0.08 }}
+                  className="break-inside-avoid glass-card p-6 rounded-xl border border-border/40 hover:border-cyan-500/30 transition-all duration-300 flex flex-col justify-between relative bg-background/25"
+                >
+                  {/* Watermark Quote Icon */}
+                  <Quote className="absolute top-4 right-4 h-8 w-8 text-muted-foreground/5 pointer-events-none" />
 
-          <AnimatePresence custom={direction} mode="wait">
-            <motion.div
-              key={currentIndex}
-              custom={direction}
-              variants={slideVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{ duration: 0.35, ease: "easeInOut" }}
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={0.2}
-              onDragEnd={handleDragEnd}
-              className="space-y-6 md:space-y-8 flex flex-col justify-between h-full cursor-grab active:cursor-grabbing"
-            >
-              <div className="space-y-4">
-                {/* 5-Star Ratings row */}
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-cyan-500 text-cyan-500" />
-                  ))}
-                  <span className="text-[10px] font-mono text-cyan-500 font-bold uppercase tracking-wider ml-2">
-                    Verified review
-                  </span>
-                </div>
+                  <div className="space-y-4">
+                    {/* Stars */}
+                    <div className="flex items-center gap-0.5">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-3.5 w-3.5 fill-cyan-500 text-cyan-500" />
+                      ))}
+                    </div>
 
-                {/* Testimonial Quote text */}
-                <p className="text-base md:text-lg text-foreground/90 leading-relaxed italic relative z-10">
-                  &ldquo;{activeTestimonial.testimonial}&rdquo;
-                </p>
-              </div>
+                    {/* Testimonial Quote */}
+                    <p className="text-xs sm:text-sm text-foreground/90 leading-relaxed italic select-text">
+                      &ldquo;{item.testimonial}&rdquo;
+                    </p>
+                  </div>
 
-              {/* Author & Client Metadata Info Row */}
-              <div className="flex items-center gap-4 border-t border-border/30 pt-6 mt-4">
-                {/* Avatar Fallback with Premium Gradient Orbs */}
-                <div className={`w-12 h-12 rounded-full bg-gradient-to-tr ${gradientClass} flex items-center justify-center text-white font-bold font-mono text-base shadow-lg shrink-0 select-none`}>
-                  {getInitials(activeTestimonial.name)}
-                </div>
-                <div>
-                  <h4 className="text-base font-bold text-foreground">{activeTestimonial.name}</h4>
-                  <p className="text-xs sm:text-sm text-muted-foreground">
-                    {activeTestimonial.designation}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
+                  {/* Author Block */}
+                  <div className="flex items-center gap-3 border-t border-border/20 pt-4 mt-5">
+                    <div className={`w-9 h-9 rounded-full bg-gradient-to-tr ${gradientClass} flex items-center justify-center text-white font-bold font-mono text-xs shadow-md shrink-0 select-none`}>
+                      {getInitials(item.name)}
+                    </div>
+                    <div className="min-w-0">
+                      <h4 className="text-xs sm:text-sm font-bold text-foreground truncate">{item.name}</h4>
+                      <p className="text-[10px] sm:text-xs text-muted-foreground truncate font-medium">
+                        {item.designation}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </AnimatePresence>
         </div>
 
-        {/* Carousel controls */}
-        <div className="flex items-center justify-between mt-6">
-          {/* Navigation indicators dots */}
-          <div className="flex items-center gap-2">
-            {list.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => handleDotClick(idx)}
-                className={`h-1.5 rounded-full transition-all cursor-pointer ${
-                  idx === currentIndex ? "w-6 bg-cyan-500" : "w-1.5 bg-border hover:bg-muted-foreground"
-                }`}
-                aria-label={`Go to slide ${idx + 1}`}
-              />
-            ))}
-          </div>
-
-          {/* Prev/Next arrows hooks */}
-          <div className="flex items-center gap-3">
-            <button
-              onClick={handlePrev}
-              className="w-10 h-10 rounded-lg border border-border/40 bg-background/40 hover:bg-accent/40 text-muted-foreground hover:text-foreground flex items-center justify-center cursor-pointer transition-colors shadow-sm"
-              aria-label="Previous Slide"
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </button>
-            <button
-              onClick={handleNext}
-              className="w-10 h-10 rounded-lg border border-border/40 bg-background/40 hover:bg-accent/40 text-muted-foreground hover:text-foreground flex items-center justify-center cursor-pointer transition-colors shadow-sm"
-              aria-label="Next Slide"
-            >
-              <ChevronRight className="h-5 w-5" />
-            </button>
-          </div>
-        </div>
+        {/* Fade overlay when collapsed */}
+        {!showAll && list.length > 9 && (
+          <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none" />
+        )}
       </div>
+
+      {/* Show more/less toggle button */}
+      {list.length > 9 && (
+        <div className="flex justify-center mt-12 relative z-20">
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border/80 bg-background/60 hover:bg-accent/40 text-xs sm:text-sm font-semibold transition-all cursor-pointer shadow-md text-foreground"
+          >
+            {showAll ? (
+              <>
+                Show Fewer Reviews <ArrowUp className="h-4 w-4" />
+              </>
+            ) : (
+              <>
+                Show All Reviews ({list.length}) <ArrowDown className="h-4 w-4" />
+              </>
+            )}
+          </button>
+        </div>
+      )}
     </section>
   );
 }
