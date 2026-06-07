@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import { CheckCircle2, ShieldAlert, Cpu, Database, Network, Activity, RefreshCw } from "lucide-react";
-import { motion } from "framer-motion";
 
 const checks = [
   {
@@ -71,7 +70,7 @@ export function StatusBoard() {
             </h2>
           </div>
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-            We don't deploy and walk away. Our solutions are engineered with automated self-healing clusters, multi-AZ database replication, and real-time PagerDuty alarms to isolate security events before they impact your clients.
+            We don&apos;t deploy and walk away. Our solutions are engineered with automated self-healing clusters, multi-AZ database replication, and real-time PagerDuty alarms to isolate security events before they impact your clients.
           </p>
           <div className="flex items-center gap-6 pt-2">
             <div className="space-y-1">

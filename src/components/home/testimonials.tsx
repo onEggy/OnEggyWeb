@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Quote, ChevronLeft, ChevronRight, Star } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, PanInfo } from "framer-motion";
 import { SectionHeader } from "../common/section-header";
 import { testimonials as rawTestimonials } from "../../../public/data/testimonial.json";
 
@@ -31,19 +31,29 @@ export function Testimonials() {
   // We filter out any empty reviews or invalid elements
   const list = rawTestimonials.filter((t) => t.name && t.testimonial);
 
-  const startAutoPlay = () => {
-    stopAutoPlay();
-    autoPlayTimer.current = setInterval(() => {
-      handleNext();
-    }, 6000); // 6 seconds per review
-  };
+  const handleNext = useCallback(() => {
+    setDirection(1);
+    setCurrentIndex((prev) => (prev + 1) % list.length);
+  }, [list.length]);
 
-  const stopAutoPlay = () => {
+  const handlePrev = useCallback(() => {
+    setDirection(-1);
+    setCurrentIndex((prev) => (prev - 1 + list.length) % list.length);
+  }, [list.length]);
+
+  const stopAutoPlay = useCallback(() => {
     if (autoPlayTimer.current) {
       clearInterval(autoPlayTimer.current);
       autoPlayTimer.current = null;
     }
-  };
+  }, []);
+
+  const startAutoPlay = useCallback(() => {
+    stopAutoPlay();
+    autoPlayTimer.current = setInterval(() => {
+      handleNext();
+    }, 6000); // 6 seconds per review
+  }, [handleNext, stopAutoPlay]);
 
   useEffect(() => {
     if (!isHovered) {
@@ -52,17 +62,7 @@ export function Testimonials() {
       stopAutoPlay();
     }
     return () => stopAutoPlay();
-  }, [isHovered, currentIndex]);
-
-  const handleNext = () => {
-    setDirection(1);
-    setCurrentIndex((prev) => (prev + 1) % list.length);
-  };
-
-  const handlePrev = () => {
-    setDirection(-1);
-    setCurrentIndex((prev) => (prev - 1 + list.length) % list.length);
-  };
+  }, [isHovered, currentIndex, startAutoPlay, stopAutoPlay]);
 
   const handleDotClick = (idx: number) => {
     setDirection(idx > currentIndex ? 1 : -1);
@@ -70,7 +70,7 @@ export function Testimonials() {
   };
 
   // Drag handler for mobile swipe
-  const handleDragEnd = (event: any, info: any) => {
+  const handleDragEnd = (event: unknown, info: PanInfo) => {
     const swipeThreshold = 50;
     if (info.offset.x > swipeThreshold) {
       handlePrev();

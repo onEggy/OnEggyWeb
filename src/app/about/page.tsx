@@ -3,18 +3,12 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { 
-  Users, 
   Terminal, 
   Cpu, 
   Eye, 
   Lock, 
-  ArrowRight, 
   CheckCircle,
-  Briefcase,
-  Layers,
-  Heart,
-  Sparkles,
-  Building2
+  Sparkles
 } from "lucide-react";
 import { StaggerContainer, StaggerItem, FadeIn, FadeUp } from "@/components/animations/motion-wrappers";
 import { SectionHeader } from "@/components/common/section-header";
@@ -140,7 +134,7 @@ export default function AboutPage() {
               <div className="space-y-4">
                 <h3 className="text-xl font-bold text-foreground">Zero ClickOps. 100% GitOps.</h3>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                  We believe that stable, secure, and auto-scaling infrastructure is not a luxury, but the baseline requirement for any company looking to grow. That's why we enforce declarative setups where every configuration resides in version-controlled git code.
+                  We believe that stable, secure, and auto-scaling infrastructure is not a luxury, but the baseline requirement for any company looking to grow. That&apos;s why we enforce declarative setups where every configuration resides in version-controlled git code.
                 </p>
               </div>
             </div>
@@ -227,7 +221,7 @@ export default function AboutPage() {
           </div>
 
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {engineering.map((member, index) => {
+            {engineering.map((member) => {
               const gradientClass = getGradientClass(member.name);
               return (
                 <StaggerItem

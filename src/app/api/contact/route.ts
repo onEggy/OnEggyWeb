@@ -98,7 +98,7 @@ export async function POST(request: Request) {
         { status: 500 }
       );
     }
-  } catch (error: any) {
+  } catch (error) {
     console.error("Contact API Route Error:", error);
     return NextResponse.json(
       { 

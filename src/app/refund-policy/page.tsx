@@ -10,7 +10,7 @@ import {
   HelpCircle,
   ArrowRight
 } from "lucide-react";
-import { StaggerContainer, StaggerItem, FadeIn, FadeUp } from "@/components/animations/motion-wrappers";
+import { StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
 import { SectionHeader } from "@/components/common/section-header";
 
 export const metadata: Metadata = {
@@ -22,7 +22,6 @@ export const metadata: Metadata = {
 };
 
 export default function RefundPolicyPage() {
-  const currentYear = new Date().getFullYear();
 
   const policySections = [
     {

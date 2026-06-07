@@ -3,7 +3,6 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowRight, ClipboardCheck, Search, ShieldCheck } from "lucide-react";
-import { motion } from "framer-motion";
 
 const auditSteps = [
   {

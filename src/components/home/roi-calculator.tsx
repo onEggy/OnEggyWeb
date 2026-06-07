@@ -2,8 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Calculator, PiggyBank, ArrowUpRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { Calculator, PiggyBank, ArrowUpRight } from "lucide-react";
 
 export function RoiCalculator() {
   const [cloudSpend, setCloudSpend] = useState(12000);
