@@ -110,7 +110,7 @@ export default function CareersPage() {
           __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
         }}
       />
-      <div className="relative max-w-5xl mx-auto px-6 py-12 md:py-24 space-y-24">
+      <div className="relative max-w-5xl mx-auto px-6 py-16 md:py-32 space-y-32">
         {/* Decorative Orbs */}
         <div className="absolute top-[10%] left-[-10%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[95px] pointer-events-none -z-10 animate-pulse" />
         <div className="absolute bottom-[20%] right-[-10%] w-[400px] h-[400px] rounded-full bg-teal-500/5 blur-[100px] pointer-events-none -z-10" />
@@ -127,12 +127,9 @@ export default function CareersPage() {
         {/* Culture Section (Asymmetric split block) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6 space-y-6">
-            <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Our Team Culture</h2>
+            <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Our Team Culture</h2>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              We are a squad of master builders, developers, and cloud engineers. We value ownership, documentation, and continuous automation. We avoid administrative bloat and encourage team members to experiment with bleeding-edge technology.
-            </p>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              If you enjoy refactoring legacy configs, designing autoscaling cluster nodes, and implementing strict security structures, you will fit right in.
+              We build automation pipelines, deploy autoscaling clusters, and manage secure environments. We skip bureaucracy and focus entirely on engineering craftsmanship.
             </p>
           </div>
           <div className="lg:col-span-6 lg:pl-6">
@@ -149,12 +146,12 @@ export default function CareersPage() {
         </div>
 
         {/* Benefits Section (Split columns instead of cards grid) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start border-t border-border/20 pt-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start border-t border-border/20 pt-24">
           <div className="lg:col-span-4 space-y-4">
             <span className="text-xs font-mono font-semibold text-cyan-500 uppercase tracking-widest">Perks</span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Engineering Benefits</h2>
+            <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Engineering Benefits</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              We provide everything you need to perform at your absolute best:
+              Core frameworks and resources to support your work.
             </p>
           </div>
 
@@ -181,10 +178,10 @@ export default function CareersPage() {
         </div>
 
         {/* Openings Rebuilt as a clean Table-style listing */}
-        <div className="space-y-8 border-t border-border/20 pt-16">
+        <div className="space-y-8 border-t border-border/20 pt-24">
           <div className="space-y-2">
             <span className="text-xs font-mono font-semibold text-cyan-500 uppercase tracking-widest">Opportunities</span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Open Roles</h2>
+            <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Open Roles</h2>
           </div>
 
           <div className="border border-border/30 rounded-xl overflow-hidden bg-background/20 backdrop-blur-sm shadow-md">

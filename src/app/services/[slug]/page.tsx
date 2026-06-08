@@ -173,7 +173,7 @@ export default async function ServicePage({ params }: PageProps) {
         <div className="absolute top-[40%] right-[-15%] w-[450px] h-[450px] rounded-full bg-teal-500/5 blur-[125px] pointer-events-none -z-10 animate-pulse" />
 
         {/* 1. HERO SECTION */}
-        <section className="relative pt-12 pb-20 md:py-32 flex flex-col items-center justify-center text-center">
+        <section className="relative pt-16 pb-24 md:py-32 flex flex-col items-center justify-center text-center">
           <div className="max-w-4xl mx-auto px-6 space-y-8 relative z-10">
             <FadeUp>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-background/50 backdrop-blur-sm text-xs font-mono text-cyan-400 shadow-sm">
@@ -242,7 +242,7 @@ export default async function ServicePage({ params }: PageProps) {
         </section>
 
         {/* 2. THE CHALLENGE VS. THE SOLUTION */}
-        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24 border-t border-border/40">
+        <section className="max-w-7xl mx-auto px-6 py-24 md:py-32 border-t border-border/40">
           <SectionHeader
             tag="Solving Bottlenecks"
             title={<>The Challenge & <span className="text-cyan-400">Our Solution</span></>}
@@ -295,7 +295,7 @@ export default async function ServicePage({ params }: PageProps) {
         </section>
 
         {/* 3. CORE SERVICE FEATURES GRID */}
-        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24 border-t border-border/40">
+        <section className="max-w-7xl mx-auto px-6 py-24 md:py-32 border-t border-border/40">
           <SectionHeader
             tag="Scope of Work"
             title={<>Engineered <span className="text-cyan-400">Platform Capabilities</span></>}
@@ -331,7 +331,7 @@ export default async function ServicePage({ params }: PageProps) {
         </section>
 
         {/* 4. METRICS / BENEFITS ROW */}
-        <section className="border-y border-border/40 bg-accent/10 py-16 relative">
+        <section className="border-y border-border/40 bg-accent/10 py-20 md:py-24 relative">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-center">
               {service.benefits.map((benefit, idx) => (
@@ -354,7 +354,7 @@ export default async function ServicePage({ params }: PageProps) {
         </div>
 
         {/* 6. PROCESS TIMELINE STEPPER */}
-        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24 border-t border-border/40">
+        <section className="max-w-7xl mx-auto px-6 py-24 md:py-32 border-t border-border/40">
           <SectionHeader
             tag="Our Workflow"
             title={<>Timeline & <span className="text-cyan-400">Delivery Process</span></>}
@@ -379,7 +379,7 @@ export default async function ServicePage({ params }: PageProps) {
         </section>
 
         {/* 7. CLIENT TESTIMONIALS */}
-        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24 border-t border-border/40 relative">
+        <section className="max-w-7xl mx-auto px-6 py-24 md:py-32 border-t border-border/40 relative">
           <div className="absolute top-[20%] left-[10%] w-[300px] h-[300px] rounded-full bg-cyan-500/5 blur-[95px] pointer-events-none -z-10" />
           
           <SectionHeader
@@ -430,7 +430,7 @@ export default async function ServicePage({ params }: PageProps) {
         </section>
 
         {/* 8. FAQ ACCORDION SECTION */}
-        <section className="max-w-4xl mx-auto px-6 py-16 md:py-24 border-t border-border/40 relative">
+        <section className="max-w-4xl mx-auto px-6 py-24 md:py-32 border-t border-border/40 relative">
           <div className="absolute bottom-[10%] left-[-15%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[100px] pointer-events-none -z-10" />
 
           <SectionHeader

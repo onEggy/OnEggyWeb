@@ -121,7 +121,7 @@ export default function AboutPage() {
           __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
         }}
       />
-      <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-28">
+      <div className="relative max-w-7xl mx-auto px-6 py-16 md:py-32 space-y-32">
         {/* Decorative Blur Orbs */}
         <div className="absolute top-[10%] left-[-10%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[95px] pointer-events-none -z-10" />
         <div className="absolute bottom-[20%] right-[-10%] w-[400px] h-[400px] rounded-full bg-teal-500/5 blur-[100px] pointer-events-none -z-10" />
@@ -143,14 +143,11 @@ export default function AboutPage() {
         </div>
 
         {/* 2. COMPANY STORY & DNA (Asymmetric Split Screen) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start border-t border-border/20 pt-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start border-t border-border/20 pt-24">
           <div className="lg:col-span-6 space-y-6">
             <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Our Story & Credentials</h2>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              OnEggy Technologies was founded by senior systems architects who grew tired of seeing growing tech teams struggle with unstable EKS clusters, undocumented console tweaks, and bloated cloud invoices. We realized that while modern cloud ecosystems are highly powerful, they are brittle without senior-level design.
-            </p>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              Instead of operating as a traditional outsourcing agency, we embed with your team as a dedicated platform engineering squad. We hold professional certifications and leverage industry-standard blueprints to deliver secure, drift-free, and compliance-ready systems.
+              We build stable, auto-scaling cloud systems. Our architects partner with scaling engineering teams to replace manual server configurations with declarative Infrastructure as Code blueprints.
             </p>
             
             {/* Certification Badge list */}
@@ -179,7 +176,7 @@ export default function AboutPage() {
               <div className="space-y-4">
                 <h3 className="text-lg font-bold text-foreground font-mono">Zero ClickOps. 100% GitOps.</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  We believe that stable, secure, and auto-scaling infrastructure is not a luxury, but a fundamental baseline. That is why we reject arbitrary console changes (ClickOps). Every security group, VPC ingress route, and deployment configuration is defined inside Git-versioned modular blueprints.
+                  Stable, secure infrastructure must live in version-controlled Git code. We reject ClickOps console modifications. Every security group, routing rule, and container node cluster is managed via code blueprints.
                 </p>
               </div>
             </div>
@@ -187,12 +184,12 @@ export default function AboutPage() {
         </div>
 
         {/* 3. LEADERSHIP & ADVISORY (Differentiated circular layout) */}
-        <div className="space-y-12 border-t border-border/20 pt-16">
+        <div className="space-y-12 border-t border-border/20 pt-24">
           <div className="max-w-xl space-y-3">
             <span className="text-xs font-mono font-semibold text-cyan-500 uppercase tracking-widest">Leadership Team</span>
             <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Tech & Strategy Direction</h2>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              Meet the strategic mentors and founders guiding OnEggy Technologies:
+              The systems architects directing our strategic engineering roadmap.
             </p>
           </div>
 
@@ -256,12 +253,12 @@ export default function AboutPage() {
         </div>
 
         {/* 4. ENGINEERING TEAM SECTION (High density, borderless card layout) */}
-        <div className="space-y-12 border-t border-border/20 pt-16">
+        <div className="space-y-12 border-t border-border/20 pt-24">
           <div className="max-w-xl space-y-3">
             <span className="text-xs font-mono font-semibold text-cyan-500 uppercase tracking-widest">Engineering Squad</span>
             <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Developers, Architects & Designers</h2>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              The technical specialists automating configurations and writing clean software codebases:
+              The platform specialists provisioning cloud assets and automated pipelines.
             </p>
           </div>
 
@@ -330,7 +327,7 @@ export default function AboutPage() {
         </div>
 
         {/* 5. ENGINEERING VALUES SECTION (Split Layout) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start border-t border-border/20 pt-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start border-t border-border/20 pt-24">
           <div className="lg:col-span-5 space-y-4">
             <span className="text-xs font-mono font-semibold text-cyan-500 uppercase tracking-widest">Our Standards</span>
             <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Engineering Principles</h2>
@@ -362,11 +359,11 @@ export default function AboutPage() {
         </div>
 
         {/* 6. WORK CULTURE SECTION (Asymmetric blocks) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center border-t border-border/20 pt-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center border-t border-border/20 pt-24">
           <div className="lg:col-span-6 space-y-6">
             <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Collaborative Work DNA</h2>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              We operate as a remote-first, asynchronous-heavy engineering squad. We avoid structural bureaucracy, administrative alignment blocks, and meeting bloat, allowing developers to focus purely on creating automated, clean configurations.
+              We run asynchronous workflow communication channels. We avoid alignment meetings, allowing architects to focus strictly on platform logic and code automation.
             </p>
             <div className="space-y-3 pt-2">
               <div className="flex items-center gap-3">

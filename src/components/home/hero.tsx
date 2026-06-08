@@ -53,7 +53,7 @@ export function Hero() {
   return (
     <section
       onMouseMove={handleMouseMove}
-      className="relative min-h-[calc(100vh-6rem)] w-full flex items-center justify-center overflow-hidden border-b border-border/30 py-12 md:py-24"
+      className="relative min-h-[calc(100vh-6rem)] w-full flex items-center justify-center overflow-hidden border-b border-border/30 py-16 md:py-32"
     >
       {/* Grid backdrop */}
       <div className="grid-bg absolute inset-0 opacity-[0.25] pointer-events-none" />
@@ -94,7 +94,7 @@ export function Hero() {
 
             <FadeUp delay={0.2}>
               <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl">
-                OnEggy partners with CTOs and engineering teams to deploy automated Kubernetes workloads, restructure AWS Landing Zones, and build secure developer portals. Zero ClickOps. 100% Declarative GitOps.
+                We deploy automated Kubernetes workloads, restructure AWS landing zones, and build secure developer platforms. Zero ClickOps. 100% GitOps.
               </p>
             </FadeUp>
           </div>
