@@ -412,7 +412,7 @@ export default async function ServicePage({ params }: PageProps) {
                       &ldquo;{item.testimonial}&rdquo;
                     </p>
                     <div className="flex items-center gap-4 border-t border-border/40 pt-6">
-                      <div className={`w-10 h-10 rounded-full ${avatarStyle} flex items-center justify-center text-white font-bold font-mono text-xs shadow-md shrink-0`}>
+                      <div className={`w-10 h-10 rounded-full ${avatarStyle} flex items-center justify-center font-bold font-mono text-xs shadow-md shrink-0`}>
                         {getInitials(item.name)}
                       </div>
                       <div>

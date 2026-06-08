@@ -15,6 +15,8 @@ const Testimonials = dynamic(() => import("@/components/home/testimonials").then
 const FaqAccordion = dynamic(() => import("@/components/home/faq-accordion").then((mod) => mod.FaqAccordion));
 const AssessmentCta = dynamic(() => import("@/components/home/assessment-cta").then((mod) => mod.AssessmentCta));
 const CtaBlock = dynamic(() => import("@/components/common/cta-block").then((mod) => mod.CtaBlock));
+const ExpertiseNarrative = dynamic(() => import("@/components/home/expertise-narrative").then((mod) => mod.ExpertiseNarrative));
+const TeamPreview = dynamic(() => import("@/components/home/team-preview").then((mod) => mod.TeamPreview));
 
 
 
@@ -87,40 +89,44 @@ export default function Home() {
         {/* 1. Cinematic Hero Section */}
         <Hero />
 
-        {/* Client Logos Motion Marquee */}
+        {/* Client Logos Motion Marquee (Trust) */}
         <ClientMarquee />
 
-        {/* 2. Systems Uptime Status board */}
+        {/* 2. Systems Uptime Status board (Trust) */}
         <StatusBoard />
 
-        {/* 3. Services Showcase Section */}
-        <ServicesShowcase />
+        {/* 3. Core Philosophy & Expertise Narrative */}
+        <ExpertiseNarrative />
 
-        {/* 4. Why Choose Us Section */}
-        <WhyChooseUs />
-
-        {/* 5. Cloud Cost Savings ROI Calculator */}
+        {/* 4. Cloud Cost Savings ROI Calculator (Business Outcomes) */}
         <RoiCalculator />
 
-        {/* 6. Technologies We Use Section */}
-        <TechStack />
+        {/* 5. Why Choose Us Section (Engineering Capability) */}
+        <WhyChooseUs />
 
-        {/* 7. Startup Scaling Journey Milestones */}
-        <ScalingJourney />
+        {/* 6. Services Showcase Section (Services) */}
+        <ServicesShowcase />
 
-        {/* 8. Process Timeline Section */}
+        {/* 7. Process Timeline Section (Delivery Process) */}
         <ProcessTimeline />
 
-        {/* 9. Testimonials Section */}
+        {/* 8. Technologies We Use Section (Technology Ecosystem) */}
+        <TechStack />
+
+        {/* 9. Startup Scaling Journey Milestones & Testimonials (Proof) */}
+        <ScalingJourney />
         <Testimonials />
 
-        {/* 10. FAQ Accordion Section */}
+        {/* 10. Team Telemetry Preview */}
+        <TeamPreview />
+
+        {/* 11. FAQ Accordion Section */}
         <FaqAccordion />
 
-        {/* 11. Cloud health assessment lead magnet */}
+        {/* 12. Cloud health assessment lead magnet */}
         <AssessmentCta />
 
-        {/* 12. Final CTA Section */}
+        {/* 13. Final CTA Section */}
         <div className="py-12 border-t border-border/40">
           <CtaBlock
             title="Ready to automate and scale your cloud infrastructure?"

@@ -145,21 +145,41 @@ export default function AboutPage() {
         {/* 2. COMPANY STORY & DNA (Asymmetric Split Screen) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start border-t border-border/20 pt-16">
           <div className="lg:col-span-6 space-y-6">
-            <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Our Story & DNA</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Our Story & Credentials</h2>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              OnEggy Technologies was founded by senior cloud architects who grew tired of seeing scaling startups struggle with unstable configurations, manual console clicks, and skyrocketing AWS bills. We realized that while modern cloud tools are incredibly powerful, they are also highly complex.
+              OnEggy Technologies was founded by senior systems architects who grew tired of seeing growing tech teams struggle with unstable EKS clusters, undocumented console tweaks, and bloated cloud invoices. We realized that while modern cloud ecosystems are highly powerful, they are brittle without senior-level design.
             </p>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              We function as a specialized infrastructure squad-as-a-service, partnering with CTOs and founders to deliver production-grade configurations, automated CI/CD releases, and rigorous security postures. Today, we manage critical cloud infrastructure for businesses across fintech, healthcare, and SaaS.
+              Instead of operating as a traditional outsourcing agency, we embed with your team as a dedicated platform engineering squad. We hold professional certifications and leverage industry-standard blueprints to deliver secure, drift-free, and compliance-ready systems.
             </p>
+            
+            {/* Certification Badge list */}
+            <div className="pt-4 space-y-3">
+              <span className="text-[10px] font-mono font-bold text-cyan-500 uppercase tracking-wider block">Verified Core Credentials</span>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-350 select-none">
+                  AWS Certified Solutions Architect - Professional
+                </span>
+                <span className="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-350 select-none">
+                  AWS Certified Security - Specialty
+                </span>
+                <span className="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-350 select-none">
+                  CKA: Certified Kubernetes Administrator
+                </span>
+                <span className="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-350 select-none">
+                  HashiCorp Certified: Terraform Associate
+                </span>
+              </div>
+            </div>
           </div>
+          
           <div className="lg:col-span-6 lg:pl-6">
-            <div className="border border-border bg-background/20 backdrop-blur-xs p-8 rounded-xl relative overflow-hidden shadow-md flex flex-col justify-center min-h-[200px]">
-              <div className="absolute top-4 right-4 text-[10px] font-mono text-cyan-500 uppercase tracking-wider">operations DNA</div>
+            <div className="border border-border bg-background/20 backdrop-blur-xs p-8 rounded-xl relative overflow-hidden shadow-md flex flex-col justify-center min-h-[220px]">
+              <div className="absolute top-4 right-4 text-[10px] font-mono text-cyan-500 uppercase tracking-wider">operations baseline</div>
               <div className="space-y-4">
                 <h3 className="text-lg font-bold text-foreground font-mono">Zero ClickOps. 100% GitOps.</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  We believe that stable, secure, and auto-scaling infrastructure is not a luxury, but the baseline requirement for any company looking to grow. That&apos;s why we enforce declarative setups where every configuration resides in version-controlled git code.
+                  We believe that stable, secure, and auto-scaling infrastructure is not a luxury, but a fundamental baseline. That is why we reject arbitrary console changes (ClickOps). Every security group, VPC ingress route, and deployment configuration is defined inside Git-versioned modular blueprints.
                 </p>
               </div>
             </div>

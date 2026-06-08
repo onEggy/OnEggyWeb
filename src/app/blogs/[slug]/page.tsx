@@ -246,7 +246,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
         {/* Dynamic Markdown parsed body HTML content */}
         <div 
-          className="blog-prose prose prose-invert max-w-none text-muted-foreground leading-relaxed space-y-6 text-sm sm:text-base"
+          className="blog-prose prose prose-invert max-w-3xl mx-auto text-muted-foreground leading-relaxed space-y-6 text-sm sm:text-base"
           dangerouslySetInnerHTML={{ __html: post.htmlContent }}
         />
 
