@@ -272,7 +272,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         {/* Author / Publisher Bio card */}
         <div className="glass-card p-6 md:p-8 rounded-2xl border border-border/40 bg-background/25 flex flex-col sm:flex-row items-center gap-6 mt-12 relative overflow-hidden">
           <div className="absolute top-[20%] right-[-10%] w-[150px] h-[150px] rounded-full bg-cyan-500/5 blur-[50px] pointer-events-none -z-10" />
-          <div className="w-14 h-14 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold font-mono text-xl shrink-0 shadow-lg border border-cyan-400/20">
+          <div className="w-14 h-14 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 font-mono flex items-center justify-center font-bold text-xl shrink-0 shadow-lg">
             OE
           </div>
           <div className="space-y-2 flex-1 text-center sm:text-left">
