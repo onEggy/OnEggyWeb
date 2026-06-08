@@ -8,7 +8,7 @@ import {
   Eye, 
   Lock, 
   CheckCircle,
-  Sparkles
+  Shield
 } from "lucide-react";
 import { StaggerContainer, StaggerItem, FadeIn, FadeUp } from "@/components/animations/motion-wrappers";
 import { SectionHeader } from "@/components/common/section-header";
@@ -16,8 +16,8 @@ import { CtaBlock } from "@/components/common/cta-block";
 import { profile as teamProfiles } from "../../../public/data/teamSection.json";
 
 export const metadata: Metadata = {
-  title: "About Us & Team | OnEggy Technologies",
-  description: "Meet the cloud and platform engineers powering modern startups and enterprises. Learn about our story, DevOps culture, and technical principles.",
+  title: "About Our Practice | OnEggy Technologies",
+  description: "Learn about OnEggy's cloud modernization practice, our verified solutions credentials, engineering standards, and advisory principles.",
   alternates: {
     canonical: "https://www.oneggy.com/about",
   },
@@ -45,24 +45,24 @@ const getAvatarStyle = (name: string) => {
 
 const companyValues = [
   {
-    icon: <Lock className="h-4.5 w-4.5 text-cyan-400" />,
+    icon: <Lock className="h-4.5 w-4.5 text-primary" />,
     title: "100% Client Ownership",
-    desc: "We enforce zero proprietary lock-in. Every line of Terraform, Helm, and application code lives inside your private repositories from day one.",
+    desc: "We enforce zero proprietary vendor lock-in. Every line of Terraform configuration, Helm deployment code, and application logic lives inside your private repositories from day one.",
   },
   {
-    icon: <Terminal className="h-4.5 w-4.5 text-teal-400" />,
+    icon: <Terminal className="h-4.5 w-4.5 text-blue-400" />,
     title: "Code-First Infrastructure",
-    desc: "We believe console ClickOps changes are a liability. If infrastructure isn't defined inside git-versioned code, it doesn't exist in production.",
+    desc: "We believe console ClickOps changes are a fundamental security and operational risk. If an environment change isn't defined inside git-versioned code, it doesn't exist.",
   },
   {
-    icon: <Eye className="h-4.5 w-4.5 text-indigo-400" />,
-    title: "Observability-First Sizing",
-    desc: "We never launch blindly. Every workload we deploy is pre-configured with active CPU/memory thresholds, Slack alerts, and Prometheus logs.",
+    icon: <Eye className="h-4.5 w-4.5 text-slate-400" />,
+    title: "Observability-First Deployment",
+    desc: "We never launch blindly. Every workload we deploy is pre-configured with active CPU/memory alerting thresholds, slack-notifications, and Prometheus logging boards.",
   },
   {
-    icon: <Cpu className="h-4.5 w-4.5 text-cyan-400" />,
+    icon: <Cpu className="h-4.5 w-4.5 text-primary" />,
     title: "Engineering Excellence",
-    desc: "We avoid shortcuts. We build multi-account landing zones, Transit Gateway network routing, and automated CI/CD security check gates.",
+    desc: "We follow strict cloud design frameworks. We construct multi-account landing zones, Transit Gateway network routing architectures, and automated CI/CD compliance audit gates.",
   },
 ];
 
@@ -79,7 +79,7 @@ export default function AboutPage() {
     }
   };
 
-  // Separate real profiles based on designation/position
+  // Separate profiles based on designation/position
   const leadership = teamProfiles.filter(
     (p) => p.position.toLowerCase() === "founder" || p.position.toLowerCase().includes("mentor")
   );
@@ -122,37 +122,36 @@ export default function AboutPage() {
         }}
       />
       <div className="relative max-w-7xl mx-auto px-6 py-16 md:py-32 space-y-32">
-        {/* Decorative Blur Orbs */}
-        <div className="absolute top-[10%] left-[-10%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[95px] pointer-events-none -z-10" />
-        <div className="absolute bottom-[20%] right-[-10%] w-[400px] h-[400px] rounded-full bg-teal-500/5 blur-[100px] pointer-events-none -z-10" />
+        {/* Subtle Background Orb */}
+        <div className="absolute top-[10%] right-[-10%] w-[350px] h-[350px] rounded-full bg-blue-500/5 blur-[95px] pointer-events-none -z-10 animate-pulse" />
 
         {/* 1. HERO SECTION */}
         <div className="relative pt-8 pb-4 flex flex-col items-start space-y-6 max-w-4xl">
           <FadeUp>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-background/50 backdrop-blur-sm text-xs font-mono text-cyan-400 shadow-sm animate-pulse">
-              <Sparkles className="h-3.5 w-3.5" />
-              <span>Meet the Tech Architects</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-background/50 backdrop-blur-sm text-xs font-mono text-primary shadow-sm">
+              <Shield className="h-3.5 w-3.5" />
+              <span>Advisory Practice Directors</span>
             </div>
           </FadeUp>
           <SectionHeader
-            title={<>Built By Passionate <span className="text-cyan-400">Cloud & Product Engineers</span></>}
-            subtitle="At OnEggy Technologies, we replace manual operational friction with standardized code templates. We merge expert infrastructure design with active development masterclasses."
+            title={<>Global Technology Modernization & <span className="text-primary">Cloud Strategy</span></>}
+            subtitle="We help enterprise organizations restructure legacy infrastructure, enforce strict DevSecOps governance, and deploy high-performance applications. We combine tactical engineering precision with corporate advisory rigor."
             align="left"
             className="mb-0"
           />
         </div>
 
         {/* 2. COMPANY STORY & DNA (Asymmetric Split Screen) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start border-t border-border/20 pt-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start border-t border-zinc-800 pt-24">
           <div className="lg:col-span-6 space-y-6">
-            <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Our Story & Credentials</h2>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              We build stable, auto-scaling cloud systems. Our architects partner with scaling engineering teams to replace manual server configurations with declarative Infrastructure as Code blueprints.
+            <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Our Story & Practice Scope</h2>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
+              We design and maintain secure, auto-scaling cloud architectures. Our senior systems architects partner with corporate technology leaders to replace manual configurations with declarative, drift-free Infrastructure as Code (IaC) blueprints.
             </p>
             
             {/* Certification Badge list */}
             <div className="pt-4 space-y-3">
-              <span className="text-[10px] font-mono font-bold text-cyan-500 uppercase tracking-wider block">Verified Core Credentials</span>
+              <span className="text-[10px] font-mono font-bold text-primary uppercase tracking-wider block">Verified Core Credentials</span>
               <div className="flex flex-wrap gap-2">
                 <span className="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-350 select-none">
                   AWS Certified Solutions Architect - Professional
@@ -171,25 +170,25 @@ export default function AboutPage() {
           </div>
           
           <div className="lg:col-span-6 lg:pl-6">
-            <div className="border border-border bg-background/20 backdrop-blur-xs p-8 rounded-xl relative overflow-hidden shadow-md flex flex-col justify-center min-h-[220px]">
-              <div className="absolute top-4 right-4 text-[10px] font-mono text-cyan-500 uppercase tracking-wider">operations baseline</div>
+            <div className="border border-zinc-800 bg-zinc-950/20 backdrop-blur-xs p-8 rounded-xl relative overflow-hidden shadow-md flex flex-col justify-center min-h-[220px]">
+              <div className="absolute top-4 right-4 text-[10px] font-mono text-primary uppercase tracking-wider">engineering governance</div>
               <div className="space-y-4">
                 <h3 className="text-lg font-bold text-foreground font-mono">Zero ClickOps. 100% GitOps.</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  Stable, secure infrastructure must live in version-controlled Git code. We reject ClickOps console modifications. Every security group, routing rule, and container node cluster is managed via code blueprints.
+                <p className="text-xs text-muted-foreground leading-relaxed font-sans">
+                  Enterprise workload configurations must be managed via version-controlled repositories. We reject ClickOps console modifications. Every security group, routing rule, and container cluster is managed via declarative code pipelines.
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* 3. LEADERSHIP & ADVISORY (Differentiated circular layout) */}
-        <div className="space-y-12 border-t border-border/20 pt-24">
+        {/* 3. LEADERSHIP & ADVISORY */}
+        <div className="space-y-12 border-t border-zinc-800 pt-24">
           <div className="max-w-xl space-y-3">
-            <span className="text-xs font-mono font-semibold text-cyan-500 uppercase tracking-widest">Leadership Team</span>
-            <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Tech & Strategy Direction</h2>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              The systems architects directing our strategic engineering roadmap.
+            <span className="text-xs font-mono font-semibold text-primary uppercase tracking-widest">Leadership Team</span>
+            <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Practice Leadership & Strategy</h2>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
+              The systems architects directing our strategic consulting and delivery models.
             </p>
           </div>
 
@@ -200,14 +199,14 @@ export default function AboutPage() {
                 <FadeIn
                   key={leader.name}
                   delay={index * 0.1}
-                  className="bg-background/25 border border-border/40 hover:border-cyan-500/30 p-6 rounded-xl flex gap-5 items-start transition-all duration-300 relative group"
+                  className="border border-zinc-800 bg-zinc-950/20 hover:border-zinc-700 p-6 rounded-xl flex gap-5 items-start transition-all duration-300 relative group"
                 >
                   <div className="absolute top-4 right-4">
                     <Link
                       href="https://linkedin.com"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-muted-foreground hover:text-cyan-400 transition-colors"
+                      className="text-muted-foreground hover:text-primary transition-colors"
                       aria-label={`${leader.name} LinkedIn`}
                     >
                       <svg className="h-4.5 w-4.5 fill-current" viewBox="0 0 24 24">
@@ -216,8 +215,8 @@ export default function AboutPage() {
                     </Link>
                   </div>
 
-                  {/* Circular profile image with hover borders */}
-                  <div className="relative w-16 h-16 rounded-full overflow-hidden bg-background/50 border border-border/45 shrink-0 shadow group-hover:border-cyan-500/30 transition-colors">
+                  {/* Profile image container */}
+                  <div className="relative w-16 h-16 rounded-full overflow-hidden bg-zinc-900 border border-zinc-800 shrink-0 shadow group-hover:border-primary transition-colors">
                     {leader.image ? (
                       <Image
                         src={leader.image}
@@ -233,12 +232,12 @@ export default function AboutPage() {
                     )}
                   </div>
 
-                  <div className="space-y-2 flex-1 min-w-0">
+                  <div className="space-y-2 flex-1 min-w-0 font-sans">
                     <div>
-                      <h3 className="text-base font-bold text-foreground group-hover:text-cyan-500 transition-colors leading-snug">
+                      <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
                         {leader.name}
                       </h3>
-                      <span className="text-[10px] font-semibold text-cyan-500 font-mono tracking-wider block mt-0.5">
+                      <span className="text-[10px] font-semibold text-primary font-mono tracking-wider block mt-0.5">
                         {leader.position}
                       </span>
                     </div>
@@ -252,13 +251,13 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* 4. ENGINEERING TEAM SECTION (High density, borderless card layout) */}
-        <div className="space-y-12 border-t border-border/20 pt-24">
+        {/* 4. ENGINEERING TEAM SECTION */}
+        <div className="space-y-12 border-t border-zinc-800 pt-24">
           <div className="max-w-xl space-y-3">
-            <span className="text-xs font-mono font-semibold text-cyan-500 uppercase tracking-widest">Engineering Squad</span>
+            <span className="text-xs font-mono font-semibold text-primary uppercase tracking-widest">Engineering Practice</span>
             <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Developers, Architects & Designers</h2>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              The platform specialists provisioning cloud assets and automated pipelines.
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
+              The platform specialists provisioning cloud assets, custom pipelines, and robust codebases.
             </p>
           </div>
 
@@ -268,12 +267,12 @@ export default function AboutPage() {
               return (
                 <StaggerItem
                   key={member.name}
-                  className="bg-transparent border border-border/30 hover:border-cyan-500/25 p-5 rounded-xl flex flex-col justify-between min-h-[220px] transition-all duration-300 group relative"
+                  className="border border-zinc-800 bg-zinc-950/20 hover:border-zinc-700 p-5 rounded-xl flex flex-col justify-between min-h-[220px] transition-all duration-300 group relative"
                 >
-                  <div className="space-y-4">
+                  <div className="space-y-4 font-sans">
                     <div className="flex items-center justify-between w-full">
                       {/* Circular Avatar */}
-                      <div className="relative w-12 h-12 rounded-full overflow-hidden bg-background/50 border border-border/40 shrink-0 shadow-xs group-hover:border-cyan-500/30 transition-colors">
+                      <div className="relative w-12 h-12 rounded-full overflow-hidden bg-zinc-900 border border-zinc-800 shrink-0 shadow-xs group-hover:border-primary transition-colors">
                         {member.image ? (
                           <Image
                             src={member.image}
@@ -293,7 +292,7 @@ export default function AboutPage() {
                         href="https://linkedin.com"
                         target="_blank"
                         rel="noreferrer"
-                        className="text-muted-foreground hover:text-cyan-400 transition-colors"
+                        className="text-muted-foreground hover:text-primary transition-colors"
                         aria-label={`${member.name} LinkedIn`}
                       >
                         <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
@@ -303,10 +302,10 @@ export default function AboutPage() {
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="text-sm font-bold text-foreground group-hover:text-cyan-500 transition-colors">
+                      <h3 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">
                         {member.name}
                       </h3>
-                      <span className="text-[10px] font-mono text-cyan-500 font-semibold tracking-wider block">
+                      <span className="text-[10px] font-mono text-primary font-semibold tracking-wider block">
                         {member.position}
                       </span>
                       <p className="text-xs text-muted-foreground leading-relaxed pt-1 select-text">
@@ -315,10 +314,10 @@ export default function AboutPage() {
                     </div>
                   </div>
                   
-                  {/* Status Indicator */}
-                  <div className="pt-3 border-t border-border/20 mt-4 flex items-center justify-between text-[9px] font-mono text-muted-foreground uppercase font-bold">
-                    <span>Platform Engineer</span>
-                    <span className="text-green-400 font-semibold">• Online</span>
+                  {/* Practice Credentials instead of active lights */}
+                  <div className="pt-3 border-t border-zinc-900/60 mt-4 flex items-center justify-between text-[9px] font-mono text-zinc-550 font-bold uppercase tracking-wider">
+                    <span>advisory practice</span>
+                    <span className="text-primary font-semibold">Verified</span>
                   </div>
                 </StaggerItem>
               );
@@ -326,13 +325,13 @@ export default function AboutPage() {
           </StaggerContainer>
         </div>
 
-        {/* 5. ENGINEERING VALUES SECTION (Split Layout) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start border-t border-border/20 pt-24">
+        {/* 5. ENGINEERING VALUES SECTION */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start border-t border-zinc-800 pt-24">
           <div className="lg:col-span-5 space-y-4">
-            <span className="text-xs font-mono font-semibold text-cyan-500 uppercase tracking-widest">Our Standards</span>
+            <span className="text-xs font-mono font-semibold text-primary uppercase tracking-widest">Our Standards</span>
             <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Engineering Principles</h2>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              We enforce strict compliance checks, code reviews, and automated standards to guarantee absolute reliability.
+            <p className="text-sm text-muted-foreground leading-relaxed font-sans">
+              We enforce strict compliance checks, codebase reviews, and automated configurations to guarantee absolute system availability.
             </p>
           </div>
 
@@ -340,13 +339,13 @@ export default function AboutPage() {
             {companyValues.map((value, i) => (
               <div 
                 key={i} 
-                className="p-5 rounded-xl border border-border/40 bg-background/25 flex gap-4 items-start group hover:border-cyan-500/25 transition-all duration-300"
+                className="p-5 rounded-xl border border-zinc-850 bg-zinc-950/20 flex gap-4 items-start group hover:border-primary/25 transition-all duration-300"
               >
-                <div className="w-8 h-8 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                <div className="w-8 h-8 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
                   {value.icon}
                 </div>
-                <div className="space-y-1.5">
-                  <h3 className="text-sm sm:text-base font-bold text-foreground group-hover:text-cyan-500 transition-colors">
+                <div className="space-y-1.5 font-sans">
+                  <h3 className="text-sm sm:text-base font-bold text-foreground group-hover:text-primary transition-colors">
                     {value.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
@@ -358,35 +357,35 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* 6. WORK CULTURE SECTION (Asymmetric blocks) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center border-t border-border/20 pt-24">
+        {/* 6. WORK CULTURE SECTION */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center border-t border-zinc-800 pt-24">
           <div className="lg:col-span-6 space-y-6">
-            <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Collaborative Work DNA</h2>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              We run asynchronous workflow communication channels. We avoid alignment meetings, allowing architects to focus strictly on platform logic and code automation.
+            <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Methodology & Engagement DNA</h2>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
+              We run highly structured asynchronous communication channels. We avoid alignment meetings, allowing practice architects to focus strictly on platform design, compliance checks, and codebase automation.
             </p>
-            <div className="space-y-3 pt-2">
+            <div className="space-y-3 pt-2 font-sans">
               <div className="flex items-center gap-3">
-                <CheckCircle className="h-4.5 w-4.5 text-cyan-400 shrink-0" />
-                <span className="text-xs sm:text-sm text-foreground font-semibold">100% Dedicated Slack & Jira workflows</span>
+                <CheckCircle className="h-4.5 w-4.5 text-primary shrink-0" />
+                <span className="text-xs sm:text-sm text-foreground font-semibold">100% Scoped JIRA boards and Slack project channels</span>
               </div>
               <div className="flex items-center gap-3">
-                <CheckCircle className="h-4.5 w-4.5 text-cyan-400 shrink-0" />
+                <CheckCircle className="h-4.5 w-4.5 text-primary shrink-0" />
                 <span className="text-xs sm:text-sm text-foreground font-semibold">Weekly peer-reviews and codebase refactoring sprints</span>
               </div>
               <div className="flex items-center gap-3">
-                <CheckCircle className="h-4.5 w-4.5 text-cyan-400 shrink-0" />
+                <CheckCircle className="h-4.5 w-4.5 text-primary shrink-0" />
                 <span className="text-xs sm:text-sm text-foreground font-semibold">Stipends for continuous cloud certifications (AWS, CNCF)</span>
               </div>
             </div>
           </div>
           <div className="lg:col-span-6 lg:pl-6">
-            <div className="border border-border bg-background/25 p-8 rounded-xl relative overflow-hidden shadow-md flex flex-col justify-center min-h-[200px]">
-              <div className="absolute top-4 right-4 text-[10px] font-mono text-cyan-500 uppercase tracking-wider">learning culture</div>
+            <div className="border border-zinc-850 bg-zinc-950/20 p-8 rounded-xl relative overflow-hidden shadow-md flex flex-col justify-center min-h-[200px]">
+              <div className="absolute top-4 right-4 text-[10px] font-mono text-primary uppercase tracking-wider">advisory training</div>
               <div className="space-y-4">
-                <h3 className="text-lg font-bold text-foreground font-mono">Continuous Evolution</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  Technology changes, but solid engineering fundamentals remain. We sponsor continuous education, certifications, and active experimentations inside isolated cloud sandbox structures.
+                <h3 className="text-lg font-bold text-foreground font-mono">Continuous Development</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed font-sans">
+                  Technologies change, but sound system architectures are eternal. We sponsor continuous certifications, training courses, and sandbox environments to keep our teams sharp.
                 </p>
               </div>
             </div>
@@ -394,10 +393,10 @@ export default function AboutPage() {
         </div>
 
         {/* 7. JOIN OUR TEAM CTA */}
-        <div className="py-8 border-t border-border/20">
+        <div className="py-8 border-t border-zinc-800">
           <CtaBlock
             title="Want to build systems with us?"
-            description="Explore our open roles for DevOps professionals, product builders, and UI developers."
+            description="Explore our open roles for DevOps professionals, cloud architects, and backend engineers."
             btnText="Browse Open Positions"
             btnHref="/careers"
           />

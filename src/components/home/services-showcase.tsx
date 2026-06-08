@@ -1,406 +1,132 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { Cloud, Settings, Layers, Smartphone, Code, Palette, Cpu, Eye, ArrowRight, Terminal as TermIcon } from "lucide-react";
+import React from "react";
+import { Cloud, Layers, Settings, ShieldCheck, Code, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 import { SectionHeader } from "../common/section-header";
 import { StaggerContainer, StaggerItem } from "../animations/motion-wrappers";
 
 export function ServicesShowcase() {
-  // Mini state for dynamic animations inside the bento visual blocks
-  const [pulseCount, setPulseCount] = useState(0);
-  
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setPulseCount(prev => (prev + 1) % 4);
-    }, 2500);
-    return () => clearInterval(timer);
-  }, []);
+  const practices = [
+    {
+      icon: <Cloud className="h-5 w-5 text-primary" />,
+      name: "AWS Cloud Operations & Landing Zones",
+      focus: "Cloud Modernization",
+      outcome: "Cost Control & Governance",
+      desc: "Architecting multi-account AWS Organizations via Control Tower and Control Tower SCPs. We design strict tenant boundaries, execute deep cost audits, and implement automated enterprise cost guardrails.",
+      metrics: "Average 38% cost reduction",
+      link: "/services/aws-cloud-managed-services"
+    },
+    {
+      icon: <Layers className="h-5 w-5 text-blue-400" />,
+      name: "Kubernetes & Container Orchestration",
+      focus: "Platform Scale",
+      outcome: "High Availability & Resiliency",
+      desc: "Containerizing monolithic applications and deploying to AWS EKS or Azure AKS. We configure ingress routers, network policy boundaries, HPA scaling, and zero-downtime cluster upgrade paths.",
+      metrics: "99.99% cluster SLA uptime",
+      link: "/services/kubernetes"
+    },
+    {
+      icon: <Settings className="h-5 w-5 text-slate-400" />,
+      name: "IaC & GitOps Release Automation",
+      focus: "DevOps Consulting",
+      outcome: "Continuous Delivery Velocity",
+      desc: "Replacing console adjustments with declarative Terraform and Ansible automation blueprints. We enforce continuous verify stages and GitOps drift matching using ArgoCD.",
+      metrics: "10x faster build cycles",
+      link: "/services/infrastructure-automation"
+    },
+    {
+      icon: <Code className="h-5 w-5 text-primary" />,
+      name: "Enterprise Application Modernization",
+      focus: "Software Engineering",
+      outcome: "Developer Velocity & Scale",
+      desc: "Developing high-performance Next.js frontends and secure API backends in Node.js or Python. We establish database replication, SAML SSO authentication, and CI/CD pipelines.",
+      metrics: "60fps frontend performance",
+      link: "/services/full-stack-web-development"
+    },
+    {
+      icon: <ShieldCheck className="h-5 w-5 text-blue-400" />,
+      name: "DevSecOps & Regulatory Audits",
+      focus: "Risk Advisory",
+      outcome: "PCI-DSS & HIPAA Compliance",
+      desc: "Integrating static code checks and vulnerability monitors directly into deployment lanes. We align cloud environments with strict security controls for external compliance reviews.",
+      metrics: "Audit-ready cloud environments",
+      link: "/services/security-devsecops"
+    }
+  ];
 
   return (
-    <section className="relative max-w-7xl mx-auto px-6 py-20 border-t border-border/40">
-      {/* Glow Backdrop */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-cyan-500/5 blur-[120px] pointer-events-none -z-10" />
-
+    <section className="relative max-w-7xl mx-auto px-6 py-24 border-t border-border/40">
       <SectionHeader
-        tag="Expertise"
-        title="Enterprise-grade platform engineering."
-        subtitle="We design, build, and automate secure cloud systems to help developer teams scale without friction."
+        tag="Services Catalog"
+        title="Strategic Technology Capabilities"
+        subtitle="We help enterprise organizations modernize infrastructure, accelerate delivery pipelines, and establish secure compliance postures."
         align="center"
-        className="mb-16"
+        className="mb-16 max-w-4xl"
       />
 
-      <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        
-        {/* Core Card 1: AWS Managed Services (2 Columns) */}
-        <StaggerItem className="lg:col-span-2 md:col-span-2 border border-border/40 bg-zinc-950/20 hover:border-cyan-500/30 p-6 rounded-lg flex flex-col justify-between min-h-[340px] transition-colors duration-200 group relative cursor-pointer overflow-hidden shadow-xs">
-          <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/0 via-cyan-500/0 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-          
-          <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 h-full items-start">
-            <div className="sm:col-span-7 space-y-4">
-              <div className="w-10 h-10 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center">
-                <Cloud className="h-6 w-6 text-cyan-400" />
+      {/* Solutions Index: Editorial list/table layout */}
+      <StaggerContainer className="space-y-4">
+        {practices.map((practice) => (
+          <StaggerItem
+            key={practice.name}
+            className="p-6 md:p-8 rounded-xl border border-zinc-900 bg-zinc-950/20 hover:border-zinc-800 hover:bg-zinc-900/10 transition-all duration-300 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center group"
+          >
+            {/* Practice Name and Icon (5 columns) */}
+            <div className="lg:col-span-5 flex items-start gap-4">
+              <div className="w-10 h-10 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
+                {practice.icon}
               </div>
-              <div className="space-y-2">
-                <span className="text-[10px] font-mono text-cyan-500 font-semibold tracking-wider block">
-                  AWS. COST. SCALE.
+              <div className="space-y-1">
+                <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest font-semibold block">
+                  {practice.focus}
                 </span>
-                <h3 className="text-xl font-bold text-foreground group-hover:text-cyan-500 transition-colors">
-                  AWS Managed Services
+                <h3 className="text-base sm:text-lg font-bold text-foreground font-display group-hover:text-primary transition-colors">
+                  {practice.name}
                 </h3>
-                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                  Enterprise cloud configurations, multi-account structures (Landing Zones via Control Tower), deep cost audits, IAM governance, and secure infrastructure automation.
-                </p>
               </div>
             </div>
-            
-            {/* Visual: Multi-account AWS structure mockup */}
-            <div className="sm:col-span-5 h-full min-h-[140px] flex items-center justify-center bg-background/50 border border-border/40 rounded-lg p-3 relative select-none">
-              <div className="w-full space-y-2 font-mono text-[9px] text-muted-foreground">
-                <div className="flex items-center gap-1.5 bg-background/60 p-1 rounded border border-border/20">
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-                  <span className="text-foreground font-semibold">Root Account</span>
-                  <span className="text-[8px] bg-amber-400/10 text-amber-400 px-1 rounded ml-auto">Org</span>
-                </div>
-                
-                <div className="pl-3 border-l border-border/40 space-y-2">
-                  <div className="flex items-center gap-1.5 bg-background/30 p-1 rounded border border-border/10">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                    <span>Core Security OU</span>
-                  </div>
-                  <div className="flex items-center gap-1.5 bg-cyan-950/20 p-1 rounded border border-cyan-500/20 text-cyan-300">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
-                    <span>Workload-Prod</span>
-                    <span className="text-[8px] bg-cyan-500/20 text-cyan-400 px-1 rounded ml-auto">EKS</span>
-                  </div>
-                  <div className="flex items-center gap-1.5 bg-background/30 p-1 rounded border border-border/10">
-                    <span className="w-1.5 h-1.5 rounded-full bg-slate-500" />
-                    <span>Shared Sandbox</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div className="pt-4 flex items-center justify-between border-t border-border/20 mt-6">
-            <div className="flex items-center gap-2">
-              <div className="relative w-5 h-5 rounded bg-background/50 border border-border/40 flex items-center justify-center p-0.5" title="AWS">
-                <Image src="/service/aws.svg" alt="AWS" fill sizes="20px" className="object-contain" />
-              </div>
-            </div>
-            <Link href="/services" className="text-[11px] font-semibold text-cyan-500 hover:text-cyan-400 inline-flex items-center gap-1 group/btn">
-              Explore Landing Zones <ArrowRight className="h-3 w-3 group-hover/btn:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-        </StaggerItem>
-
-        {/* Core Card 2: DevOps Consulting (2 Columns) */}
-        <StaggerItem className="lg:col-span-2 md:col-span-2 border border-border/40 bg-zinc-950/20 hover:border-teal-500/30 p-6 rounded-lg flex flex-col justify-between min-h-[340px] transition-colors duration-200 group relative cursor-pointer overflow-hidden shadow-xs">
-          <div className="absolute inset-0 bg-gradient-to-tr from-teal-500/0 via-teal-500/0 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-          
-          <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 h-full items-start">
-            <div className="sm:col-span-7 space-y-4">
-              <div className="w-10 h-10 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center">
-                <Settings className="h-6 w-6 text-teal-400" />
-              </div>
-              <div className="space-y-2">
-                <span className="text-[10px] font-mono text-teal-500 font-semibold tracking-wider block">
-                  IAC. CI/CD. PIPELINES.
-                </span>
-                <h3 className="text-xl font-bold text-foreground group-hover:text-teal-500 transition-colors">
-                  DevOps Consulting
-                </h3>
-                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                  Eliminate developer downtime. Build fast CI/CD pipelines, enforce test-driven deployment rules, and configure Infrastructure as Code using clean Terraform modules.
-                </p>
-              </div>
-            </div>
-            
-            {/* Visual: DevOps CI/CD pipeline steps execution */}
-            <div className="sm:col-span-5 h-full min-h-[140px] flex items-center justify-center bg-background/50 border border-border/40 rounded-lg p-3 relative select-none">
-              <div className="w-full space-y-1.5 font-mono text-[9px] text-muted-foreground">
-                <div className="flex items-center gap-1.5 border-b border-border/20 pb-1.5">
-                  <TermIcon className="h-3 w-3 text-teal-400" />
-                  <span className="text-foreground">runner #402-run</span>
-                </div>
-                <div className="flex items-center gap-2 text-[8px]">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
-                  <span className="text-foreground/80">tf-validate: OK</span>
-                  <span className="text-muted-foreground ml-auto">0.4s</span>
-                </div>
-                <div className="flex items-center gap-2 text-[8px]">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
-                  <span className="text-foreground/80">security-lint: Passed</span>
-                  <span className="text-muted-foreground ml-auto">1.2s</span>
-                </div>
-                <div className="flex items-center gap-2 text-[8px] text-teal-400 font-semibold">
-                  <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-ping" />
-                  <span>tf-apply: deploying...</span>
-                  <span className="ml-auto">Active</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="pt-4 flex items-center justify-between border-t border-border/20 mt-6">
-            <div className="flex items-center gap-2">
-              <div className="relative w-5 h-5 rounded bg-background/50 border border-border/40 flex items-center justify-center p-0.5" title="AWS">
-                <Image src="/service/aws.svg" alt="AWS" fill sizes="20px" className="object-contain" />
-              </div>
-              <div className="relative w-5 h-5 rounded bg-background/50 border border-border/40 flex items-center justify-center p-0.5" title="Kubernetes">
-                <Image src="/kubernetes.png" alt="Kubernetes" fill sizes="20px" className="object-contain" />
-              </div>
-            </div>
-            <Link href="/services" className="text-[11px] font-semibold text-teal-500 hover:text-teal-400 inline-flex items-center gap-1 group/btn">
-              Optimize Delivery <ArrowRight className="h-3 w-3 group-hover/btn:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-        </StaggerItem>
-
-        {/* Core Card 3: Kubernetes Engineering (2 Columns) */}
-        <StaggerItem className="lg:col-span-2 md:col-span-2 border border-border/40 bg-zinc-950/20 hover:border-purple-500/30 p-6 rounded-lg flex flex-col justify-between min-h-[340px] transition-colors duration-200 group relative cursor-pointer overflow-hidden shadow-xs">
-          <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/0 via-purple-500/0 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-          
-          <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 h-full items-start">
-            <div className="sm:col-span-7 space-y-4">
-              <div className="w-10 h-10 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center">
-                <Layers className="h-6 w-6 text-purple-400" />
-              </div>
-              <div className="space-y-2">
-                <span className="text-[10px] font-mono text-purple-500 font-semibold tracking-wider block">
-                  CONTAINERS. EKS. HELM.
-                </span>
-                <h3 className="text-xl font-bold text-foreground group-hover:text-purple-500 transition-colors">
-                  Kubernetes Engineering
-                </h3>
-                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                  Migrate monoliths and microservices to AWS EKS or Azure AKS. Expert ingress setup, robust network policies, HPA scaling, and Istio Service Mesh architectures.
-                </p>
-              </div>
-            </div>
-            
-            {/* Visual: Pod scaling telemetry preview */}
-            <div className="sm:col-span-5 h-full min-h-[140px] flex items-center justify-center bg-background/50 border border-border/40 rounded-lg p-3 relative select-none">
-              <div className="w-full space-y-2 font-mono text-[9px]">
-                <div className="flex items-center justify-between text-muted-foreground border-b border-border/20 pb-1">
-                  <span>HPA Replica Target</span>
-                  <span className="text-purple-400 font-bold">4 / 8</span>
-                </div>
-                <div className="grid grid-cols-4 gap-1.5 pt-1">
-                  <div className="bg-green-500/10 border border-green-500/30 p-1 rounded text-center text-green-400">
-                    pod-1
-                  </div>
-                  <div className="bg-green-500/10 border border-green-500/30 p-1 rounded text-center text-green-400">
-                    pod-2
-                  </div>
-                  <div className="bg-green-500/10 border border-green-500/30 p-1 rounded text-center text-green-400">
-                    pod-3
-                  </div>
-                  <div className={`border p-1 rounded text-center transition-colors duration-500 ${
-                    pulseCount === 0 
-                      ? "bg-purple-500/20 border-purple-500/40 text-purple-400 animate-pulse" 
-                      : "bg-green-500/10 border-green-500/30 text-green-400"
-                  }`}>
-                    {pulseCount === 0 ? "scale" : "pod-4"}
-                  </div>
-                </div>
-                <div className="text-[8px] text-muted-foreground mt-2 leading-none">
-                  Load Trigger: CPU Avg &gt; 75%
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="pt-4 flex items-center justify-between border-t border-border/20 mt-6">
-            <div className="flex items-center gap-2">
-              <div className="relative w-5 h-5 rounded bg-background/50 border border-border/40 flex items-center justify-center p-0.5" title="Kubernetes">
-                <Image src="/kubernetes.png" alt="Kubernetes" fill sizes="20px" className="object-contain" />
-              </div>
-              <div className="relative w-5 h-5 rounded bg-background/50 border border-border/40 flex items-center justify-center p-0.5" title="AWS">
-                <Image src="/service/aws.svg" alt="AWS" fill sizes="20px" className="object-contain" />
-              </div>
-            </div>
-            <Link href="/services" className="text-[11px] font-semibold text-purple-500 hover:text-purple-400 inline-flex items-center gap-1 group/btn">
-              Configure Containers <ArrowRight className="h-3 w-3 group-hover/btn:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-        </StaggerItem>
-
-        {/* Core Card 4: Platform Engineering (2 Columns) */}
-        <StaggerItem className="lg:col-span-2 md:col-span-2 border border-border/40 bg-zinc-950/20 hover:border-cyan-500/30 p-6 rounded-lg flex flex-col justify-between min-h-[340px] transition-colors duration-200 group relative cursor-pointer overflow-hidden shadow-xs">
-          <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/0 via-cyan-500/0 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-          
-          <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 h-full items-start">
-            <div className="sm:col-span-7 space-y-4">
-              <div className="w-10 h-10 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center">
-                <Cpu className="h-6 w-6 text-cyan-400" />
-              </div>
-              <div className="space-y-2">
-                <span className="text-[10px] font-mono text-cyan-500 font-semibold tracking-wider block">
-                  IDP. DEVELOPER VELOCITY.
-                </span>
-                <h3 className="text-xl font-bold text-foreground group-hover:text-cyan-500 transition-colors">
-                  Platform Engineering
-                </h3>
-                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                  Empower developers with self-service templates. We engineer internal developer portals (Backstage / custom panels) to abstract AWS IAM, network pipelines, and DNS config details.
-                </p>
-              </div>
-            </div>
-            
-            {/* Visual: Command prompt portal creation */}
-            <div className="sm:col-span-5 h-full min-h-[140px] flex items-center justify-center bg-background/50 border border-border/40 rounded-lg p-3 relative select-none">
-              <div className="w-full space-y-1.5 font-mono text-[9px] text-muted-foreground">
-                <div className="flex items-center gap-1.5 border-b border-border/20 pb-1">
-                  <TermIcon className="h-3 w-3 text-cyan-400" />
-                  <span className="text-foreground">oneggy-portal cli</span>
-                </div>
-                <div className="text-[8px] text-cyan-400/90 font-semibold">
-                  $ eggy create svc --name auth
-                </div>
-                <div className="text-[7.5px] leading-tight space-y-0.5">
-                  <p>✔ Creating RDS PostgreSQL...</p>
-                  <p>✔ Binding secrets via Vault...</p>
-                  <p className="text-foreground font-bold">✔ App ready: staging-auth.oneggy.run</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="pt-4 flex items-center justify-between border-t border-border/20 mt-6">
-            <div className="flex items-center gap-2">
-              <div className="relative w-5 h-5 rounded bg-background/50 border border-border/40 flex items-center justify-center p-0.5" title="Kubernetes">
-                <Image src="/kubernetes.png" alt="Kubernetes" fill sizes="20px" className="object-contain" />
-              </div>
-              <div className="relative w-5 h-5 rounded bg-background/50 border border-border/40 flex items-center justify-center p-0.5" title="NodeJS">
-                <Image src="/service/node.svg" alt="Node" fill sizes="20px" className="object-contain" />
-              </div>
-            </div>
-            <Link href="/services" className="text-[11px] font-semibold text-cyan-500 hover:text-cyan-400 inline-flex items-center gap-1 group/btn">
-              Build Developer Portal <ArrowRight className="h-3 w-3 group-hover/btn:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-        </StaggerItem>
-
-        {/* Secondary Card 5: Full Stack Development (1 Column) */}
-        <StaggerItem className="border border-border/40 bg-zinc-950/20 hover:border-teal-500/30 p-5 rounded-lg flex flex-col justify-between min-h-[280px] transition-colors duration-200 group relative cursor-pointer overflow-hidden shadow-xs">
-          <div className="absolute inset-0 bg-gradient-to-tr from-teal-500/0 via-teal-500/0 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-          <div className="space-y-4">
-            <div className="w-9 h-9 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center">
-              <Code className="h-5 w-5 text-teal-400" />
-            </div>
-            <div className="space-y-2">
-              <span className="text-[9px] font-mono text-teal-500 font-semibold tracking-wider block">NEXT.JS. REACT. PYTHON</span>
-              <h3 className="text-base font-bold text-foreground group-hover:text-teal-500 transition-colors">Full Stack Engineering</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed line-clamp-4">
-                Deploy clean, type-safe codebases. We build applications with React/Next.js and secure APIs on Node or Django.
+            {/* Description (4 columns) */}
+            <div className="lg:col-span-4 lg:px-4">
+              <p className="text-xs text-muted-foreground leading-relaxed font-sans">
+                {practice.desc}
               </p>
             </div>
-          </div>
-          <div className="pt-4 flex items-center justify-between border-t border-border/20 mt-4">
-            <div className="flex items-center gap-1">
-              <div className="relative w-4.5 h-4.5 rounded bg-background/50 border border-border/40 flex items-center justify-center p-0.5" title="React">
-                <Image src="/service/react.svg" alt="React" fill sizes="18px" className="object-contain" />
-              </div>
-              <div className="relative w-4.5 h-4.5 rounded bg-background/50 border border-border/40 flex items-center justify-center p-0.5" title="Node">
-                <Image src="/service/node.svg" alt="Node" fill sizes="18px" className="object-contain" />
-              </div>
-            </div>
-            <Link href="/services" className="text-[10px] font-semibold text-teal-500 hover:text-teal-400 inline-flex items-center gap-0.5 group/btn">
-              Details <ArrowRight className="h-2.5 w-2.5 group-hover/btn:translate-x-0.5 transition-transform" />
-            </Link>
-          </div>
-        </StaggerItem>
 
-        {/* Secondary Card 6: Mobile App Development (1 Column) */}
-        <StaggerItem className="border border-border/40 bg-zinc-950/20 hover:border-purple-500/30 p-5 rounded-lg flex flex-col justify-between min-h-[280px] transition-colors duration-200 group relative cursor-pointer overflow-hidden shadow-xs">
-          <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/0 via-purple-500/0 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-          <div className="space-y-4">
-            <div className="w-9 h-9 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center">
-              <Smartphone className="h-5 w-5 text-purple-400" />
+            {/* Strategic Outcome Metrics (2 columns) */}
+            <div className="lg:col-span-2 space-y-1 text-left lg:text-right">
+              <span className="text-[9px] uppercase tracking-wider text-muted-foreground font-mono font-semibold block">
+                Target Outcome
+              </span>
+              <span className="text-xs font-mono font-bold text-primary block">
+                {practice.metrics}
+              </span>
             </div>
-            <div className="space-y-2">
-              <span className="text-[9px] font-mono text-purple-500 font-semibold tracking-wider block">REACT NATIVE. MOBILE</span>
-              <h3 className="text-base font-bold text-foreground group-hover:text-purple-500 transition-colors">Mobile Engineering</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed line-clamp-4">
-                High-performance iOS and Android builds. Cross-platform React Native apps featuring offline data sync and native bridges.
-              </p>
-            </div>
-          </div>
-          <div className="pt-4 flex items-center justify-between border-t border-border/20 mt-4">
-            <div className="flex items-center gap-1">
-              <div className="relative w-4.5 h-4.5 rounded bg-background/50 border border-border/40 flex items-center justify-center p-0.5" title="React Native">
-                <Image src="/service/react.svg" alt="React Native" fill sizes="18px" className="object-contain" />
-              </div>
-            </div>
-            <Link href="/services" className="text-[10px] font-semibold text-purple-500 hover:text-purple-400 inline-flex items-center gap-0.5 group/btn">
-              Details <ArrowRight className="h-2.5 w-2.5 group-hover/btn:translate-x-0.5 transition-transform" />
-            </Link>
-          </div>
-        </StaggerItem>
 
-        {/* Secondary Card 7: UI/UX Design (1 Column) */}
-        <StaggerItem className="border border-border/40 bg-zinc-950/20 hover:border-cyan-500/30 p-5 rounded-lg flex flex-col justify-between min-h-[280px] transition-colors duration-200 group relative cursor-pointer overflow-hidden shadow-xs">
-          <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/0 via-cyan-500/0 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-          <div className="space-y-4">
-            <div className="w-9 h-9 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center">
-              <Palette className="h-5 w-5 text-cyan-400" />
+            {/* Action Arrow (1 column) */}
+            <div className="lg:col-span-1 flex justify-start lg:justify-end">
+              <Link
+                href={practice.link}
+                className="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 group-hover:bg-primary group-hover:border-primary flex items-center justify-center transition-all duration-300 cursor-pointer"
+                aria-label={`Explore our ${practice.name} practice`}
+              >
+                <ArrowRight className="h-4 w-4 text-zinc-400 group-hover:text-primary-foreground transition-colors" />
+              </Link>
             </div>
-            <div className="space-y-2">
-              <span className="text-[9px] font-mono text-cyan-500 font-semibold tracking-wider block">FIGMA. SAAS LAYOUT</span>
-              <h3 className="text-base font-bold text-foreground group-hover:text-cyan-500 transition-colors">UI/UX Strategy</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed line-clamp-4">
-                Stunning functional aesthetics. Custom SaaS layout design systems, user journeys, responsive wireframing, and Figma prototypes.
-              </p>
-            </div>
-          </div>
-          <div className="pt-4 flex items-center justify-between border-t border-border/20 mt-4">
-            <div className="flex items-center gap-1">
-              <div className="relative w-4.5 h-4.5 rounded bg-background/50 border border-border/40 flex items-center justify-center p-0.5" title="HTML">
-                <Image src="/service/html.svg" alt="HTML" fill sizes="18px" className="object-contain" />
-              </div>
-              <div className="relative w-4.5 h-4.5 rounded bg-background/50 border border-border/40 flex items-center justify-center p-0.5" title="CSS">
-                <Image src="/service/css.svg" alt="CSS" fill sizes="18px" className="object-contain" />
-              </div>
-            </div>
-            <Link href="/services" className="text-[10px] font-semibold text-cyan-500 hover:text-cyan-400 inline-flex items-center gap-0.5 group/btn">
-              Details <ArrowRight className="h-2.5 w-2.5 group-hover/btn:translate-x-0.5 transition-transform" />
-            </Link>
-          </div>
-        </StaggerItem>
-
-        {/* Secondary Card 8: Monitoring & Observability (1 Column) */}
-        <StaggerItem className="border border-border/40 bg-zinc-950/20 hover:border-teal-500/30 p-5 rounded-lg flex flex-col justify-between min-h-[280px] transition-colors duration-200 group relative cursor-pointer overflow-hidden shadow-xs">
-          <div className="absolute inset-0 bg-gradient-to-tr from-teal-500/0 via-teal-500/0 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-          <div className="space-y-4">
-            <div className="w-9 h-9 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center">
-              <Eye className="h-5 w-5 text-teal-400" />
-            </div>
-            <div className="space-y-2">
-              <span className="text-[9px] font-mono text-teal-500 font-semibold tracking-wider block">LOGS. METRICS. TRACES</span>
-              <h3 className="text-base font-bold text-foreground group-hover:text-teal-500 transition-colors">Observability</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed line-clamp-4">
-                Remove monitoring blindspots. Centralized telemetry via Datadog, Grafana dashboards, Prometheus metrics, and automated system alert routing.
-              </p>
-            </div>
-          </div>
-          <div className="pt-4 flex items-center justify-between border-t border-border/20 mt-4">
-            <div className="flex items-center gap-1">
-              <div className="relative w-4.5 h-4.5 rounded bg-background/50 border border-border/40 flex items-center justify-center p-0.5" title="AWS">
-                <Image src="/service/aws.svg" alt="AWS" fill sizes="18px" className="object-contain" />
-              </div>
-              <div className="relative w-4.5 h-4.5 rounded bg-background/50 border border-border/40 flex items-center justify-center p-0.5" title="Kubernetes">
-                <Image src="/kubernetes.png" alt="Kubernetes" fill sizes="18px" className="object-contain" />
-              </div>
-            </div>
-            <Link href="/services" className="text-[10px] font-semibold text-teal-500 hover:text-teal-400 inline-flex items-center gap-0.5 group/btn">
-              Details <ArrowRight className="h-2.5 w-2.5 group-hover/btn:translate-x-0.5 transition-transform" />
-            </Link>
-          </div>
-        </StaggerItem>
-
+          </StaggerItem>
+        ))}
       </StaggerContainer>
+
+      {/* Corporate Capabilities Footer Note */}
+      <div className="mt-12 text-center">
+        <p className="text-xs text-muted-foreground font-sans">
+          Need a custom engagement model?{" "}
+          <Link href="/contact" className="text-primary hover:underline font-semibold">
+            Speak with our senior client directors
+          </Link>
+        </p>
+      </div>
     </section>
   );
 }

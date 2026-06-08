@@ -1,234 +1,124 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
-import { ShieldAlert, RefreshCw, Lock, Terminal, Clock } from "lucide-react";
-
-interface LogEntry {
-  timestamp: string;
-  level: "INFO" | "SUCCESS" | "WARN" | "ALERT";
-  service: string;
-  message: string;
-}
-
-const INITIAL_LOGS: LogEntry[] = [
-  { timestamp: "16:48:10", level: "INFO", service: "alb-ingress", message: "ALB router forwarding path matches /api/v1/auth" },
-  { timestamp: "16:48:12", level: "SUCCESS", service: "ssl-cert", message: "Certificates verified. 242 days left on Let's Encrypt" },
-  { timestamp: "16:48:15", level: "INFO", service: "k8s-hpa", message: "Replica check: target stable (cpu avg: 34%)" },
-  { timestamp: "16:48:18", level: "ALERT", service: "waf-block", message: "WAF blocked suspicious SQL pattern from IP 42.108.5.12" },
-  { timestamp: "16:48:22", level: "SUCCESS", service: "db-replica", message: "RDS Aurora PG replica check: 0ms replication lag verified" },
-];
-
-const SERVICE_POOL = [
-  { level: "INFO" as const, service: "alb-ingress", message: "ALB router target matched root context path /" },
-  { level: "SUCCESS" as const, service: "argocd", message: "GitOps Sync complete: deployed image tag commit-f182a" },
-  { level: "INFO" as const, service: "k8s-hpa", message: "Nodes active: 6 desired, 6 running across spot group" },
-  { level: "WARN" as const, service: "db-backup", message: "Daily snapshot auto-triggered on prod-cluster-az2" },
-  { level: "SUCCESS" as const, service: "route53", message: "DNS healthcheck check resolved to primary endpoint" },
-  { level: "ALERT" as const, service: "waf-block", message: "WAF blocked XSS attempt from IP 185.220.101.4" },
-  { level: "INFO" as const, service: "cloudfront", message: "Cache hit ratio optimized at 94.8% for static assets" },
-];
+import React from "react";
+import { Cloud, Layers, ShieldCheck, Settings, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { SectionHeader } from "../common/section-header";
+import { StaggerContainer, StaggerItem } from "../animations/motion-wrappers";
 
 export function StatusBoard() {
-  const [logs, setLogs] = useState<LogEntry[]>(INITIAL_LOGS);
-  const [latencyPoints, setLatencyPoints] = useState<number[]>([14, 15, 12, 18, 14, 15, 13, 16, 14, 15, 14]);
-  const [currentLatency, setCurrentLatency] = useState(14);
-  const [threatCount, setThreatCount] = useState(4209);
-  const [isRefreshing, setIsRefreshing] = useState(false);
-  const logEndRef = useRef<HTMLDivElement>(null);
-
-  // Auto-scroll logs to bottom if they update
-  useEffect(() => {
-    if (logEndRef.current) {
-      const container = logEndRef.current.parentElement;
-      if (container) {
-        container.scrollTop = container.scrollHeight;
-      }
+  const capabilities = [
+    {
+      icon: <Cloud className="h-6 w-6 text-primary" />,
+      title: "Cloud Infrastructure Advisory",
+      focus: "Strategy & Governance",
+      desc: "Establishing multi-account cloud structures via AWS Control Tower and Landing Zones. We design secure IAM guardrails, organizational unit separations, and centralized budget tracking models.",
+      points: [
+        "AWS Control Tower multi-account layouts",
+        "Rigid IAM boundary & SCP design",
+        "Cloud Cost allocation and deep audits"
+      ],
+      link: "/services/aws-cloud-managed-services"
+    },
+    {
+      icon: <Layers className="h-6 w-6 text-blue-400" />,
+      title: "Kubernetes & Container Operations",
+      focus: "Orchestration & Scale",
+      desc: "Architecting enterprise-grade AWS EKS clusters. We manage microservice container migrations, implement Horizontal Pod Autoscaling (HPA), and configure secure Ingress routing pathways.",
+      points: [
+        "Secure EKS cluster design and updates",
+        "Network policy cluster isolation",
+        "Zero-downtime service deployments"
+      ],
+      link: "/services/kubernetes"
+    },
+    {
+      icon: <Settings className="h-6 w-6 text-slate-400" />,
+      title: "IaC & Continuous Automation",
+      focus: "Automated Deployments",
+      desc: "Codifying environments using standardized, dry-run tested Terraform modules. We configure automated CI/CD release pipelines and enable drift-free GitOps sync flows.",
+      points: [
+        "Modular Terraform infrastructure blueprints",
+        "ArgoCD / GitOps drift enforcement",
+        "Centralized CI/CD compliance gates"
+      ],
+      link: "/services/infrastructure-automation"
+    },
+    {
+      icon: <ShieldCheck className="h-6 w-6 text-primary" />,
+      title: "DevSecOps & Risk Advisory",
+      focus: "Compliance & Security",
+      desc: "Integrating proactive security vulnerability scans directly into release workflows. We prepare cloud architectures to pass strict HIPAA, PCI-DSS, and ISO 27001 audit standards.",
+      points: [
+        "Automated static analysis vulnerability scanning",
+        "Encrypted database replica configurations",
+        "Audit-ready security postures"
+      ],
+      link: "/services/security-devsecops"
     }
-  }, [logs]);
-
-  // Log simulation interval
-  useEffect(() => {
-    const logTimer = setInterval(() => {
-      const date = new Date();
-      const timestamp = date.toTimeString().split(" ")[0];
-      const randomItem = SERVICE_POOL[Math.floor(Math.random() * SERVICE_POOL.length)];
-      
-      const newLog: LogEntry = {
-        timestamp,
-        ...randomItem
-      };
-
-      setLogs(prev => [...prev.slice(1), newLog]);
-
-      // If threat block event occurs, increment threat counter
-      if (randomItem.level === "ALERT") {
-        setThreatCount(c => c + 1);
-      }
-
-      // Fluctuating latency
-      setCurrentLatency(prev => {
-        const delta = Math.floor(Math.random() * 5) - 2; // -2 to +2
-        const next = Math.max(10, Math.min(25, prev + delta));
-        setLatencyPoints(pts => [...pts.slice(1), next]);
-        return next;
-      });
-
-    }, 3200);
-
-    return () => clearInterval(logTimer);
-  }, []);
-
-  const handleManualRefresh = () => {
-    setIsRefreshing(true);
-    setTimeout(() => {
-      setIsRefreshing(false);
-      // Trigger log refresh
-      const date = new Date();
-      const ts = date.toTimeString().split(" ")[0];
-      const manualLog: LogEntry = {
-        timestamp: ts,
-        level: "SUCCESS",
-        service: "manual-audit",
-        message: "Full cluster topology and DNS verification check succeeded manually."
-      };
-      setLogs(prev => [...prev.slice(1), manualLog]);
-    }, 850);
-  };
-
-  // Build SVG path for latency sparkline
-  const sparklinePath = latencyPoints.reduce((path, pt, i) => {
-    const x = (i / (latencyPoints.length - 1)) * 140;
-    // Map latency 10-25 to SVG y-coords 40-5
-    const y = 40 - ((pt - 10) / 15) * 35;
-    return path + `${i === 0 ? "M" : "L"} ${x} ${y}`;
-  }, "");
+  ];
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-12 relative border-t border-border/40">
-      {/* Subtle Glow backdrop */}
-      <div className="absolute top-[10%] left-[20%] w-[300px] h-[300px] rounded-full bg-cyan-500/5 blur-[90px] pointer-events-none -z-10" />
+    <section className="relative max-w-7xl mx-auto px-6 py-24 border-t border-border/40">
+      {/* Subtle corporate structural lines */}
+      <div className="absolute top-0 left-12 w-[1px] h-full bg-zinc-900/40 -z-10 pointer-events-none" />
+      <div className="absolute top-0 right-12 w-[1px] h-full bg-zinc-900/40 -z-10 pointer-events-none" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        
-        {/* Left Side: Storytelling & Trust Callout */}
-        <div className="lg:col-span-5 space-y-6">
-          <div className="space-y-2">
-            <span className="text-xs font-mono font-semibold text-cyan-500 uppercase tracking-widest block">
-              Continuous Reliability
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground leading-tight">
-              Production-Grade <br />
-              <span className="text-cyan-400">Uptime Telemetry</span>
-            </h2>
-          </div>
-          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-            We don&apos;t deploy and walk away. Our solutions are engineered with automated self-healing clusters, multi-AZ database replication, and real-time security scanning alerts to catch infrastructure drift before it impacts users.
-          </p>
-          <div className="flex items-center gap-6 pt-2">
-            <div className="space-y-1">
-              <span className="text-2xl font-bold font-mono text-foreground">99.99%</span>
-              <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-semibold font-mono">Uptime SLA Target</p>
-            </div>
-            <div className="w-[1px] h-10 bg-border/80" />
-            <div className="space-y-1">
-              <span className="text-2xl font-bold font-mono text-foreground">24/7/365</span>
-              <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-semibold font-mono">Active Telemetry</p>
-            </div>
-          </div>
-        </div>
+      <SectionHeader
+        tag="Capabilities"
+        title="Enterprise-Grade Consulting Practices"
+        subtitle="We combine rigorous engineering practices with cloud modernization advisory to optimize developer pipelines, scale systems, and defend workloads."
+        align="center"
+        className="mb-16 max-w-4xl"
+      />
 
-        {/* Right Side: High-Density Telemetry Logs Board Dashboard */}
-        <div className="lg:col-span-7">
-          <div className="bg-zinc-950/90 rounded-xl border border-zinc-800 p-4 sm:p-6 shadow-2xl relative overflow-hidden select-none font-mono">
-            {/* Window control buttons and title */}
-            <div className="flex items-center justify-between border-b border-zinc-800 pb-4 mb-4">
-              <div className="flex items-center gap-3">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+      <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+        {capabilities.map((cap) => (
+          <StaggerItem
+            key={cap.title}
+            className="p-6 md:p-8 rounded-2xl border border-zinc-800 bg-zinc-950/20 hover:border-zinc-700 transition-all duration-300 flex flex-col justify-between space-y-6 group"
+          >
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <div className="w-12 h-12 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center">
+                  {cap.icon}
+                </div>
+                <span className="text-[10px] font-mono text-primary font-bold uppercase tracking-widest bg-zinc-900 border border-zinc-800 px-2.5 py-1 rounded">
+                  {cap.focus}
                 </span>
-                <span className="text-xs sm:text-sm font-bold text-zinc-300">oneggy-production-telemetry</span>
               </div>
-              <div className="flex items-center gap-3">
-                <button
-                  onClick={handleManualRefresh}
-                  disabled={isRefreshing}
-                  className="p-1 rounded bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-foreground cursor-pointer transition-colors"
-                  aria-label="Refresh status manual"
-                >
-                  <RefreshCw className={`h-3 w-3 ${isRefreshing ? "animate-spin text-cyan-400" : ""}`} />
-                </button>
+
+              <div className="space-y-2">
+                <h3 className="text-xl font-bold text-foreground font-display group-hover:text-primary transition-colors">
+                  {cap.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
+                  {cap.desc}
+                </p>
               </div>
+
+              {/* Focus points bullet list */}
+              <ul className="space-y-2 pt-2 border-t border-zinc-900/60">
+                {cap.points.map((pt, idx) => (
+                  <li key={idx} className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <span className="w-1 h-1 rounded-full bg-primary" />
+                    <span>{pt}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            {/* High-density metrics counters row */}
-            <div className="grid grid-cols-3 gap-3 mb-4 text-[10px] sm:text-xs">
-              <div className="bg-zinc-900/60 border border-zinc-800/80 p-2.5 rounded flex items-center justify-between">
-                <div>
-                  <span className="text-zinc-500 text-[8px] uppercase block">Response Time</span>
-                  <span className="font-bold text-foreground font-mono">{currentLatency}ms</span>
-                </div>
-                <svg className="w-16 h-8 overflow-visible" fill="none">
-                  <path d={sparklinePath} stroke="#22d3ee" strokeWidth="1.5" />
-                </svg>
-              </div>
-
-              <div className="bg-zinc-900/60 border border-zinc-800/80 p-2.5 rounded flex items-center justify-between">
-                <div>
-                  <span className="text-zinc-500 text-[8px] uppercase block">SSL Certificate</span>
-                  <span className="font-bold text-green-400">Valid</span>
-                </div>
-                <Lock className="h-4.5 w-4.5 text-green-400 opacity-80" />
-              </div>
-
-              <div className="bg-zinc-900/60 border border-zinc-800/80 p-2.5 rounded flex items-center justify-between">
-                <div>
-                  <span className="text-zinc-500 text-[8px] uppercase block">Threats Guarded</span>
-                  <span className="font-bold text-red-400">{threatCount}</span>
-                </div>
-                <ShieldAlert className="h-4.5 w-4.5 text-red-400 animate-pulse" />
-              </div>
+            <div className="pt-4 border-t border-zinc-900/60 flex items-center justify-end">
+              <Link
+                href={cap.link}
+                className="text-xs font-semibold text-primary inline-flex items-center gap-1 group-hover:text-foreground transition-colors group/btn"
+              >
+                Review Capability <ArrowRight className="h-3.5 w-3.5 group-hover/btn:translate-x-1 transition-transform" />
+              </Link>
             </div>
-
-            {/* Streaming log terminal panel */}
-            <div className="bg-black/70 border border-zinc-850 rounded-lg p-3 h-[180px] overflow-y-auto flex flex-col gap-1.5 scrollbar-thin select-text">
-              <div className="flex items-center gap-1.5 text-zinc-500 text-[8px] border-b border-zinc-900 pb-1 mb-1 select-none">
-                <Terminal className="h-3.5 w-3.5 text-zinc-500" />
-                <span>LOG STREAM OVERLAY -- OUTPUT LIVE</span>
-              </div>
-              
-              {logs.map((log, index) => {
-                let colorClass = "text-zinc-400";
-                if (log.level === "SUCCESS") colorClass = "text-green-400";
-                if (log.level === "WARN") colorClass = "text-amber-400";
-                if (log.level === "ALERT") colorClass = "text-red-400 font-semibold";
-
-                return (
-                  <div key={index} className="text-[9px] sm:text-[10px] leading-relaxed flex items-start gap-1 font-mono">
-                    <span className="text-zinc-600 shrink-0">{log.timestamp}</span>
-                    <span className={`px-1 rounded bg-zinc-900 text-[8px] border border-zinc-800 shrink-0 ${colorClass}`}>
-                      {log.level}
-                    </span>
-                    <span className="text-cyan-400 shrink-0">[{log.service}]</span>
-                    <span className="text-zinc-300 truncate">{log.message}</span>
-                  </div>
-                );
-              })}
-              <div ref={logEndRef} />
-            </div>
-
-            {/* Bottom Telemetry Footer */}
-            <div className="mt-4 pt-3 border-t border-zinc-900 flex items-center justify-between text-[8px] sm:text-[9px] text-zinc-500">
-              <div className="flex items-center gap-1">
-                <Clock className="h-3 w-3" />
-                <span>Response Target SLA: &lt;15m</span>
-              </div>
-              <span>Logs linked directly to AWS CloudWatch & Grafana</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
+          </StaggerItem>
+        ))}
+      </StaggerContainer>
     </section>
   );
 }

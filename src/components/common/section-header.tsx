@@ -15,7 +15,7 @@ export function SectionHeader({ tag, title, subtitle, className, align = "center
     <div className={cn("max-w-3xl space-y-4 mb-12", align === "center" ? "mx-auto text-center" : "", className)}>
       {tag && (
         <FadeUp>
-          <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold">{tag}</span>
+          <span className="text-xs font-mono uppercase tracking-widest text-primary font-bold">{tag}</span>
         </FadeUp>
       )}
       <FadeUp delay={0.1}>

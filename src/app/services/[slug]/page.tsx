@@ -2,6 +2,20 @@ import React from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import { 
+  ArrowRight, 
+  AlertTriangle, 
+  CheckCircle2, 
+  Shield,
+  ChevronRight
+} from "lucide-react";
+import { getServiceBySlug, servicesData } from "@/lib/services-data";
+import { SectionHeader } from "@/components/common/section-header";
+import { CtaBlock } from "@/components/common/cta-block";
+import { ServiceArchitecture } from "@/components/services/service-architecture";
+import { ServiceFaqAccordion } from "@/components/services/service-faq-accordion";
+import { FadeUp, StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
+import { testimonials as rawTestimonials } from "../../../../public/data/testimonial.json";
 
 function getTechLogo(tech: string): string | null {
   const t = tech.toLowerCase();
@@ -19,20 +33,6 @@ function getTechLogo(tech: string): string | null {
   if (t.includes("css")) return "/service/css.svg";
   return null;
 }
-import { 
-  ArrowRight, 
-  AlertTriangle, 
-  CheckCircle2, 
-  Terminal,
-  ChevronRight
-} from "lucide-react";
-import { getServiceBySlug, servicesData } from "@/lib/services-data";
-import { SectionHeader } from "@/components/common/section-header";
-import { CtaBlock } from "@/components/common/cta-block";
-import { ServiceArchitecture } from "@/components/services/service-architecture";
-import { ServiceFaqAccordion } from "@/components/services/service-faq-accordion";
-import { FadeUp, StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
-import { testimonials as rawTestimonials } from "../../../../public/data/testimonial.json";
 
 function getInitials(name: string) {
   const parts = name.trim().split(/\s+/);
@@ -131,21 +131,21 @@ export default async function ServicePage({ params }: PageProps) {
     {
       num: "01",
       title: "Assessment & Audit",
-      desc: "We analyze your current code repository structures, cloud usage parameters, and resource waste matrices to outline a migration checklist."
+      desc: "We analyze your current code repository structures, cloud usage parameters, and resource waste matrices to outline a modernization roadmap."
     },
     {
       num: "02",
       title: "Architecture Blueprint",
-      desc: "Our senior architects design VPC isolation networks, Kubernetes cluster setups, or software routing schemas, providing high-fidelity visual maps."
+      desc: "Our senior architects design VPC isolation networks, Kubernetes cluster setups, or software routing schemas, providing high-fidelity visual blueprints."
     },
     {
       num: "03",
-      title: "IaC & App Coding",
-      desc: "We write robust Infrastructure as Code (IaC) Terraform modules, configure automated CI/CD pipeline triggers, and implement app features."
+      title: "IaC & Software Engineering",
+      desc: "We write modular Terraform configurations, automate continuous verify check pipelines, and implement product software features."
     },
     {
       num: "04",
-      title: "Observability & SLA Support",
+      title: "Transition & Governance",
       desc: "We configure active dashboards (Prometheus/Grafana), deploy monitoring thresholds, and hand over files with complete documentation."
     }
   ];
@@ -168,16 +168,15 @@ export default async function ServicePage({ params }: PageProps) {
       />
 
       <div className="relative overflow-hidden min-h-screen">
-        {/* Glow Effects */}
-        <div className="absolute top-[8%] left-[-15%] w-[450px] h-[450px] rounded-full bg-cyan-500/10 blur-[120px] pointer-events-none -z-10" />
-        <div className="absolute top-[40%] right-[-15%] w-[450px] h-[450px] rounded-full bg-teal-500/5 blur-[125px] pointer-events-none -z-10 animate-pulse" />
+        {/* Subtle Background Accent */}
+        <div className="absolute top-[8%] right-[-10%] w-[350px] h-[350px] rounded-full bg-blue-500/5 blur-[120px] pointer-events-none -z-10 animate-pulse" />
 
         {/* 1. HERO SECTION */}
         <section className="relative pt-16 pb-24 md:py-32 flex flex-col items-center justify-center text-center">
           <div className="max-w-4xl mx-auto px-6 space-y-8 relative z-10">
             <FadeUp>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-background/50 backdrop-blur-sm text-xs font-mono text-cyan-400 shadow-sm">
-                <Terminal className="h-3.5 w-3.5" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-background/50 backdrop-blur-sm text-xs font-mono text-primary shadow-sm">
+                <Shield className="h-3.5 w-3.5" />
                 <span>{categoryLabel}</span>
               </div>
             </FadeUp>
@@ -186,17 +185,17 @@ export default async function ServicePage({ params }: PageProps) {
               <h1 className="text-4xl sm:text-6xl font-display font-bold tracking-tight text-foreground leading-tight">
                 {service.title}
                 <br />
-                <span className="text-cyan-400">{service.headline}</span>
+                <span className="text-primary">{service.headline}</span>
               </h1>
             </FadeUp>
 
             <FadeUp delay={0.2}>
-              <p className="text-base sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-sans">
                 {service.subtext}
               </p>
             </FadeUp>
 
-            {/* Float Badges / Tech Row */}
+            {/* Tech Ecosystem Row */}
             <FadeUp delay={0.25}>
               <div className="flex flex-wrap justify-center gap-2 pt-4">
                 {service.techs.map((tech) => {
@@ -204,7 +203,7 @@ export default async function ServicePage({ params }: PageProps) {
                   return (
                     <span 
                       key={tech} 
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono bg-accent/30 border border-border text-foreground/80 shadow-sm"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono bg-zinc-900 border border-zinc-800 text-foreground/80 shadow-sm"
                     >
                       {logo && (
                         <div className="relative w-3.5 h-3.5 shrink-0">
@@ -227,15 +226,15 @@ export default async function ServicePage({ params }: PageProps) {
             <FadeUp delay={0.3} className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-12 px-8 rounded-lg bg-foreground text-background hover:bg-foreground/90 font-semibold transition-colors cursor-pointer shadow-lg"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-12 px-8 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 font-semibold transition-colors cursor-pointer shadow-lg"
               >
-                Book Free Consultation <ArrowRight className="h-4 w-4" />
+                Request Advisory Assessment <ArrowRight className="h-4 w-4" />
               </Link>
               <a
                 href="#blueprint"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-12 px-8 rounded-lg bg-background border border-border hover:bg-accent/40 hover:border-border/80 font-semibold transition-colors cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-12 px-8 rounded-lg bg-background border border-border hover:bg-zinc-900 font-semibold transition-colors cursor-pointer"
               >
-                Explore Architecture
+                Review Framework Map
               </a>
             </FadeUp>
           </div>
@@ -244,28 +243,27 @@ export default async function ServicePage({ params }: PageProps) {
         {/* 2. THE CHALLENGE VS. THE SOLUTION */}
         <section className="max-w-7xl mx-auto px-6 py-24 md:py-32 border-t border-border/40">
           <SectionHeader
-            tag="Solving Bottlenecks"
-            title={<>The Challenge & <span className="text-cyan-400">Our Solution</span></>}
-            subtitle="How we analyze pain points and build engineering workflows to achieve system scaling goals."
+            tag="Strategic Context"
+            title="Business Challenge & Alignment"
+            subtitle="How we identify operational exposures, cost leakages, and pipeline friction to design compliant system solutions."
             align="center"
             className="mb-16"
           />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* The Challenges Card */}
-            <div className="glass-card rounded-2xl p-8 border border-red-500/10 bg-red-500/[0.01] space-y-6 relative overflow-hidden shadow-md">
-              <div className="absolute top-[20%] right-[10%] w-[120px] h-[120px] rounded-full bg-red-500/5 blur-[50px] pointer-events-none" />
-              <div className="flex items-center gap-3 text-red-400 font-semibold">
+            <div className="rounded-2xl p-8 border border-zinc-800 bg-zinc-950/20 space-y-6 relative overflow-hidden shadow-md">
+              <div className="flex items-center gap-3 text-red-500 font-semibold">
                 <AlertTriangle className="h-6 w-6" />
-                <h3 className="text-xl font-display font-bold">Scaling Roadblocks</h3>
+                <h3 className="text-xl font-display font-bold">Operational Vulnerabilities</h3>
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Many businesses hit a bottleneck due to manual environments, drift, security exposures, and configuration errors:
+              <p className="text-sm text-muted-foreground leading-relaxed font-sans">
+                Organizations frequently hit compliance, deployment, and cost barriers due to legacy un-managed setups:
               </p>
-              <ul className="space-y-4">
+              <ul className="space-y-4 font-sans">
                 {service.problems.map((problem, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-red-400 shrink-0 mt-2" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0 mt-2" />
                     <span className="text-sm text-muted-foreground leading-relaxed">{problem}</span>
                   </li>
                 ))}
@@ -273,19 +271,18 @@ export default async function ServicePage({ params }: PageProps) {
             </div>
 
             {/* Our Solutions Card */}
-            <div className="glass-card rounded-2xl p-8 border border-cyan-500/10 bg-cyan-500/[0.01] space-y-6 relative overflow-hidden shadow-md">
-              <div className="absolute top-[20%] right-[10%] w-[120px] h-[120px] rounded-full bg-cyan-500/5 blur-[50px] pointer-events-none" />
-              <div className="flex items-center gap-3 text-cyan-400 font-semibold">
+            <div className="rounded-2xl p-8 border border-zinc-800 bg-zinc-950/20 space-y-6 relative overflow-hidden shadow-md">
+              <div className="flex items-center gap-3 text-primary font-semibold">
                 <CheckCircle2 className="h-6 w-6" />
-                <h3 className="text-xl font-display font-bold">The OnEggy Way</h3>
+                <h3 className="text-xl font-display font-bold">Strategic Resolution Model</h3>
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                We design clean solutions directly in code to secure infrastructure and automate operations:
+              <p className="text-sm text-muted-foreground leading-relaxed font-sans">
+                We codify secure infrastructure policies and deploy automated workflows to optimize reliability:
               </p>
-              <ul className="space-y-4">
+              <ul className="space-y-4 font-sans">
                 {service.solutions.map((solution, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0 mt-2" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2" />
                     <span className="text-sm text-muted-foreground leading-relaxed">{solution}</span>
                   </li>
                 ))}
@@ -297,8 +294,8 @@ export default async function ServicePage({ params }: PageProps) {
         {/* 3. CORE SERVICE FEATURES GRID */}
         <section className="max-w-7xl mx-auto px-6 py-24 md:py-32 border-t border-border/40">
           <SectionHeader
-            tag="Scope of Work"
-            title={<>Engineered <span className="text-cyan-400">Platform Capabilities</span></>}
+            tag="Deliverables"
+            title="Core Scope & Capabilities"
             subtitle="Explore our detailed technical features engineered following the industry's absolute best practices."
             align="center"
             className="mb-16"
@@ -308,22 +305,22 @@ export default async function ServicePage({ params }: PageProps) {
             {service.features.map((feature, idx) => (
               <StaggerItem 
                 key={idx}
-                className="glass-card hover:border-cyan-500/30 p-8 rounded-xl border border-border/40 transition-all duration-300 flex flex-col justify-between space-y-6 relative group"
+                className="p-8 rounded-xl border border-zinc-800 bg-zinc-950/20 hover:border-zinc-700 transition-all duration-300 flex flex-col justify-between space-y-6 relative group"
               >
                 <div className="space-y-3">
-                  <span className="text-xs font-mono text-cyan-500/60 font-semibold uppercase">capability {idx + 1}</span>
-                  <h3 className="text-lg sm:text-xl font-display font-bold text-foreground group-hover:text-cyan-400 transition-colors">
+                  <span className="text-xs font-mono text-zinc-550 font-semibold uppercase">practice segment {idx + 1}</span>
+                  <h3 className="text-lg sm:text-xl font-display font-bold text-foreground group-hover:text-primary transition-colors">
                     {feature.title}
                   </h3>
-                  <p className="text-sm font-semibold text-foreground/80 leading-relaxed">
+                  <p className="text-sm font-semibold text-foreground/80 leading-relaxed font-sans">
                     {feature.desc}
                   </p>
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
                     {feature.detail}
                   </p>
                 </div>
-                <div className="flex items-center gap-1.5 text-xs text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity font-semibold">
-                  production-ready <ChevronRight className="h-3 w-3" />
+                <div className="flex items-center gap-1.5 text-xs text-primary opacity-0 group-hover:opacity-100 transition-opacity font-semibold font-mono">
+                  governed layout <ChevronRight className="h-3 w-3" />
                 </div>
               </StaggerItem>
             ))}
@@ -331,15 +328,15 @@ export default async function ServicePage({ params }: PageProps) {
         </section>
 
         {/* 4. METRICS / BENEFITS ROW */}
-        <section className="border-y border-border/40 bg-accent/10 py-20 md:py-24 relative">
+        <section className="border-y border-zinc-850 bg-zinc-900/10 py-20 md:py-24 relative">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-center">
               {service.benefits.map((benefit, idx) => (
                 <div key={idx} className="space-y-2">
-                  <div className="text-4xl sm:text-6xl font-extrabold tracking-tight text-cyan-400 font-mono">
+                  <div className="text-4xl sm:text-6xl font-extrabold tracking-tight text-primary font-mono">
                     {benefit.num}
                   </div>
-                  <div className="text-xs sm:text-sm font-mono uppercase tracking-widest text-muted-foreground">
+                  <div className="text-xs sm:text-sm font-mono uppercase tracking-widest text-muted-foreground font-semibold">
                     {benefit.label}
                   </div>
                 </div>
@@ -356,21 +353,21 @@ export default async function ServicePage({ params }: PageProps) {
         {/* 6. PROCESS TIMELINE STEPPER */}
         <section className="max-w-7xl mx-auto px-6 py-24 md:py-32 border-t border-border/40">
           <SectionHeader
-            tag="Our Workflow"
-            title={<>Timeline & <span className="text-cyan-400">Delivery Process</span></>}
-            subtitle="How we transition your workflows from requirements gathering to robust production setups."
+            tag="Methodology"
+            title="Advisory & Delivery Timeline"
+            subtitle="How we transition your cloud workloads from initial audit reviews to governed production setups."
             align="center"
             className="mb-16"
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
             {processSteps.map((step, idx) => (
-              <div key={idx} className="glass-card p-6 rounded-xl border border-border/40 relative space-y-4 shadow-sm hover:border-cyan-500/20 transition-all duration-300">
-                <div className="absolute top-4 right-4 text-3xl font-extrabold text-cyan-500/10 font-mono">
+              <div key={idx} className="p-6 rounded-xl border border-zinc-850 bg-zinc-950/20 relative space-y-4 shadow-sm hover:border-primary/20 transition-all duration-300">
+                <div className="absolute top-4 right-4 text-3xl font-extrabold text-primary/10 font-mono">
                   {step.num}
                 </div>
                 <h4 className="text-base sm:text-lg font-display font-bold text-foreground pt-4">{step.title}</h4>
-                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
                   {step.desc}
                 </p>
               </div>
@@ -380,12 +377,12 @@ export default async function ServicePage({ params }: PageProps) {
 
         {/* 7. CLIENT TESTIMONIALS */}
         <section className="max-w-7xl mx-auto px-6 py-24 md:py-32 border-t border-border/40 relative">
-          <div className="absolute top-[20%] left-[10%] w-[300px] h-[300px] rounded-full bg-cyan-500/5 blur-[95px] pointer-events-none -z-10" />
+          <div className="absolute top-[20%] left-[10%] w-[300px] h-[300px] rounded-full bg-blue-500/5 blur-[95px] pointer-events-none -z-10" />
           
           <SectionHeader
-            tag="Validation"
-            title={<>Client <span className="text-cyan-400">Outcomes & Reviews</span></>}
-            subtitle="See what our clients say about partnering with our senior engineering teams."
+            tag="Impact Validation"
+            title="Enterprise Success Stories"
+            subtitle="How we've partner with engineering leadership teams to deliver key modernizations."
             align="center"
             className="mb-16"
           />
@@ -407,17 +404,17 @@ export default async function ServicePage({ params }: PageProps) {
               return displayReviews.map((item, index) => {
                 const avatarStyle = getAvatarStyle(item.name);
                 return (
-                  <div key={index} className="glass-card p-8 rounded-xl border border-border/40 hover:border-cyan-500/30 transition-all duration-300 flex flex-col justify-between relative group">
-                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed italic relative z-10 mb-8">
+                  <div key={index} className="p-8 rounded-xl border border-zinc-800 bg-zinc-950/20 hover:border-zinc-700 transition-all duration-300 flex flex-col justify-between relative group">
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed italic relative z-10 mb-8 font-sans">
                       &ldquo;{item.testimonial}&rdquo;
                     </p>
-                    <div className="flex items-center gap-4 border-t border-border/40 pt-6">
-                      <div className={`w-10 h-10 rounded-full ${avatarStyle} flex items-center justify-center font-bold font-mono text-xs shadow-md shrink-0`}>
+                    <div className="flex items-center gap-4 border-t border-zinc-900/60 pt-6">
+                      <div className={`w-10 h-10 rounded-full ${avatarStyle} flex items-center justify-center font-bold font-mono text-xs shadow-md shrink-0 border border-zinc-800`}>
                         {getInitials(item.name)}
                       </div>
-                      <div>
-                        <h4 className="text-sm font-bold text-foreground">{item.name}</h4>
-                        <p className="text-xs text-muted-foreground">
+                      <div className="min-w-0">
+                        <h4 className="text-sm font-bold text-foreground truncate">{item.name}</h4>
+                        <p className="text-xs text-muted-foreground truncate font-sans">
                           {item.designation}
                         </p>
                       </div>
@@ -431,12 +428,12 @@ export default async function ServicePage({ params }: PageProps) {
 
         {/* 8. FAQ ACCORDION SECTION */}
         <section className="max-w-4xl mx-auto px-6 py-24 md:py-32 border-t border-border/40 relative">
-          <div className="absolute bottom-[10%] left-[-15%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[100px] pointer-events-none -z-10" />
+          <div className="absolute bottom-[10%] left-[-15%] w-[350px] h-[350px] rounded-full bg-blue-500/5 blur-[100px] pointer-events-none -z-10" />
 
           <SectionHeader
-            tag="Faqs"
-            title={<>Dedicated Service <span className="text-cyan-400">Faq Details</span></>}
-            subtitle="Read quick technical answers regarding project durations, setups, and developer access."
+            tag="Q&A"
+            title="Practice FAQ Details"
+            subtitle="Advisory answers regarding engagement scope, billing schedules, and compliance configurations."
             align="center"
             className="mb-16"
           />
@@ -447,9 +444,9 @@ export default async function ServicePage({ params }: PageProps) {
         {/* 9. CTA CONVERSION BLOCK */}
         <div className="py-12 border-t border-border/40">
           <CtaBlock
-            title={`Ready to scale your ${service.title}?`}
-            description="Schedule a free 30-minute consultation with a senior architect to discuss your budget, setup requirements, and timeline milestones."
-            btnText="Book Free Consultation"
+            title={`Discuss Your ${service.title} Goals`}
+            description="Schedule a 30-minute advisory call with our senior architects to map out infrastructure budgets, timeline scopes, and risk checkpoints."
+            btnText="Book Free Assessment"
             btnHref="/contact"
           />
         </div>
