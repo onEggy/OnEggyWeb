@@ -118,7 +118,7 @@ export default function CareersPage() {
         {/* Header */}
         <SectionHeader
           tag="Join the Team"
-          title={<>Build the Future of <span className="gradient-text">Cloud Infrastructure</span></>}
+          title={<>Build the Future of <span className="text-cyan-400">Cloud Infrastructure</span></>}
           subtitle="At OnEggy Technologies, we value autonomy, technical mastery, and transparency. Join our remote-first, high-growth engineering team and tackle critical cloud challenges."
           align="left"
           className="max-w-3xl"

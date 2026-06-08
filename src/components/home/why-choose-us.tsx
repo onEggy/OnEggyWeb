@@ -96,7 +96,7 @@ No changes. Infrastructure matches spec.
         <div className="lg:col-span-5 space-y-6">
           <SectionHeader
             tag="Why Partner With Us"
-            title={<>Engineered for <span className="gradient-text">Absolute Reliability</span> & Scale</>}
+            title={<>Engineered for <span className="text-cyan-400">Absolute Reliability</span> & Scale</>}
             subtitle="We partner with startup founders and enterprise CTOs to replace manual deployment friction with declarative, drift-free platform automation."
             align="left"
             className="mb-0"

@@ -159,7 +159,7 @@ export default function BlogPage() {
 
         <SectionHeader
           tag="Our Insights"
-          title={<>The OnEggy <span className="gradient-text">Engineering Blog</span></>}
+          title={<>The OnEggy <span className="text-cyan-400">Engineering Blog</span></>}
           subtitle="Stay up to date with the latest industry insights, tutorials, and best practices in DevOps, Kubernetes, and Cloud-Native platforms."
           align="left"
           className="max-w-3xl"

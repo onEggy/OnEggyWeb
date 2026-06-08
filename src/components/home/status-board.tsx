@@ -118,7 +118,7 @@ export function StatusBoard() {
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground leading-tight">
               Production-Grade <br />
-              <span className="gradient-text">Uptime Telemetry</span>
+              <span className="text-cyan-400">Uptime Telemetry</span>
             </h2>
           </div>
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">

@@ -52,7 +52,7 @@ export function ArchitectureVisuals() {
 
       <SectionHeader
         tag="Security First"
-        title={<>Enterprise AWS <span className="gradient-text">Landing Zone</span> Blueprint</>}
+        title={<>Enterprise AWS <span className="text-cyan-400">Landing Zone</span> Blueprint</>}
         subtitle="We build multi-account AWS architectures following strict Well-Architected Framework guidelines to prevent configuration drift and lateral attacks."
         align="center"
         className="mb-16"

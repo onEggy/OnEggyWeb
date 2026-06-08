@@ -58,7 +58,7 @@ export function ScalingJourney() {
 
       <SectionHeader
         tag="Lifecycle Strategy"
-        title={<>Partnership for Your <span className="gradient-text">Entire Scaling Journey</span></>}
+        title={<>Partnership for Your <span className="text-cyan-400">Entire Scaling Journey</span></>}
         subtitle="Your infrastructure requirements change at each stage of company growth. We design your platforms to survive scale spikes and pass enterprise security audits."
         align="left"
         className="mb-16 max-w-3xl"

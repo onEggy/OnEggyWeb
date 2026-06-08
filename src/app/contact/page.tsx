@@ -70,7 +70,7 @@ export default function ContactPage() {
           <div className="space-y-6">
             <SectionHeader
               tag="Get in Touch"
-              title={<>Ready to <span className="gradient-text">Transform?</span></>}
+              title={<>Ready to <span className="text-cyan-400">Transform?</span></>}
               subtitle="Have questions about Kubernetes deployments or AWS cost reduction options? Reach out to schedule a free architecture consultation session."
               align="left"
               className="mb-0"

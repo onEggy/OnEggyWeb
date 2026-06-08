@@ -41,12 +41,12 @@ export function AssessmentCta() {
           {/* Copy and CTA block */}
           <div className="lg:col-span-5 space-y-6">
             <div className="space-y-3">
-              <span className="text-xs font-mono font-semibold text-cyan-500 uppercase tracking-widest block">
+              <span className="text-xs font-mono font-semibold text-cyan-400 uppercase tracking-widest block">
                 Free Assessment Offer
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground leading-tight">
                 Get a Free <br />
-                <span className="gradient-text">Cloud Cost & Security Audit</span>
+                <span className="text-cyan-400">Cloud Cost & Security Audit</span>
               </h2>
             </div>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">

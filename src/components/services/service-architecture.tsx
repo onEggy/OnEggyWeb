@@ -448,7 +448,7 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
 
       <SectionHeader
         tag="Security & Architecture"
-        title={<>{getSectionTitle()} for <span className="gradient-text">{serviceName}</span></>}
+        title={<>{getSectionTitle()} for <span className="text-cyan-400">{serviceName}</span></>}
         subtitle={getSectionSubtitle()}
         align="center"
         className="mb-16"

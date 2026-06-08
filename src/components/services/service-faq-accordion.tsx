@@ -34,13 +34,16 @@ export function ServiceFaqAccordion({ faqs }: ServiceFaqAccordionProps) {
           >
             <button
               onClick={() => toggleFAQ(index)}
-              className="w-full flex items-center justify-between p-5 text-left font-semibold text-foreground hover:text-cyan-500 transition-colors cursor-pointer select-none"
+              aria-expanded={isOpen}
+              aria-controls={`service-faq-answer-${index}`}
+              id={`service-faq-button-${index}`}
+              className="w-full flex items-center justify-between p-5 text-left font-semibold text-foreground hover:text-cyan-400 transition-colors cursor-pointer select-none"
             >
               <span className="text-sm sm:text-base pr-4">{item.question}</span>
               <ChevronDown
                 className={cn(
                   "h-4 w-4 shrink-0 transition-transform duration-300 text-muted-foreground",
-                  isOpen ? "rotate-180 text-cyan-500" : ""
+                  isOpen ? "rotate-180 text-cyan-400" : ""
                 )}
               />
             </button>
@@ -48,6 +51,9 @@ export function ServiceFaqAccordion({ faqs }: ServiceFaqAccordionProps) {
             <AnimatePresence initial={false}>
               {isOpen && (
                 <motion.div
+                  id={`service-faq-answer-${index}`}
+                  role="region"
+                  aria-labelledby={`service-faq-button-${index}`}
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}

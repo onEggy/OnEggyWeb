@@ -22,7 +22,7 @@ export function ServicesHero() {
         <FadeUp delay={0.1}>
           <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-foreground leading-tight">
             Enterprise Cloud-Native &<br />
-            <span className="gradient-text">Software Engineering</span>
+            <span className="text-cyan-400">Software Engineering</span>
           </h1>
         </FadeUp>
 

@@ -43,7 +43,7 @@ export function ServicesFaqs() {
 
       <SectionHeader
         tag="Services FAQ"
-        title={<>Cloud Partnerships & <span className="gradient-text">Operations FAQs</span></>}
+        title={<>Cloud Partnerships & <span className="text-cyan-400">Operations FAQs</span></>}
         subtitle="Common questions from tech founders and engineering directors about workspace sharing, key handovers, and system ownership."
         align="center"
         className="mb-16"
@@ -59,13 +59,16 @@ export function ServicesFaqs() {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between p-5 text-left font-semibold text-foreground hover:text-cyan-500 transition-colors cursor-pointer select-none"
+                aria-expanded={isOpen}
+                aria-controls={`services-faq-answer-${index}`}
+                id={`services-faq-button-${index}`}
+                className="w-full flex items-center justify-between p-5 text-left font-semibold text-foreground hover:text-cyan-400 transition-colors cursor-pointer select-none"
               >
                 <span className="text-sm sm:text-base pr-4">{item.question}</span>
                 <ChevronDown
                   className={cn(
                     "h-4 w-4 shrink-0 transition-transform duration-300 text-muted-foreground",
-                    isOpen ? "rotate-180 text-cyan-500" : ""
+                    isOpen ? "rotate-180 text-cyan-400" : ""
                   )}
                 />
               </button>
@@ -73,6 +76,9 @@ export function ServicesFaqs() {
               <AnimatePresence initial={false}>
                 {isOpen && (
                   <motion.div
+                    id={`services-faq-answer-${index}`}
+                    role="region"
+                    aria-labelledby={`services-faq-button-${index}`}
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}

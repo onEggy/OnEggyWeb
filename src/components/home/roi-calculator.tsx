@@ -27,7 +27,7 @@ export function RoiCalculator() {
           Cost Optimizations
         </span>
         <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-foreground">
-          Calculate Your <span className="gradient-text">Cloud ROI</span>
+          Calculate Your <span className="text-cyan-400">Cloud ROI</span>
         </h2>
         <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
           Over-provisioned EKS clusters, idle RDS nodes, and un-optimized databases drain cash. Slide the bar to see what you could save with our senior architects.
