@@ -183,7 +183,7 @@ export default async function ServicePage({ params }: PageProps) {
             </FadeUp>
 
             <FadeUp delay={0.1}>
-              <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-foreground leading-tight">
+              <h1 className="text-4xl sm:text-6xl font-display font-bold tracking-tight text-foreground leading-tight">
                 {service.title}
                 <br />
                 <span className="text-cyan-400">{service.headline}</span>
@@ -257,7 +257,7 @@ export default async function ServicePage({ params }: PageProps) {
               <div className="absolute top-[20%] right-[10%] w-[120px] h-[120px] rounded-full bg-red-500/5 blur-[50px] pointer-events-none" />
               <div className="flex items-center gap-3 text-red-400 font-semibold">
                 <AlertTriangle className="h-6 w-6" />
-                <h3 className="text-xl font-bold">Scaling Roadblocks</h3>
+                <h3 className="text-xl font-display font-bold">Scaling Roadblocks</h3>
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Many businesses hit a bottleneck due to manual environments, drift, security exposures, and configuration errors:
@@ -277,7 +277,7 @@ export default async function ServicePage({ params }: PageProps) {
               <div className="absolute top-[20%] right-[10%] w-[120px] h-[120px] rounded-full bg-cyan-500/5 blur-[50px] pointer-events-none" />
               <div className="flex items-center gap-3 text-cyan-400 font-semibold">
                 <CheckCircle2 className="h-6 w-6" />
-                <h3 className="text-xl font-bold">The OnEggy Way</h3>
+                <h3 className="text-xl font-display font-bold">The OnEggy Way</h3>
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 We design clean solutions directly in code to secure infrastructure and automate operations:
@@ -312,7 +312,7 @@ export default async function ServicePage({ params }: PageProps) {
               >
                 <div className="space-y-3">
                   <span className="text-xs font-mono text-cyan-500/60 font-semibold uppercase">capability {idx + 1}</span>
-                  <h3 className="text-lg sm:text-xl font-bold text-foreground group-hover:text-cyan-400 transition-colors">
+                  <h3 className="text-lg sm:text-xl font-display font-bold text-foreground group-hover:text-cyan-400 transition-colors">
                     {feature.title}
                   </h3>
                   <p className="text-sm font-semibold text-foreground/80 leading-relaxed">
@@ -369,7 +369,7 @@ export default async function ServicePage({ params }: PageProps) {
                 <div className="absolute top-4 right-4 text-3xl font-extrabold text-cyan-500/10 font-mono">
                   {step.num}
                 </div>
-                <h4 className="text-base sm:text-lg font-bold text-foreground pt-4">{step.title}</h4>
+                <h4 className="text-base sm:text-lg font-display font-bold text-foreground pt-4">{step.title}</h4>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                   {step.desc}
                 </p>

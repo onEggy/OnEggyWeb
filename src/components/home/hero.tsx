@@ -86,7 +86,7 @@ export function Hero() {
             </FadeIn>
 
             <FadeUp delay={0.1}>
-              <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.08] text-foreground font-sans">
+              <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.08] text-foreground font-display">
                 We build and automate <br className="hidden sm:inline" />
                 <span className="text-cyan-400">production-grade</span> cloud platforms.
               </h1>

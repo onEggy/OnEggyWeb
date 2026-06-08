@@ -145,7 +145,7 @@ export default function AboutPage() {
         {/* 2. COMPANY STORY & DNA (Asymmetric Split Screen) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start border-t border-border/20 pt-16">
           <div className="lg:col-span-6 space-y-6">
-            <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Our Story & Credentials</h2>
+            <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Our Story & Credentials</h2>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
               OnEggy Technologies was founded by senior systems architects who grew tired of seeing growing tech teams struggle with unstable EKS clusters, undocumented console tweaks, and bloated cloud invoices. We realized that while modern cloud ecosystems are highly powerful, they are brittle without senior-level design.
             </p>
@@ -190,7 +190,7 @@ export default function AboutPage() {
         <div className="space-y-12 border-t border-border/20 pt-16">
           <div className="max-w-xl space-y-3">
             <span className="text-xs font-mono font-semibold text-cyan-500 uppercase tracking-widest">Leadership Team</span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Tech & Strategy Direction</h2>
+            <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Tech & Strategy Direction</h2>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
               Meet the strategic mentors and founders guiding OnEggy Technologies:
             </p>
@@ -259,7 +259,7 @@ export default function AboutPage() {
         <div className="space-y-12 border-t border-border/20 pt-16">
           <div className="max-w-xl space-y-3">
             <span className="text-xs font-mono font-semibold text-cyan-500 uppercase tracking-widest">Engineering Squad</span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Developers, Architects & Designers</h2>
+            <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Developers, Architects & Designers</h2>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
               The technical specialists automating configurations and writing clean software codebases:
             </p>
@@ -333,7 +333,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start border-t border-border/20 pt-16">
           <div className="lg:col-span-5 space-y-4">
             <span className="text-xs font-mono font-semibold text-cyan-500 uppercase tracking-widest">Our Standards</span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Engineering Principles</h2>
+            <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Engineering Principles</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
               We enforce strict compliance checks, code reviews, and automated standards to guarantee absolute reliability.
             </p>
@@ -364,7 +364,7 @@ export default function AboutPage() {
         {/* 6. WORK CULTURE SECTION (Asymmetric blocks) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center border-t border-border/20 pt-16">
           <div className="lg:col-span-6 space-y-6">
-            <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Collaborative Work DNA</h2>
+            <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Collaborative Work DNA</h2>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
               We operate as a remote-first, asynchronous-heavy engineering squad. We avoid structural bureaucracy, administrative alignment blocks, and meeting bloat, allowing developers to focus purely on creating automated, clean configurations.
             </p>
