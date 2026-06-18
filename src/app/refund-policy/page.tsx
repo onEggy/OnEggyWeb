@@ -10,7 +10,7 @@ import {
   HelpCircle,
   ArrowRight
 } from "lucide-react";
-import { StaggerContainer, StaggerItem, FadeIn, FadeUp } from "@/components/animations/motion-wrappers";
+import { StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
 import { SectionHeader } from "@/components/common/section-header";
 
 export const metadata: Metadata = {
@@ -22,7 +22,6 @@ export const metadata: Metadata = {
 };
 
 export default function RefundPolicyPage() {
-  const currentYear = new Date().getFullYear();
 
   const policySections = [
     {
@@ -105,7 +104,7 @@ export default function RefundPolicyPage() {
             <span>Transparent Billing Standards</span>
           </div>
           <SectionHeader
-            title={<>Refund & <span className="gradient-text">Billing Policy</span></>}
+            title={<>Refund & <span className="text-cyan-400">Billing Policy</span></>}
             subtitle="Transparent guidelines protecting custom DevOps retainers, cloud-native deployments, and software engineering agreements."
             align="center"
             className="mb-0"

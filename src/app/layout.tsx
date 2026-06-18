@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter } from "next/font/google";
 import { Navbar } from "@/components/common/navbar";
 import { Footer } from "@/components/common/footer";
 import { ThemeProvider } from "@/components/providers/theme-provider";
@@ -7,6 +7,7 @@ import { ScrollProvider } from "@/components/providers/scroll-provider";
 import { CustomCursor } from "@/components/common/custom-cursor";
 import { SplashScreen } from "@/components/common/splash-screen";
 import { PageTransition } from "@/components/animations/page-transition";
+import { MotionConfig } from "framer-motion";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -18,6 +19,12 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
+
 
 export const metadata: Metadata = {
   title: {
@@ -66,7 +73,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground transition-colors duration-300">
         <ThemeProvider
@@ -75,15 +82,17 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ScrollProvider>
-            <CustomCursor />
-            <SplashScreen />
-            <Navbar />
-            <main className="flex-grow pt-24 pb-16">
-              <PageTransition>{children}</PageTransition>
-            </main>
-            <Footer />
-          </ScrollProvider>
+          <MotionConfig reducedMotion="user">
+            <ScrollProvider>
+              <CustomCursor />
+              <SplashScreen />
+              <Navbar />
+              <main className="flex-grow pt-24 pb-16">
+                <PageTransition>{children}</PageTransition>
+              </main>
+              <Footer />
+            </ScrollProvider>
+          </MotionConfig>
         </ThemeProvider>
       </body>
     </html>

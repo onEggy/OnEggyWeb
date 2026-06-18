@@ -1,11 +1,13 @@
 import React from "react";
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { ServicesHero } from "@/components/services/services-hero";
-import { ServicesGrid } from "@/components/services/services-grid";
-import { ArchitectureVisuals } from "@/components/services/architecture-visuals";
-import { EngagementModels } from "@/components/services/engagement-models";
-import { ServicesFaqs } from "@/components/services/services-faqs";
-import { CtaBlock } from "@/components/common/cta-block";
+
+const ServicesGrid = dynamic(() => import("@/components/services/services-grid").then((mod) => mod.ServicesGrid));
+const ArchitectureVisuals = dynamic(() => import("@/components/services/architecture-visuals").then((mod) => mod.ArchitectureVisuals));
+const EngagementModels = dynamic(() => import("@/components/services/engagement-models").then((mod) => mod.EngagementModels));
+const ServicesFaqs = dynamic(() => import("@/components/services/services-faqs").then((mod) => mod.ServicesFaqs));
+const CtaBlock = dynamic(() => import("@/components/common/cta-block").then((mod) => mod.CtaBlock));
 
 export const metadata: Metadata = {
   title: "Cloud-Native & DevOps Engineering Services | OnEggy",
@@ -42,11 +44,38 @@ export default function ServicesPage() {
     ]
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.oneggy.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://www.oneggy.com/services"
+      }
+    ]
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaMarkup).replace(/</g, "\\u003c"),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
+        }}
       />
       <div className="relative overflow-hidden min-h-screen">
         {/* 1. Services Hero Section */}
@@ -77,3 +106,4 @@ export default function ServicesPage() {
     </>
   );
 }
+

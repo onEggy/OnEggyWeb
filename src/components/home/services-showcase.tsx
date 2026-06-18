@@ -1,134 +1,132 @@
 "use client";
 
 import React from "react";
-import { Cloud, Settings, Layers, Smartphone, Code, Palette, Cpu, Eye, ArrowRight } from "lucide-react";
+import { Cloud, Layers, Settings, ShieldCheck, Code, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 import { SectionHeader } from "../common/section-header";
 import { StaggerContainer, StaggerItem } from "../animations/motion-wrappers";
 
-const services = [
-  {
-    icon: <Cloud className="h-6 w-6 text-cyan-400" />,
-    title: "AWS Managed Services",
-    desc: "Enterprise cloud configurations, multi-account structures (Landing Zones), cost audits, and secure resource automation.",
-    tag: "AWS. Cost. Scale.",
-    techs: ["/service/aws.svg"]
-  },
-  {
-    icon: <Settings className="h-6 w-6 text-teal-400" />,
-    title: "DevOps Consulting",
-    desc: "Eradicate manual errors. Build CI/CD pipelines, automate deployments, and configure Infrastructure as Code via Terraform.",
-    tag: "IaC. CI/CD. Pipelines.",
-    techs: ["/service/aws.svg", "/kubernetes.png"]
-  },
-  {
-    icon: <Layers className="h-6 w-6 text-indigo-400" />,
-    title: "Kubernetes Engineering",
-    desc: "Migrate containerized apps to EKS/AKS. Custom ingress configs, network policies, cluster auto-scaling, and Service Mesh.",
-    tag: "Containers. EKS. Helm.",
-    techs: ["/kubernetes.png", "/service/aws.svg"]
-  },
-  {
-    icon: <Cpu className="h-6 w-6 text-cyan-400" />,
-    title: "Platform Engineering",
-    desc: "Empower developer self-sufficiency. We engineer internal developer portals to abstract cloud complexity.",
-    tag: "IDP. Developer Velocity.",
-    techs: ["/kubernetes.png", "/service/node.svg"]
-  },
-  {
-    icon: <Code className="h-6 w-6 text-teal-400" />,
-    title: "Full Stack Development",
-    desc: "Design and build fast modern software. Clean Next.js, React, Node.js, and Django backend codebases.",
-    tag: "Next.js. React. Django.",
-    techs: ["/service/react.svg", "/service/node.svg", "/service/python.svg"]
-  },
-  {
-    icon: <Smartphone className="h-6 w-6 text-indigo-400" />,
-    title: "Mobile App Development",
-    desc: "Sleek iOS & Android mobile software built on top of React Native frameworks with offline syncing.",
-    tag: "React Native. iOS. Android.",
-    techs: ["/service/react.svg"]
-  },
-  {
-    icon: <Palette className="h-6 w-6 text-cyan-400" />,
-    title: "UI/UX Design",
-    desc: "Modern digital designs that convert. Wireframes, user experience research, premium visual interfaces, and prototypes.",
-    tag: "Figma. SaaS Design.",
-    techs: ["/service/html.svg", "/service/css.svg"]
-  },
-  {
-    icon: <Eye className="h-6 w-6 text-teal-400" />,
-    title: "Monitoring & Observability",
-    desc: "Zero blindspots. We configure centralized Prometheus, Grafana, OpenTelemetry, and Datadog alert boards.",
-    tag: "Logs. Metrics. Traces.",
-    techs: ["/service/aws.svg", "/kubernetes.png"]
-  },
-];
-
 export function ServicesShowcase() {
-  return (
-    <section className="relative max-w-7xl mx-auto px-6 py-20 border-t border-border/40">
-      {/* Glow Backdrop */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-cyan-500/5 blur-[120px] pointer-events-none -z-10" />
+  const practices = [
+    {
+      icon: <Cloud className="h-5 w-5 text-primary" />,
+      name: "AWS Cloud Operations & Landing Zones",
+      focus: "Cloud Modernization",
+      outcome: "Cost Control & Governance",
+      desc: "Architecting multi-account AWS Organizations via Control Tower and Control Tower SCPs. We design strict tenant boundaries, execute deep cost audits, and implement automated enterprise cost guardrails.",
+      metrics: "Average 38% cost reduction",
+      link: "/services/aws-cloud-managed-services"
+    },
+    {
+      icon: <Layers className="h-5 w-5 text-blue-400" />,
+      name: "Kubernetes & Container Orchestration",
+      focus: "Platform Scale",
+      outcome: "High Availability & Resiliency",
+      desc: "Containerizing monolithic applications and deploying to AWS EKS or Azure AKS. We configure ingress routers, network policy boundaries, HPA scaling, and zero-downtime cluster upgrade paths.",
+      metrics: "99.99% cluster SLA uptime",
+      link: "/services/kubernetes"
+    },
+    {
+      icon: <Settings className="h-5 w-5 text-slate-400" />,
+      name: "IaC & GitOps Release Automation",
+      focus: "DevOps Consulting",
+      outcome: "Continuous Delivery Velocity",
+      desc: "Replacing console adjustments with declarative Terraform and Ansible automation blueprints. We enforce continuous verify stages and GitOps drift matching using ArgoCD.",
+      metrics: "10x faster build cycles",
+      link: "/services/infrastructure-automation"
+    },
+    {
+      icon: <Code className="h-5 w-5 text-primary" />,
+      name: "Enterprise Application Modernization",
+      focus: "Software Engineering",
+      outcome: "Developer Velocity & Scale",
+      desc: "Developing high-performance Next.js frontends and secure API backends in Node.js or Python. We establish database replication, SAML SSO authentication, and CI/CD pipelines.",
+      metrics: "60fps frontend performance",
+      link: "/services/full-stack-web-development"
+    },
+    {
+      icon: <ShieldCheck className="h-5 w-5 text-blue-400" />,
+      name: "DevSecOps & Regulatory Audits",
+      focus: "Risk Advisory",
+      outcome: "PCI-DSS & HIPAA Compliance",
+      desc: "Integrating static code checks and vulnerability monitors directly into deployment lanes. We align cloud environments with strict security controls for external compliance reviews.",
+      metrics: "Audit-ready cloud environments",
+      link: "/services/security-devsecops"
+    }
+  ];
 
+  return (
+    <section className="relative max-w-7xl mx-auto px-6 py-24 border-t border-border/40">
       <SectionHeader
-        tag="What We Do"
-        title={<>Enterprise-Grade <span className="gradient-text">Engineering Services</span></>}
-        subtitle="We design, automate, and scale secure modern software products. Partner with us to speed up developer output and lower cloud costs."
+        tag="Services Catalog"
+        title="Strategic Technology Capabilities"
+        subtitle="We help enterprise organizations modernize infrastructure, accelerate delivery pipelines, and establish secure compliance postures."
         align="center"
-        className="mb-16"
+        className="mb-16 max-w-4xl"
       />
 
-      <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {services.map((item, index) => (
+      {/* Solutions Index: Editorial list/table layout */}
+      <StaggerContainer className="space-y-4">
+        {practices.map((practice) => (
           <StaggerItem
-            key={index}
-            className="glass-card hover:border-cyan-500/40 p-6 rounded-xl flex flex-col justify-between min-h-[270px] h-full transition-all group hover:-translate-y-1 shadow-sm relative overflow-hidden"
+            key={practice.name}
+            className="p-6 md:p-8 rounded-xl border border-zinc-900 bg-zinc-950/20 hover:border-zinc-800 hover:bg-zinc-900/10 transition-all duration-300 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center group"
           >
-            {/* Subtle glow border overlay */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/0 via-cyan-500/0 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
-            <div className="space-y-4">
-              <div className="w-10 h-10 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center group-hover:scale-105 transition-transform">
-                {item.icon}
+            {/* Practice Name and Icon (5 columns) */}
+            <div className="lg:col-span-5 flex items-start gap-4">
+              <div className="w-10 h-10 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
+                {practice.icon}
               </div>
-              <div className="space-y-2">
-                <span className="text-[10px] font-mono text-cyan-500 font-semibold tracking-wider block">
-                  {item.tag}
+              <div className="space-y-1">
+                <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest font-semibold block">
+                  {practice.focus}
                 </span>
-                <h3 className="text-lg font-bold text-foreground group-hover:text-cyan-500 transition-colors">
-                  {item.title}
+                <h3 className="text-base sm:text-lg font-bold text-foreground font-display group-hover:text-primary transition-colors">
+                  {practice.name}
                 </h3>
-                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3">
-                  {item.desc}
-                </p>
               </div>
             </div>
-            <div className="pt-4 flex items-center justify-between border-t border-border/20 mt-4">
-              <div className="flex items-center gap-1.5">
-                {item.techs?.map((t, idx) => (
-                  <div key={idx} className="relative w-5 h-5 rounded bg-background/50 border border-border/40 flex items-center justify-center p-0.5" title={t.split('/').pop()?.split('.')[0]}>
-                    <Image 
-                      src={t} 
-                      alt="tech logo" 
-                      fill 
-                      sizes="20px" 
-                      className="object-contain" 
-                    />
-                  </div>
-                ))}
-              </div>
+
+            {/* Description (4 columns) */}
+            <div className="lg:col-span-4 lg:px-4">
+              <p className="text-xs text-muted-foreground leading-relaxed font-sans">
+                {practice.desc}
+              </p>
+            </div>
+
+            {/* Strategic Outcome Metrics (2 columns) */}
+            <div className="lg:col-span-2 space-y-1 text-left lg:text-right">
+              <span className="text-[9px] uppercase tracking-wider text-muted-foreground font-mono font-semibold block">
+                Target Outcome
+              </span>
+              <span className="text-xs font-mono font-bold text-primary block">
+                {practice.metrics}
+              </span>
+            </div>
+
+            {/* Action Arrow (1 column) */}
+            <div className="lg:col-span-1 flex justify-start lg:justify-end">
               <Link
-                href="/services"
-                className="text-[11px] font-semibold text-cyan-500 hover:text-cyan-400 inline-flex items-center gap-1 group/btn"
+                href={practice.link}
+                className="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 group-hover:bg-primary group-hover:border-primary flex items-center justify-center transition-all duration-300 cursor-pointer"
+                aria-label={`Explore our ${practice.name} practice`}
               >
-                Learn More <ArrowRight className="h-3 w-3 group-hover/btn:translate-x-1 transition-transform" />
+                <ArrowRight className="h-4 w-4 text-zinc-400 group-hover:text-primary-foreground transition-colors" />
               </Link>
             </div>
           </StaggerItem>
         ))}
       </StaggerContainer>
+
+      {/* Corporate Capabilities Footer Note */}
+      <div className="mt-12 text-center">
+        <p className="text-xs text-muted-foreground font-sans">
+          Need a custom engagement model?{" "}
+          <Link href="/contact" className="text-primary hover:underline font-semibold">
+            Speak with our senior client directors
+          </Link>
+        </p>
+      </div>
     </section>
   );
 }

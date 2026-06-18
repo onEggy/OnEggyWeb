@@ -1,6 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
-import { Mail, Phone, MapPin, Calendar } from "lucide-react";
+import { Mail, Phone, MapPin, Calendar, Clock } from "lucide-react";
 import { FadeIn } from "@/components/animations/motion-wrappers";
 import { SectionHeader } from "@/components/common/section-header";
 import { ContactForm } from "@/components/contact/contact-form";
@@ -27,15 +27,42 @@ export default function ContactPage() {
     }
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.oneggy.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Contact",
+        "item": "https://www.oneggy.com/contact"
+      }
+    ]
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaMarkup).replace(/</g, "\\u003c"),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
+        }}
       />
       <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-16">
         {/* Decorative Orb */}
-        <div className="absolute top-[20%] left-[-10%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[80px] pointer-events-none -z-10 animate-pulse" />
+        <div className="absolute top-[20%] left-[-10%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[80px] pointer-events-none -z-10" />
         <div className="absolute bottom-[10%] right-[-10%] w-[300px] h-[300px] rounded-full bg-teal-500/5 blur-[80px] pointer-events-none -z-10" />
 
         {/* Left Block - Contact Info (5 columns) */}
@@ -43,64 +70,71 @@ export default function ContactPage() {
           <div className="space-y-6">
             <SectionHeader
               tag="Get in Touch"
-              title={<>Ready to <span className="gradient-text">Transform?</span></>}
+              title={<>Ready to <span className="text-cyan-400">Transform?</span></>}
               subtitle="Have questions about Kubernetes deployments or AWS cost reduction options? Reach out to schedule a free architecture consultation session."
               align="left"
               className="mb-0"
             />
 
-            <FadeIn delay={0.2} className="space-y-6 pt-4">
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-background border border-border/40 flex items-center justify-center shadow-sm">
-                  <Mail className="h-5 w-5 text-cyan-500" />
+            <FadeIn delay={0.2} className="divide-y divide-border/25 pt-4">
+              <div className="flex items-center gap-4 py-4 first:pt-0">
+                <div className="w-9 h-9 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0 shadow-sm">
+                  <Mail className="h-4.5 w-4.5 text-cyan-400" />
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase tracking-wider text-muted-foreground block font-mono">Email Us</span>
-                  <a href="mailto:ask@oneggy.com" className="text-sm font-semibold hover:text-cyan-500 transition-colors">
+                  <span className="text-[9px] uppercase tracking-wider text-muted-foreground block font-mono">Email Us</span>
+                  <a href="mailto:ask@oneggy.com" className="text-sm font-semibold hover:text-cyan-400 transition-colors">
                     ask@oneggy.com
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-background border border-border/40 flex items-center justify-center shadow-sm">
-                  <Phone className="h-5 w-5 text-teal-500" />
+              <div className="flex items-center gap-4 py-4">
+                <div className="w-9 h-9 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0 shadow-sm">
+                  <Phone className="h-4.5 w-4.5 text-teal-400" />
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase tracking-wider text-muted-foreground block font-mono">Call Us</span>
-                  <a href="tel:+919811133005" className="text-sm font-semibold hover:text-cyan-500 transition-colors">
+                  <span className="text-[9px] uppercase tracking-wider text-muted-foreground block font-mono">Call Us</span>
+                  <a href="tel:+919811133005" className="text-sm font-semibold hover:text-cyan-400 transition-colors">
                     +91 98111 33005
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-background border border-border/40 flex items-center justify-center shadow-sm">
-                  <MapPin className="h-5 w-5 text-indigo-500" />
+              <div className="flex items-center gap-4 py-4 last:pb-0">
+                <div className="w-9 h-9 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0 shadow-sm">
+                  <MapPin className="h-4.5 w-4.5 text-indigo-400" />
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase tracking-wider text-muted-foreground block font-mono">Location</span>
+                  <span className="text-[9px] uppercase tracking-wider text-muted-foreground block font-mono">Location</span>
                   <span className="text-sm font-semibold">Gurgaon, Delhi NCR, India</span>
                 </div>
               </div>
             </FadeIn>
           </div>
 
-          <FadeIn delay={0.3} className="p-6 rounded-xl border border-border/40 bg-background/50 backdrop-blur-sm space-y-4">
-            <h2 className="text-base font-bold text-foreground inline-flex items-center gap-2">
-              <Calendar className="h-5 w-5 text-cyan-500" /> Need a meeting quickly?
-            </h2>
+          {/* Quick Meeting Panel */}
+          <FadeIn delay={0.3} className="p-5 rounded-xl border border-border bg-background/25 space-y-4 max-w-sm">
+            <h3 className="text-sm font-bold text-foreground inline-flex items-center gap-2 font-mono">
+              <Calendar className="h-4.5 w-4.5 text-cyan-400" /> Need quick response?
+            </h3>
             <p className="text-xs text-muted-foreground leading-relaxed">
               Schedule a direct 30-minute cloud-native engineering assessment with our senior architect.
             </p>
-            <a
-              href="https://cal.com/oneggy-aakash-sharma/30min"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center text-xs font-semibold h-9 px-4 rounded-md bg-foreground text-background hover:bg-foreground/90 transition-colors"
-            >
-              Book Free Meeting
-            </a>
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href="https://cal.com/oneggy-aakash-sharma/30min"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center text-xs font-semibold h-9 px-4 rounded-md bg-foreground text-background hover:bg-foreground/90 transition-colors"
+              >
+                Book Review
+              </a>
+              <div className="flex items-center gap-1 text-[10px] font-mono text-muted-foreground">
+                <Clock className="h-3.5 w-3.5" />
+                <span>Next slot today</span>
+              </div>
+            </div>
           </FadeIn>
         </div>
 

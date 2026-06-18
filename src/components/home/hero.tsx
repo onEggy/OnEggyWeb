@@ -3,10 +3,10 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { useMotionValue } from "framer-motion";
 import { HeroVisual } from "./hero-visual";
-import { FadeUp, FadeIn, StaggerContainer, StaggerItem, Float } from "../animations/motion-wrappers";
+import { FadeUp, FadeIn, StaggerContainer, StaggerItem } from "../animations/motion-wrappers";
 
 // Animated counter helper component for premium counts
 function StatCounter({ value, suffix = "", duration = 1.5 }: { value: number; suffix?: string; duration?: number }) {
@@ -53,7 +53,7 @@ export function Hero() {
   return (
     <section
       onMouseMove={handleMouseMove}
-      className="relative min-h-[calc(100vh-6rem)] w-full flex items-center justify-center overflow-hidden border-b border-border/30 py-12 md:py-24"
+      className="relative min-h-[calc(100vh-6rem)] w-full flex items-center justify-center overflow-hidden border-b border-border/30 py-16 md:py-32"
     >
       {/* Grid backdrop */}
       <div className="grid-bg absolute inset-0 opacity-[0.25] pointer-events-none" />
@@ -72,152 +72,113 @@ export function Hero() {
       <div className="absolute top-[10%] left-[-10%] w-[450px] h-[450px] rounded-full bg-cyan-500/10 blur-[110px] pointer-events-none animate-pulse" style={{ animationDuration: "6s" }} />
       <div className="absolute bottom-[10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-teal-500/5 blur-[120px] pointer-events-none animate-pulse" style={{ animationDuration: "10s" }} />
 
-      {/* Floating Tech Badges - Left/Right sides */}
-      {/* AWS */}
-      <Float speed={4} className="absolute left-[8%] top-[25%] z-20 hidden lg:block">
-        <div className="glass-card px-3 py-1.5 rounded-full border border-orange-500/20 text-orange-400 flex items-center gap-1.5 shadow-md shadow-orange-500/5">
-          <div className="relative w-3.5 h-3.5">
-            <Image 
-              src="/service/aws.svg" 
-              alt="AWS" 
-              fill 
-              sizes="14px" 
-              className="object-contain" 
-            />
-          </div>
-          <span className="text-[11px] font-mono font-semibold uppercase tracking-wider">AWS</span>
-        </div>
-      </Float>
-
-      {/* Kubernetes */}
-      <Float speed={4.5} className="absolute left-[4%] top-[60%] z-20 hidden lg:block">
-        <div className="glass-card px-3 py-1.5 rounded-full border border-blue-500/20 text-blue-400 flex items-center gap-1.5 shadow-md shadow-blue-500/5">
-          <div className="relative w-3.5 h-3.5">
-            <Image 
-              src="/kubernetes.png" 
-              alt="Kubernetes" 
-              fill 
-              sizes="14px" 
-              className="object-contain" 
-            />
-          </div>
-          <span className="text-[11px] font-mono font-semibold uppercase tracking-wider">Kubernetes</span>
-        </div>
-      </Float>
-
-      {/* Terraform */}
-      <Float speed={5} className="absolute right-[5%] bottom-[20%] z-20 hidden lg:block">
-        <div className="glass-card px-3 py-1.5 rounded-full border border-purple-500/20 text-purple-400 flex items-center gap-1.5 shadow-md shadow-purple-500/5">
-          <svg className="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24">
-            <path d="M0 0h7.5v7.5h-7.5zm8.25 0h7.5v7.5h-7.5zm8.25 8.25h7.5v7.5h-7.5zm-16.5 0h7.5v7.5h-7.5z" />
-          </svg>
-          <span className="text-[11px] font-mono font-semibold uppercase tracking-wider">Terraform</span>
-        </div>
-      </Float>
-
-      {/* Next.js */}
-      <Float speed={3.5} className="absolute right-[10%] top-[20%] z-20 hidden lg:block">
-        <div className="glass-card px-3 py-1.5 rounded-full border border-border/80 text-foreground flex items-center gap-1.5 shadow-md">
-          <div className="relative w-3.5 h-3.5 dark:invert">
-            <Image 
-              src="/next.svg" 
-              alt="Next.js" 
-              fill 
-              sizes="14px" 
-              className="object-contain" 
-            />
-          </div>
-          <span className="text-[11px] font-mono font-semibold uppercase tracking-wider">Next.js</span>
-        </div>
-      </Float>
-
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10 w-full">
         
-        {/* Left Column: Premium Marketing Copy & Stats */}
+        {/* Left Column: Premium Advisory Copy & Stats */}
         <div className="lg:col-span-7 flex flex-col justify-center space-y-8 text-left">
           
           <div className="space-y-4">
             <FadeIn>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-background/50 backdrop-blur-sm text-xs text-muted-foreground shadow-sm">
-                <Sparkles className="h-3.5 w-3.5 text-cyan-400" />
-                <span>Your Dedicated Cloud & Platform Engineering Partner</span>
+                <CheckCircle2 className="h-3.5 w-3.5 text-primary" />
+                <span>Enterprise Technology Advisory & Consulting</span>
               </div>
             </FadeIn>
-
+ 
             <FadeUp delay={0.1}>
-              <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] text-foreground">
-                Scale Your Platform.<br />
-                <span className="gradient-text">Automate DevOps.</span><br />
-                Startup to Enterprise.
+              <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.08] text-foreground font-display">
+                Cloud Modernization & <br className="hidden sm:inline" />
+                <span className="text-primary">Platform Engineering</span> for Enterprise.
               </h1>
             </FadeUp>
-
+ 
             <FadeUp delay={0.2}>
-              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl">
-                We engineer production-grade cloud environments, automate Kubernetes pipelines, and optimize infrastructure spend. Partner with senior architects to accelerate release cycles with 100% transparency.
+              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl font-sans">
+                We partner with corporate technology leaders to engineer resilient AWS landing zones, automate DevSecOps compliance, and deploy secure developer portals. Outcome-driven. Consulting-led.
               </p>
             </FadeUp>
           </div>
-
+ 
           {/* Interactive CTAs */}
-          <FadeUp delay={0.3} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-            <Link
-              href="/contact"
-              className="relative inline-flex items-center justify-center h-12 px-6 rounded-lg bg-foreground text-background font-medium hover:bg-foreground/90 transition-all shadow-lg overflow-hidden group isolate"
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-teal-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
-              <span className="relative z-10 group-hover:text-black transition-colors flex items-center gap-2">
-                Schedule Architecture Discussion <ArrowRight className="h-4 w-4" />
-              </span>
-            </Link>
-            
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center h-12 px-6 rounded-lg border border-border/80 bg-background/40 hover:bg-accent/40 text-sm font-medium transition-all"
-            >
-              Get Free Cloud Audit
-            </Link>
-          </FadeUp>
-
+          <div className="space-y-5">
+            <FadeUp delay={0.3} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center h-11 px-5 rounded-md bg-primary text-primary-foreground font-bold text-sm hover:bg-primary/90 transition-colors shadow-sm focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:outline-none cursor-pointer"
+              >
+                Schedule Consultation <ArrowRight className="h-3.5 w-3.5 ml-1.5" />
+              </Link>
+              
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center h-11 px-5 rounded-md border border-border/80 bg-background/50 hover:bg-zinc-900 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:outline-none cursor-pointer"
+              >
+                Request Cloud Audit
+              </Link>
+            </FadeUp>
+ 
+            {/* Handcrafted Stack Bar */}
+            <FadeIn delay={0.35} className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-4 border-t border-border/20 max-w-xl">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground font-semibold">Ecosystem Credentials:</span>
+              <div className="flex items-center gap-5">
+                <div className="relative w-5 h-5 shrink-0" title="AWS">
+                  <Image src="/service/aws.svg" alt="AWS" fill sizes="20px" className="object-contain opacity-50 hover:opacity-100 transition-opacity" />
+                </div>
+                <div className="relative w-5 h-5 shrink-0" title="Kubernetes">
+                  <Image src="/kubernetes.png" alt="Kubernetes" fill sizes="20px" className="object-contain opacity-50 hover:opacity-100 transition-opacity" />
+                </div>
+                <div className="flex items-center gap-1.5 opacity-50 hover:opacity-100 transition-opacity shrink-0" title="Terraform">
+                  <svg className="h-4.5 w-4.5 fill-current text-blue-400" viewBox="0 0 24 24">
+                    <path d="M0 0h7.5v7.5h-7.5zm8.25 0h7.5v7.5h-7.5zm8.25 8.25h7.5v7.5h-7.5zm-16.5 0h7.5v7.5h-7.5z" />
+                  </svg>
+                  <span className="text-[10px] font-mono font-bold tracking-wider text-blue-400">TERRAFORM</span>
+                </div>
+                <div className="relative w-12 h-4 dark:invert shrink-0" title="Next.js">
+                  <Image src="/next.svg" alt="Next.js" fill sizes="48px" className="object-contain opacity-50 hover:opacity-100 transition-opacity" />
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+ 
           {/* Trust Indicators banner */}
           <FadeIn delay={0.4} className="border-t border-border/40 pt-6 space-y-3">
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest font-mono flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-cyan-400" /> Compliance-Ready & Production-Grade
+              <CheckCircle2 className="h-4 w-4 text-primary" /> Regulatory Compliance & Production Standards
             </p>
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-muted-foreground font-medium">
-              <span>HIPAA Alignments</span>
+              <span>HIPAA Enforcements</span>
               <span className="text-border">•</span>
               <span>PCI-DSS Architectures</span>
               <span className="text-border">•</span>
-              <span>ISO 27001 Ready blueprints</span>
+              <span>ISO 27001 Preparedness</span>
             </div>
           </FadeIn>
-
+ 
           {/* Stats Row */}
           <StaggerContainer className="grid grid-cols-3 gap-6 border-t border-border/40 pt-6">
             <StaggerItem className="space-y-1">
-              <StatCounter value={34} suffix="%" />
-              <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider font-semibold">Cost Saved</p>
+              <StatCounter value={38} suffix="%" />
+              <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider font-semibold">Avg Cloud Cost Cut</p>
             </StaggerItem>
             <StaggerItem className="space-y-1">
               <StatCounter value={10} suffix="x" />
-              <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider font-semibold">Speedup cycles</p>
+              <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider font-semibold">Delivery Speedup</p>
             </StaggerItem>
             <StaggerItem className="space-y-1">
-              <StatCounter value={99} suffix=".9%" />
-              <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider font-semibold">SLA Uptime</p>
+              <StatCounter value={99} suffix=".99%" />
+              <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider font-semibold">Target SLA Uptime</p>
             </StaggerItem>
           </StaggerContainer>
-
+ 
         </div>
-
+ 
         {/* Right Column: Custom Animated Nodes Diagram */}
         <div className="lg:col-span-5 flex items-center justify-center">
           <FadeIn delay={0.2} duration={0.8} className="w-full">
             <HeroVisual mouseX={mouseX} mouseY={mouseY} />
           </FadeIn>
         </div>
-
+ 
       </div>
     </section>
   );

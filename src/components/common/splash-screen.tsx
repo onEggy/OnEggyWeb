@@ -77,7 +77,7 @@ export function SplashScreen() {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 1.6, ease: "easeInOut" }}
-          className="absolute bottom-0 left-0 w-full h-[3px] bg-gradient-to-r from-cyan-500 to-teal-400 origin-left"
+          className="absolute bottom-0 left-0 w-full h-[3px] bg-cyan-400 origin-left"
           onAnimationComplete={() => setShow(false)}
         />
       </motion.div>

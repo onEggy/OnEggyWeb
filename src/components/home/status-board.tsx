@@ -1,180 +1,124 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { CheckCircle2, ShieldAlert, Cpu, Database, Network, Activity, RefreshCw } from "lucide-react";
-import { motion } from "framer-motion";
-
-const checks = [
-  {
-    id: "ingress",
-    name: "aws-ingress-gateway",
-    status: "healthy",
-    metrics: "ALB Routing | WAF Guard",
-    uptime: "99.99%",
-    icon: <Network className="h-4 w-4 text-cyan-400" />,
-  },
-  {
-    id: "k8s",
-    name: "k8s-pod-scaler",
-    status: "healthy",
-    metrics: "HPA Active | 14 Nodes",
-    uptime: "99.98%",
-    icon: <Cpu className="h-4 w-4 text-teal-400" />,
-  },
-  {
-    id: "db",
-    name: "replica-database-sync",
-    status: "healthy",
-    metrics: "Aurora Multi-AZ | 0ms lag",
-    uptime: "100%",
-    icon: <Database className="h-4 w-4 text-indigo-400" />,
-  },
-];
+import React from "react";
+import { Cloud, Layers, ShieldCheck, Settings, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { SectionHeader } from "../common/section-header";
+import { StaggerContainer, StaggerItem } from "../animations/motion-wrappers";
 
 export function StatusBoard() {
-  const [blockedThreats, setBlockedThreats] = useState(4209);
-  const [lastCheckTime, setLastCheckTime] = useState("Just now");
-  const [isRefreshing, setIsRefreshing] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      // Simulate random blocked threats increasing
-      setBlockedThreats((prev) => prev + Math.floor(Math.random() * 3));
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const handleManualRefresh = () => {
-    setIsRefreshing(true);
-    setTimeout(() => {
-      setIsRefreshing(false);
-      const now = new Date();
-      setLastCheckTime(`Checked at ${now.toLocaleTimeString()}`);
-    }, 800);
-  };
+  const capabilities = [
+    {
+      icon: <Cloud className="h-6 w-6 text-primary" />,
+      title: "Cloud Infrastructure Advisory",
+      focus: "Strategy & Governance",
+      desc: "Establishing multi-account cloud structures via AWS Control Tower and Landing Zones. We design secure IAM guardrails, organizational unit separations, and centralized budget tracking models.",
+      points: [
+        "AWS Control Tower multi-account layouts",
+        "Rigid IAM boundary & SCP design",
+        "Cloud Cost allocation and deep audits"
+      ],
+      link: "/services/aws-cloud-managed-services"
+    },
+    {
+      icon: <Layers className="h-6 w-6 text-blue-400" />,
+      title: "Kubernetes & Container Operations",
+      focus: "Orchestration & Scale",
+      desc: "Architecting enterprise-grade AWS EKS clusters. We manage microservice container migrations, implement Horizontal Pod Autoscaling (HPA), and configure secure Ingress routing pathways.",
+      points: [
+        "Secure EKS cluster design and updates",
+        "Network policy cluster isolation",
+        "Zero-downtime service deployments"
+      ],
+      link: "/services/kubernetes"
+    },
+    {
+      icon: <Settings className="h-6 w-6 text-slate-400" />,
+      title: "IaC & Continuous Automation",
+      focus: "Automated Deployments",
+      desc: "Codifying environments using standardized, dry-run tested Terraform modules. We configure automated CI/CD release pipelines and enable drift-free GitOps sync flows.",
+      points: [
+        "Modular Terraform infrastructure blueprints",
+        "ArgoCD / GitOps drift enforcement",
+        "Centralized CI/CD compliance gates"
+      ],
+      link: "/services/infrastructure-automation"
+    },
+    {
+      icon: <ShieldCheck className="h-6 w-6 text-primary" />,
+      title: "DevSecOps & Risk Advisory",
+      focus: "Compliance & Security",
+      desc: "Integrating proactive security vulnerability scans directly into release workflows. We prepare cloud architectures to pass strict HIPAA, PCI-DSS, and ISO 27001 audit standards.",
+      points: [
+        "Automated static analysis vulnerability scanning",
+        "Encrypted database replica configurations",
+        "Audit-ready security postures"
+      ],
+      link: "/services/security-devsecops"
+    }
+  ];
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-12 relative border-t border-border/40">
-      {/* Subtle Glow backdrop */}
-      <div className="absolute top-[10%] left-[20%] w-[300px] h-[300px] rounded-full bg-cyan-500/5 blur-[90px] pointer-events-none -z-10" />
+    <section className="relative max-w-7xl mx-auto px-6 py-24 border-t border-border/40">
+      {/* Subtle corporate structural lines */}
+      <div className="absolute top-0 left-12 w-[1px] h-full bg-zinc-900/40 -z-10 pointer-events-none" />
+      <div className="absolute top-0 right-12 w-[1px] h-full bg-zinc-900/40 -z-10 pointer-events-none" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        {/* Left Side: Storytelling & Trust Callout */}
-        <div className="lg:col-span-5 space-y-6">
-          <div className="space-y-2">
-            <span className="text-xs font-mono font-semibold text-cyan-500 uppercase tracking-widest block">
-              Continuous Reliability
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground leading-tight">
-              Production-Grade <br />
-              <span className="gradient-text">Uptime Telemetry</span>
-            </h2>
-          </div>
-          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-            We don't deploy and walk away. Our solutions are engineered with automated self-healing clusters, multi-AZ database replication, and real-time PagerDuty alarms to isolate security events before they impact your clients.
-          </p>
-          <div className="flex items-center gap-6 pt-2">
-            <div className="space-y-1">
-              <span className="text-2xl font-bold font-mono text-foreground">99.99%</span>
-              <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-semibold font-mono">Uptime SLA Target</p>
-            </div>
-            <div className="w-[1px] h-10 bg-border/80" />
-            <div className="space-y-1">
-              <span className="text-2xl font-bold font-mono text-foreground">24/7/365</span>
-              <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-semibold font-mono">Active Telemetry</p>
-            </div>
-          </div>
-        </div>
+      <SectionHeader
+        tag="Capabilities"
+        title="Enterprise-Grade Consulting Practices"
+        subtitle="We combine rigorous engineering practices with cloud modernization advisory to optimize developer pipelines, scale systems, and defend workloads."
+        align="center"
+        className="mb-16 max-w-4xl"
+      />
 
-        {/* Right Side: Visual System Status Dashboard Panel */}
-        <div className="lg:col-span-7">
-          <div className="glass-card rounded-2xl border border-border/40 p-6 md:p-8 shadow-2xl relative overflow-hidden bg-background/25">
-            {/* Edge glow overlay */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/0 via-cyan-500/0 to-cyan-500/5 opacity-40 pointer-events-none" />
-
-            {/* Header controls of status board */}
-            <div className="flex items-center justify-between border-b border-border/40 pb-5 mb-6">
-              <div className="flex items-center gap-3">
-                <div className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse" />
-                <span className="text-sm font-bold text-foreground">Systems Status Dashboard</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="text-[10px] font-mono text-muted-foreground hidden sm:inline-block">
-                  {lastCheckTime}
-                </span>
-                <button
-                  onClick={handleManualRefresh}
-                  disabled={isRefreshing}
-                  className="p-1.5 rounded-lg border border-border/40 bg-background/40 hover:bg-accent/40 text-muted-foreground hover:text-foreground cursor-pointer transition-colors"
-                  aria-label="Refresh Status"
-                >
-                  <RefreshCw className={`h-3.5 w-3.5 ${isRefreshing ? "animate-spin text-cyan-500" : ""}`} />
-                </button>
-              </div>
-            </div>
-
-            {/* Metrics Checklist Stack */}
+      <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+        {capabilities.map((cap) => (
+          <StaggerItem
+            key={cap.title}
+            className="p-6 md:p-8 rounded-2xl border border-zinc-800 bg-zinc-950/20 hover:border-zinc-700 transition-all duration-300 flex flex-col justify-between space-y-6 group"
+          >
             <div className="space-y-4">
-              {checks.map((item) => (
-                <div
-                  key={item.id}
-                  className="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-xl border border-border/30 bg-background/50 backdrop-blur-sm group hover:border-cyan-500/20 transition-all duration-300"
-                >
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-8 h-8 rounded-lg bg-background/80 border border-border/40 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-bold text-foreground font-mono">{item.name}</h4>
-                      <span className="text-[11px] text-muted-foreground block mt-0.5">{item.metrics}</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center justify-between sm:justify-end gap-6 mt-3 sm:mt-0 pt-3 sm:pt-0 border-t border-border/10 sm:border-0">
-                    <div className="text-left sm:text-right">
-                      <span className="text-[9px] uppercase tracking-wider text-muted-foreground block font-mono">Uptime</span>
-                      <span className="text-xs font-mono font-bold text-foreground">{item.uptime}</span>
-                    </div>
-                    <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-[10px] text-green-400 font-bold uppercase tracking-wider font-mono">
-                      <CheckCircle2 className="h-3 w-3 shrink-0" />
-                      <span>Online</span>
-                    </div>
-                  </div>
+              <div className="flex items-center justify-between">
+                <div className="w-12 h-12 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center">
+                  {cap.icon}
                 </div>
-              ))}
-
-              {/* Firewall Security Live Telemetry Card */}
-              <div className="p-4 rounded-xl border border-red-500/10 bg-red-500/[0.01] flex flex-col sm:flex-row sm:items-center justify-between transition-all hover:border-red-500/25 duration-300">
-                <div className="flex items-center gap-3.5">
-                  <div className="w-8 h-8 rounded-lg bg-background/80 border border-red-500/10 flex items-center justify-center shrink-0">
-                    <ShieldAlert className="h-4 w-4 text-red-400" />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-foreground font-mono">aws-waf-firewall</h4>
-                    <span className="text-[11px] text-muted-foreground block mt-0.5">Threat Prevention Edge</span>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between sm:justify-end gap-6 mt-3 sm:mt-0 pt-3 sm:pt-0 border-t border-border/10 sm:border-0">
-                  <div className="text-left sm:text-right">
-                    <span className="text-[9px] uppercase tracking-wider text-muted-foreground block font-mono">Threats Blocked</span>
-                    <span className="text-xs font-mono font-bold text-red-400">{blockedThreats.toLocaleString()}</span>
-                  </div>
-                  <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-[10px] text-red-400 font-bold uppercase tracking-wider font-mono">
-                    <Activity className="h-3 w-3 shrink-0 animate-pulse" />
-                    <span>Active Protection</span>
-                  </div>
-                </div>
+                <span className="text-[10px] font-mono text-primary font-bold uppercase tracking-widest bg-zinc-900 border border-zinc-800 px-2.5 py-1 rounded">
+                  {cap.focus}
+                </span>
               </div>
+
+              <div className="space-y-2">
+                <h3 className="text-xl font-bold text-foreground font-display group-hover:text-primary transition-colors">
+                  {cap.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
+                  {cap.desc}
+                </p>
+              </div>
+
+              {/* Focus points bullet list */}
+              <ul className="space-y-2 pt-2 border-t border-zinc-900/60">
+                {cap.points.map((pt, idx) => (
+                  <li key={idx} className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <span className="w-1 h-1 rounded-full bg-primary" />
+                    <span>{pt}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            {/* Bottom SLA assurance footer */}
-            <div className="mt-6 pt-5 border-t border-border/40 flex flex-wrap items-center justify-between gap-3 text-[11px] text-muted-foreground">
-              <span>SLA Response Target: &lt;15 mins for critical bugs</span>
-              <span>Centralized Log Shipping: Active</span>
+            <div className="pt-4 border-t border-zinc-900/60 flex items-center justify-end">
+              <Link
+                href={cap.link}
+                className="text-xs font-semibold text-primary inline-flex items-center gap-1 group-hover:text-foreground transition-colors group/btn"
+              >
+                Review Capability <ArrowRight className="h-3.5 w-3.5 group-hover/btn:translate-x-1 transition-transform" />
+              </Link>
             </div>
-          </div>
-        </div>
-      </div>
+          </StaggerItem>
+        ))}
+      </StaggerContainer>
     </section>
   );
 }

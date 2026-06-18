@@ -62,7 +62,7 @@ export function EngagementModels() {
 
       <SectionHeader
         tag="Engagement Models"
-        title={<>Pricing & Collaboration <span className="gradient-text">Models</span></>}
+        title={<>Pricing & Collaboration <span className="text-cyan-400">Models</span></>}
         subtitle="Transparent flat-fee audits and retainer plans tailored for startups, SaaS platforms, and scaling businesses."
         align="center"
         className="mb-16"

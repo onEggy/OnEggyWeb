@@ -11,8 +11,8 @@ export default function Loading() {
         <div className="absolute w-20 h-20 rounded-full border border-cyan-500/30 animate-ping opacity-75" />
         
         {/* Spinner icon */}
-        <div className="relative w-12 h-12 rounded-xl bg-gradient-to-tr from-cyan-500 to-teal-400 flex items-center justify-center text-white shadow-lg shadow-cyan-500/20">
-          <Loader2 className="h-6 w-6 animate-spin text-white" />
+        <div className="relative w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-cyan-400 shadow-lg shadow-cyan-500/5">
+          <Loader2 className="h-6 w-6 animate-spin text-cyan-400" />
         </div>
 
         {/* Loading text */}

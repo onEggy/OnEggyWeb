@@ -1,4 +1,6 @@
 import { MetadataRoute } from "next";
+import fs from "fs";
+import path from "path";
 import { servicesData } from "@/lib/services-data";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -31,5 +33,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  return [...staticSitemap, ...serviceSitemap];
+  // Dynamic blog sitemap mapping
+  let blogSitemap: MetadataRoute.Sitemap = [];
+  try {
+    const indexFilePath = path.join(process.cwd(), "public/AllBlogs/index.json");
+    if (fs.existsSync(indexFilePath)) {
+      const rawData = fs.readFileSync(indexFilePath, "utf8");
+      const posts = JSON.parse(rawData);
+      blogSitemap = posts.map((post: { slug: string }) => ({
+        url: `${baseUrl}/blogs/${post.slug}`,
+        lastModified: new Date(),
+        changeFrequency: "daily" as const,
+        priority: 0.6,
+      }));
+    }
+  } catch (error) {
+    console.error("Error generating sitemap for blogs:", error);
+  }
+
+  return [...staticSitemap, ...serviceSitemap, ...blogSitemap];
 }

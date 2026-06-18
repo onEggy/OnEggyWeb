@@ -3,18 +3,12 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { 
-  Users, 
   Terminal, 
   Cpu, 
   Eye, 
   Lock, 
-  ArrowRight, 
   CheckCircle,
-  Briefcase,
-  Layers,
-  Heart,
-  Sparkles,
-  Building2
+  Shield
 } from "lucide-react";
 import { StaggerContainer, StaggerItem, FadeIn, FadeUp } from "@/components/animations/motion-wrappers";
 import { SectionHeader } from "@/components/common/section-header";
@@ -22,8 +16,8 @@ import { CtaBlock } from "@/components/common/cta-block";
 import { profile as teamProfiles } from "../../../public/data/teamSection.json";
 
 export const metadata: Metadata = {
-  title: "About Us & Team | OnEggy Technologies",
-  description: "Meet the cloud and platform engineers powering modern startups and enterprises. Learn about our story, DevOps culture, and technical principles.",
+  title: "About Our Practice | OnEggy Technologies",
+  description: "Learn about OnEggy's cloud modernization practice, our verified solutions credentials, engineering standards, and advisory principles.",
   alternates: {
     canonical: "https://www.oneggy.com/about",
   },
@@ -37,40 +31,38 @@ function getInitials(name: string) {
   return name.slice(0, 2).toUpperCase();
 }
 
-const gradientAvatars = [
-  "from-cyan-500 to-blue-500",
-  "from-teal-400 to-emerald-500",
-  "from-indigo-500 to-purple-500",
-  "from-cyan-400 to-teal-500",
-  "from-blue-500 to-indigo-600",
+const avatarBgClasses = [
+  "bg-zinc-900 border border-zinc-800 text-zinc-400 font-mono",
+  "bg-zinc-950 border border-zinc-900/60 text-zinc-450 font-mono",
+  "bg-zinc-900/80 border border-zinc-850 text-zinc-400 font-mono",
 ];
 
-const getGradientClass = (name: string) => {
+const getAvatarStyle = (name: string) => {
   let sum = 0;
   for (let i = 0; i < name.length; i++) sum += name.charCodeAt(i);
-  return gradientAvatars[sum % gradientAvatars.length];
+  return avatarBgClasses[sum % avatarBgClasses.length];
 };
 
 const companyValues = [
   {
-    icon: <Lock className="h-5 w-5 text-cyan-400" />,
+    icon: <Lock className="h-4.5 w-4.5 text-primary" />,
     title: "100% Client Ownership",
-    desc: "We enforce zero proprietary lock-in. Every line of Terraform, Helm, and application code lives inside your private repositories from day one.",
+    desc: "We enforce zero proprietary vendor lock-in. Every line of Terraform configuration, Helm deployment code, and application logic lives inside your private repositories from day one.",
   },
   {
-    icon: <Terminal className="h-5 w-5 text-teal-400" />,
+    icon: <Terminal className="h-4.5 w-4.5 text-blue-400" />,
     title: "Code-First Infrastructure",
-    desc: "We believe console ClickOps changes are a liability. If infrastructure isn't defined inside git-versioned code, it doesn't exist in production.",
+    desc: "We believe console ClickOps changes are a fundamental security and operational risk. If an environment change isn't defined inside git-versioned code, it doesn't exist.",
   },
   {
-    icon: <Eye className="h-5 w-5 text-indigo-400" />,
-    title: "Observability-First Sizing",
-    desc: "We never launch blindly. Every workload we deploy is pre-configured with active CPU/memory thresholds, Slack alerts, and Prometheus logs.",
+    icon: <Eye className="h-4.5 w-4.5 text-slate-400" />,
+    title: "Observability-First Deployment",
+    desc: "We never launch blindly. Every workload we deploy is pre-configured with active CPU/memory alerting thresholds, slack-notifications, and Prometheus logging boards.",
   },
   {
-    icon: <Cpu className="h-5 w-5 text-cyan-400" />,
+    icon: <Cpu className="h-4.5 w-4.5 text-primary" />,
     title: "Engineering Excellence",
-    desc: "We avoid shortcuts. We build multi-account landing zones, Transit Gateway network routing, and automated CI/CD security check gates.",
+    desc: "We follow strict cloud design frameworks. We construct multi-account landing zones, Transit Gateway network routing architectures, and automated CI/CD compliance audit gates.",
   },
 ];
 
@@ -87,7 +79,7 @@ export default function AboutPage() {
     }
   };
 
-  // Separate real profiles based on designation/position
+  // Separate profiles based on designation/position
   const leadership = teamProfiles.filter(
     (p) => p.position.toLowerCase() === "founder" || p.position.toLowerCase().includes("mentor")
   );
@@ -96,113 +88,156 @@ export default function AboutPage() {
     (p) => !leadership.some((l) => l.name === p.name)
   );
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.oneggy.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://www.oneggy.com/about"
+      }
+    ]
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaMarkup).replace(/</g, "\\u003c"),
+        }}
       />
-      <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-24">
-        {/* Decorative Blur Orbs */}
-        <div className="absolute top-[10%] left-[-10%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[95px] pointer-events-none -z-10" />
-        <div className="absolute bottom-[20%] right-[-10%] w-[400px] h-[400px] rounded-full bg-teal-500/5 blur-[100px] pointer-events-none -z-10 animate-pulse" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
+        }}
+      />
+      <div className="relative max-w-7xl mx-auto px-6 py-16 md:py-32 space-y-32">
+        {/* Subtle Background Orb */}
+        <div className="absolute top-[10%] right-[-10%] w-[350px] h-[350px] rounded-full bg-blue-500/5 blur-[95px] pointer-events-none -z-10 animate-pulse" />
 
         {/* 1. HERO SECTION */}
-        <div className="relative pt-8 pb-12 flex flex-col items-start space-y-6 max-w-4xl">
+        <div className="relative pt-8 pb-4 flex flex-col items-start space-y-6 max-w-4xl">
           <FadeUp>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-background/50 backdrop-blur-sm text-xs font-mono text-cyan-400 shadow-sm">
-              <Sparkles className="h-3.5 w-3.5" />
-              <span>Meet the Tech Heroes</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-background/50 backdrop-blur-sm text-xs font-mono text-primary shadow-sm">
+              <Shield className="h-3.5 w-3.5" />
+              <span>Advisory Practice Directors</span>
             </div>
           </FadeUp>
           <SectionHeader
-            title={<>Built By Passionate <span className="gradient-text">Cloud & Product Engineers</span></>}
-            subtitle="At OnEggy Technologies, we replace manual operational friction with standardized code templates. We merge expert infrastructure design with active development masterclasses."
+            title={<>Global Technology Modernization & <span className="text-primary">Cloud Strategy</span></>}
+            subtitle="We help enterprise organizations restructure legacy infrastructure, enforce strict DevSecOps governance, and deploy high-performance applications. We combine tactical engineering precision with corporate advisory rigor."
             align="left"
             className="mb-0"
           />
         </div>
 
-        {/* 2. COMPANY STORY & CULTURE */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center border-t border-border/40 pt-16">
+        {/* 2. COMPANY STORY & DNA (Asymmetric Split Screen) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start border-t border-zinc-800 pt-24">
           <div className="lg:col-span-6 space-y-6">
-            <h2 className="text-3xl font-bold text-foreground">Our Story & DNA</h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-              OnEggy Technologies was founded by senior cloud architects who grew tired of seeing scaling startups struggle with unstable configurations, manual console clicks, and skyrocketing AWS bills. We realized that while modern cloud tools are incredibly powerful, they are also highly complex. 
+            <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Our Story & Practice Scope</h2>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
+              We design and maintain secure, auto-scaling cloud architectures. Our senior systems architects partner with corporate technology leaders to replace manual configurations with declarative, drift-free Infrastructure as Code (IaC) blueprints.
             </p>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-              We function as a specialized infrastructure squad-as-a-service, partnering with CTOs and founders to deliver production-grade configurations, automated CI/CD releases, and rigorous security postures. Today, we manage critical cloud infrastructure for businesses across fintech, healthcare, and SaaS.
-            </p>
+            
+            {/* Certification Badge list */}
+            <div className="pt-4 space-y-3">
+              <span className="text-[10px] font-mono font-bold text-primary uppercase tracking-wider block">Verified Core Credentials</span>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-350 select-none">
+                  AWS Certified Solutions Architect - Professional
+                </span>
+                <span className="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-350 select-none">
+                  AWS Certified Security - Specialty
+                </span>
+                <span className="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-350 select-none">
+                  CKA: Certified Kubernetes Administrator
+                </span>
+                <span className="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-350 select-none">
+                  HashiCorp Certified: Terraform Associate
+                </span>
+              </div>
+            </div>
           </div>
-          <div className="lg:col-span-6">
-            <div className="glass-card p-8 rounded-2xl border border-border/40 relative overflow-hidden shadow-2xl flex flex-col justify-center min-h-[220px]">
-              <div className="absolute top-4 right-4 text-xs font-mono font-semibold text-cyan-500">operations</div>
+          
+          <div className="lg:col-span-6 lg:pl-6">
+            <div className="border border-zinc-800 bg-zinc-950/20 backdrop-blur-xs p-8 rounded-xl relative overflow-hidden shadow-md flex flex-col justify-center min-h-[220px]">
+              <div className="absolute top-4 right-4 text-[10px] font-mono text-primary uppercase tracking-wider">engineering governance</div>
               <div className="space-y-4">
-                <h3 className="text-xl font-bold text-foreground">Zero ClickOps. 100% GitOps.</h3>
-                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                  We believe that stable, secure, and auto-scaling infrastructure is not a luxury, but the baseline requirement for any company looking to grow. That's why we enforce declarative setups where every configuration resides in version-controlled git code.
+                <h3 className="text-lg font-bold text-foreground font-mono">Zero ClickOps. 100% GitOps.</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed font-sans">
+                  Enterprise workload configurations must be managed via version-controlled repositories. We reject ClickOps console modifications. Every security group, routing rule, and container cluster is managed via declarative code pipelines.
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* 3. LEADERSHIP SECTION */}
-        <div className="space-y-12 border-t border-border/40 pt-16">
+        {/* 3. LEADERSHIP & ADVISORY */}
+        <div className="space-y-12 border-t border-zinc-800 pt-24">
           <div className="max-w-xl space-y-3">
-            <span className="text-xs font-mono font-semibold text-cyan-500 uppercase tracking-widest">Leadership Team</span>
-            <h2 className="text-3xl font-bold text-foreground">Tech & Strategy Direction</h2>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              Meet the strategic mentors and founders guiding OnEggy Technologies:
+            <span className="text-xs font-mono font-semibold text-primary uppercase tracking-widest">Leadership Team</span>
+            <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Practice Leadership & Strategy</h2>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
+              The systems architects directing our strategic consulting and delivery models.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
             {leadership.map((leader, index) => {
-              const gradientClass = getGradientClass(leader.name);
+              const avatarStyle = getAvatarStyle(leader.name);
               return (
                 <FadeIn
                   key={leader.name}
-                  delay={index * 0.15}
-                  className="glass-card p-6 md:p-8 rounded-2xl border border-border/40 hover:border-cyan-500/35 transition-all duration-300 flex flex-col sm:flex-row gap-6 items-start relative group"
+                  delay={index * 0.1}
+                  className="border border-zinc-800 bg-zinc-950/20 hover:border-zinc-700 p-6 rounded-xl flex gap-5 items-start transition-all duration-300 relative group"
                 >
                   <div className="absolute top-4 right-4">
                     <Link
                       href="https://linkedin.com"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-muted-foreground hover:text-cyan-400 transition-colors"
+                      className="text-muted-foreground hover:text-primary transition-colors"
                       aria-label={`${leader.name} LinkedIn`}
                     >
-                      <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
+                      <svg className="h-4.5 w-4.5 fill-current" viewBox="0 0 24 24">
                         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                       </svg>
                     </Link>
                   </div>
 
-                  {/* Leadership Avatar / Image */}
-                  <div className="relative w-20 h-20 rounded-full overflow-hidden bg-background/50 border border-border/40 shrink-0 shadow-lg group-hover:border-cyan-500/30 transition-colors">
+                  {/* Profile image container */}
+                  <div className="relative w-16 h-16 rounded-full overflow-hidden bg-zinc-900 border border-zinc-800 shrink-0 shadow group-hover:border-primary transition-colors">
                     {leader.image ? (
                       <Image
                         src={leader.image}
                         alt={leader.alt || leader.name}
                         fill
-                        sizes="80px"
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        sizes="64px"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     ) : (
-                      <div className={`w-full h-full bg-gradient-to-tr ${gradientClass} flex items-center justify-center text-white font-bold font-mono text-3xl`}>
+                      <div className={`w-full h-full ${avatarStyle} flex items-center justify-center font-bold text-2xl`}>
                         {getInitials(leader.name)}
                       </div>
                     )}
                   </div>
 
-                  <div className="space-y-3 flex-1 min-w-0">
+                  <div className="space-y-2 flex-1 min-w-0 font-sans">
                     <div>
-                      <h3 className="text-lg font-bold text-foreground group-hover:text-cyan-500 transition-colors">
+                      <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
                         {leader.name}
                       </h3>
-                      <span className="text-xs font-semibold text-cyan-500 font-mono tracking-wide">
+                      <span className="text-[10px] font-semibold text-primary font-mono tracking-wider block mt-0.5">
                         {leader.position}
                       </span>
                     </div>
@@ -217,37 +252,37 @@ export default function AboutPage() {
         </div>
 
         {/* 4. ENGINEERING TEAM SECTION */}
-        <div className="space-y-12 border-t border-border/40 pt-16">
+        <div className="space-y-12 border-t border-zinc-800 pt-24">
           <div className="max-w-xl space-y-3">
-            <span className="text-xs font-mono font-semibold text-cyan-500 uppercase tracking-widest">Engineering Squad</span>
-            <h2 className="text-3xl font-bold text-foreground">Developers, Architects & Designers</h2>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              The technical hands automating configurations and writing robust software codebases:
+            <span className="text-xs font-mono font-semibold text-primary uppercase tracking-widest">Engineering Practice</span>
+            <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Developers, Architects & Designers</h2>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
+              The platform specialists provisioning cloud assets, custom pipelines, and robust codebases.
             </p>
           </div>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {engineering.map((member, index) => {
-              const gradientClass = getGradientClass(member.name);
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {engineering.map((member) => {
+              const avatarStyle = getAvatarStyle(member.name);
               return (
                 <StaggerItem
                   key={member.name}
-                  className="glass-card p-6 rounded-2xl border border-border/40 hover:border-cyan-500/30 transition-all duration-300 flex flex-col justify-between min-h-[300px] group relative"
+                  className="border border-zinc-800 bg-zinc-950/20 hover:border-zinc-700 p-5 rounded-xl flex flex-col justify-between min-h-[220px] transition-all duration-300 group relative"
                 >
-                  <div className="space-y-6">
-                    <div className="flex items-start justify-between w-full">
-                      {/* Member Avatar / Image */}
-                      <div className="relative w-14 h-14 rounded-full overflow-hidden bg-background/50 border border-border/40 shrink-0 shadow-md group-hover:border-cyan-500/30 transition-colors">
+                  <div className="space-y-4 font-sans">
+                    <div className="flex items-center justify-between w-full">
+                      {/* Circular Avatar */}
+                      <div className="relative w-12 h-12 rounded-full overflow-hidden bg-zinc-900 border border-zinc-800 shrink-0 shadow-xs group-hover:border-primary transition-colors">
                         {member.image ? (
                           <Image
                             src={member.image}
                             alt={member.alt || member.name}
                             fill
-                            sizes="56px"
-                            className="object-cover transition-transform duration-500 group-hover:scale-110"
+                            sizes="48px"
+                            className="object-cover transition-transform duration-500 group-hover:scale-105"
                           />
                         ) : (
-                          <div className={`w-full h-full bg-gradient-to-tr ${gradientClass} flex items-center justify-center text-white font-bold font-mono text-xl`}>
+                          <div className={`w-full h-full ${avatarStyle} flex items-center justify-center font-bold text-sm`}>
                             {getInitials(member.name)}
                           </div>
                         )}
@@ -257,32 +292,32 @@ export default function AboutPage() {
                         href="https://linkedin.com"
                         target="_blank"
                         rel="noreferrer"
-                        className="text-muted-foreground hover:text-cyan-400 transition-colors"
+                        className="text-muted-foreground hover:text-primary transition-colors"
                         aria-label={`${member.name} LinkedIn`}
                       >
-                        <svg className="h-4.5 w-4.5 fill-current" viewBox="0 0 24 24">
+                        <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
                           <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                         </svg>
                       </Link>
                     </div>
 
-                    <div className="space-y-2">
-                      <h3 className="text-base font-bold text-foreground group-hover:text-cyan-500 transition-colors">
+                    <div className="space-y-1">
+                      <h3 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">
                         {member.name}
                       </h3>
-                      <span className="text-xs font-mono text-cyan-500 font-semibold tracking-wider">
+                      <span className="text-[10px] font-mono text-primary font-semibold tracking-wider block">
                         {member.position}
                       </span>
-                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed pt-2">
+                      <p className="text-xs text-muted-foreground leading-relaxed pt-1 select-text">
                         {member.description}
                       </p>
                     </div>
                   </div>
                   
-                  {/* Status Indicator check */}
-                  <div className="pt-4 border-t border-border/20 mt-4 flex items-center justify-between text-[10px] font-mono text-muted-foreground uppercase font-semibold">
-                    <span>Active Developer</span>
-                    <span className="text-green-400">• Online</span>
+                  {/* Practice Credentials instead of active lights */}
+                  <div className="pt-3 border-t border-zinc-900/60 mt-4 flex items-center justify-between text-[9px] font-mono text-zinc-550 font-bold uppercase tracking-wider">
+                    <span>advisory practice</span>
+                    <span className="text-primary font-semibold">Verified</span>
                   </div>
                 </StaggerItem>
               );
@@ -290,67 +325,67 @@ export default function AboutPage() {
           </StaggerContainer>
         </div>
 
-        {/* 5. VALUES SECTION */}
-        <div className="space-y-12 border-t border-border/40 pt-16">
-          <div className="max-w-xl space-y-3">
-            <span className="text-xs font-mono font-semibold text-cyan-500 uppercase tracking-widest">Our Values</span>
-            <h2 className="text-3xl font-bold text-foreground">Engineering Standards</h2>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              We live by these four guiding principles to deliver production-ready excellence for all digital systems:
+        {/* 5. ENGINEERING VALUES SECTION */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start border-t border-zinc-800 pt-24">
+          <div className="lg:col-span-5 space-y-4">
+            <span className="text-xs font-mono font-semibold text-primary uppercase tracking-widest">Our Standards</span>
+            <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Engineering Principles</h2>
+            <p className="text-sm text-muted-foreground leading-relaxed font-sans">
+              We enforce strict compliance checks, codebase reviews, and automated configurations to guarantee absolute system availability.
             </p>
           </div>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {companyValues.map((value, index) => (
-              <StaggerItem
-                key={index}
-                className="glass-card hover:border-cyan-500/40 p-6 rounded-xl space-y-4 transition-all duration-300 flex flex-col justify-between min-h-[220px] group"
+          <div className="lg:col-span-7 space-y-6">
+            {companyValues.map((value, i) => (
+              <div 
+                key={i} 
+                className="p-5 rounded-xl border border-zinc-850 bg-zinc-950/20 flex gap-4 items-start group hover:border-primary/25 transition-all duration-300"
               >
-                <div className="space-y-4">
-                  <div className="w-10 h-10 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center group-hover:scale-105 transition-transform">
-                    {value.icon}
-                  </div>
-                  <h3 className="text-lg font-bold text-foreground group-hover:text-cyan-500 transition-colors">
+                <div className="w-8 h-8 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
+                  {value.icon}
+                </div>
+                <div className="space-y-1.5 font-sans">
+                  <h3 className="text-sm sm:text-base font-bold text-foreground group-hover:text-primary transition-colors">
                     {value.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                     {value.desc}
                   </p>
                 </div>
-              </StaggerItem>
+              </div>
             ))}
-          </StaggerContainer>
+          </div>
         </div>
 
         {/* 6. WORK CULTURE SECTION */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center border-t border-border/40 pt-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center border-t border-zinc-800 pt-24">
           <div className="lg:col-span-6 space-y-6">
-            <h2 className="text-3xl font-bold text-foreground">Collaborative Work DNA</h2>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              We operate as a remote-first, asynchronous-heavy engineering squad. We avoid structural bureaucracy, administrative alignment blocks, and meeting bloat, allowing developers to focus purely on creating automated, clean configurations.
+            <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Methodology & Engagement DNA</h2>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
+              We run highly structured asynchronous communication channels. We avoid alignment meetings, allowing practice architects to focus strictly on platform design, compliance checks, and codebase automation.
             </p>
-            <div className="space-y-3 pt-2">
+            <div className="space-y-3 pt-2 font-sans">
               <div className="flex items-center gap-3">
-                <CheckCircle className="h-4.5 w-4.5 text-cyan-400 shrink-0" />
-                <span className="text-xs sm:text-sm text-foreground font-semibold">100% Dedicated Slack & Jira workflows</span>
+                <CheckCircle className="h-4.5 w-4.5 text-primary shrink-0" />
+                <span className="text-xs sm:text-sm text-foreground font-semibold">100% Scoped JIRA boards and Slack project channels</span>
               </div>
               <div className="flex items-center gap-3">
-                <CheckCircle className="h-4.5 w-4.5 text-cyan-400 shrink-0" />
+                <CheckCircle className="h-4.5 w-4.5 text-primary shrink-0" />
                 <span className="text-xs sm:text-sm text-foreground font-semibold">Weekly peer-reviews and codebase refactoring sprints</span>
               </div>
               <div className="flex items-center gap-3">
-                <CheckCircle className="h-4.5 w-4.5 text-cyan-400 shrink-0" />
+                <CheckCircle className="h-4.5 w-4.5 text-primary shrink-0" />
                 <span className="text-xs sm:text-sm text-foreground font-semibold">Stipends for continuous cloud certifications (AWS, CNCF)</span>
               </div>
             </div>
           </div>
-          <div className="lg:col-span-6">
-            <div className="glass-card p-8 rounded-2xl border border-border/40 relative overflow-hidden shadow-2xl flex flex-col justify-center min-h-[220px]">
-              <div className="absolute top-4 right-4 text-xs font-mono font-semibold text-cyan-500">learning culture</div>
+          <div className="lg:col-span-6 lg:pl-6">
+            <div className="border border-zinc-850 bg-zinc-950/20 p-8 rounded-xl relative overflow-hidden shadow-md flex flex-col justify-center min-h-[200px]">
+              <div className="absolute top-4 right-4 text-[10px] font-mono text-primary uppercase tracking-wider">advisory training</div>
               <div className="space-y-4">
-                <h3 className="text-xl font-bold text-foreground">Continuous Evolution</h3>
-                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                  Technology changes, but solid engineering fundamentals remain. We sponsor continuous education, certifications, and active experimentations inside isolated cloud sandbox structures.
+                <h3 className="text-lg font-bold text-foreground font-mono">Continuous Development</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed font-sans">
+                  Technologies change, but sound system architectures are eternal. We sponsor continuous certifications, training courses, and sandbox environments to keep our teams sharp.
                 </p>
               </div>
             </div>
@@ -358,11 +393,11 @@ export default function AboutPage() {
         </div>
 
         {/* 7. JOIN OUR TEAM CTA */}
-        <div className="py-12 border-t border-border/40">
+        <div className="py-8 border-t border-zinc-800">
           <CtaBlock
-            title="Want to automate cloud systems with us?"
-            description="Explore our open positions for junior and senior DevOps developers, product engineers, and UI specialists."
-            btnText="Browse Open Careers"
+            title="Want to build systems with us?"
+            description="Explore our open roles for DevOps professionals, cloud architects, and backend engineers."
+            btnText="Browse Open Positions"
             btnHref="/careers"
           />
         </div>

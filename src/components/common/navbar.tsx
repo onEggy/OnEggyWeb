@@ -185,7 +185,7 @@ export function Navbar() {
               href="/contact"
               className="relative inline-flex items-center justify-center text-xs sm:text-sm font-medium h-10 px-5 rounded-lg bg-foreground text-background hover:bg-foreground/90 transition-all shadow-md shadow-foreground/10 cursor-pointer overflow-hidden group isolate"
             >
-              <span className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-teal-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
+              <span className="absolute inset-0 bg-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
               <span className="relative z-10 group-hover:text-black transition-colors">Book Free Consultation</span>
             </Link>
           </div>
