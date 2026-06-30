@@ -35,12 +35,14 @@ export function Testimonials() {
 
   return (
     <section className="max-w-7xl mx-auto px-6 py-20 border-t border-border/40 relative">
-      {/* Background radial glow */}
-      <div className="absolute top-[20%] right-[15%] w-[400px] h-[400px] rounded-full bg-cyan-500/5 blur-[120px] pointer-events-none -z-10 animate-pulse" />
+      {/* Blueprint Coordinates */}
+      <div className="absolute top-2 left-10 font-mono text-[8px] text-zinc-650 opacity-40 select-none">
+        GRID.SEC.H // CLIENT.FEEDBACK_V1.1
+      </div>
 
       <SectionHeader
         tag="Client Success"
-        title={<>Trusted by <span className="text-cyan-400">Engineers & Founders</span></>}
+        title={<>Trusted by <span className="text-primary font-bold">Engineers & Founders</span></>}
         subtitle="Real outcomes. See how high-growth startups and global enterprises partner with OnEggy to scale production-grade platforms."
         align="center"
         className="mb-16"
@@ -59,7 +61,7 @@ export function Testimonials() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.3, delay: (index % 3) * 0.08 }}
-                  className="break-inside-avoid glass-card p-6 rounded-xl border border-border/40 hover:border-cyan-500/30 transition-all duration-300 flex flex-col justify-between relative bg-background/25"
+                  className="break-inside-avoid glass-card p-6 rounded-xl border border-border/40 hover:border-primary/30 transition-all duration-300 flex flex-col justify-between relative bg-background/25"
                 >
                   {/* Watermark Quote Icon */}
                   <Quote className="absolute top-4 right-4 h-8 w-8 text-muted-foreground/5 pointer-events-none" />
@@ -68,7 +70,7 @@ export function Testimonials() {
                     {/* Stars */}
                     <div className="flex items-center gap-0.5">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-3.5 w-3.5 fill-cyan-500 text-cyan-500" />
+                        <Star key={i} className="h-3.5 w-3.5 fill-primary text-primary" />
                       ))}
                     </div>
 

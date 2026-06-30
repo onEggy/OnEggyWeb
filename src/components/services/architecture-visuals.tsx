@@ -8,35 +8,35 @@ import { motion, AnimatePresence } from "framer-motion";
 const tiers = [
   {
     id: "org-mgmt",
-    icon: <LayoutGrid className="h-5 w-5 text-cyan-400" />,
+    icon: <LayoutGrid className="h-5 w-5 text-primary" />,
     title: "Organization Control Account",
     sub: "AWS Control Tower & Organizations",
     desc: "Handles root-level account orchestration, AWS billing consolidations, and security controls policies that prevent sub-accounts from bypassing corporate rules.",
-    color: "#22d3ee",
+    color: "#2563eb",
   },
   {
     id: "security-logging",
-    icon: <Shield className="h-5 w-5 text-teal-400" />,
+    icon: <Shield className="h-5 w-5 text-indigo-400" />,
     title: "Audit & Security Account",
     sub: "Centralized S3 logs & GuardDuty",
     desc: "Consolidates CloudTrail, VPC Flow logs, and GuardDuty alerts from all child accounts into a locked, read-only S3 bucket. Zero write access for normal developers.",
-    color: "#14b8a6",
+    color: "#818cf8",
   },
   {
     id: "core-networking",
-    icon: <Network className="h-5 w-5 text-indigo-400" />,
+    icon: <Network className="h-5 w-5 text-blue-400" />,
     title: "Core Networking Account",
     sub: "AWS Transit Gateway & DNS Core",
     desc: "Centralizes cloud networking interfaces. Uses AWS Transit Gateways to manage secure, encrypted communication routing between production, sandbox, and local VPN endpoints.",
-    color: "#6366f1",
+    color: "#60a5fa",
   },
   {
     id: "workloads",
-    icon: <HardDrive className="h-5 w-5 text-cyan-400" />,
+    icon: <HardDrive className="h-5 w-5 text-primary" />,
     title: "App Workloads Account",
     sub: "Kubernetes (EKS) & Secure DB Tiers",
     desc: "The isolated tier where code is executed. EKS pods are deployed into isolated private subnets, only accessible via ALBs from the networking zone, communicating with replica database subnets.",
-    color: "#06b6d4",
+    color: "#3b82f6",
   },
 ];
 
@@ -48,11 +48,11 @@ export function ArchitectureVisuals() {
   return (
     <section className="max-w-7xl mx-auto px-6 py-20 border-t border-border/40 relative">
       {/* Glow Backdrop */}
-      <div className="absolute top-[30%] right-[10%] w-[450px] h-[450px] rounded-full bg-cyan-500/5 blur-[115px] pointer-events-none -z-10" />
+      <div className="absolute top-[30%] right-[10%] w-[450px] h-[450px] rounded-full bg-primary/5 blur-[115px] pointer-events-none -z-10" />
 
       <SectionHeader
         tag="Security First"
-        title={<>Enterprise AWS <span className="text-cyan-400">Landing Zone</span> Blueprint</>}
+        title={<>Enterprise AWS <span className="text-primary">Landing Zone</span> Blueprint</>}
         subtitle="We build multi-account AWS architectures following strict Well-Architected Framework guidelines to prevent configuration drift and lateral attacks."
         align="center"
         className="mb-16"
@@ -75,7 +75,7 @@ export function ArchitectureVisuals() {
                   onMouseEnter={() => setActiveTierId(tier.id)}
                   className={`w-full text-left p-4 rounded-xl border transition-all flex flex-col gap-3 cursor-pointer select-none ${
                     isActive
-                      ? "bg-accent/40 border-cyan-500/40 shadow-md"
+                      ? "bg-accent/40 border-primary/40 shadow-md"
                       : "bg-background/20 border-border/40 hover:bg-accent/20 hover:border-border"
                   }`}
                 >
@@ -84,7 +84,7 @@ export function ArchitectureVisuals() {
                       {tier.icon}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h4 className={`text-base font-bold transition-colors ${isActive ? "text-cyan-500" : "text-foreground"}`}>
+                      <h4 className={`text-base font-bold transition-colors ${isActive ? "text-primary" : "text-foreground"}`}>
                         {tier.title}
                       </h4>
                       <span className="text-[11px] font-mono text-muted-foreground block mt-0.5">
@@ -135,10 +135,10 @@ export function ArchitectureVisuals() {
                   height="50"
                   rx="8"
                   className={`transition-all duration-300 ${
-                    activeTierId === "org-mgmt" ? "stroke-cyan-500 fill-cyan-500/5 stroke-2" : "stroke-border/40 fill-background/30"
+                    activeTierId === "org-mgmt" ? "stroke-primary fill-primary/5 stroke-2" : "stroke-border/40 fill-background/30"
                   }`}
                 />
-                <text x="55" y="95" className={`font-semibold text-xs transition-colors ${activeTierId === "org-mgmt" ? "fill-cyan-400" : "fill-foreground/80"}`}>
+                <text x="55" y="95" className={`font-semibold text-xs transition-colors ${activeTierId === "org-mgmt" ? "fill-primary" : "fill-foreground/80"}`}>
                   1. Organization Control Account
                 </text>
               </g>
@@ -152,10 +152,10 @@ export function ArchitectureVisuals() {
                   height="70"
                   rx="8"
                   className={`transition-all duration-300 ${
-                    activeTierId === "security-logging" ? "stroke-teal-500 fill-teal-500/5 stroke-2" : "stroke-border/40 fill-background/30"
+                    activeTierId === "security-logging" ? "stroke-indigo-500 fill-indigo-500/5 stroke-2" : "stroke-border/40 fill-background/30"
                   }`}
                 />
-                <text x="55" y="160" className={`font-semibold text-xs transition-colors ${activeTierId === "security-logging" ? "fill-teal-400" : "fill-foreground/80"}`}>
+                <text x="55" y="160" className={`font-semibold text-xs transition-colors ${activeTierId === "security-logging" ? "fill-indigo-400" : "fill-foreground/80"}`}>
                   2. Security & Logs
                 </text>
                 <text x="55" y="180" className="fill-muted-foreground text-[10px] font-mono">Centralized Log Store</text>
@@ -170,10 +170,10 @@ export function ArchitectureVisuals() {
                   height="70"
                   rx="8"
                   className={`transition-all duration-300 ${
-                    activeTierId === "core-networking" ? "stroke-indigo-500 fill-indigo-500/5 stroke-2" : "stroke-border/40 fill-background/30"
+                    activeTierId === "core-networking" ? "stroke-blue-500 fill-blue-500/5 stroke-2" : "stroke-border/40 fill-background/30"
                   }`}
                 />
-                <text x="275" y="160" className={`font-semibold text-xs transition-colors ${activeTierId === "core-networking" ? "fill-indigo-400" : "fill-foreground/80"}`}>
+                <text x="275" y="160" className={`font-semibold text-xs transition-colors ${activeTierId === "core-networking" ? "fill-blue-400" : "fill-foreground/80"}`}>
                   3. Network Gateway
                 </text>
                 <text x="275" y="180" className="fill-muted-foreground text-[10px] font-mono">Transit Gateway Routing</text>
@@ -188,10 +188,10 @@ export function ArchitectureVisuals() {
                   height="100"
                   rx="8"
                   className={`transition-all duration-300 ${
-                    activeTierId === "workloads" ? "stroke-cyan-500 fill-cyan-500/5 stroke-2" : "stroke-border/40 fill-background/30"
+                    activeTierId === "workloads" ? "stroke-primary fill-primary/5 stroke-2" : "stroke-border/40 fill-background/30"
                   }`}
                 />
-                <text x="55" y="250" className={`font-semibold text-xs transition-colors ${activeTierId === "workloads" ? "fill-cyan-400" : "fill-foreground/80"}`}>
+                <text x="55" y="250" className={`font-semibold text-xs transition-colors ${activeTierId === "workloads" ? "fill-primary" : "fill-foreground/80"}`}>
                   4. App Workloads Account (Sandbox & Prod VPCs)
                 </text>
                 
@@ -219,9 +219,9 @@ export function ArchitectureVisuals() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
                 transition={{ duration: 0.2 }}
-                className="p-5 rounded-xl border border-cyan-500/20 bg-background/50 backdrop-blur-sm space-y-2 relative"
+                className="p-5 rounded-xl border border-primary/20 bg-background/50 backdrop-blur-sm space-y-2 relative"
               >
-                <div className="absolute top-4 right-4 flex items-center gap-1.5 text-[10px] font-mono font-semibold text-cyan-400">
+                <div className="absolute top-4 right-4 flex items-center gap-1.5 text-[10px] font-mono font-semibold text-primary">
                   <HelpCircle className="h-3.5 w-3.5" /> active-blueprint
                 </div>
                 <h4 className="text-base font-bold text-foreground inline-flex items-center gap-2">

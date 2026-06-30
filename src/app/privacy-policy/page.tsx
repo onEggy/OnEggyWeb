@@ -15,7 +15,7 @@ export default function PrivacyPolicyPage() {
     <div className="relative max-w-4xl mx-auto px-6 py-12 md:py-24 space-y-8">
       <SectionHeader
         tag="Data Governance"
-        title={<>Privacy <span className="text-cyan-400">Policy</span></>}
+        title={<>Privacy <span className="text-primary">Policy</span></>}
         subtitle="Last updated: May 28, 2026"
         align="left"
         className="mb-0"
@@ -48,7 +48,7 @@ export default function PrivacyPolicyPage() {
 
         <div className="pt-6 border-t border-border/20 text-xs">
           For any data deletion requests or inquiries, reach out to us at{" "}
-          <a href="mailto:ask@oneggy.com" className="text-cyan-400 hover:underline">
+          <a href="mailto:ask@oneggy.com" className="text-primary hover:underline">
             ask@oneggy.com
           </a>.
         </div>

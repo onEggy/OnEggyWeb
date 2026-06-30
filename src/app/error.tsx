@@ -19,7 +19,7 @@ export default function Error({ error, reset }: ErrorProps) {
     <div className="min-h-[70vh] flex items-center justify-center px-6 relative py-12">
       {/* Glow Effects */}
       <div className="absolute top-[20%] left-[20%] w-[350px] h-[350px] rounded-full bg-red-500/5 blur-[95px] pointer-events-none" />
-      <div className="absolute bottom-[20%] right-[20%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[95px] pointer-events-none" />
+      <div className="absolute bottom-[20%] right-[20%] w-[350px] h-[350px] rounded-full bg-primary/5 blur-[95px] pointer-events-none" />
 
       <div className="glass-card max-w-xl w-full p-8 md:p-10 rounded-2xl border border-red-500/10 text-center space-y-6 shadow-2xl relative">
         <div className="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center mx-auto text-red-400">
@@ -40,7 +40,7 @@ export default function Error({ error, reset }: ErrorProps) {
             <span className="text-[10px] font-mono text-muted-foreground block uppercase tracking-wider">
               error ID (digest)
             </span>
-            <code className="text-xs font-mono text-cyan-400 select-all block mt-0.5 break-all">
+            <code className="text-xs font-mono text-primary select-all block mt-0.5 break-all">
               {error.digest}
             </code>
           </div>
@@ -63,9 +63,9 @@ export default function Error({ error, reset }: ErrorProps) {
         </div>
 
         <div className="pt-4 border-t border-border/20 flex items-center justify-center gap-2 text-xs text-muted-foreground">
-          <Mail className="h-4 w-4 text-cyan-400" />
+          <Mail className="h-4 w-4 text-primary" />
           <span>Need immediate assistance? Email us at </span>
-          <a href="mailto:support@oneggy.com" className="text-cyan-400 hover:underline">
+          <a href="mailto:support@oneggy.com" className="text-primary hover:underline">
             support@oneggy.com
           </a>
         </div>

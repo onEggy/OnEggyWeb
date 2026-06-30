@@ -128,10 +128,8 @@ export default function CaseStudiesPage() {
           __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
         }}
       />
-      <div className="relative max-w-7xl mx-auto px-6 py-16 md:py-32 space-y-24">
-        {/* Decorative background elements */}
-        <div className="absolute top-[10%] left-[-10%] w-[350px] h-[350px] rounded-full bg-blue-500/5 blur-[95px] pointer-events-none -z-10 animate-pulse" />
-
+      <div className="max-w-7xl mx-auto px-6 py-16 md:py-32 space-y-24">
+        
         <SectionHeader
           tag="Proven Outcomes"
           title={<>Client Success & <span className="text-primary">Modernization Case Studies</span></>}
@@ -146,7 +144,7 @@ export default function CaseStudiesPage() {
             return (
               <StaggerItem
                 key={index}
-                className="border border-zinc-800 p-6 sm:p-8 rounded-2xl transition-all duration-300 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch bg-zinc-950/20 group"
+                className="border border-zinc-900 p-6 sm:p-8 rounded transition-all duration-300 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch bg-zinc-950/20 group hover:border-primary/40"
               >
                 {/* Text block */}
                 <div className={`lg:col-span-7 flex flex-col justify-between space-y-6 ${
@@ -154,7 +152,7 @@ export default function CaseStudiesPage() {
                 }`}>
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-zinc-900 border border-zinc-855 border-zinc-800 flex items-center justify-center shrink-0">
+                      <div className="w-10 h-10 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
                         {item.icon}
                       </div>
                       <div>
@@ -205,7 +203,7 @@ export default function CaseStudiesPage() {
                 </div>
 
                 {/* Corporate Performance Summary Board */}
-                <div className={`lg:col-span-5 flex flex-col justify-center bg-zinc-900/10 rounded-xl border border-zinc-850 p-6 relative overflow-hidden font-sans ${
+                <div className={`lg:col-span-5 flex flex-col justify-center bg-zinc-900/10 rounded border border-zinc-900 p-6 relative overflow-hidden font-sans ${
                   isEven ? "lg:order-last" : "lg:order-first"
                 }`}>
                   <div className="absolute top-3 right-4 text-[9px] font-mono font-bold text-primary uppercase tracking-widest">

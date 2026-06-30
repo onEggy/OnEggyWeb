@@ -122,10 +122,10 @@ function parseInlineMarkdown(text: string): string {
   parsed = parsed.replace(/\*(.*?)\*/g, '<em class="italic">$1</em>');
   
   // Inline code `code`
-  parsed = parsed.replace(/`(.*?)`/g, '<code class="bg-accent/40 border border-border/40 px-1.5 py-0.5 rounded text-cyan-400 font-mono text-xs font-medium">$1</code>');
+  parsed = parsed.replace(/`(.*?)`/g, '<code class="bg-accent/40 border border-border/40 px-1.5 py-0.5 rounded text-primary font-mono text-xs font-medium">$1</code>');
   
   // Links [text](url)
-  parsed = parsed.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-cyan-400 hover:underline hover:text-cyan-300 font-medium">$1</a>');
+  parsed = parsed.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-primary hover:underline hover:text-primary/80 font-medium">$1</a>');
 
   return parsed;
 }

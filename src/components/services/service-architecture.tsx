@@ -41,70 +41,70 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
         return [
           {
             id: "cloud-gateway",
-            icon: <Network className="h-5 w-5 text-cyan-400" />,
+            icon: <Network className="h-5 w-5 text-primary" />,
             title: "Global Transit & DNS",
             sub: "Route 53 & ALB Ingress",
             desc: "Directs web traffic safely. Uses Route53 geolocation records, AWS WAF firewall inspection, and Application Load Balancers to route incoming connections.",
-            color: "#22d3ee",
+            color: "#2563eb",
           },
           {
             id: "cloud-security",
-            icon: <Shield className="h-5 w-5 text-teal-400" />,
+            icon: <Shield className="h-5 w-5 text-indigo-400" />,
             title: "Identity & Key Access",
             sub: "IAM Controls & KMS Keys",
             desc: "Enforces zero-trust boundaries. IAM roles isolate services, database tables are encrypted with KMS keys, and secrets are dynamically fetched from AWS Secrets Manager.",
-            color: "#14b8a6",
+            color: "#818cf8",
           },
           {
             id: "cloud-compute",
-            icon: <Cpu className="h-5 w-5 text-indigo-400" />,
+            icon: <Cpu className="h-5 w-5 text-blue-400" />,
             title: "Isolated App Compute",
             sub: "Private VPC EKS Subnets",
             desc: "Executes microservice containers. Apps run inside isolated private subnets with egress-only NAT Gateways, preventing direct inbound connections from the internet.",
-            color: "#6366f1",
+            color: "#60a5fa",
           },
           {
             id: "cloud-data",
-            icon: <Database className="h-5 w-5 text-cyan-500" />,
+            icon: <Database className="h-5 w-5 text-primary" />,
             title: "Replicated Data Tier",
             sub: "Multi-AZ Aurora Clusters",
             desc: "Houses persistent structured data. Deployed across multiple Availability Zones with subnets walled off, reachable only from the application workload layer.",
-            color: "#06b6d4",
+            color: "#3b82f6",
           },
         ];
       case "devops":
         return [
           {
             id: "devops-git",
-            icon: <GitBranch className="h-5 w-5 text-cyan-400" />,
+            icon: <GitBranch className="h-5 w-5 text-primary" />,
             title: "Commit Trigger",
             sub: "Webhook Integrations",
             desc: "Merge triggers instant actions. Merging code changes into main repositories alerts CI systems to boot containerized runners.",
-            color: "#22d3ee",
+            color: "#2563eb",
           },
           {
             id: "devops-scan",
-            icon: <Search className="h-5 w-5 text-teal-400" />,
+            icon: <Search className="h-5 w-5 text-indigo-400" />,
             title: "SecOps Compliance Scan",
             sub: "Snyk & SonarQube Checking",
             desc: "Scans repository layouts for security problems, bad coding standards, or committed credentials, failing builds automatically if issues are detected.",
-            color: "#14b8a6",
+            color: "#818cf8",
           },
           {
             id: "devops-build",
-            icon: <Container className="h-5 w-5 text-indigo-400" />,
+            icon: <Container className="h-5 w-5 text-blue-400" />,
             title: "Container Packaging",
             sub: "Multi-Stage Docker & ECR",
             desc: "Builds small runtime container layers, striping out development tooling dependencies. Safe images are pushed to AWS Elastic Container Registry.",
-            color: "#6366f1",
+            color: "#60a5fa",
           },
           {
             id: "devops-deploy",
-            icon: <Rocket className="h-5 w-5 text-cyan-500" />,
+            icon: <Rocket className="h-5 w-5 text-primary" />,
             title: "ArgoCD GitOps Rollout",
             sub: "Kubernetes Cluster Sync",
             desc: "ArgoCD monitors Git state updates and performs automated rolling pod deployment restarts with health checks for zero-downtime releases.",
-            color: "#06b6d4",
+            color: "#3b82f6",
           },
         ];
       case "software":
@@ -112,35 +112,35 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
         return [
           {
             id: "software-client",
-            icon: <Globe className="h-5 w-5 text-cyan-400" />,
+            icon: <Globe className="h-5 w-5 text-primary" />,
             title: "Next.js Hybrid Rendering",
             sub: "Server Components & Hydration",
             desc: "Presents beautiful responsive layouts. Pages compile on the server for speed and SEO rankings, then hydrate client-side for smooth transitions.",
-            color: "#22d3ee",
+            color: "#2563eb",
           },
           {
             id: "software-gateway",
-            icon: <Lock className="h-5 w-5 text-teal-400" />,
+            icon: <Lock className="h-5 w-5 text-indigo-400" />,
             title: "API Gateway Routing",
             sub: "JSON Web Token Verification",
             desc: "Manages network endpoints. Translates client URL inputs, validates incoming authorization tokens, and handles rate limiting to prevent DDoS overload.",
-            color: "#14b8a6",
+            color: "#818cf8",
           },
           {
             id: "software-backend",
-            icon: <Cpu className="h-5 w-5 text-indigo-400" />,
+            icon: <Cpu className="h-5 w-5 text-blue-400" />,
             title: "Async Backend Services",
             sub: "FastAPI Async Processing",
             desc: "Executes business process models. Highly efficient async worker engines process backend logic layers, validation rules, and third-party integrations.",
-            color: "#6366f1",
+            color: "#60a5fa",
           },
           {
             id: "software-storage",
-            icon: <Database className="h-5 w-5 text-cyan-500" />,
+            icon: <Database className="h-5 w-5 text-primary" />,
             title: "Data Cache & Storage",
             sub: "PostgreSQL & Redis Cluster",
             desc: "Saves application state securely. Employs Postgres Row-Level Security to enforce tenant isolation, combined with a fast Redis caching layer.",
-            color: "#06b6d4",
+            color: "#3b82f6",
           },
         ];
     }
@@ -183,7 +183,7 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
             {/* Outer Cloud Boundary */}
             <rect x="15" y="15" width="470" height="330" rx="16" strokeDasharray="4, 4" className="stroke-muted-foreground/30" />
             <text x="35" y="42" className="fill-muted-foreground/60 font-mono text-[9px] uppercase tracking-wider">AWS VPC Cloud Environment</text>
-
+ 
             {/* Global Transit Tier */}
             <g className="cursor-pointer" onClick={() => setActiveTierId("cloud-gateway")}>
               <rect
@@ -193,14 +193,14 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
                 height="50"
                 rx="8"
                 className={`transition-all duration-300 ${
-                  activeTierId === "cloud-gateway" ? "stroke-cyan-500 fill-cyan-500/5 stroke-2" : "stroke-border/40 fill-background/30"
+                  activeTierId === "cloud-gateway" ? "stroke-primary fill-primary/5 stroke-2" : "stroke-border/40 fill-background/30"
                 }`}
               />
-              <text x="55" y="95" className={`font-semibold text-xs transition-colors ${activeTierId === "cloud-gateway" ? "fill-cyan-400" : "fill-foreground/80"}`}>
+              <text x="55" y="95" className={`font-semibold text-xs transition-colors ${activeTierId === "cloud-gateway" ? "fill-primary" : "fill-foreground/80"}`}>
                 1. Transit Network & Security Edge
               </text>
             </g>
-
+ 
             {/* Security Tiers */}
             <g className="cursor-pointer" onClick={() => setActiveTierId("cloud-security")}>
               <rect
@@ -210,15 +210,15 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
                 height="70"
                 rx="8"
                 className={`transition-all duration-300 ${
-                  activeTierId === "cloud-security" ? "stroke-teal-500 fill-teal-500/5 stroke-2" : "stroke-border/40 fill-background/30"
+                  activeTierId === "cloud-security" ? "stroke-indigo-500 fill-indigo-500/5 stroke-2" : "stroke-border/40 fill-background/30"
                 }`}
               />
-              <text x="55" y="160" className={`font-semibold text-xs transition-colors ${activeTierId === "cloud-security" ? "fill-teal-400" : "fill-foreground/80"}`}>
+              <text x="55" y="160" className={`font-semibold text-xs transition-colors ${activeTierId === "cloud-security" ? "fill-indigo-400" : "fill-foreground/80"}`}>
                 2. Security & Control
               </text>
               <text x="55" y="180" className="fill-muted-foreground text-[10px] font-mono">IAM roles, KMS & Key rotation</text>
             </g>
-
+ 
             {/* App Compute Tiers */}
             <g className="cursor-pointer" onClick={() => setActiveTierId("cloud-compute")}>
               <rect
@@ -228,15 +228,15 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
                 height="70"
                 rx="8"
                 className={`transition-all duration-300 ${
-                  activeTierId === "cloud-compute" ? "stroke-indigo-500 fill-indigo-500/5 stroke-2" : "stroke-border/40 fill-background/30"
+                  activeTierId === "cloud-compute" ? "stroke-blue-500 fill-blue-500/5 stroke-2" : "stroke-border/40 fill-background/30"
                 }`}
               />
-              <text x="275" y="160" className={`font-semibold text-xs transition-colors ${activeTierId === "cloud-compute" ? "fill-indigo-400" : "fill-foreground/80"}`}>
+              <text x="275" y="160" className={`font-semibold text-xs transition-colors ${activeTierId === "cloud-compute" ? "fill-blue-400" : "fill-foreground/80"}`}>
                 3. Isolated App Compute
               </text>
               <text x="275" y="180" className="fill-muted-foreground text-[10px] font-mono">EKS Pods & Autoscaling</text>
             </g>
-
+ 
             {/* Database Tiers */}
             <g className="cursor-pointer" onClick={() => setActiveTierId("cloud-data")}>
               <rect
@@ -246,34 +246,34 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
                 height="100"
                 rx="8"
                 className={`transition-all duration-300 ${
-                  activeTierId === "cloud-data" ? "stroke-cyan-500 fill-cyan-500/5 stroke-2" : "stroke-border/40 fill-background/30"
+                  activeTierId === "cloud-data" ? "stroke-primary fill-primary/5 stroke-2" : "stroke-border/40 fill-background/30"
                 }`}
               />
-              <text x="55" y="250" className={`font-semibold text-xs transition-colors ${activeTierId === "cloud-data" ? "fill-cyan-400" : "fill-foreground/80"}`}>
+              <text x="55" y="250" className={`font-semibold text-xs transition-colors ${activeTierId === "cloud-data" ? "fill-primary" : "fill-foreground/80"}`}>
                 4. Replicated Database Tier (Private Multi-AZ)
               </text>
               
               <rect x="55" y="270" width="180" height="35" rx="4" strokeDasharray="3, 3" className="stroke-muted-foreground/30 fill-background/40" />
               <text x="65" y="290" className="fill-muted-foreground text-[9px] font-mono">Master Database Node</text>
-
+ 
               <rect x="255" y="270" width="190" height="35" rx="4" strokeDasharray="3, 3" className="stroke-muted-foreground/30 fill-background/40" />
               <text x="265" y="290" className="fill-muted-foreground text-[9px] font-mono">Multi-AZ Read Replica</text>
             </g>
-
+ 
             {/* Connecting lines */}
             <line x1="250" y1="115" x2="250" y2="130" strokeDasharray="3, 3" className="stroke-muted-foreground/40" />
             <line x1="140" y1="200" x2="140" y2="220" strokeDasharray="3, 3" className="stroke-muted-foreground/40" />
             <line x1="360" y1="200" x2="360" y2="220" strokeDasharray="3, 3" className="stroke-muted-foreground/40" />
           </svg>
         );
-
+ 
       case "devops":
         return (
           <svg viewBox="0 0 500 360" className="w-full h-full stroke-muted-foreground/20 fill-none">
             {/* Outer Pipeline Frame */}
             <rect x="15" y="15" width="470" height="330" rx="16" strokeDasharray="4, 4" className="stroke-muted-foreground/30" />
             <text x="35" y="42" className="fill-muted-foreground/60 font-mono text-[9px] uppercase tracking-wider">DevOps Build & Deployment Flow</text>
-
+ 
             {/* Step 1: Git push */}
             <g className="cursor-pointer" onClick={() => setActiveTierId("devops-git")}>
               <rect
@@ -283,17 +283,17 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
                 height="85"
                 rx="8"
                 className={`transition-all duration-300 ${
-                  activeTierId === "devops-git" ? "stroke-cyan-500 fill-cyan-500/5 stroke-2" : "stroke-border/40 fill-background/30"
+                  activeTierId === "devops-git" ? "stroke-primary fill-primary/5 stroke-2" : "stroke-border/40 fill-background/30"
                 }`}
               />
-              <text x="55" y="95" className={`font-semibold text-xs transition-colors ${activeTierId === "devops-git" ? "fill-cyan-400" : "fill-foreground/80"}`}>
+              <text x="55" y="95" className={`font-semibold text-xs transition-colors ${activeTierId === "devops-git" ? "fill-primary" : "fill-foreground/80"}`}>
                 1. Git Push / Merge
               </text>
               <text x="55" y="115" className="fill-muted-foreground text-[10px] font-mono">Code repository webhooks</text>
-              <circle cx="190" cy="115" r="8" className="stroke-cyan-500/40 fill-background" />
-              <path d="M190 111 v8 M187 115 h6" className="stroke-cyan-500/60" />
+              <circle cx="190" cy="115" r="8" className="stroke-primary/40 fill-background" />
+              <path d="M190 111 v8 M187 115 h6" className="stroke-primary/60" />
             </g>
-
+ 
             {/* Step 2: SecOps Scan */}
             <g className="cursor-pointer" onClick={() => setActiveTierId("devops-scan")}>
               <rect
@@ -303,15 +303,15 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
                 height="85"
                 rx="8"
                 className={`transition-all duration-300 ${
-                  activeTierId === "devops-scan" ? "stroke-teal-500 fill-teal-500/5 stroke-2" : "stroke-border/40 fill-background/30"
+                  activeTierId === "devops-scan" ? "stroke-indigo-500 fill-indigo-500/5 stroke-2" : "stroke-border/40 fill-background/30"
                 }`}
               />
-              <text x="285" y="95" className={`font-semibold text-xs transition-colors ${activeTierId === "devops-scan" ? "fill-teal-400" : "fill-foreground/80"}`}>
+              <text x="285" y="95" className={`font-semibold text-xs transition-colors ${activeTierId === "devops-scan" ? "fill-indigo-400" : "fill-foreground/80"}`}>
                 2. Security Scan
               </text>
               <text x="285" y="115" className="fill-muted-foreground text-[10px] font-mono">Snyk & Trivy vulnerability checks</text>
             </g>
-
+ 
             {/* Step 3: Container Build */}
             <g className="cursor-pointer" onClick={() => setActiveTierId("devops-build")}>
               <rect
@@ -321,15 +321,15 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
                 height="85"
                 rx="8"
                 className={`transition-all duration-300 ${
-                  activeTierId === "devops-build" ? "stroke-indigo-500 fill-indigo-500/5 stroke-2" : "stroke-border/40 fill-background/30"
+                  activeTierId === "devops-build" ? "stroke-blue-500 fill-blue-500/5 stroke-2" : "stroke-border/40 fill-background/30"
                 }`}
               />
-              <text x="55" y="230" className={`font-semibold text-xs transition-colors ${activeTierId === "devops-build" ? "fill-indigo-400" : "fill-foreground/80"}`}>
+              <text x="55" y="230" className={`font-semibold text-xs transition-colors ${activeTierId === "devops-build" ? "fill-blue-400" : "fill-foreground/80"}`}>
                 3. Docker Build & Registry
               </text>
               <text x="55" y="250" className="fill-muted-foreground text-[10px] font-mono">Multi-stage push to AWS ECR</text>
             </g>
-
+ 
             {/* Step 4: GitOps Rollout */}
             <g className="cursor-pointer" onClick={() => setActiveTierId("devops-deploy")}>
               <rect
@@ -339,15 +339,15 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
                 height="85"
                 rx="8"
                 className={`transition-all duration-300 ${
-                  activeTierId === "devops-deploy" ? "stroke-cyan-500 fill-cyan-500/5 stroke-2" : "stroke-border/40 fill-background/30"
+                  activeTierId === "devops-deploy" ? "stroke-primary fill-primary/5 stroke-2" : "stroke-border/40 fill-background/30"
                 }`}
               />
-              <text x="285" y="230" className={`font-semibold text-xs transition-colors ${activeTierId === "devops-deploy" ? "fill-cyan-400" : "fill-foreground/80"}`}>
+              <text x="285" y="230" className={`font-semibold text-xs transition-colors ${activeTierId === "devops-deploy" ? "fill-primary" : "fill-foreground/80"}`}>
                 4. ArgoCD / K8s Deploy
               </text>
               <text x="285" y="250" className="fill-muted-foreground text-[10px] font-mono">Auto scaling pods deploy</text>
             </g>
-
+ 
             {/* Connection Paths */}
             <path d="M230 107 H270" className="stroke-muted-foreground/30" markerEnd="url(#arrow)" />
             <path d="M365 150 V200" className="stroke-muted-foreground/30" />
@@ -355,7 +355,7 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
             <path d="M230 242 H270" className="stroke-muted-foreground/30" />
           </svg>
         );
-
+ 
       case "software":
       default:
         return (
@@ -363,7 +363,7 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
             {/* Outer Box */}
             <rect x="15" y="15" width="470" height="330" rx="16" strokeDasharray="4, 4" className="stroke-muted-foreground/30" />
             <text x="35" y="42" className="fill-muted-foreground/60 font-mono text-[9px] uppercase tracking-wider">Multi-Tier Software Stack</text>
-
+ 
             {/* Tier 1: Client Frontends */}
             <g className="cursor-pointer" onClick={() => setActiveTierId("software-client")}>
               <rect
@@ -373,14 +373,14 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
                 height="50"
                 rx="8"
                 className={`transition-all duration-300 ${
-                  activeTierId === "software-client" ? "stroke-cyan-500 fill-cyan-500/5 stroke-2" : "stroke-border/40 fill-background/30"
+                  activeTierId === "software-client" ? "stroke-primary fill-primary/5 stroke-2" : "stroke-border/40 fill-background/30"
                 }`}
               />
-              <text x="55" y="95" className={`font-semibold text-xs transition-colors ${activeTierId === "software-client" ? "fill-cyan-400" : "fill-foreground/80"}`}>
+              <text x="55" y="95" className={`font-semibold text-xs transition-colors ${activeTierId === "software-client" ? "fill-primary" : "fill-foreground/80"}`}>
                 1. User Interface (Next.js & Mobile)
               </text>
             </g>
-
+ 
             {/* Tier 2: API Gateway */}
             <g className="cursor-pointer" onClick={() => setActiveTierId("software-gateway")}>
               <rect
@@ -390,14 +390,14 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
                 height="50"
                 rx="8"
                 className={`transition-all duration-300 ${
-                  activeTierId === "software-gateway" ? "stroke-teal-500 fill-teal-500/5 stroke-2" : "stroke-border/40 fill-background/30"
+                  activeTierId === "software-gateway" ? "stroke-indigo-500 fill-indigo-500/5 stroke-2" : "stroke-border/40 fill-background/30"
                 }`}
               />
-              <text x="55" y="160" className={`font-semibold text-xs transition-colors ${activeTierId === "software-gateway" ? "fill-teal-400" : "fill-foreground/80"}`}>
+              <text x="55" y="160" className={`font-semibold text-xs transition-colors ${activeTierId === "software-gateway" ? "fill-indigo-400" : "fill-foreground/80"}`}>
                 2. API Gateway & JWT Auth
               </text>
             </g>
-
+ 
             {/* Tier 3: Async Services */}
             <g className="cursor-pointer" onClick={() => setActiveTierId("software-backend")}>
               <rect
@@ -407,14 +407,14 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
                 height="50"
                 rx="8"
                 className={`transition-all duration-300 ${
-                  activeTierId === "software-backend" ? "stroke-indigo-500 fill-indigo-500/5 stroke-2" : "stroke-border/40 fill-background/30"
+                  activeTierId === "software-backend" ? "stroke-blue-500 fill-blue-500/5 stroke-2" : "stroke-border/40 fill-background/30"
                 }`}
               />
-              <text x="55" y="225" className={`font-semibold text-xs transition-colors ${activeTierId === "software-backend" ? "fill-indigo-400" : "fill-foreground/80"}`}>
+              <text x="55" y="225" className={`font-semibold text-xs transition-colors ${activeTierId === "software-backend" ? "fill-blue-400" : "fill-foreground/80"}`}>
                 3. Business Async Microservices
               </text>
             </g>
-
+ 
             {/* Tier 4: Cache & Postgres DB */}
             <g className="cursor-pointer" onClick={() => setActiveTierId("software-storage")}>
               <rect
@@ -424,14 +424,14 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
                 height="65"
                 rx="8"
                 className={`transition-all duration-300 ${
-                  activeTierId === "software-storage" ? "stroke-cyan-500 fill-cyan-500/5 stroke-2" : "stroke-border/40 fill-background/30"
+                  activeTierId === "software-storage" ? "stroke-primary fill-primary/5 stroke-2" : "stroke-border/40 fill-background/30"
                 }`}
               />
-              <text x="55" y="290" className={`font-semibold text-xs transition-colors ${activeTierId === "software-storage" ? "fill-cyan-400" : "fill-foreground/80"}`}>
+              <text x="55" y="290" className={`font-semibold text-xs transition-colors ${activeTierId === "software-storage" ? "fill-primary" : "fill-foreground/80"}`}>
                 4. Data Tier (Postgres & Redis Cache)
               </text>
             </g>
-
+ 
             {/* Connections */}
             <line x1="250" y1="115" x2="250" y2="130" strokeDasharray="3, 3" className="stroke-muted-foreground/30" />
             <line x1="250" y1="180" x2="250" y2="195" strokeDasharray="3, 3" className="stroke-muted-foreground/30" />
@@ -440,20 +440,20 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
         );
     }
   };
-
+ 
   return (
     <section className="max-w-7xl mx-auto px-6 py-16 md:py-24 border-t border-border/40 relative">
       {/* Background Glow */}
-      <div className="absolute top-[25%] right-[12%] w-[400px] h-[400px] rounded-full bg-cyan-500/5 blur-[120px] pointer-events-none -z-10 animate-pulse" />
-
+      <div className="absolute top-[25%] right-[12%] w-[400px] h-[400px] rounded-full bg-primary/5 blur-[120px] pointer-events-none -z-10 animate-pulse" />
+ 
       <SectionHeader
         tag="Security & Architecture"
-        title={<>{getSectionTitle()} for <span className="text-cyan-400">{serviceName}</span></>}
+        title={<>{getSectionTitle()} for <span className="text-primary">{serviceName}</span></>}
         subtitle={getSectionSubtitle()}
         align="center"
         className="mb-16"
       />
-
+ 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Left Column: Tiers Selector */}
         <div className="lg:col-span-5 space-y-4">
@@ -470,7 +470,7 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
                   onMouseEnter={() => setActiveTierId(tier.id)}
                   className={`w-full text-left p-4 rounded-xl border transition-all flex flex-col gap-3 cursor-pointer select-none ${
                     isActive
-                      ? "bg-accent/40 border-cyan-500/40 shadow-md scale-[1.01]"
+                      ? "bg-accent/40 border-primary/40 shadow-md scale-[1.01]"
                       : "bg-background/25 border-border/40 hover:bg-accent/20 hover:border-border/60"
                   }`}
                 >
@@ -479,7 +479,7 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
                       {tier.icon}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h4 className={`text-sm sm:text-base font-bold transition-colors ${isActive ? "text-cyan-400" : "text-foreground"}`}>
+                      <h4 className={`text-sm sm:text-base font-bold transition-colors ${isActive ? "text-primary" : "text-foreground"}`}>
                         {tier.title}
                       </h4>
                       <span className="text-[10px] font-mono text-muted-foreground block mt-0.5">
@@ -509,13 +509,13 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
             })}
           </div>
         </div>
-
+ 
         {/* Right Column: Dynamic SVG & Info Panel */}
         <div className="lg:col-span-7 space-y-6">
           <div className="glass-card rounded-2xl p-6 border border-border/40 relative aspect-[4/3] flex items-center justify-center overflow-hidden shadow-2xl bg-background/20 backdrop-blur-md">
             {renderSVGDiagram()}
           </div>
-
+ 
           {/* Detailed Info Panel (desktop only) */}
           <div className="min-h-[130px] hidden lg:block">
             <AnimatePresence mode="wait">
@@ -525,9 +525,9 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.25 }}
-                className="p-5 rounded-xl border border-cyan-500/20 bg-background/45 backdrop-blur-sm space-y-2 relative"
+                className="p-5 rounded-xl border border-primary/20 bg-background/45 backdrop-blur-sm space-y-2 relative"
               >
-                <div className="absolute top-4 right-4 flex items-center gap-1.5 text-[9px] font-mono font-semibold text-cyan-400">
+                <div className="absolute top-4 right-4 flex items-center gap-1.5 text-[9px] font-mono font-semibold text-primary">
                   <HelpCircle className="h-3.5 w-3.5" /> node-blueprint
                 </div>
                 <h4 className="text-base font-bold text-foreground inline-flex items-center gap-2">

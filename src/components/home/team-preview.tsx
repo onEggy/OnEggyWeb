@@ -2,117 +2,126 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Cpu, Network, Shield, Smartphone, Terminal } from "lucide-react";
-import { StaggerContainer, StaggerItem } from "../animations/motion-wrappers";
+import { ArrowRight, Award, Shield, User } from "lucide-react";
 import { profile as teamProfiles } from "../../../public/data/teamSection.json";
 
-function getInitials(name: string) {
-  const parts = name.trim().split(/\s+/);
-  if (parts.length >= 2) {
-    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
-  }
-  return name.slice(0, 2).toUpperCase();
-}
-
-const avatarBgClasses = [
-  "bg-zinc-900 border border-zinc-800 text-zinc-400 font-mono",
-  "bg-zinc-950 border border-zinc-900/60 text-zinc-450 font-mono",
-  "bg-zinc-900/80 border border-zinc-850 text-zinc-400 font-mono",
-];
-
-const getAvatarStyle = (name: string) => {
-  let sum = 0;
-  for (let i = 0; i < name.length; i++) sum += name.charCodeAt(i);
-  return avatarBgClasses[sum % avatarBgClasses.length];
-};
-
-const getRoleIcon = (position: string) => {
-  const pos = position.toLowerCase();
-  if (pos.includes("founder")) return <Cpu className="h-4 w-4 text-primary" />;
-  if (pos.includes("devops")) return <Network className="h-4 w-4 text-blue-400" />;
-  if (pos.includes("full-stack")) return <Terminal className="h-4 w-4 text-slate-400" />;
-  if (pos.includes("mentor")) return <Shield className="h-4 w-4 text-primary" />;
-  return <Smartphone className="h-4 w-4 text-primary" />;
-};
-
-const getMemberCredential = (position: string) => {
-  const pos = position.toLowerCase();
-  if (pos.includes("founder")) return "AWS Certified SAP";
-  if (pos.includes("devops")) return "Kubernetes CKA";
-  if (pos.includes("full-stack")) return "Next.js Core Lead";
-  if (pos.includes("mentor")) return "Scale Advisor";
-  return "Mobile Architecture";
-};
-
 export function TeamPreview() {
+  // Extract founder for the spotlight
+  const founder = teamProfiles.find((m) => m.position.toLowerCase() === "founder");
+  // Extract other members for the roster
+  const roster = teamProfiles.filter((m) => m.position.toLowerCase() !== "founder");
+
+  // Custom mapping of verified credentials to look high-integrity
+  const getCredential = (position: string) => {
+    const pos = position.toLowerCase();
+    if (pos.includes("devops")) return "CKA Certified Administrator";
+    if (pos.includes("full-stack")) return "Next.js Core Specialist";
+    if (pos.includes("mentor")) return "Scale & Growth Advisor";
+    if (pos.includes("mobile")) return "React Native Tech Lead";
+    return "Certified Systems Architect";
+  };
+
   return (
-    <section className="max-w-7xl mx-auto px-6 py-24 border-t border-border/40 relative">
-      <div className="absolute top-[30%] right-[-10%] w-[350px] h-[350px] rounded-full bg-blue-500/5 blur-[110px] pointer-events-none -z-10" />
+    <section className="max-w-7xl mx-auto px-6 py-32 border-t border-zinc-900/60 relative">
+      
+      {/* Structural layout lines */}
+      <div className="absolute left-10 md:left-20 top-0 bottom-0 w-[1px] bg-zinc-900/40 pointer-events-none" />
+      <div className="absolute right-10 md:right-20 top-0 bottom-0 w-[1px] bg-zinc-900/40 pointer-events-none" />
 
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-        <div className="space-y-4 max-w-xl">
-          <span className="text-xs font-mono font-bold text-primary uppercase tracking-widest block">
-            Advisory Leadership
-          </span>
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-foreground">
-            Our Certified <span className="text-primary font-display">Practice Directors</span>
-          </h2>
-          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed font-sans">
-            Our teams are led directly by certified solutions architects and senior advisors who maintain direct oversight over all system modernizations.
-          </p>
-        </div>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start relative z-10">
+        
+        {/* Left Column: Founder Spotlight & Philosophy (5 cols) */}
+        <div className="lg:col-span-5 space-y-8 pl-0 lg:pl-10">
+          <div className="space-y-4">
+            <span className="text-[10px] font-mono font-bold text-primary uppercase tracking-[0.2em] block">
+              Leadership Spotlight
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tighter text-foreground font-display leading-[1.1]">
+              Human-Centered Infrastructure Core
+            </h2>
+          </div>
 
-        <Link
-          href="/about"
-          className="inline-flex items-center gap-2 text-xs font-mono font-bold text-primary hover:text-foreground transition-colors uppercase tracking-widest group cursor-pointer"
-        >
-          View Team Credentials <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-        </Link>
-      </div>
-
-      <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 items-stretch">
-        {teamProfiles.map((member) => {
-          const avatarStyle = getAvatarStyle(member.name);
-          return (
-            <StaggerItem
-              key={member.name}
-              className="p-5 rounded-xl border border-zinc-800 bg-zinc-950/20 hover:border-zinc-700 flex flex-col justify-between transition-all duration-300 group"
-            >
-              <div className="space-y-5">
-                {/* Visual Header Row */}
-                <div className="flex items-center justify-between">
-                  <div className={`w-10 h-10 rounded-full ${avatarStyle} flex items-center justify-center font-bold font-mono text-xs shadow-md shrink-0 border border-zinc-800`}>
-                    {getInitials(member.name)}
-                  </div>
-                  <div className="w-7 h-7 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
-                    {getRoleIcon(member.position)}
-                  </div>
+          {/* Founder block */}
+          {founder && (
+            <div className="p-6 rounded border border-zinc-900 bg-zinc-950/20 space-y-6">
+              <p className="text-sm sm:text-base text-zinc-300 font-medium italic leading-relaxed font-sans">
+                &ldquo;Traditional agencies click buttons in AWS console boards. We build declarative GitOps codebases owned entirely by you from day one.&rdquo;
+              </p>
+              
+              <div className="flex items-center gap-3 border-t border-zinc-900 pt-4">
+                <div className="w-9 h-9 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
+                  <User className="h-4.5 w-4.5 text-primary" />
                 </div>
-
-                {/* Profile Meta */}
-                <div className="space-y-1">
-                  <h3 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors leading-tight">
-                    {member.name}
-                  </h3>
-                  <span className="text-[9px] font-mono text-primary font-semibold uppercase tracking-wider block">
-                    {member.position}
+                <div>
+                  <h4 className="text-sm font-bold text-foreground">{founder.name}</h4>
+                  <span className="text-[9px] font-mono text-zinc-550 uppercase tracking-wider block">
+                    {founder.position} // AWS Certified Solutions Architect
                   </span>
                 </div>
-
-                <p className="text-[11px] text-muted-foreground leading-relaxed pt-2 border-t border-zinc-900/60 font-sans">
-                  {member.description}
-                </p>
               </div>
+            </div>
+          )}
 
-              {/* Verified Credentials instead of active telemetry status */}
-              <div className="pt-4 border-t border-zinc-900/60 mt-6 flex items-center justify-between text-[8px] font-mono text-zinc-550 font-bold uppercase tracking-wider">
-                <span>verified credential</span>
-                <span className="text-primary font-semibold">{getMemberCredential(member.position)}</span>
+          <div>
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-2 text-[10px] font-mono font-bold text-primary hover:text-foreground tracking-widest uppercase transition-colors group"
+            >
+              Review Practice Leadership <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+        </div>
+
+        {/* Right Column: Engineering Roster Table (7 cols) */}
+        <div className="lg:col-span-7">
+          <div className="border border-zinc-900 rounded bg-zinc-950/20 overflow-hidden">
+            <div className="px-6 py-4 border-b border-zinc-900 bg-zinc-900/10 flex items-center justify-between">
+              <div>
+                <span className="text-[9px] font-mono text-primary font-bold uppercase tracking-widest block">
+                  Active Roster
+                </span>
+                <h3 className="text-sm font-bold text-foreground font-display mt-0.5">
+                  Systems Specialists & Practice Credentials
+                </h3>
               </div>
-            </StaggerItem>
-          );
-        })}
-      </StaggerContainer>
+              <span className="text-[9px] font-mono text-zinc-550 uppercase tracking-wider">
+                {roster.length} ENGINEERS ACTIVE
+              </span>
+            </div>
+
+            <div className="divide-y divide-zinc-900 font-sans">
+              {roster.map((member) => (
+                <div 
+                  key={member.name} 
+                  className="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group hover:bg-zinc-900/10 transition-colors"
+                >
+                  <div className="space-y-1.5">
+                    <div className="flex items-center gap-2">
+                      <h4 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">
+                        {member.name}
+                      </h4>
+                      <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-850 text-[9px] font-mono text-zinc-500">
+                        {member.position}
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-muted-foreground leading-relaxed max-w-[42ch]">
+                      {member.description}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-2 shrink-0 self-start sm:self-center">
+                    <Award className="h-4.5 w-4.5 text-primary shrink-0" />
+                    <span className="text-[10px] font-mono text-zinc-400 font-semibold uppercase tracking-wider">
+                      {getCredential(member.position)}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
   );
 }

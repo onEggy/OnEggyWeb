@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <div className="min-h-[75vh] flex items-center justify-center px-6 relative py-12">
       {/* Dynamic Background Glows */}
-      <div className="absolute top-[20%] left-[-10%] w-[450px] h-[450px] rounded-full bg-cyan-500/5 blur-[120px] pointer-events-none -z-10 animate-pulse" />
+      <div className="absolute top-[20%] left-[-10%] w-[450px] h-[450px] rounded-full bg-primary/5 blur-[120px] pointer-events-none -z-10 animate-pulse" />
       <div className="absolute bottom-[20%] right-[-10%] w-[450px] h-[450px] rounded-full bg-indigo-500/5 blur-[125px] pointer-events-none -z-10" />
 
       <div className="max-w-xl w-full text-center space-y-8 relative z-10">
@@ -16,7 +16,7 @@ export default function NotFound() {
             404
           </h1>
           <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-2xl sm:text-3xl font-bold tracking-tight text-cyan-400">
+            <span className="text-2xl sm:text-3xl font-bold tracking-tight text-primary">
               Page Not Found
             </span>
           </div>
@@ -43,15 +43,15 @@ export default function NotFound() {
             href="/contact"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-12 px-6 rounded-lg bg-background border border-border hover:bg-accent/40 font-medium transition-colors cursor-pointer"
           >
-            <Calendar className="h-4 w-4 text-cyan-400" /> Book Consultation <ArrowRight className="h-4 w-4" />
+            <Calendar className="h-4 w-4 text-primary" /> Book Consultation <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
 
         {/* Support Link */}
         <div className="pt-8 border-t border-border/20 flex items-center justify-center gap-2 text-xs text-muted-foreground">
-          <HelpCircle className="h-4 w-4 text-cyan-400" />
+          <HelpCircle className="h-4 w-4 text-primary" />
           <span>Need help finding a service? Contact our desk at </span>
-          <a href="mailto:support@oneggy.com" className="text-cyan-400 hover:underline">
+          <a href="mailto:support@oneggy.com" className="text-primary hover:underline">
             support@oneggy.com
           </a>
         </div>

@@ -124,7 +124,7 @@ export function ContactForm() {
               placeholder="Aakash Sharma"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full h-11 px-4 rounded-md bg-background border border-border focus:ring-1 focus:ring-cyan-500 focus:outline-none text-sm placeholder:text-muted-foreground/60 transition-all"
+              className="w-full h-11 px-4 rounded-md bg-background border border-border focus:ring-1 focus:ring-primary focus:outline-none text-sm placeholder:text-muted-foreground/60 transition-all"
             />
           </div>
 
@@ -136,7 +136,7 @@ export function ContactForm() {
               placeholder="OnEggy Technologies"
               value={formData.company}
               onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-              className="w-full h-11 px-4 rounded-md bg-background border border-border focus:ring-1 focus:ring-cyan-500 focus:outline-none text-sm placeholder:text-muted-foreground/60 transition-all"
+              className="w-full h-11 px-4 rounded-md bg-background border border-border focus:ring-1 focus:ring-primary focus:outline-none text-sm placeholder:text-muted-foreground/60 transition-all"
             />
           </div>
         </div>
@@ -152,7 +152,7 @@ export function ContactForm() {
               placeholder="aakash@oneggy.com"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full h-11 px-4 rounded-md bg-background border border-border focus:ring-1 focus:ring-cyan-500 focus:outline-none text-sm placeholder:text-muted-foreground/60 transition-all"
+              className="w-full h-11 px-4 rounded-md bg-background border border-border focus:ring-1 focus:ring-primary focus:outline-none text-sm placeholder:text-muted-foreground/60 transition-all"
             />
           </div>
 
@@ -164,7 +164,7 @@ export function ContactForm() {
               placeholder="+91 98111 33005"
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              className="w-full h-11 px-4 rounded-md bg-background border border-border focus:ring-1 focus:ring-cyan-500 focus:outline-none text-sm placeholder:text-muted-foreground/60 transition-all"
+              className="w-full h-11 px-4 rounded-md bg-background border border-border focus:ring-1 focus:ring-primary focus:outline-none text-sm placeholder:text-muted-foreground/60 transition-all"
             />
           </div>
         </div>
@@ -177,7 +177,7 @@ export function ContactForm() {
               id="service"
               value={formData.service}
               onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-              className="w-full h-11 px-4 rounded-md bg-background border border-border focus:ring-1 focus:ring-cyan-500 focus:outline-none text-sm cursor-pointer"
+              className="w-full h-11 px-4 rounded-md bg-background border border-border focus:ring-1 focus:ring-primary focus:outline-none text-sm cursor-pointer"
             >
               <option>AWS Managed Services</option>
               <option>DevOps Consulting & Automation</option>
@@ -196,7 +196,7 @@ export function ContactForm() {
               id="budget"
               value={formData.budget}
               onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-              className="w-full h-11 px-4 rounded-md bg-background border border-border focus:ring-1 focus:ring-cyan-500 focus:outline-none text-sm cursor-pointer"
+              className="w-full h-11 px-4 rounded-md bg-background border border-border focus:ring-1 focus:ring-primary focus:outline-none text-sm cursor-pointer"
             >
               <option>Startup Retainer ($1,000 - $3,000 / mo)</option>
               <option>Growth Retainer ($3,000 - $5,000 / mo)</option>
@@ -215,7 +215,7 @@ export function ContactForm() {
               id="timeline"
               value={formData.timeline}
               onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-              className="w-full h-11 px-4 rounded-md bg-background border border-border focus:ring-1 focus:ring-cyan-500 focus:outline-none text-sm cursor-pointer"
+              className="w-full h-11 px-4 rounded-md bg-background border border-border focus:ring-1 focus:ring-primary focus:outline-none text-sm cursor-pointer"
             >
               <option>Immediate (Under 2 weeks)</option>
               <option>Within 30 Days</option>
@@ -232,7 +232,7 @@ export function ContactForm() {
               placeholder="e.g. India, USA, South Korea"
               value={formData.location}
               onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-              className="w-full h-11 px-4 rounded-md bg-background border border-border focus:ring-1 focus:ring-cyan-500 focus:outline-none text-sm placeholder:text-muted-foreground/60 transition-all"
+              className="w-full h-11 px-4 rounded-md bg-background border border-border focus:ring-1 focus:ring-primary focus:outline-none text-sm placeholder:text-muted-foreground/60 transition-all"
             />
           </div>
         </div>
@@ -247,7 +247,7 @@ export function ContactForm() {
             placeholder="Tell us about your tech stack, number of developers, active cloud hosting cost challenges, or project scope..."
             value={formData.message}
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-            className="w-full p-4 rounded-md bg-background border border-border focus:ring-1 focus:ring-cyan-500 focus:outline-none text-sm placeholder:text-muted-foreground/60 transition-all resize-y min-h-[100px]"
+            className="w-full p-4 rounded-md bg-background border border-border focus:ring-1 focus:ring-primary focus:outline-none text-sm placeholder:text-muted-foreground/60 transition-all resize-y min-h-[100px]"
           />
         </div>
 

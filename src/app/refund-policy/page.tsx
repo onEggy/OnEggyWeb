@@ -93,18 +93,19 @@ export default function RefundPolicyPage() {
   return (
     <>
       <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-16">
-        {/* Background Blur Orbs */}
-        <div className="absolute top-[10%] left-[-10%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[95px] pointer-events-none -z-10" />
-        <div className="absolute bottom-[20%] right-[-10%] w-[400px] h-[400px] rounded-full bg-teal-500/5 blur-[100px] pointer-events-none -z-10 animate-pulse" />
+        {/* Blueprint Coordinates */}
+        <div className="absolute top-2 left-10 font-mono text-[8px] text-zinc-650 opacity-40 select-none">
+          GRID.SEC.L // BILLING.POLICY_V1.0
+        </div>
 
         {/* 1. HERO SECTION */}
         <div className="text-center max-w-3xl mx-auto space-y-6 pt-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-background/50 backdrop-blur-sm text-xs font-mono text-cyan-400 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-background/50 backdrop-blur-sm text-xs font-mono text-primary shadow-sm">
             <ShieldCheck className="h-3.5 w-3.5" />
             <span>Transparent Billing Standards</span>
           </div>
           <SectionHeader
-            title={<>Refund & <span className="text-cyan-400">Billing Policy</span></>}
+            title={<>Refund & <span className="text-primary font-bold">Billing Policy</span></>}
             subtitle="Transparent guidelines protecting custom DevOps retainers, cloud-native deployments, and software engineering agreements."
             align="center"
             className="mb-0"
@@ -115,7 +116,7 @@ export default function RefundPolicyPage() {
         <div className="max-w-4xl mx-auto">
           <div className="glass-card p-6 rounded-2xl border border-border/40 bg-background/25 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 shrink-0">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary shrink-0">
                 <Building2 className="h-6 w-6" />
               </div>
               <div className="space-y-1">
@@ -141,7 +142,7 @@ export default function RefundPolicyPage() {
         <div className="max-w-4xl mx-auto space-y-4">
           <div className="space-y-2 mb-6">
             <h2 className="text-xl font-bold text-foreground inline-flex items-center gap-2">
-              <FileText className="h-5 w-5 text-cyan-400" /> Policy Clauses
+              <FileText className="h-5 w-5 text-primary" /> Policy Clauses
             </h2>
             <p className="text-xs text-muted-foreground">
               Click on each section below to review the specific guidelines and billing terms:
@@ -152,12 +153,12 @@ export default function RefundPolicyPage() {
             {policySections.map((sec, index) => (
               <StaggerItem
                 key={index}
-                className="glass-card border border-border/40 rounded-xl overflow-hidden hover:border-cyan-500/20 transition-all duration-300 shadow-sm"
+                className="glass-card border border-border/40 rounded-xl overflow-hidden hover:border-primary/20 transition-all duration-300 shadow-sm"
               >
                 <details className="group [&_summary::-webkit-details-marker]:hidden">
                   <summary className="flex items-center justify-between p-5 cursor-pointer font-bold text-foreground hover:bg-accent/20 transition-colors select-none">
                     <span className="text-sm md:text-base font-semibold pr-4">{sec.title}</span>
-                    <span className="transition-transform duration-300 group-open:rotate-180 shrink-0 text-muted-foreground group-hover:text-cyan-400">
+                    <span className="transition-transform duration-300 group-open:rotate-180 shrink-0 text-muted-foreground group-hover:text-primary">
                       <ChevronDown className="h-4 w-4" />
                     </span>
                   </summary>
@@ -187,8 +188,8 @@ export default function RefundPolicyPage() {
         </div>
 
         {/* 5. CONTACT SUPPORT CTA */}
-        <div className="max-w-4xl mx-auto bg-gradient-to-tr from-cyan-500/5 to-transparent border border-border/40 rounded-2xl p-8 text-center space-y-6 shadow-xl">
-          <div className="w-12 h-12 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mx-auto">
+        <div className="max-w-4xl mx-auto bg-gradient-to-tr from-primary/5 to-transparent border border-border/40 rounded-2xl p-8 text-center space-y-6 shadow-xl">
+          <div className="w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mx-auto">
             <HelpCircle className="h-6 w-6" />
           </div>
           <div className="space-y-2 max-w-lg mx-auto">

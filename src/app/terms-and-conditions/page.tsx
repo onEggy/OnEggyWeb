@@ -15,7 +15,7 @@ export default function TermsAndConditionsPage() {
     <div className="relative max-w-4xl mx-auto px-6 py-12 md:py-24 space-y-8">
       <SectionHeader
         tag="Agreement"
-        title={<>Terms & <span className="text-cyan-400">Conditions</span></>}
+        title={<>Terms & <span className="text-primary">Conditions</span></>}
         subtitle="Last updated: May 28, 2026"
         align="left"
         className="mb-0"
@@ -48,7 +48,7 @@ export default function TermsAndConditionsPage() {
 
         <div className="pt-6 border-t border-border/20 text-xs">
           For legal inquiries or agreement details, email our compliance team at{" "}
-          <a href="mailto:ask@oneggy.com" className="text-cyan-400 hover:underline">
+          <a href="mailto:ask@oneggy.com" className="text-primary hover:underline">
             ask@oneggy.com
           </a>.
         </div>

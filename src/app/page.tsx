@@ -4,7 +4,6 @@ import dynamic from "next/dynamic";
 import { Hero } from "@/components/home/hero";
 
 const ClientMarquee = dynamic(() => import("@/components/home/client-marquee").then((mod) => mod.ClientMarquee));
-const StatusBoard = dynamic(() => import("@/components/home/status-board").then((mod) => mod.StatusBoard));
 const ServicesShowcase = dynamic(() => import("@/components/home/services-showcase").then((mod) => mod.ServicesShowcase));
 const WhyChooseUs = dynamic(() => import("@/components/home/why-choose-us").then((mod) => mod.WhyChooseUs));
 const RoiCalculator = dynamic(() => import("@/components/home/roi-calculator").then((mod) => mod.RoiCalculator));
@@ -92,10 +91,7 @@ export default function Home() {
         {/* Client Logos Motion Marquee (Trust) */}
         <ClientMarquee />
 
-        {/* 2. Systems Uptime Status board (Trust) */}
-        <StatusBoard />
-
-        {/* 3. Core Philosophy & Expertise Narrative */}
+        {/* 2. Core Philosophy & Expertise Narrative */}
         <ExpertiseNarrative />
 
         {/* 4. Cloud Cost Savings ROI Calculator (Business Outcomes) */}

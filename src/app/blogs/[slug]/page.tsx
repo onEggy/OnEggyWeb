@@ -186,22 +186,23 @@ export default async function BlogPostPage({ params }: PageProps) {
         }}
       />
       <article className="relative max-w-4xl mx-auto px-6 py-8 md:py-16 space-y-10 overflow-hidden">
-        {/* Glow Backgrounds */}
-        <div className="absolute top-[5%] left-[-15%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[90px] pointer-events-none -z-10 animate-pulse" />
-        <div className="absolute bottom-[20%] right-[-15%] w-[350px] h-[350px] rounded-full bg-teal-500/5 blur-[95px] pointer-events-none -z-10" />
+        {/* Blueprint Coordinates */}
+        <div className="absolute top-2 left-10 font-mono text-[8px] text-zinc-650 opacity-40 select-none">
+          GRID.SEC.L // BLOG.READ_V1.1
+        </div>
 
         {/* Back Link */}
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 text-xs font-semibold text-muted-foreground hover:text-cyan-500 transition-colors group cursor-pointer"
+          className="inline-flex items-center gap-2 text-xs font-semibold text-muted-foreground hover:text-primary transition-colors group cursor-pointer"
         >
           <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" /> Back to engineering insights
         </Link>
 
         {/* Header Block */}
         <div className="space-y-6">
-          <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-cyan-500 font-semibold uppercase tracking-wider">
-            <span className="px-2.5 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/20">
+          <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-primary font-semibold uppercase tracking-wider">
+            <span className="px-2.5 py-0.5 rounded-full bg-primary/10 border border-primary/20">
               {post.category}
             </span>
           </div>
@@ -211,7 +212,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           </h1>
 
           {post.subTitle && (
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed border-l-2 border-cyan-500/40 pl-4 italic">
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed border-l-2 border-primary/40 pl-4 italic">
               {post.subTitle}
             </p>
           )}
@@ -219,13 +220,13 @@ export default async function BlogPostPage({ params }: PageProps) {
           {/* Telemetry metadata row */}
           <div className="flex flex-wrap items-center gap-6 pt-2 text-xs text-muted-foreground border-b border-border/40 pb-6">
             <span className="flex items-center gap-1.5">
-              <Calendar className="h-4 w-4 text-cyan-500" /> {post.date}
+              <Calendar className="h-4 w-4 text-primary" /> {post.date}
             </span>
             <span className="flex items-center gap-1.5">
-              <Clock className="h-4 w-4 text-teal-500" /> {post.readTime}
+              <Clock className="h-4 w-4 text-amber-500" /> {post.readTime}
             </span>
             <span className="flex items-center gap-1.5">
-              <User className="h-4 w-4 text-indigo-500" /> OnEggy Engineering
+              <User className="h-4 w-4 text-amber-600" /> OnEggy Engineering
             </span>
           </div>
         </div>
@@ -254,13 +255,13 @@ export default async function BlogPostPage({ params }: PageProps) {
         {post.keywords.length > 0 && (
           <div className="border-t border-border/40 pt-8 mt-12 space-y-3">
             <span className="text-xs font-mono font-semibold uppercase tracking-wider text-foreground flex items-center gap-1.5">
-              <Tag className="h-4 w-4 text-cyan-400" /> Tag Ecosystem
+              <Tag className="h-4 w-4 text-primary" /> Tag Ecosystem
             </span>
             <div className="flex flex-wrap gap-2">
               {post.keywords.map((tag) => (
                 <span 
                   key={tag}
-                  className="px-2.5 py-1 rounded bg-accent/20 border border-border/50 text-xs font-medium hover:border-cyan-500/20 transition-colors"
+                  className="px-2.5 py-1 rounded bg-accent/20 border border-border/50 text-xs font-medium hover:border-primary/20 transition-colors"
                 >
                   {tag}
                 </span>
@@ -271,7 +272,6 @@ export default async function BlogPostPage({ params }: PageProps) {
 
         {/* Author / Publisher Bio card */}
         <div className="glass-card p-6 md:p-8 rounded-2xl border border-border/40 bg-background/25 flex flex-col sm:flex-row items-center gap-6 mt-12 relative overflow-hidden">
-          <div className="absolute top-[20%] right-[-10%] w-[150px] h-[150px] rounded-full bg-cyan-500/5 blur-[50px] pointer-events-none -z-10" />
           <div className="w-14 h-14 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 font-mono flex items-center justify-center font-bold text-xl shrink-0 shadow-lg">
             OE
           </div>

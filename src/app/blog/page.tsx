@@ -153,13 +153,14 @@ export default function BlogPage() {
         }}
       />
       <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-16">
-        {/* Decorative Orb */}
-        <div className="absolute top-[30%] right-[-10%] w-[300px] h-[300px] rounded-full bg-cyan-500/5 blur-[80px] pointer-events-none -z-10" />
-        <div className="absolute bottom-[20%] left-[-10%] w-[350px] h-[350px] rounded-full bg-teal-500/5 blur-[100px] pointer-events-none -z-10" />
+        {/* Blueprint Coordinates */}
+        <div className="absolute top-2 left-10 font-mono text-[8px] text-zinc-650 opacity-40 select-none">
+          GRID.SEC.L // BLOG.ARCHIVE_V1.1
+        </div>
 
         <SectionHeader
           tag="Our Insights"
-          title={<>The OnEggy <span className="text-cyan-400">Engineering Blog</span></>}
+          title={<>The OnEggy <span className="text-primary font-bold">Engineering Blog</span></>}
           subtitle="Stay up to date with the latest industry insights, tutorials, and best practices in DevOps, Kubernetes, and Cloud-Native platforms."
           align="left"
           className="max-w-3xl"

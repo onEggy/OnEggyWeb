@@ -9,122 +9,131 @@ const steps = [
   {
     num: "01",
     badge: "Assessment",
-    title: "Discovery & Cloud Cost Audit",
-    desc: "We analyze your AWS bills, EKS cluster resource configurations, and build pipelines to identify resource leaks, slow releases, and compliance gaps.",
-    duration: "Duration: 3-5 Days",
-    deliverables: ["AWS Cost Explorer audits", "IAM privilege analyzer maps", "EKS resource sizing reports"],
-    icon: <ClipboardList className="h-4 w-4 text-cyan-400 group-hover:text-cyan-300 transition-colors" />,
+    title: "Discovery & Cost Auditing",
+    desc: "We analyze your AWS billing statements, resource usage limits, and release lanes to map out architectural bottlenecks and compliance exposures.",
+    duration: "3-5 Days",
+    deliverables: ["AWS Cost Explorer audits", "IAM privilege maps", "EKS pod sizing analyses"],
+    icon: <ClipboardList className="h-4 w-4 text-primary" />,
   },
   {
     num: "02",
     badge: "Strategy",
-    title: "Architecture Blueprint",
-    desc: "We design a secure, highly scalable cloud configuration plan detailing landing zones, cluster scopes, databases, and network policies.",
-    duration: "Duration: 5-7 Days",
-    deliverables: ["Multi-Account AWS Landing Zones", "VPC CIDR / Subnet routing tables", "Kubernetes RBAC matrix"],
-    icon: <PenTool className="h-4 w-4 text-teal-400 group-hover:text-teal-300 transition-colors" />,
+    title: "Landing Zone Blueprints",
+    desc: "We design a multi-account cloud layout detailing isolated networking routes, service-control policies, and container registry security gates.",
+    duration: "5-7 Days",
+    deliverables: ["AWS Control Tower planning", "Transit Gateway routing layouts", "Kubernetes RBAC specifications"],
+    icon: <PenTool className="h-4 w-4 text-primary" />,
   },
   {
     num: "03",
     badge: "Automation",
     title: "Declarative Infrastructure (IaC)",
-    desc: "Our senior engineers write clean, modular Terraform files and Helm charts to provision staging and sandbox environments.",
-    duration: "Duration: 2-3 Weeks",
-    deliverables: ["Dry-run tested Terraform states", "Helm v3 custom templates", "HashiCorp Vault policy JSONs"],
-    icon: <Code className="h-4 w-4 text-indigo-400 group-hover:text-indigo-300 transition-colors" />,
+    desc: "Our senior engineers write dry-run verified Terraform module frameworks and Helm charts, creating replicable staging environments.",
+    duration: "2-3 Weeks",
+    deliverables: ["Dry-run verified Terraform modules", "Helm v3 chart templates", "Isolated VPC configurations"],
+    icon: <Code className="h-4 w-4 text-primary" />,
   },
   {
     num: "04",
-    badge: "CI/CD Setup",
-    title: "Continuous Delivery Pipelines",
-    desc: "We configure robust pipelines to build, lint, and deploy updates into isolated cluster namespaces with zero downtime.",
-    duration: "Duration: 1-2 Weeks",
-    deliverables: ["GitHub Actions runner configs", "ArgoCD GitOps application maps", "Trivy image vulnerability scans"],
-    icon: <Cpu className="h-4 w-4 text-cyan-400 group-hover:text-cyan-300 transition-colors" />,
+    badge: "Pipelines",
+    title: "GitOps Continuous Delivery",
+    desc: "We configure automated deployment pipelines to test, build, scan, and deploy microservices with zero deployment downtime.",
+    duration: "1-2 Weeks",
+    deliverables: ["GitHub Actions configurations", "ArgoCD synchronization workflows", "Trivy SAST security audits"],
+    icon: <Cpu className="h-4 w-4 text-primary" />,
   },
   {
     num: "05",
-    badge: "Scaling & Support",
-    title: "Production Launch & Telemetry",
-    desc: "We transition live operations, configure Grafana/Prometheus alert monitoring systems, and supply persistent weekly audits.",
-    duration: "Duration: Ongoing Support",
-    deliverables: ["Prometheus rules & metrics configs", "Grafana infrastructure dashboards", "PagerDuty webhook alerts"],
-    icon: <Activity className="h-4 w-4 text-teal-400 group-hover:text-teal-300 transition-colors" />,
+    badge: "Operations",
+    title: "SRE Telemetry & Transition",
+    desc: "We migrate production workloads, deploy active log alerting parameters, and hand over architectural blueprints with complete operational logs.",
+    duration: "Ongoing Advisory",
+    deliverables: ["Prometheus alerts configurations", "Grafana infrastructure boards", "PagerDuty incident triggers"],
+    icon: <Activity className="h-4 w-4 text-primary" />,
   },
 ];
 
 export function ProcessTimeline() {
   return (
-    <section className="max-w-5xl mx-auto px-6 py-24 border-t border-border/40 relative">
-      {/* Glow backdrop */}
-      <div className="absolute bottom-[20%] right-[10%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[100px] pointer-events-none -z-10" />
+    <section className="max-w-7xl mx-auto px-6 py-32 border-t border-zinc-900/60 relative">
+      {/* Blueprint Coordinates */}
+      <div className="absolute top-2 left-10 font-mono text-[8px] text-zinc-650 opacity-40 select-none">
+        GRID.SEC.E // ADVISORY.STEPPER_V1.1
+      </div>
+      
+      {/* Structural layout lines */}
+      <div className="absolute left-10 md:left-20 top-0 bottom-0 w-[1px] bg-zinc-900/40 pointer-events-none" />
+      <div className="absolute right-10 md:right-20 top-0 bottom-0 w-[1px] bg-zinc-900/40 pointer-events-none" />
 
-      <SectionHeader
-        tag="Engineering Cycle"
-        title={<>Our Structured <span className="text-cyan-400">Automation Process</span></>}
-        subtitle="We follow a systematic engineering lifecycle to guarantee compliance, eliminate cloud waste, and accelerate your release loops."
-        align="left"
-        className="mb-20 max-w-3xl"
-      />
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start relative z-10">
+        
+        {/* Left Sticky Header */}
+        <div className="lg:col-span-4 space-y-5 lg:sticky lg:top-28 pl-0 lg:pl-10">
+          <SectionHeader
+            tag="Engineering Model"
+            title="Our Structured Advisory Cycle"
+            subtitle="We follow a rigorous, stage-by-stage engineering roadmap to audit workloads, eliminate cloud waste, and accelerate your deploy loops."
+            align="left"
+            className="mb-0"
+          />
+        </div>
 
-      <div className="relative pl-6 sm:pl-10 md:pl-16">
-        {/* Glowing vertical tracking path line */}
-        <div className="absolute left-6 sm:left-10 md:left-16 top-6 bottom-6 w-[2px] bg-gradient-to-b from-cyan-500/20 via-teal-400/10 to-zinc-800/10 -translate-x-1/2 -z-10" />
+        {/* Right Stepper Timeline */}
+        <div className="lg:col-span-8 pl-0 md:pl-8 relative">
+          {/* Thin vertical timeline line */}
+          <div className="absolute left-4 top-4 bottom-4 w-[1px] bg-zinc-900" />
 
-        <StaggerContainer className="space-y-16">
-          {steps.map((item) => (
-            <StaggerItem
-              key={item.num}
-              className="relative flex gap-6 sm:gap-10 md:gap-12 items-start group"
-            >
-              
-              {/* Timeline dot step circle */}
-              <div className="absolute left-0 top-1 -translate-x-1/2 flex items-center justify-center z-10">
-                <div className="w-8 h-8 rounded-full bg-background border border-border group-hover:border-cyan-500/40 flex items-center justify-center shadow-lg transition-colors">
-                  {item.icon}
-                </div>
-              </div>
-
-              {/* Content box - indented */}
-              <div className="flex-1 pl-10 sm:pl-6 space-y-4">
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-                  <span className="text-xs font-mono font-bold text-cyan-500 uppercase tracking-widest">
-                    Phase {item.num} -- {item.badge}
-                  </span>
-                  <span className="text-border hidden sm:inline">•</span>
-                  <div className="flex items-center gap-1 text-[10px] sm:text-xs text-muted-foreground font-mono">
-                    <Clock className="h-3.5 w-3.5 text-muted-foreground/60" />
-                    <span>{item.duration}</span>
+          <StaggerContainer className="space-y-12">
+            {steps.map((item) => (
+              <StaggerItem
+                key={item.num}
+                className="relative flex gap-6 items-start group pl-10"
+              >
+                {/* Milestone indicator dot */}
+                <div className="absolute left-0 top-1.5 -translate-x-1/2 flex items-center justify-center z-10">
+                  <div className="w-8 h-8 rounded border border-zinc-850 bg-zinc-900 flex items-center justify-center text-zinc-400 group-hover:border-primary/45 transition-colors">
+                    {item.icon}
                   </div>
                 </div>
 
-                <div className="space-y-2 max-w-3xl">
-                  <h3 className="text-xl sm:text-2xl font-bold text-foreground group-hover:text-cyan-400 transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
+                {/* Milestone content */}
+                <div className="space-y-3 font-sans">
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-[9px] font-bold text-zinc-550 uppercase tracking-widest">
+                    <span>Phase {item.num} -- {item.badge}</span>
+                    <span className="text-zinc-800 hidden sm:inline">•</span>
+                    <div className="flex items-center gap-1 font-semibold text-primary">
+                      <Clock className="h-3 w-3 text-primary" />
+                      <span>{item.duration}</span>
+                    </div>
+                  </div>
 
-                {/* Micro-deliverables list */}
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {item.deliverables.map((deliv, i) => (
-                    <span 
-                      key={i}
-                      className="px-2.5 py-0.5 rounded text-[9px] sm:text-[10px] font-mono bg-zinc-900 border border-zinc-850 text-zinc-400"
-                    >
-                      {deliv}
-                    </span>
-                  ))}
-                </div>
-              </div>
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-bold text-foreground font-display transition-colors group-hover:text-primary">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-[60ch]">
+                      {item.desc}
+                    </p>
+                  </div>
 
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
+                  {/* Technical deliverables grid tags */}
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    {item.deliverables.map((deliv, i) => (
+                      <span 
+                        key={i}
+                        className="px-2.5 py-0.5 rounded text-[10px] font-mono bg-zinc-900/40 border border-zinc-850 text-zinc-400"
+                      >
+                        {deliv}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+
       </div>
-
     </section>
   );
 }

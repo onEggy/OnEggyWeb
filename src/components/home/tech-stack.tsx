@@ -328,12 +328,14 @@ export function TechStack() {
 
   return (
     <section className="max-w-7xl mx-auto px-6 py-24 border-t border-border/40 relative animate-fade-in" id="technology-ecosystem">
-      {/* Background glow orb */}
-      <div className="absolute top-[20%] left-[20%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[95px] pointer-events-none -z-10" />
+      {/* Blueprint Coordinates */}
+      <div className="absolute top-2 left-10 font-mono text-[8px] text-zinc-650 opacity-40 select-none">
+        GRID.SEC.F // TECHNOLOGY.ECOSYSTEM_V3.8
+      </div>
 
       <SectionHeader
         tag="Ecosystem"
-        title={<>Premium Technology <span className="text-cyan-400">Ecosystem</span></>}
+        title={<>Premium Technology <span className="text-primary font-bold">Ecosystem</span></>}
         subtitle="We build exclusively with standard, enterprise-grade tools. Our teams specialize in cloud-native infrastructure, declarative automation, and highly scaling framework stacks."
         align="center"
         className="mb-16"
@@ -349,7 +351,7 @@ export function TechStack() {
               onClick={() => setActiveTab(cat.id)}
               className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-semibold border transition-all cursor-pointer select-none ${
                 isActive
-                  ? "bg-cyan-500/10 text-cyan-400 border-cyan-500/30 shadow-md shadow-cyan-500/5"
+                  ? "bg-primary/10 text-primary border-primary/30 shadow-md shadow-primary/5"
                   : "bg-background/20 hover:bg-accent/40 border-border/40 text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -374,9 +376,9 @@ export function TechStack() {
             {activeCategory?.items.map((item) => (
               <div
                 key={item.name}
-                className="bg-background/20 border border-border/40 p-5 rounded-xl flex gap-4 transition-all duration-300 hover:border-cyan-500/30 hover:bg-background/45 group"
+                className="bg-background/20 border border-border/40 p-5 rounded-xl flex gap-4 transition-all duration-300 hover:border-primary/30 hover:bg-background/45 group"
               >
-                <div className="w-10 h-10 rounded-lg bg-zinc-900/60 border border-zinc-800/80 flex items-center justify-center shrink-0 shadow-sm relative overflow-hidden group-hover:border-cyan-500/30 transition-colors">
+                <div className="w-10 h-10 rounded-lg bg-zinc-900/60 border border-zinc-800/80 flex items-center justify-center shrink-0 shadow-sm relative overflow-hidden group-hover:border-primary/30 transition-colors">
                   {item.isAsset && typeof item.icon === "string" ? (
                     <div className="relative w-6 h-6">
                       <Image
@@ -388,13 +390,13 @@ export function TechStack() {
                       />
                     </div>
                   ) : (
-                    <div className="text-muted-foreground group-hover:text-cyan-400 transition-colors">
+                    <div className="text-muted-foreground group-hover:text-primary transition-colors">
                       {item.icon}
                     </div>
                   )}
                 </div>
                 <div className="space-y-1 min-w-0">
-                  <h4 className="text-sm font-bold text-foreground group-hover:text-cyan-400 transition-colors">
+                  <h4 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">
                     {item.name}
                   </h4>
                   <p className="text-xs text-muted-foreground leading-relaxed">

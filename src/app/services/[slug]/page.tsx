@@ -241,102 +241,117 @@ export default async function ServicePage({ params }: PageProps) {
         </section>
 
         {/* 2. THE CHALLENGE VS. THE SOLUTION */}
-        <section className="max-w-7xl mx-auto px-6 py-24 md:py-32 border-t border-border/40">
-          <SectionHeader
-            tag="Strategic Context"
-            title="Business Challenge & Alignment"
-            subtitle="How we identify operational exposures, cost leakages, and pipeline friction to design compliant system solutions."
-            align="center"
-            className="mb-16"
-          />
+        <section className="max-w-7xl mx-auto px-6 py-32 border-t border-zinc-900/60 relative">
+          {/* Structural layout lines */}
+          <div className="absolute left-10 md:left-20 top-0 bottom-0 w-[1px] bg-zinc-900/40 pointer-events-none" />
+          <div className="absolute right-10 md:right-20 top-0 bottom-0 w-[1px] bg-zinc-900/40 pointer-events-none" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* The Challenges Card */}
-            <div className="rounded-2xl p-8 border border-zinc-800 bg-zinc-950/20 space-y-6 relative overflow-hidden shadow-md">
-              <div className="flex items-center gap-3 text-red-500 font-semibold">
-                <AlertTriangle className="h-6 w-6" />
-                <h3 className="text-xl font-display font-bold">Operational Vulnerabilities</h3>
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed font-sans">
-                Organizations frequently hit compliance, deployment, and cost barriers due to legacy un-managed setups:
-              </p>
-              <ul className="space-y-4 font-sans">
-                {service.problems.map((problem, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0 mt-2" />
-                    <span className="text-sm text-muted-foreground leading-relaxed">{problem}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="relative z-10">
+            <SectionHeader
+              tag="Strategic Context"
+              title="Business Challenge & Alignment"
+              subtitle="How we identify operational exposures, cost leakages, and pipeline friction to design compliant system solutions."
+              align="center"
+              className="mb-20"
+            />
 
-            {/* Our Solutions Card */}
-            <div className="rounded-2xl p-8 border border-zinc-800 bg-zinc-950/20 space-y-6 relative overflow-hidden shadow-md">
-              <div className="flex items-center gap-3 text-primary font-semibold">
-                <CheckCircle2 className="h-6 w-6" />
-                <h3 className="text-xl font-display font-bold">Strategic Resolution Model</h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+              {/* The Challenges Column */}
+              <div className="space-y-6 pl-0 lg:pl-10">
+                <div className="flex items-center gap-3 text-red-500/90 font-semibold">
+                  <AlertTriangle className="h-5 w-5" />
+                  <h3 className="text-lg font-display font-bold">Operational Vulnerabilities</h3>
+                </div>
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
+                  Organizations frequently hit compliance, deployment, and cost barriers due to legacy un-managed setups:
+                </p>
+                <ul className="space-y-4 font-sans text-xs sm:text-sm text-muted-foreground">
+                  {service.problems.map((problem, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <span className="w-1 h-1 rounded-full bg-red-500 shrink-0 mt-2" />
+                      <span className="leading-relaxed">{problem}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed font-sans">
-                We codify secure infrastructure policies and deploy automated workflows to optimize reliability:
-              </p>
-              <ul className="space-y-4 font-sans">
-                {service.solutions.map((solution, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2" />
-                    <span className="text-sm text-muted-foreground leading-relaxed">{solution}</span>
-                  </li>
-                ))}
-              </ul>
+
+              {/* Our Solutions Column */}
+              <div className="space-y-6 pr-0 lg:pr-10 border-t lg:border-t-0 lg:border-l border-zinc-900 pt-8 lg:pt-0 lg:pl-12">
+                <div className="flex items-center gap-3 text-primary font-semibold">
+                  <CheckCircle2 className="h-5 w-5" />
+                  <h3 className="text-lg font-display font-bold">Strategic Resolution Model</h3>
+                </div>
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
+                  We codify secure infrastructure policies and deploy automated workflows to optimize reliability:
+                </p>
+                <ul className="space-y-4 font-sans text-xs sm:text-sm text-muted-foreground">
+                  {service.solutions.map((solution, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <span className="w-1 h-1 rounded-full bg-primary shrink-0 mt-2" />
+                      <span className="leading-relaxed">{solution}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* 3. CORE SERVICE FEATURES GRID */}
-        <section className="max-w-7xl mx-auto px-6 py-24 md:py-32 border-t border-border/40">
-          <SectionHeader
-            tag="Deliverables"
-            title="Core Scope & Capabilities"
-            subtitle="Explore our detailed technical features engineered following the industry's absolute best practices."
-            align="center"
-            className="mb-16"
-          />
+        {/* 3. CORE SERVICE FEATURES ROSTER */}
+        <section className="max-w-7xl mx-auto px-6 py-32 border-t border-zinc-900/60 relative">
+          {/* Structural layout lines */}
+          <div className="absolute left-10 md:left-20 top-0 bottom-0 w-[1px] bg-zinc-900/40 pointer-events-none" />
+          <div className="absolute right-10 md:right-20 top-0 bottom-0 w-[1px] bg-zinc-900/40 pointer-events-none" />
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {service.features.map((feature, idx) => (
-              <StaggerItem 
-                key={idx}
-                className="p-8 rounded-xl border border-zinc-800 bg-zinc-950/20 hover:border-zinc-700 transition-all duration-300 flex flex-col justify-between space-y-6 relative group"
-              >
-                <div className="space-y-3">
-                  <span className="text-xs font-mono text-zinc-550 font-semibold uppercase">practice segment {idx + 1}</span>
-                  <h3 className="text-lg sm:text-xl font-display font-bold text-foreground group-hover:text-primary transition-colors">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm font-semibold text-foreground/80 leading-relaxed font-sans">
-                    {feature.desc}
-                  </p>
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
-                    {feature.detail}
-                  </p>
+          <div className="relative z-10">
+            <SectionHeader
+              tag="Deliverables"
+              title="Core Scope & Capabilities"
+              subtitle="Explore our detailed technical features engineered following the industry's absolute best practices."
+              align="center"
+              className="mb-20"
+            />
+
+            <div className="divide-y divide-zinc-900 mx-0 md:mx-14 border-t border-b border-zinc-900">
+              {service.features.map((feature, idx) => (
+                <div 
+                  key={idx}
+                  className="py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-start group"
+                >
+                  <div className="md:col-span-3">
+                    <span className="text-[9px] font-mono text-primary font-bold uppercase tracking-widest block pt-0.5">
+                      Practice Segment {idx + 1}
+                    </span>
+                  </div>
+                  <div className="md:col-span-4">
+                    <h3 className="text-base font-bold text-foreground font-display group-hover:text-primary transition-colors">
+                      {feature.title}
+                    </h3>
+                  </div>
+                  <div className="md:col-span-5 space-y-2 font-sans">
+                    <p className="text-xs sm:text-sm text-foreground/80 leading-relaxed font-semibold">
+                      {feature.desc}
+                    </p>
+                    <p className="text-xs text-muted-foreground leading-relaxed">
+                      {feature.detail}
+                    </p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-1.5 text-xs text-primary opacity-0 group-hover:opacity-100 transition-opacity font-semibold font-mono">
-                  governed layout <ChevronRight className="h-3 w-3" />
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* 4. METRICS / BENEFITS ROW */}
-        <section className="border-y border-zinc-850 bg-zinc-900/10 py-20 md:py-24 relative">
+        <section className="border-y border-zinc-900 bg-zinc-900/10 py-24 relative">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-center">
               {service.benefits.map((benefit, idx) => (
                 <div key={idx} className="space-y-2">
-                  <div className="text-4xl sm:text-6xl font-extrabold tracking-tight text-primary font-mono">
+                  <div className="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground font-mono">
                     {benefit.num}
                   </div>
-                  <div className="text-xs sm:text-sm font-mono uppercase tracking-widest text-muted-foreground font-semibold">
+                  <div className="text-[9px] sm:text-[10px] font-mono uppercase tracking-widest text-zinc-500 font-bold">
                     {benefit.label}
                   </div>
                 </div>
@@ -346,83 +361,95 @@ export default async function ServicePage({ params }: PageProps) {
         </section>
 
         {/* 5. INTERACTIVE ARCHITECTURE BLUEPRINT MAP */}
-        <div id="blueprint">
+        <div id="blueprint" className="relative">
+          <div className="absolute left-6 md:left-20 top-0 bottom-0 w-[1px] bg-zinc-900/40 pointer-events-none" />
+          <div className="absolute right-6 md:right-20 top-0 bottom-0 w-[1px] bg-zinc-900/40 pointer-events-none" />
           <ServiceArchitecture category={service.category} serviceName={service.title} />
         </div>
 
         {/* 6. PROCESS TIMELINE STEPPER */}
-        <section className="max-w-7xl mx-auto px-6 py-24 md:py-32 border-t border-border/40">
-          <SectionHeader
-            tag="Methodology"
-            title="Advisory & Delivery Timeline"
-            subtitle="How we transition your cloud workloads from initial audit reviews to governed production setups."
-            align="center"
-            className="mb-16"
-          />
+        <section className="max-w-7xl mx-auto px-6 py-32 border-t border-zinc-900/60 relative">
+          {/* Structural layout lines */}
+          <div className="absolute left-10 md:left-20 top-0 bottom-0 w-[1px] bg-zinc-900/40 pointer-events-none" />
+          <div className="absolute right-10 md:right-20 top-0 bottom-0 w-[1px] bg-zinc-900/40 pointer-events-none" />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-            {processSteps.map((step, idx) => (
-              <div key={idx} className="p-6 rounded-xl border border-zinc-850 bg-zinc-950/20 relative space-y-4 shadow-sm hover:border-primary/20 transition-all duration-300">
-                <div className="absolute top-4 right-4 text-3xl font-extrabold text-primary/10 font-mono">
-                  {step.num}
+          <div className="relative z-10">
+            <SectionHeader
+              tag="Methodology"
+              title="Advisory & Delivery Timeline"
+              subtitle="How we transition your cloud workloads from initial audit reviews to governed production setups."
+              align="center"
+              className="mb-20"
+            />
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative border-t border-b border-zinc-900 py-10 divide-y sm:divide-y-0 sm:divide-x divide-zinc-900 mx-0 md:mx-14">
+              {processSteps.map((step, idx) => (
+                <div key={idx} className="space-y-4 px-0 sm:px-6 first:pl-0 last:pr-0 pt-6 sm:pt-0 first:pt-0">
+                  <div className="text-xl font-bold text-primary font-mono">
+                    {step.num}
+                  </div>
+                  <h4 className="text-xs font-bold text-foreground font-display uppercase tracking-wider">{step.title}</h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed font-sans">
+                    {step.desc}
+                  </p>
                 </div>
-                <h4 className="text-base sm:text-lg font-display font-bold text-foreground pt-4">{step.title}</h4>
-                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
-                  {step.desc}
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 
         {/* 7. CLIENT TESTIMONIALS */}
-        <section className="max-w-7xl mx-auto px-6 py-24 md:py-32 border-t border-border/40 relative">
-          <div className="absolute top-[20%] left-[10%] w-[300px] h-[300px] rounded-full bg-blue-500/5 blur-[95px] pointer-events-none -z-10" />
+        <section className="max-w-7xl mx-auto px-6 py-32 border-t border-zinc-900/60 relative">
+          {/* Structural layout lines */}
+          <div className="absolute left-10 md:left-20 top-0 bottom-0 w-[1px] bg-zinc-900/40 pointer-events-none" />
+          <div className="absolute right-10 md:right-20 top-0 bottom-0 w-[1px] bg-zinc-900/40 pointer-events-none" />
           
-          <SectionHeader
-            tag="Impact Validation"
-            title="Enterprise Success Stories"
-            subtitle="How we've partner with engineering leadership teams to deliver key modernizations."
-            align="center"
-            className="mb-16"
-          />
+          <div className="relative z-10">
+            <SectionHeader
+              tag="Impact Validation"
+              title="Enterprise Success Stories"
+              subtitle="How we've partner with engineering leadership teams to deliver key modernizations."
+              align="center"
+              className="mb-20"
+            />
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {(() => {
-              const filteredReviews = rawTestimonials.filter((t) => {
-                const desc = t.designation.toLowerCase();
-                const test = t.testimonial.toLowerCase();
-                if (service.category === "cloud") {
-                  return desc.includes("cloud") || desc.includes("aws") || test.includes("aws") || test.includes("cloud") || desc.includes("brahmatells");
-                } else if (service.category === "devops") {
-                  return desc.includes("devops") || desc.includes("sre") || test.includes("kubernetes") || test.includes("eks") || test.includes("devops") || desc.includes("payu") || desc.includes("pinelabs");
-                } else { // software
-                  return desc.includes("developer") || desc.includes("full stack") || desc.includes("mobile") || desc.includes("app") || test.includes("react native") || test.includes("next") || test.includes("software") || desc.includes("anveshan") || desc.includes("digispeax");
-                }
-              });
-              const displayReviews = filteredReviews.length >= 3 ? filteredReviews.slice(0, 3) : rawTestimonials.slice(0, 3);
-              return displayReviews.map((item, index) => {
-                const avatarStyle = getAvatarStyle(item.name);
-                return (
-                  <div key={index} className="p-8 rounded-xl border border-zinc-800 bg-zinc-950/20 hover:border-zinc-700 transition-all duration-300 flex flex-col justify-between relative group">
-                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed italic relative z-10 mb-8 font-sans">
-                      &ldquo;{item.testimonial}&rdquo;
-                    </p>
-                    <div className="flex items-center gap-4 border-t border-zinc-900/60 pt-6">
-                      <div className={`w-10 h-10 rounded-full ${avatarStyle} flex items-center justify-center font-bold font-mono text-xs shadow-md shrink-0 border border-zinc-800`}>
-                        {getInitials(item.name)}
-                      </div>
-                      <div className="min-w-0">
-                        <h4 className="text-sm font-bold text-foreground truncate">{item.name}</h4>
-                        <p className="text-xs text-muted-foreground truncate font-sans">
-                          {item.designation}
-                        </p>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mx-0 md:mx-14">
+              {(() => {
+                const filteredReviews = rawTestimonials.filter((t) => {
+                  const desc = t.designation.toLowerCase();
+                  const test = t.testimonial.toLowerCase();
+                  if (service.category === "cloud") {
+                    return desc.includes("cloud") || desc.includes("aws") || test.includes("aws") || test.includes("cloud") || desc.includes("brahmatells");
+                  } else if (service.category === "devops") {
+                    return desc.includes("devops") || desc.includes("sre") || test.includes("kubernetes") || test.includes("eks") || test.includes("devops") || desc.includes("payu") || desc.includes("pinelabs");
+                  } else { // software
+                    return desc.includes("developer") || desc.includes("full stack") || desc.includes("mobile") || desc.includes("app") || test.includes("react native") || test.includes("next") || test.includes("software") || desc.includes("anveshan") || desc.includes("digispeax");
+                  }
+                });
+                const displayReviews = filteredReviews.length >= 3 ? filteredReviews.slice(0, 3) : rawTestimonials.slice(0, 3);
+                return displayReviews.map((item, index) => {
+                  const avatarStyle = getAvatarStyle(item.name);
+                  return (
+                    <div key={index} className="p-6 rounded border border-zinc-900 bg-zinc-950/20 hover:border-primary/45 transition-colors flex flex-col justify-between relative group">
+                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed italic relative z-10 mb-8 font-sans">
+                        &ldquo;{item.testimonial}&rdquo;
+                      </p>
+                      <div className="flex items-center gap-3 border-t border-zinc-900/60 pt-4 font-sans">
+                        <div className="w-8 h-8 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center font-bold text-[10px] shrink-0">
+                          {getInitials(item.name)}
+                        </div>
+                        <div className="min-w-0">
+                          <h4 className="text-xs font-bold text-foreground truncate">{item.name}</h4>
+                          <p className="text-[10px] text-zinc-500 truncate font-mono uppercase tracking-wider">
+                            {item.designation}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                );
-              });
-            })()}
+                  );
+                });
+              })()}
+            </div>
           </div>
         </section>
 

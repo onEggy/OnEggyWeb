@@ -39,11 +39,11 @@ export function ServicesFaqs() {
   return (
     <section className="max-w-4xl mx-auto px-6 py-20 border-t border-border/40 relative">
       {/* Background radial glow */}
-      <div className="absolute bottom-[20%] left-[-15%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[100px] pointer-events-none -z-10" />
+      <div className="absolute bottom-[20%] left-[-15%] w-[350px] h-[350px] rounded-full bg-primary/5 blur-[100px] pointer-events-none -z-10" />
 
       <SectionHeader
         tag="Services FAQ"
-        title={<>Cloud Partnerships & <span className="text-cyan-400">Operations FAQs</span></>}
+        title={<>Cloud Partnerships & <span className="text-primary">Operations FAQs</span></>}
         subtitle="Common questions from tech founders and engineering directors about workspace sharing, key handovers, and system ownership."
         align="center"
         className="mb-16"
@@ -55,20 +55,20 @@ export function ServicesFaqs() {
           return (
             <div
               key={index}
-              className="border border-border/40 rounded-xl bg-background/30 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:border-cyan-500/20"
+              className="border border-border/40 rounded-xl bg-background/30 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:border-primary/20"
             >
               <button
                 onClick={() => toggleFAQ(index)}
                 aria-expanded={isOpen}
                 aria-controls={`services-faq-answer-${index}`}
                 id={`services-faq-button-${index}`}
-                className="w-full flex items-center justify-between p-5 text-left font-semibold text-foreground hover:text-cyan-400 transition-colors cursor-pointer select-none"
+                className="w-full flex items-center justify-between p-5 text-left font-semibold text-foreground hover:text-primary transition-colors cursor-pointer select-none"
               >
                 <span className="text-sm sm:text-base pr-4">{item.question}</span>
                 <ChevronDown
                   className={cn(
                     "h-4 w-4 shrink-0 transition-transform duration-300 text-muted-foreground",
-                    isOpen ? "rotate-180 text-cyan-400" : ""
+                    isOpen ? "rotate-180 text-primary" : ""
                   )}
                 />
               </button>

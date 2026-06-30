@@ -8,7 +8,9 @@ import {
   Eye, 
   Lock, 
   CheckCircle,
-  Shield
+  Shield,
+  Award,
+  User
 } from "lucide-react";
 import { StaggerContainer, StaggerItem, FadeIn, FadeUp } from "@/components/animations/motion-wrappers";
 import { SectionHeader } from "@/components/common/section-header";
@@ -182,169 +184,119 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* 3. LEADERSHIP & ADVISORY */}
-        <div className="space-y-12 border-t border-zinc-800 pt-24">
-          <div className="max-w-xl space-y-3">
-            <span className="text-xs font-mono font-semibold text-primary uppercase tracking-widest">Leadership Team</span>
-            <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Practice Leadership & Strategy</h2>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
-              The systems architects directing our strategic consulting and delivery models.
-            </p>
+        {/* 3. PRACTICE LEADERSHIP & ROSTER SPLIT */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 border-t border-zinc-900 pt-24 items-start">
+          
+          {/* Left: Leadership Spotlight (5 cols) */}
+          <div className="lg:col-span-5 space-y-8 pl-0 lg:pl-4">
+            <div className="space-y-3">
+              <span className="text-[10px] font-mono font-bold text-primary uppercase tracking-[0.2em] block">Practice Leadership</span>
+              <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Strategic Directors</h2>
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-[42ch]">
+                The solutions architects directing our consulting frameworks, compliance audits, and system deliveries.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              {/* Leader 1: Aakash Sharma */}
+              <div className="p-5 rounded border border-zinc-900 bg-zinc-950/20 space-y-4">
+                <p className="text-xs sm:text-sm text-zinc-300 font-medium italic leading-relaxed">
+                  &ldquo;Traditional agencies click buttons in AWS console boards. We build declarative GitOps codebases owned entirely by you from day one.&rdquo;
+                </p>
+                <div className="flex items-center gap-3 border-t border-zinc-900 pt-3">
+                  <div className="w-8 h-8 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
+                    <User className="h-4.5 w-4.5 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-foreground">Aakash Sharma</h4>
+                    <span className="text-[9px] font-mono text-zinc-550 uppercase tracking-wider block">Founder & Cloud Architect // AWS Certified Professional</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Leader 2: Niraj */}
+              <div className="p-5 rounded border border-zinc-900 bg-zinc-950/20 space-y-4">
+                <p className="text-xs sm:text-sm text-zinc-300 font-medium italic leading-relaxed">
+                  &ldquo;Startups fail at scale because they treat cloud infrastructure as an afterthought. We design architectures that scale to millions of users on day one.&rdquo;
+                </p>
+                <div className="flex items-center gap-3 border-t border-zinc-900 pt-3">
+                  <div className="w-8 h-8 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
+                    <User className="h-4.5 w-4.5 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-foreground">Niraj</h4>
+                    <span className="text-[9px] font-mono text-zinc-550 uppercase tracking-wider block">Mentor in Growth // Scale Advisor</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
-            {leadership.map((leader, index) => {
-              const avatarStyle = getAvatarStyle(leader.name);
-              return (
-                <FadeIn
-                  key={leader.name}
-                  delay={index * 0.1}
-                  className="border border-zinc-800 bg-zinc-950/20 hover:border-zinc-700 p-6 rounded-xl flex gap-5 items-start transition-all duration-300 relative group"
-                >
-                  <div className="absolute top-4 right-4">
-                    <Link
-                      href="https://linkedin.com"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                      aria-label={`${leader.name} LinkedIn`}
-                    >
-                      <svg className="h-4.5 w-4.5 fill-current" viewBox="0 0 24 24">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                      </svg>
-                    </Link>
-                  </div>
+          {/* Right: Engineering Roster (7 cols) */}
+          <div className="lg:col-span-7">
+            <div className="border border-zinc-900 rounded bg-zinc-950/20 overflow-hidden">
+              <div className="px-6 py-4 border-b border-zinc-900 bg-zinc-900/10 flex items-center justify-between">
+                <div>
+                  <span className="text-[9px] font-mono text-primary font-bold uppercase tracking-widest block">Engineering Practice</span>
+                  <h3 className="text-sm font-bold text-foreground font-display mt-0.5">Systems Specialists & Practice Credentials</h3>
+                </div>
+                <span className="text-[9px] font-mono text-zinc-550 uppercase tracking-wider">3 ENGINEERS ACTIVE</span>
+              </div>
 
-                  {/* Profile image container */}
-                  <div className="relative w-16 h-16 rounded-full overflow-hidden bg-zinc-900 border border-zinc-800 shrink-0 shadow group-hover:border-primary transition-colors">
-                    {leader.image ? (
-                      <Image
-                        src={leader.image}
-                        alt={leader.alt || leader.name}
-                        fill
-                        sizes="64px"
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    ) : (
-                      <div className={`w-full h-full ${avatarStyle} flex items-center justify-center font-bold text-2xl`}>
-                        {getInitials(leader.name)}
+              <div className="divide-y divide-zinc-900 font-sans">
+                {engineering.map((member) => (
+                  <div 
+                    key={member.name} 
+                    className="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group hover:bg-zinc-900/10 transition-colors"
+                  >
+                    <div className="space-y-1.5">
+                      <div className="flex items-center gap-2">
+                        <h4 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">
+                          {member.name}
+                        </h4>
+                        <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-850 text-[9px] font-mono text-zinc-500">
+                          {member.position}
+                        </span>
                       </div>
-                    )}
-                  </div>
-
-                  <div className="space-y-2 flex-1 min-w-0 font-sans">
-                    <div>
-                      <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
-                        {leader.name}
-                      </h3>
-                      <span className="text-[10px] font-semibold text-primary font-mono tracking-wider block mt-0.5">
-                        {leader.position}
-                      </span>
-                    </div>
-                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                      {leader.description}
-                    </p>
-                  </div>
-                </FadeIn>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* 4. ENGINEERING TEAM SECTION */}
-        <div className="space-y-12 border-t border-zinc-800 pt-24">
-          <div className="max-w-xl space-y-3">
-            <span className="text-xs font-mono font-semibold text-primary uppercase tracking-widest">Engineering Practice</span>
-            <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Developers, Architects & Designers</h2>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
-              The platform specialists provisioning cloud assets, custom pipelines, and robust codebases.
-            </p>
-          </div>
-
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {engineering.map((member) => {
-              const avatarStyle = getAvatarStyle(member.name);
-              return (
-                <StaggerItem
-                  key={member.name}
-                  className="border border-zinc-800 bg-zinc-950/20 hover:border-zinc-700 p-5 rounded-xl flex flex-col justify-between min-h-[220px] transition-all duration-300 group relative"
-                >
-                  <div className="space-y-4 font-sans">
-                    <div className="flex items-center justify-between w-full">
-                      {/* Circular Avatar */}
-                      <div className="relative w-12 h-12 rounded-full overflow-hidden bg-zinc-900 border border-zinc-800 shrink-0 shadow-xs group-hover:border-primary transition-colors">
-                        {member.image ? (
-                          <Image
-                            src={member.image}
-                            alt={member.alt || member.name}
-                            fill
-                            sizes="48px"
-                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                          />
-                        ) : (
-                          <div className={`w-full h-full ${avatarStyle} flex items-center justify-center font-bold text-sm`}>
-                            {getInitials(member.name)}
-                          </div>
-                        )}
-                      </div>
-                      
-                      <Link
-                        href="https://linkedin.com"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                        aria-label={`${member.name} LinkedIn`}
-                      >
-                        <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
-                          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
-                      </Link>
-                    </div>
-
-                    <div className="space-y-1">
-                      <h3 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">
-                        {member.name}
-                      </h3>
-                      <span className="text-[10px] font-mono text-primary font-semibold tracking-wider block">
-                        {member.position}
-                      </span>
-                      <p className="text-xs text-muted-foreground leading-relaxed pt-1 select-text">
+                      <p className="text-[11px] text-muted-foreground leading-relaxed max-w-[42ch]">
                         {member.description}
                       </p>
                     </div>
+
+                    <div className="flex items-center gap-2 shrink-0 self-start sm:self-center">
+                      <Award className="h-4.5 w-4.5 text-primary shrink-0" />
+                      <span className="text-[10px] font-mono text-zinc-400 font-semibold uppercase tracking-wider">
+                        {member.position.toLowerCase().includes("devops") ? "CKA Certified Administrator" : member.position.toLowerCase().includes("full-stack") ? "Next.js Core Specialist" : "React Native Tech Lead"}
+                      </span>
+                    </div>
                   </div>
-                  
-                  {/* Practice Credentials instead of active lights */}
-                  <div className="pt-3 border-t border-zinc-900/60 mt-4 flex items-center justify-between text-[9px] font-mono text-zinc-550 font-bold uppercase tracking-wider">
-                    <span>advisory practice</span>
-                    <span className="text-primary font-semibold">Verified</span>
-                  </div>
-                </StaggerItem>
-              );
-            })}
-          </StaggerContainer>
+                ))}
+              </div>
+            </div>
+          </div>
+
         </div>
 
-        {/* 5. ENGINEERING VALUES SECTION */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start border-t border-zinc-800 pt-24">
-          <div className="lg:col-span-5 space-y-4">
-            <span className="text-xs font-mono font-semibold text-primary uppercase tracking-widest">Our Standards</span>
+        {/* 4. ENGINEERING PRINCIPLES SECTION */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 border-t border-zinc-900 pt-24 items-start">
+          <div className="lg:col-span-5 space-y-4 pr-0 lg:pr-10">
+            <span className="text-[10px] font-mono font-bold text-primary uppercase tracking-[0.2em] block">Our Standards</span>
             <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Engineering Principles</h2>
-            <p className="text-sm text-muted-foreground leading-relaxed font-sans">
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-[42ch]">
               We enforce strict compliance checks, codebase reviews, and automated configurations to guarantee absolute system availability.
             </p>
           </div>
 
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-7 divide-y divide-zinc-900 font-sans">
             {companyValues.map((value, i) => (
               <div 
                 key={i} 
-                className="p-5 rounded-xl border border-zinc-850 bg-zinc-950/20 flex gap-4 items-start group hover:border-primary/25 transition-all duration-300"
+                className="py-6 first:pt-0 last:pb-0 flex gap-4 items-start group transition-all duration-300"
               >
-                <div className="w-8 h-8 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
+                <div className="w-8 h-8 rounded border border-zinc-850 bg-zinc-900/20 flex items-center justify-center shrink-0">
                   {value.icon}
                 </div>
-                <div className="space-y-1.5 font-sans">
+                <div className="space-y-1.5">
                   <h3 className="text-sm sm:text-base font-bold text-foreground group-hover:text-primary transition-colors">
                     {value.title}
                   </h3>

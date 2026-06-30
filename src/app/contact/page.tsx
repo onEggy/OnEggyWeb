@@ -61,16 +61,17 @@ export default function ContactPage() {
         }}
       />
       <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-16">
-        {/* Decorative Orb */}
-        <div className="absolute top-[20%] left-[-10%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[80px] pointer-events-none -z-10" />
-        <div className="absolute bottom-[10%] right-[-10%] w-[300px] h-[300px] rounded-full bg-teal-500/5 blur-[80px] pointer-events-none -z-10" />
+        {/* Blueprint Coordinates */}
+        <div className="absolute top-2 left-10 font-mono text-[8px] text-zinc-650 opacity-40 select-none">
+          GRID.SEC.L // CONTACT.INTERFACE_V1.0
+        </div>
 
         {/* Left Block - Contact Info (5 columns) */}
         <div className="lg:col-span-5 space-y-10 flex flex-col justify-between">
           <div className="space-y-6">
             <SectionHeader
               tag="Get in Touch"
-              title={<>Ready to <span className="text-cyan-400">Transform?</span></>}
+              title={<>Ready to <span className="text-primary font-bold">Transform?</span></>}
               subtitle="Have questions about Kubernetes deployments or AWS cost reduction options? Reach out to schedule a free architecture consultation session."
               align="left"
               className="mb-0"
@@ -79,11 +80,11 @@ export default function ContactPage() {
             <FadeIn delay={0.2} className="divide-y divide-border/25 pt-4">
               <div className="flex items-center gap-4 py-4 first:pt-0">
                 <div className="w-9 h-9 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0 shadow-sm">
-                  <Mail className="h-4.5 w-4.5 text-cyan-400" />
+                  <Mail className="h-4.5 w-4.5 text-primary" />
                 </div>
                 <div>
                   <span className="text-[9px] uppercase tracking-wider text-muted-foreground block font-mono">Email Us</span>
-                  <a href="mailto:ask@oneggy.com" className="text-sm font-semibold hover:text-cyan-400 transition-colors">
+                  <a href="mailto:ask@oneggy.com" className="text-sm font-semibold hover:text-primary transition-colors">
                     ask@oneggy.com
                   </a>
                 </div>
@@ -91,11 +92,11 @@ export default function ContactPage() {
 
               <div className="flex items-center gap-4 py-4">
                 <div className="w-9 h-9 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0 shadow-sm">
-                  <Phone className="h-4.5 w-4.5 text-teal-400" />
+                  <Phone className="h-4.5 w-4.5 text-amber-500" />
                 </div>
                 <div>
                   <span className="text-[9px] uppercase tracking-wider text-muted-foreground block font-mono">Call Us</span>
-                  <a href="tel:+919811133005" className="text-sm font-semibold hover:text-cyan-400 transition-colors">
+                  <a href="tel:+919811133005" className="text-sm font-semibold hover:text-primary transition-colors">
                     +91 98111 33005
                   </a>
                 </div>
@@ -103,7 +104,7 @@ export default function ContactPage() {
 
               <div className="flex items-center gap-4 py-4 last:pb-0">
                 <div className="w-9 h-9 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0 shadow-sm">
-                  <MapPin className="h-4.5 w-4.5 text-indigo-400" />
+                  <MapPin className="h-4.5 w-4.5 text-amber-600" />
                 </div>
                 <div>
                   <span className="text-[9px] uppercase tracking-wider text-muted-foreground block font-mono">Location</span>
@@ -116,7 +117,7 @@ export default function ContactPage() {
           {/* Quick Meeting Panel */}
           <FadeIn delay={0.3} className="p-5 rounded-xl border border-border bg-background/25 space-y-4 max-w-sm">
             <h3 className="text-sm font-bold text-foreground inline-flex items-center gap-2 font-mono">
-              <Calendar className="h-4.5 w-4.5 text-cyan-400" /> Need quick response?
+              <Calendar className="h-4.5 w-4.5 text-primary" /> Need quick response?
             </h3>
             <p className="text-xs text-muted-foreground leading-relaxed">
               Schedule a direct 30-minute cloud-native engineering assessment with our senior architect.

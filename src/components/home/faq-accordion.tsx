@@ -36,20 +36,22 @@ export function FaqAccordion() {
 
   return (
     <section className="max-w-7xl mx-auto px-6 py-24 border-t border-border/40 relative">
-      {/* Background radial glow */}
-      <div className="absolute bottom-[10%] left-[-15%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[100px] pointer-events-none -z-10" />
+      {/* Blueprint Coordinates */}
+      <div className="absolute top-2 left-10 font-mono text-[8px] text-zinc-650 opacity-40 select-none">
+        GRID.SEC.J // FAQ.ACCORDION_V1.2
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         
         {/* Left Column: Editorial Header & Booking Card (5 columns) */}
         <div className="lg:col-span-5 space-y-8">
           <div className="space-y-4">
-            <span className="text-xs font-mono font-semibold text-cyan-500 uppercase tracking-widest block">
+            <span className="text-xs font-mono font-semibold text-primary uppercase tracking-widest block">
               Got Questions?
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground leading-tight">
               Frequently Asked <br />
-              <span className="text-cyan-400">Questions</span>
+              <span className="text-primary">Questions</span>
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
               Find answers to common questions about our DevOps, Kubernetes, and Cloud Management engineering solutions.
@@ -59,7 +61,7 @@ export function FaqAccordion() {
           {/* Quick meeting booking panel */}
           <div className="p-5 rounded-xl border border-border bg-background/30 backdrop-blur-sm space-y-4 max-w-sm">
             <h3 className="text-sm font-bold text-foreground inline-flex items-center gap-2">
-              <Calendar className="h-4.5 w-4.5 text-cyan-400" /> Need quick clarification?
+              <Calendar className="h-4.5 w-4.5 text-primary" /> Need quick clarification?
             </h3>
             <p className="text-[11px] sm:text-xs text-muted-foreground leading-relaxed">
               Skip the reading and chat directly with our cloud-native systems architect in a free 15-minute alignment call.
@@ -87,12 +89,12 @@ export function FaqAccordion() {
                     aria-expanded={isOpen}
                     aria-controls={`faq-answer-${index}`}
                     id={`faq-button-${index}`}
-                    className="w-full flex items-center justify-between text-left font-semibold text-foreground hover:text-cyan-400 transition-colors cursor-pointer select-none py-2"
+                    className="w-full flex items-center justify-between text-left font-semibold text-foreground hover:text-primary transition-colors cursor-pointer select-none py-2"
                   >
                     <span className="text-sm sm:text-base pr-4 font-semibold">{item.question}</span>
                     <ChevronDown
                       className={`h-4 w-4 shrink-0 transition-transform duration-300 text-muted-foreground ${
-                        isOpen ? "rotate-180 text-cyan-400" : ""
+                        isOpen ? "rotate-180 text-primary" : ""
                       }`}
                     />
                   </button>

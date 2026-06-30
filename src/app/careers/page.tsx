@@ -43,22 +43,22 @@ const openings = [
 
 const benefits = [
   {
-    icon: <Moon className="h-4.5 w-4.5 text-cyan-400" />,
+    icon: <Moon className="h-4.5 w-4.5 text-primary" />,
     title: "Remote-First Autonomy",
     desc: "Work from wherever you are. We prioritize asynchronous documentation over endless daily meetings.",
   },
   {
-    icon: <GraduationCap className="h-4.5 w-4.5 text-teal-400" />,
+    icon: <GraduationCap className="h-4.5 w-4.5 text-amber-500" />,
     title: "Continuous Learning Budget",
     desc: "We support certifications (AWS, CKA) and provide stipends for books, tutorials, and bootcamps.",
   },
   {
-    icon: <Laptop className="h-4.5 w-4.5 text-indigo-400" />,
+    icon: <Laptop className="h-4.5 w-4.5 text-amber-600" />,
     title: "Premium Hardware Stipend",
     desc: "Get paid to set up your home workspace. We provide stipends for monitors, keyboards, and chairs.",
   },
   {
-    icon: <Heart className="h-4.5 w-4.5 text-cyan-400" />,
+    icon: <Heart className="h-4.5 w-4.5 text-amber-400" />,
     title: "Comprehensive Healthcare",
     desc: "Full medical coverage for you and your family to ensure you are supported in times of need.",
   },
@@ -111,14 +111,15 @@ export default function CareersPage() {
         }}
       />
       <div className="relative max-w-5xl mx-auto px-6 py-16 md:py-32 space-y-32">
-        {/* Decorative Orbs */}
-        <div className="absolute top-[10%] left-[-10%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[95px] pointer-events-none -z-10 animate-pulse" />
-        <div className="absolute bottom-[20%] right-[-10%] w-[400px] h-[400px] rounded-full bg-teal-500/5 blur-[100px] pointer-events-none -z-10" />
+        {/* Blueprint Coordinates */}
+        <div className="absolute top-2 left-10 font-mono text-[8px] text-zinc-650 opacity-40 select-none">
+          GRID.SEC.K // CAREERS.ECOSYSTEM_V1.1
+        </div>
 
         {/* Header */}
         <SectionHeader
           tag="Join the Team"
-          title={<>Build the Future of <span className="text-cyan-400">Cloud Infrastructure</span></>}
+          title={<>Build the Future of <span className="text-primary font-bold">Cloud Infrastructure</span></>}
           subtitle="At OnEggy Technologies, we value autonomy, technical mastery, and transparency. Join our remote-first, high-growth engineering team and tackle critical cloud challenges."
           align="left"
           className="max-w-3xl"
@@ -134,7 +135,7 @@ export default function CareersPage() {
           </div>
           <div className="lg:col-span-6 lg:pl-6">
             <div className="border border-border bg-background/25 p-8 rounded-xl relative overflow-hidden shadow-md flex flex-col justify-center min-h-[180px]">
-              <div className="absolute top-4 right-4 text-[10px] font-mono text-cyan-500 uppercase tracking-wider">engineering baseline</div>
+              <div className="absolute top-4 right-4 text-[10px] font-mono text-primary uppercase tracking-wider">engineering baseline</div>
               <div className="space-y-3">
                 <h3 className="text-lg font-bold text-foreground font-mono">Zero ClickOps. 100% Automation.</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">
@@ -148,7 +149,7 @@ export default function CareersPage() {
         {/* Benefits Section (Split columns instead of cards grid) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start border-t border-border/20 pt-24">
           <div className="lg:col-span-4 space-y-4">
-            <span className="text-xs font-mono font-semibold text-cyan-500 uppercase tracking-widest">Perks</span>
+            <span className="text-xs font-mono font-semibold text-primary uppercase tracking-widest">Perks</span>
             <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Engineering Benefits</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Core frameworks and resources to support your work.
@@ -160,13 +161,13 @@ export default function CareersPage() {
               {benefits.map((feat) => (
                 <StaggerItem
                   key={feat.title}
-                  className="bg-background/20 border border-border/40 p-5 rounded-xl flex gap-4 items-start hover:border-cyan-500/25 transition-all duration-300 group"
+                  className="bg-background/20 border border-border/40 p-5 rounded-xl flex gap-4 items-start hover:border-primary/25 transition-all duration-300 group"
                 >
                   <div className="w-8 h-8 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                     {feat.icon}
                   </div>
                   <div className="space-y-1">
-                    <h3 className="text-sm sm:text-base font-bold text-foreground group-hover:text-cyan-500 transition-colors">{feat.title}</h3>
+                    <h3 className="text-sm sm:text-base font-bold text-foreground group-hover:text-primary transition-colors">{feat.title}</h3>
                     <p className="text-xs text-muted-foreground leading-relaxed">
                       {feat.desc}
                     </p>
@@ -180,7 +181,7 @@ export default function CareersPage() {
         {/* Openings Rebuilt as a clean Table-style listing */}
         <div className="space-y-8 border-t border-border/20 pt-24">
           <div className="space-y-2">
-            <span className="text-xs font-mono font-semibold text-cyan-500 uppercase tracking-widest">Opportunities</span>
+            <span className="text-xs font-mono font-semibold text-primary uppercase tracking-widest">Opportunities</span>
             <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-foreground">Open Roles</h2>
           </div>
 
@@ -200,8 +201,8 @@ export default function CareersPage() {
                   className="grid grid-cols-1 sm:grid-cols-12 gap-4 p-4 sm:p-5 items-center hover:bg-zinc-900/35 transition-colors group cursor-pointer text-xs sm:text-sm font-semibold"
                 >
                   <div className="col-span-5 space-y-1 sm:space-y-0">
-                    <span className="sm:hidden block text-[9px] font-mono text-cyan-500 uppercase tracking-wider">{role.department}</span>
-                    <span className="text-foreground group-hover:text-cyan-400 transition-colors text-sm sm:text-base font-bold">{role.title}</span>
+                    <span className="sm:hidden block text-[9px] font-mono text-primary uppercase tracking-wider">{role.department}</span>
+                    <span className="text-foreground group-hover:text-primary transition-colors text-sm sm:text-base font-bold">{role.title}</span>
                   </div>
                   <div className="col-span-3 hidden sm:block text-muted-foreground font-mono text-xs">{role.department}</div>
                   <div className="col-span-3 text-muted-foreground text-xs font-mono flex items-center gap-1.5">
@@ -209,7 +210,7 @@ export default function CareersPage() {
                     <span>{role.location}</span>
                   </div>
                   <div className="col-span-1 text-right flex items-center justify-end sm:opacity-0 group-hover:opacity-100 transition-all">
-                    <span className="text-xs font-bold text-cyan-500 inline-flex items-center gap-0.5">
+                    <span className="text-xs font-bold text-primary inline-flex items-center gap-0.5">
                       Apply <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                     </span>
                   </div>

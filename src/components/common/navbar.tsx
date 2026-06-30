@@ -13,25 +13,25 @@ const megaMenuServices = [
   {
     category: "Cloud Solutions",
     items: [
-      { name: "AWS Cloud Services", desc: "Enterprise account setup & operations", href: "/services/aws-cloud-managed-services", icon: <Cloud className="h-4 w-4 text-cyan-400" /> },
-      { name: "Cost Optimization", desc: "Audit cloud bills & reduce waste", href: "/services/cloud-cost-optimization", icon: <Layers className="h-4 w-4 text-teal-400" /> },
-      { name: "Cloud Migration", desc: "Multi-cloud architecture & migration", href: "/services/cloud-migration", icon: <Laptop className="h-4 w-4 text-indigo-400" /> }
+      { name: "AWS Cloud Services", desc: "Enterprise account setup & operations", href: "/services/aws-cloud-managed-services", icon: <Cloud className="h-4 w-4 text-primary" /> },
+      { name: "Cost Optimization", desc: "Audit cloud bills & reduce waste", href: "/services/cloud-cost-optimization", icon: <Layers className="h-4 w-4 text-amber-400" /> },
+      { name: "Cloud Migration", desc: "Multi-cloud architecture & migration", href: "/services/cloud-migration", icon: <Laptop className="h-4 w-4 text-amber-500" /> }
     ]
   },
   {
     category: "DevOps & IaC",
     items: [
-      { name: "Kubernetes Orchestration", desc: "Deploy & scale containerized apps", href: "/services/kubernetes", icon: <Server className="h-4 w-4 text-cyan-400" /> },
-      { name: "CI/CD & Delivery", desc: "Automate build & release pipelines", href: "/services/cicd-pipeline-automation", icon: <Settings className="h-4 w-4 text-teal-400" /> },
-      { name: "Platform Engineering", desc: "Developer self-service templates", href: "/services/platform-engineering", icon: <Code className="h-4 w-4 text-indigo-400" /> }
+      { name: "Kubernetes Orchestration", desc: "Deploy & scale containerized apps", href: "/services/kubernetes", icon: <Server className="h-4 w-4 text-primary" /> },
+      { name: "CI/CD & Delivery", desc: "Automate build & release pipelines", href: "/services/cicd-pipeline-automation", icon: <Settings className="h-4 w-4 text-amber-400" /> },
+      { name: "Platform Engineering", desc: "Developer self-service templates", href: "/services/platform-engineering", icon: <Code className="h-4 w-4 text-amber-500" /> }
     ]
   },
   {
     category: "Engineering & QA",
     items: [
-      { name: "Full Stack Development", desc: "Scalable Next.js & backend software", href: "/services/full-stack-web-development", icon: <Code className="h-4 w-4 text-cyan-400" /> },
-      { name: "React Native Mobile Apps", desc: "Cross-platform iOS & Android apps", href: "/services/mobile-app-development", icon: <Laptop className="h-4 w-4 text-teal-400" /> },
-      { name: "Security & DevSecOps", desc: "Rigorous pentesting & compliance checks", href: "/services/security-devsecops", icon: <ShieldAlert className="h-4 w-4 text-indigo-400" /> }
+      { name: "Full Stack Development", desc: "Scalable Next.js & backend software", href: "/services/full-stack-web-development", icon: <Code className="h-4 w-4 text-primary" /> },
+      { name: "React Native Mobile Apps", desc: "Cross-platform iOS & Android apps", href: "/services/mobile-app-development", icon: <Laptop className="h-4 w-4 text-amber-400" /> },
+      { name: "Security & DevSecOps", desc: "Rigorous pentesting & compliance checks", href: "/services/security-devsecops", icon: <ShieldAlert className="h-4 w-4 text-amber-500" /> }
     ]
   }
 ];
@@ -75,7 +75,7 @@ export function Navbar() {
       {/* Scroll Progress Indicator */}
       <div className="absolute top-0 left-0 w-full h-[2px] bg-border/20 z-50">
         <div
-          className="h-full bg-cyan-500 transition-all duration-100 ease-out"
+          className="h-full bg-primary transition-all duration-100 ease-out"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
@@ -103,7 +103,7 @@ export function Navbar() {
               onMouseEnter={() => setShowMegaMenu(true)}
               onMouseLeave={() => setShowMegaMenu(false)}
             >
-              <span className="text-sm font-medium text-muted-foreground hover:text-cyan-500 inline-flex items-center gap-1 transition-colors">
+              <span className="text-sm font-medium text-muted-foreground hover:text-primary inline-flex items-center gap-1 transition-colors">
                 Services <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", showMegaMenu ? "rotate-180" : "")} />
               </span>
 
@@ -119,7 +119,7 @@ export function Navbar() {
                   >
                     {megaMenuServices.map((cat) => (
                       <div key={cat.category} className="space-y-4">
-                        <span className="text-xs font-mono text-cyan-500 uppercase tracking-widest font-semibold block border-b border-border/40 pb-2">
+                        <span className="text-xs font-mono text-primary uppercase tracking-widest font-semibold block border-b border-border/40 pb-2">
                           {cat.category}
                         </span>
                         <ul className="space-y-3">
@@ -133,7 +133,7 @@ export function Navbar() {
                                   {item.icon}
                                 </div>
                                 <div>
-                                  <span className="text-sm font-medium text-foreground group-hover:text-cyan-500 transition-colors block">
+                                  <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors block">
                                     {item.name}
                                   </span>
                                   <span className="text-[11px] text-muted-foreground leading-normal line-clamp-1 block">
@@ -159,15 +159,15 @@ export function Navbar() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "relative py-1.5 text-sm font-medium transition-colors hover:text-cyan-500",
-                    isActive ? "text-cyan-500" : "text-muted-foreground"
+                    "relative py-1.5 text-sm font-medium transition-colors hover:text-primary",
+                    isActive ? "text-primary" : "text-muted-foreground"
                   )}
                 >
                   <span className="relative z-10">{item.name}</span>
                   {isActive && (
                     <motion.div
                       layoutId="activeNav"
-                      className="absolute bottom-0 left-0 w-full h-[2px] bg-cyan-500"
+                      className="absolute bottom-0 left-0 w-full h-[2px] bg-primary"
                       transition={{ type: "spring", stiffness: 350, damping: 30 }}
                     />
                   )}
@@ -185,8 +185,8 @@ export function Navbar() {
               href="/contact"
               className="relative inline-flex items-center justify-center text-xs sm:text-sm font-medium h-10 px-5 rounded-lg bg-foreground text-background hover:bg-foreground/90 transition-all shadow-md shadow-foreground/10 cursor-pointer overflow-hidden group isolate"
             >
-              <span className="absolute inset-0 bg-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
-              <span className="relative z-10 group-hover:text-black transition-colors">Book Free Consultation</span>
+              <span className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
+              <span className="relative z-10 group-hover:text-foreground transition-colors">Book Free Consultation</span>
             </Link>
           </div>
         </nav>
@@ -217,27 +217,27 @@ export function Navbar() {
             <nav className="flex flex-col gap-6">
               {/* Services List for Mobile */}
               <div className="space-y-3">
-                <span className="text-xs font-mono text-cyan-500 uppercase tracking-widest block border-b border-border/40 pb-2">
+                <span className="text-xs font-mono text-primary uppercase tracking-widest block border-b border-border/40 pb-2">
                   Our Services
                 </span>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <li>
-                    <Link href="/services/aws-cloud-managed-services" onClick={() => setIsOpen(false)} className="text-sm text-muted-foreground block py-1.5 hover:text-cyan-500">
+                    <Link href="/services/aws-cloud-managed-services" onClick={() => setIsOpen(false)} className="text-sm text-muted-foreground block py-1.5 hover:text-primary">
                       AWS Cloud Management
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/devops-consulting" onClick={() => setIsOpen(false)} className="text-sm text-muted-foreground block py-1.5 hover:text-cyan-500">
+                    <Link href="/services/devops-consulting" onClick={() => setIsOpen(false)} className="text-sm text-muted-foreground block py-1.5 hover:text-primary">
                       DevOps Automation
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/kubernetes" onClick={() => setIsOpen(false)} className="text-sm text-muted-foreground block py-1.5 hover:text-cyan-500">
+                    <Link href="/services/kubernetes" onClick={() => setIsOpen(false)} className="text-sm text-muted-foreground block py-1.5 hover:text-primary">
                       Kubernetes setup
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/platform-engineering" onClick={() => setIsOpen(false)} className="text-sm text-muted-foreground block py-1.5 hover:text-cyan-500">
+                    <Link href="/services/platform-engineering" onClick={() => setIsOpen(false)} className="text-sm text-muted-foreground block py-1.5 hover:text-primary">
                       Platform Engineering
                     </Link>
                   </li>
@@ -254,8 +254,8 @@ export function Navbar() {
                         href={item.href}
                         onClick={() => setIsOpen(false)}
                         className={cn(
-                          "block py-1.5 text-base font-medium rounded-md transition-colors hover:text-cyan-500",
-                          isActive ? "text-cyan-500 font-semibold" : "text-muted-foreground"
+                          "block py-1.5 text-base font-medium rounded-md transition-colors hover:text-primary",
+                          isActive ? "text-primary font-semibold" : "text-muted-foreground"
                         )}
                       >
                         {item.name}

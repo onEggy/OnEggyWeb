@@ -30,20 +30,20 @@ export function ServiceFaqAccordion({ faqs }: ServiceFaqAccordionProps) {
         return (
           <div
             key={index}
-            className="border border-border/40 rounded-xl bg-background/30 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:border-cyan-500/20"
+            className="border border-border/40 rounded-xl bg-background/30 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:border-primary/20"
           >
             <button
               onClick={() => toggleFAQ(index)}
               aria-expanded={isOpen}
               aria-controls={`service-faq-answer-${index}`}
               id={`service-faq-button-${index}`}
-              className="w-full flex items-center justify-between p-5 text-left font-semibold text-foreground hover:text-cyan-400 transition-colors cursor-pointer select-none"
+              className="w-full flex items-center justify-between p-5 text-left font-semibold text-foreground hover:text-primary transition-colors cursor-pointer select-none"
             >
               <span className="text-sm sm:text-base pr-4">{item.question}</span>
               <ChevronDown
                 className={cn(
                   "h-4 w-4 shrink-0 transition-transform duration-300 text-muted-foreground",
-                  isOpen ? "rotate-180 text-cyan-400" : ""
+                  isOpen ? "rotate-180 text-primary" : ""
                 )}
               />
             </button>

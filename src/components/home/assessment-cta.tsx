@@ -7,19 +7,19 @@ import { ArrowRight, ClipboardCheck, Search, ShieldCheck } from "lucide-react";
 const auditSteps = [
   {
     num: "1",
-    icon: <ShieldCheck className="h-5 w-5 text-cyan-400" />,
+    icon: <ShieldCheck className="h-5 w-5 text-primary" />,
     title: "Read-Only STS Connect",
     desc: "Set up scoped read-only IAM access to your AWS or Kubernetes clusters in under 5 minutes. Zero write permissions required.",
   },
   {
     num: "2",
-    icon: <Search className="h-5 w-5 text-teal-400" />,
+    icon: <Search className="h-5 w-5 text-amber-500" />,
     title: "Deep Leakage Scanning",
     desc: "We run checks to audit idle RDS clusters, orphan EBS volumes, over-provisioned EKS nodes, and loose IAM security groups.",
   },
   {
     num: "3",
-    icon: <ClipboardCheck className="h-5 w-5 text-indigo-400" />,
+    icon: <ClipboardCheck className="h-5 w-5 text-amber-600" />,
     title: "Actionable Report Delivery",
     desc: "We deliver a comprehensive report showing exactly how to slash up to 40% of cloud waste and fix build deployment locks.",
   },
@@ -28,25 +28,27 @@ const auditSteps = [
 export function AssessmentCta() {
   return (
     <section className="max-w-7xl mx-auto px-6 py-20 border-t border-border/40 relative">
-      {/* Visual background elements */}
-      <div className="absolute top-[20%] right-[10%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[100px] pointer-events-none -z-10" />
+      {/* Blueprint Coordinates */}
+      <div className="absolute top-2 left-10 font-mono text-[8px] text-zinc-650 opacity-40 select-none">
+        GRID.SEC.I // LEAD.ASSESSMENT_V1.0
+      </div>
 
-      <div className="glass-card rounded-2xl border border-cyan-500/20 p-8 md:p-12 shadow-2xl relative overflow-hidden bg-background/20 backdrop-blur-md">
+      <div className="glass-card rounded-2xl border border-primary/20 p-8 md:p-12 shadow-2xl relative overflow-hidden bg-background/20 backdrop-blur-md">
         
         {/* Glow corner overlay */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/0 via-cyan-500/0 to-cyan-500/5 opacity-50 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-primary/0 via-primary/0 to-primary/5 opacity-50 pointer-events-none" />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           
           {/* Copy and CTA block */}
           <div className="lg:col-span-5 space-y-6">
             <div className="space-y-3">
-              <span className="text-xs font-mono font-semibold text-cyan-400 uppercase tracking-widest block">
+              <span className="text-xs font-mono font-semibold text-primary uppercase tracking-widest block">
                 Free Assessment Offer
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground leading-tight">
                 Get a Free <br />
-                <span className="text-cyan-400">Cloud Cost & Security Audit</span>
+                <span className="text-primary">Cloud Cost & Security Audit</span>
               </h2>
             </div>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
@@ -67,7 +69,7 @@ export function AssessmentCta() {
             {auditSteps.map((step) => (
               <div
                 key={step.num}
-                className="glass-card p-5 rounded-xl border border-border/40 hover:border-cyan-500/25 transition-all duration-300 relative group flex flex-col justify-between min-h-[220px]"
+                className="glass-card p-5 rounded-xl border border-border/40 hover:border-primary/25 transition-all duration-300 relative group flex flex-col justify-between min-h-[220px]"
               >
                 <div className="space-y-4">
                   <div className="w-9 h-9 rounded-lg bg-background/50 border border-border/40 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">

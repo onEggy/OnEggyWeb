@@ -73,16 +73,16 @@ export function BlogContent({ posts, categories }: BlogContentProps) {
             placeholder="Search articles..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full h-10 pl-9 pr-4 rounded-lg bg-background/50 border border-border text-xs sm:text-sm focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/25 transition-all placeholder:text-muted-foreground"
+            className="w-full h-10 pl-9 pr-4 rounded-lg bg-background/50 border border-border text-xs sm:text-sm focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/25 transition-all placeholder:text-muted-foreground"
           />
         </div>
       </div>
 
       {/* 1. Featured Post Banner */}
       {showFeaturedBanner && featuredPost && (
-        <FadeIn className="glass-card p-6 md:p-8 rounded-2xl border border-border/40 hover:border-cyan-500/30 transition-all duration-300 relative overflow-hidden shadow-2xl">
+        <FadeIn className="glass-card p-6 md:p-8 rounded-2xl border border-border/40 hover:border-primary/30 transition-all duration-300 relative overflow-hidden shadow-2xl">
           {/* Radial visual glow */}
-          <div className="absolute -bottom-40 -left-20 w-[300px] h-[300px] rounded-full bg-cyan-500/10 blur-[80px] pointer-events-none" />
+          <div className="absolute -bottom-40 -left-20 w-[300px] h-[300px] rounded-full bg-primary/5 blur-[80px] pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             {/* Featured Post Image */}
@@ -100,14 +100,14 @@ export function BlogContent({ posts, categories }: BlogContentProps) {
 
             <div className={`${featuredPost.image ? "lg:col-span-8" : "lg:col-span-12"} space-y-4`}>
               <div className="flex items-center gap-4 text-xs font-mono">
-                <span className="px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 font-semibold border border-cyan-500/20">
+                <span className="px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-semibold border border-primary/20">
                   Featured: {featuredPost.category}
                 </span>
                 <span className="flex items-center gap-1 text-muted-foreground">
                   <Clock className="h-3.5 w-3.5" /> {featuredPost.readTime}
                 </span>
               </div>
-              <h2 className="text-xl sm:text-3xl font-bold text-foreground hover:text-cyan-500 transition-colors">
+              <h2 className="text-xl sm:text-3xl font-bold text-foreground hover:text-primary transition-colors">
                 <Link href={`/blogs/${featuredPost.slug}`}>{featuredPost.title}</Link>
               </h2>
               <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3">
@@ -135,7 +135,7 @@ export function BlogContent({ posts, categories }: BlogContentProps) {
           {regularPosts.map((post) => (
             <StaggerItem
               key={post.slug}
-              className="glass-card hover:border-cyan-500/35 p-0 rounded-xl flex flex-col justify-between overflow-hidden transition-all duration-300 group"
+              className="glass-card hover:border-primary/30 p-0 rounded-xl flex flex-col justify-between overflow-hidden transition-all duration-300 group"
             >
               {/* Optional Post Card Thumbnail */}
               {post.image && (
@@ -153,7 +153,7 @@ export function BlogContent({ posts, categories }: BlogContentProps) {
               <div className="p-6 flex flex-col justify-between flex-1 space-y-4">
                 <div className="space-y-3">
                   <div className="flex justify-between items-center text-xs font-mono">
-                    <span className="px-2 py-0.5 rounded bg-background/80 border border-border/40 text-cyan-500 font-semibold">
+                    <span className="px-2 py-0.5 rounded bg-background/80 border border-border/40 text-primary font-semibold">
                       {post.category}
                     </span>
                     <span className="flex items-center gap-1 text-muted-foreground">
@@ -161,7 +161,7 @@ export function BlogContent({ posts, categories }: BlogContentProps) {
                     </span>
                   </div>
                   
-                  <h3 className="text-base font-bold text-foreground group-hover:text-cyan-500 transition-colors line-clamp-2">
+                  <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2">
                     <Link href={`/blogs/${post.slug}`}>{post.title}</Link>
                   </h3>
                   
@@ -176,7 +176,7 @@ export function BlogContent({ posts, categories }: BlogContentProps) {
                   </span>
                   <Link 
                     href={`/blogs/${post.slug}`}
-                    className="font-semibold text-foreground group-hover:text-cyan-500 inline-flex items-center gap-1 cursor-pointer"
+                    className="font-semibold text-foreground group-hover:text-primary inline-flex items-center gap-1 cursor-pointer"
                   >
                     Read Article <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
                   </Link>

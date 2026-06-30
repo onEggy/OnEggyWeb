@@ -58,11 +58,11 @@ export function EngagementModels() {
   return (
     <section className="max-w-7xl mx-auto px-6 py-20 border-t border-border/40 relative">
       {/* Background radial glow */}
-      <div className="absolute top-[10%] left-[-15%] w-[400px] h-[400px] rounded-full bg-cyan-500/5 blur-[105px] pointer-events-none -z-10" />
+      <div className="absolute top-[10%] left-[-15%] w-[400px] h-[400px] rounded-full bg-primary/5 blur-[105px] pointer-events-none -z-10" />
 
       <SectionHeader
         tag="Engagement Models"
-        title={<>Pricing & Collaboration <span className="text-cyan-400">Models</span></>}
+        title={<>Pricing & Collaboration <span className="text-primary">Models</span></>}
         subtitle="Transparent flat-fee audits and retainer plans tailored for startups, SaaS platforms, and scaling businesses."
         align="center"
         className="mb-16"
@@ -74,13 +74,13 @@ export function EngagementModels() {
             key={model.name}
             className={`glass-card p-8 rounded-2xl flex flex-col justify-between min-h-[520px] h-full transition-all relative ${
               model.highlight
-                ? "border-cyan-500/40 shadow-2xl lg:scale-[1.02] bg-cyan-500/[0.02] z-10"
-                : "border-border/40 hover:border-cyan-500/25"
+                ? "border-primary/40 shadow-2xl lg:scale-[1.02] bg-primary/[0.02] z-10"
+                : "border-border/40 hover:border-primary/25"
             }`}
           >
             {/* Highlighted Banner Badge */}
             {model.highlight && (
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-cyan-500 text-black text-[10px] font-bold uppercase tracking-wider shadow-md">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-wider shadow-md">
                 Squad-As-A-Service
               </span>
             )}
@@ -99,7 +99,7 @@ export function EngagementModels() {
               <ul className="space-y-3.5">
                 {model.features.map((feat) => (
                   <li key={feat} className="flex items-center gap-2.5 text-xs sm:text-sm text-muted-foreground leading-normal">
-                    <Check className="h-4 w-4 text-cyan-400 shrink-0" />
+                    <Check className="h-4 w-4 text-primary shrink-0" />
                     <span>{feat}</span>
                   </li>
                 ))}
@@ -111,7 +111,7 @@ export function EngagementModels() {
                 href="/contact"
                 className={`w-full inline-flex items-center justify-center h-11 px-6 rounded-lg text-sm font-semibold transition-all cursor-pointer ${
                   model.highlight
-                    ? "bg-cyan-500 text-black hover:bg-cyan-400"
+                    ? "bg-primary text-primary-foreground hover:bg-primary/90"
                     : "bg-foreground text-background hover:bg-foreground/90"
                 }`}
               >
