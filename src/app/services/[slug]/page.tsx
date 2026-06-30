@@ -238,54 +238,104 @@ export default async function ServicePage({ params }: PageProps) {
         }}
       />
 
-      {/* 1. HERO — editorial serif */}
-      <section className="max-w-7xl mx-auto px-6 pt-12 pb-16 sm:pt-16 lg:pt-20 lg:pb-24">
-        <div className="max-w-[58ch]">
-          <span className="eyebrow mb-6">{categoryLabel}</span>
-          <h1 className="display text-4xl sm:text-5xl lg:text-[3.6rem] mt-5">
-            {service.title} — <em>{service.headline}</em>
-          </h1>
-          <p className="mt-7 text-lg text-muted-foreground leading-relaxed max-w-[52ch]">
-            {service.subtext}
-          </p>
+      {/* 1. HERO — editorial, two-column with engagement snapshot */}
+      <section className="max-w-7xl mx-auto px-6 pt-8 pb-16 sm:pt-10 lg:pt-14 lg:pb-24">
+        {/* Breadcrumb */}
+        <nav aria-label="Breadcrumb" className="mb-10">
+          <ol className="flex items-center gap-2.5 text-xs font-mono text-muted-foreground">
+            <li><Link href="/" className="hover:text-primary-strong transition-colors">Home</Link></li>
+            <li aria-hidden="true" className="text-muted-foreground/50">/</li>
+            <li><Link href="/services" className="hover:text-primary-strong transition-colors">Services</Link></li>
+            <li aria-hidden="true" className="text-muted-foreground/50">/</li>
+            <li className="text-foreground truncate max-w-[50vw]">{service.title}</li>
+          </ol>
+        </nav>
 
-          <div className="mt-9 flex flex-col sm:flex-row sm:items-center gap-3">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-md bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-sm transition-colors focus-visible:ring-2 focus-visible:ring-primary"
-            >
-              Request advisory assessment <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-            <a
-              href="#blueprint"
-              className="inline-flex items-center justify-center gap-1.5 h-12 px-3 text-sm font-semibold text-foreground hover:text-primary-strong transition-colors"
-            >
-              Review framework map <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-            </a>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
+          {/* Editorial copy */}
+          <div className="lg:col-span-7 lg:pr-4">
+            <span className="eyebrow mb-6">{categoryLabel}</span>
+            <h1 className="display text-4xl sm:text-5xl lg:text-[3.6rem] mt-5">
+              {service.title} — <em>{service.headline}</em>
+            </h1>
+            <p className="mt-7 text-lg text-muted-foreground leading-relaxed max-w-[52ch]">
+              {service.subtext}
+            </p>
+
+            <div className="mt-9 flex flex-col sm:flex-row sm:items-center gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-md bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-sm transition-colors focus-visible:ring-2 focus-visible:ring-primary"
+              >
+                Request advisory assessment <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+              <a
+                href="#blueprint"
+                className="inline-flex items-center justify-center gap-1.5 h-12 px-3 text-sm font-semibold text-foreground hover:text-primary-strong transition-colors"
+              >
+                Review framework map <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+              </a>
+            </div>
+
+            {/* Tech ecosystem row */}
+            <div className="mt-12 pt-7 border-t border-border">
+              <p className="text-xs font-mono uppercase tracking-[0.12em] text-muted-foreground/80 mb-4">
+                Built on
+              </p>
+              <div className="flex flex-wrap items-center gap-2.5">
+                {service.techs.map((tech) => {
+                  const logo = getTechLogo(tech);
+                  return (
+                    <span
+                      key={tech}
+                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-mono bg-surface-subtle border border-border text-foreground/80"
+                    >
+                      {logo && (
+                        <span className="relative w-3.5 h-3.5 shrink-0">
+                          <Image src={logo} alt="" fill sizes="14px" className="object-contain" />
+                        </span>
+                      )}
+                      <span>{tech}</span>
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
           </div>
 
-          {/* Tech ecosystem row */}
-          <div className="mt-12 pt-7 border-t border-border">
-            <p className="text-xs font-mono uppercase tracking-[0.12em] text-muted-foreground/80 mb-4">
-              Built on
-            </p>
-            <div className="flex flex-wrap items-center gap-2.5">
-              {service.techs.map((tech) => {
-                const logo = getTechLogo(tech);
-                return (
-                  <span
-                    key={tech}
-                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-mono bg-surface-subtle border border-border text-foreground/80"
-                  >
-                    {logo && (
-                      <span className="relative w-3.5 h-3.5 shrink-0">
-                        <Image src={logo} alt="" fill sizes="14px" className="object-contain" />
-                      </span>
-                    )}
-                    <span>{tech}</span>
-                  </span>
-                );
-              })}
+          {/* Engagement snapshot card */}
+          <div className="lg:col-span-5">
+            <div className="relative surface-card rounded-2xl p-7 overflow-hidden">
+              <OrbitMark size={120} className="absolute -top-6 -right-6 opacity-[0.06] pointer-events-none" />
+              <p className="text-xs font-mono uppercase tracking-[0.1em] text-primary-strong relative">
+                Engagement at a glance
+              </p>
+              <dl className="mt-6 relative">
+                <div className="flex items-center justify-between gap-4 py-3.5 border-b border-border">
+                  <dt className="text-sm text-muted-foreground">Discipline</dt>
+                  <dd className="text-sm font-semibold text-foreground text-right">{categoryLabel}</dd>
+                </div>
+                <div className="flex items-center justify-between gap-4 py-3.5 border-b border-border">
+                  <dt className="text-sm text-muted-foreground">Capabilities</dt>
+                  <dd className="text-sm font-semibold text-foreground">{service.features.length} core areas</dd>
+                </div>
+                <div className="flex items-center justify-between gap-4 py-3.5 border-b border-border">
+                  <dt className="text-sm text-muted-foreground">Foundations</dt>
+                  <dd className="text-sm font-semibold text-foreground">{service.techs.length} technologies</dd>
+                </div>
+              </dl>
+              {service.benefits[0] && (
+                <div className="mt-6 pt-6 border-t border-border relative">
+                  <div className="display text-4xl text-foreground tabular-nums">{service.benefits[0].num}</div>
+                  <div className="mt-1 text-sm text-muted-foreground">{service.benefits[0].label}</div>
+                </div>
+              )}
+              <Link
+                href="/contact"
+                className="mt-6 relative inline-flex items-center gap-1.5 text-sm font-semibold text-primary-strong hover:gap-2.5 transition-all"
+              >
+                Get a tailored proposal <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
             </div>
           </div>
         </div>
