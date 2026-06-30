@@ -20,14 +20,14 @@ export function RoiCalculator() {
   return (
     <section className="max-w-7xl mx-auto px-6 py-20 border-t border-border/40 relative">
       {/* Background Glow */}
-      <div className="absolute top-[30%] right-[-10%] w-[350px] h-[350px] rounded-full bg-teal-500/5 blur-[105px] pointer-events-none -z-10 animate-pulse" />
+      <div className="absolute top-[30%] right-[-10%] w-[350px] h-[350px] rounded-full bg-primary/2 blur-[105px] pointer-events-none -z-10 animate-pulse" />
 
       <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <span className="text-xs font-mono font-semibold text-cyan-500 uppercase tracking-widest block">
+        <span className="text-xs font-mono font-semibold text-primary uppercase tracking-widest block">
           Cost Optimizations
         </span>
         <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-foreground">
-          Calculate Your <span className="text-cyan-400">Cloud ROI</span>
+          Calculate Your <span className="text-primary font-bold">Cloud ROI</span>
         </h2>
         <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
           Over-provisioned EKS clusters, idle RDS nodes, and un-optimized databases drain cash. Slide the bar to see what you could save with our senior architects.
@@ -41,9 +41,9 @@ export function RoiCalculator() {
           <div className="space-y-6 w-full">
             <div className="flex items-center justify-between">
               <span className="text-sm font-semibold text-foreground flex items-center gap-2">
-                <Calculator className="h-4.5 w-4.5 text-cyan-400" /> Current Monthly AWS / Cloud Spend
+                <Calculator className="h-4.5 w-4.5 text-primary" /> Current Monthly AWS / Cloud Spend
               </span>
-              <span className="text-2xl font-mono font-bold text-cyan-500">
+              <span className="text-2xl font-mono font-bold text-primary">
                 ${cloudSpend.toLocaleString()}
               </span>
             </div>
@@ -57,7 +57,7 @@ export function RoiCalculator() {
                 step="1000"
                 value={cloudSpend}
                 onChange={(e) => setCloudSpend(Number(e.target.value))}
-                className="w-full h-2 rounded-lg bg-border/60 appearance-none cursor-pointer accent-cyan-500 focus:outline-none"
+                className="w-full h-2 rounded-lg bg-border/60 appearance-none cursor-pointer accent-primary focus:outline-none"
                 aria-label="Cloud Spend Slider"
               />
               <div className="flex items-center justify-between text-[10px] font-mono text-muted-foreground uppercase pt-1 font-semibold">
@@ -72,34 +72,34 @@ export function RoiCalculator() {
               <span className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground block font-semibold">
                 Projected Savings Allocation
               </span>
-              <div className="w-full h-3 rounded-full bg-zinc-900 overflow-hidden flex">
+              <div className="w-full h-3 rounded-full bg-secondary overflow-hidden flex">
                 <div 
-                  className="h-full bg-cyan-400 transition-all duration-300" 
+                  className="h-full bg-primary transition-all duration-300" 
                   style={{ width: "45%" }} 
                   title="Compute Rightsizing: 45%"
                 />
                 <div 
-                  className="h-full bg-teal-400 transition-all duration-300" 
+                  className="h-full bg-primary/80 transition-all duration-300" 
                   style={{ width: "25%" }} 
                   title="Orphan Volume Cleanup: 25%"
                 />
                 <div 
-                  className="h-full bg-indigo-500 transition-all duration-300" 
+                  className="h-full bg-primary/50 transition-all duration-300" 
                   style={{ width: "30%" }} 
                   title="CloudFront & Egress: 30%"
                 />
               </div>
               <div className="grid grid-cols-3 gap-2 text-[9px] sm:text-[11px] font-mono">
                 <div className="flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
                   <span className="text-muted-foreground truncate">Compute (${Math.floor(monthlySavings * 0.45).toLocaleString()}/mo)</span>
                 </div>
                 <div className="flex items-center gap-1.5 justify-center">
-                  <span className="w-1.5 h-1.5 rounded-full bg-teal-400 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary/80 shrink-0" />
                   <span className="text-muted-foreground truncate">Storage (${Math.floor(monthlySavings * 0.25).toLocaleString()}/mo)</span>
                 </div>
                 <div className="flex items-center gap-1.5 justify-end">
-                  <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
                   <span className="text-muted-foreground truncate">Network (${Math.floor(monthlySavings * 0.30).toLocaleString()}/mo)</span>
                 </div>
               </div>
@@ -126,8 +126,8 @@ export function RoiCalculator() {
             </div>
           </div>
 
-          <div className="p-4 rounded-xl border border-cyan-500/10 bg-cyan-500/[0.01] flex items-start gap-3">
-            <PiggyBank className="h-5 w-5 text-cyan-400 shrink-0 mt-0.5" />
+          <div className="p-4 rounded-xl border border-border bg-secondary/15 flex items-start gap-3">
+            <PiggyBank className="h-5 w-5 text-primary shrink-0 mt-0.5" />
             <p className="text-xs text-muted-foreground leading-relaxed">
               We audit log sizes, rightsize EC2 sizes, configure horizontal autoscalers, and leverage AWS Spot instances. Billed savings typically cover our retainer services within 30 days.
             </p>
@@ -135,11 +135,11 @@ export function RoiCalculator() {
         </div>
 
         {/* Right Column: ROI Recommendation & Action Panel (5 columns) */}
-        <div className="lg:col-span-5 flex flex-col justify-between p-6 md:p-8 rounded-2xl border border-cyan-500/30 bg-cyan-500/[0.02] shadow-2xl relative">
+        <div className="lg:col-span-5 flex flex-col justify-between p-6 md:p-8 rounded-2xl border border-border bg-card/45 backdrop-blur-md shadow-2xl relative">
           
           <div className="space-y-6">
             <div>
-              <span className="text-[10px] font-mono font-bold text-cyan-500 uppercase tracking-widest block mb-1">
+              <span className="text-[10px] font-mono font-bold text-primary uppercase tracking-widest block mb-1">
                 Recommended Engagement
               </span>
               <h3 className="text-2xl font-bold text-foreground">{recommendedPlan.name}</h3>
@@ -167,15 +167,15 @@ export function RoiCalculator() {
 
             <ul className="space-y-2.5 text-xs text-muted-foreground leading-normal">
               <li className="flex items-center gap-2">
-                <span className="w-1 h-1 rounded-full bg-cyan-500" />
+                <span className="w-1 h-1 rounded-full bg-primary" />
                 <span>Rightsizing EC2 & DB memory clusters</span>
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1 h-1 rounded-full bg-cyan-500" />
+                <span className="w-1 h-1 rounded-full bg-primary" />
                 <span>Zero-downtime pipeline deployments</span>
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1 h-1 rounded-full bg-cyan-500" />
+                <span className="w-1 h-1 rounded-full bg-primary" />
                 <span>100% money-back savings guarantee</span>
               </li>
             </ul>
@@ -184,7 +184,7 @@ export function RoiCalculator() {
           <div className="pt-6 sm:pt-0">
             <Link
               href="/contact"
-              className="w-full inline-flex items-center justify-center gap-2 h-11 px-6 rounded-lg bg-cyan-500 text-black hover:bg-cyan-400 text-sm font-semibold transition-all shadow-lg cursor-pointer"
+              className="w-full inline-flex items-center justify-center gap-2 h-11 px-6 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 text-sm font-semibold transition-all shadow-lg cursor-pointer"
             >
               Discuss Cloud Assessment <ArrowUpRight className="h-4 w-4" />
             </Link>

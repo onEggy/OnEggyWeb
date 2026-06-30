@@ -31,7 +31,8 @@ export function WhyChooseUs() {
 
   return (
     <section className="max-w-7xl mx-auto px-6 py-24 border-t border-border/40 relative">
-      <div className="absolute top-[10%] right-[10%] w-[350px] h-[350px] rounded-full bg-blue-500/5 blur-[90px] pointer-events-none -z-10 animate-pulse" />
+      {/* Background Glow */}
+      <div className="absolute top-[10%] right-[10%] w-[350px] h-[350px] rounded-full bg-primary/2 blur-[90px] pointer-events-none -z-10 animate-pulse" />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         
@@ -45,13 +46,13 @@ export function WhyChooseUs() {
             className="mb-0"
           />
 
-          <FadeUp delay={0.2} className="space-y-4 pt-6 border-t border-zinc-800">
+          <FadeUp delay={0.2} className="space-y-4 pt-6 border-t border-border/30">
             <div className="flex gap-4">
-              <div className="w-10 h-10 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded bg-background border border-border flex items-center justify-center shrink-0">
                 <ShieldCheck className="h-5 w-5 text-primary" />
               </div>
               <div className="space-y-1">
-                <h4 className="text-sm font-bold text-foreground">Senior Architect Led</h4>
+                <h4 className="text-sm font-bold text-foreground font-display">Senior Architect Led</h4>
                 <p className="text-xs text-muted-foreground leading-relaxed">
                   We assign AWS Professional Certified Architects directly to your workloads to guarantee high-integrity designs.
                 </p>
@@ -59,11 +60,11 @@ export function WhyChooseUs() {
             </div>
 
             <div className="flex gap-4">
-              <div className="w-10 h-10 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded bg-background border border-border flex items-center justify-center shrink-0">
                 <PiggyBank className="h-5 w-5 text-primary" />
               </div>
               <div className="space-y-1">
-                <h4 className="text-sm font-bold text-foreground">Spend Optimization</h4>
+                <h4 className="text-sm font-bold text-foreground font-display">Spend Optimization</h4>
                 <p className="text-xs text-muted-foreground leading-relaxed">
                   Continuous rightsizing of Kubernetes node capacity ensures you only pay for what your services actively consume.
                 </p>
@@ -71,11 +72,11 @@ export function WhyChooseUs() {
             </div>
 
             <div className="flex gap-4">
-              <div className="w-10 h-10 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded bg-background border border-border flex items-center justify-center shrink-0">
                 <Settings className="h-5 w-5 text-primary" />
               </div>
               <div className="space-y-1">
-                <h4 className="text-sm font-bold text-foreground">Zero Vendor Lock-in</h4>
+                <h4 className="text-sm font-bold text-foreground font-display">Zero Vendor Lock-in</h4>
                 <p className="text-xs text-muted-foreground leading-relaxed">
                   Every account tier and networking rule is written in clean, modular Terraform configurations owned entirely by you.
                 </p>
@@ -87,14 +88,14 @@ export function WhyChooseUs() {
         {/* Right Side: Cloud Maturity Comparison Framework Table (7 columns) */}
         <div className="lg:col-span-7">
           <FadeIn delay={0.3} className="w-full">
-            <div className="border border-zinc-850 rounded-2xl overflow-hidden bg-zinc-950/20 shadow-xl">
-              <div className="p-6 border-b border-zinc-850 bg-zinc-900/10">
+            <div className="border border-border rounded-2xl overflow-hidden bg-card/25 shadow-xl backdrop-blur-md">
+              <div className="p-6 border-b border-border/80 bg-secondary/15">
                 <h3 className="text-base font-bold text-foreground font-display">
                   Transformation Matrix: Legacy vs. Engineered Posture
                 </h3>
               </div>
 
-              <div className="divide-y divide-zinc-900">
+              <div className="divide-y divide-border/40">
                 {comparisonRows.map((row) => (
                   <div key={row.dimension} className="p-6 grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
                     {/* Dimension Label (3 cols) */}
@@ -106,7 +107,7 @@ export function WhyChooseUs() {
 
                     {/* Legacy Posture (4 cols) */}
                     <div className="md:col-span-4 flex items-start gap-2">
-                      <XCircle className="h-4 w-4 text-red-500/80 shrink-0 mt-0.5" />
+                      <XCircle className="h-4 w-4 text-destructive/80 shrink-0 mt-0.5" />
                       <p className="text-[11px] text-muted-foreground leading-relaxed font-sans">
                         {row.legacy}
                       </p>
@@ -114,7 +115,7 @@ export function WhyChooseUs() {
 
                     {/* Engineered Posture (5 cols) */}
                     <div className="md:col-span-5 flex items-start gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-green-500 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
                       <p className="text-[11px] text-foreground leading-relaxed font-sans font-medium">
                         {row.modern}
                       </p>

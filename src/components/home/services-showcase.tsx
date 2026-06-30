@@ -18,7 +18,7 @@ export function ServicesShowcase() {
       link: "/services/aws-cloud-managed-services"
     },
     {
-      icon: <Layers className="h-5 w-5 text-blue-400" />,
+      icon: <Layers className="h-5 w-5 text-primary/80" />,
       name: "Kubernetes & Container Orchestration",
       focus: "Platform Scale",
       outcome: "High Availability & Resiliency",
@@ -27,7 +27,7 @@ export function ServicesShowcase() {
       link: "/services/kubernetes"
     },
     {
-      icon: <Settings className="h-5 w-5 text-slate-400" />,
+      icon: <Settings className="h-5 w-5 text-primary/60" />,
       name: "IaC & GitOps Release Automation",
       focus: "DevOps Consulting",
       outcome: "Continuous Delivery Velocity",
@@ -45,7 +45,7 @@ export function ServicesShowcase() {
       link: "/services/full-stack-web-development"
     },
     {
-      icon: <ShieldCheck className="h-5 w-5 text-blue-400" />,
+      icon: <ShieldCheck className="h-5 w-5 text-primary/80" />,
       name: "DevSecOps & Regulatory Audits",
       focus: "Risk Advisory",
       outcome: "PCI-DSS & HIPAA Compliance",
@@ -70,15 +70,15 @@ export function ServicesShowcase() {
         {practices.map((practice) => (
           <StaggerItem
             key={practice.name}
-            className="p-6 md:p-8 rounded-xl border border-zinc-900 bg-zinc-950/20 hover:border-zinc-800 hover:bg-zinc-900/10 transition-all duration-300 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center group"
+            className="p-6 md:p-8 rounded-xl border border-border bg-card/25 hover:border-primary/30 hover:bg-secondary/15 transition-all duration-300 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center group"
           >
             {/* Practice Name and Icon (5 columns) */}
             <div className="lg:col-span-5 flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-lg bg-background border border-border flex items-center justify-center shrink-0">
                 {practice.icon}
               </div>
               <div className="space-y-1">
-                <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest font-semibold block">
+                <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest font-semibold block">
                   {practice.focus}
                 </span>
                 <h3 className="text-base sm:text-lg font-bold text-foreground font-display group-hover:text-primary transition-colors">
@@ -108,10 +108,10 @@ export function ServicesShowcase() {
             <div className="lg:col-span-1 flex justify-start lg:justify-end">
               <Link
                 href={practice.link}
-                className="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 group-hover:bg-primary group-hover:border-primary flex items-center justify-center transition-all duration-300 cursor-pointer"
+                className="w-8 h-8 rounded-full bg-background border border-border group-hover:bg-primary group-hover:border-primary flex items-center justify-center transition-all duration-300 cursor-pointer"
                 aria-label={`Explore our ${practice.name} practice`}
               >
-                <ArrowRight className="h-4 w-4 text-zinc-400 group-hover:text-primary-foreground transition-colors" />
+                <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary-foreground transition-colors" />
               </Link>
             </div>
           </StaggerItem>

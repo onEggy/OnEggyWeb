@@ -60,7 +60,7 @@ export function Hero() {
 
       {/* Mouse Follow Glow Backdrop */}
       <div
-        className="absolute pointer-events-none -z-10 w-[600px] h-[600px] rounded-full bg-cyan-500/5 blur-[120px] transition-all duration-300 ease-out"
+        className="absolute pointer-events-none -z-10 w-[600px] h-[600px] rounded-full bg-primary/4 blur-[120px] transition-all duration-300 ease-out"
         style={{
           left: `${bgGlowPos.x}px`,
           top: `${bgGlowPos.y}px`,
@@ -69,8 +69,8 @@ export function Hero() {
       />
 
       {/* Large Glowing Orbs */}
-      <div className="absolute top-[10%] left-[-10%] w-[450px] h-[450px] rounded-full bg-cyan-500/10 blur-[110px] pointer-events-none animate-pulse" style={{ animationDuration: "6s" }} />
-      <div className="absolute bottom-[10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-teal-500/5 blur-[120px] pointer-events-none animate-pulse" style={{ animationDuration: "10s" }} />
+      <div className="absolute top-[10%] left-[-10%] w-[450px] h-[450px] rounded-full bg-primary/5 blur-[110px] pointer-events-none animate-pulse" style={{ animationDuration: "6s" }} />
+      <div className="absolute bottom-[10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-primary/2 blur-[120px] pointer-events-none animate-pulse" style={{ animationDuration: "10s" }} />
 
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10 w-full">
         
@@ -111,7 +111,7 @@ export function Hero() {
               
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center h-11 px-5 rounded-md border border-border/80 bg-background/50 hover:bg-zinc-900 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:outline-none cursor-pointer"
+                className="inline-flex items-center justify-center h-11 px-5 rounded-md border border-border/80 bg-background/50 hover:bg-secondary/40 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:outline-none cursor-pointer"
               >
                 Request Cloud Audit
               </Link>
@@ -128,10 +128,10 @@ export function Hero() {
                   <Image src="/kubernetes.png" alt="Kubernetes" fill sizes="20px" className="object-contain opacity-50 hover:opacity-100 transition-opacity" />
                 </div>
                 <div className="flex items-center gap-1.5 opacity-50 hover:opacity-100 transition-opacity shrink-0" title="Terraform">
-                  <svg className="h-4.5 w-4.5 fill-current text-blue-400" viewBox="0 0 24 24">
+                  <svg className="h-4.5 w-4.5 fill-current text-primary" viewBox="0 0 24 24">
                     <path d="M0 0h7.5v7.5h-7.5zm8.25 0h7.5v7.5h-7.5zm8.25 8.25h7.5v7.5h-7.5zm-16.5 0h7.5v7.5h-7.5z" />
                   </svg>
-                  <span className="text-[10px] font-mono font-bold tracking-wider text-blue-400">TERRAFORM</span>
+                  <span className="text-[10px] font-mono font-bold tracking-wider text-primary">TERRAFORM</span>
                 </div>
                 <div className="relative w-12 h-4 dark:invert shrink-0" title="Next.js">
                   <Image src="/next.svg" alt="Next.js" fill sizes="48px" className="object-contain opacity-50 hover:opacity-100 transition-opacity" />

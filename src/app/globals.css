@@ -38,48 +38,48 @@
 }
 
 :root {
-  --background: 0 0% 100%;
-  --foreground: 240 10% 3.9%;
-  --card: 0 0% 100%;
-  --card-foreground: 240 10% 3.9%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 240 10% 3.9%;
-  --primary: 217.2 91.2% 59.8%; /* Corporate Steel Blue Accent */
-  --primary-foreground: 0 0% 98%;
-  --secondary: 240 4.8% 95.9%;
-  --secondary-foreground: 240 5.9% 10%;
-  --muted: 240 4.8% 95.9%;
-  --muted-foreground: 240 3.8% 46.1%;
-  --accent: 217.2 91.2% 59.8%;
-  --accent-foreground: 240 5.9% 10%;
+  --background: 60 12% 98%; /* Warm cream #FAF9F6 */
+  --foreground: 156 18% 5%; /* Basalt dark #090D0B */
+  --card: 60 8% 95%;
+  --card-foreground: 156 18% 5%;
+  --popover: 60 12% 98%;
+  --popover-foreground: 156 18% 5%;
+  --primary: 142 50% 45%; /* Warm sage green #2e7d4d */
+  --primary-foreground: 60 12% 98%;
+  --secondary: 156 8% 90%;
+  --secondary-foreground: 156 18% 5%;
+  --muted: 156 8% 90%;
+  --muted-foreground: 156 10% 40%;
+  --accent: 142 50% 45%;
+  --accent-foreground: 60 12% 98%;
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 0 0% 98%;
-  --border: 240 5.9% 90%;
-  --input: 240 5.9% 90%;
-  --ring: 217.2 91.2% 59.8%;
-  --radius: 0.75rem;
+  --border: 156 10% 88%;
+  --input: 156 10% 88%;
+  --ring: 142 50% 45%;
+  --radius: 1rem; /* Softer, more organic corners */
 }
 
 .dark {
-  --background: 240 10% 3.9%;
-  --foreground: 0 0% 98%;
-  --card: 240 10% 3.9%;
-  --card-foreground: 0 0% 98%;
-  --popover: 240 10% 3.9%;
-  --popover-foreground: 0 0% 98%;
-  --primary: 217.2 91.2% 59.8%; /* Corporate Steel Blue Accent */
-  --primary-foreground: 240 5.9% 10%;
-  --secondary: 240 3.7% 15.9%;
+  --background: 156 18% 5%; /* Deep basalt forest green #090D0B */
+  --foreground: 60 5% 95%; /* Soft oatmeal cream #F2F2F1 */
+  --card: 156 12% 8%; /* Slate-forest #121715 */
+  --card-foreground: 60 5% 95%;
+  --popover: 156 12% 8%;
+  --popover-foreground: 60 5% 95%;
+  --primary: 142 55% 72%; /* Warm glowing Sage Green #86efac */
+  --primary-foreground: 156 18% 5%; /* Basalt dark */
+  --secondary: 156 10% 12%; /* Warm dark green-charcoal #19201D */
   --secondary-foreground: 0 0% 98%;
-  --muted: 240 3.7% 15.9%;
-  --muted-foreground: 240 5% 64.9%;
-  --accent: 217.2 91.2% 59.8%;
-  --accent-foreground: 0 0% 98%;
+  --muted: 156 10% 12%;
+  --muted-foreground: 150 8% 55%; /* Warm gray-green text */
+  --accent: 142 55% 72%;
+  --accent-foreground: 156 18% 5%;
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 0% 98%;
-  --border: 240 3.7% 15.9%;
-  --input: 240 3.7% 15.9%;
-  --ring: 217.2 91.2% 59.8%;
+  --border: 156 10% 12%; /* Warm green-charcoal #19201D */
+  --input: 156 10% 12%;
+  --ring: 142 55% 72%;
 }
 
 * {
@@ -97,36 +97,42 @@ body {
 /* Premium Design System Utilities */
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(24, 30, 27, 0.4);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(134, 239, 172, 0.05); /* Organic sage border highlight */
 }
 
 .dark .glass-card {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(14, 18, 16, 0.55);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(134, 239, 172, 0.08); /* Organic sage border highlight */
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #37fff4 0%, #06b6d4 50%, #0284c7 100%);
+  background: linear-gradient(to right, #F2F2F1 25%, #86EFAC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-accent {
+  background: linear-gradient(to right, #86EFAC 0%, #34D399 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gradient-bg {
-  background: linear-gradient(135deg, rgba(55, 255, 244, 0.1) 0%, rgba(6, 182, 212, 0.05) 50%, transparent 100%);
+  background: linear-gradient(to bottom, rgba(134, 239, 172, 0.02) 0%, transparent 100%);
 }
 
 .grid-bg {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(134, 239, 172, 0.03) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
 .dark .grid-bg {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(134, 239, 172, 0.02) 1px, transparent 1px);
 }
 
 @keyframes marquee {
@@ -142,4 +148,12 @@ body {
 
 .animate-marquee:hover {
   animation-play-state: paused;
+}
+
+/* Organic details (leaf/wave cards) */
+.organic-corners {
+  border-top-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
 }

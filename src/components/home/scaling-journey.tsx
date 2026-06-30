@@ -12,7 +12,7 @@ const stages = [
     title: "Seed to MVP Stage",
     desc: "Speed and simplicity are critical. We set up initial secure environments that avoid lock-ins, allowing startup developers to write and deploy code in seconds.",
     focus: "Fast iteration, low cloud spend, reproducible staging sandboxes",
-    icon: <Rocket className="h-4.5 w-4.5 text-cyan-400" />,
+    icon: <Rocket className="h-4.5 w-4.5 text-primary" />,
     features: [
       "VPC networking with subnet isolation",
       "Greenfield AWS landing zones in 5 days",
@@ -26,7 +26,7 @@ const stages = [
     title: "Series A to Growth",
     desc: "As client numbers grow, manual deployments fail. We transition workloads into auto-scaling EKS clusters, automate pipeline gates, and add central logging.",
     focus: "No single point of failure, container scaling, release automation",
-    icon: <Zap className="h-4.5 w-4.5 text-teal-400" />,
+    icon: <Zap className="h-4.5 w-4.5 text-primary/80" />,
     features: [
       "AWS EKS Kubernetes migration via Helm",
       "Automated CI/CD release pipelines",
@@ -40,7 +40,7 @@ const stages = [
     title: "Enterprise Readiness",
     desc: "To close large-market enterprise deals, your infrastructure must be audit-ready. We enforce strict compliance policies and Transit Gateway security.",
     focus: "SOC2 / HIPAA compliance audits, disaster recovery configurations",
-    icon: <ShieldCheck className="h-4.5 w-4.5 text-indigo-400" />,
+    icon: <ShieldCheck className="h-4.5 w-4.5 text-primary/60" />,
     features: [
       "HIPAA, PCI-DSS, or ISO 27001 zones",
       "Transit Gateway network isolation",
@@ -53,12 +53,14 @@ const stages = [
 export function ScalingJourney() {
   return (
     <section className="max-w-7xl mx-auto px-6 py-24 border-t border-border/40 relative">
-      {/* Decorative Orb */}
-      <div className="absolute bottom-[10%] left-[-15%] w-[400px] h-[400px] rounded-full bg-cyan-500/5 blur-[110px] pointer-events-none -z-10" />
+      {/* Blueprint Coordinates */}
+      <div className="absolute top-2 left-6 font-mono text-[8px] text-muted-foreground/30 select-none">
+        GRID.SEC.E // ENTERPRISE.ROADMAP_V1.1
+      </div>
 
       <SectionHeader
         tag="Lifecycle Strategy"
-        title={<>Partnership for Your <span className="text-cyan-400">Entire Scaling Journey</span></>}
+        title={<>Partnership for Your <span className="text-primary font-bold">Entire Scaling Journey</span></>}
         subtitle="Your infrastructure requirements change at each stage of company growth. We design your platforms to survive scale spikes and pass enterprise security audits."
         align="left"
         className="mb-16 max-w-3xl"
@@ -69,7 +71,7 @@ export function ScalingJourney() {
         {stages.map((stage, index) => (
           <StaggerItem
             key={stage.num}
-            className="bg-background/25 border border-border/40 hover:border-cyan-500/30 p-6 rounded-2xl flex flex-col justify-between shadow-sm relative overflow-hidden transition-all duration-300 group"
+            className="bg-background/25 border border-border/40 hover:border-primary/30 p-6 rounded-2xl flex flex-col justify-between shadow-sm relative overflow-hidden transition-all duration-300 group"
           >
             {/* Horizontal step indicator line overlay (desktop only) */}
             {index < 2 && (
@@ -80,11 +82,11 @@ export function ScalingJourney() {
               {/* Header Badge */}
               <div className="flex items-center justify-between border-b border-border/20 pb-4">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-background border border-border flex items-center justify-center shrink-0">
                     {stage.icon}
                   </div>
                   <div>
-                    <span className="text-[10px] font-mono text-cyan-500 font-semibold tracking-wider block">
+                    <span className="text-[10px] font-mono text-primary font-semibold tracking-wider block">
                       STAGE {stage.num}
                     </span>
                     <h4 className="text-xs font-bold text-foreground font-mono uppercase tracking-wider leading-none">
@@ -96,7 +98,7 @@ export function ScalingJourney() {
 
               {/* Stage Description */}
               <div className="space-y-2">
-                <h3 className="text-lg font-bold text-foreground group-hover:text-cyan-500 transition-colors">
+                <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
                   {stage.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
@@ -105,7 +107,7 @@ export function ScalingJourney() {
               </div>
 
               {/* Primary Focus Box */}
-              <div className="p-3 bg-zinc-900/40 border border-zinc-800/80 rounded-xl">
+              <div className="p-3 bg-secondary/20 border border-border rounded-xl">
                 <span className="text-[8px] font-mono text-muted-foreground uppercase tracking-widest block font-bold mb-0.5">
                   Primary Focus Area
                 </span>
@@ -116,13 +118,13 @@ export function ScalingJourney() {
 
               {/* Outputs Checklist */}
               <div className="space-y-2.5 pt-2 border-t border-border/25">
-                <span className="text-[9px] font-mono font-semibold text-cyan-500 uppercase tracking-widest block">
+                <span className="text-[9px] font-mono font-semibold text-primary uppercase tracking-widest block">
                   Actionable Infrastructure Outputs
                 </span>
                 <ul className="space-y-2">
                   {stage.features.map((feat) => (
                     <li key={feat} className="flex items-start gap-2 text-xs text-muted-foreground leading-snug">
-                      <Check className="h-3.5 w-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                      <Check className="h-3.5 w-3.5 text-primary shrink-0 mt-0.5" />
                       <span>{feat}</span>
                     </li>
                   ))}

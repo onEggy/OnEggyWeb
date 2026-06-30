@@ -13,7 +13,7 @@ const steps = [
     desc: "We analyze your AWS bills, EKS cluster resource configurations, and build pipelines to identify resource leaks, slow releases, and compliance gaps.",
     duration: "Duration: 3-5 Days",
     deliverables: ["AWS Cost Explorer audits", "IAM privilege analyzer maps", "EKS resource sizing reports"],
-    icon: <ClipboardList className="h-4 w-4 text-cyan-400 group-hover:text-cyan-300 transition-colors" />,
+    icon: <ClipboardList className="h-4 w-4 text-primary group-hover:text-primary transition-colors" />,
   },
   {
     num: "02",
@@ -22,7 +22,7 @@ const steps = [
     desc: "We design a secure, highly scalable cloud configuration plan detailing landing zones, cluster scopes, databases, and network policies.",
     duration: "Duration: 5-7 Days",
     deliverables: ["Multi-Account AWS Landing Zones", "VPC CIDR / Subnet routing tables", "Kubernetes RBAC matrix"],
-    icon: <PenTool className="h-4 w-4 text-teal-400 group-hover:text-teal-300 transition-colors" />,
+    icon: <PenTool className="h-4 w-4 text-primary/80 group-hover:text-primary transition-colors" />,
   },
   {
     num: "03",
@@ -31,7 +31,7 @@ const steps = [
     desc: "Our senior engineers write clean, modular Terraform files and Helm charts to provision staging and sandbox environments.",
     duration: "Duration: 2-3 Weeks",
     deliverables: ["Dry-run tested Terraform states", "Helm v3 custom templates", "HashiCorp Vault policy JSONs"],
-    icon: <Code className="h-4 w-4 text-indigo-400 group-hover:text-indigo-300 transition-colors" />,
+    icon: <Code className="h-4 w-4 text-primary/60 group-hover:text-primary transition-colors" />,
   },
   {
     num: "04",
@@ -40,7 +40,7 @@ const steps = [
     desc: "We configure robust pipelines to build, lint, and deploy updates into isolated cluster namespaces with zero downtime.",
     duration: "Duration: 1-2 Weeks",
     deliverables: ["GitHub Actions runner configs", "ArgoCD GitOps application maps", "Trivy image vulnerability scans"],
-    icon: <Cpu className="h-4 w-4 text-cyan-400 group-hover:text-cyan-300 transition-colors" />,
+    icon: <Cpu className="h-4 w-4 text-primary group-hover:text-primary transition-colors" />,
   },
   {
     num: "05",
@@ -49,19 +49,20 @@ const steps = [
     desc: "We transition live operations, configure Grafana/Prometheus alert monitoring systems, and supply persistent weekly audits.",
     duration: "Duration: Ongoing Support",
     deliverables: ["Prometheus rules & metrics configs", "Grafana infrastructure dashboards", "PagerDuty webhook alerts"],
-    icon: <Activity className="h-4 w-4 text-teal-400 group-hover:text-teal-300 transition-colors" />,
+    icon: <Activity className="h-4 w-4 text-primary/80 group-hover:text-primary transition-colors" />,
   },
 ];
 
 export function ProcessTimeline() {
   return (
     <section className="max-w-5xl mx-auto px-6 py-24 border-t border-border/40 relative">
-      {/* Glow backdrop */}
-      <div className="absolute bottom-[20%] right-[10%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[100px] pointer-events-none -z-10" />
+      <div className="absolute top-2 left-6 font-mono text-[8px] text-muted-foreground/30 select-none">
+        GRID.SEC.C // OPERATIONS.TIMELINE_V1.1
+      </div>
 
       <SectionHeader
         tag="Engineering Cycle"
-        title={<>Our Structured <span className="text-cyan-400">Automation Process</span></>}
+        title={<>Our Structured <span className="text-primary font-bold">Automation Process</span></>}
         subtitle="We follow a systematic engineering lifecycle to guarantee compliance, eliminate cloud waste, and accelerate your release loops."
         align="left"
         className="mb-20 max-w-3xl"
@@ -69,7 +70,7 @@ export function ProcessTimeline() {
 
       <div className="relative pl-6 sm:pl-10 md:pl-16">
         {/* Glowing vertical tracking path line */}
-        <div className="absolute left-6 sm:left-10 md:left-16 top-6 bottom-6 w-[2px] bg-gradient-to-b from-cyan-500/20 via-teal-400/10 to-zinc-800/10 -translate-x-1/2 -z-10" />
+        <div className="absolute left-6 sm:left-10 md:left-16 top-6 bottom-6 w-[2px] bg-gradient-to-b from-primary/20 via-primary/10 to-border/10 -translate-x-1/2 -z-10" />
 
         <StaggerContainer className="space-y-16">
           {steps.map((item) => (
@@ -80,7 +81,7 @@ export function ProcessTimeline() {
               
               {/* Timeline dot step circle */}
               <div className="absolute left-0 top-1 -translate-x-1/2 flex items-center justify-center z-10">
-                <div className="w-8 h-8 rounded-full bg-background border border-border group-hover:border-cyan-500/40 flex items-center justify-center shadow-lg transition-colors">
+                <div className="w-8 h-8 rounded-full bg-background border border-border group-hover:border-primary/40 flex items-center justify-center shadow-lg transition-colors">
                   {item.icon}
                 </div>
               </div>
@@ -88,7 +89,7 @@ export function ProcessTimeline() {
               {/* Content box - indented */}
               <div className="flex-1 pl-10 sm:pl-6 space-y-4">
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-                  <span className="text-xs font-mono font-bold text-cyan-500 uppercase tracking-widest">
+                  <span className="text-xs font-mono font-bold text-primary uppercase tracking-widest">
                     Phase {item.num} -- {item.badge}
                   </span>
                   <span className="text-border hidden sm:inline">•</span>
@@ -99,7 +100,7 @@ export function ProcessTimeline() {
                 </div>
 
                 <div className="space-y-2 max-w-3xl">
-                  <h3 className="text-xl sm:text-2xl font-bold text-foreground group-hover:text-cyan-400 transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
@@ -112,7 +113,7 @@ export function ProcessTimeline() {
                   {item.deliverables.map((deliv, i) => (
                     <span 
                       key={i}
-                      className="px-2.5 py-0.5 rounded text-[9px] sm:text-[10px] font-mono bg-zinc-900 border border-zinc-850 text-zinc-400"
+                      className="px-2.5 py-0.5 rounded text-[9px] sm:text-[10px] font-mono bg-secondary/20 border border-border text-muted-foreground"
                     >
                       {deliv}
                     </span>
