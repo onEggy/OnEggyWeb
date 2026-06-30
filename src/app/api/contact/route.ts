@@ -1,16 +1,69 @@
 import { NextResponse } from "next/server";
 
+// Best-effort in-memory per-IP rate limiter.
+// NOTE: module-scope state resets on cold start / is per-instance only;
+// this is a lightweight guard, not a distributed limiter.
+const RATE_LIMIT_MAX = 5; // max requests
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // per 10 minutes
+const rateLimitMap = new Map<string, number[]>();
+
+// Minimum time a genuine human takes to fill the form, in milliseconds.
+const MIN_FILL_TIME_MS = 2000;
+
+function getClientIp(request: Request): string {
+  const forwarded = request.headers.get("x-forwarded-for");
+  if (forwarded) {
+    // x-forwarded-for may be a comma-separated list; the first entry is the client.
+    return forwarded.split(",")[0].trim();
+  }
+  return request.headers.get("x-real-ip")?.trim() || "unknown";
+}
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const hits = (rateLimitMap.get(ip) || []).filter(
+    (t) => now - t < RATE_LIMIT_WINDOW_MS
+  );
+  hits.push(now);
+  rateLimitMap.set(ip, hits);
+  return hits.length > RATE_LIMIT_MAX;
+}
+
 export async function POST(request: Request) {
   try {
+    // 0. Per-IP rate limiting (best-effort, in-memory)
+    const ip = getClientIp(request);
+    if (isRateLimited(ip)) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Too many requests. Please wait a few minutes and try again, or email us directly at ask@oneggy.com.",
+        },
+        { status: 429 }
+      );
+    }
+
     const body = await request.json();
-    const { name, company, email, phone, service, budget, message, timeline, location, _honey } = body;
+    const { name, company, email, phone, service, budget, message, timeline, location, _honey, _ts } = body;
 
     // 1. Anti-spam Honeypot Validation
     if (_honey && _honey.trim() !== "") {
       // Return 200 so spambots think it worked, but do not send the email
-      return NextResponse.json({ 
-        success: true, 
-        message: "Message received successfully." 
+      return NextResponse.json({
+        success: true,
+        message: "Message received successfully."
+      });
+    }
+
+    // 1b. Anti-spam minimum-fill-time check
+    // The form sends a "_ts" start timestamp (ms). Submissions faster than a
+    // human could plausibly fill the form are treated as spam — silently
+    // accepted (200) so bots think it worked, but no email is forwarded.
+    const startTs = Number(_ts);
+    if (Number.isFinite(startTs) && Date.now() - startTs < MIN_FILL_TIME_MS) {
+      return NextResponse.json({
+        success: true,
+        message: "Message received successfully.",
       });
     }
 

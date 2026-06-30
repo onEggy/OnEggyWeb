@@ -1,27 +1,8 @@
 import React from "react";
 import { Metadata } from "next";
-import Image from "next/image";
-import { Layers, Cloud, Smartphone, CheckCircle2 } from "lucide-react";
-import { StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
-import { SectionHeader } from "@/components/common/section-header";
+import { FadeUp, StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
 import { CtaBlock } from "@/components/common/cta-block";
-
-function getTechLogo(tech: string): string | null {
-  const t = tech.toLowerCase();
-  if (t.includes("aws") || t.includes("control tower") || t.includes("s3") || t.includes("cloudfront") || t.includes("cloudwatch")) return "/service/aws.svg";
-  if (t.includes("eks") || t.includes("kubernetes") || t.includes("k8s")) return "/kubernetes.png";
-  if (t.includes("react")) return "/service/react.svg";
-  if (t.includes("node")) return "/service/node.svg";
-  if (t.includes("python") || t.includes("django")) return "/service/python.svg";
-  if (t.includes("mongodb")) return "/service/mongodb.svg";
-  if (t.includes("mysql") || t.includes("sql") || t.includes("postgres")) return "/service/mysql.svg";
-  if (t.includes("firebase")) return "/service/firebase.svg";
-  if (t.includes("vue")) return "/service/vue.svg";
-  if (t.includes("angular")) return "/service/angular.svg";
-  if (t.includes("html")) return "/service/html.svg";
-  if (t.includes("css")) return "/service/css.svg";
-  return null;
-}
+import { testimonials } from "../../../public/data/testimonial.json";
 
 export const metadata: Metadata = {
   title: "Case Studies & Outcomes | OnEggy Technologies",
@@ -29,13 +10,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.oneggy.com/case-studies",
   },
+  openGraph: {
+    type: "website",
+    url: "https://www.oneggy.com/case-studies",
+    title: "Case Studies & Outcomes | OnEggy Technologies",
+    description: "Explore our real client success stories: AWS Cloud restructuring for Smile Foundation, EKS Kubernetes migrations for CloudStok, and fintech React Native setups for Beyond Imagination.",
+    siteName: "OnEggy Technologies",
+  },
 };
 
 const cases = [
   {
     title: "AWS Cloud Operations for Smile Foundation",
     sector: "Education / Non-Profit",
-    icon: <Cloud className="h-5 w-5 text-primary" />,
     challenge: "Smile Foundation struggled with legacy AWS accounts, unmonitored compute resources, and timeouts during donation campaigns, resulting in lost sponsorships.",
     solution: "We restructured their infrastructure under a secure AWS Landing Zone. We rightsized over-provisioned EC2 instances, moved static assets to S3 with CloudFront caching, and configured unified CloudWatch alarms.",
     techs: ["AWS Organizations", "Control Tower", "CloudFront CDN", "S3", "CloudWatch"],
@@ -48,7 +35,6 @@ const cases = [
   {
     title: "Kubernetes Migration for CloudStok Technologies",
     sector: "SaaS / Platforms",
-    icon: <Layers className="h-5 w-5 text-blue-400" />,
     challenge: "CloudStok's monolithic SaaS app ran on un-orchestrated instances. Deployments were manual and error-prone, and traffic peaks caused database lockups.",
     solution: "We containerized the workloads using Docker and migrated the platform to AWS EKS. We wrote modular Terraform scripts for IaC, and configured ArgoCD pipelines to enable zero-downtime canary updates.",
     techs: ["AWS EKS", "Terraform IaC", "ArgoCD Pipelines", "Docker", "Prometheus"],
@@ -61,7 +47,6 @@ const cases = [
   {
     title: "Mobile Architecture for Beyond Imagination",
     sector: "Fintech / Blockchain",
-    icon: <Smartphone className="h-5 w-5 text-slate-400" />,
     challenge: "Building a fintech blockchain mobile application requiring low-latency database synchronization, secure encryption postures, and rigid compliance auditing.",
     solution: "We engineered a cross-platform React Native app with offline-first local SQL syncing, designed secure microservice APIs on FastAPI, and integrated AWS Secrets Manager for key rotation.",
     techs: ["React Native", "FastAPI APIs", "PostgreSQL Clusters", "AWS Secrets Manager", "GitHub Actions"],
@@ -93,6 +78,20 @@ export default function CaseStudiesPage() {
         }
       }))
     }
+  };
+
+  const reviewCount = testimonials.length;
+  const aggregateRatingSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "OnEggy Technologies",
+    "url": "https://www.oneggy.com",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "bestRating": "5",
+      "reviewCount": reviewCount,
+    },
   };
 
   const breadcrumbSchema = {
@@ -128,124 +127,145 @@ export default function CaseStudiesPage() {
           __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
         }}
       />
-      <div className="relative max-w-7xl mx-auto px-6 py-16 md:py-32 space-y-24">
-        {/* Decorative background elements */}
-        <div className="absolute top-[10%] left-[-10%] w-[350px] h-[350px] rounded-full bg-blue-500/5 blur-[95px] pointer-events-none -z-10 animate-pulse" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(aggregateRatingSchema).replace(/</g, "\\u003c"),
+        }}
+      />
 
-        <SectionHeader
-          tag="Proven Outcomes"
-          title={<>Client Success & <span className="text-primary">Modernization Case Studies</span></>}
-          subtitle="Discover how we partner with engineering leaders to drive deployment speed, slash monthly cloud spend, and implement compliant architectures."
-          align="left"
-          className="max-w-3xl font-display"
-        />
+      {/* Hero */}
+      <section className="max-w-7xl mx-auto px-6 pt-12 pb-16 sm:pt-16 lg:pt-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-end">
+          <div className="lg:col-span-7">
+            <span className="eyebrow mb-6">Proven Outcomes</span>
+            <h1 className="display text-5xl sm:text-6xl lg:text-[4rem] mt-5 max-w-[16ch]">
+              Client work, measured in <em>results.</em>
+            </h1>
+          </div>
+          <div className="lg:col-span-5">
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-[44ch]">
+              How we partner with engineering leaders to drive deployment speed, slash monthly
+              cloud spend, and implement compliant architectures.
+            </p>
+          </div>
+        </div>
+      </section>
 
-        <StaggerContainer className="space-y-16">
-          {cases.map((item, index) => {
-            const isEven = index % 2 === 0;
-            return (
-              <StaggerItem
-                key={index}
-                className="border border-zinc-800 p-6 sm:p-8 rounded-2xl transition-all duration-300 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch bg-zinc-950/20 group"
-              >
-                {/* Text block */}
-                <div className={`lg:col-span-7 flex flex-col justify-between space-y-6 ${
-                  isEven ? "lg:order-first" : "lg:order-last"
-                }`}>
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-zinc-900 border border-zinc-855 border-zinc-800 flex items-center justify-center shrink-0">
-                        {item.icon}
-                      </div>
-                      <div>
-                        <span className="text-[10px] font-mono text-primary font-semibold tracking-wider block">
+      {/* Case studies */}
+      <section className="border-t border-border">
+        <div className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-24">
+          <StaggerContainer className="space-y-8 sm:space-y-10">
+            {cases.map((item, index) => {
+              const featured = index === 0;
+              const lead = item.metrics[0];
+              const isLeadRating = lead.num.includes("★");
+              return (
+                <StaggerItem
+                  key={index}
+                  className={`surface-card rounded-2xl overflow-hidden ${
+                    featured ? "border-t-2 border-t-primary" : ""
+                  }`}
+                >
+                  <div className="grid grid-cols-1 lg:grid-cols-12">
+                    {/* Lead metric + identity */}
+                    <div className="lg:col-span-4 p-8 sm:p-10 lg:border-r border-border flex flex-col">
+                      <div className="flex items-center justify-between gap-4">
+                        <span className="font-mono text-sm uppercase tracking-[0.12em] text-primary-strong">
                           {item.sector}
                         </span>
-                        <h2 className="text-xl font-bold text-foreground font-display group-hover:text-primary transition-colors">
-                          {item.title}
-                        </h2>
-                      </div>
-                    </div>
-
-                    <div className="space-y-3.5 pt-4 border-t border-zinc-900/60 select-text font-sans">
-                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                        <strong className="text-foreground font-semibold">The Challenge:</strong> {item.challenge}
-                      </p>
-                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                        <strong className="text-foreground font-semibold">Strategic Approach:</strong> {item.solution}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Technologies tags */}
-                  <div className="flex flex-wrap gap-2 pt-4 border-t border-zinc-900/60">
-                    {item.techs.map((tech) => {
-                      const logo = getTechLogo(tech);
-                      return (
-                        <span
-                          key={tech}
-                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-zinc-900 border border-zinc-800 text-[10px] sm:text-xs text-zinc-400 font-mono"
-                        >
-                          {logo && (
-                            <div className="relative w-3.5 h-3.5 shrink-0">
-                              <Image 
-                                src={logo} 
-                                alt={`${tech} logo`} 
-                                fill 
-                                sizes="14px" 
-                                className="object-contain" 
-                              />
-                            </div>
-                          )}
-                          <span>{tech}</span>
+                        <span className="font-mono text-sm tabular-nums text-muted-foreground/70">
+                          {String(index + 1).padStart(2, "0")}
                         </span>
-                      );
-                    })}
-                  </div>
-                </div>
+                      </div>
 
-                {/* Corporate Performance Summary Board */}
-                <div className={`lg:col-span-5 flex flex-col justify-center bg-zinc-900/10 rounded-xl border border-zinc-850 p-6 relative overflow-hidden font-sans ${
-                  isEven ? "lg:order-last" : "lg:order-first"
-                }`}>
-                  <div className="absolute top-3 right-4 text-[9px] font-mono font-bold text-primary uppercase tracking-widest">
-                    strategic deliverables
-                  </div>
-                  
-                  <div className="space-y-6 pt-4">
-                    {item.metrics.map((m, i) => (
-                      <div key={i} className="flex items-center justify-between border-b border-zinc-900/40 pb-3 last:border-0 last:pb-0">
-                        <div className="space-y-0.5">
-                          <span className="text-[9px] uppercase tracking-wider text-muted-foreground font-mono font-semibold">
-                            {m.label}
-                          </span>
-                          <span className="text-xl sm:text-2xl font-bold text-foreground block tracking-tight font-display">
-                            {m.num}
-                          </span>
+                      <div className="mt-8">
+                        <div
+                          className="display text-6xl sm:text-7xl tabular-nums text-foreground"
+                          aria-label={isLeadRating ? "4.8 out of 5" : undefined}
+                        >
+                          {lead.num}
                         </div>
-                        
-                        <div className="flex items-center gap-1.5 text-[9px] font-bold px-2.5 py-1 rounded border border-zinc-800 bg-zinc-900 font-mono text-primary">
-                          <CheckCircle2 className="h-3 w-3 text-primary" />
-                          <span>{m.status}</span>
+                        <div className="mt-3 text-sm text-muted-foreground max-w-[24ch]">
+                          {lead.label}
                         </div>
                       </div>
-                    ))}
+
+                      <h2 className="display text-2xl sm:text-3xl mt-auto pt-10 leading-tight">
+                        {item.title}
+                      </h2>
+                    </div>
+
+                    {/* Narrative + supporting metrics */}
+                    <div className="lg:col-span-8 p-8 sm:p-10">
+                      <dl className="grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-x-6 gap-y-3">
+                        <dt className="font-mono text-sm uppercase tracking-[0.1em] text-destructive pt-0.5">
+                          Challenge
+                        </dt>
+                        <dd className="text-base text-foreground leading-relaxed max-w-[60ch]">
+                          {item.challenge}
+                        </dd>
+                        <dt className="font-mono text-sm uppercase tracking-[0.1em] text-primary-strong pt-0.5 sm:mt-4">
+                          Result
+                        </dt>
+                        <dd className="text-base text-muted-foreground leading-relaxed max-w-[60ch] sm:mt-4">
+                          {item.solution}
+                        </dd>
+                      </dl>
+
+                      {/* Supporting metrics */}
+                      <div className="mt-8 pt-7 border-t border-border grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-6">
+                        {item.metrics.map((m, i) => {
+                          const isRating = m.num.includes("★");
+                          return (
+                            <div key={i}>
+                              <div
+                                className="display text-3xl sm:text-4xl tabular-nums text-foreground"
+                                aria-label={isRating ? "4.8 out of 5" : undefined}
+                              >
+                                {m.num}
+                              </div>
+                              <div className="mt-1.5 text-sm text-muted-foreground leading-snug">
+                                {m.label}
+                              </div>
+                              <div className="mt-1 text-xs font-mono uppercase tracking-wider text-success">
+                                {m.status}
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+
+                      {/* Stack */}
+                      <div className="mt-8 pt-7 border-t border-border flex flex-wrap items-center gap-x-6 gap-y-3">
+                        <span className="text-xs font-mono uppercase tracking-[0.12em] text-muted-foreground/80">
+                          Built with
+                        </span>
+                        {item.techs.map((tech) => (
+                          <span key={tech} className="text-sm font-medium text-foreground/70">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </StaggerItem>
+              );
+            })}
+          </StaggerContainer>
+        </div>
+      </section>
 
-              </StaggerItem>
-            );
-          })}
-        </StaggerContainer>
-
-        <div className="py-8 border-t border-zinc-800">
+      {/* CTA */}
+      <div className="py-16 sm:py-20 border-t border-border">
+        <FadeUp>
           <CtaBlock
             title="Interested in aligning your infrastructure metrics?"
             description="Schedule a free technology consulting call with our team to discuss your operational, scaling, or compliance requirements."
             btnText="Discuss Cloud Assessment"
             btnHref="/contact"
           />
-        </div>
+        </FadeUp>
       </div>
     </>
   );

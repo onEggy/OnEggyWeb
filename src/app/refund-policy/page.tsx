@@ -1,17 +1,8 @@
 import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
-import { 
-  ShieldCheck, 
-  ChevronDown, 
-  Mail, 
-  Building2, 
-  FileText, 
-  HelpCircle,
-  ArrowRight
-} from "lucide-react";
+import { ChevronDown, ArrowRight } from "lucide-react";
 import { StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
-import { SectionHeader } from "@/components/common/section-header";
 
 export const metadata: Metadata = {
   title: "Refund & Billing Policy | OnEggy Technologies",
@@ -20,6 +11,8 @@ export const metadata: Metadata = {
     canonical: "https://www.oneggy.com/refund-policy",
   },
 };
+
+const LAST_UPDATED = "June 30, 2026";
 
 export default function RefundPolicyPage() {
 
@@ -90,130 +83,138 @@ export default function RefundPolicyPage() {
     }
   ];
 
+  const corporateIdentifiers = [
+    { label: "Company CIN", value: "U72900DL2022OPC407567" },
+    { label: "Company GSTIN", value: "07AADCO9485D1Z6" },
+  ];
+
+  const commitments = [
+    {
+      title: "Transparent Communication",
+      desc: "We coordinate engineering deliverables in open sprints. Our clients have direct visibility into code updates, active issues, and pipeline runs, ensuring zero administrative blockages or surprises.",
+    },
+    {
+      title: "Customer-First Commitment",
+      desc: "If an architecture setup or codebase release does not align with your scope, we will hold peer review workshops and modify components immediately, standing behind our standards of excellence.",
+    },
+  ];
+
   return (
     <>
-      <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-16">
-        {/* Background Blur Orbs */}
-        <div className="absolute top-[10%] left-[-10%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[95px] pointer-events-none -z-10" />
-        <div className="absolute bottom-[20%] right-[-10%] w-[400px] h-[400px] rounded-full bg-teal-500/5 blur-[100px] pointer-events-none -z-10 animate-pulse" />
+      {/* Hero */}
+      <section className="max-w-7xl mx-auto px-6 pt-12 pb-12 sm:pt-16 lg:pt-20">
+        <span className="eyebrow mb-6">Transparent Billing Standards</span>
+        <h1 className="display text-5xl sm:text-6xl mt-5 max-w-[18ch]">
+          Refund & <em>Billing Policy.</em>
+        </h1>
+        <p className="mt-7 text-lg text-muted-foreground leading-relaxed max-w-[60ch]">
+          Transparent guidelines protecting custom DevOps retainers, cloud-native deployments,
+          and software engineering agreements.
+        </p>
+        <p className="mt-8 font-mono text-xs uppercase tracking-[0.1em] text-muted-foreground">
+          Last updated — {LAST_UPDATED}
+        </p>
+      </section>
 
-        {/* 1. HERO SECTION */}
-        <div className="text-center max-w-3xl mx-auto space-y-6 pt-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-background/50 backdrop-blur-sm text-xs font-mono text-cyan-400 shadow-sm">
-            <ShieldCheck className="h-3.5 w-3.5" />
-            <span>Transparent Billing Standards</span>
-          </div>
-          <SectionHeader
-            title={<>Refund & <span className="text-cyan-400">Billing Policy</span></>}
-            subtitle="Transparent guidelines protecting custom DevOps retainers, cloud-native deployments, and software engineering agreements."
-            align="center"
-            className="mb-0"
-          />
-        </div>
-
-        {/* 2. CORPORATE IDENTIFICATION SUMMARY CARD */}
-        <div className="max-w-4xl mx-auto">
-          <div className="glass-card p-6 rounded-2xl border border-border/40 bg-background/25 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 shrink-0">
-                <Building2 className="h-6 w-6" />
-              </div>
-              <div className="space-y-1">
-                <h4 className="text-sm font-bold text-foreground font-mono">OnEggy Technologies</h4>
-                <p className="text-xs text-muted-foreground">Registered Corporate Entity in Delhi NCR, India</p>
-              </div>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 text-xs font-mono shrink-0">
-              <div className="space-y-1">
-                <span className="text-[10px] text-muted-foreground uppercase tracking-wider block">Company CIN</span>
-                <span className="font-semibold text-foreground bg-accent/30 px-2 py-0.5 rounded border border-border/50">U72900DL2022OPC407567</span>
-              </div>
-              <div className="space-y-1">
-                <span className="text-[10px] text-muted-foreground uppercase tracking-wider block">Company GSTIN</span>
-                <span className="font-semibold text-foreground bg-accent/30 px-2 py-0.5 rounded border border-border/50">07AADCO9485D1Z6</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 3. POLICY CONTENT SECTION (NATIVE details/summary ACCORDIONS) */}
-        <div className="max-w-4xl mx-auto space-y-4">
-          <div className="space-y-2 mb-6">
-            <h2 className="text-xl font-bold text-foreground inline-flex items-center gap-2">
-              <FileText className="h-5 w-5 text-cyan-400" /> Policy Clauses
-            </h2>
-            <p className="text-xs text-muted-foreground">
-              Click on each section below to review the specific guidelines and billing terms:
+      {/* Corporate identification */}
+      <section className="border-y border-border bg-surface-subtle">
+        <div className="max-w-7xl mx-auto px-6 py-12 sm:py-14 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 lg:items-center">
+          <div className="lg:col-span-5">
+            <p className="text-xs font-mono uppercase tracking-[0.1em] text-primary-strong">Registered entity</p>
+            <p className="mt-3 font-display text-2xl text-foreground">OnEggy Technologies</p>
+            <p className="mt-2 text-base text-muted-foreground leading-relaxed">
+              Registered Corporate Entity in Delhi NCR, India.
             </p>
           </div>
-
-          <StaggerContainer className="space-y-3.5">
-            {policySections.map((sec, index) => (
-              <StaggerItem
-                key={index}
-                className="glass-card border border-border/40 rounded-xl overflow-hidden hover:border-cyan-500/20 transition-all duration-300 shadow-sm"
-              >
-                <details className="group [&_summary::-webkit-details-marker]:hidden">
-                  <summary className="flex items-center justify-between p-5 cursor-pointer font-bold text-foreground hover:bg-accent/20 transition-colors select-none">
-                    <span className="text-sm md:text-base font-semibold pr-4">{sec.title}</span>
-                    <span className="transition-transform duration-300 group-open:rotate-180 shrink-0 text-muted-foreground group-hover:text-cyan-400">
-                      <ChevronDown className="h-4 w-4" />
-                    </span>
-                  </summary>
-                  <div className="px-5 pb-5 pt-1 border-t border-border/20 text-xs sm:text-sm text-muted-foreground leading-relaxed bg-background/5 space-y-3 font-medium">
-                    <p>{sec.content}</p>
-                  </div>
-                </details>
-              </StaggerItem>
+          <dl className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6 border-t border-border pt-8 lg:border-t-0 lg:pt-0 lg:border-l lg:pl-16">
+            {corporateIdentifiers.map((item) => (
+              <div key={item.label}>
+                <dt className="text-xs font-mono uppercase tracking-[0.1em] text-muted-foreground">{item.label}</dt>
+                <dd className="mt-2 font-mono text-base text-foreground tabular-nums">{item.value}</dd>
+              </div>
             ))}
-          </StaggerContainer>
+          </dl>
         </div>
+      </section>
 
-        {/* 4. TRUST SECTION */}
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-border/40 pt-16">
-          <div className="space-y-3">
-            <h3 className="text-lg font-bold text-foreground">Transparent Communication</h3>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              We coordinate engineering deliverables in open sprints. Our clients have direct visibility into code updates, active issues, and pipeline runs, ensuring zero administrative blockages or surprises.
+      {/* Policy clauses */}
+      <section className="border-t border-border">
+        <div className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-28 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          <div className="lg:col-span-4">
+            <span className="eyebrow mb-5">The policy</span>
+            <h2 className="display text-3xl sm:text-4xl mt-4">Billing &amp; refund clauses.</h2>
+            <p className="mt-4 text-base text-muted-foreground leading-relaxed max-w-[40ch]">
+              Expand each clause below to review the specific guidelines, eligibility, and billing
+              terms governing our engagements.
             </p>
           </div>
-          <div className="space-y-3">
-            <h3 className="text-lg font-bold text-foreground">Customer-First Commitment</h3>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              If an architecture setup or codebase release does not align with your scope, we will hold peer review workshops and modify components immediately, standing behind our standards of excellence.
-            </p>
+
+          <div className="lg:col-span-8">
+            <StaggerContainer className="border-t border-border">
+              {policySections.map((sec, index) => (
+                <StaggerItem key={index} className="border-b border-border">
+                  <details className="group [&_summary::-webkit-details-marker]:hidden">
+                    <summary className="flex items-start justify-between gap-6 py-6 cursor-pointer select-none">
+                      <span className="font-display text-xl text-foreground leading-snug">{sec.title}</span>
+                      <span className="shrink-0 mt-1 text-muted-foreground transition-transform duration-300 group-open:rotate-180 group-hover:text-primary">
+                        <ChevronDown className="h-5 w-5" aria-hidden="true" />
+                      </span>
+                    </summary>
+                    <p className="pb-7 -mt-1 text-base text-muted-foreground leading-relaxed max-w-[62ch]">
+                      {sec.content}
+                    </p>
+                  </details>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
           </div>
         </div>
+      </section>
 
-        {/* 5. CONTACT SUPPORT CTA */}
-        <div className="max-w-4xl mx-auto bg-gradient-to-tr from-cyan-500/5 to-transparent border border-border/40 rounded-2xl p-8 text-center space-y-6 shadow-xl">
-          <div className="w-12 h-12 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mx-auto">
-            <HelpCircle className="h-6 w-6" />
+      {/* Commitments */}
+      <section className="border-t border-border bg-surface-subtle">
+        <div className="max-w-7xl mx-auto px-6 py-16 sm:py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          <div className="lg:col-span-4">
+            <span className="eyebrow mb-5">Standing behind the work</span>
+            <h2 className="display text-3xl sm:text-4xl mt-4">Built on trust.</h2>
           </div>
-          <div className="space-y-2 max-w-lg mx-auto">
-            <h3 className="text-xl font-bold text-foreground">Have questions about your invoice?</h3>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              For any payment questions, retainer adjustments, or custom billing structures, please contact our billing desk.
+          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-10">
+            {commitments.map((c) => (
+              <div key={c.title}>
+                <h3 className="font-display text-xl text-foreground">{c.title}</h3>
+                <p className="mt-3 text-base text-muted-foreground leading-relaxed">{c.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="border-t border-border">
+        <div className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-28 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:items-center">
+          <div className="lg:col-span-7">
+            <h2 className="display text-3xl sm:text-4xl">Have questions about your invoice?</h2>
+            <p className="mt-5 text-base text-muted-foreground leading-relaxed max-w-[52ch]">
+              For any payment questions, retainer adjustments, or custom billing structures, please
+              contact our billing desk.
             </p>
           </div>
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a 
+          <div className="lg:col-span-5 flex flex-col sm:flex-row lg:justify-end items-stretch sm:items-center gap-4">
+            <a
               href="mailto:billing@oneggy.com"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-11 px-6 rounded-lg bg-foreground text-background hover:bg-foreground/90 font-semibold text-xs sm:text-sm transition-all cursor-pointer shadow-md"
+              className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-md bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-sm transition-colors focus-visible:ring-2 focus-visible:ring-primary"
             >
-              <Mail className="h-4 w-4" /> Email Billing Team
+              Email billing team
             </a>
             <Link
               href="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-11 px-6 rounded-lg bg-background border border-border hover:bg-accent/40 hover:border-border/80 font-semibold text-xs sm:text-sm transition-all cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-md border border-primary text-primary-strong hover:bg-primary/10 font-semibold text-sm transition-colors focus-visible:ring-2 focus-visible:ring-primary"
             >
-              Request Call <ArrowRight className="h-4 w-4" />
+              Request a call <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }

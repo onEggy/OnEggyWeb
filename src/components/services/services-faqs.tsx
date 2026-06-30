@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { SectionHeader } from "../common/section-header";
-import { ChevronDown } from "lucide-react";
+import { Plus } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -37,62 +36,75 @@ export function ServicesFaqs() {
   };
 
   return (
-    <section className="max-w-4xl mx-auto px-6 py-20 border-t border-border/40 relative">
-      {/* Background radial glow */}
-      <div className="absolute bottom-[20%] left-[-15%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[100px] pointer-events-none -z-10" />
+    <section className="border-t border-border">
+      <div className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-28 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <div className="lg:col-span-4">
+          <span className="eyebrow mb-5">Services FAQ</span>
+          <h2 className="display text-3xl sm:text-4xl mt-4">
+            Cloud partnerships &amp; <em>operations.</em>
+          </h2>
+          <p className="mt-5 text-base text-muted-foreground leading-relaxed max-w-[38ch]">
+            Common questions from tech founders and engineering directors about workspace sharing,
+            key handovers, and system ownership.
+          </p>
+        </div>
 
-      <SectionHeader
-        tag="Services FAQ"
-        title={<>Cloud Partnerships & <span className="text-cyan-400">Operations FAQs</span></>}
-        subtitle="Common questions from tech founders and engineering directors about workspace sharing, key handovers, and system ownership."
-        align="center"
-        className="mb-16"
-      />
+        <div className="lg:col-span-8">
+          <ul className="border-t border-border">
+            {faqs.map((item, index) => {
+              const isOpen = openIndex === index;
+              return (
+                <li key={index} className="border-b border-border">
+                  <h3>
+                    <button
+                      type="button"
+                      onClick={() => toggleFAQ(index)}
+                      aria-expanded={isOpen}
+                      aria-controls={`services-faq-answer-${index}`}
+                      id={`services-faq-button-${index}`}
+                      className="w-full flex items-start justify-between gap-6 py-6 text-left transition-colors cursor-pointer select-none focus-visible:ring-2 focus-visible:ring-primary group"
+                    >
+                      <span className="grid grid-cols-[auto_1fr] gap-x-5 items-baseline">
+                        <span className="font-mono text-sm text-primary-strong/70 tabular-nums">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <span className="font-display text-lg sm:text-xl text-foreground group-hover:text-primary-strong transition-colors leading-snug">
+                          {item.question}
+                        </span>
+                      </span>
+                      <Plus
+                        aria-hidden="true"
+                        className={cn(
+                          "h-5 w-5 shrink-0 mt-1 transition-transform duration-300 text-muted-foreground group-hover:text-primary-strong",
+                          isOpen ? "rotate-45 text-primary-strong" : ""
+                        )}
+                      />
+                    </button>
+                  </h3>
 
-      <div className="space-y-4">
-        {faqs.map((item, index) => {
-          const isOpen = openIndex === index;
-          return (
-            <div
-              key={index}
-              className="border border-border/40 rounded-xl bg-background/30 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:border-cyan-500/20"
-            >
-              <button
-                onClick={() => toggleFAQ(index)}
-                aria-expanded={isOpen}
-                aria-controls={`services-faq-answer-${index}`}
-                id={`services-faq-button-${index}`}
-                className="w-full flex items-center justify-between p-5 text-left font-semibold text-foreground hover:text-cyan-400 transition-colors cursor-pointer select-none"
-              >
-                <span className="text-sm sm:text-base pr-4">{item.question}</span>
-                <ChevronDown
-                  className={cn(
-                    "h-4 w-4 shrink-0 transition-transform duration-300 text-muted-foreground",
-                    isOpen ? "rotate-180 text-cyan-400" : ""
-                  )}
-                />
-              </button>
-
-              <AnimatePresence initial={false}>
-                {isOpen && (
-                  <motion.div
-                    id={`services-faq-answer-${index}`}
-                    role="region"
-                    aria-labelledby={`services-faq-button-${index}`}
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.25, ease: "easeInOut" }}
-                  >
-                    <div className="px-5 pb-5 pt-1 border-t border-border/20 text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                      {item.answer}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          );
-        })}
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        id={`services-faq-answer-${index}`}
+                        role="region"
+                        aria-labelledby={`services-faq-button-${index}`}
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <p className="pl-0 sm:pl-[3.25rem] pb-7 text-base text-muted-foreground leading-relaxed max-w-[68ch]">
+                          {item.answer}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </section>
   );

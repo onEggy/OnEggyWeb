@@ -327,44 +327,58 @@ export function TechStack() {
   const activeCategory = categories.find((cat) => cat.id === activeTab);
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-24 border-t border-border/40 relative animate-fade-in" id="technology-ecosystem">
-      {/* Background glow orb */}
-      <div className="absolute top-[20%] left-[20%] w-[350px] h-[350px] rounded-full bg-cyan-500/5 blur-[95px] pointer-events-none -z-10" />
+    <section className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-28 border-t border-border relative animate-fade-in" id="technology-ecosystem">
+      {/* Blueprint Coordinates */}
+      <div className="absolute top-2 left-10 font-mono text-[10px] uppercase tracking-widest text-muted-foreground/60 select-none" aria-hidden="true">
+        GRID.SEC.F // TECHNOLOGY.ECOSYSTEM_V3.8
+      </div>
 
       <SectionHeader
         tag="Ecosystem"
-        title={<>Premium Technology <span className="text-cyan-400">Ecosystem</span></>}
+        title={<>Premium Technology <span className="text-primary font-bold">Ecosystem</span></>}
         subtitle="We build exclusively with standard, enterprise-grade tools. Our teams specialize in cloud-native infrastructure, declarative automation, and highly scaling framework stacks."
         align="center"
         className="mb-16"
       />
 
       {/* Rebuilt: Center-aligned top horizontal tab bar selector */}
-      <div className="flex flex-wrap items-center justify-center gap-1.5 pb-6 border-b border-border/20 mb-10 w-full overflow-x-auto scrollbar-none">
+      <div
+        role="tablist"
+        aria-label="Technology categories"
+        className="flex flex-wrap items-center justify-center gap-2 pb-6 border-b border-border mb-10 w-full overflow-x-auto scrollbar-none"
+      >
         {categories.map((cat) => {
           const isActive = activeTab === cat.id;
           return (
             <button
               key={cat.id}
+              type="button"
+              role="tab"
+              id={`tech-tab-${cat.id}`}
+              aria-selected={isActive}
+              aria-controls={`tech-panel-${cat.id}`}
               onClick={() => setActiveTab(cat.id)}
-              className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-semibold border transition-all cursor-pointer select-none ${
+              className={`flex items-center gap-2 min-h-11 px-4 py-2 rounded-md text-sm font-semibold border transition-all cursor-pointer select-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none ${
                 isActive
-                  ? "bg-cyan-500/10 text-cyan-400 border-cyan-500/30 shadow-md shadow-cyan-500/5"
-                  : "bg-background/20 hover:bg-accent/40 border-border/40 text-muted-foreground hover:text-foreground"
+                  ? "bg-primary/10 text-primary-strong border-primary/40 shadow-sm"
+                  : "bg-card hover:bg-primary/5 border-border text-muted-foreground hover:text-foreground"
               }`}
             >
-              <div className="shrink-0">{cat.icon}</div>
+              <span className="shrink-0" aria-hidden="true">{cat.icon}</span>
               <span>{cat.name}</span>
             </button>
           );
         })}
       </div>
 
-      {/* Grid of clean, borderless, high-density Cards */}
+      {/* Grid of clean, high-density Cards */}
       <div className="min-h-[300px]">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
+            role="tabpanel"
+            id={`tech-panel-${activeTab}`}
+            aria-labelledby={`tech-tab-${activeTab}`}
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
@@ -374,9 +388,9 @@ export function TechStack() {
             {activeCategory?.items.map((item) => (
               <div
                 key={item.name}
-                className="bg-background/20 border border-border/40 p-5 rounded-xl flex gap-4 transition-all duration-300 hover:border-cyan-500/30 hover:bg-background/45 group"
+                className="surface-card p-5 rounded-xl flex gap-4 transition-all duration-300 hover:border-primary/30 group"
               >
-                <div className="w-10 h-10 rounded-lg bg-zinc-900/60 border border-zinc-800/80 flex items-center justify-center shrink-0 shadow-sm relative overflow-hidden group-hover:border-cyan-500/30 transition-colors">
+                <div className="w-10 h-10 rounded-lg bg-muted border border-border flex items-center justify-center shrink-0 relative overflow-hidden group-hover:border-primary/30 transition-colors">
                   {item.isAsset && typeof item.icon === "string" ? (
                     <div className="relative w-6 h-6">
                       <Image
@@ -384,20 +398,20 @@ export function TechStack() {
                         alt={item.name}
                         fill
                         sizes="24px"
-                        className="object-contain filter grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all"
+                        className="object-contain transition-all"
                       />
                     </div>
                   ) : (
-                    <div className="text-muted-foreground group-hover:text-cyan-400 transition-colors">
+                    <div className="text-muted-foreground group-hover:text-primary transition-colors" aria-hidden="true">
                       {item.icon}
                     </div>
                   )}
                 </div>
                 <div className="space-y-1 min-w-0">
-                  <h4 className="text-sm font-bold text-foreground group-hover:text-cyan-400 transition-colors">
+                  <h4 className="text-base font-bold text-foreground group-hover:text-primary-strong transition-colors">
                     {item.name}
                   </h4>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     {item.desc}
                   </p>
                 </div>

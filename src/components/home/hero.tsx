@@ -1,185 +1,112 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { useMotionValue } from "framer-motion";
-import { HeroVisual } from "./hero-visual";
-import { FadeUp, FadeIn, StaggerContainer, StaggerItem } from "../animations/motion-wrappers";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { OrbitMark } from "../common/orbit-mark";
 
-// Animated counter helper component for premium counts
-function StatCounter({ value, suffix = "", duration = 1.5 }: { value: number; suffix?: string; duration?: number }) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    let start = 0;
-    const end = value;
-    if (start === end) return;
-
-    const totalMiliseconds = duration * 1000;
-    const incrementTime = Math.max(Math.floor(totalMiliseconds / end), 25);
-    
-    const timer = setInterval(() => {
-      start += 1;
-      setCount(start);
-      if (start >= end) {
-        clearInterval(timer);
-      }
-    }, incrementTime);
-
-    return () => clearInterval(timer);
-  }, [value, duration]);
-
-  return <span className="font-mono text-3xl sm:text-4xl font-bold tracking-tight text-foreground">{count}{suffix}</span>;
-}
+const trustedBy = ["PineLabs", "EastMojo", "DigisPeax", "Anveshan"];
 
 export function Hero() {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  const [bgGlowPos, setBgGlowPos] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    setBgGlowPos({ x, y });
-
-    // Normalized parallax values (-0.5 to 0.5)
-    mouseX.set((e.clientX / window.innerWidth) - 0.5);
-    mouseY.set((e.clientY / window.innerHeight) - 0.5);
-  };
-
   return (
-    <section
-      onMouseMove={handleMouseMove}
-      className="relative min-h-[calc(100vh-6rem)] w-full flex items-center justify-center overflow-hidden border-b border-border/30 py-16 md:py-32"
-    >
-      {/* Grid backdrop */}
-      <div className="grid-bg absolute inset-0 opacity-[0.25] pointer-events-none" />
+    <section className="relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 pt-12 pb-16 sm:pt-16 lg:pt-20 lg:pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 items-center">
+          {/* Editorial copy */}
+          <div className="lg:col-span-7 lg:pr-8">
+            <span className="eyebrow mb-7">Cloud &amp; DevOps consulting</span>
 
-      {/* Mouse Follow Glow Backdrop */}
-      <div
-        className="absolute pointer-events-none -z-10 w-[600px] h-[600px] rounded-full bg-cyan-500/5 blur-[120px] transition-all duration-300 ease-out"
-        style={{
-          left: `${bgGlowPos.x}px`,
-          top: `${bgGlowPos.y}px`,
-          transform: "translate(-50%, -50%)",
-        }}
-      />
+            <h1 className="display text-[2.6rem] leading-[1.05] sm:text-6xl lg:text-[4.2rem] mt-5">
+              We engineer cloud platforms teams can <em>bet the company on.</em>
+            </h1>
 
-      {/* Large Glowing Orbs */}
-      <div className="absolute top-[10%] left-[-10%] w-[450px] h-[450px] rounded-full bg-cyan-500/10 blur-[110px] pointer-events-none animate-pulse" style={{ animationDuration: "6s" }} />
-      <div className="absolute bottom-[10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-teal-500/5 blur-[120px] pointer-events-none animate-pulse" style={{ animationDuration: "10s" }} />
-
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10 w-full">
-        
-        {/* Left Column: Premium Advisory Copy & Stats */}
-        <div className="lg:col-span-7 flex flex-col justify-center space-y-8 text-left">
-          
-          <div className="space-y-4">
-            <FadeIn>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-background/50 backdrop-blur-sm text-xs text-muted-foreground shadow-sm">
-                <CheckCircle2 className="h-3.5 w-3.5 text-primary" />
-                <span>Enterprise Technology Advisory & Consulting</span>
-              </div>
-            </FadeIn>
- 
-            <FadeUp delay={0.1}>
-              <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.08] text-foreground font-display">
-                Cloud Modernization & <br className="hidden sm:inline" />
-                <span className="text-primary">Platform Engineering</span> for Enterprise.
-              </h1>
-            </FadeUp>
- 
-            <FadeUp delay={0.2}>
-              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl font-sans">
-                We partner with corporate technology leaders to engineer resilient AWS landing zones, automate DevSecOps compliance, and deploy secure developer portals. Outcome-driven. Consulting-led.
-              </p>
-            </FadeUp>
-          </div>
- 
-          {/* Interactive CTAs */}
-          <div className="space-y-5">
-            <FadeUp delay={0.3} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center h-11 px-5 rounded-md bg-primary text-primary-foreground font-bold text-sm hover:bg-primary/90 transition-colors shadow-sm focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:outline-none cursor-pointer"
-              >
-                Schedule Consultation <ArrowRight className="h-3.5 w-3.5 ml-1.5" />
-              </Link>
-              
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center h-11 px-5 rounded-md border border-border/80 bg-background/50 hover:bg-zinc-900 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:outline-none cursor-pointer"
-              >
-                Request Cloud Audit
-              </Link>
-            </FadeUp>
- 
-            {/* Handcrafted Stack Bar */}
-            <FadeIn delay={0.35} className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-4 border-t border-border/20 max-w-xl">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground font-semibold">Ecosystem Credentials:</span>
-              <div className="flex items-center gap-5">
-                <div className="relative w-5 h-5 shrink-0" title="AWS">
-                  <Image src="/service/aws.svg" alt="AWS" fill sizes="20px" className="object-contain opacity-50 hover:opacity-100 transition-opacity" />
-                </div>
-                <div className="relative w-5 h-5 shrink-0" title="Kubernetes">
-                  <Image src="/kubernetes.png" alt="Kubernetes" fill sizes="20px" className="object-contain opacity-50 hover:opacity-100 transition-opacity" />
-                </div>
-                <div className="flex items-center gap-1.5 opacity-50 hover:opacity-100 transition-opacity shrink-0" title="Terraform">
-                  <svg className="h-4.5 w-4.5 fill-current text-blue-400" viewBox="0 0 24 24">
-                    <path d="M0 0h7.5v7.5h-7.5zm8.25 0h7.5v7.5h-7.5zm8.25 8.25h7.5v7.5h-7.5zm-16.5 0h7.5v7.5h-7.5z" />
-                  </svg>
-                  <span className="text-[10px] font-mono font-bold tracking-wider text-blue-400">TERRAFORM</span>
-                </div>
-                <div className="relative w-12 h-4 dark:invert shrink-0" title="Next.js">
-                  <Image src="/next.svg" alt="Next.js" fill sizes="48px" className="object-contain opacity-50 hover:opacity-100 transition-opacity" />
-                </div>
-              </div>
-            </FadeIn>
-          </div>
- 
-          {/* Trust Indicators banner */}
-          <FadeIn delay={0.4} className="border-t border-border/40 pt-6 space-y-3">
-            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest font-mono flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-primary" /> Regulatory Compliance & Production Standards
+            <p className="mt-7 text-lg text-muted-foreground leading-relaxed max-w-[46ch]">
+              OnEggy designs, automates, and operates AWS and Kubernetes infrastructure — secure by
+              default, cost-optimized, and built for zero-downtime releases.
             </p>
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-muted-foreground font-medium">
-              <span>HIPAA Enforcements</span>
-              <span className="text-border">•</span>
-              <span>PCI-DSS Architectures</span>
-              <span className="text-border">•</span>
-              <span>ISO 27001 Preparedness</span>
+
+            <div className="mt-9 flex flex-col sm:flex-row sm:items-center gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-md bg-accent text-accent-foreground font-semibold text-sm hover:bg-accent/90 transition-colors"
+              >
+                Book a consultation <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/case-studies"
+                className="inline-flex items-center justify-center gap-1.5 h-12 px-3 text-sm font-semibold text-foreground hover:text-primary-strong transition-colors"
+              >
+                See client outcomes <ArrowUpRight className="h-4 w-4" />
+              </Link>
             </div>
-          </FadeIn>
- 
-          {/* Stats Row */}
-          <StaggerContainer className="grid grid-cols-3 gap-6 border-t border-border/40 pt-6">
-            <StaggerItem className="space-y-1">
-              <StatCounter value={38} suffix="%" />
-              <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider font-semibold">Avg Cloud Cost Cut</p>
-            </StaggerItem>
-            <StaggerItem className="space-y-1">
-              <StatCounter value={10} suffix="x" />
-              <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider font-semibold">Delivery Speedup</p>
-            </StaggerItem>
-            <StaggerItem className="space-y-1">
-              <StatCounter value={99} suffix=".99%" />
-              <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider font-semibold">Target SLA Uptime</p>
-            </StaggerItem>
-          </StaggerContainer>
- 
+
+            <div className="mt-12 pt-7 border-t border-border">
+              <p className="text-xs font-mono uppercase tracking-[0.12em] text-muted-foreground/80 mb-4">
+                Trusted by engineering teams at
+              </p>
+              <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
+                {trustedBy.map((name) => (
+                  <span key={name} className="text-base font-semibold tracking-tight text-foreground/45">
+                    {name}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Reliability console — signature object */}
+          <div className="lg:col-span-5">
+            <ConsolePanel />
+          </div>
         </div>
- 
-        {/* Right Column: Custom Animated Nodes Diagram */}
-        <div className="lg:col-span-5 flex items-center justify-center">
-          <FadeIn delay={0.2} duration={0.8} className="w-full">
-            <HeroVisual mouseX={mouseX} mouseY={mouseY} />
-          </FadeIn>
-        </div>
- 
       </div>
     </section>
+  );
+}
+
+function ConsolePanel() {
+  return (
+    <div className="relative surface-card rounded-2xl p-6 sm:p-7 max-w-md mx-auto lg:ml-auto">
+      <OrbitMark size={120} className="absolute -top-6 -right-6 opacity-[0.06] pointer-events-none" />
+
+      <div className="flex items-center justify-between relative">
+        <span className="text-xs font-mono uppercase tracking-[0.1em] text-primary-strong">
+          Reliability console
+        </span>
+        <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+          <span className="status-indicator" /> live
+        </span>
+      </div>
+
+      <div className="mt-6 flex items-end gap-2">
+        <span className="display text-5xl text-foreground">99.99%</span>
+        <span className="text-sm text-muted-foreground pb-1.5">uptime</span>
+      </div>
+
+      <svg viewBox="0 0 280 44" className="w-full h-11 mt-3" preserveAspectRatio="none" aria-hidden="true">
+        <polyline
+          fill="none"
+          stroke="hsl(var(--accent))"
+          strokeWidth="2"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+          points="0,32 35,27 70,33 105,16 140,21 175,11 210,18 245,7 280,12"
+        />
+      </svg>
+
+      <div className="mt-5 grid grid-cols-2 gap-3">
+        <div className="rounded-xl bg-surface-subtle border border-border p-4">
+          <div className="display text-2xl text-foreground">−38%</div>
+          <div className="text-xs text-muted-foreground mt-1">cloud spend</div>
+        </div>
+        <div className="rounded-xl bg-surface-subtle border border-border p-4">
+          <div className="display text-2xl text-foreground">10×</div>
+          <div className="text-xs text-muted-foreground mt-1">deploy speed</div>
+        </div>
+      </div>
+
+      <div className="mt-5 pt-4 border-t border-border flex items-center gap-2 text-xs text-muted-foreground">
+        <span className="status-indicator" />
+        All systems operational
+      </div>
+    </div>
   );
 }

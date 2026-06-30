@@ -1,101 +1,166 @@
 "use client";
 
-import React from "react";
-import { motion, MotionValue, useTransform } from "framer-motion";
-import { Shield, GitBranch, Activity, Compass, ArrowUpRight } from "lucide-react";
+import React, { useState } from "react";
+import { Shield, GitBranch, ArrowUpRight, Cpu, Layers } from "lucide-react";
 
-interface HeroVisualProps {
-  mouseX: MotionValue<number>;
-  mouseY: MotionValue<number>;
-}
+type NodeKey = "root" | "security" | "workload" | "database";
 
-export function HeroVisual({ mouseX, mouseY }: HeroVisualProps) {
-  // Subtle parallax offsets for depth
-  const xOffset = useTransform(mouseX, [-0.5, 0.5], [-8, 8]);
-  const yOffset = useTransform(mouseY, [-0.5, 0.5], [-8, 8]);
+const nodes: { key: NodeKey; cx: number; cy: number; label: string; labelY: number; Icon: React.ElementType }[] = [
+  { key: "root", cx: 200, cy: 40, label: "Management", labelY: 18, Icon: Cpu },
+  { key: "security", cx: 100, cy: 110, label: "Security", labelY: 140, Icon: Shield },
+  { key: "workload", cx: 300, cy: 110, label: "EKS Compute", labelY: 140, Icon: Layers },
+  { key: "database", cx: 200, cy: 180, label: "DB Subnets", labelY: 208, Icon: GitBranch },
+];
 
-  const pillars = [
-    {
-      num: "01",
-      icon: <Compass className="h-5 w-5 text-primary" />,
-      title: "Cloud Architecture Advisory",
-      desc: "Multi-account Landing Zones, secure AWS Control Tower blueprints, and compliant tenant separation architectures.",
-    },
-    {
-      num: "02",
-      icon: <Shield className="h-5 w-5 text-blue-400" />,
-      title: "DevSecOps & Compliance",
-      desc: "Declarative guardrails enforcing strict PCI-DSS, HIPAA, and ISO 27001 audit standards directly inside IaC.",
-    },
-    {
-      num: "03",
-      icon: <GitBranch className="h-5 w-5 text-slate-400" />,
-      title: "Infrastructure Automation",
-      desc: "100% version-controlled Terraform code blocks and zero-downtime GitOps pipeline release architectures.",
-    },
-    {
-      num: "04",
-      icon: <Activity className="h-5 w-5 text-primary" />,
-      title: "Continuous Observability",
-      desc: "Advanced cluster logging setups, real-time alert routing maps, and proactive cloud waste cost optimization.",
-    },
-  ];
+const nodeDetails: Record<NodeKey, { title: string; subtitle: string; code: string }> = {
+  root: {
+    title: "AWS Organizations / Control Tower",
+    subtitle: "Root governance level mapping policies and multi-account rules.",
+    code: '{\n  "Name": "OnEggy-Core",\n  "Features": "ALL",\n  "ServiceControlPolicies": ["DenyClickOps", "EnforceMFA"]\n}',
+  },
+  security: {
+    title: "Core Security & Log Archive OU",
+    subtitle: "Centralized AWS CloudTrail storage and IAM Identity Center access control keys.",
+    code: '{\n  "LoggingBucket": "s3://central-logs-secure",\n  "KMSKeyRotation": "30_DAYS",\n  "GuardDuty": "ENABLED"\n}',
+  },
+  workload: {
+    title: "EKS Workload Node cluster Group",
+    subtitle: "Container workloads run inside private VPC subnets with automated node updates.",
+    code: '{\n  "ClusterName": "prod-eks-01",\n  "NodeGroups": "Managed-Spot",\n  "AutoscaleLimits": "2-20_Pods"\n}',
+  },
+  database: {
+    title: "Encrypted DB Cluster Replica (RDS)",
+    subtitle: "PostgreSQL master database with continuous backups and automated failovers.",
+    code: '{\n  "Engine": "PostgreSQL-16",\n  "BackupRetention": "30_Days",\n  "MultiAZ": "ACTIVE"\n}',
+  },
+};
+
+export function HeroVisual() {
+  const [activeNode, setActiveNode] = useState<NodeKey | null>(null);
 
   return (
-    <motion.div
-      style={{ x: xOffset, y: yOffset }}
-      className="w-full relative bg-zinc-950/40 border border-zinc-800 p-6 md:p-8 rounded-2xl shadow-xl select-none max-w-lg mx-auto"
-    >
-      {/* Decorative top-right accent */}
-      <div className="absolute top-4 right-4 flex items-center gap-1.5 text-[9px] font-mono text-zinc-500 uppercase tracking-widest border-b border-zinc-800 pb-1">
-        <span>framework // ecm-v2</span>
-        <ArrowUpRight className="h-3 w-3 text-zinc-550" />
+    <div className="surface-card w-full relative p-6 rounded-xl select-none max-w-lg mx-auto overflow-hidden">
+      {/* Header */}
+      <div className="absolute top-4 right-4 flex items-center gap-1.5 text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
+        <span>blueprints // lz-v3.0</span>
+        <ArrowUpRight className="h-2.5 w-2.5" aria-hidden="true" />
       </div>
 
       <div className="mb-6 space-y-1">
-        <span className="text-[10px] font-mono font-bold text-primary uppercase tracking-widest">
-          Consulting Model
+        <span className="text-xs font-mono font-bold text-primary-strong uppercase tracking-widest">
+          Systems Architecture Diagram
         </span>
-        <h3 className="text-lg font-bold text-foreground font-display tracking-tight">
-          Enterprise Cloud Modernization
+        <h3 className="text-base font-bold text-foreground font-display tracking-tight">
+          Secure AWS Landing Zone Topology
         </h3>
       </div>
 
-      {/* Structured Consulting Framework 2x2 Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {pillars.map((pillar) => (
-          <div
-            key={pillar.num}
-            className="p-4 rounded-xl border border-zinc-900 bg-zinc-900/20 hover:border-zinc-800 transition-all duration-300 flex flex-col justify-between space-y-3"
-          >
-            <div className="flex items-center justify-between">
-              <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center">
-                {pillar.icon}
-              </div>
-              <span className="text-xs font-mono text-zinc-600 font-bold">
-                {pillar.num}
-              </span>
-            </div>
-            <div className="space-y-1">
-              <h4 className="text-xs font-bold text-foreground font-display leading-tight">
-                {pillar.title}
-              </h4>
-              <p className="text-[10px] text-muted-foreground leading-normal font-sans">
-                {pillar.desc}
-              </p>
-            </div>
-          </div>
-        ))}
+      {/* SVG schematic */}
+      <div className="relative aspect-video w-full border border-border bg-surface-subtle rounded-lg flex items-center justify-center p-4">
+        <svg viewBox="0 0 400 224" className="w-full h-full" role="group" aria-label="Interactive AWS landing zone topology diagram">
+          <path
+            d="M 200 40 L 100 110 M 200 40 L 300 110 M 100 110 L 200 180 M 300 110 L 200 180"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.2"
+            strokeDasharray="4 4"
+            className={activeNode ? "text-primary/50" : "text-border"}
+            style={{ transition: "color 0.3s" }}
+          />
+          <line
+            x1="200" y1="40" x2="200" y2="180"
+            stroke="currentColor"
+            strokeWidth="0.8"
+            className={activeNode ? "text-primary/30" : "text-border"}
+            style={{ transition: "color 0.3s" }}
+          />
+
+          {nodes.map(({ key, cx, cy, label, labelY, Icon }) => {
+            const isActive = activeNode === key;
+            return (
+              <g
+                key={key}
+                role="button"
+                tabIndex={0}
+                aria-label={`${label}: ${nodeDetails[key].title}`}
+                aria-pressed={isActive}
+                className="cursor-pointer focus:outline-none"
+                onMouseEnter={() => setActiveNode(key)}
+                onMouseLeave={() => setActiveNode(null)}
+                onFocus={() => setActiveNode(key)}
+                onBlur={() => setActiveNode(null)}
+                onClick={() => setActiveNode(isActive ? null : key)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setActiveNode(isActive ? null : key);
+                  }
+                }}
+              >
+                <circle
+                  cx={cx}
+                  cy={cy}
+                  r="17"
+                  className={isActive ? "fill-primary/15 stroke-primary" : "fill-card stroke-border"}
+                  strokeWidth={isActive ? 2 : 1.2}
+                  style={{ transition: "fill 0.3s, stroke 0.3s" }}
+                />
+                <foreignObject x={cx - 9} y={cy - 9} width="18" height="18" style={{ pointerEvents: "none" }}>
+                  <div className="w-full h-full flex items-center justify-center">
+                    <Icon
+                      style={{
+                        width: 13,
+                        height: 13,
+                        color: isActive ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))",
+                        transition: "color 0.3s",
+                      }}
+                    />
+                  </div>
+                </foreignObject>
+                <text
+                  x={cx}
+                  y={labelY}
+                  textAnchor="middle"
+                  className={isActive ? "fill-primary-strong" : "fill-muted-foreground"}
+                  style={{ fontFamily: "var(--font-mono)", fontSize: 8, letterSpacing: "0.12em", fontWeight: 600, textTransform: "uppercase" }}
+                >
+                  {label}
+                </text>
+              </g>
+            );
+          })}
+        </svg>
       </div>
 
-      {/* Bottom framework details status row */}
-      <div className="mt-6 pt-4 border-t border-zinc-900 flex items-center justify-between text-[8px] font-mono text-zinc-500 font-bold uppercase tracking-wider">
-        <span>AWS partner network certified</span>
-        <span className="text-green-500 flex items-center gap-1">
-          <span className="w-1.5 h-1.5 rounded-full bg-green-500 inline-block animate-pulse" />
-          framework active
+      {/* Documentation console */}
+      <div className="mt-4 pt-4 border-t border-border min-h-[120px] flex flex-col justify-between font-mono" aria-live="polite">
+        {activeNode ? (
+          <div className="space-y-2">
+            <div className="flex items-center justify-between text-[10px]">
+              <span className="text-primary-strong font-bold uppercase">{nodeDetails[activeNode].title}</span>
+              <span className="text-muted-foreground font-semibold">[INSPECTING NODE]</span>
+            </div>
+            <p className="text-[11px] text-muted-foreground leading-normal">{nodeDetails[activeNode].subtitle}</p>
+            <pre className="text-[9px] text-foreground/80 bg-muted p-2 rounded border border-border overflow-x-auto">
+              {nodeDetails[activeNode].code}
+            </pre>
+          </div>
+        ) : (
+          <div className="flex flex-col justify-center items-center h-[96px] text-muted-foreground text-[11px] text-center px-4">
+            <span className="mb-1 text-primary-strong font-semibold">● Select a node</span>
+            <span>Tap, click, or focus the topology nodes to inspect their compliance parameters and configuration manifests.</span>
+          </div>
+        )}
+      </div>
+
+      {/* Footer status line */}
+      <div className="mt-4 pt-3 border-t border-border flex items-center justify-between text-[10px] font-mono text-muted-foreground font-semibold uppercase tracking-widest">
+        <span>well-architected framework</span>
+        <span className="text-primary-strong flex items-center gap-1.5">
+          <span className="status-indicator" />
+          compliance verified
         </span>
       </div>
-    </motion.div>
+    </div>
   );
 }

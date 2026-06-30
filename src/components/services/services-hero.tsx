@@ -1,36 +1,33 @@
-"use client";
-
 import React from "react";
-import { FadeUp } from "../animations/motion-wrappers";
-import { Shield } from "lucide-react";
+
+const stats = [
+  { value: "25", label: "practice areas" },
+  { value: "3", label: "disciplines: cloud, DevOps, software" },
+  { value: "1", label: "senior team, end to end" },
+];
 
 export function ServicesHero() {
   return (
-    <section className="relative w-full overflow-hidden py-16 md:py-24 flex flex-col items-center justify-center text-center">
-      <div className="absolute top-[10%] right-[-10%] w-[350px] h-[350px] rounded-full bg-blue-500/5 blur-[90px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: "12s" }} />
-
-      <div className="max-w-4xl mx-auto px-6 space-y-6 relative z-10">
-        <FadeUp>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-background/50 backdrop-blur-sm text-xs text-muted-foreground shadow-sm">
-            <Shield className="h-3.5 w-3.5 text-primary" />
-            <span>Core Practices & Strategic Consulting</span>
-          </div>
-        </FadeUp>
-
-        <FadeUp delay={0.1}>
-          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-foreground leading-tight font-display">
-            Practice Areas &<br />
-            <span className="text-primary">Strategic Capabilities</span>
-          </h1>
-        </FadeUp>
-
-        <FadeUp delay={0.2}>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed font-sans">
-            We provide comprehensive cloud modernization, platform engineering, and software advisory services engineered to pass strict compliance audits and survive enterprise scale.
-          </p>
-        </FadeUp>
+    <section className="max-w-7xl mx-auto px-6 pt-12 pb-12 sm:pt-16 lg:pt-20">
+      <div className="max-w-4xl">
+        <span className="eyebrow mb-6">Services</span>
+        <h1 className="display text-5xl sm:text-6xl lg:text-[4rem] mt-5">
+          Everything it takes to keep your cloud <em>dependable.</em>
+        </h1>
+        <p className="mt-7 text-lg text-muted-foreground leading-relaxed max-w-[58ch]">
+          Cloud architecture, DevOps automation, Kubernetes, and product engineering — delivered to
+          pass strict compliance audits and survive real scale.
+        </p>
       </div>
+
+      <dl className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-px bg-border border border-border rounded-xl overflow-hidden">
+        {stats.map((s) => (
+          <div key={s.label} className="bg-background p-6">
+            <dt className="display text-4xl text-foreground tabular-nums">{s.value}</dt>
+            <dd className="mt-1 text-sm text-muted-foreground max-w-[26ch]">{s.label}</dd>
+          </div>
+        ))}
+      </dl>
     </section>
   );
 }
-

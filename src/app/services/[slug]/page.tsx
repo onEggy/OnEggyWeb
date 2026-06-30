@@ -2,19 +2,12 @@ import React from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { 
-  ArrowRight, 
-  AlertTriangle, 
-  CheckCircle2, 
-  Shield,
-  ChevronRight
-} from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { getServiceBySlug, servicesData } from "@/lib/services-data";
-import { SectionHeader } from "@/components/common/section-header";
-import { CtaBlock } from "@/components/common/cta-block";
 import { ServiceArchitecture } from "@/components/services/service-architecture";
 import { ServiceFaqAccordion } from "@/components/services/service-faq-accordion";
-import { FadeUp, StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
+import { OrbitMark } from "@/components/common/orbit-mark";
+import { FadeUp } from "@/components/animations/motion-wrappers";
 import { testimonials as rawTestimonials } from "../../../../public/data/testimonial.json";
 
 function getTechLogo(tech: string): string | null {
@@ -41,18 +34,6 @@ function getInitials(name: string) {
   }
   return name.slice(0, 2).toUpperCase();
 }
-
-const avatarBgClasses = [
-  "bg-zinc-900 border border-zinc-800 text-zinc-400 font-mono",
-  "bg-zinc-950 border border-zinc-900/60 text-zinc-450 font-mono",
-  "bg-zinc-900/80 border border-zinc-850 text-zinc-400 font-mono",
-];
-
-const getAvatarStyle = (name: string) => {
-  let sum = 0;
-  for (let i = 0; i < name.length; i++) sum += name.charCodeAt(i);
-  return avatarBgClasses[sum % avatarBgClasses.length];
-};
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -88,6 +69,11 @@ export async function generateMetadata({ params }: PageProps) {
       description: service.seo.description,
       url: `https://www.oneggy.com/services/${service.slug}`,
       type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: service.seo.title,
+      description: service.seo.description,
     },
   };
 }
@@ -126,6 +112,65 @@ export default async function ServicePage({ params }: PageProps) {
     }
   };
 
+  // Breadcrumb structured data (Home > Services > {service.title})
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.oneggy.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://www.oneggy.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": service.title,
+        "item": `https://www.oneggy.com/services/${service.slug}`
+      }
+    ]
+  };
+
+  // FAQ structured data built from the service FAQ entries
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": service.faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
+  // Category-aware intro/timeline copy (problems/solutions arrays stay as-is)
+  const categoryCopy = {
+    cloud: {
+      challengeIntro: "Organizations frequently hit compliance, deployment, and cost barriers due to legacy un-managed cloud setups:",
+      solutionIntro: "We codify secure infrastructure policies and deploy automated workflows to optimize reliability:",
+      timelineSubtitle: "How we transition your cloud workloads from initial audit reviews to governed production setups."
+    },
+    devops: {
+      challengeIntro: "Engineering teams frequently hit release-velocity, reliability, and toil barriers due to manual, un-automated pipelines:",
+      solutionIntro: "We codify automated CI/CD pipelines and infrastructure-as-code workflows to optimize delivery reliability:",
+      timelineSubtitle: "How we transition your delivery pipelines from initial audit reviews to governed, automated production workflows."
+    },
+    software: {
+      challengeIntro: "Product teams frequently hit code quality, scalability, and maintainability barriers due to rushed, un-architected applications:",
+      solutionIntro: "We engineer clean, well-tested application code and modular product architecture to optimize quality and velocity:",
+      timelineSubtitle: "How we transition your product and application code from initial audit reviews to governed, production-ready releases."
+    }
+  }[service.category];
+
   // Reusable timeline process data
   const processSteps = [
     {
@@ -157,6 +202,20 @@ export default async function ServicePage({ params }: PageProps) {
     software: "Software Engineering"
   }[service.category];
 
+  // Category-aware testimonials (restrained pull-quotes)
+  const filteredReviews = rawTestimonials.filter((t) => {
+    const desc = t.designation.toLowerCase();
+    const test = t.testimonial.toLowerCase();
+    if (service.category === "cloud") {
+      return desc.includes("cloud") || desc.includes("aws") || test.includes("aws") || test.includes("cloud") || desc.includes("brahmatells");
+    } else if (service.category === "devops") {
+      return desc.includes("devops") || desc.includes("sre") || test.includes("kubernetes") || test.includes("eks") || test.includes("devops") || desc.includes("payu") || desc.includes("pinelabs");
+    } else { // software
+      return desc.includes("developer") || desc.includes("full stack") || desc.includes("mobile") || desc.includes("app") || test.includes("react native") || test.includes("next") || test.includes("software") || desc.includes("anveshan") || desc.includes("digispeax");
+    }
+  });
+  const displayReviews = filteredReviews.length >= 3 ? filteredReviews.slice(0, 3) : rawTestimonials.slice(0, 3);
+
   return (
     <>
       {/* Inject Structured Data Schema */}
@@ -166,291 +225,378 @@ export default async function ServicePage({ params }: PageProps) {
           __html: JSON.stringify(schemaMarkup).replace(/</g, "\\u003c"),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
+        }}
+      />
 
-      <div className="relative overflow-hidden min-h-screen">
-        {/* Subtle Background Accent */}
-        <div className="absolute top-[8%] right-[-10%] w-[350px] h-[350px] rounded-full bg-blue-500/5 blur-[120px] pointer-events-none -z-10 animate-pulse" />
+      {/* 1. HERO — editorial, two-column with engagement snapshot */}
+      <section className="max-w-7xl mx-auto px-6 pt-8 pb-16 sm:pt-10 lg:pt-14 lg:pb-24">
+        {/* Breadcrumb */}
+        <nav aria-label="Breadcrumb" className="mb-10">
+          <ol className="flex items-center gap-2.5 text-xs font-mono text-muted-foreground">
+            <li><Link href="/" className="hover:text-primary-strong transition-colors">Home</Link></li>
+            <li aria-hidden="true" className="text-muted-foreground/50">/</li>
+            <li><Link href="/services" className="hover:text-primary-strong transition-colors">Services</Link></li>
+            <li aria-hidden="true" className="text-muted-foreground/50">/</li>
+            <li className="text-foreground truncate max-w-[50vw]">{service.title}</li>
+          </ol>
+        </nav>
 
-        {/* 1. HERO SECTION */}
-        <section className="relative pt-16 pb-24 md:py-32 flex flex-col items-center justify-center text-center">
-          <div className="max-w-4xl mx-auto px-6 space-y-8 relative z-10">
-            <FadeUp>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-background/50 backdrop-blur-sm text-xs font-mono text-primary shadow-sm">
-                <Shield className="h-3.5 w-3.5" />
-                <span>{categoryLabel}</span>
-              </div>
-            </FadeUp>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
+          {/* Editorial copy */}
+          <div className="lg:col-span-7 lg:pr-4">
+            <span className="eyebrow mb-6">{categoryLabel}</span>
+            <h1 className="display text-4xl sm:text-5xl lg:text-[3.6rem] mt-5">
+              {service.title} — <em>{service.headline}</em>
+            </h1>
+            <p className="mt-7 text-lg text-muted-foreground leading-relaxed max-w-[52ch]">
+              {service.subtext}
+            </p>
 
-            <FadeUp delay={0.1}>
-              <h1 className="text-4xl sm:text-6xl font-display font-bold tracking-tight text-foreground leading-tight">
-                {service.title}
-                <br />
-                <span className="text-primary">{service.headline}</span>
-              </h1>
-            </FadeUp>
+            <div className="mt-9 flex flex-col sm:flex-row sm:items-center gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-md bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-sm transition-colors focus-visible:ring-2 focus-visible:ring-primary"
+              >
+                Request advisory assessment <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+              <a
+                href="#blueprint"
+                className="inline-flex items-center justify-center gap-1.5 h-12 px-3 text-sm font-semibold text-foreground hover:text-primary-strong transition-colors"
+              >
+                Review framework map <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+              </a>
+            </div>
 
-            <FadeUp delay={0.2}>
-              <p className="text-base sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-sans">
-                {service.subtext}
+            {/* Tech ecosystem row */}
+            <div className="mt-12 pt-7 border-t border-border">
+              <p className="text-xs font-mono uppercase tracking-[0.12em] text-muted-foreground/80 mb-4">
+                Built on
               </p>
-            </FadeUp>
-
-            {/* Tech Ecosystem Row */}
-            <FadeUp delay={0.25}>
-              <div className="flex flex-wrap justify-center gap-2 pt-4">
+              <div className="flex flex-wrap items-center gap-2.5">
                 {service.techs.map((tech) => {
                   const logo = getTechLogo(tech);
                   return (
-                    <span 
-                      key={tech} 
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono bg-zinc-900 border border-zinc-800 text-foreground/80 shadow-sm"
+                    <span
+                      key={tech}
+                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-mono bg-surface-subtle border border-border text-foreground/80"
                     >
                       {logo && (
-                        <div className="relative w-3.5 h-3.5 shrink-0">
-                          <Image 
-                            src={logo} 
-                            alt={`${tech} logo`} 
-                            fill 
-                            sizes="14px" 
-                            className="object-contain" 
-                          />
-                        </div>
+                        <span className="relative w-3.5 h-3.5 shrink-0">
+                          <Image src={logo} alt="" fill sizes="14px" className="object-contain" />
+                        </span>
                       )}
                       <span>{tech}</span>
                     </span>
                   );
                 })}
               </div>
-            </FadeUp>
+            </div>
+          </div>
 
-            <FadeUp delay={0.3} className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+          {/* Engagement snapshot card */}
+          <div className="lg:col-span-5">
+            <div className="relative surface-card rounded-2xl p-7 overflow-hidden">
+              <OrbitMark size={120} className="absolute -top-6 -right-6 opacity-[0.06] pointer-events-none" />
+              <p className="text-xs font-mono uppercase tracking-[0.1em] text-primary-strong relative">
+                Engagement at a glance
+              </p>
+              <dl className="mt-6 relative">
+                <div className="flex items-center justify-between gap-4 py-3.5 border-b border-border">
+                  <dt className="text-sm text-muted-foreground">Discipline</dt>
+                  <dd className="text-sm font-semibold text-foreground text-right">{categoryLabel}</dd>
+                </div>
+                <div className="flex items-center justify-between gap-4 py-3.5 border-b border-border">
+                  <dt className="text-sm text-muted-foreground">Capabilities</dt>
+                  <dd className="text-sm font-semibold text-foreground">{service.features.length} core areas</dd>
+                </div>
+                <div className="flex items-center justify-between gap-4 py-3.5 border-b border-border">
+                  <dt className="text-sm text-muted-foreground">Foundations</dt>
+                  <dd className="text-sm font-semibold text-foreground">{service.techs.length} technologies</dd>
+                </div>
+              </dl>
+              {service.benefits[0] && (
+                <div className="mt-6 pt-6 border-t border-border relative">
+                  <div className="display text-4xl text-foreground tabular-nums">{service.benefits[0].num}</div>
+                  <div className="mt-1 text-sm text-muted-foreground">{service.benefits[0].label}</div>
+                </div>
+              )}
               <Link
                 href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-12 px-8 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 font-semibold transition-colors cursor-pointer shadow-lg"
+                className="mt-6 relative inline-flex items-center gap-1.5 text-sm font-semibold text-primary-strong hover:gap-2.5 transition-all"
               >
-                Request Advisory Assessment <ArrowRight className="h-4 w-4" />
+                Get a tailored proposal <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
               </Link>
-              <a
-                href="#blueprint"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-12 px-8 rounded-lg bg-background border border-border hover:bg-zinc-900 font-semibold transition-colors cursor-pointer"
-              >
-                Review Framework Map
-              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. THE CHALLENGE vs. THE SOLUTION — editorial two-column */}
+      <section className="border-t border-border">
+        <div className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 mb-14">
+            <div className="lg:col-span-5">
+              <span className="eyebrow mb-5">Strategic context</span>
+              <h2 className="display text-3xl sm:text-4xl mt-4">
+                Business challenge &amp; <em>alignment.</em>
+              </h2>
+            </div>
+            <div className="lg:col-span-7 lg:pt-2">
+              <p className="text-base text-muted-foreground leading-relaxed max-w-[54ch]">
+                How we identify operational exposures, cost leakages, and pipeline friction to design
+                compliant system solutions.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+            {/* Challenges */}
+            <FadeUp>
+              <p className="text-xs font-mono uppercase tracking-[0.12em] text-destructive/90 mb-5">
+                Operational vulnerabilities
+              </p>
+              <p className="text-base text-muted-foreground leading-relaxed mb-2">
+                {categoryCopy.challengeIntro}
+              </p>
+              <ul className="border-t border-border mt-6">
+                {service.problems.map((problem, idx) => (
+                  <li key={idx} className="grid grid-cols-[auto_1fr] gap-x-4 py-5 border-b border-border">
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-destructive shrink-0" aria-hidden="true" />
+                    <span className="text-base text-foreground/90 leading-relaxed">{problem}</span>
+                  </li>
+                ))}
+              </ul>
+            </FadeUp>
+
+            {/* Solutions */}
+            <FadeUp delay={0.1}>
+              <p className="text-xs font-mono uppercase tracking-[0.12em] text-primary-strong mb-5">
+                Strategic resolution model
+              </p>
+              <p className="text-base text-muted-foreground leading-relaxed mb-2">
+                {categoryCopy.solutionIntro}
+              </p>
+              <ul className="border-t border-border mt-6">
+                {service.solutions.map((solution, idx) => (
+                  <li key={idx} className="grid grid-cols-[auto_1fr] gap-x-4 py-5 border-b border-border">
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" aria-hidden="true" />
+                    <span className="text-base text-foreground/90 leading-relaxed">{solution}</span>
+                  </li>
+                ))}
+              </ul>
             </FadeUp>
           </div>
-        </section>
-
-        {/* 2. THE CHALLENGE VS. THE SOLUTION */}
-        <section className="max-w-7xl mx-auto px-6 py-24 md:py-32 border-t border-border/40">
-          <SectionHeader
-            tag="Strategic Context"
-            title="Business Challenge & Alignment"
-            subtitle="How we identify operational exposures, cost leakages, and pipeline friction to design compliant system solutions."
-            align="center"
-            className="mb-16"
-          />
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* The Challenges Card */}
-            <div className="rounded-2xl p-8 border border-zinc-800 bg-zinc-950/20 space-y-6 relative overflow-hidden shadow-md">
-              <div className="flex items-center gap-3 text-red-500 font-semibold">
-                <AlertTriangle className="h-6 w-6" />
-                <h3 className="text-xl font-display font-bold">Operational Vulnerabilities</h3>
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed font-sans">
-                Organizations frequently hit compliance, deployment, and cost barriers due to legacy un-managed setups:
-              </p>
-              <ul className="space-y-4 font-sans">
-                {service.problems.map((problem, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0 mt-2" />
-                    <span className="text-sm text-muted-foreground leading-relaxed">{problem}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Our Solutions Card */}
-            <div className="rounded-2xl p-8 border border-zinc-800 bg-zinc-950/20 space-y-6 relative overflow-hidden shadow-md">
-              <div className="flex items-center gap-3 text-primary font-semibold">
-                <CheckCircle2 className="h-6 w-6" />
-                <h3 className="text-xl font-display font-bold">Strategic Resolution Model</h3>
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed font-sans">
-                We codify secure infrastructure policies and deploy automated workflows to optimize reliability:
-              </p>
-              <ul className="space-y-4 font-sans">
-                {service.solutions.map((solution, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2" />
-                    <span className="text-sm text-muted-foreground leading-relaxed">{solution}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* 3. CORE SERVICE FEATURES GRID */}
-        <section className="max-w-7xl mx-auto px-6 py-24 md:py-32 border-t border-border/40">
-          <SectionHeader
-            tag="Deliverables"
-            title="Core Scope & Capabilities"
-            subtitle="Explore our detailed technical features engineered following the industry's absolute best practices."
-            align="center"
-            className="mb-16"
-          />
-
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {service.features.map((feature, idx) => (
-              <StaggerItem 
-                key={idx}
-                className="p-8 rounded-xl border border-zinc-800 bg-zinc-950/20 hover:border-zinc-700 transition-all duration-300 flex flex-col justify-between space-y-6 relative group"
-              >
-                <div className="space-y-3">
-                  <span className="text-xs font-mono text-zinc-550 font-semibold uppercase">practice segment {idx + 1}</span>
-                  <h3 className="text-lg sm:text-xl font-display font-bold text-foreground group-hover:text-primary transition-colors">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm font-semibold text-foreground/80 leading-relaxed font-sans">
-                    {feature.desc}
-                  </p>
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
-                    {feature.detail}
-                  </p>
-                </div>
-                <div className="flex items-center gap-1.5 text-xs text-primary opacity-0 group-hover:opacity-100 transition-opacity font-semibold font-mono">
-                  governed layout <ChevronRight className="h-3 w-3" />
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </section>
-
-        {/* 4. METRICS / BENEFITS ROW */}
-        <section className="border-y border-zinc-850 bg-zinc-900/10 py-20 md:py-24 relative">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-center">
-              {service.benefits.map((benefit, idx) => (
-                <div key={idx} className="space-y-2">
-                  <div className="text-4xl sm:text-6xl font-extrabold tracking-tight text-primary font-mono">
-                    {benefit.num}
-                  </div>
-                  <div className="text-xs sm:text-sm font-mono uppercase tracking-widest text-muted-foreground font-semibold">
-                    {benefit.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 5. INTERACTIVE ARCHITECTURE BLUEPRINT MAP */}
-        <div id="blueprint">
-          <ServiceArchitecture category={service.category} serviceName={service.title} />
         </div>
+      </section>
 
-        {/* 6. PROCESS TIMELINE STEPPER */}
-        <section className="max-w-7xl mx-auto px-6 py-24 md:py-32 border-t border-border/40">
-          <SectionHeader
-            tag="Methodology"
-            title="Advisory & Delivery Timeline"
-            subtitle="How we transition your cloud workloads from initial audit reviews to governed production setups."
-            align="center"
-            className="mb-16"
-          />
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-            {processSteps.map((step, idx) => (
-              <div key={idx} className="p-6 rounded-xl border border-zinc-850 bg-zinc-950/20 relative space-y-4 shadow-sm hover:border-primary/20 transition-all duration-300">
-                <div className="absolute top-4 right-4 text-3xl font-extrabold text-primary/10 font-mono">
-                  {step.num}
-                </div>
-                <h4 className="text-base sm:text-lg font-display font-bold text-foreground pt-4">{step.title}</h4>
-                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
-                  {step.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* 7. CLIENT TESTIMONIALS */}
-        <section className="max-w-7xl mx-auto px-6 py-24 md:py-32 border-t border-border/40 relative">
-          <div className="absolute top-[20%] left-[10%] w-[300px] h-[300px] rounded-full bg-blue-500/5 blur-[95px] pointer-events-none -z-10" />
-          
-          <SectionHeader
-            tag="Impact Validation"
-            title="Enterprise Success Stories"
-            subtitle="How we've partner with engineering leadership teams to deliver key modernizations."
-            align="center"
-            className="mb-16"
-          />
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {(() => {
-              const filteredReviews = rawTestimonials.filter((t) => {
-                const desc = t.designation.toLowerCase();
-                const test = t.testimonial.toLowerCase();
-                if (service.category === "cloud") {
-                  return desc.includes("cloud") || desc.includes("aws") || test.includes("aws") || test.includes("cloud") || desc.includes("brahmatells");
-                } else if (service.category === "devops") {
-                  return desc.includes("devops") || desc.includes("sre") || test.includes("kubernetes") || test.includes("eks") || test.includes("devops") || desc.includes("payu") || desc.includes("pinelabs");
-                } else { // software
-                  return desc.includes("developer") || desc.includes("full stack") || desc.includes("mobile") || desc.includes("app") || test.includes("react native") || test.includes("next") || test.includes("software") || desc.includes("anveshan") || desc.includes("digispeax");
-                }
-              });
-              const displayReviews = filteredReviews.length >= 3 ? filteredReviews.slice(0, 3) : rawTestimonials.slice(0, 3);
-              return displayReviews.map((item, index) => {
-                const avatarStyle = getAvatarStyle(item.name);
-                return (
-                  <div key={index} className="p-8 rounded-xl border border-zinc-800 bg-zinc-950/20 hover:border-zinc-700 transition-all duration-300 flex flex-col justify-between relative group">
-                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed italic relative z-10 mb-8 font-sans">
-                      &ldquo;{item.testimonial}&rdquo;
-                    </p>
-                    <div className="flex items-center gap-4 border-t border-zinc-900/60 pt-6">
-                      <div className={`w-10 h-10 rounded-full ${avatarStyle} flex items-center justify-center font-bold font-mono text-xs shadow-md shrink-0 border border-zinc-800`}>
-                        {getInitials(item.name)}
-                      </div>
-                      <div className="min-w-0">
-                        <h4 className="text-sm font-bold text-foreground truncate">{item.name}</h4>
-                        <p className="text-xs text-muted-foreground truncate font-sans">
-                          {item.designation}
-                        </p>
-                      </div>
+      {/* 3. METRICS / BENEFITS BAND */}
+      <section className="border-y border-border bg-surface-subtle">
+        <div className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-4">
+              <span className="eyebrow mb-5">Measured impact</span>
+              <h2 className="display text-3xl sm:text-4xl mt-4">Outcomes, not slideware.</h2>
+              <p className="mt-5 text-base text-muted-foreground leading-relaxed max-w-[34ch]">
+                Every engagement is measured against the numbers that move your business and your
+                on-call rotation.
+              </p>
+            </div>
+            <div className="lg:col-span-8">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-10 border-t border-border pt-10">
+                {service.benefits.map((benefit, idx) => (
+                  <div key={idx}>
+                    <div className="display text-5xl sm:text-6xl text-foreground tabular-nums">
+                      {benefit.num}
+                    </div>
+                    <div className="mt-2 text-sm text-muted-foreground max-w-[22ch]">
+                      {benefit.label}
                     </div>
                   </div>
-                );
-              });
-            })()}
+                ))}
+              </div>
+            </div>
           </div>
-        </section>
-
-        {/* 8. FAQ ACCORDION SECTION */}
-        <section className="max-w-4xl mx-auto px-6 py-24 md:py-32 border-t border-border/40 relative">
-          <div className="absolute bottom-[10%] left-[-15%] w-[350px] h-[350px] rounded-full bg-blue-500/5 blur-[100px] pointer-events-none -z-10" />
-
-          <SectionHeader
-            tag="Q&A"
-            title="Practice FAQ Details"
-            subtitle="Advisory answers regarding engagement scope, billing schedules, and compliance configurations."
-            align="center"
-            className="mb-16"
-          />
-
-          <ServiceFaqAccordion faqs={service.faqs} />
-        </section>
-
-        {/* 9. CTA CONVERSION BLOCK */}
-        <div className="py-12 border-t border-border/40">
-          <CtaBlock
-            title={`Discuss Your ${service.title} Goals`}
-            description="Schedule a 30-minute advisory call with our senior architects to map out infrastructure budgets, timeline scopes, and risk checkpoints."
-            btnText="Book Free Assessment"
-            btnHref="/contact"
-          />
         </div>
+      </section>
+
+      {/* 4. CORE SERVICE FEATURES — editorial numbered list */}
+      <section className="border-t border-border">
+        <div className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+            <div className="lg:col-span-4">
+              <span className="eyebrow mb-5">Deliverables</span>
+              <h2 className="display text-3xl sm:text-4xl mt-4">
+                Core scope &amp; <em>capabilities.</em>
+              </h2>
+              <p className="mt-5 text-base text-muted-foreground leading-relaxed max-w-[38ch]">
+                Detailed technical features engineered following the industry&rsquo;s absolute best
+                practices.
+              </p>
+            </div>
+
+            <div className="lg:col-span-8">
+              <ul className="border-t border-border">
+                {service.features.map((feature, idx) => (
+                  <li
+                    key={idx}
+                    className="grid grid-cols-[auto_1fr] gap-x-5 sm:gap-x-8 py-7 border-b border-border group"
+                  >
+                    <span className="font-mono text-sm text-primary-strong/70 tabular-nums pt-1">
+                      {String(idx + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <h3 className="font-display text-xl sm:text-2xl text-foreground group-hover:text-primary-strong transition-colors">
+                        {feature.title}
+                      </h3>
+                      <p className="mt-1.5 text-base text-foreground/80 leading-relaxed max-w-[56ch]">
+                        {feature.desc}
+                      </p>
+                      <p className="mt-1 text-sm text-muted-foreground leading-relaxed max-w-[56ch]">
+                        {feature.detail}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. INTERACTIVE ARCHITECTURE BLUEPRINT */}
+      <div id="blueprint" className="scroll-mt-24">
+        <ServiceArchitecture category={service.category} serviceName={service.title} />
       </div>
+
+      {/* 6. PROCESS TIMELINE */}
+      <section className="border-t border-border">
+        <div className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 mb-14">
+            <div className="lg:col-span-5">
+              <span className="eyebrow mb-5">Methodology</span>
+              <h2 className="display text-3xl sm:text-4xl mt-4">
+                Advisory &amp; delivery <em>timeline.</em>
+              </h2>
+            </div>
+            <div className="lg:col-span-7 lg:pt-2">
+              <p className="text-base text-muted-foreground leading-relaxed max-w-[54ch]">
+                {categoryCopy.timelineSubtitle}
+              </p>
+            </div>
+          </div>
+
+          <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-border divide-y divide-border sm:divide-y-0">
+            {processSteps.map((step, idx) => (
+              <li
+                key={step.num}
+                className={`py-8 lg:px-7 lg:first:pl-0 lg:last:pr-0 lg:border-l lg:first:border-l-0 lg:border-border ${idx % 2 === 1 ? "sm:border-l sm:border-border" : ""}`}
+              >
+                <span className="font-mono text-sm text-primary-strong/70 tabular-nums">{step.num}</span>
+                <h3 className="font-display text-xl text-foreground mt-3">{step.title}</h3>
+                <p className="mt-2.5 text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* 7. CLIENT TESTIMONIALS — restrained pull-quotes */}
+      <section className="border-t border-border bg-surface-subtle">
+        <div className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 mb-14">
+            <div className="lg:col-span-5">
+              <span className="eyebrow mb-5">Impact validation</span>
+              <h2 className="display text-3xl sm:text-4xl mt-4">
+                Enterprise success <em>stories.</em>
+              </h2>
+            </div>
+            <div className="lg:col-span-7 lg:pt-2">
+              <p className="text-base text-muted-foreground leading-relaxed max-w-[54ch]">
+                How we&rsquo;ve partnered with engineering leadership teams to deliver key
+                modernizations.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+            {displayReviews.map((item, index) => (
+              <figure
+                key={index}
+                className="surface-card rounded-2xl p-7 flex flex-col justify-between"
+              >
+                <blockquote className="display text-lg text-foreground/90 leading-snug">
+                  &ldquo;{item.testimonial}&rdquo;
+                </blockquote>
+                <figcaption className="mt-7 pt-5 border-t border-border flex items-center gap-3">
+                  <span className="w-9 h-9 rounded-full bg-muted border border-border flex items-center justify-center font-mono text-xs text-muted-foreground shrink-0">
+                    {getInitials(item.name)}
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block font-display text-base text-foreground truncate">{item.name}</span>
+                    <span className="block text-xs font-mono uppercase tracking-wider text-muted-foreground truncate">
+                      {item.designation}
+                    </span>
+                  </span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 8. FAQ ACCORDION */}
+      <section className="border-t border-border">
+        <div className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-28 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          <div className="lg:col-span-4">
+            <span className="eyebrow mb-5">Q&amp;A</span>
+            <h2 className="display text-3xl sm:text-4xl mt-4">
+              Practice FAQ <em>details.</em>
+            </h2>
+            <p className="mt-5 text-base text-muted-foreground leading-relaxed max-w-[38ch]">
+              Advisory answers on engagement scope, billing schedules, and compliance configurations.
+            </p>
+          </div>
+          <div className="lg:col-span-8">
+            <ServiceFaqAccordion faqs={service.faqs} />
+          </div>
+        </div>
+      </section>
+
+      {/* 9. CTA CONVERSION BLOCK — editorial */}
+      <section className="border-t border-border">
+        <div className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-24">
+          <div className="relative surface-card rounded-2xl p-8 sm:p-12 overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <OrbitMark size={140} className="absolute -top-10 -right-10 opacity-[0.06] pointer-events-none" />
+            <div className="lg:col-span-8 relative">
+              <h2 className="display text-3xl sm:text-4xl">
+                Discuss your {service.title} <em>goals.</em>
+              </h2>
+              <p className="mt-5 text-base text-muted-foreground leading-relaxed max-w-[58ch]">
+                Schedule a 30-minute advisory call with our senior architects to map out
+                infrastructure budgets, timeline scopes, and risk checkpoints.
+              </p>
+            </div>
+            <div className="lg:col-span-4 flex lg:justify-end relative">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-md border border-primary text-primary-strong hover:bg-primary/10 font-semibold text-sm transition-colors focus-visible:ring-2 focus-visible:ring-primary"
+              >
+                Book free assessment <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

@@ -6,7 +6,7 @@ import { servicesData } from "@/lib/services-data";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.oneggy.com";
   
-  // Static website routes
+  // Primary website routes
   const staticRoutes = [
     "",
     "/services",
@@ -18,11 +18,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/contact",
   ];
 
+  // Lower-priority compliance routes
+  const legalRoutes = ["/privacy-policy", "/terms-and-conditions", "/refund-policy"];
+
   const staticSitemap = staticRoutes.map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: "daily" as const,
     priority: route === "" ? 1.0 : 0.8,
+  }));
+
+  const legalSitemap = legalRoutes.map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: "yearly" as const,
+    priority: 0.3,
   }));
 
   // Dynamic service routing sitemap mapping
@@ -51,5 +61,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error("Error generating sitemap for blogs:", error);
   }
 
-  return [...staticSitemap, ...serviceSitemap, ...blogSitemap];
+  return [...staticSitemap, ...serviceSitemap, ...blogSitemap, ...legalSitemap];
 }

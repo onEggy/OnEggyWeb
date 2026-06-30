@@ -2,6 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { ServicesHero } from "@/components/services/services-hero";
+import { servicesData } from "@/lib/services-data";
 
 const ServicesGrid = dynamic(() => import("@/components/services/services-grid").then((mod) => mod.ServicesGrid));
 const ArchitectureVisuals = dynamic(() => import("@/components/services/architecture-visuals").then((mod) => mod.ArchitectureVisuals));
@@ -10,8 +11,8 @@ const ServicesFaqs = dynamic(() => import("@/components/services/services-faqs")
 const CtaBlock = dynamic(() => import("@/components/common/cta-block").then((mod) => mod.CtaBlock));
 
 export const metadata: Metadata = {
-  title: "Cloud-Native & DevOps Engineering Services | OnEggy",
-  description: "Browse OnEggy's professional engineering services catalog: AWS managed resources, Kubernetes, DevOps, CI/CD pipelines, SRE support, and Full-Stack Next.js development.",
+  title: "Cloud, DevOps & Software Engineering Services | OnEggy",
+  description: "Browse OnEggy's professional engineering services catalog: AWS managed cloud, Kubernetes, DevOps, CI/CD pipelines, SRE support, plus full-stack web, mobile, SaaS, and API software development.",
   alternates: {
     canonical: "https://www.oneggy.com/services",
   },
@@ -22,26 +23,12 @@ export default function ServicesPage() {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": "OnEggy Technologies Cloud & Software Engineering Services",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "AWS Cloud Managed Services",
-        "url": "https://www.oneggy.com/services/aws-cloud-managed-services"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "DevOps Consulting Services",
-        "url": "https://www.oneggy.com/services/devops-consulting"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Kubernetes Consulting & Management",
-        "url": "https://www.oneggy.com/services/kubernetes"
-      }
-    ]
+    "itemListElement": servicesData.map((service, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": service.title,
+      "url": `https://www.oneggy.com/services/${service.slug}`,
+    })),
   };
 
   const breadcrumbSchema = {
@@ -77,7 +64,7 @@ export default function ServicesPage() {
           __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
         }}
       />
-      <div className="relative overflow-hidden min-h-screen">
+      <div className="relative">
         {/* 1. Services Hero Section */}
         <ServicesHero />
 
@@ -94,7 +81,7 @@ export default function ServicesPage() {
         <ServicesFaqs />
 
         {/* 6. Final Conversion CTA Section */}
-        <div className="py-12 border-t border-border/40">
+        <div className="py-16 sm:py-20 border-t border-border">
           <CtaBlock
             title="Ready to automate and scale your architecture?"
             description="Schedule a free 30-minute cloud-native engineering assessment with our senior architect to discuss your business requirements."

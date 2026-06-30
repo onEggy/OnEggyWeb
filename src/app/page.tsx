@@ -4,27 +4,20 @@ import dynamic from "next/dynamic";
 import { Hero } from "@/components/home/hero";
 
 const ClientMarquee = dynamic(() => import("@/components/home/client-marquee").then((mod) => mod.ClientMarquee));
-const StatusBoard = dynamic(() => import("@/components/home/status-board").then((mod) => mod.StatusBoard));
+const Problems = dynamic(() => import("@/components/home/problems").then((mod) => mod.Problems));
+const Outcomes = dynamic(() => import("@/components/home/outcomes").then((mod) => mod.Outcomes));
 const ServicesShowcase = dynamic(() => import("@/components/home/services-showcase").then((mod) => mod.ServicesShowcase));
-const WhyChooseUs = dynamic(() => import("@/components/home/why-choose-us").then((mod) => mod.WhyChooseUs));
-const RoiCalculator = dynamic(() => import("@/components/home/roi-calculator").then((mod) => mod.RoiCalculator));
-const TechStack = dynamic(() => import("@/components/home/tech-stack").then((mod) => mod.TechStack));
-const ScalingJourney = dynamic(() => import("@/components/home/scaling-journey").then((mod) => mod.ScalingJourney));
 const ProcessTimeline = dynamic(() => import("@/components/home/process-timeline").then((mod) => mod.ProcessTimeline));
 const Testimonials = dynamic(() => import("@/components/home/testimonials").then((mod) => mod.Testimonials));
 const FaqAccordion = dynamic(() => import("@/components/home/faq-accordion").then((mod) => mod.FaqAccordion));
-const AssessmentCta = dynamic(() => import("@/components/home/assessment-cta").then((mod) => mod.AssessmentCta));
 const CtaBlock = dynamic(() => import("@/components/common/cta-block").then((mod) => mod.CtaBlock));
-const ExpertiseNarrative = dynamic(() => import("@/components/home/expertise-narrative").then((mod) => mod.ExpertiseNarrative));
-const TeamPreview = dynamic(() => import("@/components/home/team-preview").then((mod) => mod.TeamPreview));
-
 
 
 export const metadata: Metadata = {
   title: "OnEggy Technologies | AWS Cloud Managed Services & DevOps Consulting Company India",
   description: "Scale secure AWS cloud deployments, automate CI/CD pipelines, and migrate to Kubernetes EKS with OnEggy's premium DevOps consulting company in India. Request a free cloud cost audit.",
   alternates: {
-    canonical: "https://www.oneggy.com",
+    canonical: "/",
   },
   keywords: [
     "AWS Cloud Managed Services India",
@@ -35,46 +28,35 @@ export const metadata: Metadata = {
     "DevOps company in India",
     "AWS consulting India",
     "cloud engineering company Delhi",
-    "Kubernetes experts India"
+    "Kubernetes experts India",
   ],
   openGraph: {
     title: "OnEggy Technologies | AWS Cloud Managed Services & DevOps Consulting Company India",
     description: "Scale secure AWS cloud deployments, automate CI/CD pipelines, and migrate to Kubernetes EKS with OnEggy's premium DevOps consulting company in India.",
     url: "https://www.oneggy.com",
     type: "website",
-    images: [
-      {
-        url: "https://www.oneggy.com/logov1.png",
-        width: 800,
-        height: 600,
-        alt: "OnEggy Technologies Logo",
-      }
-    ]
   },
   twitter: {
     card: "summary_large_image",
     title: "OnEggy Technologies | AWS Cloud Managed Services & DevOps Consulting Company India",
     description: "Scale secure AWS cloud deployments, automate CI/CD pipelines, and migrate to Kubernetes EKS with OnEggy's premium DevOps consulting company.",
-    images: ["https://www.oneggy.com/logov1.png"],
-  }
+  },
 };
 
 export default function Home() {
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "OnEggy Technologies",
-    "url": "https://www.oneggy.com",
-    "logo": "https://www.oneggy.com/logov1.png",
-    "sameAs": [
-      "https://github.com/onEggy",
-      "https://linkedin.com/company/oneggy"
-    ],
-    "contactPoint": {
+    name: "OnEggy Technologies",
+    url: "https://www.oneggy.com",
+    logo: "https://www.oneggy.com/logov1.png",
+    sameAs: ["https://github.com/onEggy", "https://linkedin.com/company/oneggy"],
+    contactPoint: {
       "@type": "ContactPoint",
-      "email": "support@oneggy.com",
-      "contactType": "customer service"
-    }
+      email: "ask@oneggy.com",
+      telephone: "+91-98111-33005",
+      contactType: "customer service",
+    },
   };
 
   return (
@@ -85,53 +67,37 @@ export default function Home() {
           __html: JSON.stringify(schemaMarkup).replace(/</g, "\\u003c"),
         }}
       />
-      <div className="relative overflow-hidden min-h-screen">
-        {/* 1. Cinematic Hero Section */}
+      <div className="relative">
+        {/* 1. Editorial hero + reliability console */}
         <Hero />
 
-        {/* Client Logos Motion Marquee (Trust) */}
+        {/* 2. Client trust strip */}
         <ClientMarquee />
 
-        {/* 2. Systems Uptime Status board (Trust) */}
-        <StatusBoard />
+        {/* 3. Problems we solve — name the pain, show the fix */}
+        <Problems />
 
-        {/* 3. Core Philosophy & Expertise Narrative */}
-        <ExpertiseNarrative />
+        {/* 4. Outcomes / proof metrics */}
+        <Outcomes />
 
-        {/* 4. Cloud Cost Savings ROI Calculator (Business Outcomes) */}
-        <RoiCalculator />
-
-        {/* 5. Why Choose Us Section (Engineering Capability) */}
-        <WhyChooseUs />
-
-        {/* 6. Services Showcase Section (Services) */}
+        {/* 4. Capabilities index */}
         <ServicesShowcase />
 
-        {/* 7. Process Timeline Section (Delivery Process) */}
+        {/* 5. How we work */}
         <ProcessTimeline />
 
-        {/* 8. Technologies We Use Section (Technology Ecosystem) */}
-        <TechStack />
-
-        {/* 9. Startup Scaling Journey Milestones & Testimonials (Proof) */}
-        <ScalingJourney />
+        {/* 6. Client proof */}
         <Testimonials />
 
-        {/* 10. Team Telemetry Preview */}
-        <TeamPreview />
-
-        {/* 11. FAQ Accordion Section */}
+        {/* 7. FAQ */}
         <FaqAccordion />
 
-        {/* 12. Cloud health assessment lead magnet */}
-        <AssessmentCta />
-
-        {/* 13. Final CTA Section */}
-        <div className="py-12 border-t border-border/40">
+        {/* 8. Final CTA */}
+        <div className="py-16 sm:py-20 border-t border-border">
           <CtaBlock
-            title="Ready to automate and scale your cloud infrastructure?"
-            description="Talk to our senior cloud architects today to build secure platforms, slash monthly waste, and configure zero-downtime releases."
-            btnText="Book Free Consultation"
+            title="Let's pressure-test your cloud."
+            description="Book a 30-minute consultation with a senior architect. We'll review your infrastructure, surface the biggest risks and savings, and show you exactly where we'd start."
+            btnText="Book a consultation"
             btnHref="/contact"
           />
         </div>

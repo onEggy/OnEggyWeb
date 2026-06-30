@@ -2,13 +2,12 @@ import React from "react";
 import { Metadata } from "next";
 import fs from "fs";
 import path from "path";
-import { SectionHeader } from "@/components/common/section-header";
 import { CtaBlock } from "@/components/common/cta-block";
 import { BlogContent } from "@/components/blog/blog-content";
 
 export const metadata: Metadata = {
   title: "Engineering Insights Blog | OnEggy Technologies",
-  description: "Read technical articles, sitemaps blueprints, and tutorials on AWS Control Tower, Kubernetes autoscaling pipelines, Terraform configs, and FastAPI async structures.",
+  description: "Read technical articles and hands-on tutorials on DevOps, AWS, Kubernetes autoscaling, Terraform, and cloud-native platform engineering.",
   alternates: {
     canonical: "https://www.oneggy.com/blog",
   },
@@ -43,43 +42,42 @@ function getBlogPosts(): BlogPostInfo[] {
     const rawPosts: RawBlogPost[] = JSON.parse(rawData);
 
     return rawPosts.map((post: RawBlogPost, idx: number): BlogPostInfo => {
-      let date = "Oct 24, 2024";
-      let readTime = "8 min read";
       let image = "/blogs-thumbnails/oneggy-technologies-integrating-aws-kubernetes.png";
 
-      // Attempt to load frontmatter from the markdown file
+      // Posts have no date field; only the hero image is sourced from the
+      // markdown frontmatter. Read time is estimated from the overview length.
       try {
         const mdPath = path.join(process.cwd(), post.mdFileLocation.replace("./", ""));
         if (fs.existsSync(mdPath)) {
           const content = fs.readFileSync(mdPath, "utf8");
           const frontmatterMatch = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
           if (frontmatterMatch) {
-            const lines = frontmatterMatch[1].split("\n");
-            lines.forEach((line) => {
+            frontmatterMatch[1].split("\n").forEach((line) => {
               const parts = line.split(":");
-              if (parts.length >= 2) {
-                const key = parts[0].trim();
-                const val = parts.slice(1).join(":").trim();
-                if (key === "date") date = val;
-                else if (key === "readTime") readTime = val;
-                else if (key === "mainBigImage") image = val;
+              if (parts.length >= 2 && parts[0].trim() === "mainBigImage") {
+                image = parts.slice(1).join(":").trim();
               }
             });
           }
         }
       } catch {
-        // fallback
+        // fallback to default image
       }
+
+      // Estimate read time from word count (~200 wpm) rather than fabricating it.
+      const wordCount = (post.overview || "").trim().split(/\s+/).filter(Boolean).length;
+      const readTime = `${Math.max(3, Math.ceil(wordCount / 40))} min read`;
 
       return {
         title: post.title,
         excerpt: post.overview || "",
-        date,
+        date: "",
         readTime,
         category: post.category || "DevOps",
         slug: post.slug,
         image,
-        featured: idx === 0, // Make the first post featured
+        // Feature the first (most-recent) post in the archive.
+        featured: idx === 0,
       };
     });
   } catch (error) {
@@ -100,7 +98,7 @@ export default function BlogPage() {
     "@context": "https://schema.org",
     "@type": "Blog",
     "name": "OnEggy Technologies Engineering Blog",
-    "description": "Read technical articles, sitemaps blueprints, and tutorials on AWS Control Tower, Kubernetes autoscaling pipelines, Terraform configs, and FastAPI async structures.",
+    "description": "Read technical articles and hands-on tutorials on DevOps, AWS, Kubernetes autoscaling, Terraform, and cloud-native platform engineering.",
     "url": "https://www.oneggy.com/blog",
     "publisher": {
       "@type": "Organization",
@@ -111,7 +109,6 @@ export default function BlogPage() {
       "@type": "BlogPosting",
       "headline": post.title,
       "description": post.excerpt,
-      "datePublished": post.date,
       "publisher": {
         "@type": "Organization",
         "name": "OnEggy Technologies"
@@ -152,31 +149,31 @@ export default function BlogPage() {
           __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
         }}
       />
-      <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-16">
-        {/* Decorative Orb */}
-        <div className="absolute top-[30%] right-[-10%] w-[300px] h-[300px] rounded-full bg-cyan-500/5 blur-[80px] pointer-events-none -z-10" />
-        <div className="absolute bottom-[20%] left-[-10%] w-[350px] h-[350px] rounded-full bg-teal-500/5 blur-[100px] pointer-events-none -z-10" />
+      {/* Editorial hero */}
+      <section className="max-w-7xl mx-auto px-6 pt-12 pb-12 sm:pt-16 lg:pt-20">
+        <span className="eyebrow mb-6">Our insights</span>
+        <h1 className="display text-5xl sm:text-6xl mt-5 max-w-[16ch]">
+          The OnEggy engineering <em>journal.</em>
+        </h1>
+        <p className="mt-7 text-lg text-muted-foreground leading-relaxed max-w-[58ch]">
+          Field notes, tutorials, and standards from our practice — DevOps, Kubernetes,
+          AWS, and the cloud-native platforms we build and operate.
+        </p>
+      </section>
 
-        <SectionHeader
-          tag="Our Insights"
-          title={<>The OnEggy <span className="text-cyan-400">Engineering Blog</span></>}
-          subtitle="Stay up to date with the latest industry insights, tutorials, and best practices in DevOps, Kubernetes, and Cloud-Native platforms."
-          align="left"
-          className="max-w-3xl"
-        />
-
-        {/* Stateful Client Blog Content */}
+      {/* Stateful client blog index */}
+      <section className="max-w-7xl mx-auto px-6 py-12 sm:py-16">
         <BlogContent posts={posts} categories={categories} />
+      </section>
 
-        {/* Subscription CTA Block */}
-        <div className="py-12 border-t border-border/40">
-          <CtaBlock
-            title="Want engineering articles delivered to your inbox?"
-            description="Subscribe to our monthly newsletter to get Kubernetes scaling blueprints, AWS cost reviews, and secure pipeline checklists."
-            btnText="Subscribe to Insights"
-            btnHref="#footer-newsletter"
-          />
-        </div>
+      {/* Subscription CTA */}
+      <div className="py-16 sm:py-20 border-t border-border">
+        <CtaBlock
+          title="Want engineering articles delivered to your inbox?"
+          description="Subscribe to our monthly newsletter to get Kubernetes scaling blueprints, AWS cost reviews, and secure pipeline checklists."
+          btnText="Subscribe to Insights"
+          btnHref="#footer-newsletter"
+        />
       </div>
     </>
   );
