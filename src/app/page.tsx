@@ -4,12 +4,9 @@ import dynamic from "next/dynamic";
 import { Hero } from "@/components/home/hero";
 
 const ClientMarquee = dynamic(() => import("@/components/home/client-marquee").then((mod) => mod.ClientMarquee));
-const ExpertiseNarrative = dynamic(() => import("@/components/home/expertise-narrative").then((mod) => mod.ExpertiseNarrative));
+const Outcomes = dynamic(() => import("@/components/home/outcomes").then((mod) => mod.Outcomes));
 const ServicesShowcase = dynamic(() => import("@/components/home/services-showcase").then((mod) => mod.ServicesShowcase));
-const WhyChooseUs = dynamic(() => import("@/components/home/why-choose-us").then((mod) => mod.WhyChooseUs));
-const RoiCalculator = dynamic(() => import("@/components/home/roi-calculator").then((mod) => mod.RoiCalculator));
 const ProcessTimeline = dynamic(() => import("@/components/home/process-timeline").then((mod) => mod.ProcessTimeline));
-const TechStack = dynamic(() => import("@/components/home/tech-stack").then((mod) => mod.TechStack));
 const Testimonials = dynamic(() => import("@/components/home/testimonials").then((mod) => mod.Testimonials));
 const FaqAccordion = dynamic(() => import("@/components/home/faq-accordion").then((mod) => mod.FaqAccordion));
 const CtaBlock = dynamic(() => import("@/components/common/cta-block").then((mod) => mod.CtaBlock));
@@ -69,43 +66,34 @@ export default function Home() {
           __html: JSON.stringify(schemaMarkup).replace(/</g, "\\u003c"),
         }}
       />
-      <div className="relative overflow-hidden">
-        {/* 1. Cinematic hero */}
+      <div className="relative">
+        {/* 1. Editorial hero + reliability console */}
         <Hero />
 
-        {/* 2. Client logos (trust) */}
+        {/* 2. Client trust strip */}
         <ClientMarquee />
 
-        {/* 3. Core philosophy & expertise narrative */}
-        <ExpertiseNarrative />
+        {/* 3. Outcomes / proof metrics */}
+        <Outcomes />
 
-        {/* 4. Services showcase */}
+        {/* 4. Capabilities index */}
         <ServicesShowcase />
 
-        {/* 5. Why choose us (engineering capability) */}
-        <WhyChooseUs />
-
-        {/* 6. Cloud cost ROI calculator (business outcomes) */}
-        <RoiCalculator />
-
-        {/* 7. Delivery process timeline */}
+        {/* 5. How we work */}
         <ProcessTimeline />
 
-        {/* 8. Technology ecosystem */}
-        <TechStack />
-
-        {/* 9. Testimonials (proof) */}
+        {/* 6. Client proof */}
         <Testimonials />
 
-        {/* 10. FAQ */}
+        {/* 7. FAQ */}
         <FaqAccordion />
 
-        {/* 11. Final CTA */}
-        <div className="py-12 border-t border-border">
+        {/* 8. Final CTA */}
+        <div className="py-16 sm:py-20 border-t border-border">
           <CtaBlock
-            title="Ready to automate and scale your cloud infrastructure?"
-            description="Talk to our senior cloud architects today to build secure platforms, slash monthly waste, and configure zero-downtime releases."
-            btnText="Book Free Consultation"
+            title="Let's pressure-test your cloud."
+            description="Book a 30-minute consultation with a senior architect. We'll review your infrastructure, surface the biggest risks and savings, and show you exactly where we'd start."
+            btnText="Book a consultation"
             btnHref="/contact"
           />
         </div>

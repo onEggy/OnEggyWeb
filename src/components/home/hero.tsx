@@ -1,115 +1,112 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight, ShieldCheck } from "lucide-react";
-import { HeroVisual } from "./hero-visual";
-import { FadeUp, FadeIn, StaggerContainer, StaggerItem } from "../animations/motion-wrappers";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { OrbitMark } from "../common/orbit-mark";
+
+const trustedBy = ["PineLabs", "EastMojo", "DigisPeax", "Anveshan"];
 
 export function Hero() {
   return (
-    <section className="relative min-h-[80vh] w-full flex items-center justify-center overflow-hidden border-b border-border py-20 md:py-28 blueprint-grid">
-      {/* Blueprint corner crosshairs (decorative) */}
-      <div className="absolute left-4 top-4 text-primary/40 font-mono text-[10px] pointer-events-none select-none" aria-hidden="true">+</div>
-      <div className="absolute right-4 top-4 text-primary/40 font-mono text-[10px] pointer-events-none select-none" aria-hidden="true">+</div>
-      <div className="absolute left-4 bottom-4 text-primary/40 font-mono text-[10px] pointer-events-none select-none" aria-hidden="true">+</div>
-      <div className="absolute right-4 bottom-4 text-primary/40 font-mono text-[10px] pointer-events-none select-none" aria-hidden="true">+</div>
+    <section className="relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 pt-12 pb-16 sm:pt-16 lg:pt-20 lg:pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 items-center">
+          {/* Editorial copy */}
+          <div className="lg:col-span-7 lg:pr-8">
+            <span className="eyebrow mb-7">Cloud &amp; DevOps consulting</span>
 
-      {/* Studio grid side rails — desktop only */}
-      <div className="absolute left-20 top-0 bottom-0 w-px bg-border/60 pointer-events-none hidden lg:block" aria-hidden="true" />
-      <div className="absolute right-20 top-0 bottom-0 w-px bg-border/60 pointer-events-none hidden lg:block" aria-hidden="true" />
+            <h1 className="display text-[2.6rem] leading-[1.05] sm:text-6xl lg:text-[4.2rem] mt-5">
+              We engineer cloud platforms teams can <em>bet the company on.</em>
+            </h1>
 
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 relative z-10 w-full">
-        {/* Left: editorial copy */}
-        <div className="lg:col-span-7 flex flex-col justify-center space-y-9 text-left lg:pr-6">
-          <div className="space-y-5">
-            <FadeIn>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-card text-[11px] font-mono text-muted-foreground uppercase tracking-widest">
-                <ShieldCheck className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
-                <span>Cloud Infrastructure Modernization</span>
-              </div>
-            </FadeIn>
+            <p className="mt-7 text-lg text-muted-foreground leading-relaxed max-w-[46ch]">
+              OnEggy designs, automates, and operates AWS and Kubernetes infrastructure — secure by
+              default, cost-optimized, and built for zero-downtime releases.
+            </p>
 
-            <FadeUp delay={0.1}>
-              <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tighter leading-[1.05] text-foreground font-display">
-                We design and build <br className="hidden sm:block" />
-                <span className="gradient-text-gold">production cloud environments.</span>
-              </h1>
-            </FadeUp>
+            <div className="mt-9 flex flex-col sm:flex-row sm:items-center gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-md bg-accent text-accent-foreground font-semibold text-sm hover:bg-accent/90 transition-colors"
+              >
+                Book a consultation <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/case-studies"
+                className="inline-flex items-center justify-center gap-1.5 h-12 px-3 text-sm font-semibold text-foreground hover:text-primary-strong transition-colors"
+              >
+                See client outcomes <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            </div>
 
-            <FadeUp delay={0.2}>
-              <p className="text-base text-muted-foreground leading-relaxed max-w-[58ch]">
-                OnEggy Technologies is an elite cloud architecture squad. We partner with technology leaders to structure multi-account landing zones, automate Kubernetes container releases, and enforce zero-downtime compliance guardrails. Zero console ClickOps. 100% version-controlled GitOps.
+            <div className="mt-12 pt-7 border-t border-border">
+              <p className="text-xs font-mono uppercase tracking-[0.12em] text-muted-foreground/80 mb-4">
+                Trusted by engineering teams at
               </p>
-            </FadeUp>
-          </div>
-
-          {/* CTAs */}
-          <div className="space-y-6">
-            <FadeUp delay={0.3} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center h-12 px-6 rounded-md bg-accent text-accent-foreground font-bold text-sm hover:bg-accent/90 transition-colors tracking-wide cursor-pointer"
-              >
-                Schedule Consultation <ArrowRight className="h-4 w-4 ml-2" />
-              </Link>
-
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center h-12 px-6 rounded-md border border-primary text-primary-strong bg-card hover:bg-primary/10 text-sm font-bold tracking-wide transition-colors cursor-pointer"
-              >
-                Request Cloud Audit
-              </Link>
-            </FadeUp>
-
-            {/* Technology foundations — monochrome strip */}
-            <FadeIn delay={0.35} className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-6 border-t border-border max-w-xl">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground font-bold">Technology Foundations:</span>
-              <div className="flex items-center gap-6">
-                <div className="relative w-5 h-5 shrink-0" title="AWS">
-                  <Image src="/service/aws.svg" alt="AWS" fill sizes="20px" className="object-contain opacity-60 hover:opacity-100 transition-opacity" />
-                </div>
-                <div className="relative w-5 h-5 shrink-0" title="Kubernetes">
-                  <Image src="/kubernetes.png" alt="Kubernetes" fill sizes="20px" className="object-contain opacity-60 hover:opacity-100 transition-opacity" />
-                </div>
-                <div className="flex items-center gap-1.5 opacity-60 hover:opacity-100 transition-opacity shrink-0" title="Terraform">
-                  <svg className="h-4 w-4 fill-current text-muted-foreground" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M0 0h7.5v7.5h-7.5zm8.25 0h7.5v7.5h-7.5zm8.25 8.25h7.5v7.5h-7.5zm-16.5 0h7.5v7.5h-7.5z" />
-                  </svg>
-                  <span className="text-[10px] font-mono font-extrabold tracking-wider text-muted-foreground">TERRAFORM</span>
-                </div>
-                <div className="relative w-12 h-4 shrink-0" title="Next.js">
-                  <Image src="/next.svg" alt="Next.js" fill sizes="48px" className="object-contain opacity-60 hover:opacity-100 transition-opacity" />
-                </div>
+              <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
+                {trustedBy.map((name) => (
+                  <span key={name} className="text-base font-semibold tracking-tight text-foreground/45">
+                    {name}
+                  </span>
+                ))}
               </div>
-            </FadeIn>
+            </div>
           </div>
 
-          {/* Engineering benchmarks */}
-          <StaggerContainer className="grid grid-cols-3 gap-8 pt-8 border-t border-border max-w-xl">
-            <StaggerItem className="space-y-1">
-              <span className="text-2xl sm:text-3xl font-bold font-mono tracking-tight text-foreground">38%</span>
-              <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold font-mono">Avg Cost Reduction</p>
-            </StaggerItem>
-            <StaggerItem className="space-y-1">
-              <span className="text-2xl sm:text-3xl font-bold font-mono tracking-tight text-foreground">10x</span>
-              <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold font-mono">Deploy Speedup</p>
-            </StaggerItem>
-            <StaggerItem className="space-y-1">
-              <span className="text-2xl sm:text-3xl font-bold font-mono tracking-tight text-foreground">99.99%</span>
-              <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold font-mono">Uptime Target SLA</p>
-            </StaggerItem>
-          </StaggerContainer>
-        </div>
-
-        {/* Right: architecture visual */}
-        <div className="lg:col-span-5 flex items-center justify-center">
-          <FadeIn delay={0.2} duration={0.8} className="w-full">
-            <HeroVisual />
-          </FadeIn>
+          {/* Reliability console — signature object */}
+          <div className="lg:col-span-5">
+            <ConsolePanel />
+          </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function ConsolePanel() {
+  return (
+    <div className="relative surface-card rounded-2xl p-6 sm:p-7 max-w-md mx-auto lg:ml-auto">
+      <OrbitMark size={120} className="absolute -top-6 -right-6 opacity-[0.06] pointer-events-none" />
+
+      <div className="flex items-center justify-between relative">
+        <span className="text-xs font-mono uppercase tracking-[0.1em] text-primary-strong">
+          Reliability console
+        </span>
+        <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+          <span className="status-indicator" /> live
+        </span>
+      </div>
+
+      <div className="mt-6 flex items-end gap-2">
+        <span className="display text-5xl text-foreground">99.99%</span>
+        <span className="text-sm text-muted-foreground pb-1.5">uptime</span>
+      </div>
+
+      <svg viewBox="0 0 280 44" className="w-full h-11 mt-3" preserveAspectRatio="none" aria-hidden="true">
+        <polyline
+          fill="none"
+          stroke="hsl(var(--accent))"
+          strokeWidth="2"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+          points="0,32 35,27 70,33 105,16 140,21 175,11 210,18 245,7 280,12"
+        />
+      </svg>
+
+      <div className="mt-5 grid grid-cols-2 gap-3">
+        <div className="rounded-xl bg-surface-subtle border border-border p-4">
+          <div className="display text-2xl text-foreground">−38%</div>
+          <div className="text-xs text-muted-foreground mt-1">cloud spend</div>
+        </div>
+        <div className="rounded-xl bg-surface-subtle border border-border p-4">
+          <div className="display text-2xl text-foreground">10×</div>
+          <div className="text-xs text-muted-foreground mt-1">deploy speed</div>
+        </div>
+      </div>
+
+      <div className="mt-5 pt-4 border-t border-border flex items-center gap-2 text-xs text-muted-foreground">
+        <span className="status-indicator" />
+        All systems operational
+      </div>
+    </div>
   );
 }

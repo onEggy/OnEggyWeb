@@ -40,7 +40,8 @@
 
   --font-sans: var(--font-inter), sans-serif;
   --font-mono: var(--font-geist-mono), monospace;
-  --font-display: var(--font-geist-sans), sans-serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-grotesk: var(--font-geist-sans), sans-serif;
 }
 
 /*
@@ -224,7 +225,59 @@ body {
   box-shadow: 0 0 0 3px hsl(var(--success) / 0.18);
 }
 
+/* ---------- Editorial system (enterprise-minimal) ---------- */
+
+/* Small teal eyebrow label */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: hsl(var(--primary-strong));
+  font-weight: 600;
+}
+.eyebrow::before {
+  content: "";
+  width: 1.75rem;
+  height: 1px;
+  background: hsl(var(--primary));
+}
+.eyebrow.no-rule::before { display: none; }
+
+/* Editorial serif display — calm, tight, premium */
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.04;
+  color: hsl(var(--foreground));
+}
+.display em {
+  font-style: italic;
+  color: hsl(var(--primary-strong));
+}
+
+/* Hairline section divider */
+.rule {
+  height: 1px;
+  background: hsl(var(--border));
+  border: 0;
+}
+
+/* Orbit brand motif */
+@keyframes orbit-spin {
+  to { transform: rotate(360deg); }
+}
+.orbit-spin {
+  transform-origin: center;
+  animation: orbit-spin 22s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .animate-marquee { animation: none; }
+  .orbit-spin { animation: none; }
 }
