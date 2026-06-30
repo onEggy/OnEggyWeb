@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { Hero } from "@/components/home/hero";
 
 const ClientMarquee = dynamic(() => import("@/components/home/client-marquee").then((mod) => mod.ClientMarquee));
+const Problems = dynamic(() => import("@/components/home/problems").then((mod) => mod.Problems));
 const Outcomes = dynamic(() => import("@/components/home/outcomes").then((mod) => mod.Outcomes));
 const ServicesShowcase = dynamic(() => import("@/components/home/services-showcase").then((mod) => mod.ServicesShowcase));
 const ProcessTimeline = dynamic(() => import("@/components/home/process-timeline").then((mod) => mod.ProcessTimeline));
@@ -73,7 +74,10 @@ export default function Home() {
         {/* 2. Client trust strip */}
         <ClientMarquee />
 
-        {/* 3. Outcomes / proof metrics */}
+        {/* 3. Problems we solve — name the pain, show the fix */}
+        <Problems />
+
+        {/* 4. Outcomes / proof metrics */}
         <Outcomes />
 
         {/* 4. Capabilities index */}
