@@ -5,6 +5,7 @@ import { Layers, Cloud, Smartphone, CheckCircle2 } from "lucide-react";
 import { StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
 import { SectionHeader } from "@/components/common/section-header";
 import { CtaBlock } from "@/components/common/cta-block";
+import { testimonials } from "../../../public/data/testimonial.json";
 
 function getTechLogo(tech: string): string | null {
   const t = tech.toLowerCase();
@@ -29,6 +30,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.oneggy.com/case-studies",
   },
+  openGraph: {
+    type: "website",
+    url: "https://www.oneggy.com/case-studies",
+    title: "Case Studies & Outcomes | OnEggy Technologies",
+    description: "Explore our real client success stories: AWS Cloud restructuring for Smile Foundation, EKS Kubernetes migrations for CloudStok, and fintech React Native setups for Beyond Imagination.",
+    siteName: "OnEggy Technologies",
+  },
 };
 
 const cases = [
@@ -48,7 +56,7 @@ const cases = [
   {
     title: "Kubernetes Migration for CloudStok Technologies",
     sector: "SaaS / Platforms",
-    icon: <Layers className="h-5 w-5 text-blue-400" />,
+    icon: <Layers className="h-5 w-5 text-primary" />,
     challenge: "CloudStok's monolithic SaaS app ran on un-orchestrated instances. Deployments were manual and error-prone, and traffic peaks caused database lockups.",
     solution: "We containerized the workloads using Docker and migrated the platform to AWS EKS. We wrote modular Terraform scripts for IaC, and configured ArgoCD pipelines to enable zero-downtime canary updates.",
     techs: ["AWS EKS", "Terraform IaC", "ArgoCD Pipelines", "Docker", "Prometheus"],
@@ -61,7 +69,7 @@ const cases = [
   {
     title: "Mobile Architecture for Beyond Imagination",
     sector: "Fintech / Blockchain",
-    icon: <Smartphone className="h-5 w-5 text-slate-400" />,
+    icon: <Smartphone className="h-5 w-5 text-primary" />,
     challenge: "Building a fintech blockchain mobile application requiring low-latency database synchronization, secure encryption postures, and rigid compliance auditing.",
     solution: "We engineered a cross-platform React Native app with offline-first local SQL syncing, designed secure microservice APIs on FastAPI, and integrated AWS Secrets Manager for key rotation.",
     techs: ["React Native", "FastAPI APIs", "PostgreSQL Clusters", "AWS Secrets Manager", "GitHub Actions"],
@@ -93,6 +101,20 @@ export default function CaseStudiesPage() {
         }
       }))
     }
+  };
+
+  const reviewCount = testimonials.length;
+  const aggregateRatingSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "OnEggy Technologies",
+    "url": "https://www.oneggy.com",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "bestRating": "5",
+      "reviewCount": reviewCount,
+    },
   };
 
   const breadcrumbSchema = {
@@ -128,9 +150,16 @@ export default function CaseStudiesPage() {
           __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
         }}
       />
-      <div className="max-w-7xl mx-auto px-6 py-16 md:py-32 space-y-24">
-        
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(aggregateRatingSchema).replace(/</g, "\\u003c"),
+        }}
+      />
+      <div className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-28 space-y-24">
+
         <SectionHeader
+          as="h1"
           tag="Proven Outcomes"
           title={<>Client Success & <span className="text-primary">Modernization Case Studies</span></>}
           subtitle="Discover how we partner with engineering leaders to drive deployment speed, slash monthly cloud spend, and implement compliant architectures."
@@ -144,19 +173,19 @@ export default function CaseStudiesPage() {
             return (
               <StaggerItem
                 key={index}
-                className="border border-zinc-900 p-6 sm:p-8 rounded transition-all duration-300 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch bg-zinc-950/20 group hover:border-primary/40"
+                className="surface-card border border-border p-6 sm:p-8 rounded transition-all duration-300 grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch group hover:border-primary/40"
               >
                 {/* Text block */}
-                <div className={`lg:col-span-7 flex flex-col justify-between space-y-6 ${
-                  isEven ? "lg:order-first" : "lg:order-last"
+                <div className={`md:col-span-7 flex flex-col justify-between space-y-6 ${
+                  isEven ? "md:order-first" : "md:order-last"
                 }`}>
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
+                      <div className="w-10 h-10 rounded bg-muted border border-border flex items-center justify-center shrink-0">
                         {item.icon}
                       </div>
                       <div>
-                        <span className="text-[10px] font-mono text-primary font-semibold tracking-wider block">
+                        <span className="text-sm font-mono text-primary-strong font-semibold tracking-wider block">
                           {item.sector}
                         </span>
                         <h2 className="text-xl font-bold text-foreground font-display group-hover:text-primary transition-colors">
@@ -165,24 +194,24 @@ export default function CaseStudiesPage() {
                       </div>
                     </div>
 
-                    <div className="space-y-3.5 pt-4 border-t border-zinc-900/60 select-text font-sans">
-                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                    <div className="space-y-3.5 pt-4 border-t border-border select-text font-sans">
+                      <p className="text-sm text-muted-foreground leading-relaxed">
                         <strong className="text-foreground font-semibold">The Challenge:</strong> {item.challenge}
                       </p>
-                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                      <p className="text-sm text-muted-foreground leading-relaxed">
                         <strong className="text-foreground font-semibold">Strategic Approach:</strong> {item.solution}
                       </p>
                     </div>
                   </div>
 
                   {/* Technologies tags */}
-                  <div className="flex flex-wrap gap-2 pt-4 border-t border-zinc-900/60">
+                  <div className="flex flex-wrap gap-2 pt-4 border-t border-border">
                     {item.techs.map((tech) => {
                       const logo = getTechLogo(tech);
                       return (
                         <span
                           key={tech}
-                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-zinc-900 border border-zinc-800 text-[10px] sm:text-xs text-zinc-400 font-mono"
+                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-muted border border-border text-sm text-muted-foreground font-mono"
                         >
                           {logo && (
                             <div className="relative w-3.5 h-3.5 shrink-0">
@@ -203,31 +232,37 @@ export default function CaseStudiesPage() {
                 </div>
 
                 {/* Corporate Performance Summary Board */}
-                <div className={`lg:col-span-5 flex flex-col justify-center bg-zinc-900/10 rounded border border-zinc-900 p-6 relative overflow-hidden font-sans ${
-                  isEven ? "lg:order-last" : "lg:order-first"
+                <div className={`md:col-span-5 flex flex-col justify-center bg-surface-subtle rounded border border-border p-6 relative overflow-hidden font-sans ${
+                  isEven ? "md:order-last" : "md:order-first"
                 }`}>
-                  <div className="absolute top-3 right-4 text-[9px] font-mono font-bold text-primary uppercase tracking-widest">
+                  <div className="absolute top-3 right-4 text-sm font-mono font-bold text-primary-strong uppercase tracking-widest">
                     strategic deliverables
                   </div>
-                  
+
                   <div className="space-y-6 pt-4">
-                    {item.metrics.map((m, i) => (
-                      <div key={i} className="flex items-center justify-between border-b border-zinc-900/40 pb-3 last:border-0 last:pb-0">
+                    {item.metrics.map((m, i) => {
+                      const isRating = m.num.includes("★");
+                      return (
+                      <div key={i} className="flex items-center justify-between border-b border-border pb-3 last:border-0 last:pb-0">
                         <div className="space-y-0.5">
-                          <span className="text-[9px] uppercase tracking-wider text-muted-foreground font-mono font-semibold">
+                          <span className="text-sm uppercase tracking-wider text-muted-foreground font-mono font-semibold">
                             {m.label}
                           </span>
-                          <span className="text-xl sm:text-2xl font-bold text-foreground block tracking-tight font-display">
+                          <span
+                            className="text-xl sm:text-2xl font-bold text-foreground block tracking-tight font-display"
+                            aria-label={isRating ? "4.8 out of 5" : undefined}
+                          >
                             {m.num}
                           </span>
                         </div>
-                        
-                        <div className="flex items-center gap-1.5 text-[9px] font-bold px-2.5 py-1 rounded border border-zinc-800 bg-zinc-900 font-mono text-primary">
-                          <CheckCircle2 className="h-3 w-3 text-primary" />
+
+                        <div className="flex items-center gap-1.5 text-sm font-bold px-2.5 py-1 rounded border border-border bg-muted font-mono text-primary-strong">
+                          <CheckCircle2 className="h-3 w-3 text-primary" aria-hidden="true" />
                           <span>{m.status}</span>
                         </div>
                       </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
 
@@ -236,7 +271,7 @@ export default function CaseStudiesPage() {
           })}
         </StaggerContainer>
 
-        <div className="py-8 border-t border-zinc-800">
+        <div className="py-8 border-t border-border">
           <CtaBlock
             title="Interested in aligning your infrastructure metrics?"
             description="Schedule a free technology consulting call with our team to discuss your operational, scaling, or compliance requirements."

@@ -55,15 +55,15 @@ const steps = [
 
 export function ProcessTimeline() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-32 border-t border-zinc-900/60 relative">
+    <section className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-28 border-t border-border relative">
       {/* Blueprint Coordinates */}
-      <div className="absolute top-2 left-10 font-mono text-[8px] text-zinc-650 opacity-40 select-none">
+      <div className="absolute top-2 left-10 font-mono text-[10px] text-muted-foreground opacity-40 select-none hidden sm:block" aria-hidden="true">
         GRID.SEC.E // ADVISORY.STEPPER_V1.1
       </div>
-      
+
       {/* Structural layout lines */}
-      <div className="absolute left-10 md:left-20 top-0 bottom-0 w-[1px] bg-zinc-900/40 pointer-events-none" />
-      <div className="absolute right-10 md:right-20 top-0 bottom-0 w-[1px] bg-zinc-900/40 pointer-events-none" />
+      <div className="absolute left-10 md:left-20 top-0 bottom-0 w-px bg-border pointer-events-none hidden lg:block" aria-hidden="true" />
+      <div className="absolute right-10 md:right-20 top-0 bottom-0 w-px bg-border pointer-events-none hidden lg:block" aria-hidden="true" />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start relative z-10">
         
@@ -81,7 +81,7 @@ export function ProcessTimeline() {
         {/* Right Stepper Timeline */}
         <div className="lg:col-span-8 pl-0 md:pl-8 relative">
           {/* Thin vertical timeline line */}
-          <div className="absolute left-4 top-4 bottom-4 w-[1px] bg-zinc-900" />
+          <div className="absolute left-4 top-4 bottom-4 w-px bg-border" aria-hidden="true" />
 
           <StaggerContainer className="space-y-12">
             {steps.map((item) => (
@@ -91,27 +91,27 @@ export function ProcessTimeline() {
               >
                 {/* Milestone indicator dot */}
                 <div className="absolute left-0 top-1.5 -translate-x-1/2 flex items-center justify-center z-10">
-                  <div className="w-8 h-8 rounded border border-zinc-850 bg-zinc-900 flex items-center justify-center text-zinc-400 group-hover:border-primary/45 transition-colors">
+                  <div className="w-8 h-8 rounded border border-border bg-card flex items-center justify-center group-hover:border-primary transition-colors">
                     {item.icon}
                   </div>
                 </div>
 
                 {/* Milestone content */}
                 <div className="space-y-3 font-sans">
-                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-[9px] font-bold text-zinc-550 uppercase tracking-widest">
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-xs font-bold text-muted-foreground uppercase tracking-widest">
                     <span>Phase {item.num} -- {item.badge}</span>
-                    <span className="text-zinc-800 hidden sm:inline">•</span>
-                    <div className="flex items-center gap-1 font-semibold text-primary">
-                      <Clock className="h-3 w-3 text-primary" />
+                    <span className="text-border hidden sm:inline" aria-hidden="true">•</span>
+                    <div className="flex items-center gap-1 font-semibold text-primary-strong">
+                      <Clock className="h-3 w-3 text-primary" aria-hidden="true" />
                       <span>{item.duration}</span>
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-lg font-bold text-foreground font-display transition-colors group-hover:text-primary">
+                    <h3 className="text-lg font-bold text-foreground font-display transition-colors group-hover:text-primary-strong">
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-[60ch]">
+                    <p className="text-sm text-muted-foreground leading-relaxed max-w-[60ch]">
                       {item.desc}
                     </p>
                   </div>
@@ -119,9 +119,9 @@ export function ProcessTimeline() {
                   {/* Technical deliverables grid tags */}
                   <div className="flex flex-wrap gap-2 pt-1">
                     {item.deliverables.map((deliv, i) => (
-                      <span 
+                      <span
                         key={i}
-                        className="px-2.5 py-0.5 rounded text-[10px] font-mono bg-zinc-900/40 border border-zinc-850 text-zinc-400"
+                        className="px-2.5 py-1 rounded text-xs font-mono bg-muted border border-border text-muted-foreground"
                       >
                         {deliv}
                       </span>

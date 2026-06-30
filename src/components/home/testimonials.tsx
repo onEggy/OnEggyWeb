@@ -15,9 +15,9 @@ function getInitials(name: string) {
 }
 
 const avatarBgClasses = [
-  "bg-zinc-900 border border-zinc-800 text-zinc-400 font-mono",
-  "bg-zinc-950 border border-zinc-900/60 text-zinc-450 font-mono",
-  "bg-zinc-900/80 border border-zinc-850 text-zinc-400 font-mono",
+  "bg-primary/10 border border-primary/20 text-primary-strong",
+  "bg-muted border border-border text-foreground",
+  "bg-accent/10 border border-accent/20 text-accent-strong",
 ];
 
 const getAvatarStyle = (name: string) => {
@@ -34,9 +34,9 @@ export function Testimonials() {
   const visibleTestimonials = showAll ? list : list.slice(0, 9);
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-20 border-t border-border/40 relative">
+    <section className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-28 border-t border-border relative">
       {/* Blueprint Coordinates */}
-      <div className="absolute top-2 left-10 font-mono text-[8px] text-zinc-650 opacity-40 select-none">
+      <div className="absolute top-2 left-6 sm:left-10 font-mono text-xs text-muted-foreground/50 select-none pointer-events-none" aria-hidden="true">
         GRID.SEC.H // CLIENT.FEEDBACK_V1.1
       </div>
 
@@ -61,33 +61,33 @@ export function Testimonials() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.3, delay: (index % 3) * 0.08 }}
-                  className="break-inside-avoid glass-card p-6 rounded-xl border border-border/40 hover:border-primary/30 transition-all duration-300 flex flex-col justify-between relative bg-background/25"
+                  className="break-inside-avoid surface-card p-6 rounded-xl border border-border hover:border-primary/40 transition-all duration-300 flex flex-col justify-between relative"
                 >
                   {/* Watermark Quote Icon */}
-                  <Quote className="absolute top-4 right-4 h-8 w-8 text-muted-foreground/5 pointer-events-none" />
+                  <Quote className="absolute top-4 right-4 h-8 w-8 text-primary/10 pointer-events-none" aria-hidden="true" />
 
                   <div className="space-y-4">
                     {/* Stars */}
-                    <div className="flex items-center gap-0.5">
+                    <div className="flex items-center gap-0.5" role="img" aria-label="5 out of 5 stars">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-3.5 w-3.5 fill-primary text-primary" />
+                        <Star key={i} className="h-4 w-4 fill-accent text-accent" aria-hidden="true" />
                       ))}
                     </div>
 
                     {/* Testimonial Quote */}
-                    <p className="text-xs sm:text-sm text-foreground/90 leading-relaxed italic select-text">
+                    <p className="text-sm text-foreground leading-relaxed italic select-text">
                       &ldquo;{item.testimonial}&rdquo;
                     </p>
                   </div>
 
                   {/* Author Block */}
-                  <div className="flex items-center gap-3 border-t border-border/20 pt-4 mt-5">
-                    <div className={`w-9 h-9 rounded-full ${avatarStyle} flex items-center justify-center text-white font-bold font-mono text-xs shadow-md shrink-0 select-none`}>
+                  <div className="flex items-center gap-3 border-t border-border pt-4 mt-5">
+                    <div className={`w-10 h-10 rounded-full ${avatarStyle} flex items-center justify-center font-bold font-mono text-sm shrink-0 select-none`}>
                       {getInitials(item.name)}
                     </div>
                     <div className="min-w-0">
-                      <h4 className="text-xs sm:text-sm font-bold text-foreground truncate">{item.name}</h4>
-                      <p className="text-[10px] sm:text-xs text-muted-foreground truncate font-medium">
+                      <h4 className="text-sm font-bold text-foreground truncate">{item.name}</h4>
+                      <p className="text-xs text-muted-foreground truncate font-medium">
                         {item.designation}
                       </p>
                     </div>
@@ -109,15 +109,16 @@ export function Testimonials() {
         <div className="flex justify-center mt-12 relative z-20">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border/80 bg-background/60 hover:bg-accent/40 text-xs sm:text-sm font-semibold transition-all cursor-pointer shadow-md text-foreground"
+            aria-expanded={showAll}
+            className="inline-flex items-center justify-center gap-2 h-11 px-6 rounded-md border border-primary text-primary-strong bg-card hover:bg-primary/10 text-sm font-semibold transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-primary"
           >
             {showAll ? (
               <>
-                Show Fewer Reviews <ArrowUp className="h-4 w-4" />
+                Show Fewer Reviews <ArrowUp className="h-4 w-4" aria-hidden="true" />
               </>
             ) : (
               <>
-                Show All Reviews ({list.length}) <ArrowDown className="h-4 w-4" />
+                Show All Reviews ({list.length}) <ArrowDown className="h-4 w-4" aria-hidden="true" />
               </>
             )}
           </button>

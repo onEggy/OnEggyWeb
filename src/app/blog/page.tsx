@@ -8,7 +8,7 @@ import { BlogContent } from "@/components/blog/blog-content";
 
 export const metadata: Metadata = {
   title: "Engineering Insights Blog | OnEggy Technologies",
-  description: "Read technical articles, sitemaps blueprints, and tutorials on AWS Control Tower, Kubernetes autoscaling pipelines, Terraform configs, and FastAPI async structures.",
+  description: "Read technical articles and hands-on tutorials on DevOps, AWS, Kubernetes autoscaling, Terraform, and cloud-native platform engineering.",
   alternates: {
     canonical: "https://www.oneggy.com/blog",
   },
@@ -43,43 +43,42 @@ function getBlogPosts(): BlogPostInfo[] {
     const rawPosts: RawBlogPost[] = JSON.parse(rawData);
 
     return rawPosts.map((post: RawBlogPost, idx: number): BlogPostInfo => {
-      let date = "Oct 24, 2024";
-      let readTime = "8 min read";
       let image = "/blogs-thumbnails/oneggy-technologies-integrating-aws-kubernetes.png";
 
-      // Attempt to load frontmatter from the markdown file
+      // Posts have no date field; only the hero image is sourced from the
+      // markdown frontmatter. Read time is estimated from the overview length.
       try {
         const mdPath = path.join(process.cwd(), post.mdFileLocation.replace("./", ""));
         if (fs.existsSync(mdPath)) {
           const content = fs.readFileSync(mdPath, "utf8");
           const frontmatterMatch = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
           if (frontmatterMatch) {
-            const lines = frontmatterMatch[1].split("\n");
-            lines.forEach((line) => {
+            frontmatterMatch[1].split("\n").forEach((line) => {
               const parts = line.split(":");
-              if (parts.length >= 2) {
-                const key = parts[0].trim();
-                const val = parts.slice(1).join(":").trim();
-                if (key === "date") date = val;
-                else if (key === "readTime") readTime = val;
-                else if (key === "mainBigImage") image = val;
+              if (parts.length >= 2 && parts[0].trim() === "mainBigImage") {
+                image = parts.slice(1).join(":").trim();
               }
             });
           }
         }
       } catch {
-        // fallback
+        // fallback to default image
       }
+
+      // Estimate read time from word count (~200 wpm) rather than fabricating it.
+      const wordCount = (post.overview || "").trim().split(/\s+/).filter(Boolean).length;
+      const readTime = `${Math.max(3, Math.ceil(wordCount / 40))} min read`;
 
       return {
         title: post.title,
         excerpt: post.overview || "",
-        date,
+        date: "",
         readTime,
         category: post.category || "DevOps",
         slug: post.slug,
         image,
-        featured: idx === 0, // Make the first post featured
+        // Feature the first (most-recent) post in the archive.
+        featured: idx === 0,
       };
     });
   } catch (error) {
@@ -100,7 +99,7 @@ export default function BlogPage() {
     "@context": "https://schema.org",
     "@type": "Blog",
     "name": "OnEggy Technologies Engineering Blog",
-    "description": "Read technical articles, sitemaps blueprints, and tutorials on AWS Control Tower, Kubernetes autoscaling pipelines, Terraform configs, and FastAPI async structures.",
+    "description": "Read technical articles and hands-on tutorials on DevOps, AWS, Kubernetes autoscaling, Terraform, and cloud-native platform engineering.",
     "url": "https://www.oneggy.com/blog",
     "publisher": {
       "@type": "Organization",
@@ -111,7 +110,6 @@ export default function BlogPage() {
       "@type": "BlogPosting",
       "headline": post.title,
       "description": post.excerpt,
-      "datePublished": post.date,
       "publisher": {
         "@type": "Organization",
         "name": "OnEggy Technologies"
@@ -154,11 +152,12 @@ export default function BlogPage() {
       />
       <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-16">
         {/* Blueprint Coordinates */}
-        <div className="absolute top-2 left-10 font-mono text-[8px] text-zinc-650 opacity-40 select-none">
+        <div aria-hidden="true" className="absolute top-2 left-10 font-mono text-xs text-muted-foreground opacity-40 select-none">
           GRID.SEC.L // BLOG.ARCHIVE_V1.1
         </div>
 
         <SectionHeader
+          as="h1"
           tag="Our Insights"
           title={<>The OnEggy <span className="text-primary font-bold">Engineering Blog</span></>}
           subtitle="Stay up to date with the latest industry insights, tutorials, and best practices in DevOps, Kubernetes, and Cloud-Native platforms."

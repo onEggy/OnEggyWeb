@@ -35,8 +35,7 @@ export function BlogContent({ posts, categories }: BlogContentProps) {
   });
 
   const featuredPost = posts.find((post) => post.featured);
-  
-  // Only show featured post banner if we are in "All" category and search is empty
+
   const showFeaturedBanner =
     featuredPost && activeCategory === "All" && searchQuery.trim() === "";
 
@@ -46,48 +45,48 @@ export function BlogContent({ posts, categories }: BlogContentProps) {
 
   return (
     <div className="space-y-10">
-      {/* Search and Category Filter Header Block */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border/40 pb-6">
-        {/* Category Tabs */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-none shrink-0 max-w-full">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold border transition-all cursor-pointer whitespace-nowrap ${
-                activeCategory === cat
-                  ? "bg-foreground text-background border-foreground shadow-md"
-                  : "bg-background/40 hover:bg-accent/40 border-border text-muted-foreground"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+      {/* Search + category filters */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border pb-6">
+        <div className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-none shrink-0 max-w-full" role="group" aria-label="Filter articles by category">
+          {categories.map((cat) => {
+            const isActive = activeCategory === cat;
+            return (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                aria-pressed={isActive}
+                className={`inline-flex items-center min-h-11 px-4 rounded-md text-sm font-semibold border transition-colors cursor-pointer whitespace-nowrap focus-visible:ring-2 focus-visible:ring-primary ${
+                  isActive
+                    ? "bg-primary text-primary-foreground border-primary"
+                    : "bg-card hover:bg-muted border-border text-muted-foreground"
+                }`}
+              >
+                {cat}
+              </button>
+            );
+          })}
         </div>
 
-        {/* Instant Search Box */}
         <div className="relative w-full md:max-w-xs">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <label htmlFor="blog-search" className="sr-only">Search articles</label>
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
           <input
+            id="blog-search"
             type="text"
             placeholder="Search articles..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full h-10 pl-9 pr-4 rounded-lg bg-background/50 border border-border text-xs sm:text-sm focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/25 transition-all placeholder:text-muted-foreground"
+            className="w-full h-11 pl-9 pr-4 rounded-md bg-card border border-border text-sm focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none placeholder:text-muted-foreground transition-all"
           />
         </div>
       </div>
 
-      {/* 1. Featured Post Banner */}
+      {/* Featured post */}
       {showFeaturedBanner && featuredPost && (
-        <FadeIn className="glass-card p-6 md:p-8 rounded-2xl border border-border/40 hover:border-primary/30 transition-all duration-300 relative overflow-hidden shadow-2xl">
-          {/* Radial visual glow */}
-          <div className="absolute -bottom-40 -left-20 w-[300px] h-[300px] rounded-full bg-primary/5 blur-[80px] pointer-events-none" />
-
+        <FadeIn className="surface-card p-6 md:p-8 rounded-2xl hover:border-primary/30 transition-all duration-300 relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-            {/* Featured Post Image */}
             {featuredPost.image && (
-              <div className="lg:col-span-4 relative aspect-[16/10] w-full rounded-xl overflow-hidden border border-border/40 shadow-inner bg-accent/25">
+              <div className="lg:col-span-4 relative aspect-[16/10] w-full rounded-xl overflow-hidden border border-border bg-muted">
                 <Image
                   src={featuredPost.image}
                   alt={featuredPost.title}
@@ -100,26 +99,30 @@ export function BlogContent({ posts, categories }: BlogContentProps) {
 
             <div className={`${featuredPost.image ? "lg:col-span-8" : "lg:col-span-12"} space-y-4`}>
               <div className="flex items-center gap-4 text-xs font-mono">
-                <span className="px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-semibold border border-primary/20">
+                <span className="px-2.5 py-0.5 rounded-full bg-primary/10 text-primary-strong font-semibold border border-primary/20">
                   Featured: {featuredPost.category}
                 </span>
-                <span className="flex items-center gap-1 text-muted-foreground">
-                  <Clock className="h-3.5 w-3.5" /> {featuredPost.readTime}
-                </span>
+                {featuredPost.readTime && (
+                  <span className="flex items-center gap-1 text-muted-foreground">
+                    <Clock className="h-3.5 w-3.5" aria-hidden="true" /> {featuredPost.readTime}
+                  </span>
+                )}
               </div>
-              <h2 className="text-xl sm:text-3xl font-bold text-foreground hover:text-primary transition-colors">
+              <h2 className="text-xl sm:text-3xl font-display font-bold text-foreground hover:text-primary-strong transition-colors">
                 <Link href={`/blogs/${featuredPost.slug}`}>{featuredPost.title}</Link>
               </h2>
-              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3">
+              <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
                 {featuredPost.excerpt}
               </p>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
-                <span className="flex items-center gap-1 text-xs text-muted-foreground font-mono">
-                  <Calendar className="h-3.5 w-3.5" /> {featuredPost.date}
-                </span>
+                {featuredPost.date && (
+                  <span className="flex items-center gap-1 text-xs text-muted-foreground font-mono">
+                    <Calendar className="h-3.5 w-3.5" aria-hidden="true" /> {featuredPost.date}
+                  </span>
+                )}
                 <Link
                   href={`/blogs/${featuredPost.slug}`}
-                  className="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-lg bg-foreground text-background font-semibold hover:bg-foreground/90 transition-colors shadow-lg cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-md bg-accent text-accent-foreground font-semibold hover:bg-accent/90 transition-colors cursor-pointer"
                 >
                   Read Featured Post <ArrowRight className="h-4 w-4" />
                 </Link>
@@ -129,17 +132,16 @@ export function BlogContent({ posts, categories }: BlogContentProps) {
         </FadeIn>
       )}
 
-      {/* 2. Regular Posts Grid */}
+      {/* Regular posts grid */}
       {regularPosts.length > 0 ? (
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {regularPosts.map((post) => (
             <StaggerItem
               key={post.slug}
-              className="glass-card hover:border-primary/30 p-0 rounded-xl flex flex-col justify-between overflow-hidden transition-all duration-300 group"
+              className="surface-card hover:border-primary/30 p-0 rounded-xl flex flex-col justify-between overflow-hidden transition-all duration-300 group"
             >
-              {/* Optional Post Card Thumbnail */}
               {post.image && (
-                <Link href={`/blogs/${post.slug}`} className="relative aspect-[16/9] w-full block overflow-hidden bg-accent/25 border-b border-border/40">
+                <Link href={`/blogs/${post.slug}`} className="relative aspect-[16/9] w-full block overflow-hidden bg-muted border-b border-border">
                   <Image
                     src={post.image}
                     alt={post.title}
@@ -153,30 +155,36 @@ export function BlogContent({ posts, categories }: BlogContentProps) {
               <div className="p-6 flex flex-col justify-between flex-1 space-y-4">
                 <div className="space-y-3">
                   <div className="flex justify-between items-center text-xs font-mono">
-                    <span className="px-2 py-0.5 rounded bg-background/80 border border-border/40 text-primary font-semibold">
+                    <span className="px-2 py-0.5 rounded bg-muted border border-border text-primary-strong font-semibold">
                       {post.category}
                     </span>
-                    <span className="flex items-center gap-1 text-muted-foreground">
-                      <Clock className="h-3.5 w-3.5" /> {post.readTime}
-                    </span>
+                    {post.readTime && (
+                      <span className="flex items-center gap-1 text-muted-foreground">
+                        <Clock className="h-3.5 w-3.5" aria-hidden="true" /> {post.readTime}
+                      </span>
+                    )}
                   </div>
-                  
-                  <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2">
+
+                  <h3 className="text-base font-bold text-foreground group-hover:text-primary-strong transition-colors line-clamp-2">
                     <Link href={`/blogs/${post.slug}`}>{post.title}</Link>
                   </h3>
-                  
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3">
+
+                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
                     {post.excerpt}
                   </p>
                 </div>
 
-                <div className="border-t border-border/20 pt-4 flex items-center justify-between text-xs text-muted-foreground">
-                  <span className="flex items-center gap-1 font-mono">
-                    <Calendar className="h-3.5 w-3.5" /> {post.date}
-                  </span>
-                  <Link 
+                <div className="border-t border-border pt-4 flex items-center justify-between text-xs text-muted-foreground">
+                  {post.date ? (
+                    <span className="flex items-center gap-1 font-mono">
+                      <Calendar className="h-3.5 w-3.5" aria-hidden="true" /> {post.date}
+                    </span>
+                  ) : (
+                    <span />
+                  )}
+                  <Link
                     href={`/blogs/${post.slug}`}
-                    className="font-semibold text-foreground group-hover:text-primary inline-flex items-center gap-1 cursor-pointer"
+                    className="font-semibold text-primary-strong inline-flex items-center gap-1 cursor-pointer"
                   >
                     Read Article <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
                   </Link>
@@ -187,9 +195,9 @@ export function BlogContent({ posts, categories }: BlogContentProps) {
         </StaggerContainer>
       ) : (
         <div className="text-center py-16 text-muted-foreground">
-          <BookOpen className="h-10 w-10 mx-auto opacity-20 mb-3 animate-pulse" />
+          <BookOpen className="h-10 w-10 mx-auto opacity-20 mb-3" aria-hidden="true" />
           <p className="text-sm font-semibold">No articles found.</p>
-          <p className="text-xs mt-1 text-muted-foreground/60">Try searching for other keywords or select a different category.</p>
+          <p className="text-xs mt-1 text-muted-foreground/70">Try searching for other keywords or select a different category.</p>
         </div>
       )}
     </div>

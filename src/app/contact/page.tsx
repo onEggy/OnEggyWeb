@@ -62,7 +62,7 @@ export default function ContactPage() {
       />
       <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-16">
         {/* Blueprint Coordinates */}
-        <div className="absolute top-2 left-10 font-mono text-[8px] text-zinc-650 opacity-40 select-none">
+        <div className="absolute top-2 left-10 font-mono text-sm text-muted-foreground opacity-40 select-none" aria-hidden="true">
           GRID.SEC.L // CONTACT.INTERFACE_V1.0
         </div>
 
@@ -70,6 +70,7 @@ export default function ContactPage() {
         <div className="lg:col-span-5 space-y-10 flex flex-col justify-between">
           <div className="space-y-6">
             <SectionHeader
+              as="h1"
               tag="Get in Touch"
               title={<>Ready to <span className="text-primary font-bold">Transform?</span></>}
               subtitle="Have questions about Kubernetes deployments or AWS cost reduction options? Reach out to schedule a free architecture consultation session."
@@ -79,35 +80,35 @@ export default function ContactPage() {
 
             <FadeIn delay={0.2} className="divide-y divide-border/25 pt-4">
               <div className="flex items-center gap-4 py-4 first:pt-0">
-                <div className="w-9 h-9 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0 shadow-sm">
-                  <Mail className="h-4.5 w-4.5 text-primary" />
+                <div className="w-9 h-9 rounded bg-muted border border-border flex items-center justify-center shrink-0 shadow-sm">
+                  <Mail className="h-4.5 w-4.5 text-primary" aria-hidden="true" />
                 </div>
                 <div>
-                  <span className="text-[9px] uppercase tracking-wider text-muted-foreground block font-mono">Email Us</span>
-                  <a href="mailto:ask@oneggy.com" className="text-sm font-semibold hover:text-primary transition-colors">
+                  <span className="text-sm uppercase tracking-wider text-muted-foreground block font-mono">Email Us</span>
+                  <a href="mailto:ask@oneggy.com" className="text-sm font-semibold hover:text-primary-strong transition-colors">
                     ask@oneggy.com
                   </a>
                 </div>
               </div>
 
               <div className="flex items-center gap-4 py-4">
-                <div className="w-9 h-9 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0 shadow-sm">
-                  <Phone className="h-4.5 w-4.5 text-amber-500" />
+                <div className="w-9 h-9 rounded bg-muted border border-border flex items-center justify-center shrink-0 shadow-sm">
+                  <Phone className="h-4.5 w-4.5 text-primary" aria-hidden="true" />
                 </div>
                 <div>
-                  <span className="text-[9px] uppercase tracking-wider text-muted-foreground block font-mono">Call Us</span>
-                  <a href="tel:+919811133005" className="text-sm font-semibold hover:text-primary transition-colors">
+                  <span className="text-sm uppercase tracking-wider text-muted-foreground block font-mono">Call Us</span>
+                  <a href="tel:+919811133005" className="text-sm font-semibold hover:text-primary-strong transition-colors">
                     +91 98111 33005
                   </a>
                 </div>
               </div>
 
               <div className="flex items-center gap-4 py-4 last:pb-0">
-                <div className="w-9 h-9 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0 shadow-sm">
-                  <MapPin className="h-4.5 w-4.5 text-amber-600" />
+                <div className="w-9 h-9 rounded bg-muted border border-border flex items-center justify-center shrink-0 shadow-sm">
+                  <MapPin className="h-4.5 w-4.5 text-primary" aria-hidden="true" />
                 </div>
                 <div>
-                  <span className="text-[9px] uppercase tracking-wider text-muted-foreground block font-mono">Location</span>
+                  <span className="text-sm uppercase tracking-wider text-muted-foreground block font-mono">Location</span>
                   <span className="text-sm font-semibold">Gurgaon, Delhi NCR, India</span>
                 </div>
               </div>
@@ -115,11 +116,11 @@ export default function ContactPage() {
           </div>
 
           {/* Quick Meeting Panel */}
-          <FadeIn delay={0.3} className="p-5 rounded-xl border border-border bg-background/25 space-y-4 max-w-sm">
+          <FadeIn delay={0.3} className="surface-card p-5 rounded-xl border border-border space-y-4 max-w-sm">
             <h3 className="text-sm font-bold text-foreground inline-flex items-center gap-2 font-mono">
-              <Calendar className="h-4.5 w-4.5 text-primary" /> Need quick response?
+              <Calendar className="h-4.5 w-4.5 text-primary" aria-hidden="true" /> Need quick response?
             </h3>
-            <p className="text-xs text-muted-foreground leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Schedule a direct 30-minute cloud-native engineering assessment with our senior architect.
             </p>
             <div className="flex flex-wrap items-center gap-3">
@@ -127,12 +128,12 @@ export default function ContactPage() {
                 href="https://cal.com/oneggy-aakash-sharma/30min"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center text-xs font-semibold h-9 px-4 rounded-md bg-foreground text-background hover:bg-foreground/90 transition-colors"
+                className="inline-flex items-center justify-center text-sm font-semibold h-11 px-4 rounded-md border border-primary text-primary-strong hover:bg-primary/10 transition-colors focus-visible:ring-2 focus-visible:ring-primary focus:outline-none"
               >
                 Book Review
               </a>
-              <div className="flex items-center gap-1 text-[10px] font-mono text-muted-foreground">
-                <Clock className="h-3.5 w-3.5" />
+              <div className="flex items-center gap-1 text-sm font-mono text-muted-foreground">
+                <Clock className="h-3.5 w-3.5" aria-hidden="true" />
                 <span>Next slot today</span>
               </div>
             </div>

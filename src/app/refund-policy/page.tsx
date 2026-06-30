@@ -94,17 +94,18 @@ export default function RefundPolicyPage() {
     <>
       <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-16">
         {/* Blueprint Coordinates */}
-        <div className="absolute top-2 left-10 font-mono text-[8px] text-zinc-650 opacity-40 select-none">
+        <div className="absolute top-2 left-10 font-mono text-sm text-muted-foreground opacity-40 select-none">
           GRID.SEC.L // BILLING.POLICY_V1.0
         </div>
 
         {/* 1. HERO SECTION */}
         <div className="text-center max-w-3xl mx-auto space-y-6 pt-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-background/50 backdrop-blur-sm text-xs font-mono text-primary shadow-sm">
-            <ShieldCheck className="h-3.5 w-3.5" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-card text-sm font-mono text-primary-strong shadow-sm">
+            <ShieldCheck className="h-3.5 w-3.5" aria-hidden="true" />
             <span>Transparent Billing Standards</span>
           </div>
           <SectionHeader
+            as="h1"
             title={<>Refund & <span className="text-primary font-bold">Billing Policy</span></>}
             subtitle="Transparent guidelines protecting custom DevOps retainers, cloud-native deployments, and software engineering agreements."
             align="center"
@@ -114,25 +115,25 @@ export default function RefundPolicyPage() {
 
         {/* 2. CORPORATE IDENTIFICATION SUMMARY CARD */}
         <div className="max-w-4xl mx-auto">
-          <div className="glass-card p-6 rounded-2xl border border-border/40 bg-background/25 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg">
+          <div className="surface-card p-6 rounded-2xl border border-border flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary shrink-0">
-                <Building2 className="h-6 w-6" />
+                <Building2 className="h-6 w-6" aria-hidden="true" />
               </div>
               <div className="space-y-1">
                 <h4 className="text-sm font-bold text-foreground font-mono">OnEggy Technologies</h4>
-                <p className="text-xs text-muted-foreground">Registered Corporate Entity in Delhi NCR, India</p>
+                <p className="text-sm text-muted-foreground">Registered Corporate Entity in Delhi NCR, India</p>
               </div>
             </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 text-xs font-mono shrink-0">
+
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 text-sm font-mono shrink-0">
               <div className="space-y-1">
-                <span className="text-[10px] text-muted-foreground uppercase tracking-wider block">Company CIN</span>
-                <span className="font-semibold text-foreground bg-accent/30 px-2 py-0.5 rounded border border-border/50">U72900DL2022OPC407567</span>
+                <span className="text-sm text-muted-foreground uppercase tracking-wider block">Company CIN</span>
+                <span className="font-semibold text-foreground bg-muted px-2 py-0.5 rounded border border-border">U72900DL2022OPC407567</span>
               </div>
               <div className="space-y-1">
-                <span className="text-[10px] text-muted-foreground uppercase tracking-wider block">Company GSTIN</span>
-                <span className="font-semibold text-foreground bg-accent/30 px-2 py-0.5 rounded border border-border/50">07AADCO9485D1Z6</span>
+                <span className="text-sm text-muted-foreground uppercase tracking-wider block">Company GSTIN</span>
+                <span className="font-semibold text-foreground bg-muted px-2 py-0.5 rounded border border-border">07AADCO9485D1Z6</span>
               </div>
             </div>
           </div>
@@ -142,9 +143,9 @@ export default function RefundPolicyPage() {
         <div className="max-w-4xl mx-auto space-y-4">
           <div className="space-y-2 mb-6">
             <h2 className="text-xl font-bold text-foreground inline-flex items-center gap-2">
-              <FileText className="h-5 w-5 text-primary" /> Policy Clauses
+              <FileText className="h-5 w-5 text-primary" aria-hidden="true" /> Policy Clauses
             </h2>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-sm text-muted-foreground">
               Click on each section below to review the specific guidelines and billing terms:
             </p>
           </div>
@@ -153,16 +154,16 @@ export default function RefundPolicyPage() {
             {policySections.map((sec, index) => (
               <StaggerItem
                 key={index}
-                className="glass-card border border-border/40 rounded-xl overflow-hidden hover:border-primary/20 transition-all duration-300 shadow-sm"
+                className="surface-card border border-border rounded-xl overflow-hidden hover:border-primary/30 transition-all duration-300 shadow-sm"
               >
                 <details className="group [&_summary::-webkit-details-marker]:hidden">
-                  <summary className="flex items-center justify-between p-5 cursor-pointer font-bold text-foreground hover:bg-accent/20 transition-colors select-none">
-                    <span className="text-sm md:text-base font-semibold pr-4">{sec.title}</span>
+                  <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-foreground hover:bg-muted transition-colors select-none">
+                    <span className="text-sm md:text-base pr-4">{sec.title}</span>
                     <span className="transition-transform duration-300 group-open:rotate-180 shrink-0 text-muted-foreground group-hover:text-primary">
-                      <ChevronDown className="h-4 w-4" />
+                      <ChevronDown className="h-4 w-4" aria-hidden="true" />
                     </span>
                   </summary>
-                  <div className="px-5 pb-5 pt-1 border-t border-border/20 text-xs sm:text-sm text-muted-foreground leading-relaxed bg-background/5 space-y-3 font-medium">
+                  <div className="px-5 pb-5 pt-1 border-t border-border text-sm text-muted-foreground leading-relaxed space-y-3">
                     <p>{sec.content}</p>
                   </div>
                 </details>
@@ -175,42 +176,42 @@ export default function RefundPolicyPage() {
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-border/40 pt-16">
           <div className="space-y-3">
             <h3 className="text-lg font-bold text-foreground">Transparent Communication</h3>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed">
               We coordinate engineering deliverables in open sprints. Our clients have direct visibility into code updates, active issues, and pipeline runs, ensuring zero administrative blockages or surprises.
             </p>
           </div>
           <div className="space-y-3">
             <h3 className="text-lg font-bold text-foreground">Customer-First Commitment</h3>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed">
               If an architecture setup or codebase release does not align with your scope, we will hold peer review workshops and modify components immediately, standing behind our standards of excellence.
             </p>
           </div>
         </div>
 
         {/* 5. CONTACT SUPPORT CTA */}
-        <div className="max-w-4xl mx-auto bg-gradient-to-tr from-primary/5 to-transparent border border-border/40 rounded-2xl p-8 text-center space-y-6 shadow-xl">
+        <div className="max-w-4xl mx-auto gradient-bg border border-border rounded-2xl p-8 text-center space-y-6 shadow-xl">
           <div className="w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mx-auto">
-            <HelpCircle className="h-6 w-6" />
+            <HelpCircle className="h-6 w-6" aria-hidden="true" />
           </div>
           <div className="space-y-2 max-w-lg mx-auto">
             <h3 className="text-xl font-bold text-foreground">Have questions about your invoice?</h3>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed">
               For any payment questions, retainer adjustments, or custom billing structures, please contact our billing desk.
             </p>
           </div>
-          
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a 
+            <a
               href="mailto:billing@oneggy.com"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-11 px-6 rounded-lg bg-foreground text-background hover:bg-foreground/90 font-semibold text-xs sm:text-sm transition-all cursor-pointer shadow-md"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-11 px-6 rounded-md bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-sm transition-all cursor-pointer shadow-md focus-visible:ring-2 focus-visible:ring-primary"
             >
-              <Mail className="h-4 w-4" /> Email Billing Team
+              <Mail className="h-4 w-4" aria-hidden="true" /> Email Billing Team
             </a>
             <Link
               href="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-11 px-6 rounded-lg bg-background border border-border hover:bg-accent/40 hover:border-border/80 font-semibold text-xs sm:text-sm transition-all cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-11 px-6 rounded-md border border-primary text-primary-strong hover:bg-primary/10 font-semibold text-sm transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-primary"
             >
-              Request Call <ArrowRight className="h-4 w-4" />
+              Request Call <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
         </div>

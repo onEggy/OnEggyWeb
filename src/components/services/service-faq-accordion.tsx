@@ -30,17 +30,19 @@ export function ServiceFaqAccordion({ faqs }: ServiceFaqAccordionProps) {
         return (
           <div
             key={index}
-            className="border border-border/40 rounded-xl bg-background/30 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:border-primary/20"
+            className="surface-card border border-border rounded-xl overflow-hidden transition-all duration-300 hover:border-primary/20"
           >
             <button
+              type="button"
               onClick={() => toggleFAQ(index)}
               aria-expanded={isOpen}
               aria-controls={`service-faq-answer-${index}`}
               id={`service-faq-button-${index}`}
-              className="w-full flex items-center justify-between p-5 text-left font-semibold text-foreground hover:text-primary transition-colors cursor-pointer select-none"
+              className="w-full flex items-center justify-between p-5 text-left font-semibold text-foreground hover:text-primary-strong transition-colors cursor-pointer select-none focus-visible:ring-2 focus-visible:ring-primary"
             >
               <span className="text-sm sm:text-base pr-4">{item.question}</span>
               <ChevronDown
+                aria-hidden="true"
                 className={cn(
                   "h-4 w-4 shrink-0 transition-transform duration-300 text-muted-foreground",
                   isOpen ? "rotate-180 text-primary" : ""
@@ -59,7 +61,7 @@ export function ServiceFaqAccordion({ faqs }: ServiceFaqAccordionProps) {
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.25, ease: "easeInOut" }}
                 >
-                  <div className="px-5 pb-5 pt-1 border-t border-border/20 text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                  <div className="px-5 pb-5 pt-1 border-t border-border text-sm text-muted-foreground leading-relaxed">
                     {item.answer}
                   </div>
                 </motion.div>

@@ -43,9 +43,9 @@ function getInitials(name: string) {
 }
 
 const avatarBgClasses = [
-  "bg-zinc-900 border border-zinc-800 text-zinc-400 font-mono",
-  "bg-zinc-950 border border-zinc-900/60 text-zinc-450 font-mono",
-  "bg-zinc-900/80 border border-zinc-850 text-zinc-400 font-mono",
+  "bg-muted border border-border text-muted-foreground font-mono",
+  "bg-muted border border-border text-muted-foreground font-mono",
+  "bg-muted border border-border text-muted-foreground font-mono",
 ];
 
 const getAvatarStyle = (name: string) => {
@@ -89,6 +89,11 @@ export async function generateMetadata({ params }: PageProps) {
       url: `https://www.oneggy.com/services/${service.slug}`,
       type: "website",
     },
+    twitter: {
+      card: "summary_large_image",
+      title: service.seo.title,
+      description: service.seo.description,
+    },
   };
 }
 
@@ -125,6 +130,65 @@ export default async function ServicePage({ params }: PageProps) {
       }))
     }
   };
+
+  // Breadcrumb structured data (Home > Services > {service.title})
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.oneggy.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://www.oneggy.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": service.title,
+        "item": `https://www.oneggy.com/services/${service.slug}`
+      }
+    ]
+  };
+
+  // FAQ structured data built from the service FAQ entries
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": service.faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
+  // Category-aware intro/timeline copy (problems/solutions arrays stay as-is)
+  const categoryCopy = {
+    cloud: {
+      challengeIntro: "Organizations frequently hit compliance, deployment, and cost barriers due to legacy un-managed cloud setups:",
+      solutionIntro: "We codify secure infrastructure policies and deploy automated workflows to optimize reliability:",
+      timelineSubtitle: "How we transition your cloud workloads from initial audit reviews to governed production setups."
+    },
+    devops: {
+      challengeIntro: "Engineering teams frequently hit release-velocity, reliability, and toil barriers due to manual, un-automated pipelines:",
+      solutionIntro: "We codify automated CI/CD pipelines and infrastructure-as-code workflows to optimize delivery reliability:",
+      timelineSubtitle: "How we transition your delivery pipelines from initial audit reviews to governed, automated production workflows."
+    },
+    software: {
+      challengeIntro: "Product teams frequently hit code quality, scalability, and maintainability barriers due to rushed, un-architected applications:",
+      solutionIntro: "We engineer clean, well-tested application code and modular product architecture to optimize quality and velocity:",
+      timelineSubtitle: "How we transition your product and application code from initial audit reviews to governed, production-ready releases."
+    }
+  }[service.category];
 
   // Reusable timeline process data
   const processSteps = [
@@ -166,11 +230,20 @@ export default async function ServicePage({ params }: PageProps) {
           __html: JSON.stringify(schemaMarkup).replace(/</g, "\\u003c"),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
+        }}
+      />
 
       <div className="relative overflow-hidden min-h-screen">
-        {/* Subtle Background Accent */}
-        <div className="absolute top-[8%] right-[-10%] w-[350px] h-[350px] rounded-full bg-blue-500/5 blur-[120px] pointer-events-none -z-10 animate-pulse" />
-
         {/* 1. HERO SECTION */}
         <section className="relative pt-16 pb-24 md:py-32 flex flex-col items-center justify-center text-center">
           <div className="max-w-4xl mx-auto px-6 space-y-8 relative z-10">
@@ -203,7 +276,7 @@ export default async function ServicePage({ params }: PageProps) {
                   return (
                     <span 
                       key={tech} 
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono bg-zinc-900 border border-zinc-800 text-foreground/80 shadow-sm"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono bg-muted border border-border text-foreground/80 shadow-sm"
                     >
                       {logo && (
                         <div className="relative w-3.5 h-3.5 shrink-0">
@@ -226,13 +299,13 @@ export default async function ServicePage({ params }: PageProps) {
             <FadeUp delay={0.3} className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-12 px-8 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 font-semibold transition-colors cursor-pointer shadow-lg"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-12 px-8 rounded-md bg-accent text-accent-foreground hover:bg-accent/90 font-semibold transition-colors cursor-pointer shadow-lg focus-visible:ring-2 focus-visible:ring-primary"
               >
                 Request Advisory Assessment <ArrowRight className="h-4 w-4" />
               </Link>
               <a
                 href="#blueprint"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-12 px-8 rounded-lg bg-background border border-border hover:bg-zinc-900 font-semibold transition-colors cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-12 px-8 rounded-md border border-primary text-primary-strong hover:bg-primary/10 font-semibold transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-primary"
               >
                 Review Framework Map
               </a>
@@ -241,10 +314,10 @@ export default async function ServicePage({ params }: PageProps) {
         </section>
 
         {/* 2. THE CHALLENGE VS. THE SOLUTION */}
-        <section className="max-w-7xl mx-auto px-6 py-32 border-t border-zinc-900/60 relative">
+        <section className="max-w-7xl mx-auto px-6 py-32 border-t border-border relative">
           {/* Structural layout lines */}
-          <div className="absolute left-10 md:left-20 top-0 bottom-0 w-[1px] bg-zinc-900/40 pointer-events-none" />
-          <div className="absolute right-10 md:right-20 top-0 bottom-0 w-[1px] bg-zinc-900/40 pointer-events-none" />
+          <div className="hidden lg:block absolute left-10 md:left-20 top-0 bottom-0 w-[1px] bg-border pointer-events-none" />
+          <div className="hidden lg:block absolute right-10 md:right-20 top-0 bottom-0 w-[1px] bg-border pointer-events-none" />
 
           <div className="relative z-10">
             <SectionHeader
@@ -258,17 +331,17 @@ export default async function ServicePage({ params }: PageProps) {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
               {/* The Challenges Column */}
               <div className="space-y-6 pl-0 lg:pl-10">
-                <div className="flex items-center gap-3 text-red-500/90 font-semibold">
+                <div className="flex items-center gap-3 text-destructive font-semibold">
                   <AlertTriangle className="h-5 w-5" />
                   <h3 className="text-lg font-display font-bold">Operational Vulnerabilities</h3>
                 </div>
-                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
-                  Organizations frequently hit compliance, deployment, and cost barriers due to legacy un-managed setups:
+                <p className="text-sm text-muted-foreground leading-relaxed font-sans">
+                  {categoryCopy.challengeIntro}
                 </p>
-                <ul className="space-y-4 font-sans text-xs sm:text-sm text-muted-foreground">
+                <ul className="space-y-4 font-sans text-sm text-muted-foreground">
                   {service.problems.map((problem, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <span className="w-1 h-1 rounded-full bg-red-500 shrink-0 mt-2" />
+                      <span className="w-1 h-1 rounded-full bg-destructive shrink-0 mt-2" />
                       <span className="leading-relaxed">{problem}</span>
                     </li>
                   ))}
@@ -276,15 +349,15 @@ export default async function ServicePage({ params }: PageProps) {
               </div>
 
               {/* Our Solutions Column */}
-              <div className="space-y-6 pr-0 lg:pr-10 border-t lg:border-t-0 lg:border-l border-zinc-900 pt-8 lg:pt-0 lg:pl-12">
+              <div className="space-y-6 pr-0 lg:pr-10 border-t lg:border-t-0 lg:border-l border-border pt-8 lg:pt-0 lg:pl-12">
                 <div className="flex items-center gap-3 text-primary font-semibold">
                   <CheckCircle2 className="h-5 w-5" />
                   <h3 className="text-lg font-display font-bold">Strategic Resolution Model</h3>
                 </div>
-                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
-                  We codify secure infrastructure policies and deploy automated workflows to optimize reliability:
+                <p className="text-sm text-muted-foreground leading-relaxed font-sans">
+                  {categoryCopy.solutionIntro}
                 </p>
-                <ul className="space-y-4 font-sans text-xs sm:text-sm text-muted-foreground">
+                <ul className="space-y-4 font-sans text-sm text-muted-foreground">
                   {service.solutions.map((solution, idx) => (
                     <li key={idx} className="flex items-start gap-3">
                       <span className="w-1 h-1 rounded-full bg-primary shrink-0 mt-2" />
@@ -298,10 +371,10 @@ export default async function ServicePage({ params }: PageProps) {
         </section>
 
         {/* 3. CORE SERVICE FEATURES ROSTER */}
-        <section className="max-w-7xl mx-auto px-6 py-32 border-t border-zinc-900/60 relative">
+        <section className="max-w-7xl mx-auto px-6 py-32 border-t border-border relative">
           {/* Structural layout lines */}
-          <div className="absolute left-10 md:left-20 top-0 bottom-0 w-[1px] bg-zinc-900/40 pointer-events-none" />
-          <div className="absolute right-10 md:right-20 top-0 bottom-0 w-[1px] bg-zinc-900/40 pointer-events-none" />
+          <div className="hidden lg:block absolute left-10 md:left-20 top-0 bottom-0 w-[1px] bg-border pointer-events-none" />
+          <div className="hidden lg:block absolute right-10 md:right-20 top-0 bottom-0 w-[1px] bg-border pointer-events-none" />
 
           <div className="relative z-10">
             <SectionHeader
@@ -312,14 +385,14 @@ export default async function ServicePage({ params }: PageProps) {
               className="mb-20"
             />
 
-            <div className="divide-y divide-zinc-900 mx-0 md:mx-14 border-t border-b border-zinc-900">
+            <div className="divide-y divide-border mx-0 md:mx-14 border-t border-b border-border">
               {service.features.map((feature, idx) => (
                 <div 
                   key={idx}
                   className="py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-start group"
                 >
                   <div className="md:col-span-3">
-                    <span className="text-[9px] font-mono text-primary font-bold uppercase tracking-widest block pt-0.5">
+                    <span className="text-xs font-mono text-primary font-bold uppercase tracking-widest block pt-0.5">
                       Practice Segment {idx + 1}
                     </span>
                   </div>
@@ -329,10 +402,10 @@ export default async function ServicePage({ params }: PageProps) {
                     </h3>
                   </div>
                   <div className="md:col-span-5 space-y-2 font-sans">
-                    <p className="text-xs sm:text-sm text-foreground/80 leading-relaxed font-semibold">
+                    <p className="text-sm text-foreground/80 leading-relaxed font-semibold">
                       {feature.desc}
                     </p>
-                    <p className="text-xs text-muted-foreground leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       {feature.detail}
                     </p>
                   </div>
@@ -343,7 +416,7 @@ export default async function ServicePage({ params }: PageProps) {
         </section>
 
         {/* 4. METRICS / BENEFITS ROW */}
-        <section className="border-y border-zinc-900 bg-zinc-900/10 py-24 relative">
+        <section className="border-y border-border bg-surface-subtle py-24 relative">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-center">
               {service.benefits.map((benefit, idx) => (
@@ -351,7 +424,7 @@ export default async function ServicePage({ params }: PageProps) {
                   <div className="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground font-mono">
                     {benefit.num}
                   </div>
-                  <div className="text-[9px] sm:text-[10px] font-mono uppercase tracking-widest text-zinc-500 font-bold">
+                  <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground font-bold">
                     {benefit.label}
                   </div>
                 </div>
@@ -362,27 +435,27 @@ export default async function ServicePage({ params }: PageProps) {
 
         {/* 5. INTERACTIVE ARCHITECTURE BLUEPRINT MAP */}
         <div id="blueprint" className="relative">
-          <div className="absolute left-6 md:left-20 top-0 bottom-0 w-[1px] bg-zinc-900/40 pointer-events-none" />
-          <div className="absolute right-6 md:right-20 top-0 bottom-0 w-[1px] bg-zinc-900/40 pointer-events-none" />
+          <div className="hidden lg:block absolute left-6 md:left-20 top-0 bottom-0 w-[1px] bg-border pointer-events-none" />
+          <div className="hidden lg:block absolute right-6 md:right-20 top-0 bottom-0 w-[1px] bg-border pointer-events-none" />
           <ServiceArchitecture category={service.category} serviceName={service.title} />
         </div>
 
         {/* 6. PROCESS TIMELINE STEPPER */}
-        <section className="max-w-7xl mx-auto px-6 py-32 border-t border-zinc-900/60 relative">
+        <section className="max-w-7xl mx-auto px-6 py-32 border-t border-border relative">
           {/* Structural layout lines */}
-          <div className="absolute left-10 md:left-20 top-0 bottom-0 w-[1px] bg-zinc-900/40 pointer-events-none" />
-          <div className="absolute right-10 md:right-20 top-0 bottom-0 w-[1px] bg-zinc-900/40 pointer-events-none" />
+          <div className="hidden lg:block absolute left-10 md:left-20 top-0 bottom-0 w-[1px] bg-border pointer-events-none" />
+          <div className="hidden lg:block absolute right-10 md:right-20 top-0 bottom-0 w-[1px] bg-border pointer-events-none" />
 
           <div className="relative z-10">
             <SectionHeader
               tag="Methodology"
               title="Advisory & Delivery Timeline"
-              subtitle="How we transition your cloud workloads from initial audit reviews to governed production setups."
+              subtitle={categoryCopy.timelineSubtitle}
               align="center"
               className="mb-20"
             />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative border-t border-b border-zinc-900 py-10 divide-y sm:divide-y-0 sm:divide-x divide-zinc-900 mx-0 md:mx-14">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative border-t border-b border-border py-10 divide-y sm:divide-y-0 sm:divide-x divide-border mx-0 md:mx-14">
               {processSteps.map((step, idx) => (
                 <div key={idx} className="space-y-4 px-0 sm:px-6 first:pl-0 last:pr-0 pt-6 sm:pt-0 first:pt-0">
                   <div className="text-xl font-bold text-primary font-mono">
@@ -399,10 +472,10 @@ export default async function ServicePage({ params }: PageProps) {
         </section>
 
         {/* 7. CLIENT TESTIMONIALS */}
-        <section className="max-w-7xl mx-auto px-6 py-32 border-t border-zinc-900/60 relative">
+        <section className="max-w-7xl mx-auto px-6 py-32 border-t border-border relative">
           {/* Structural layout lines */}
-          <div className="absolute left-10 md:left-20 top-0 bottom-0 w-[1px] bg-zinc-900/40 pointer-events-none" />
-          <div className="absolute right-10 md:right-20 top-0 bottom-0 w-[1px] bg-zinc-900/40 pointer-events-none" />
+          <div className="hidden lg:block absolute left-10 md:left-20 top-0 bottom-0 w-[1px] bg-border pointer-events-none" />
+          <div className="hidden lg:block absolute right-10 md:right-20 top-0 bottom-0 w-[1px] bg-border pointer-events-none" />
           
           <div className="relative z-10">
             <SectionHeader
@@ -430,17 +503,17 @@ export default async function ServicePage({ params }: PageProps) {
                 return displayReviews.map((item, index) => {
                   const avatarStyle = getAvatarStyle(item.name);
                   return (
-                    <div key={index} className="p-6 rounded border border-zinc-900 bg-zinc-950/20 hover:border-primary/45 transition-colors flex flex-col justify-between relative group">
-                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed italic relative z-10 mb-8 font-sans">
+                    <div key={index} className="p-6 rounded border border-border surface-card hover:border-primary/45 transition-colors flex flex-col justify-between relative group">
+                      <p className="text-sm text-muted-foreground leading-relaxed italic relative z-10 mb-8 font-sans">
                         &ldquo;{item.testimonial}&rdquo;
                       </p>
-                      <div className="flex items-center gap-3 border-t border-zinc-900/60 pt-4 font-sans">
-                        <div className="w-8 h-8 rounded bg-zinc-900 border border-zinc-800 flex items-center justify-center font-bold text-[10px] shrink-0">
+                      <div className="flex items-center gap-3 border-t border-border pt-4 font-sans">
+                        <div className={`w-8 h-8 rounded flex items-center justify-center font-bold text-xs shrink-0 ${avatarStyle}`}>
                           {getInitials(item.name)}
                         </div>
                         <div className="min-w-0">
-                          <h4 className="text-xs font-bold text-foreground truncate">{item.name}</h4>
-                          <p className="text-[10px] text-zinc-500 truncate font-mono uppercase tracking-wider">
+                          <h4 className="text-sm font-bold text-foreground truncate">{item.name}</h4>
+                          <p className="text-xs text-muted-foreground truncate font-mono uppercase tracking-wider">
                             {item.designation}
                           </p>
                         </div>
@@ -454,9 +527,7 @@ export default async function ServicePage({ params }: PageProps) {
         </section>
 
         {/* 8. FAQ ACCORDION SECTION */}
-        <section className="max-w-4xl mx-auto px-6 py-24 md:py-32 border-t border-border/40 relative">
-          <div className="absolute bottom-[10%] left-[-15%] w-[350px] h-[350px] rounded-full bg-blue-500/5 blur-[100px] pointer-events-none -z-10" />
-
+        <section className="max-w-4xl mx-auto px-6 py-24 md:py-32 border-t border-border relative">
           <SectionHeader
             tag="Q&A"
             title="Practice FAQ Details"

@@ -1,13 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import { Navbar } from "@/components/common/navbar";
 import { Footer } from "@/components/common/footer";
-import { ThemeProvider } from "@/components/providers/theme-provider";
 import { ScrollProvider } from "@/components/providers/scroll-provider";
-import { CustomCursor } from "@/components/common/custom-cursor";
-import { SplashScreen } from "@/components/common/splash-screen";
 import { PageTransition } from "@/components/animations/page-transition";
-import { MotionConfig } from "framer-motion";
+import { MotionProvider } from "@/components/providers/motion-provider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -64,6 +61,13 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#1B8E92",
+  colorScheme: "light",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -72,28 +76,21 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground transition-colors duration-300">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <MotionConfig reducedMotion="user">
-            <ScrollProvider>
-              <CustomCursor />
-              <SplashScreen />
-              <Navbar />
-              <main className="flex-grow pt-24 pb-16">
-                <PageTransition>{children}</PageTransition>
-              </main>
-              <Footer />
-            </ScrollProvider>
-          </MotionConfig>
-        </ThemeProvider>
+      <body className="min-h-full flex flex-col bg-background text-foreground">
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
+        <MotionProvider>
+          <ScrollProvider>
+            <Navbar />
+            <main id="main" className="flex-grow pt-20 sm:pt-24 pb-16">
+              <PageTransition>{children}</PageTransition>
+            </main>
+            <Footer />
+          </ScrollProvider>
+        </MotionProvider>
       </body>
     </html>
   );

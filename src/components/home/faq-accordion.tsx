@@ -35,9 +35,12 @@ export function FaqAccordion() {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-24 border-t border-border/40 relative">
+    <section className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-28 border-t border-border relative">
       {/* Blueprint Coordinates */}
-      <div className="absolute top-2 left-10 font-mono text-[8px] text-zinc-650 opacity-40 select-none">
+      <div
+        className="absolute top-2 left-10 font-mono text-xs text-muted-foreground/60 select-none hidden sm:block"
+        aria-hidden="true"
+      >
         GRID.SEC.J // FAQ.ACCORDION_V1.2
       </div>
 
@@ -46,12 +49,12 @@ export function FaqAccordion() {
         {/* Left Column: Editorial Header & Booking Card (5 columns) */}
         <div className="lg:col-span-5 space-y-8">
           <div className="space-y-4">
-            <span className="text-xs font-mono font-semibold text-primary uppercase tracking-widest block">
+            <span className="text-xs font-mono font-semibold text-primary-strong uppercase tracking-widest block">
               Got Questions?
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground leading-tight">
+            <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-foreground leading-tight">
               Frequently Asked <br />
-              <span className="text-primary">Questions</span>
+              <span className="text-primary-strong">Questions</span>
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
               Find answers to common questions about our DevOps, Kubernetes, and Cloud Management engineering solutions.
@@ -59,40 +62,42 @@ export function FaqAccordion() {
           </div>
 
           {/* Quick meeting booking panel */}
-          <div className="p-5 rounded-xl border border-border bg-background/30 backdrop-blur-sm space-y-4 max-w-sm">
-            <h3 className="text-sm font-bold text-foreground inline-flex items-center gap-2">
-              <Calendar className="h-4.5 w-4.5 text-primary" /> Need quick clarification?
+          <div className="surface-card p-5 space-y-4 max-w-sm">
+            <h3 className="text-base font-bold text-foreground inline-flex items-center gap-2">
+              <Calendar className="h-5 w-5 text-primary" aria-hidden="true" /> Need quick clarification?
             </h3>
-            <p className="text-[11px] sm:text-xs text-muted-foreground leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Skip the reading and chat directly with our cloud-native systems architect in a free 15-minute alignment call.
             </p>
             <a
               href="https://cal.com/oneggy-aakash-sharma/30min"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-1 text-[11px] sm:text-xs font-semibold h-9 px-4 rounded-md bg-foreground text-background hover:bg-foreground/90 transition-colors"
+              className="inline-flex items-center justify-center gap-1.5 text-sm font-semibold h-11 px-4 rounded-md border border-primary text-primary-strong hover:bg-primary/10 transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
             >
-              Book Architecture Review <ArrowRight className="h-3 w-3" />
+              Book Architecture Review <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
           </div>
         </div>
 
         {/* Right Column: Clean Accordion Stack (7 columns) */}
-        <div className="lg:col-span-7 border-t border-border/20 lg:border-t-0">
-          <div className="divide-y divide-border/20">
+        <div className="lg:col-span-7 border-t border-border lg:border-t-0">
+          <div className="divide-y divide-border">
             {faqs.map((item, index) => {
               const isOpen = openIndex === index;
               return (
                 <div key={index} className="py-4 sm:py-5 first:pt-0 last:pb-0">
                   <button
+                    type="button"
                     onClick={() => toggleFAQ(index)}
                     aria-expanded={isOpen}
                     aria-controls={`faq-answer-${index}`}
                     id={`faq-button-${index}`}
-                    className="w-full flex items-center justify-between text-left font-semibold text-foreground hover:text-primary transition-colors cursor-pointer select-none py-2"
+                    className="w-full flex items-center justify-between gap-4 text-left font-semibold text-foreground hover:text-primary-strong transition-colors cursor-pointer select-none min-h-11 py-2 rounded-md focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
                   >
-                    <span className="text-sm sm:text-base pr-4 font-semibold">{item.question}</span>
+                    <span className="text-base font-semibold">{item.question}</span>
                     <ChevronDown
+                      aria-hidden="true"
                       className={`h-4 w-4 shrink-0 transition-transform duration-300 text-muted-foreground ${
                         isOpen ? "rotate-180 text-primary" : ""
                       }`}
@@ -111,7 +116,7 @@ export function FaqAccordion() {
                         transition={{ duration: 0.25, ease: "easeInOut" }}
                         className="overflow-hidden"
                       >
-                        <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed pt-2 pb-1 pr-6 select-text">
+                        <p className="text-sm text-muted-foreground leading-relaxed pt-2 pb-1 pr-6 select-text">
                           {item.answer}
                         </p>
                       </motion.div>
