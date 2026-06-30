@@ -1,129 +1,77 @@
 "use client";
 
 import React, { useState } from "react";
-import { Star, Quote, ArrowDown, ArrowUp } from "lucide-react";
+import { ArrowDown, ArrowUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { SectionHeader } from "../common/section-header";
 import { testimonials as rawTestimonials } from "../../../public/data/testimonial.json";
-
-function getInitials(name: string) {
-  const parts = name.trim().split(/\s+/);
-  if (parts.length >= 2) {
-    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
-  }
-  return name.slice(0, 2).toUpperCase();
-}
-
-const avatarBgClasses = [
-  "bg-primary/10 border border-primary/20 text-primary-strong",
-  "bg-muted border border-border text-foreground",
-  "bg-accent/10 border border-accent/20 text-accent-strong",
-];
-
-const getAvatarStyle = (name: string) => {
-  let sum = 0;
-  for (let i = 0; i < name.length; i++) sum += name.charCodeAt(i);
-  return avatarBgClasses[sum % avatarBgClasses.length];
-};
 
 export function Testimonials() {
   const [showAll, setShowAll] = useState(false);
   const list = rawTestimonials.filter((t) => t.name && t.testimonial);
-  
-  // Show first 9 testimonials initially, expand to show all 18 on click
-  const visibleTestimonials = showAll ? list : list.slice(0, 9);
+
+  // Show first 6 testimonials initially, expand to show all on click
+  const visibleTestimonials = showAll ? list : list.slice(0, 6);
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-28 border-t border-border relative">
-      {/* Blueprint Coordinates */}
-      <div className="absolute top-2 left-6 sm:left-10 font-mono text-xs text-muted-foreground/50 select-none pointer-events-none" aria-hidden="true">
-        GRID.SEC.H // CLIENT.FEEDBACK_V1.1
-      </div>
+    <section className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-28 border-t border-border">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+        <div className="lg:col-span-4">
+          <span className="eyebrow mb-5">Client proof</span>
+          <h2 className="display text-3xl sm:text-4xl mt-4">
+            Trusted by engineers and <em>founders.</em>
+          </h2>
+          <p className="mt-5 text-base text-muted-foreground leading-relaxed max-w-[36ch]">
+            Real outcomes from the high-growth startups and global enterprises that partner with OnEggy to run production-grade platforms.
+          </p>
+        </div>
 
-      <SectionHeader
-        tag="Client Success"
-        title={<>Trusted by <span className="text-primary font-bold">Engineers & Founders</span></>}
-        subtitle="Real outcomes. See how high-growth startups and global enterprises partner with OnEggy to scale production-grade platforms."
-        align="center"
-        className="mb-16"
-      />
-
-      {/* Masonry Layout Container */}
-      <div className="relative">
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 [column-fill:_balance]">
-          <AnimatePresence mode="popLayout">
-            {visibleTestimonials.map((item, index) => {
-              const avatarStyle = getAvatarStyle(item.name);
-              return (
-                <motion.div
+        <div className="lg:col-span-8">
+          <div className="border-t border-border">
+            <AnimatePresence initial={false} mode="popLayout">
+              {visibleTestimonials.map((item, index) => (
+                <motion.figure
                   key={`${item.name}-${index}`}
-                  initial={{ opacity: 0, y: 15 }}
+                  initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.3, delay: (index % 3) * 0.08 }}
-                  className="break-inside-avoid surface-card p-6 rounded-xl border border-border hover:border-primary/40 transition-all duration-300 flex flex-col justify-between relative"
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3, delay: (index % 6) * 0.05 }}
+                  className="border-b border-border py-8 sm:py-10"
                 >
-                  {/* Watermark Quote Icon */}
-                  <Quote className="absolute top-4 right-4 h-8 w-8 text-primary/10 pointer-events-none" aria-hidden="true" />
+                  <blockquote className="display text-xl sm:text-2xl text-foreground leading-[1.4] max-w-[46ch]">
+                    &ldquo;{item.testimonial}&rdquo;
+                  </blockquote>
+                  <figcaption className="mt-5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                    <span className="text-sm font-semibold text-foreground">{item.name}</span>
+                    <span className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground/80">
+                      {item.designation}
+                    </span>
+                  </figcaption>
+                </motion.figure>
+              ))}
+            </AnimatePresence>
+          </div>
 
-                  <div className="space-y-4">
-                    {/* Stars */}
-                    <div className="flex items-center gap-0.5" role="img" aria-label="5 out of 5 stars">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-accent text-accent" aria-hidden="true" />
-                      ))}
-                    </div>
-
-                    {/* Testimonial Quote */}
-                    <p className="text-sm text-foreground leading-relaxed italic select-text">
-                      &ldquo;{item.testimonial}&rdquo;
-                    </p>
-                  </div>
-
-                  {/* Author Block */}
-                  <div className="flex items-center gap-3 border-t border-border pt-4 mt-5">
-                    <div className={`w-10 h-10 rounded-full ${avatarStyle} flex items-center justify-center font-bold font-mono text-sm shrink-0 select-none`}>
-                      {getInitials(item.name)}
-                    </div>
-                    <div className="min-w-0">
-                      <h4 className="text-sm font-bold text-foreground truncate">{item.name}</h4>
-                      <p className="text-xs text-muted-foreground truncate font-medium">
-                        {item.designation}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </AnimatePresence>
+          {list.length > 6 && (
+            <div className="mt-10">
+              <button
+                onClick={() => setShowAll(!showAll)}
+                aria-expanded={showAll}
+                className="inline-flex items-center justify-center gap-2 h-11 px-6 rounded-md border border-primary text-primary-strong bg-card hover:bg-primary/10 text-sm font-semibold transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-primary"
+              >
+                {showAll ? (
+                  <>
+                    Show fewer reviews <ArrowUp className="h-4 w-4" aria-hidden="true" />
+                  </>
+                ) : (
+                  <>
+                    Show all reviews ({list.length}) <ArrowDown className="h-4 w-4" aria-hidden="true" />
+                  </>
+                )}
+              </button>
+            </div>
+          )}
         </div>
-
-        {/* Fade overlay when collapsed */}
-        {!showAll && list.length > 9 && (
-          <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none" />
-        )}
       </div>
-
-      {/* Show more/less toggle button */}
-      {list.length > 9 && (
-        <div className="flex justify-center mt-12 relative z-20">
-          <button
-            onClick={() => setShowAll(!showAll)}
-            aria-expanded={showAll}
-            className="inline-flex items-center justify-center gap-2 h-11 px-6 rounded-md border border-primary text-primary-strong bg-card hover:bg-primary/10 text-sm font-semibold transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-primary"
-          >
-            {showAll ? (
-              <>
-                Show Fewer Reviews <ArrowUp className="h-4 w-4" aria-hidden="true" />
-              </>
-            ) : (
-              <>
-                Show All Reviews ({list.length}) <ArrowDown className="h-4 w-4" aria-hidden="true" />
-              </>
-            )}
-          </button>
-        </div>
-      )}
     </section>
   );
 }

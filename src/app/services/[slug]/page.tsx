@@ -2,19 +2,12 @@ import React from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { 
-  ArrowRight, 
-  AlertTriangle, 
-  CheckCircle2, 
-  Shield,
-  ChevronRight
-} from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { getServiceBySlug, servicesData } from "@/lib/services-data";
-import { SectionHeader } from "@/components/common/section-header";
-import { CtaBlock } from "@/components/common/cta-block";
 import { ServiceArchitecture } from "@/components/services/service-architecture";
 import { ServiceFaqAccordion } from "@/components/services/service-faq-accordion";
-import { FadeUp, StaggerContainer, StaggerItem } from "@/components/animations/motion-wrappers";
+import { OrbitMark } from "@/components/common/orbit-mark";
+import { FadeUp } from "@/components/animations/motion-wrappers";
 import { testimonials as rawTestimonials } from "../../../../public/data/testimonial.json";
 
 function getTechLogo(tech: string): string | null {
@@ -41,18 +34,6 @@ function getInitials(name: string) {
   }
   return name.slice(0, 2).toUpperCase();
 }
-
-const avatarBgClasses = [
-  "bg-muted border border-border text-muted-foreground font-mono",
-  "bg-muted border border-border text-muted-foreground font-mono",
-  "bg-muted border border-border text-muted-foreground font-mono",
-];
-
-const getAvatarStyle = (name: string) => {
-  let sum = 0;
-  for (let i = 0; i < name.length; i++) sum += name.charCodeAt(i);
-  return avatarBgClasses[sum % avatarBgClasses.length];
-};
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -221,6 +202,20 @@ export default async function ServicePage({ params }: PageProps) {
     software: "Software Engineering"
   }[service.category];
 
+  // Category-aware testimonials (restrained pull-quotes)
+  const filteredReviews = rawTestimonials.filter((t) => {
+    const desc = t.designation.toLowerCase();
+    const test = t.testimonial.toLowerCase();
+    if (service.category === "cloud") {
+      return desc.includes("cloud") || desc.includes("aws") || test.includes("aws") || test.includes("cloud") || desc.includes("brahmatells");
+    } else if (service.category === "devops") {
+      return desc.includes("devops") || desc.includes("sre") || test.includes("kubernetes") || test.includes("eks") || test.includes("devops") || desc.includes("payu") || desc.includes("pinelabs");
+    } else { // software
+      return desc.includes("developer") || desc.includes("full stack") || desc.includes("mobile") || desc.includes("app") || test.includes("react native") || test.includes("next") || test.includes("software") || desc.includes("anveshan") || desc.includes("digispeax");
+    }
+  });
+  const displayReviews = filteredReviews.length >= 3 ? filteredReviews.slice(0, 3) : rawTestimonials.slice(0, 3);
+
   return (
     <>
       {/* Inject Structured Data Schema */}
@@ -243,312 +238,315 @@ export default async function ServicePage({ params }: PageProps) {
         }}
       />
 
-      <div className="relative overflow-hidden min-h-screen">
-        {/* 1. HERO SECTION */}
-        <section className="relative pt-16 pb-24 md:py-32 flex flex-col items-center justify-center text-center">
-          <div className="max-w-4xl mx-auto px-6 space-y-8 relative z-10">
-            <FadeUp>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-background/50 backdrop-blur-sm text-xs font-mono text-primary shadow-sm">
-                <Shield className="h-3.5 w-3.5" />
-                <span>{categoryLabel}</span>
-              </div>
-            </FadeUp>
+      {/* 1. HERO — editorial serif */}
+      <section className="max-w-7xl mx-auto px-6 pt-12 pb-16 sm:pt-16 lg:pt-20 lg:pb-24">
+        <div className="max-w-[58ch]">
+          <span className="eyebrow mb-6">{categoryLabel}</span>
+          <h1 className="display text-4xl sm:text-5xl lg:text-[3.6rem] mt-5">
+            {service.title} — <em>{service.headline}</em>
+          </h1>
+          <p className="mt-7 text-lg text-muted-foreground leading-relaxed max-w-[52ch]">
+            {service.subtext}
+          </p>
 
-            <FadeUp delay={0.1}>
-              <h1 className="text-4xl sm:text-6xl font-display font-bold tracking-tight text-foreground leading-tight">
-                {service.title}
-                <br />
-                <span className="text-primary">{service.headline}</span>
-              </h1>
-            </FadeUp>
+          <div className="mt-9 flex flex-col sm:flex-row sm:items-center gap-3">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-md bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-sm transition-colors focus-visible:ring-2 focus-visible:ring-primary"
+            >
+              Request advisory assessment <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+            <a
+              href="#blueprint"
+              className="inline-flex items-center justify-center gap-1.5 h-12 px-3 text-sm font-semibold text-foreground hover:text-primary-strong transition-colors"
+            >
+              Review framework map <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+            </a>
+          </div>
 
-            <FadeUp delay={0.2}>
-              <p className="text-base sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-sans">
-                {service.subtext}
+          {/* Tech ecosystem row */}
+          <div className="mt-12 pt-7 border-t border-border">
+            <p className="text-xs font-mono uppercase tracking-[0.12em] text-muted-foreground/80 mb-4">
+              Built on
+            </p>
+            <div className="flex flex-wrap items-center gap-2.5">
+              {service.techs.map((tech) => {
+                const logo = getTechLogo(tech);
+                return (
+                  <span
+                    key={tech}
+                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-mono bg-surface-subtle border border-border text-foreground/80"
+                  >
+                    {logo && (
+                      <span className="relative w-3.5 h-3.5 shrink-0">
+                        <Image src={logo} alt="" fill sizes="14px" className="object-contain" />
+                      </span>
+                    )}
+                    <span>{tech}</span>
+                  </span>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. THE CHALLENGE vs. THE SOLUTION — editorial two-column */}
+      <section className="border-t border-border">
+        <div className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 mb-14">
+            <div className="lg:col-span-5">
+              <span className="eyebrow mb-5">Strategic context</span>
+              <h2 className="display text-3xl sm:text-4xl mt-4">
+                Business challenge &amp; <em>alignment.</em>
+              </h2>
+            </div>
+            <div className="lg:col-span-7 lg:pt-2">
+              <p className="text-base text-muted-foreground leading-relaxed max-w-[54ch]">
+                How we identify operational exposures, cost leakages, and pipeline friction to design
+                compliant system solutions.
               </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+            {/* Challenges */}
+            <FadeUp>
+              <p className="text-xs font-mono uppercase tracking-[0.12em] text-destructive/90 mb-5">
+                Operational vulnerabilities
+              </p>
+              <p className="text-base text-muted-foreground leading-relaxed mb-2">
+                {categoryCopy.challengeIntro}
+              </p>
+              <ul className="border-t border-border mt-6">
+                {service.problems.map((problem, idx) => (
+                  <li key={idx} className="grid grid-cols-[auto_1fr] gap-x-4 py-5 border-b border-border">
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-destructive shrink-0" aria-hidden="true" />
+                    <span className="text-base text-foreground/90 leading-relaxed">{problem}</span>
+                  </li>
+                ))}
+              </ul>
             </FadeUp>
 
-            {/* Tech Ecosystem Row */}
-            <FadeUp delay={0.25}>
-              <div className="flex flex-wrap justify-center gap-2 pt-4">
-                {service.techs.map((tech) => {
-                  const logo = getTechLogo(tech);
-                  return (
-                    <span 
-                      key={tech} 
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono bg-muted border border-border text-foreground/80 shadow-sm"
-                    >
-                      {logo && (
-                        <div className="relative w-3.5 h-3.5 shrink-0">
-                          <Image 
-                            src={logo} 
-                            alt={`${tech} logo`} 
-                            fill 
-                            sizes="14px" 
-                            className="object-contain" 
-                          />
-                        </div>
-                      )}
-                      <span>{tech}</span>
-                    </span>
-                  );
-                })}
+            {/* Solutions */}
+            <FadeUp delay={0.1}>
+              <p className="text-xs font-mono uppercase tracking-[0.12em] text-primary-strong mb-5">
+                Strategic resolution model
+              </p>
+              <p className="text-base text-muted-foreground leading-relaxed mb-2">
+                {categoryCopy.solutionIntro}
+              </p>
+              <ul className="border-t border-border mt-6">
+                {service.solutions.map((solution, idx) => (
+                  <li key={idx} className="grid grid-cols-[auto_1fr] gap-x-4 py-5 border-b border-border">
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" aria-hidden="true" />
+                    <span className="text-base text-foreground/90 leading-relaxed">{solution}</span>
+                  </li>
+                ))}
+              </ul>
+            </FadeUp>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. METRICS / BENEFITS BAND */}
+      <section className="border-y border-border bg-surface-subtle">
+        <div className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-4">
+              <span className="eyebrow mb-5">Measured impact</span>
+              <h2 className="display text-3xl sm:text-4xl mt-4">Outcomes, not slideware.</h2>
+              <p className="mt-5 text-base text-muted-foreground leading-relaxed max-w-[34ch]">
+                Every engagement is measured against the numbers that move your business and your
+                on-call rotation.
+              </p>
+            </div>
+            <div className="lg:col-span-8">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-10 border-t border-border pt-10">
+                {service.benefits.map((benefit, idx) => (
+                  <div key={idx}>
+                    <div className="display text-5xl sm:text-6xl text-foreground tabular-nums">
+                      {benefit.num}
+                    </div>
+                    <div className="mt-2 text-sm text-muted-foreground max-w-[22ch]">
+                      {benefit.label}
+                    </div>
+                  </div>
+                ))}
               </div>
-            </FadeUp>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <FadeUp delay={0.3} className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+      {/* 4. CORE SERVICE FEATURES — editorial numbered list */}
+      <section className="border-t border-border">
+        <div className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+            <div className="lg:col-span-4">
+              <span className="eyebrow mb-5">Deliverables</span>
+              <h2 className="display text-3xl sm:text-4xl mt-4">
+                Core scope &amp; <em>capabilities.</em>
+              </h2>
+              <p className="mt-5 text-base text-muted-foreground leading-relaxed max-w-[38ch]">
+                Detailed technical features engineered following the industry&rsquo;s absolute best
+                practices.
+              </p>
+            </div>
+
+            <div className="lg:col-span-8">
+              <ul className="border-t border-border">
+                {service.features.map((feature, idx) => (
+                  <li
+                    key={idx}
+                    className="grid grid-cols-[auto_1fr] gap-x-5 sm:gap-x-8 py-7 border-b border-border group"
+                  >
+                    <span className="font-mono text-sm text-primary-strong/70 tabular-nums pt-1">
+                      {String(idx + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <h3 className="font-display text-xl sm:text-2xl text-foreground group-hover:text-primary-strong transition-colors">
+                        {feature.title}
+                      </h3>
+                      <p className="mt-1.5 text-base text-foreground/80 leading-relaxed max-w-[56ch]">
+                        {feature.desc}
+                      </p>
+                      <p className="mt-1 text-sm text-muted-foreground leading-relaxed max-w-[56ch]">
+                        {feature.detail}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. INTERACTIVE ARCHITECTURE BLUEPRINT */}
+      <div id="blueprint" className="scroll-mt-24">
+        <ServiceArchitecture category={service.category} serviceName={service.title} />
+      </div>
+
+      {/* 6. PROCESS TIMELINE */}
+      <section className="border-t border-border">
+        <div className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 mb-14">
+            <div className="lg:col-span-5">
+              <span className="eyebrow mb-5">Methodology</span>
+              <h2 className="display text-3xl sm:text-4xl mt-4">
+                Advisory &amp; delivery <em>timeline.</em>
+              </h2>
+            </div>
+            <div className="lg:col-span-7 lg:pt-2">
+              <p className="text-base text-muted-foreground leading-relaxed max-w-[54ch]">
+                {categoryCopy.timelineSubtitle}
+              </p>
+            </div>
+          </div>
+
+          <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-border divide-y divide-border sm:divide-y-0">
+            {processSteps.map((step, idx) => (
+              <li
+                key={step.num}
+                className={`py-8 lg:px-7 lg:first:pl-0 lg:last:pr-0 lg:border-l lg:first:border-l-0 lg:border-border ${idx % 2 === 1 ? "sm:border-l sm:border-border" : ""}`}
+              >
+                <span className="font-mono text-sm text-primary-strong/70 tabular-nums">{step.num}</span>
+                <h3 className="font-display text-xl text-foreground mt-3">{step.title}</h3>
+                <p className="mt-2.5 text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* 7. CLIENT TESTIMONIALS — restrained pull-quotes */}
+      <section className="border-t border-border bg-surface-subtle">
+        <div className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 mb-14">
+            <div className="lg:col-span-5">
+              <span className="eyebrow mb-5">Impact validation</span>
+              <h2 className="display text-3xl sm:text-4xl mt-4">
+                Enterprise success <em>stories.</em>
+              </h2>
+            </div>
+            <div className="lg:col-span-7 lg:pt-2">
+              <p className="text-base text-muted-foreground leading-relaxed max-w-[54ch]">
+                How we&rsquo;ve partnered with engineering leadership teams to deliver key
+                modernizations.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+            {displayReviews.map((item, index) => (
+              <figure
+                key={index}
+                className="surface-card rounded-2xl p-7 flex flex-col justify-between"
+              >
+                <blockquote className="display text-lg text-foreground/90 leading-snug">
+                  &ldquo;{item.testimonial}&rdquo;
+                </blockquote>
+                <figcaption className="mt-7 pt-5 border-t border-border flex items-center gap-3">
+                  <span className="w-9 h-9 rounded-full bg-muted border border-border flex items-center justify-center font-mono text-xs text-muted-foreground shrink-0">
+                    {getInitials(item.name)}
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block font-display text-base text-foreground truncate">{item.name}</span>
+                    <span className="block text-xs font-mono uppercase tracking-wider text-muted-foreground truncate">
+                      {item.designation}
+                    </span>
+                  </span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 8. FAQ ACCORDION */}
+      <section className="border-t border-border">
+        <div className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-28 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          <div className="lg:col-span-4">
+            <span className="eyebrow mb-5">Q&amp;A</span>
+            <h2 className="display text-3xl sm:text-4xl mt-4">
+              Practice FAQ <em>details.</em>
+            </h2>
+            <p className="mt-5 text-base text-muted-foreground leading-relaxed max-w-[38ch]">
+              Advisory answers on engagement scope, billing schedules, and compliance configurations.
+            </p>
+          </div>
+          <div className="lg:col-span-8">
+            <ServiceFaqAccordion faqs={service.faqs} />
+          </div>
+        </div>
+      </section>
+
+      {/* 9. CTA CONVERSION BLOCK — editorial */}
+      <section className="border-t border-border">
+        <div className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-24">
+          <div className="relative surface-card rounded-2xl p-8 sm:p-12 overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <OrbitMark size={140} className="absolute -top-10 -right-10 opacity-[0.06] pointer-events-none" />
+            <div className="lg:col-span-8 relative">
+              <h2 className="display text-3xl sm:text-4xl">
+                Discuss your {service.title} <em>goals.</em>
+              </h2>
+              <p className="mt-5 text-base text-muted-foreground leading-relaxed max-w-[58ch]">
+                Schedule a 30-minute advisory call with our senior architects to map out
+                infrastructure budgets, timeline scopes, and risk checkpoints.
+              </p>
+            </div>
+            <div className="lg:col-span-4 flex lg:justify-end relative">
               <Link
                 href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-12 px-8 rounded-md bg-accent text-accent-foreground hover:bg-accent/90 font-semibold transition-colors cursor-pointer shadow-lg focus-visible:ring-2 focus-visible:ring-primary"
+                className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-md border border-primary text-primary-strong hover:bg-primary/10 font-semibold text-sm transition-colors focus-visible:ring-2 focus-visible:ring-primary"
               >
-                Request Advisory Assessment <ArrowRight className="h-4 w-4" />
+                Book free assessment <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
               </Link>
-              <a
-                href="#blueprint"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-12 px-8 rounded-md border border-primary text-primary-strong hover:bg-primary/10 font-semibold transition-colors cursor-pointer focus-visible:ring-2 focus-visible:ring-primary"
-              >
-                Review Framework Map
-              </a>
-            </FadeUp>
-          </div>
-        </section>
-
-        {/* 2. THE CHALLENGE VS. THE SOLUTION */}
-        <section className="max-w-7xl mx-auto px-6 py-32 border-t border-border relative">
-          {/* Structural layout lines */}
-          <div className="hidden lg:block absolute left-10 md:left-20 top-0 bottom-0 w-[1px] bg-border pointer-events-none" />
-          <div className="hidden lg:block absolute right-10 md:right-20 top-0 bottom-0 w-[1px] bg-border pointer-events-none" />
-
-          <div className="relative z-10">
-            <SectionHeader
-              tag="Strategic Context"
-              title="Business Challenge & Alignment"
-              subtitle="How we identify operational exposures, cost leakages, and pipeline friction to design compliant system solutions."
-              align="center"
-              className="mb-20"
-            />
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-              {/* The Challenges Column */}
-              <div className="space-y-6 pl-0 lg:pl-10">
-                <div className="flex items-center gap-3 text-destructive font-semibold">
-                  <AlertTriangle className="h-5 w-5" />
-                  <h3 className="text-lg font-display font-bold">Operational Vulnerabilities</h3>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed font-sans">
-                  {categoryCopy.challengeIntro}
-                </p>
-                <ul className="space-y-4 font-sans text-sm text-muted-foreground">
-                  {service.problems.map((problem, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <span className="w-1 h-1 rounded-full bg-destructive shrink-0 mt-2" />
-                      <span className="leading-relaxed">{problem}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Our Solutions Column */}
-              <div className="space-y-6 pr-0 lg:pr-10 border-t lg:border-t-0 lg:border-l border-border pt-8 lg:pt-0 lg:pl-12">
-                <div className="flex items-center gap-3 text-primary font-semibold">
-                  <CheckCircle2 className="h-5 w-5" />
-                  <h3 className="text-lg font-display font-bold">Strategic Resolution Model</h3>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed font-sans">
-                  {categoryCopy.solutionIntro}
-                </p>
-                <ul className="space-y-4 font-sans text-sm text-muted-foreground">
-                  {service.solutions.map((solution, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <span className="w-1 h-1 rounded-full bg-primary shrink-0 mt-2" />
-                      <span className="leading-relaxed">{solution}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
           </div>
-        </section>
-
-        {/* 3. CORE SERVICE FEATURES ROSTER */}
-        <section className="max-w-7xl mx-auto px-6 py-32 border-t border-border relative">
-          {/* Structural layout lines */}
-          <div className="hidden lg:block absolute left-10 md:left-20 top-0 bottom-0 w-[1px] bg-border pointer-events-none" />
-          <div className="hidden lg:block absolute right-10 md:right-20 top-0 bottom-0 w-[1px] bg-border pointer-events-none" />
-
-          <div className="relative z-10">
-            <SectionHeader
-              tag="Deliverables"
-              title="Core Scope & Capabilities"
-              subtitle="Explore our detailed technical features engineered following the industry's absolute best practices."
-              align="center"
-              className="mb-20"
-            />
-
-            <div className="divide-y divide-border mx-0 md:mx-14 border-t border-b border-border">
-              {service.features.map((feature, idx) => (
-                <div 
-                  key={idx}
-                  className="py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-start group"
-                >
-                  <div className="md:col-span-3">
-                    <span className="text-xs font-mono text-primary font-bold uppercase tracking-widest block pt-0.5">
-                      Practice Segment {idx + 1}
-                    </span>
-                  </div>
-                  <div className="md:col-span-4">
-                    <h3 className="text-base font-bold text-foreground font-display group-hover:text-primary transition-colors">
-                      {feature.title}
-                    </h3>
-                  </div>
-                  <div className="md:col-span-5 space-y-2 font-sans">
-                    <p className="text-sm text-foreground/80 leading-relaxed font-semibold">
-                      {feature.desc}
-                    </p>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {feature.detail}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 4. METRICS / BENEFITS ROW */}
-        <section className="border-y border-border bg-surface-subtle py-24 relative">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-center">
-              {service.benefits.map((benefit, idx) => (
-                <div key={idx} className="space-y-2">
-                  <div className="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground font-mono">
-                    {benefit.num}
-                  </div>
-                  <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground font-bold">
-                    {benefit.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 5. INTERACTIVE ARCHITECTURE BLUEPRINT MAP */}
-        <div id="blueprint" className="relative">
-          <div className="hidden lg:block absolute left-6 md:left-20 top-0 bottom-0 w-[1px] bg-border pointer-events-none" />
-          <div className="hidden lg:block absolute right-6 md:right-20 top-0 bottom-0 w-[1px] bg-border pointer-events-none" />
-          <ServiceArchitecture category={service.category} serviceName={service.title} />
         </div>
-
-        {/* 6. PROCESS TIMELINE STEPPER */}
-        <section className="max-w-7xl mx-auto px-6 py-32 border-t border-border relative">
-          {/* Structural layout lines */}
-          <div className="hidden lg:block absolute left-10 md:left-20 top-0 bottom-0 w-[1px] bg-border pointer-events-none" />
-          <div className="hidden lg:block absolute right-10 md:right-20 top-0 bottom-0 w-[1px] bg-border pointer-events-none" />
-
-          <div className="relative z-10">
-            <SectionHeader
-              tag="Methodology"
-              title="Advisory & Delivery Timeline"
-              subtitle={categoryCopy.timelineSubtitle}
-              align="center"
-              className="mb-20"
-            />
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative border-t border-b border-border py-10 divide-y sm:divide-y-0 sm:divide-x divide-border mx-0 md:mx-14">
-              {processSteps.map((step, idx) => (
-                <div key={idx} className="space-y-4 px-0 sm:px-6 first:pl-0 last:pr-0 pt-6 sm:pt-0 first:pt-0">
-                  <div className="text-xl font-bold text-primary font-mono">
-                    {step.num}
-                  </div>
-                  <h4 className="text-xs font-bold text-foreground font-display uppercase tracking-wider">{step.title}</h4>
-                  <p className="text-xs text-muted-foreground leading-relaxed font-sans">
-                    {step.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 7. CLIENT TESTIMONIALS */}
-        <section className="max-w-7xl mx-auto px-6 py-32 border-t border-border relative">
-          {/* Structural layout lines */}
-          <div className="hidden lg:block absolute left-10 md:left-20 top-0 bottom-0 w-[1px] bg-border pointer-events-none" />
-          <div className="hidden lg:block absolute right-10 md:right-20 top-0 bottom-0 w-[1px] bg-border pointer-events-none" />
-          
-          <div className="relative z-10">
-            <SectionHeader
-              tag="Impact Validation"
-              title="Enterprise Success Stories"
-              subtitle="How we've partner with engineering leadership teams to deliver key modernizations."
-              align="center"
-              className="mb-20"
-            />
-
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mx-0 md:mx-14">
-              {(() => {
-                const filteredReviews = rawTestimonials.filter((t) => {
-                  const desc = t.designation.toLowerCase();
-                  const test = t.testimonial.toLowerCase();
-                  if (service.category === "cloud") {
-                    return desc.includes("cloud") || desc.includes("aws") || test.includes("aws") || test.includes("cloud") || desc.includes("brahmatells");
-                  } else if (service.category === "devops") {
-                    return desc.includes("devops") || desc.includes("sre") || test.includes("kubernetes") || test.includes("eks") || test.includes("devops") || desc.includes("payu") || desc.includes("pinelabs");
-                  } else { // software
-                    return desc.includes("developer") || desc.includes("full stack") || desc.includes("mobile") || desc.includes("app") || test.includes("react native") || test.includes("next") || test.includes("software") || desc.includes("anveshan") || desc.includes("digispeax");
-                  }
-                });
-                const displayReviews = filteredReviews.length >= 3 ? filteredReviews.slice(0, 3) : rawTestimonials.slice(0, 3);
-                return displayReviews.map((item, index) => {
-                  const avatarStyle = getAvatarStyle(item.name);
-                  return (
-                    <div key={index} className="p-6 rounded border border-border surface-card hover:border-primary/45 transition-colors flex flex-col justify-between relative group">
-                      <p className="text-sm text-muted-foreground leading-relaxed italic relative z-10 mb-8 font-sans">
-                        &ldquo;{item.testimonial}&rdquo;
-                      </p>
-                      <div className="flex items-center gap-3 border-t border-border pt-4 font-sans">
-                        <div className={`w-8 h-8 rounded flex items-center justify-center font-bold text-xs shrink-0 ${avatarStyle}`}>
-                          {getInitials(item.name)}
-                        </div>
-                        <div className="min-w-0">
-                          <h4 className="text-sm font-bold text-foreground truncate">{item.name}</h4>
-                          <p className="text-xs text-muted-foreground truncate font-mono uppercase tracking-wider">
-                            {item.designation}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                });
-              })()}
-            </div>
-          </div>
-        </section>
-
-        {/* 8. FAQ ACCORDION SECTION */}
-        <section className="max-w-4xl mx-auto px-6 py-24 md:py-32 border-t border-border relative">
-          <SectionHeader
-            tag="Q&A"
-            title="Practice FAQ Details"
-            subtitle="Advisory answers regarding engagement scope, billing schedules, and compliance configurations."
-            align="center"
-            className="mb-16"
-          />
-
-          <ServiceFaqAccordion faqs={service.faqs} />
-        </section>
-
-        {/* 9. CTA CONVERSION BLOCK */}
-        <div className="py-12 border-t border-border/40">
-          <CtaBlock
-            title={`Discuss Your ${service.title} Goals`}
-            description="Schedule a 30-minute advisory call with our senior architects to map out infrastructure budgets, timeline scopes, and risk checkpoints."
-            btnText="Book Free Assessment"
-            btnHref="/contact"
-          />
-        </div>
-      </div>
+      </section>
     </>
   );
 }

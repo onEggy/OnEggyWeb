@@ -1,19 +1,17 @@
 "use client";
 
 import React, { useState } from "react";
-import { SectionHeader } from "../common/section-header";
-import { 
-  Shield, 
-  Network, 
-  GitBranch, 
-  Search, 
-  Container, 
-  Rocket, 
-  Globe, 
-  Lock, 
-  Cpu, 
+import {
+  Shield,
+  Network,
+  GitBranch,
+  Search,
+  Container,
+  Rocket,
+  Globe,
+  Lock,
+  Cpu,
   Database,
-  HelpCircle
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -538,103 +536,109 @@ export function ServiceArchitecture({ category, serviceName }: ServiceArchitectu
   };
  
   return (
-    <section className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-28 border-t border-border relative">
-      <SectionHeader
-        tag="Security & Architecture"
-        title={<>{getSectionTitle()} for <span className="text-primary-strong">{serviceName}</span></>}
-        subtitle={getSectionSubtitle()}
-        align="center"
-        className="mb-16"
-      />
- 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        {/* Left Column: Tiers Selector */}
-        <div className="lg:col-span-5 space-y-4">
-          <p className="text-sm font-mono text-muted-foreground uppercase tracking-widest block mb-2">
-            Architecture Blueprint Nodes
-          </p>
-          <div className="space-y-3">
-            {tiers.map((tier) => {
-              const isActive = tier.id === activeTierId;
-              return (
-                <button
-                  key={tier.id}
-                  type="button"
-                  aria-pressed={isActive}
-                  onClick={() => setActiveTierId(tier.id)}
-                  onMouseEnter={() => setActiveTierId(tier.id)}
-                  onFocus={() => setActiveTierId(tier.id)}
-                  className={`w-full text-left p-4 rounded-xl border transition-all flex flex-col gap-3 cursor-pointer select-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none ${
-                    isActive
-                      ? "bg-primary/10 border-primary shadow-md scale-[1.01]"
-                      : "bg-card border-border hover:bg-muted hover:border-primary/40"
-                  }`}
-                >
-                  <div className="flex items-start gap-4 w-full">
-                    <div className="w-9 h-9 rounded-lg bg-muted border border-border flex items-center justify-center shrink-0">
-                      {tier.icon}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h4 className={`text-base font-bold transition-colors ${isActive ? "text-primary-strong" : "text-foreground"}`}>
-                        {tier.title}
-                      </h4>
-                      <span className="text-sm font-mono text-muted-foreground block mt-0.5">
-                        {tier.sub}
-                      </span>
-                    </div>
-                  </div>
-                  
-                  {/* Inline Mobile Accordion (visible only below lg when active) */}
-                  <AnimatePresence initial={false}>
-                    {isActive && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="overflow-hidden lg:hidden"
-                      >
-                        <p className="text-sm text-muted-foreground leading-relaxed pt-2 border-t border-border">
-                          {tier.desc}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </button>
-              );
-            })}
+    <section className="border-t border-border">
+      <div className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-28">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 mb-14">
+          <div className="lg:col-span-5">
+            <span className="eyebrow mb-5">Security &amp; architecture</span>
+            <h2 className="display text-3xl sm:text-4xl mt-4">
+              {getSectionTitle()} for <em>{serviceName}.</em>
+            </h2>
+          </div>
+          <div className="lg:col-span-7 lg:pt-2">
+            <p className="text-base text-muted-foreground leading-relaxed max-w-[54ch]">
+              {getSectionSubtitle()}
+            </p>
           </div>
         </div>
- 
-        {/* Right Column: Dynamic SVG & Info Panel */}
-        <div className="lg:col-span-7 space-y-6">
-          <div className="surface-card rounded-2xl p-6 border border-border relative aspect-[4/3] flex items-center justify-center overflow-hidden shadow-lg">
-            {renderSVGDiagram()}
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+          {/* Left Column: Tiers Selector */}
+          <div className="lg:col-span-5">
+            <p className="text-xs font-mono uppercase tracking-[0.12em] text-muted-foreground/80 mb-5">
+              Architecture blueprint nodes
+            </p>
+            <ul className="border-t border-border">
+              {tiers.map((tier) => {
+                const isActive = tier.id === activeTierId;
+                return (
+                  <li key={tier.id} className="border-b border-border">
+                    <button
+                      type="button"
+                      aria-pressed={isActive}
+                      onClick={() => setActiveTierId(tier.id)}
+                      onMouseEnter={() => setActiveTierId(tier.id)}
+                      onFocus={() => setActiveTierId(tier.id)}
+                      className="w-full text-left py-5 flex flex-col gap-3 cursor-pointer select-none transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none group"
+                    >
+                      <div className="flex items-start gap-4 w-full">
+                        <div
+                          className={`w-10 h-10 rounded-lg border flex items-center justify-center shrink-0 transition-colors ${
+                            isActive ? "bg-primary/10 border-primary/40" : "bg-muted border-border"
+                          }`}
+                        >
+                          {tier.icon}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h3 className={`font-display text-lg transition-colors ${isActive ? "text-primary-strong" : "text-foreground group-hover:text-primary-strong"}`}>
+                            {tier.title}
+                          </h3>
+                          <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground block mt-1">
+                            {tier.sub}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Inline Mobile Accordion (visible only below lg when active) */}
+                      <AnimatePresence initial={false}>
+                        {isActive && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="overflow-hidden lg:hidden"
+                          >
+                            <p className="text-sm text-muted-foreground leading-relaxed pl-14">
+                              {tier.desc}
+                            </p>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
- 
-          {/* Detailed Info Panel (desktop only) */}
-          <div className="min-h-[130px] hidden lg:block">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeTierId}
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.25 }}
-                className="p-5 rounded-xl border border-border surface-card space-y-2 relative"
-              >
-                <div className="absolute top-4 right-4 flex items-center gap-1.5 text-[10px] font-mono font-semibold text-primary-strong">
-                  <HelpCircle className="h-3.5 w-3.5" aria-hidden="true" /> node-blueprint
-                </div>
-                <h4 className="text-base font-bold text-foreground inline-flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: activeTier.color }} aria-hidden="true" />
-                  {activeTier.title}
-                </h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {activeTier.desc}
-                </p>
-              </motion.div>
-            </AnimatePresence>
+
+          {/* Right Column: Dynamic SVG & Info Panel */}
+          <div className="lg:col-span-7 space-y-6">
+            <div className="surface-card rounded-2xl p-6 relative aspect-[4/3] flex items-center justify-center overflow-hidden">
+              {renderSVGDiagram()}
+            </div>
+
+            {/* Detailed Info Panel (desktop only) */}
+            <div className="min-h-[130px] hidden lg:block">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeTierId}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.25 }}
+                  className="surface-card rounded-xl p-6 space-y-3 relative"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: activeTier.color }} aria-hidden="true" />
+                    <h3 className="font-display text-lg text-foreground">{activeTier.title}</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed max-w-[62ch]">
+                    {activeTier.desc}
+                  </p>
+                </motion.div>
+              </AnimatePresence>
+            </div>
           </div>
         </div>
       </div>

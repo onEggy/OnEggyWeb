@@ -2,7 +2,6 @@ import React from "react";
 import { Metadata } from "next";
 import fs from "fs";
 import path from "path";
-import { SectionHeader } from "@/components/common/section-header";
 import { CtaBlock } from "@/components/common/cta-block";
 import { BlogContent } from "@/components/blog/blog-content";
 
@@ -150,33 +149,31 @@ export default function BlogPage() {
           __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
         }}
       />
-      <div className="relative max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-16">
-        {/* Blueprint Coordinates */}
-        <div aria-hidden="true" className="absolute top-2 left-10 font-mono text-xs text-muted-foreground opacity-40 select-none">
-          GRID.SEC.L // BLOG.ARCHIVE_V1.1
-        </div>
+      {/* Editorial hero */}
+      <section className="max-w-7xl mx-auto px-6 pt-12 pb-12 sm:pt-16 lg:pt-20">
+        <span className="eyebrow mb-6">Our insights</span>
+        <h1 className="display text-5xl sm:text-6xl mt-5 max-w-[16ch]">
+          The OnEggy engineering <em>journal.</em>
+        </h1>
+        <p className="mt-7 text-lg text-muted-foreground leading-relaxed max-w-[58ch]">
+          Field notes, tutorials, and standards from our practice — DevOps, Kubernetes,
+          AWS, and the cloud-native platforms we build and operate.
+        </p>
+      </section>
 
-        <SectionHeader
-          as="h1"
-          tag="Our Insights"
-          title={<>The OnEggy <span className="text-primary font-bold">Engineering Blog</span></>}
-          subtitle="Stay up to date with the latest industry insights, tutorials, and best practices in DevOps, Kubernetes, and Cloud-Native platforms."
-          align="left"
-          className="max-w-3xl"
-        />
-
-        {/* Stateful Client Blog Content */}
+      {/* Stateful client blog index */}
+      <section className="max-w-7xl mx-auto px-6 py-12 sm:py-16">
         <BlogContent posts={posts} categories={categories} />
+      </section>
 
-        {/* Subscription CTA Block */}
-        <div className="py-12 border-t border-border/40">
-          <CtaBlock
-            title="Want engineering articles delivered to your inbox?"
-            description="Subscribe to our monthly newsletter to get Kubernetes scaling blueprints, AWS cost reviews, and secure pipeline checklists."
-            btnText="Subscribe to Insights"
-            btnHref="#footer-newsletter"
-          />
-        </div>
+      {/* Subscription CTA */}
+      <div className="py-16 sm:py-20 border-t border-border">
+        <CtaBlock
+          title="Want engineering articles delivered to your inbox?"
+          description="Subscribe to our monthly newsletter to get Kubernetes scaling blueprints, AWS cost reviews, and secure pipeline checklists."
+          btnText="Subscribe to Insights"
+          btnHref="#footer-newsletter"
+        />
       </div>
     </>
   );

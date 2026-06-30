@@ -1,9 +1,5 @@
-"use client";
-
 import React from "react";
-import { SectionHeader } from "../common/section-header";
-import { StaggerContainer, StaggerItem } from "../animations/motion-wrappers";
-import { ClipboardList, PenTool, Code, Cpu, Activity, Clock } from "lucide-react";
+import { FadeUp, StaggerContainer, StaggerItem } from "../animations/motion-wrappers";
 
 const steps = [
   {
@@ -13,7 +9,6 @@ const steps = [
     desc: "We analyze your AWS billing statements, resource usage limits, and release lanes to map out architectural bottlenecks and compliance exposures.",
     duration: "3-5 Days",
     deliverables: ["AWS Cost Explorer audits", "IAM privilege maps", "EKS pod sizing analyses"],
-    icon: <ClipboardList className="h-4 w-4 text-primary" />,
   },
   {
     num: "02",
@@ -22,7 +17,6 @@ const steps = [
     desc: "We design a multi-account cloud layout detailing isolated networking routes, service-control policies, and container registry security gates.",
     duration: "5-7 Days",
     deliverables: ["AWS Control Tower planning", "Transit Gateway routing layouts", "Kubernetes RBAC specifications"],
-    icon: <PenTool className="h-4 w-4 text-primary" />,
   },
   {
     num: "03",
@@ -31,7 +25,6 @@ const steps = [
     desc: "Our senior engineers write dry-run verified Terraform module frameworks and Helm charts, creating replicable staging environments.",
     duration: "2-3 Weeks",
     deliverables: ["Dry-run verified Terraform modules", "Helm v3 chart templates", "Isolated VPC configurations"],
-    icon: <Code className="h-4 w-4 text-primary" />,
   },
   {
     num: "04",
@@ -40,7 +33,6 @@ const steps = [
     desc: "We configure automated deployment pipelines to test, build, scan, and deploy microservices with zero deployment downtime.",
     duration: "1-2 Weeks",
     deliverables: ["GitHub Actions configurations", "ArgoCD synchronization workflows", "Trivy SAST security audits"],
-    icon: <Cpu className="h-4 w-4 text-primary" />,
   },
   {
     num: "05",
@@ -49,90 +41,56 @@ const steps = [
     desc: "We migrate production workloads, deploy active log alerting parameters, and hand over architectural blueprints with complete operational logs.",
     duration: "Ongoing Advisory",
     deliverables: ["Prometheus alerts configurations", "Grafana infrastructure boards", "PagerDuty incident triggers"],
-    icon: <Activity className="h-4 w-4 text-primary" />,
   },
 ];
 
 export function ProcessTimeline() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-28 border-t border-border relative">
-      {/* Blueprint Coordinates */}
-      <div className="absolute top-2 left-10 font-mono text-[10px] text-muted-foreground opacity-40 select-none hidden sm:block" aria-hidden="true">
-        GRID.SEC.E // ADVISORY.STEPPER_V1.1
-      </div>
-
-      {/* Structural layout lines */}
-      <div className="absolute left-10 md:left-20 top-0 bottom-0 w-px bg-border pointer-events-none hidden lg:block" aria-hidden="true" />
-      <div className="absolute right-10 md:right-20 top-0 bottom-0 w-px bg-border pointer-events-none hidden lg:block" aria-hidden="true" />
-
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start relative z-10">
-        
-        {/* Left Sticky Header */}
-        <div className="lg:col-span-4 space-y-5 lg:sticky lg:top-28 pl-0 lg:pl-10">
-          <SectionHeader
-            tag="Engineering Model"
-            title="Our Structured Advisory Cycle"
-            subtitle="We follow a rigorous, stage-by-stage engineering roadmap to audit workloads, eliminate cloud waste, and accelerate your deploy loops."
-            align="left"
-            className="mb-0"
-          />
+    <section className="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-28 border-t border-border">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+        <div className="lg:col-span-4">
+          <FadeUp>
+            <span className="eyebrow mb-5">Engineering model</span>
+            <h2 className="display text-3xl sm:text-4xl mt-4">
+              A structured advisory <em>cycle.</em>
+            </h2>
+            <p className="mt-5 text-base text-muted-foreground leading-relaxed max-w-[38ch]">
+              A rigorous, stage-by-stage roadmap to audit workloads, eliminate cloud waste, and accelerate your deploy loops.
+            </p>
+          </FadeUp>
         </div>
 
-        {/* Right Stepper Timeline */}
-        <div className="lg:col-span-8 pl-0 md:pl-8 relative">
-          {/* Thin vertical timeline line */}
-          <div className="absolute left-4 top-4 bottom-4 w-px bg-border" aria-hidden="true" />
-
-          <StaggerContainer className="space-y-12">
+        <div className="lg:col-span-8">
+          <StaggerContainer className="border-t border-border">
             {steps.map((item) => (
-              <StaggerItem
-                key={item.num}
-                className="relative flex gap-6 items-start group pl-10"
-              >
-                {/* Milestone indicator dot */}
-                <div className="absolute left-0 top-1.5 -translate-x-1/2 flex items-center justify-center z-10">
-                  <div className="w-8 h-8 rounded border border-border bg-card flex items-center justify-center group-hover:border-primary transition-colors">
-                    {item.icon}
-                  </div>
-                </div>
-
-                {/* Milestone content */}
-                <div className="space-y-3 font-sans">
-                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-xs font-bold text-muted-foreground uppercase tracking-widest">
-                    <span>Phase {item.num} -- {item.badge}</span>
-                    <span className="text-border hidden sm:inline" aria-hidden="true">•</span>
-                    <div className="flex items-center gap-1 font-semibold text-primary-strong">
-                      <Clock className="h-3 w-3 text-primary" aria-hidden="true" />
-                      <span>{item.duration}</span>
+              <StaggerItem key={item.num}>
+                <div className="grid grid-cols-[auto_1fr] gap-x-5 sm:gap-x-8 py-8 sm:py-10 border-b border-border">
+                  <span className="font-mono text-sm text-primary-strong/70 tabular-nums pt-1.5">
+                    {item.num}
+                  </span>
+                  <div className="min-w-0">
+                    <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                      <h3 className="display text-xl sm:text-2xl text-foreground">{item.title}</h3>
+                      <span className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground/80">
+                        {item.badge} · {item.duration}
+                      </span>
                     </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <h3 className="text-lg font-bold text-foreground font-display transition-colors group-hover:text-primary-strong">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed max-w-[60ch]">
+                    <p className="mt-3 text-sm text-muted-foreground leading-relaxed max-w-[60ch]">
                       {item.desc}
                     </p>
-                  </div>
-
-                  {/* Technical deliverables grid tags */}
-                  <div className="flex flex-wrap gap-2 pt-1">
-                    {item.deliverables.map((deliv, i) => (
-                      <span
-                        key={i}
-                        className="px-2.5 py-1 rounded text-xs font-mono bg-muted border border-border text-muted-foreground"
-                      >
-                        {deliv}
-                      </span>
-                    ))}
+                    <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-1.5">
+                      {item.deliverables.map((deliv) => (
+                        <li key={deliv} className="text-sm text-foreground/70">
+                          {deliv}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
         </div>
-
       </div>
     </section>
   );

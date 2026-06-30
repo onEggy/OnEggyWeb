@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Calendar, Clock, ArrowRight, BookOpen, Search } from "lucide-react";
+import { Calendar, BookOpen, Search, ArrowUpRight } from "lucide-react";
 import { StaggerContainer, StaggerItem, FadeIn } from "@/components/animations/motion-wrappers";
 import Link from "next/link";
 import Image from "next/image";
@@ -44,10 +44,14 @@ export function BlogContent({ posts, categories }: BlogContentProps) {
     : filteredPosts;
 
   return (
-    <div className="space-y-10">
-      {/* Search + category filters */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border pb-6">
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-none shrink-0 max-w-full" role="group" aria-label="Filter articles by category">
+    <div className="space-y-12">
+      {/* Filter + search — hairline editorial bar */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-5 border-b border-border pb-6">
+        <div
+          className="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0 scrollbar-none shrink-0 max-w-full"
+          role="group"
+          aria-label="Filter articles by category"
+        >
           {categories.map((cat) => {
             const isActive = activeCategory === cat;
             return (
@@ -58,7 +62,7 @@ export function BlogContent({ posts, categories }: BlogContentProps) {
                 className={`inline-flex items-center min-h-11 px-4 rounded-md text-sm font-semibold border transition-colors cursor-pointer whitespace-nowrap focus-visible:ring-2 focus-visible:ring-primary ${
                   isActive
                     ? "bg-primary text-primary-foreground border-primary"
-                    : "bg-card hover:bg-muted border-border text-muted-foreground"
+                    : "bg-card hover:bg-surface-subtle border-border text-muted-foreground"
                 }`}
               >
                 {cat}
@@ -81,123 +85,122 @@ export function BlogContent({ posts, categories }: BlogContentProps) {
         </div>
       </div>
 
-      {/* Featured post */}
+      {/* Featured lead post */}
       {showFeaturedBanner && featuredPost && (
-        <FadeIn className="surface-card p-6 md:p-8 rounded-2xl hover:border-primary/30 transition-all duration-300 relative overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-            {featuredPost.image && (
-              <div className="lg:col-span-4 relative aspect-[16/10] w-full rounded-xl overflow-hidden border border-border bg-muted">
-                <Image
-                  src={featuredPost.image}
-                  alt={featuredPost.title}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 320px"
-                  className="object-cover"
-                />
-              </div>
-            )}
+        <FadeIn>
+          <article className="group relative surface-card rounded-2xl overflow-hidden border-t-2 border-t-primary">
+            <Link
+              href={`/blogs/${featuredPost.slug}`}
+              className="grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-8 items-stretch focus-visible:outline-none"
+            >
+              {featuredPost.image && (
+                <div className="lg:col-span-5 relative aspect-[16/10] lg:aspect-auto lg:min-h-[20rem] w-full overflow-hidden bg-muted">
+                  <Image
+                    src={featuredPost.image}
+                    alt={featuredPost.title}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 560px"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
+                </div>
+              )}
 
-            <div className={`${featuredPost.image ? "lg:col-span-8" : "lg:col-span-12"} space-y-4`}>
-              <div className="flex items-center gap-4 text-xs font-mono">
-                <span className="px-2.5 py-0.5 rounded-full bg-primary/10 text-primary-strong font-semibold border border-primary/20">
-                  Featured: {featuredPost.category}
-                </span>
-                {featuredPost.readTime && (
-                  <span className="flex items-center gap-1 text-muted-foreground">
-                    <Clock className="h-3.5 w-3.5" aria-hidden="true" /> {featuredPost.readTime}
+              <div className={`${featuredPost.image ? "lg:col-span-7" : "lg:col-span-12"} flex flex-col justify-center p-7 sm:p-9`}>
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-xs uppercase tracking-[0.12em]">
+                  <span className="text-primary-strong font-semibold">Featured · {featuredPost.category}</span>
+                  {featuredPost.readTime && (
+                    <span className="text-muted-foreground">{featuredPost.readTime}</span>
+                  )}
+                </div>
+
+                <h2 className="display text-3xl sm:text-4xl mt-4 group-hover:text-primary-strong transition-colors">
+                  {featuredPost.title}
+                </h2>
+
+                <p className="mt-4 text-base text-muted-foreground leading-relaxed max-w-[60ch] line-clamp-3">
+                  {featuredPost.excerpt}
+                </p>
+
+                <div className="mt-7 flex items-center gap-4">
+                  {featuredPost.date && (
+                    <span className="flex items-center gap-1.5 font-mono text-xs text-muted-foreground tabular-nums">
+                      <Calendar className="h-3.5 w-3.5" aria-hidden="true" /> {featuredPost.date}
+                    </span>
+                  )}
+                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-strong">
+                    Read the feature
+                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
                   </span>
-                )}
+                </div>
               </div>
-              <h2 className="text-xl sm:text-3xl font-display font-bold text-foreground hover:text-primary-strong transition-colors">
-                <Link href={`/blogs/${featuredPost.slug}`}>{featuredPost.title}</Link>
-              </h2>
-              <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
-                {featuredPost.excerpt}
-              </p>
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
-                {featuredPost.date && (
-                  <span className="flex items-center gap-1 text-xs text-muted-foreground font-mono">
-                    <Calendar className="h-3.5 w-3.5" aria-hidden="true" /> {featuredPost.date}
-                  </span>
-                )}
-                <Link
-                  href={`/blogs/${featuredPost.slug}`}
-                  className="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-md bg-accent text-accent-foreground font-semibold hover:bg-accent/90 transition-colors cursor-pointer"
-                >
-                  Read Featured Post <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-          </div>
+            </Link>
+          </article>
         </FadeIn>
       )}
 
-      {/* Regular posts grid */}
+      {/* Article index */}
       {regularPosts.length > 0 ? (
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
           {regularPosts.map((post) => (
-            <StaggerItem
-              key={post.slug}
-              className="surface-card hover:border-primary/30 p-0 rounded-xl flex flex-col justify-between overflow-hidden transition-all duration-300 group"
-            >
-              {post.image && (
-                <Link href={`/blogs/${post.slug}`} className="relative aspect-[16/9] w-full block overflow-hidden bg-muted border-b border-border">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 380px"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </Link>
-              )}
+            <StaggerItem key={post.slug}>
+              <article className="group flex flex-col h-full">
+                {post.image && (
+                  <Link
+                    href={`/blogs/${post.slug}`}
+                    className="relative aspect-[16/9] w-full block overflow-hidden rounded-xl bg-muted border border-border"
+                  >
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 380px"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    />
+                  </Link>
+                )}
 
-              <div className="p-6 flex flex-col justify-between flex-1 space-y-4">
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center text-xs font-mono">
-                    <span className="px-2 py-0.5 rounded bg-muted border border-border text-primary-strong font-semibold">
-                      {post.category}
-                    </span>
+                <div className="flex flex-col flex-1 pt-5">
+                  <div className="flex items-center justify-between font-mono text-xs uppercase tracking-[0.12em]">
+                    <span className="text-primary-strong font-semibold">{post.category}</span>
                     {post.readTime && (
-                      <span className="flex items-center gap-1 text-muted-foreground">
-                        <Clock className="h-3.5 w-3.5" aria-hidden="true" /> {post.readTime}
-                      </span>
+                      <span className="text-muted-foreground">{post.readTime}</span>
                     )}
                   </div>
 
-                  <h3 className="text-base font-bold text-foreground group-hover:text-primary-strong transition-colors line-clamp-2">
+                  <h3 className="font-display text-xl text-foreground mt-3 leading-snug group-hover:text-primary-strong transition-colors line-clamp-2">
                     <Link href={`/blogs/${post.slug}`}>{post.title}</Link>
                   </h3>
 
-                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed line-clamp-3">
                     {post.excerpt}
                   </p>
-                </div>
 
-                <div className="border-t border-border pt-4 flex items-center justify-between text-xs text-muted-foreground">
-                  {post.date ? (
-                    <span className="flex items-center gap-1 font-mono">
-                      <Calendar className="h-3.5 w-3.5" aria-hidden="true" /> {post.date}
-                    </span>
-                  ) : (
-                    <span />
-                  )}
-                  <Link
-                    href={`/blogs/${post.slug}`}
-                    className="font-semibold text-primary-strong inline-flex items-center gap-1 cursor-pointer"
-                  >
-                    Read Article <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                  <div className="mt-auto pt-5 flex items-center justify-between border-t border-border">
+                    {post.date ? (
+                      <span className="flex items-center gap-1.5 font-mono text-xs text-muted-foreground tabular-nums">
+                        <Calendar className="h-3.5 w-3.5" aria-hidden="true" /> {post.date}
+                      </span>
+                    ) : (
+                      <span />
+                    )}
+                    <Link
+                      href={`/blogs/${post.slug}`}
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-strong"
+                    >
+                      Read article
+                      <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+                    </Link>
+                  </div>
                 </div>
-              </div>
+              </article>
             </StaggerItem>
           ))}
         </StaggerContainer>
       ) : (
-        <div className="text-center py-16 text-muted-foreground">
+        <div className="text-center py-20 text-muted-foreground border-t border-border">
           <BookOpen className="h-10 w-10 mx-auto opacity-20 mb-3" aria-hidden="true" />
-          <p className="text-sm font-semibold">No articles found.</p>
-          <p className="text-xs mt-1 text-muted-foreground/70">Try searching for other keywords or select a different category.</p>
+          <p className="text-sm font-semibold text-foreground">No articles found.</p>
+          <p className="text-sm mt-1 text-muted-foreground/80">Try a different keyword or category.</p>
         </div>
       )}
     </div>
