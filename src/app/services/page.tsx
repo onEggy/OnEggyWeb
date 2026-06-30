@@ -64,7 +64,7 @@ export default function ServicesPage() {
           __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
         }}
       />
-      <div className="relative overflow-hidden min-h-screen">
+      <div className="relative">
         {/* 1. Services Hero Section */}
         <ServicesHero />
 
@@ -81,7 +81,7 @@ export default function ServicesPage() {
         <ServicesFaqs />
 
         {/* 6. Final Conversion CTA Section */}
-        <div className="py-12 border-t border-border/40">
+        <div className="py-16 sm:py-20 border-t border-border">
           <CtaBlock
             title="Ready to automate and scale your architecture?"
             description="Schedule a free 30-minute cloud-native engineering assessment with our senior architect to discuss your business requirements."
