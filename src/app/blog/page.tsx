@@ -159,7 +159,7 @@ export default function BlogPage() {
       {/* Editorial hero */}
       <section className="max-w-7xl mx-auto px-6 pt-12 pb-12 sm:pt-16 lg:pt-20">
         <span className="eyebrow mb-6">Our insights</span>
-        <h1 className="display text-5xl sm:text-6xl mt-5 max-w-[16ch]">
+        <h1 className="display text-4xl sm:text-5xl lg:text-6xl mt-5 max-w-[16ch]">
           The OnEggy engineering <em>journal.</em>
         </h1>
         <p className="mt-7 text-lg text-muted-foreground leading-relaxed max-w-[58ch]">
