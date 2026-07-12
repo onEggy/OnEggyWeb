@@ -35,7 +35,7 @@ interface RawBlogPost {
 // Helper function to read all posts on the server
 function getBlogPosts(): BlogPostInfo[] {
   try {
-    const indexFilePath = path.join(process.cwd(), "public/AllBlogs/index.json");
+    const indexFilePath = path.join(/*turbopackIgnore: true*/ process.cwd(), "public/AllBlogs/index.json");
     if (!fs.existsSync(indexFilePath)) return [];
 
     const rawData = fs.readFileSync(indexFilePath, "utf8");
@@ -48,7 +48,7 @@ function getBlogPosts(): BlogPostInfo[] {
       // Sourcing main image and date from the markdown frontmatter.
       // Read time is estimated from the overview length.
       try {
-        const mdPath = path.join(process.cwd(), post.mdFileLocation.replace("./", ""));
+        const mdPath = path.join(/*turbopackIgnore: true*/ process.cwd(), post.mdFileLocation.replace("./", ""));
         if (fs.existsSync(mdPath)) {
           const content = fs.readFileSync(mdPath, "utf8");
           const frontmatterMatch = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);

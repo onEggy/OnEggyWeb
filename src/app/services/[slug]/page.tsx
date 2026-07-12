@@ -157,17 +157,26 @@ export default async function ServicePage({ params }: PageProps) {
     cloud: {
       challengeIntro: "Organizations frequently hit compliance, deployment, and cost barriers due to legacy un-managed cloud setups:",
       solutionIntro: "We codify secure infrastructure policies and deploy automated workflows to optimize reliability:",
-      timelineSubtitle: "How we transition your cloud workloads from initial audit reviews to governed production setups."
+      timelineSubtitle: "How we transition your cloud workloads from initial audit reviews to governed production setups.",
+      ctaTitle: "Optimize your AWS Cloud posture.",
+      ctaDesc: "Schedule a 30-minute Cloud Optimization audit to identify redundant assets, right-size compute nodes, and cut waste.",
+      ctaButton: "Get Free Cloud Audit"
     },
     devops: {
       challengeIntro: "Engineering teams frequently hit release-velocity, reliability, and toil barriers due to manual, un-automated pipelines:",
       solutionIntro: "We codify automated CI/CD pipelines and infrastructure-as-code workflows to optimize delivery reliability:",
-      timelineSubtitle: "How we transition your delivery pipelines from initial audit reviews to governed, automated production workflows."
+      timelineSubtitle: "How we transition your delivery pipelines from initial audit reviews to governed, automated production workflows.",
+      ctaTitle: "Automate your release lifecycle.",
+      ctaDesc: "Partner with our platform team to eliminate developer toil, build automated CI/CD guardrails, and scale securely.",
+      ctaButton: "Schedule DevOps Consult"
     },
     software: {
       challengeIntro: "Product teams frequently hit code quality, scalability, and maintainability barriers due to rushed, un-architected applications:",
       solutionIntro: "We engineer clean, well-tested application code and modular product architecture to optimize quality and velocity:",
-      timelineSubtitle: "How we transition your product and application code from initial audit reviews to governed, production-ready releases."
+      timelineSubtitle: "How we transition your product and application code from initial audit reviews to governed, production-ready releases.",
+      ctaTitle: "Accelerate product engineering.",
+      ctaDesc: "Discuss product roadmaps, cross-platform React Native performance, or Next.js migrations with senior software leads.",
+      ctaButton: "Book Engineering Consult"
     }
   }[service.category];
 
@@ -579,11 +588,10 @@ export default async function ServicePage({ params }: PageProps) {
             <OrbitMark size={140} className="absolute -top-10 -right-10 opacity-[0.06] pointer-events-none" />
             <div className="lg:col-span-8 relative">
               <h2 className="display text-3xl sm:text-4xl">
-                Discuss your {service.title} <em>goals.</em>
+                {categoryCopy.ctaTitle}
               </h2>
               <p className="mt-5 text-base text-muted-foreground leading-relaxed max-w-[58ch]">
-                Schedule a 30-minute advisory call with our senior architects to map out
-                infrastructure budgets, timeline scopes, and risk checkpoints.
+                {categoryCopy.ctaDesc}
               </p>
             </div>
             <div className="lg:col-span-4 flex lg:justify-end relative">
@@ -591,7 +599,7 @@ export default async function ServicePage({ params }: PageProps) {
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-md border border-primary text-primary-strong hover:bg-primary/10 font-semibold text-sm transition-colors focus-visible:ring-2 focus-visible:ring-primary"
               >
-                Book free assessment <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                {categoryCopy.ctaButton} <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </div>
           </div>

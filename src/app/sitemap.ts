@@ -46,14 +46,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Dynamic blog sitemap mapping
   let blogSitemap: MetadataRoute.Sitemap = [];
   try {
-    const indexFilePath = path.join(process.cwd(), "public/AllBlogs/index.json");
+    const indexFilePath = path.join(/*turbopackIgnore: true*/ process.cwd(), "public/AllBlogs/index.json");
     if (fs.existsSync(indexFilePath)) {
       const rawData = fs.readFileSync(indexFilePath, "utf8");
       const posts = JSON.parse(rawData);
       blogSitemap = posts.map((post: { slug: string; mdFileLocation: string }) => {
         let date = new Date();
         try {
-          const mdPath = path.join(process.cwd(), post.mdFileLocation.replace("./", ""));
+          const mdPath = path.join(/*turbopackIgnore: true*/ process.cwd(), post.mdFileLocation.replace("./", ""));
           if (fs.existsSync(mdPath)) {
             const content = fs.readFileSync(mdPath, "utf8");
             const frontmatterMatch = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);

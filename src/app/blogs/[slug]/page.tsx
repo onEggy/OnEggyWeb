@@ -4,7 +4,7 @@ import path from "path";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, ArrowUpRight, Calendar, Clock, User } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Calendar, Clock, User, ChevronRight } from "lucide-react";
 import { OrbitMark } from "@/components/common/orbit-mark";
 import { parseMarkdown } from "@/lib/markdown-parser";
 
@@ -23,7 +23,7 @@ interface BlogPostFileEntry {
 // Generate static params for all 65 blog posts
 export async function generateStaticParams() {
   try {
-    const indexFilePath = path.join(process.cwd(), "public/AllBlogs/index.json");
+    const indexFilePath = path.join(/*turbopackIgnore: true*/ process.cwd(), "public/AllBlogs/index.json");
     if (!fs.existsSync(indexFilePath)) return [];
     
     const rawData = fs.readFileSync(indexFilePath, "utf8");
@@ -53,7 +53,7 @@ function parseToIsoDate(dateStr: string): string {
 // Read the blog index once and return all entries
 function getAllPosts(): BlogPostFileEntry[] {
   try {
-    const indexFilePath = path.join(process.cwd(), "public/AllBlogs/index.json");
+    const indexFilePath = path.join(/*turbopackIgnore: true*/ process.cwd(), "public/AllBlogs/index.json");
     if (!fs.existsSync(indexFilePath)) return [];
     const rawData = fs.readFileSync(indexFilePath, "utf8");
     return JSON.parse(rawData) as BlogPostFileEntry[];
@@ -75,7 +75,7 @@ function getRelatedPosts(slug: string, category: string): BlogPostFileEntry[] {
 // Helper to get blog post content and metadata
 function getBlogPost(slug: string) {
   try {
-    const indexFilePath = path.join(process.cwd(), "public/AllBlogs/index.json");
+    const indexFilePath = path.join(/*turbopackIgnore: true*/ process.cwd(), "public/AllBlogs/index.json");
     if (!fs.existsSync(indexFilePath)) return null;
 
     const rawData = fs.readFileSync(indexFilePath, "utf8");
@@ -83,7 +83,7 @@ function getBlogPost(slug: string) {
     const postEntry = posts.find((p) => p.slug === slug);
     if (!postEntry) return null;
 
-    const mdPath = path.join(process.cwd(), postEntry.mdFileLocation.replace("./", ""));
+    const mdPath = path.join(/*turbopackIgnore: true*/ process.cwd(), postEntry.mdFileLocation.replace("./", ""));
     if (!fs.existsSync(mdPath)) return null;
 
     const fileContent = fs.readFileSync(mdPath, "utf8");
@@ -175,6 +175,42 @@ export async function generateMetadata({ params }: PageProps) {
       description: post.description,
       images: [`https://www.oneggy.com${post.mainBigImage}`],
     },
+  };
+}
+
+interface ServiceMapping {
+  name: string;
+  href: string;
+  desc: string;
+}
+
+function getRelatedService(category: string): ServiceMapping | null {
+  const cat = (category || "").toLowerCase();
+  if (cat.includes("aws") || cat.includes("cloud") || cat.includes("cost") || cat.includes("billing")) {
+    return {
+      name: "AWS Cloud Managed Services",
+      href: "/services/aws-cloud-managed-services",
+      desc: "Optimize infrastructure costs, security guardrails, and compliance postures under senior AWS cloud governance."
+    };
+  }
+  if (cat.includes("devops") || cat.includes("kubernetes") || cat.includes("ci") || cat.includes("pipeline") || cat.includes("automation")) {
+    return {
+      name: "Kubernetes Orchestration & DevOps Services",
+      href: "/services/kubernetes",
+      desc: "Deploy containerized applications, design GitOps release pipelines, and configure Backstage platform engineering portals."
+    };
+  }
+  if (cat.includes("web") || cat.includes("app") || cat.includes("software") || cat.includes("mobile") || cat.includes("api") || cat.includes("database") || cat.includes("security")) {
+    return {
+      name: "Full Stack & Custom Software Engineering",
+      href: "/services/full-stack-web-development",
+      desc: "Engineered next-gen Next.js web applications, React Native mobile apps, and enterprise DevOps security blueprints."
+    };
+  }
+  return {
+    name: "AWS Cloud & DevOps Advisory Services",
+    href: "/services",
+    desc: "Explore our comprehensive modern DevOps, IaC orchestration, and AWS managed services portfolios."
   };
 }
 
@@ -313,6 +349,27 @@ export default async function BlogPostPage({ params }: PageProps) {
           className="blog-prose prose text-foreground leading-relaxed space-y-6 text-base mt-12 max-w-[68ch]"
           dangerouslySetInnerHTML={{ __html: post.htmlContent }}
         />
+
+        {/* Dynamic Service practice lead capture link */}
+        {(() => {
+          const service = getRelatedService(post.category);
+          if (!service) return null;
+          return (
+            <div className="mt-12 p-6 rounded-2xl border border-border bg-surface-subtle relative overflow-hidden flex flex-col sm:flex-row items-baseline sm:items-center justify-between gap-5">
+              <div className="space-y-1 max-w-[50ch]">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-primary-strong font-semibold block">Practice Area</span>
+                <h3 className="font-display text-lg text-foreground font-semibold">{service.name}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{service.desc}</p>
+              </div>
+              <Link
+                href={service.href}
+                className="inline-flex items-center gap-1.5 h-10 px-5 rounded-md bg-accent text-accent-foreground hover:bg-accent/90 transition-colors font-semibold text-sm cursor-pointer shrink-0"
+              >
+                Explore service <ChevronRight className="h-4 w-4" />
+              </Link>
+            </div>
+          );
+        })()}
 
         {/* Topics */}
         {post.keywords.length > 0 && (
