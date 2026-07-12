@@ -48,7 +48,7 @@ export function BlogContent({ posts, categories }: BlogContentProps) {
       {/* Filter + search — hairline editorial bar */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-5 border-b border-border pb-6">
         <div
-          className="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0 scrollbar-none shrink-0 max-w-full"
+          className="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0 scrollbar-none w-full min-w-0 max-w-full"
           role="group"
           aria-label="Filter articles by category"
         >
@@ -105,7 +105,7 @@ export function BlogContent({ posts, categories }: BlogContentProps) {
                 </div>
               )}
 
-              <div className={`${featuredPost.image ? "lg:col-span-7" : "lg:col-span-12"} flex flex-col justify-center p-7 sm:p-9`}>
+              <div className={`${featuredPost.image ? "lg:col-span-7" : "lg:col-span-12"} flex flex-col justify-center p-5 sm:p-8`}>
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-xs uppercase tracking-[0.12em]">
                   <span className="text-primary-strong font-semibold">Featured · {featuredPost.category}</span>
                   {featuredPost.readTime && (
@@ -113,7 +113,7 @@ export function BlogContent({ posts, categories }: BlogContentProps) {
                   )}
                 </div>
 
-                <h2 className="display text-3xl sm:text-4xl mt-4 group-hover:text-primary-strong transition-colors">
+                <h2 className="display text-2xl sm:text-3xl lg:text-4xl mt-4 group-hover:text-primary-strong transition-colors break-words">
                   {featuredPost.title}
                 </h2>
 
@@ -140,10 +140,10 @@ export function BlogContent({ posts, categories }: BlogContentProps) {
 
       {/* Article index */}
       {regularPosts.length > 0 ? (
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 w-full min-w-0">
           {regularPosts.map((post) => (
             <StaggerItem key={post.slug}>
-              <article className="group flex flex-col h-full">
+              <article className="group flex flex-col h-full w-full min-w-0 overflow-hidden">
                 {post.image && (
                   <Link
                     href={`/blogs/${post.slug}`}
@@ -167,7 +167,7 @@ export function BlogContent({ posts, categories }: BlogContentProps) {
                     )}
                   </div>
 
-                  <h3 className="font-display text-xl text-foreground mt-3 leading-snug group-hover:text-primary-strong transition-colors line-clamp-2">
+                  <h3 className="font-display text-lg sm:text-xl text-foreground mt-3 leading-snug group-hover:text-primary-strong transition-colors line-clamp-2 break-words">
                     <Link href={`/blogs/${post.slug}`}>{post.title}</Link>
                   </h3>
 
