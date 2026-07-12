@@ -15,7 +15,7 @@ const CtaBlock = dynamic(() => import("@/components/common/cta-block").then((mod
 
 export const metadata: Metadata = {
   title: "OnEggy Technologies | AWS Cloud Managed Services & DevOps Consulting Company India",
-  description: "Scale secure AWS cloud deployments, automate CI/CD pipelines, and migrate to Kubernetes EKS with OnEggy's premium DevOps consulting company in India. Request a free cloud cost audit.",
+  description: "Scale secure AWS cloud deployments, automate CI/CD pipelines, and migrate to Kubernetes EKS with India's premium DevOps consulting and cloud managed company.",
   alternates: {
     canonical: "/",
   },
@@ -32,14 +32,14 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "OnEggy Technologies | AWS Cloud Managed Services & DevOps Consulting Company India",
-    description: "Scale secure AWS cloud deployments, automate CI/CD pipelines, and migrate to Kubernetes EKS with OnEggy's premium DevOps consulting company in India.",
+    description: "Scale secure AWS cloud deployments, automate CI/CD pipelines, and migrate to Kubernetes EKS with India's premium DevOps consulting company.",
     url: "https://www.oneggy.com",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "OnEggy Technologies | AWS Cloud Managed Services & DevOps Consulting Company India",
-    description: "Scale secure AWS cloud deployments, automate CI/CD pipelines, and migrate to Kubernetes EKS with OnEggy's premium DevOps consulting company.",
+    description: "Scale secure AWS cloud deployments, automate CI/CD pipelines, and migrate to Kubernetes EKS with India's premium DevOps consulting company.",
   },
 };
 

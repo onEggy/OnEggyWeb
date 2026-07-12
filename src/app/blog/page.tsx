@@ -43,9 +43,10 @@ function getBlogPosts(): BlogPostInfo[] {
 
     return rawPosts.map((post: RawBlogPost, idx: number): BlogPostInfo => {
       let image = "/blogs-thumbnails/oneggy-technologies-integrating-aws-kubernetes.png";
+      let date = "";
 
-      // Posts have no date field; only the hero image is sourced from the
-      // markdown frontmatter. Read time is estimated from the overview length.
+      // Sourcing main image and date from the markdown frontmatter.
+      // Read time is estimated from the overview length.
       try {
         const mdPath = path.join(process.cwd(), post.mdFileLocation.replace("./", ""));
         if (fs.existsSync(mdPath)) {
@@ -54,14 +55,20 @@ function getBlogPosts(): BlogPostInfo[] {
           if (frontmatterMatch) {
             frontmatterMatch[1].split("\n").forEach((line) => {
               const parts = line.split(":");
-              if (parts.length >= 2 && parts[0].trim() === "mainBigImage") {
-                image = parts.slice(1).join(":").trim();
+              if (parts.length >= 2) {
+                const key = parts[0].trim();
+                const val = parts.slice(1).join(":").trim();
+                if (key === "mainBigImage") {
+                  image = val;
+                } else if (key === "date") {
+                  date = val;
+                }
               }
             });
           }
         }
       } catch {
-        // fallback to default image
+        // fallback
       }
 
       // Estimate read time from word count (~200 wpm) rather than fabricating it.
@@ -71,7 +78,7 @@ function getBlogPosts(): BlogPostInfo[] {
       return {
         title: post.title,
         excerpt: post.overview || "",
-        date: "",
+        date,
         readTime,
         category: post.category || "DevOps",
         slug: post.slug,

@@ -6,7 +6,7 @@ import { testimonials } from "../../../public/data/testimonial.json";
 
 export const metadata: Metadata = {
   title: "Case Studies & Outcomes | OnEggy Technologies",
-  description: "Explore our real client success stories: AWS Cloud restructuring for Smile Foundation, EKS Kubernetes migrations for CloudStok, and fintech React Native setups for Beyond Imagination.",
+  description: "Explore our client success stories: AWS Cloud restructuring, Kubernetes migrations, and React Native fintech setups engineered by OnEggy Technologies.",
   alternates: {
     canonical: "https://www.oneggy.com/case-studies",
   },
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://www.oneggy.com/case-studies",
     title: "Case Studies & Outcomes | OnEggy Technologies",
-    description: "Explore our real client success stories: AWS Cloud restructuring for Smile Foundation, EKS Kubernetes migrations for CloudStok, and fintech React Native setups for Beyond Imagination.",
+    description: "Explore our client success stories: AWS Cloud restructuring, Kubernetes migrations, and React Native fintech setups engineered by OnEggy Technologies.",
     siteName: "OnEggy Technologies",
   },
 };

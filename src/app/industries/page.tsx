@@ -3,16 +3,16 @@ import { FadeUp } from "@/components/animations/motion-wrappers";
 import { CtaBlock } from "@/components/common/cta-block";
 
 export const metadata: Metadata = {
-  title: "Industries We Serve | OnEggy Technologies",
-  description: "Browse our industry-specific cloud engineering solutions: HIPAA-compliant architectures for Healthcare, PCI-DSS configurations for Fintech, multi-tenant SaaS scaling, and E-Commerce storefronts.",
+  title: "Industries Serve | OnEggy Technologies",
+  description: "Browse OnEggy's sector-specific cloud engineering solutions: HIPAA compliance for Healthcare, PCI-DSS for Fintech, and multi-tenant SaaS scaling architectures.",
   alternates: {
     canonical: "https://www.oneggy.com/industries",
   },
   openGraph: {
     type: "website",
     url: "https://www.oneggy.com/industries",
-    title: "Industries We Serve | OnEggy Technologies",
-    description: "Industry-specific cloud engineering blueprints: HIPAA-compliant Healthcare, PCI-DSS Fintech, multi-tenant SaaS, Headless E-Commerce, and more — engineered to your sector's regulatory standards.",
+    title: "Industries Serve | OnEggy Technologies",
+    description: "OnEggy's sector-specific cloud engineering solutions: HIPAA compliance for Healthcare, PCI-DSS for Fintech, and multi-tenant SaaS scaling.",
     siteName: "OnEggy Technologies",
   },
 };
@@ -68,12 +68,37 @@ const itemListJsonLd = {
   })),
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.oneggy.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Industries We Serve",
+      "item": "https://www.oneggy.com/industries"
+    }
+  ]
+};
+
 export default function IndustriesPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
+        }}
       />
 
       {/* Hero */}

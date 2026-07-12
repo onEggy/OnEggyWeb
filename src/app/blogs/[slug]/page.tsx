@@ -37,8 +37,18 @@ export async function generateStaticParams() {
   }
 }
 
-// Stable ISO date used for structured data (no per-post date exists in index.json)
-const STABLE_ISO_DATE = "2024-01-01T00:00:00Z";
+// Helper to parse date string (e.g. "24-Oct-2024") to ISO string for search engines
+function parseToIsoDate(dateStr: string): string {
+  try {
+    const d = new Date(dateStr.trim());
+    if (!isNaN(d.getTime())) {
+      return d.toISOString();
+    }
+  } catch (e) {
+    console.error("Error parsing date:", dateStr, e);
+  }
+  return "2024-01-01T00:00:00Z"; // fallback
+}
 
 // Read the blog index once and return all entries
 function getAllPosts(): BlogPostFileEntry[] {
@@ -150,7 +160,7 @@ export async function generateMetadata({ params }: PageProps) {
       description: post.description,
       url: `https://www.oneggy.com/blogs/${post.slug}`,
       type: "article",
-      publishedTime: post.date,
+      publishedTime: parseToIsoDate(post.date),
       authors: ["OnEggy Engineering Team"],
       images: [
         {
@@ -184,8 +194,8 @@ export default async function BlogPostPage({ params }: PageProps) {
     "@type": "BlogPosting",
     "headline": post.title,
     "image": `https://www.oneggy.com${post.mainBigImage}`,
-    "datePublished": STABLE_ISO_DATE,
-    "dateModified": STABLE_ISO_DATE,
+    "datePublished": parseToIsoDate(post.date),
+    "dateModified": parseToIsoDate(post.date),
     "description": post.description,
     "author": {
       "@type": "Organization",
