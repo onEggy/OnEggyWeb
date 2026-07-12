@@ -12,7 +12,7 @@ const CtaBlock = dynamic(() => import("@/components/common/cta-block").then((mod
 
 export const metadata: Metadata = {
   title: "Cloud, DevOps & Software Engineering Services | OnEggy",
-  description: "Browse OnEggy's professional engineering services catalog: AWS managed cloud, Kubernetes, DevOps, CI/CD pipelines, SRE support, plus full-stack web, mobile, SaaS, and API software development.",
+  description: "Browse OnEggy's professional services: AWS managed cloud, Kubernetes infrastructure, DevOps automation, and high-performance software engineering.",
   alternates: {
     canonical: "https://www.oneggy.com/services",
   },

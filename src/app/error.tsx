@@ -56,7 +56,7 @@ export default function Error({ error, reset }: ErrorProps) {
         <div className="pt-4 border-t border-border flex items-center justify-center gap-2 text-xs text-muted-foreground flex-wrap">
           <Mail className="h-4 w-4 text-primary" aria-hidden="true" />
           <span>Need immediate assistance? Email us at</span>
-          <a href="mailto:support@oneggy.com" className="text-primary-strong hover:underline">support@oneggy.com</a>
+          <a href="mailto:ask@oneggy.com" className="text-primary-strong hover:underline">ask@oneggy.com</a>
         </div>
       </div>
     </div>

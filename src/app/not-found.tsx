@@ -39,7 +39,7 @@ export default function NotFound() {
         <div className="pt-8 border-t border-border flex items-center justify-center gap-2 text-xs text-muted-foreground flex-wrap">
           <HelpCircle className="h-4 w-4 text-primary" aria-hidden="true" />
           <span>Need help finding a service? Contact our desk at</span>
-          <a href="mailto:support@oneggy.com" className="text-primary-strong hover:underline">support@oneggy.com</a>
+          <a href="mailto:ask@oneggy.com" className="text-primary-strong hover:underline">ask@oneggy.com</a>
         </div>
       </div>
     </div>

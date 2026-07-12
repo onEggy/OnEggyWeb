@@ -14,8 +14,8 @@ const CtaBlock = dynamic(() => import("@/components/common/cta-block").then((mod
 
 
 export const metadata: Metadata = {
-  title: "OnEggy Technologies | AWS Cloud Managed Services & DevOps Consulting Company India",
-  description: "Scale secure AWS cloud deployments, automate CI/CD pipelines, and migrate to Kubernetes EKS with OnEggy's premium DevOps consulting company in India. Request a free cloud cost audit.",
+  title: "AWS Managed Cloud & DevOps Consulting | OnEggy Technologies",
+  description: "Scale secure AWS cloud environments, automate CI/CD pipelines, and manage Kubernetes clusters. Global DevOps consulting and cloud managed services by OnEggy.",
   alternates: {
     canonical: "/",
   },
@@ -31,32 +31,73 @@ export const metadata: Metadata = {
     "Kubernetes experts India",
   ],
   openGraph: {
-    title: "OnEggy Technologies | AWS Cloud Managed Services & DevOps Consulting Company India",
-    description: "Scale secure AWS cloud deployments, automate CI/CD pipelines, and migrate to Kubernetes EKS with OnEggy's premium DevOps consulting company in India.",
+    title: "AWS Managed Cloud & DevOps Consulting | OnEggy Technologies",
+    description: "Scale secure AWS cloud environments, automate CI/CD pipelines, and manage Kubernetes clusters. Global DevOps consulting and cloud managed services by OnEggy.",
     url: "https://www.oneggy.com",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "OnEggy Technologies | AWS Cloud Managed Services & DevOps Consulting Company India",
-    description: "Scale secure AWS cloud deployments, automate CI/CD pipelines, and migrate to Kubernetes EKS with OnEggy's premium DevOps consulting company.",
+    title: "AWS Managed Cloud & DevOps Consulting | OnEggy Technologies",
+    description: "Scale secure AWS cloud environments, automate CI/CD pipelines, and manage Kubernetes clusters. Global DevOps consulting and cloud managed services by OnEggy.",
   },
 };
 
 export default function Home() {
   const schemaMarkup = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "OnEggy Technologies",
-    url: "https://www.oneggy.com",
-    logo: "https://www.oneggy.com/logov1.png",
-    sameAs: ["https://github.com/onEggy", "https://linkedin.com/company/oneggy"],
-    contactPoint: {
-      "@type": "ContactPoint",
-      email: "ask@oneggy.com",
-      telephone: "+91-98111-33005",
-      contactType: "customer service",
-    },
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.oneggy.com/#organization",
+        "name": "OnEggy Technologies",
+        "url": "https://www.oneggy.com",
+        "logo": "https://www.oneggy.com/logov1.png",
+        "sameAs": ["https://github.com/onEggy", "https://linkedin.com/company/oneggy"],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "ask@oneggy.com",
+          "telephone": "+91-98111-33005",
+          "contactType": "customer service"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.oneggy.com/#website",
+        "name": "OnEggy Technologies",
+        "url": "https://www.oneggy.com",
+        "publisher": {
+          "@id": "https://www.oneggy.com/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.oneggy.com/blog?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://www.oneggy.com/#localbusiness",
+        "name": "OnEggy Technologies",
+        "image": "https://www.oneggy.com/logov1.png",
+        "url": "https://www.oneggy.com",
+        "telephone": "+91-98111-33005",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Gurgaon",
+          "addressLocality": "Gurgaon",
+          "addressRegion": "Delhi NCR",
+          "postalCode": "122001",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "28.4595",
+          "longitude": "77.0266"
+        }
+      }
+    ]
   };
 
   return (

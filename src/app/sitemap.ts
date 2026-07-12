@@ -46,16 +46,42 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Dynamic blog sitemap mapping
   let blogSitemap: MetadataRoute.Sitemap = [];
   try {
-    const indexFilePath = path.join(process.cwd(), "public/AllBlogs/index.json");
+    const indexFilePath = path.join(/*turbopackIgnore: true*/ process.cwd(), "public/AllBlogs/index.json");
     if (fs.existsSync(indexFilePath)) {
       const rawData = fs.readFileSync(indexFilePath, "utf8");
       const posts = JSON.parse(rawData);
-      blogSitemap = posts.map((post: { slug: string }) => ({
-        url: `${baseUrl}/blogs/${post.slug}`,
-        lastModified: new Date(),
-        changeFrequency: "daily" as const,
-        priority: 0.6,
-      }));
+      blogSitemap = posts.map((post: { slug: string; mdFileLocation: string }) => {
+        let date = new Date();
+        try {
+          const mdPath = path.join(/*turbopackIgnore: true*/ process.cwd(), post.mdFileLocation.replace("./", ""));
+          if (fs.existsSync(mdPath)) {
+            const content = fs.readFileSync(mdPath, "utf8");
+            const frontmatterMatch = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+            if (frontmatterMatch) {
+              const lines = frontmatterMatch[1].split("\n");
+              for (const line of lines) {
+                const parts = line.split(":");
+                if (parts.length >= 2 && parts[0].trim() === "date") {
+                  const val = parts.slice(1).join(":").trim();
+                  const parsed = new Date(val);
+                  if (!isNaN(parsed.getTime())) {
+                    date = parsed;
+                  }
+                  break;
+                }
+              }
+            }
+          }
+        } catch (e) {
+          // fallback to build date
+        }
+        return {
+          url: `${baseUrl}/blogs/${post.slug}`,
+          lastModified: date,
+          changeFrequency: "daily" as const,
+          priority: 0.6,
+        };
+      });
     }
   } catch (error) {
     console.error("Error generating sitemap for blogs:", error);
