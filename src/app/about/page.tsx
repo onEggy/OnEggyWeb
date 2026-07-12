@@ -103,7 +103,7 @@ export default function AboutPage() {
               {leadership.map((leader) => (
                 <div key={leader.name} className="surface-card rounded-xl p-6">
                   <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-full overflow-hidden bg-muted border border-border shrink-0 relative">
+                    <div className="w-14 h-14 overflow-hidden shrink-0 relative">
                       <Image src={leader.image} alt={leader.alt} fill sizes="56px" className="object-cover" />
                     </div>
                     <div>
@@ -128,7 +128,7 @@ export default function AboutPage() {
             <ul className="border-t border-border">
               {engineering.map((member) => (
                 <li key={member.name} className="flex items-start gap-4 py-6 border-b border-border">
-                  <div className="w-12 h-12 rounded-full overflow-hidden bg-muted border border-border shrink-0 relative">
+                  <div className="w-12 h-12 overflow-hidden shrink-0 relative">
                     <Image src={member.image} alt={member.alt} fill sizes="48px" className="object-cover" />
                   </div>
                   <div className="min-w-0">
