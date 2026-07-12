@@ -1,0 +1,16 @@
+# OnEggy Technologies
+
+OnEggy Technologies is a modern cloud-native engineering partner specializing in AWS Cloud, Kubernetes infrastructure orchestration, DevOps automation, and high-performance digital applications.
+
+## Core Services
+- AWS Cloud Managed Services (https://www.oneggy.com/services/aws-cloud-managed-services)
+- Kubernetes Setup & Orchestration (https://www.oneggy.com/services/kubernetes)
+- DevOps Consulting & Automation (https://www.oneggy.com/services/devops-consulting)
+- Platform Engineering (https://www.oneggy.com/services/platform-engineering)
+- Full Stack & Mobile App Development (https://www.oneggy.com/services/full-stack-web-development)
+
+## Core Resources
+- Blog & Insights: https://www.oneggy.com/blog
+- Case Studies: https://www.oneggy.com/case-studies
+- Contact & Consultations: https://www.oneggy.com/contact
+- Pricing Specifications: https://www.oneggy.com/pricing.md

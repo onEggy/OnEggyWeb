@@ -46,17 +46,36 @@ export const metadata: Metadata = {
 export default function Home() {
   const schemaMarkup = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "OnEggy Technologies",
-    url: "https://www.oneggy.com",
-    logo: "https://www.oneggy.com/logov1.png",
-    sameAs: ["https://github.com/onEggy", "https://linkedin.com/company/oneggy"],
-    contactPoint: {
-      "@type": "ContactPoint",
-      email: "ask@oneggy.com",
-      telephone: "+91-98111-33005",
-      contactType: "customer service",
-    },
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.oneggy.com/#organization",
+        "name": "OnEggy Technologies",
+        "url": "https://www.oneggy.com",
+        "logo": "https://www.oneggy.com/logov1.png",
+        "sameAs": ["https://github.com/onEggy", "https://linkedin.com/company/oneggy"],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "ask@oneggy.com",
+          "telephone": "+91-98111-33005",
+          "contactType": "customer service"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.oneggy.com/#website",
+        "name": "OnEggy Technologies",
+        "url": "https://www.oneggy.com",
+        "publisher": {
+          "@id": "https://www.oneggy.com/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.oneggy.com/blog?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
   };
 
   return (

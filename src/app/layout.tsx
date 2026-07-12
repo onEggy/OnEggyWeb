@@ -5,6 +5,7 @@ import { Footer } from "@/components/common/footer";
 import { ScrollProvider } from "@/components/providers/scroll-provider";
 import { PageTransition } from "@/components/animations/page-transition";
 import { MotionProvider } from "@/components/providers/motion-provider";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -85,6 +86,22 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+              `}
+            </Script>
+          </>
+        )}
         <a href="#main" className="skip-link">
           Skip to content
         </a>
