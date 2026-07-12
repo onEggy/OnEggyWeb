@@ -21,32 +21,22 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
   useEffect(() => {
     if (headings.length === 0) return;
 
-    // Cache elements once when headings change, instead of querying DOM on every single scroll tick
-    const headingElements = headings
-      .map((h) => ({ id: h.id, el: document.getElementById(h.id) }))
-      .filter((item) => item.el !== null) as { id: string; el: HTMLElement }[];
-
-    let ticking = false;
-
     const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          let currentActiveId = headings[0].id;
-          const scrollPosition = window.scrollY + 120; // offset for sticky nav/header
+      let currentActiveId = headings[0].id;
+      const scrollPosition = window.scrollY + 120; // offset for sticky nav/header
 
-          for (const { id, el } of headingElements) {
-            if (el.offsetTop <= scrollPosition) {
-              currentActiveId = id;
-            } else {
-              break; // Headings are sorted by offsetTop, so we can stop
-            }
+      for (const heading of headings) {
+        const el = document.getElementById(heading.id);
+        if (el) {
+          if (el.offsetTop <= scrollPosition) {
+            currentActiveId = heading.id;
+          } else {
+            break; // Headings are sorted by offsetTop, so we can stop
           }
-
-          setActiveId((prev) => (prev !== currentActiveId ? currentActiveId : prev));
-          ticking = false;
-        });
-        ticking = true;
+        }
       }
+
+      setActiveId((prev) => (prev !== currentActiveId ? currentActiveId : prev));
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
