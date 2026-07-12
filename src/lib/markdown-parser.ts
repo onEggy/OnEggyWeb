@@ -17,7 +17,15 @@ export function parseMarkdown(markdown: string): string {
     if (line.trim().startsWith("```")) {
       if (inCodeBlock) {
         // End code block
-        html += `<pre class="bg-accent/30 border border-border/40 p-4 rounded-lg my-6 font-mono text-xs sm:text-sm overflow-x-auto text-foreground whitespace-pre"><code class="language-${codeLanguage}">${escapeHtml(codeBlockContent.trim())}</code></pre>\n`;
+        html += `<div class="relative group my-6">
+  <button 
+    class="absolute right-3 top-3 opacity-0 group-hover:opacity-100 transition-opacity bg-surface-subtle border border-border text-xs px-2.5 py-1 rounded font-semibold text-muted-foreground hover:text-foreground hover:bg-card cursor-pointer select-none"
+    onclick="navigator.clipboard.writeText(this.nextElementSibling.querySelector('code').innerText).then(() => { this.innerText = 'Copied!'; setTimeout(() => this.innerText = 'Copy', 2000) })"
+  >
+    Copy
+  </button>
+  <pre class="bg-accent/30 border border-border/40 p-4 rounded-lg font-mono text-xs sm:text-sm overflow-x-auto text-foreground whitespace-pre"><code class="language-${codeLanguage}">${escapeHtml(codeBlockContent.trim())}</code></pre>
+</div>\n`;
         inCodeBlock = false;
         codeBlockContent = "";
         codeLanguage = "";
@@ -96,10 +104,61 @@ export function parseMarkdown(markdown: string): string {
       }
       i--; // step back for the for-loop's i++
 
+      // Check for Github Alert syntax
+      let alertType = "";
+      if (quoteLines.length > 0) {
+        const firstLine = quoteLines[0].trim();
+        if (firstLine.startsWith("[!NOTE]")) {
+          alertType = "NOTE";
+          quoteLines[0] = firstLine.replace("[!NOTE]", "").trim();
+        } else if (firstLine.startsWith("[!WARNING]")) {
+          alertType = "WARNING";
+          quoteLines[0] = firstLine.replace("[!WARNING]", "").trim();
+        } else if (firstLine.startsWith("[!TIP]")) {
+          alertType = "TIP";
+          quoteLines[0] = firstLine.replace("[!TIP]", "").trim();
+        } else if (firstLine.startsWith("[!IMPORTANT]")) {
+          alertType = "IMPORTANT";
+          quoteLines[0] = firstLine.replace("[!IMPORTANT]", "").trim();
+        } else if (firstLine.startsWith("[!CAUTION]")) {
+          alertType = "CAUTION";
+          quoteLines[0] = firstLine.replace("[!CAUTION]", "").trim();
+        }
+      }
+
       const quoteHtml = quoteLines
+        .filter((q, idx) => idx > 0 || q.trim() !== "") // remove empty first line if it just had the alert tag
         .map((q) => parseInlineMarkdown(q))
         .join("<br />");
-      html += `<blockquote class="border-l-4 border-primary/40 pl-4 italic text-muted-foreground my-6">${quoteHtml}</blockquote>\n`;
+
+      if (alertType === "NOTE") {
+        html += `<div class="bg-primary/5 border-l-4 border-primary px-4 py-3.5 rounded-r-lg my-6 text-sm">
+  <p class="font-mono text-xs uppercase tracking-wider text-primary-strong font-semibold mb-1">Note</p>
+  <div class="text-muted-foreground leading-relaxed">${quoteHtml}</div>
+</div>\n`;
+      } else if (alertType === "WARNING") {
+        html += `<div class="bg-accent/5 border-l-4 border-accent px-4 py-3.5 rounded-r-lg my-6 text-sm">
+  <p class="font-mono text-xs uppercase tracking-wider text-accent-strong font-semibold mb-1">Warning</p>
+  <div class="text-muted-foreground leading-relaxed">${quoteHtml}</div>
+</div>\n`;
+      } else if (alertType === "TIP") {
+        html += `<div class="bg-success/5 border-l-4 border-success px-4 py-3.5 rounded-r-lg my-6 text-sm">
+  <p class="font-mono text-xs uppercase tracking-wider text-success font-semibold mb-1">Tip</p>
+  <div class="text-muted-foreground leading-relaxed">${quoteHtml}</div>
+</div>\n`;
+      } else if (alertType === "IMPORTANT") {
+        html += `<div class="bg-primary/5 border-l-4 border-primary-strong px-4 py-3.5 rounded-r-lg my-6 text-sm">
+  <p class="font-mono text-xs uppercase tracking-wider text-primary-strong font-semibold mb-1">Important</p>
+  <div class="text-muted-foreground leading-relaxed">${quoteHtml}</div>
+</div>\n`;
+      } else if (alertType === "CAUTION") {
+        html += `<div class="bg-destructive/5 border-l-4 border-destructive px-4 py-3.5 rounded-r-lg my-6 text-sm">
+  <p class="font-mono text-xs uppercase tracking-wider text-destructive font-semibold mb-1">Caution</p>
+  <div class="text-muted-foreground leading-relaxed">${quoteHtml}</div>
+</div>\n`;
+      } else {
+        html += `<blockquote class="border-l-4 border-primary/40 pl-4 italic text-muted-foreground my-6">${quoteHtml}</blockquote>\n`;
+      }
       continue;
     }
 
@@ -150,11 +209,20 @@ export function parseMarkdown(markdown: string): string {
 
     // Handle Headings
     if (line.trim().startsWith("### ")) {
-      html += `<h4 class="text-lg font-bold text-foreground mt-8 mb-3">${parseInlineMarkdown(line.trim().substring(4))}</h4>\n`;
+      const headingText = line.trim().substring(4);
+      const cleanText = headingText.replace(/\*\*|\*|`/g, "");
+      const id = cleanText.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+      html += `<h4 id="${id}" class="text-lg font-bold text-foreground mt-8 mb-3 scroll-mt-24">${parseInlineMarkdown(headingText)}</h4>\n`;
     } else if (line.trim().startsWith("## ")) {
-      html += `<h3 class="text-xl font-bold text-foreground mt-10 mb-4 pb-2 border-b border-border/20">${parseInlineMarkdown(line.trim().substring(3))}</h3>\n`;
+      const headingText = line.trim().substring(3);
+      const cleanText = headingText.replace(/\*\*|\*|`/g, "");
+      const id = cleanText.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+      html += `<h3 id="${id}" class="text-xl font-bold text-foreground mt-10 mb-4 pb-2 border-b border-border/20 scroll-mt-24">${parseInlineMarkdown(headingText)}</h3>\n`;
     } else if (line.trim().startsWith("# ")) {
-      html += `<h2 class="text-2xl font-bold text-foreground mt-12 mb-6">${parseInlineMarkdown(line.trim().substring(2))}</h2>\n`;
+      const headingText = line.trim().substring(2);
+      const cleanText = headingText.replace(/\*\*|\*|`/g, "");
+      const id = cleanText.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+      html += `<h2 id="${id}" class="text-2xl font-bold text-foreground mt-12 mb-6 scroll-mt-24">${parseInlineMarkdown(headingText)}</h2>\n`;
     } else {
       // Default to paragraph
       html += `<p class="leading-relaxed text-muted-foreground my-4">${parseInlineMarkdown(line.trim())}</p>\n`;
