@@ -5,7 +5,7 @@ import { CtaBlock } from "@/components/common/cta-block";
 import { testimonials } from "../../../public/data/testimonial.json";
 
 export const metadata: Metadata = {
-  title: "Case Studies & Outcomes | OnEggy Technologies",
+  title: "DevOps & AWS Cloud Migration Case Studies | OnEggy",
   description: "Explore our client success stories: AWS Cloud restructuring, Kubernetes migrations, and React Native fintech setups engineered by OnEggy Technologies.",
   alternates: {
     canonical: "https://www.oneggy.com/case-studies",
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://www.oneggy.com/case-studies",
-    title: "Case Studies & Outcomes | OnEggy Technologies",
+    title: "DevOps & AWS Cloud Migration Case Studies | OnEggy",
     description: "Explore our client success stories: AWS Cloud restructuring, Kubernetes migrations, and React Native fintech setups engineered by OnEggy Technologies.",
     siteName: "OnEggy Technologies",
   },

@@ -7,12 +7,12 @@ import { OrbitMark } from "@/components/common/orbit-mark";
 import { profile as teamProfiles } from "../../../public/data/teamSection.json";
 
 export const metadata: Metadata = {
-  title: "About Our Practice | OnEggy Technologies",
-  description: "Learn about OnEggy's cloud modernization practice, our engineering standards, and advisory principles.",
+  title: "Cloud Modernization Practice & Engineers | OnEggy",
+  description: "Meet OnEggy's senior cloud architects and platform engineers. Learn about our GitOps principles, 100% code ownership standards, and cloud delivery framework.",
   alternates: { canonical: "https://www.oneggy.com/about" },
   openGraph: {
-    title: "About Our Practice | OnEggy Technologies",
-    description: "Learn about OnEggy's cloud modernization practice, our engineering standards, and advisory principles.",
+    title: "Cloud Modernization Practice & Engineers | OnEggy",
+    description: "Meet OnEggy's senior cloud architects and platform engineers. Learn about our GitOps principles, 100% code ownership standards, and cloud delivery framework.",
     url: "https://www.oneggy.com/about",
     type: "website",
   },

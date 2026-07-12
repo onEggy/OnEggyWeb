@@ -1,16 +1,24 @@
 # OnEggy Technologies
 
-OnEggy Technologies is a modern cloud-native engineering partner specializing in AWS Cloud, Kubernetes infrastructure orchestration, DevOps automation, and high-performance digital applications.
+OnEggy Technologies is a premium cloud modernization and platform engineering practice that helps startups and enterprises scale secure AWS environments, automate CI/CD pipelines, and migrate to Kubernetes EKS.
 
-## Core Services
-- AWS Cloud Managed Services (https://www.oneggy.com/services/aws-cloud-managed-services)
-- Kubernetes Setup & Orchestration (https://www.oneggy.com/services/kubernetes)
-- DevOps Consulting & Automation (https://www.oneggy.com/services/devops-consulting)
-- Platform Engineering (https://www.oneggy.com/services/platform-engineering)
-- Full Stack & Mobile App Development (https://www.oneggy.com/services/full-stack-web-development)
+## Core Architecture Principles
+* **100% Client Ownership**: Zero proprietary vendor lock-in. All Terraform, Helm, and application code resides in the client's private repositories from day one.
+* **Code-first Infrastructure (Zero ClickOps)**: All environment changes are version-controlled, auditable, and declarative.
+* **Observability-first Delivery**: Workloads ship pre-configured with Prometheus, Grafana, and Slack alert integrations.
 
-## Core Resources
-- Blog & Insights: https://www.oneggy.com/blog
-- Case Studies: https://www.oneggy.com/case-studies
-- Contact & Consultations: https://www.oneggy.com/contact
-- Pricing Specifications: https://www.oneggy.com/pricing.md
+## Core Capabilities & Practice Areas
+1. **AWS Cloud Managed Services**: Secure, auto-scaling multi-account AWS Control Tower setup, security audits, and KMS key rotations.
+2. **DevOps Consulting & Automation**: Continuous integration & delivery pipelines (GitHub Actions, GitLab CI), Terraform scaffolding, and containerization.
+3. **Kubernetes Orchestration**: AWS EKS cluster migration, cluster autoscaling, ingress routing (Nginx/Traefik), and Helm configurations.
+4. **Platform Engineering**: Internal developer portals (Spotify Backstage) and developer self-service sandboxes.
+5. **Cloud Cost Optimization**: Right-sizing EC2/RDS compute resources, spot instance integrations, and Kubecost tracking.
+6. **SecOps & Compliance**: HIPAA compliant healthcare platforms and PCI-DSS auditable fintech infrastructures.
+
+## Core Navigation Links
+* **Homepage**: https://www.oneggy.com
+* **Services**: https://www.oneggy.com/services
+* **Case Studies & Outcomes**: https://www.oneggy.com/case-studies
+* **Engineering Blog**: https://www.oneggy.com/blog
+* **About the Practice**: https://www.oneggy.com/about
+* **Contact & Free Consultation**: https://www.oneggy.com/contact

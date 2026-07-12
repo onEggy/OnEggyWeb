@@ -3,7 +3,7 @@ import { FadeUp } from "@/components/animations/motion-wrappers";
 import { CtaBlock } from "@/components/common/cta-block";
 
 export const metadata: Metadata = {
-  title: "Industries Serve | OnEggy Technologies",
+  title: "Industries We Serve | OnEggy Technologies",
   description: "Browse OnEggy's sector-specific cloud engineering solutions: HIPAA compliance for Healthcare, PCI-DSS for Fintech, and multi-tenant SaaS scaling architectures.",
   alternates: {
     canonical: "https://www.oneggy.com/industries",
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://www.oneggy.com/industries",
-    title: "Industries Serve | OnEggy Technologies",
+    title: "Industries We Serve | OnEggy Technologies",
     description: "OnEggy's sector-specific cloud engineering solutions: HIPAA compliance for Healthcare, PCI-DSS for Fintech, and multi-tenant SaaS scaling.",
     siteName: "OnEggy Technologies",
   },
