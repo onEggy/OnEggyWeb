@@ -48,7 +48,7 @@ export function BlogContent({ posts, categories }: BlogContentProps) {
       {/* Filter + search — hairline editorial bar */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-5 border-b border-border pb-6">
         <div
-          className="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0 scrollbar-none shrink-0 max-w-full"
+          className="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0 scrollbar-none w-full min-w-0 max-w-full"
           role="group"
           aria-label="Filter articles by category"
         >
