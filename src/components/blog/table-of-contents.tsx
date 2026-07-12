@@ -21,22 +21,32 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
   useEffect(() => {
     if (headings.length === 0) return;
 
+    // Cache elements once when headings change, instead of querying DOM on every single scroll tick
+    const headingElements = headings
+      .map((h) => ({ id: h.id, el: document.getElementById(h.id) }))
+      .filter((item) => item.el !== null) as { id: string; el: HTMLElement }[];
+
+    let ticking = false;
+
     const handleScroll = () => {
-      // Find the heading that is closest to top of viewport
-      const headingElements = headings.map((h) => document.getElementById(h.id)).filter(Boolean) as HTMLElement[];
-      
-      let currentActiveId = headings[0].id;
-      const scrollPosition = window.scrollY + 120; // offset for sticky nav/header
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          let currentActiveId = headings[0].id;
+          const scrollPosition = window.scrollY + 120; // offset for sticky nav/header
 
-      for (const el of headingElements) {
-        if (el.offsetTop <= scrollPosition) {
-          currentActiveId = el.id;
-        } else {
-          break; // Headings are sorted by offsetTop, so we can stop
-        }
+          for (const { id, el } of headingElements) {
+            if (el.offsetTop <= scrollPosition) {
+              currentActiveId = id;
+            } else {
+              break; // Headings are sorted by offsetTop, so we can stop
+            }
+          }
+
+          setActiveId((prev) => (prev !== currentActiveId ? currentActiveId : prev));
+          ticking = false;
+        });
+        ticking = true;
       }
-
-      setActiveId(currentActiveId);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -50,21 +60,27 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
 
   const scrollToHeading = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 96; // sticky header offset
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
+    
+    // Close the mobile menu first to let the DOM collapse and layout recalculate
+    setIsMobileOpen(false);
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-      setActiveId(id);
-      setIsMobileOpen(false);
-    }
+    // Calculate position and scroll in the next event loop tick to prevent layout shifts
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        const offset = 96; // sticky header offset
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = element.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+        setActiveId(id);
+      }
+    }, 50);
   };
 
   return (

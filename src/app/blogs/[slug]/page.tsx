@@ -398,7 +398,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-14 items-start mt-8">
           {/* Main Column */}
-          <div className="lg:col-span-8 max-w-3xl">
+          <div className="lg:col-span-8 max-w-3xl min-w-0 w-full">
             {/* Article header */}
             <header>
               <span className="eyebrow mb-5">{post.category}</span>
