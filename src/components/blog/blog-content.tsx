@@ -140,54 +140,56 @@ export function BlogContent({ posts, categories }: BlogContentProps) {
 
       {/* Article index */}
       {regularPosts.length > 0 ? (
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 w-full min-w-0">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 md:gap-y-12 w-full min-w-0">
           {regularPosts.map((post) => (
             <StaggerItem key={post.slug}>
-              <article className="group flex flex-col h-full w-full min-w-0 overflow-hidden">
+              <article className="group flex flex-row md:flex-col gap-4 md:gap-0 h-full w-full min-w-0 overflow-hidden border-b border-border/40 pb-5 md:border-none md:pb-0">
                 {post.image && (
                   <Link
                     href={`/blogs/${post.slug}`}
-                    className="relative aspect-[16/9] w-full block overflow-hidden rounded-xl bg-muted border border-border"
+                    className="relative aspect-[4/3] md:aspect-[16/9] w-24 sm:w-32 md:w-full block overflow-hidden rounded-xl bg-muted border border-border shrink-0"
                   >
                     <Image
                       src={post.image}
                       alt={post.title}
                       fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 380px"
+                      sizes="(max-width: 768px) 120px, (max-width: 1024px) 50vw, 380px"
                       className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                     />
                   </Link>
                 )}
 
-                <div className="flex flex-col flex-1 pt-5">
-                  <div className="flex items-center justify-between font-mono text-xs uppercase tracking-[0.12em]">
-                    <span className="text-primary-strong font-semibold">{post.category}</span>
-                    {post.readTime && (
-                      <span className="text-muted-foreground">{post.readTime}</span>
-                    )}
+                <div className="flex flex-col flex-1 min-w-0 justify-between md:pt-5">
+                  <div>
+                    <div className="flex items-center justify-between font-mono text-[10px] sm:text-xs uppercase tracking-[0.12em]">
+                      <span className="text-primary-strong font-semibold">{post.category}</span>
+                      {post.readTime && (
+                        <span className="text-muted-foreground hidden sm:inline">{post.readTime}</span>
+                      )}
+                    </div>
+
+                    <h3 className="font-display text-sm sm:text-base md:text-xl text-foreground mt-1.5 md:mt-3 leading-snug group-hover:text-primary-strong transition-colors line-clamp-2 break-words">
+                      <Link href={`/blogs/${post.slug}`}>{post.title}</Link>
+                    </h3>
+
+                    <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-2 hidden sm:line-clamp-3 md:block">
+                      {post.excerpt}
+                    </p>
                   </div>
 
-                  <h3 className="font-display text-lg sm:text-xl text-foreground mt-3 leading-snug group-hover:text-primary-strong transition-colors line-clamp-2 break-words">
-                    <Link href={`/blogs/${post.slug}`}>{post.title}</Link>
-                  </h3>
-
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed line-clamp-3">
-                    {post.excerpt}
-                  </p>
-
-                  <div className="mt-auto pt-5 flex items-center justify-between border-t border-border">
+                  <div className="mt-3 md:mt-auto pt-2 md:pt-5 flex items-center justify-between border-t border-border/60">
                     {post.date ? (
-                      <span className="flex items-center gap-1.5 font-mono text-xs text-muted-foreground tabular-nums">
-                        <Calendar className="h-3.5 w-3.5" aria-hidden="true" /> {post.date}
+                      <span className="flex items-center gap-1 font-mono text-[10px] sm:text-xs text-muted-foreground tabular-nums">
+                        <Calendar className="h-3.5 w-3.5 text-muted-foreground/60" aria-hidden="true" /> {post.date}
                       </span>
                     ) : (
                       <span />
                     )}
                     <Link
                       href={`/blogs/${post.slug}`}
-                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-strong"
+                      className="inline-flex items-center gap-1 text-xs sm:text-sm font-semibold text-primary-strong"
                     >
-                      Read article
+                      Read <span className="hidden sm:inline">article</span>
                       <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
                     </Link>
                   </div>
