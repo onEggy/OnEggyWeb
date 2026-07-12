@@ -106,7 +106,7 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
       </div>
 
       {/* Desktop Sticky Table of Contents */}
-      <div className="hidden lg:block space-y-4">
+      <div className="hidden lg:block space-y-4 max-h-[calc(100vh-200px)] overflow-y-auto pr-3 custom-scrollbar">
         <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground/70 font-semibold flex items-center gap-2">
           <List className="h-3.5 w-3.5 text-primary" /> On This Page
         </p>
