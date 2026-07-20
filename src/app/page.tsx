@@ -57,7 +57,6 @@ export default function Home() {
         "contactPoint": {
           "@type": "ContactPoint",
           "email": "ask@oneggy.com",
-          "telephone": "+91-98111-33005",
           "contactType": "customer service"
         }
       },
@@ -81,7 +80,6 @@ export default function Home() {
         "name": "OnEggy Technologies",
         "image": "https://www.oneggy.com/logov1.png",
         "url": "https://www.oneggy.com",
-        "telephone": "+91-98111-33005",
         "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",

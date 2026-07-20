@@ -211,7 +211,7 @@ export function ContactForm() {
             <input
               id="phone"
               type="tel"
-              placeholder="+91 98111 33005"
+              placeholder="+1 (555) 000-0000"
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
               className="w-full h-11 px-4 rounded-md bg-background border border-border focus-visible:ring-2 focus-visible:ring-primary focus:outline-none text-sm placeholder:text-muted-foreground/60 transition-all"

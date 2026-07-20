@@ -1,6 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
-import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
+import { Mail, MapPin, ArrowUpRight } from "lucide-react";
 import { ContactForm } from "@/components/contact/contact-form";
 import { OrbitMark } from "@/components/common/orbit-mark";
 
@@ -20,7 +20,6 @@ export const metadata: Metadata = {
 
 const channels = [
   { icon: Mail, label: "Email", value: "ask@oneggy.com", href: "mailto:ask@oneggy.com" },
-  { icon: Phone, label: "Phone", value: "+91 98111 33005", href: "tel:+919811133005" },
   { icon: MapPin, label: "Studio", value: "Gurgaon, Delhi NCR, India", href: null },
 ];
 

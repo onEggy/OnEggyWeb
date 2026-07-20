@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone, MapPin, Send, Check } from "lucide-react";
+import { Mail, MapPin, Send, Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const services = [
@@ -149,12 +149,6 @@ export function Footer() {
                 <Mail className="h-4 w-4 text-primary shrink-0" aria-hidden="true" />
                 <a href="mailto:ask@oneggy.com" className="hover:text-primary-strong transition-colors">
                   ask@oneggy.com
-                </a>
-              </li>
-              <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Phone className="h-4 w-4 text-primary shrink-0" aria-hidden="true" />
-                <a href="tel:+919811133005" className="hover:text-primary-strong transition-colors">
-                  +91 98111 33005
                 </a>
               </li>
             </ul>
