@@ -1,6 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
-import { Mail, MapPin, ArrowUpRight } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { ContactForm } from "@/components/contact/contact-form";
 import { OrbitMark } from "@/components/common/orbit-mark";
 
@@ -107,22 +107,6 @@ export default function ContactPage() {
                   <div key={label} className="px-2">{inner}</div>
                 );
               })}
-            </div>
-
-            {/* Direct booking */}
-            <div className="mt-8 relative surface-card rounded-xl p-5 overflow-hidden">
-              <OrbitMark size={90} className="absolute -bottom-5 -right-5 opacity-[0.06] pointer-events-none" />
-              <p className="text-sm text-muted-foreground leading-relaxed max-w-[34ch]">
-                Prefer to skip the form? Grab a slot on the calendar directly.
-              </p>
-              <a
-                href="https://cal.com/oneggy-aakash-sharma/30min"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary-strong hover:gap-2.5 transition-all"
-              >
-                Book a 30-min call <ArrowUpRight className="h-4 w-4" />
-              </a>
             </div>
           </div>
 
